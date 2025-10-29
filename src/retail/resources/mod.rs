@@ -1,0 +1,33 @@
+//! Resource modules
+
+pub mod product;
+pub use product::Product;
+pub mod generative_question;
+pub use generative_question::Generative_question;
+pub mod control;
+pub use control::Control;
+pub mod project;
+pub use project::Project;
+pub mod operation;
+pub use operation::Operation;
+pub mod branche;
+pub use branche::Branche;
+pub mod catalog;
+pub use catalog::Catalog;
+pub mod serving_config;
+pub use serving_config::Serving_config;
+pub mod attributes_config;
+pub use attributes_config::Attributes_config;
+pub mod placement;
+pub use placement::Placement;
+pub mod user_event;
+pub use user_event::User_event;
+pub mod merchant_center_account_link;
+pub use merchant_center_account_link::Merchant_center_account_link;
+pub mod retail_project;
+pub use retail_project::Retail_project;
+pub mod model;
+pub use model::Model;
+pub mod completion_data;
+pub use completion_data::Completion_data;
+

@@ -1,0 +1,33 @@
+//! Resource modules
+
+pub mod uptime_check_config;
+pub use uptime_check_config::Uptime_check_config;
+pub mod snooze;
+pub use snooze::Snooze;
+pub mod service;
+pub use service::Service;
+pub mod group;
+pub use group::Group;
+pub mod time_serie;
+pub use time_serie::Time_serie;
+pub mod service_level_objective;
+pub use service_level_objective::Service_level_objective;
+pub mod collectd_time_serie;
+pub use collectd_time_serie::Collectd_time_serie;
+pub mod alert_policie;
+pub use alert_policie::Alert_policie;
+pub mod notification_channel_descriptor;
+pub use notification_channel_descriptor::Notification_channel_descriptor;
+pub mod uptime_check_ip;
+pub use uptime_check_ip::Uptime_check_ip;
+pub mod notification_channel;
+pub use notification_channel::Notification_channel;
+pub mod metric_descriptor;
+pub use metric_descriptor::Metric_descriptor;
+pub mod monitored_resource_descriptor;
+pub use monitored_resource_descriptor::Monitored_resource_descriptor;
+pub mod alert;
+pub use alert::Alert;
+pub mod member;
+pub use member::Member;
+

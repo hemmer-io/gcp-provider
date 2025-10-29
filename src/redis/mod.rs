@@ -1,0 +1,54 @@
+//! Redis Service
+//!
+//! Auto-generated service module for redis
+
+pub mod resources;
+
+use crate::{ProviderError, Result};
+
+/// Service handler for redis
+pub struct RedisService<'a> {
+    provider: &'a crate::GcpProvider,
+}
+
+impl<'a> RedisService<'a> {
+    pub(crate) fn new(provider: &'a crate::GcpProvider) -> Self {
+        Self { provider }
+    }
+
+    /// Get backup_collection resource handler
+    pub fn backup_collection(&self) -> resources::Backup_collection<'_> {
+        resources::Backup_collection::new(self.provider)
+    }
+    /// Get location resource handler
+    pub fn location(&self) -> resources::Location<'_> {
+        resources::Location::new(self.provider)
+    }
+    /// Get instance resource handler
+    pub fn instance(&self) -> resources::Instance<'_> {
+        resources::Instance::new(self.provider)
+    }
+    /// Get operation resource handler
+    pub fn operation(&self) -> resources::Operation<'_> {
+        resources::Operation::new(self.provider)
+    }
+    /// Get cluster resource handler
+    pub fn cluster(&self) -> resources::Cluster<'_> {
+        resources::Cluster::new(self.provider)
+    }
+    /// Get backup resource handler
+    pub fn backup(&self) -> resources::Backup<'_> {
+        resources::Backup::new(self.provider)
+    }
+
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_service_creation() {
+        // Service creation test
+    }
+}

@@ -1,0 +1,31 @@
+//! Resource modules
+
+pub mod runtime_entity_schema;
+pub use runtime_entity_schema::Runtime_entity_schema;
+pub mod integration;
+pub use integration::Integration;
+pub mod suspension;
+pub use suspension::Suspension;
+pub mod callback;
+pub use callback::Callback;
+pub mod connector_platform_region;
+pub use connector_platform_region::Connector_platform_region;
+pub mod execution;
+pub use execution::Execution;
+pub mod sfdc_channel;
+pub use sfdc_channel::Sfdc_channel;
+pub mod auth_config;
+pub use auth_config::Auth_config;
+pub mod certificate;
+pub use certificate::Certificate;
+pub mod runtime_action_schema;
+pub use runtime_action_schema::Runtime_action_schema;
+pub mod connection;
+pub use connection::Connection;
+pub mod version;
+pub use version::Version;
+pub mod sfdc_instance;
+pub use sfdc_instance::Sfdc_instance;
+pub mod apps_script_project;
+pub use apps_script_project::Apps_script_project;
+

@@ -1,0 +1,33 @@
+//! Resource modules
+
+pub mod sku_group;
+pub use sku_group::Sku_group;
+pub mod report_job;
+pub use report_job::Report_job;
+pub mod entitlement;
+pub use entitlement::Entitlement;
+pub mod channel_partner_link;
+pub use channel_partner_link::Channel_partner_link;
+pub mod sku;
+pub use sku::Sku;
+pub mod operation;
+pub use operation::Operation;
+pub mod billable_sku;
+pub use billable_sku::Billable_sku;
+pub mod account;
+pub use account::Account;
+pub mod customer;
+pub use customer::Customer;
+pub mod product;
+pub use product::Product;
+pub mod integrator;
+pub use integrator::Integrator;
+pub mod channel_partner_repricing_config;
+pub use channel_partner_repricing_config::Channel_partner_repricing_config;
+pub mod customer_repricing_config;
+pub use customer_repricing_config::Customer_repricing_config;
+pub mod offer;
+pub use offer::Offer;
+pub mod report;
+pub use report::Report;
+

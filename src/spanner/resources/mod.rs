@@ -1,0 +1,31 @@
+//! Resource modules
+
+pub mod instance_partition_operation;
+pub use instance_partition_operation::Instance_partition_operation;
+pub mod instance_partition;
+pub use instance_partition::Instance_partition;
+pub mod database;
+pub use database::Database;
+pub mod session;
+pub use session::Session;
+pub mod backup_schedule;
+pub use backup_schedule::Backup_schedule;
+pub mod database_role;
+pub use database_role::Database_role;
+pub mod instance_config_operation;
+pub use instance_config_operation::Instance_config_operation;
+pub mod backup;
+pub use backup::Backup;
+pub mod backup_operation;
+pub use backup_operation::Backup_operation;
+pub mod instance_config;
+pub use instance_config::Instance_config;
+pub mod operation;
+pub use operation::Operation;
+pub mod scan;
+pub use scan::Scan;
+pub mod instance;
+pub use instance::Instance;
+pub mod database_operation;
+pub use database_operation::Database_operation;
+

@@ -1,0 +1,29 @@
+//! Resource modules
+
+pub mod effective_tag;
+pub use effective_tag::Effective_tag;
+pub mod effective_tag_binding_collection;
+pub use effective_tag_binding_collection::Effective_tag_binding_collection;
+pub mod tag_binding_collection;
+pub use tag_binding_collection::Tag_binding_collection;
+pub mod tag_binding;
+pub use tag_binding::Tag_binding;
+pub mod lien;
+pub use lien::Lien;
+pub mod organization;
+pub use organization::Organization;
+pub mod operation;
+pub use operation::Operation;
+pub mod tag_hold;
+pub use tag_hold::Tag_hold;
+pub mod tag_key;
+pub use tag_key::Tag_key;
+pub mod project;
+pub use project::Project;
+pub mod folder;
+pub use folder::Folder;
+pub mod capabilitie;
+pub use capabilitie::Capabilitie;
+pub mod tag_value;
+pub use tag_value::Tag_value;
+
