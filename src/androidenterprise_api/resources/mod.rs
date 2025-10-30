@@ -1,0 +1,37 @@
+//! Resource modules
+
+pub mod entitlement;
+pub use entitlement::Entitlement;
+pub mod permission;
+pub use permission::Permission;
+pub mod webapp;
+pub use webapp::Webapp;
+pub mod serviceaccountkey;
+pub use serviceaccountkey::Serviceaccountkey;
+pub mod grouplicenseuser;
+pub use grouplicenseuser::Grouplicenseuser;
+pub mod install;
+pub use install::Install;
+pub mod storelayoutpage;
+pub use storelayoutpage::Storelayoutpage;
+pub mod managedconfigurationssetting;
+pub use managedconfigurationssetting::Managedconfigurationssetting;
+pub mod user;
+pub use user::User;
+pub mod grouplicense;
+pub use grouplicense::Grouplicense;
+pub mod enrollment_token;
+pub use enrollment_token::Enrollment_token;
+pub mod device;
+pub use device::Device;
+pub mod storelayoutcluster;
+pub use storelayoutcluster::Storelayoutcluster;
+pub mod managedconfigurationsforuser;
+pub use managedconfigurationsforuser::Managedconfigurationsforuser;
+pub mod product;
+pub use product::Product;
+pub mod managedconfigurationsfordevice;
+pub use managedconfigurationsfordevice::Managedconfigurationsfordevice;
+pub mod enterprise;
+pub use enterprise::Enterprise;
+

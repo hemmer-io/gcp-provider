@@ -1,0 +1,31 @@
+//! Resource modules
+
+pub mod image_import_job;
+pub use image_import_job::Image_import_job;
+pub mod source;
+pub use source::Source;
+pub mod utilization_report;
+pub use utilization_report::Utilization_report;
+pub mod operation;
+pub use operation::Operation;
+pub mod disk_migration_job;
+pub use disk_migration_job::Disk_migration_job;
+pub mod cutover_job;
+pub use cutover_job::Cutover_job;
+pub mod location;
+pub use location::Location;
+pub mod replication_cycle;
+pub use replication_cycle::Replication_cycle;
+pub mod group;
+pub use group::Group;
+pub mod target_project;
+pub use target_project::Target_project;
+pub mod migrating_vm;
+pub use migrating_vm::Migrating_vm;
+pub mod image_import;
+pub use image_import::Image_import;
+pub mod datacenter_connector;
+pub use datacenter_connector::Datacenter_connector;
+pub mod clone_job;
+pub use clone_job::Clone_job;
+

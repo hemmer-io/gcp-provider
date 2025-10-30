@@ -1,0 +1,46 @@
+//! Accesscontextmanager_api Service
+//!
+//! Auto-generated service module for accesscontextmanager_api
+
+pub mod resources;
+
+use crate::{ProviderError, Result};
+
+/// Service handler for accesscontextmanager_api
+pub struct Accesscontextmanager_apiService<'a> {
+    provider: &'a crate::GcpProvider,
+}
+
+impl<'a> Accesscontextmanager_apiService<'a> {
+    pub(crate) fn new(provider: &'a crate::GcpProvider) -> Self {
+        Self { provider }
+    }
+
+    /// Get operation resource handler
+    pub fn operation(&self) -> resources::Operation<'_> {
+        resources::Operation::new(self.provider)
+    }
+    /// Get access_policie resource handler
+    pub fn access_policie(&self) -> resources::Access_policie<'_> {
+        resources::Access_policie::new(self.provider)
+    }
+    /// Get service_perimeter resource handler
+    pub fn service_perimeter(&self) -> resources::Service_perimeter<'_> {
+        resources::Service_perimeter::new(self.provider)
+    }
+    /// Get access_level resource handler
+    pub fn access_level(&self) -> resources::Access_level<'_> {
+        resources::Access_level::new(self.provider)
+    }
+
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_service_creation() {
+        // Service creation test
+    }
+}

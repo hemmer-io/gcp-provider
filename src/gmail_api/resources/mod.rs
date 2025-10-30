@@ -1,0 +1,33 @@
+//! Resource modules
+
+pub mod identitie;
+pub use identitie::Identitie;
+pub mod attachment;
+pub use attachment::Attachment;
+pub mod message;
+pub use message::Message;
+pub mod history;
+pub use history::History;
+pub mod thread;
+pub use thread::Thread;
+pub mod draft;
+pub use draft::Draft;
+pub mod filter;
+pub use filter::Filter;
+pub mod label;
+pub use label::Label;
+pub mod user;
+pub use user::User;
+pub mod delegate;
+pub use delegate::Delegate;
+pub mod forwarding_addresse;
+pub use forwarding_addresse::Forwarding_addresse;
+pub mod smime_info;
+pub use smime_info::Smime_info;
+pub mod send_a;
+pub use send_a::Send_a;
+pub mod keypair;
+pub use keypair::Keypair;
+pub mod setting;
+pub use setting::Setting;
+

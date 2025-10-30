@@ -1,0 +1,29 @@
+//! Resource modules
+
+pub mod recall;
+pub use recall::Recall;
+pub mod player;
+pub use player::Player;
+pub mod stat;
+pub use stat::Stat;
+pub mod achievement_definition;
+pub use achievement_definition::Achievement_definition;
+pub mod accesstoken;
+pub use accesstoken::Accesstoken;
+pub mod snapshot;
+pub use snapshot::Snapshot;
+pub mod leaderboard;
+pub use leaderboard::Leaderboard;
+pub mod achievement;
+pub use achievement::Achievement;
+pub mod event;
+pub use event::Event;
+pub mod score;
+pub use score::Score;
+pub mod revision;
+pub use revision::Revision;
+pub mod application;
+pub use application::Application;
+pub mod metagame;
+pub use metagame::Metagame;
+

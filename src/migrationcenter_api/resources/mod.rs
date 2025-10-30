@@ -1,0 +1,31 @@
+//! Resource modules
+
+pub mod report;
+pub use report::Report;
+pub mod error_frame;
+pub use error_frame::Error_frame;
+pub mod asset;
+pub use asset::Asset;
+pub mod import_data_file;
+pub use import_data_file::Import_data_file;
+pub mod source;
+pub use source::Source;
+pub mod assets_export_job;
+pub use assets_export_job::Assets_export_job;
+pub mod import_job;
+pub use import_job::Import_job;
+pub mod operation;
+pub use operation::Operation;
+pub mod location;
+pub use location::Location;
+pub mod preference_set;
+pub use preference_set::Preference_set;
+pub mod report_config;
+pub use report_config::Report_config;
+pub mod discovery_client;
+pub use discovery_client::Discovery_client;
+pub mod group;
+pub use group::Group;
+pub mod relation;
+pub use relation::Relation;
+

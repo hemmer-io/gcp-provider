@@ -1,0 +1,29 @@
+//! Resource modules
+
+pub mod management_server;
+pub use management_server::Management_server;
+pub mod resource_backup_config;
+pub use resource_backup_config::Resource_backup_config;
+pub mod backup_plan;
+pub use backup_plan::Backup_plan;
+pub mod backup_vault;
+pub use backup_vault::Backup_vault;
+pub mod location;
+pub use location::Location;
+pub mod backup_plan_association;
+pub use backup_plan_association::Backup_plan_association;
+pub mod operation;
+pub use operation::Operation;
+pub mod revision;
+pub use revision::Revision;
+pub mod data_source;
+pub use data_source::Data_source;
+pub mod data_source_reference;
+pub use data_source_reference::Data_source_reference;
+pub mod service_config;
+pub use service_config::Service_config;
+pub mod backup;
+pub use backup::Backup;
+pub mod trial;
+pub use trial::Trial;
+

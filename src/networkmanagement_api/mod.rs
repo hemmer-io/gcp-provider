@@ -1,0 +1,46 @@
+//! Networkmanagement_api Service
+//!
+//! Auto-generated service module for networkmanagement_api
+
+pub mod resources;
+
+use crate::{ProviderError, Result};
+
+/// Service handler for networkmanagement_api
+pub struct Networkmanagement_apiService<'a> {
+    provider: &'a crate::GcpProvider,
+}
+
+impl<'a> Networkmanagement_apiService<'a> {
+    pub(crate) fn new(provider: &'a crate::GcpProvider) -> Self {
+        Self { provider }
+    }
+
+    /// Get connectivity_test resource handler
+    pub fn connectivity_test(&self) -> resources::Connectivity_test<'_> {
+        resources::Connectivity_test::new(self.provider)
+    }
+    /// Get location resource handler
+    pub fn location(&self) -> resources::Location<'_> {
+        resources::Location::new(self.provider)
+    }
+    /// Get operation resource handler
+    pub fn operation(&self) -> resources::Operation<'_> {
+        resources::Operation::new(self.provider)
+    }
+    /// Get vpc_flow_logs_config resource handler
+    pub fn vpc_flow_logs_config(&self) -> resources::Vpc_flow_logs_config<'_> {
+        resources::Vpc_flow_logs_config::new(self.provider)
+    }
+
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_service_creation() {
+        // Service creation test
+    }
+}
