@@ -21,7 +21,7 @@ impl<'a> Negative_keyword_list<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, name: Option<String>, targeted_line_item_count: Option<String>, advertiser_id: Option<String>, negative_keyword_list_id: Option<String>, advertiser_id: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, negative_keyword_list_id: Option<String>, display_name: Option<String>, targeted_line_item_count: Option<String>, advertiser_id: Option<String>, advertiser_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Negative_keyword_list<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, name: Option<String>, targeted_line_item_count: Option<String>, advertiser_id: Option<String>, negative_keyword_list_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, negative_keyword_list_id: Option<String>, display_name: Option<String>, targeted_line_item_count: Option<String>, advertiser_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

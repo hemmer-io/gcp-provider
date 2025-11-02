@@ -21,7 +21,7 @@ impl<'a> Device_recall<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, new_values: Option<String>, integrity_token: Option<String>, package_name: String) -> Result<String> {
+    pub async fn create(&self, integrity_token: Option<String>, new_values: Option<String>, package_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

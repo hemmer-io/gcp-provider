@@ -21,7 +21,7 @@ impl<'a> Ad_unit<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, reward_settings: Option<String>, display_name: Option<String>, app_id: Option<String>, ad_format: Option<String>, ad_unit_id: Option<String>, ad_types: Option<Vec<String>>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, ad_types: Option<Vec<String>>, display_name: Option<String>, name: Option<String>, reward_settings: Option<String>, ad_format: Option<String>, app_id: Option<String>, ad_unit_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

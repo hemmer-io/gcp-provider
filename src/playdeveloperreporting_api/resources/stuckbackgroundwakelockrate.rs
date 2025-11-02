@@ -21,7 +21,7 @@ impl<'a> Stuckbackgroundwakelockrate<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, dimensions: Option<Vec<String>>, page_token: Option<String>, page_size: Option<i64>, filter: Option<String>, timeline_spec: Option<String>, user_cohort: Option<String>, metrics: Option<Vec<String>>, name: String) -> Result<String> {
+    pub async fn create(&self, dimensions: Option<Vec<String>>, page_size: Option<i64>, timeline_spec: Option<String>, filter: Option<String>, user_cohort: Option<String>, metrics: Option<Vec<String>>, page_token: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

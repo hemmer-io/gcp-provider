@@ -1,6 +1,6 @@
 //! Client resource
 //!
-//! Perform the provisioning steps to enable a user GCP project to use IP. If GCP project already registered on IP end via Apigee Integration, provisioning will fail.
+//! Perform the deprovisioning steps to disable a user GCP project to use IP and purge all related data in a wipeout-compliant way.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Client<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cloud_kms_config: Option<String>, create_sample_workflows: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Metric<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, label_extractors: Option<HashMap<String, String>>, bucket_options: Option<String>, resource_name: Option<String>, disabled: Option<bool>, update_time: Option<String>, description: Option<String>, metric_descriptor: Option<String>, version: Option<String>, filter: Option<String>, name: Option<String>, value_extractor: Option<String>, bucket_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, create_time: Option<String>, disabled: Option<bool>, value_extractor: Option<String>, label_extractors: Option<HashMap<String, String>>, update_time: Option<String>, version: Option<String>, filter: Option<String>, metric_descriptor: Option<String>, resource_name: Option<String>, bucket_name: Option<String>, bucket_options: Option<String>, description: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Metric<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_time: Option<String>, label_extractors: Option<HashMap<String, String>>, bucket_options: Option<String>, resource_name: Option<String>, disabled: Option<bool>, update_time: Option<String>, description: Option<String>, metric_descriptor: Option<String>, version: Option<String>, filter: Option<String>, name: Option<String>, value_extractor: Option<String>, bucket_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, create_time: Option<String>, disabled: Option<bool>, value_extractor: Option<String>, label_extractors: Option<HashMap<String, String>>, update_time: Option<String>, version: Option<String>, filter: Option<String>, metric_descriptor: Option<String>, resource_name: Option<String>, bucket_name: Option<String>, bucket_options: Option<String>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

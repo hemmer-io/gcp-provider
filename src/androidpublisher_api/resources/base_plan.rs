@@ -1,6 +1,6 @@
 //! Base_plan resource
 //!
-//! Activates a base plan. Once activated, base plans will be available to new subscribers.
+//! Batch variant of the MigrateBasePlanPrices endpoint. Set the latencyTolerance field on nested requests to PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT to achieve maximum update throughput.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Base_plan<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, base_plan_id: Option<String>, package_name: Option<String>, latency_tolerance: Option<String>, product_id: Option<String>, product_id: String, base_plan_id: String, package_name: String) -> Result<String> {
+    pub async fn create(&self, requests: Option<Vec<String>>, package_name: String, product_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

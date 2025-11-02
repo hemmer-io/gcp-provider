@@ -21,7 +21,7 @@ impl<'a> License_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, free_trial: Option<bool>, auto_renew: Option<bool>, license_count: Option<String>, end_date: Option<String>, start_date: Option<String>, gemini_bundle: Option<bool>, state: Option<String>, subscription_term: Option<String>, name: Option<String>, subscription_tier: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, start_date: Option<String>, auto_renew: Option<bool>, subscription_term: Option<String>, subscription_tier: Option<String>, end_date: Option<String>, gemini_bundle: Option<bool>, name: Option<String>, license_count: Option<String>, free_trial: Option<bool>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> License_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, free_trial: Option<bool>, auto_renew: Option<bool>, license_count: Option<String>, end_date: Option<String>, start_date: Option<String>, gemini_bundle: Option<bool>, state: Option<String>, subscription_term: Option<String>, name: Option<String>, subscription_tier: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, start_date: Option<String>, auto_renew: Option<bool>, subscription_term: Option<String>, subscription_tier: Option<String>, end_date: Option<String>, gemini_bundle: Option<bool>, name: Option<String>, license_count: Option<String>, free_trial: Option<bool>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

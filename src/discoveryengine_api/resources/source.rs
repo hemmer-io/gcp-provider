@@ -1,6 +1,6 @@
 //! Source resource
 //!
-//! Creates a list of Sources.
+//! Deletes multiple sources
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Source<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, user_contents: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, names: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

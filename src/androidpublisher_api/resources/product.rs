@@ -1,6 +1,6 @@
 //! Product resource
 //!
-//! Acknowledges a purchase of an inapp item.
+//! Consumes a purchase for an inapp item.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Product<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, developer_payload: Option<String>, product_id: String, package_name: String, token: String) -> Result<String> {
+    pub async fn create(&self, product_id: String, token: String, package_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

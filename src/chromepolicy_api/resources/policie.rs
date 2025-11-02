@@ -21,7 +21,7 @@ impl<'a> Policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, policy_target_key: Option<String>, page_token: Option<String>, page_size: Option<i64>, policy_schema_filter: Option<String>, customer: String) -> Result<String> {
+    pub async fn create(&self, page_token: Option<String>, page_size: Option<i64>, policy_schema_filter: Option<String>, policy_target_key: Option<String>, customer: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

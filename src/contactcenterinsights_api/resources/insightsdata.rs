@@ -21,7 +21,7 @@ impl<'a> Insightsdata<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, filter: Option<String>, big_query_destination: Option<String>, export_schema_version: Option<String>, kms_key: Option<String>, parent: Option<String>, write_disposition: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, big_query_destination: Option<String>, export_schema_version: Option<String>, write_disposition: Option<String>, filter: Option<String>, kms_key: Option<String>, parent: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

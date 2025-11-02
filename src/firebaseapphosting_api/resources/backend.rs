@@ -21,7 +21,7 @@ impl<'a> Backend<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, annotations: Option<HashMap<String, String>>, service_account: Option<String>, override_env: Option<Vec<String>>, labels: Option<HashMap<String, String>>, reconciling: Option<bool>, app_id: Option<String>, environment: Option<String>, etag: Option<String>, serving_locality: Option<String>, uid: Option<String>, codebase: Option<String>, delete_time: Option<String>, uri: Option<String>, name: Option<String>, create_time: Option<String>, display_name: Option<String>, mode: Option<String>, request_logs_disabled: Option<bool>, managed_resources: Option<Vec<String>>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, override_env: Option<Vec<String>>, uid: Option<String>, service_account: Option<String>, create_time: Option<String>, reconciling: Option<bool>, mode: Option<String>, annotations: Option<HashMap<String, String>>, request_logs_disabled: Option<bool>, update_time: Option<String>, codebase: Option<String>, serving_locality: Option<String>, uri: Option<String>, delete_time: Option<String>, app_id: Option<String>, environment: Option<String>, etag: Option<String>, display_name: Option<String>, labels: Option<HashMap<String, String>>, managed_resources: Option<Vec<String>>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backend<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, annotations: Option<HashMap<String, String>>, service_account: Option<String>, override_env: Option<Vec<String>>, labels: Option<HashMap<String, String>>, reconciling: Option<bool>, app_id: Option<String>, environment: Option<String>, etag: Option<String>, serving_locality: Option<String>, uid: Option<String>, codebase: Option<String>, delete_time: Option<String>, uri: Option<String>, name: Option<String>, create_time: Option<String>, display_name: Option<String>, mode: Option<String>, request_logs_disabled: Option<bool>, managed_resources: Option<Vec<String>>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, override_env: Option<Vec<String>>, uid: Option<String>, service_account: Option<String>, create_time: Option<String>, reconciling: Option<bool>, mode: Option<String>, annotations: Option<HashMap<String, String>>, request_logs_disabled: Option<bool>, update_time: Option<String>, codebase: Option<String>, serving_locality: Option<String>, uri: Option<String>, delete_time: Option<String>, app_id: Option<String>, environment: Option<String>, etag: Option<String>, display_name: Option<String>, labels: Option<HashMap<String, String>>, managed_resources: Option<Vec<String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

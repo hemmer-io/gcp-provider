@@ -21,7 +21,7 @@ impl<'a> Channel_partner_repricing_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, repricing_config: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, repricing_config: Option<String>, name: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Channel_partner_repricing_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, repricing_config: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, repricing_config: Option<String>, name: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

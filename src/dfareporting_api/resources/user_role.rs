@@ -21,7 +21,7 @@ impl<'a> User_role<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, account_id: Option<String>, permissions: Option<Vec<String>>, kind: Option<String>, parent_user_role_id: Option<String>, default_user_role: Option<bool>, name: Option<String>, subaccount_id: Option<String>, id: Option<String>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, default_user_role: Option<bool>, kind: Option<String>, permissions: Option<Vec<String>>, subaccount_id: Option<String>, account_id: Option<String>, parent_user_role_id: Option<String>, name: Option<String>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> User_role<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, account_id: Option<String>, permissions: Option<Vec<String>>, kind: Option<String>, parent_user_role_id: Option<String>, default_user_role: Option<bool>, name: Option<String>, subaccount_id: Option<String>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, default_user_role: Option<bool>, kind: Option<String>, permissions: Option<Vec<String>>, subaccount_id: Option<String>, account_id: Option<String>, parent_user_role_id: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

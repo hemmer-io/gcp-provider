@@ -21,7 +21,7 @@ impl<'a> Serviceaccountkey<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, data: Option<String>, public_data: Option<String>, id: Option<String>, type: Option<String>, enterprise_id: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, data: Option<String>, public_data: Option<String>, type: Option<String>, enterprise_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

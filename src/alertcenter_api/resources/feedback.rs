@@ -21,7 +21,7 @@ impl<'a> Feedback<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, feedback_id: Option<String>, type: Option<String>, email: Option<String>, create_time: Option<String>, customer_id: Option<String>, alert_id: Option<String>, alert_id: String) -> Result<String> {
+    pub async fn create(&self, alert_id: Option<String>, create_time: Option<String>, email: Option<String>, feedback_id: Option<String>, type: Option<String>, customer_id: Option<String>, alert_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

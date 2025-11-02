@@ -21,7 +21,7 @@ impl<'a> Share<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, backup: Option<String>, nfs_export_options: Option<Vec<String>>, mount_name: Option<String>, name: Option<String>, capacity_gb: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, state: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, backup: Option<String>, labels: Option<HashMap<String, String>>, mount_name: Option<String>, description: Option<String>, create_time: Option<String>, name: Option<String>, nfs_export_options: Option<Vec<String>>, capacity_gb: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Share<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, backup: Option<String>, nfs_export_options: Option<Vec<String>>, mount_name: Option<String>, name: Option<String>, capacity_gb: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, state: Option<String>, create_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, backup: Option<String>, labels: Option<HashMap<String, String>>, mount_name: Option<String>, description: Option<String>, create_time: Option<String>, name: Option<String>, nfs_export_options: Option<Vec<String>>, capacity_gb: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

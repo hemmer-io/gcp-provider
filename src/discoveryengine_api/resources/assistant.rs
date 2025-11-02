@@ -21,7 +21,7 @@ impl<'a> Assistant<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, tools_spec: Option<String>, generation_spec: Option<String>, user_metadata: Option<String>, session: Option<String>, query: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, user_metadata: Option<String>, tools_spec: Option<String>, generation_spec: Option<String>, session: Option<String>, query: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Assistant<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, tools_spec: Option<String>, generation_spec: Option<String>, user_metadata: Option<String>, session: Option<String>, query: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, user_metadata: Option<String>, tools_spec: Option<String>, generation_spec: Option<String>, session: Option<String>, query: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

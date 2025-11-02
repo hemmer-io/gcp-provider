@@ -21,7 +21,7 @@ impl<'a> Workflow_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, disabled: Option<bool>, internal_metadata: Option<String>, cron_schedule: Option<String>, recent_scheduled_execution_records: Option<Vec<String>>, release_config: Option<String>, create_time: Option<String>, invocation_config: Option<String>, time_zone: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, internal_metadata: Option<String>, disabled: Option<bool>, update_time: Option<String>, invocation_config: Option<String>, recent_scheduled_execution_records: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, cron_schedule: Option<String>, release_config: Option<String>, time_zone: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Workflow_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, disabled: Option<bool>, internal_metadata: Option<String>, cron_schedule: Option<String>, recent_scheduled_execution_records: Option<Vec<String>>, release_config: Option<String>, create_time: Option<String>, invocation_config: Option<String>, time_zone: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, internal_metadata: Option<String>, disabled: Option<bool>, update_time: Option<String>, invocation_config: Option<String>, recent_scheduled_execution_records: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, cron_schedule: Option<String>, release_config: Option<String>, time_zone: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

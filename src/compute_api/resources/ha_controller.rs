@@ -21,7 +21,7 @@ impl<'a> Ha_controller<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, backend_services: Option<Vec<String>>, secondary_zone_capacity: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, description: Option<String>, networking_auto_configuration: Option<String>, status: Option<String>, name: Option<String>, region: Option<String>, instance_name: Option<String>, id: Option<String>, self_link_with_id: Option<String>, self_link: Option<String>, zone_configurations: Option<HashMap<String, String>>, failover_initiation: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, networking_auto_configuration: Option<String>, secondary_zone_capacity: Option<String>, instance_name: Option<String>, status: Option<String>, self_link_with_id: Option<String>, failover_initiation: Option<String>, kind: Option<String>, id: Option<String>, region: Option<String>, zone_configurations: Option<HashMap<String, String>>, description: Option<String>, name: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>, backend_services: Option<Vec<String>>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Ha_controller<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, backend_services: Option<Vec<String>>, secondary_zone_capacity: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, description: Option<String>, networking_auto_configuration: Option<String>, status: Option<String>, name: Option<String>, region: Option<String>, instance_name: Option<String>, id: Option<String>, self_link_with_id: Option<String>, self_link: Option<String>, zone_configurations: Option<HashMap<String, String>>, failover_initiation: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, networking_auto_configuration: Option<String>, secondary_zone_capacity: Option<String>, instance_name: Option<String>, status: Option<String>, self_link_with_id: Option<String>, failover_initiation: Option<String>, kind: Option<String>, id: Option<String>, region: Option<String>, zone_configurations: Option<HashMap<String, String>>, description: Option<String>, name: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>, backend_services: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

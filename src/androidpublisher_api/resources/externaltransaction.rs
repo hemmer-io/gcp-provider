@@ -21,7 +21,7 @@ impl<'a> Externaltransaction<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, recurring_transaction: Option<String>, transaction_program_code: Option<i64>, test_purchase: Option<String>, transaction_time: Option<String>, original_tax_amount: Option<String>, user_tax_address: Option<String>, package_name: Option<String>, external_transaction_id: Option<String>, one_time_transaction: Option<String>, transaction_state: Option<String>, create_time: Option<String>, current_tax_amount: Option<String>, original_pre_tax_amount: Option<String>, current_pre_tax_amount: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, user_tax_address: Option<String>, current_tax_amount: Option<String>, package_name: Option<String>, current_pre_tax_amount: Option<String>, original_tax_amount: Option<String>, one_time_transaction: Option<String>, test_purchase: Option<String>, recurring_transaction: Option<String>, transaction_program_code: Option<i64>, transaction_state: Option<String>, transaction_time: Option<String>, create_time: Option<String>, original_pre_tax_amount: Option<String>, external_transaction_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

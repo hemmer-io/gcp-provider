@@ -21,7 +21,7 @@ impl<'a> Add_on_attachment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, course_id: Option<String>, max_points: Option<f64>, item_id: Option<String>, student_work_review_uri: Option<String>, teacher_view_uri: Option<String>, due_time: Option<String>, title: Option<String>, due_date: Option<String>, id: Option<String>, copy_history: Option<Vec<String>>, student_view_uri: Option<String>, post_id: Option<String>, course_id: String, item_id: String) -> Result<String> {
+    pub async fn create(&self, teacher_view_uri: Option<String>, title: Option<String>, due_time: Option<String>, copy_history: Option<Vec<String>>, id: Option<String>, max_points: Option<f64>, student_work_review_uri: Option<String>, post_id: Option<String>, student_view_uri: Option<String>, course_id: Option<String>, due_date: Option<String>, item_id: Option<String>, course_id: String, post_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Add_on_attachment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, course_id: Option<String>, max_points: Option<f64>, item_id: Option<String>, student_work_review_uri: Option<String>, teacher_view_uri: Option<String>, due_time: Option<String>, title: Option<String>, due_date: Option<String>, id: Option<String>, copy_history: Option<Vec<String>>, student_view_uri: Option<String>, post_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, teacher_view_uri: Option<String>, title: Option<String>, due_time: Option<String>, copy_history: Option<Vec<String>>, id: Option<String>, max_points: Option<f64>, student_work_review_uri: Option<String>, post_id: Option<String>, student_view_uri: Option<String>, course_id: Option<String>, due_date: Option<String>, item_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Version resource
 //!
-//! Destroys a SecretVersion. Sets the state of the SecretVersion to DESTROYED and irrevocably destroys the secret data.
+//! Disables a SecretVersion. Sets the state of the SecretVersion to DISABLED.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

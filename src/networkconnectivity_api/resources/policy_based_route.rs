@@ -21,7 +21,7 @@ impl<'a> Policy_based_route<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, name: Option<String>, kind: Option<String>, update_time: Option<String>, interconnect_attachment: Option<String>, labels: Option<HashMap<String, String>>, virtual_machine: Option<String>, next_hop_other_routes: Option<String>, priority: Option<i64>, network: Option<String>, filter: Option<String>, description: Option<String>, warnings: Option<Vec<String>>, self_link: Option<String>, next_hop_ilb_ip: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, network: Option<String>, next_hop_ilb_ip: Option<String>, virtual_machine: Option<String>, warnings: Option<Vec<String>>, name: Option<String>, kind: Option<String>, priority: Option<i64>, labels: Option<HashMap<String, String>>, update_time: Option<String>, next_hop_other_routes: Option<String>, interconnect_attachment: Option<String>, create_time: Option<String>, filter: Option<String>, self_link: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

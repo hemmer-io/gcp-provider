@@ -21,7 +21,7 @@ impl<'a> Document<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, lists: Option<HashMap<String, String>>, suggestions_view_mode: Option<String>, suggested_named_styles_changes: Option<HashMap<String, String>>, body: Option<String>, positioned_objects: Option<HashMap<String, String>>, inline_objects: Option<HashMap<String, String>>, revision_id: Option<String>, tabs: Option<Vec<String>>, headers: Option<HashMap<String, String>>, named_ranges: Option<HashMap<String, String>>, named_styles: Option<String>, footers: Option<HashMap<String, String>>, title: Option<String>, document_style: Option<String>, document_id: Option<String>, footnotes: Option<HashMap<String, String>>, suggested_document_style_changes: Option<HashMap<String, String>>) -> Result<String> {
+    pub async fn create(&self, document_id: Option<String>, headers: Option<HashMap<String, String>>, named_styles: Option<String>, body: Option<String>, revision_id: Option<String>, positioned_objects: Option<HashMap<String, String>>, footers: Option<HashMap<String, String>>, suggested_named_styles_changes: Option<HashMap<String, String>>, suggestions_view_mode: Option<String>, lists: Option<HashMap<String, String>>, suggested_document_style_changes: Option<HashMap<String, String>>, inline_objects: Option<HashMap<String, String>>, tabs: Option<Vec<String>>, title: Option<String>, footnotes: Option<HashMap<String, String>>, document_style: Option<String>, named_ranges: Option<HashMap<String, String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

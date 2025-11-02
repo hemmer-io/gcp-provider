@@ -21,7 +21,7 @@ impl<'a> Cloud_function<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, project_id: Option<String>, function_region: Option<String>, function_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, function_region: Option<String>, function_name: Option<String>, project_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

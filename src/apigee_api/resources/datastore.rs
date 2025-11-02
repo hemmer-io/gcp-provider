@@ -21,7 +21,7 @@ impl<'a> Datastore<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, org: Option<String>, self: Option<String>, target_type: Option<String>, last_update_time: Option<String>, create_time: Option<String>, datastore_config: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, self: Option<String>, target_type: Option<String>, display_name: Option<String>, last_update_time: Option<String>, create_time: Option<String>, org: Option<String>, datastore_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Datastore<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, org: Option<String>, self: Option<String>, target_type: Option<String>, last_update_time: Option<String>, create_time: Option<String>, datastore_config: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, self: Option<String>, target_type: Option<String>, display_name: Option<String>, last_update_time: Option<String>, create_time: Option<String>, org: Option<String>, datastore_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Placement<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, params: Option<HashMap<String, String>>, user_event: Option<String>, page_size: Option<i64>, dry_run: Option<bool>, labels: Option<HashMap<String, String>>, filter: Option<String>, page_token: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, page_token: Option<String>, params: Option<HashMap<String, String>>, user_event: Option<String>, filter: Option<String>, page_size: Option<i64>, labels: Option<HashMap<String, String>>, dry_run: Option<bool>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Certificate<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, config: Option<String>, issuer_certificate_authority: Option<String>, labels: Option<HashMap<String, String>>, pem_certificate: Option<String>, pem_certificate_chain: Option<Vec<String>>, certificate_template: Option<String>, lifetime: Option<String>, revocation_details: Option<String>, subject_mode: Option<String>, name: Option<String>, update_time: Option<String>, certificate_description: Option<String>, create_time: Option<String>, pem_csr: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, certificate_template: Option<String>, pem_certificate: Option<String>, name: Option<String>, pem_certificate_chain: Option<Vec<String>>, config: Option<String>, labels: Option<HashMap<String, String>>, pem_csr: Option<String>, revocation_details: Option<String>, subject_mode: Option<String>, update_time: Option<String>, create_time: Option<String>, lifetime: Option<String>, certificate_description: Option<String>, issuer_certificate_authority: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Certificate<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, config: Option<String>, issuer_certificate_authority: Option<String>, labels: Option<HashMap<String, String>>, pem_certificate: Option<String>, pem_certificate_chain: Option<Vec<String>>, certificate_template: Option<String>, lifetime: Option<String>, revocation_details: Option<String>, subject_mode: Option<String>, name: Option<String>, update_time: Option<String>, certificate_description: Option<String>, create_time: Option<String>, pem_csr: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, certificate_template: Option<String>, pem_certificate: Option<String>, name: Option<String>, pem_certificate_chain: Option<Vec<String>>, config: Option<String>, labels: Option<HashMap<String, String>>, pem_csr: Option<String>, revocation_details: Option<String>, subject_mode: Option<String>, update_time: Option<String>, create_time: Option<String>, lifetime: Option<String>, certificate_description: Option<String>, issuer_certificate_authority: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

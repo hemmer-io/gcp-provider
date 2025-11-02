@@ -21,7 +21,7 @@ impl<'a> App<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, linked_app_info: Option<String>, app_id: Option<String>, name: Option<String>, manual_app_info: Option<String>, platform: Option<String>, app_approval_state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, platform: Option<String>, app_id: Option<String>, linked_app_info: Option<String>, app_approval_state: Option<String>, manual_app_info: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

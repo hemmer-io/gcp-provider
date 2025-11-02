@@ -21,7 +21,7 @@ impl<'a> Key_event<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, event_name: Option<String>, default_value: Option<String>, deletable: Option<bool>, create_time: Option<String>, counting_method: Option<String>, name: Option<String>, custom: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, deletable: Option<bool>, create_time: Option<String>, event_name: Option<String>, name: Option<String>, custom: Option<bool>, default_value: Option<String>, counting_method: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Key_event<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, event_name: Option<String>, default_value: Option<String>, deletable: Option<bool>, create_time: Option<String>, counting_method: Option<String>, name: Option<String>, custom: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, deletable: Option<bool>, create_time: Option<String>, event_name: Option<String>, name: Option<String>, custom: Option<bool>, default_value: Option<String>, counting_method: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

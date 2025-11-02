@@ -21,7 +21,7 @@ impl<'a> Analytics_account_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, analytics_account: Option<String>, display_name: Option<String>, link_verification_state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, analytics_account: Option<String>, name: Option<String>, link_verification_state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

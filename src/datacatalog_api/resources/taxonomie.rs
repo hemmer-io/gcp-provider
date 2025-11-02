@@ -21,7 +21,7 @@ impl<'a> Taxonomie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, policy_tag_count: Option<i64>, taxonomy_timestamps: Option<String>, display_name: Option<String>, description: Option<String>, name: Option<String>, activated_policy_types: Option<Vec<String>>, service: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, taxonomy_timestamps: Option<String>, description: Option<String>, display_name: Option<String>, name: Option<String>, activated_policy_types: Option<Vec<String>>, policy_tag_count: Option<i64>, service: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Taxonomie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, policy_tag_count: Option<i64>, taxonomy_timestamps: Option<String>, display_name: Option<String>, description: Option<String>, name: Option<String>, activated_policy_types: Option<Vec<String>>, service: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, taxonomy_timestamps: Option<String>, description: Option<String>, display_name: Option<String>, name: Option<String>, activated_policy_types: Option<Vec<String>>, policy_tag_count: Option<i64>, service: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

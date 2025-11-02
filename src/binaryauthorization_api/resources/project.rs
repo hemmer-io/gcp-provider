@@ -34,7 +34,7 @@ impl<'a> Project<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, name: Option<String>, update_time: Option<String>, global_policy_evaluation_mode: Option<String>, istio_service_identity_admission_rules: Option<HashMap<String, String>>, kubernetes_namespace_admission_rules: Option<HashMap<String, String>>, cluster_admission_rules: Option<HashMap<String, String>>, default_admission_rule: Option<String>, admission_whitelist_patterns: Option<Vec<String>>, kubernetes_service_account_admission_rules: Option<HashMap<String, String>>, etag: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, istio_service_identity_admission_rules: Option<HashMap<String, String>>, cluster_admission_rules: Option<HashMap<String, String>>, default_admission_rule: Option<String>, global_policy_evaluation_mode: Option<String>, admission_whitelist_patterns: Option<Vec<String>>, etag: Option<String>, kubernetes_service_account_admission_rules: Option<HashMap<String, String>>, description: Option<String>, kubernetes_namespace_admission_rules: Option<HashMap<String, String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

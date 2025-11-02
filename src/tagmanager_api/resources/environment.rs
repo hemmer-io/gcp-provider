@@ -21,7 +21,7 @@ impl<'a> Environment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, fingerprint: Option<String>, name: Option<String>, type: Option<String>, workspace_id: Option<String>, description: Option<String>, environment_id: Option<String>, authorization_code: Option<String>, enable_debug: Option<bool>, path: Option<String>, tag_manager_url: Option<String>, authorization_timestamp: Option<String>, url: Option<String>, container_id: Option<String>, container_version_id: Option<String>, account_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, container_id: Option<String>, url: Option<String>, fingerprint: Option<String>, account_id: Option<String>, authorization_code: Option<String>, authorization_timestamp: Option<String>, enable_debug: Option<bool>, workspace_id: Option<String>, type: Option<String>, tag_manager_url: Option<String>, name: Option<String>, path: Option<String>, description: Option<String>, container_version_id: Option<String>, environment_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Environment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, fingerprint: Option<String>, name: Option<String>, type: Option<String>, workspace_id: Option<String>, description: Option<String>, environment_id: Option<String>, authorization_code: Option<String>, enable_debug: Option<bool>, path: Option<String>, tag_manager_url: Option<String>, authorization_timestamp: Option<String>, url: Option<String>, container_id: Option<String>, container_version_id: Option<String>, account_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, container_id: Option<String>, url: Option<String>, fingerprint: Option<String>, account_id: Option<String>, authorization_code: Option<String>, authorization_timestamp: Option<String>, enable_debug: Option<bool>, workspace_id: Option<String>, type: Option<String>, tag_manager_url: Option<String>, name: Option<String>, path: Option<String>, description: Option<String>, container_version_id: Option<String>, environment_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

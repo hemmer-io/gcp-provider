@@ -21,7 +21,7 @@ impl<'a> Consent_artifact<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, user_id: Option<String>, guardian_signature: Option<String>, consent_content_version: Option<String>, user_signature: Option<String>, witness_signature: Option<String>, consent_content_screenshots: Option<Vec<String>>, name: Option<String>, metadata: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, consent_content_screenshots: Option<Vec<String>>, witness_signature: Option<String>, metadata: Option<HashMap<String, String>>, user_id: Option<String>, consent_content_version: Option<String>, guardian_signature: Option<String>, user_signature: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

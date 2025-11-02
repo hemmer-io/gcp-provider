@@ -21,7 +21,7 @@ impl<'a> Creative_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, advertiser_id_dimension_value: Option<String>, kind: Option<String>, account_id: Option<String>, group_number: Option<i64>, id: Option<String>, name: Option<String>, subaccount_id: Option<String>, advertiser_id: Option<String>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, group_number: Option<i64>, account_id: Option<String>, advertiser_id_dimension_value: Option<String>, name: Option<String>, advertiser_id: Option<String>, id: Option<String>, kind: Option<String>, subaccount_id: Option<String>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Creative_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, advertiser_id_dimension_value: Option<String>, kind: Option<String>, account_id: Option<String>, group_number: Option<i64>, id: Option<String>, name: Option<String>, subaccount_id: Option<String>, advertiser_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, group_number: Option<i64>, account_id: Option<String>, advertiser_id_dimension_value: Option<String>, name: Option<String>, advertiser_id: Option<String>, id: Option<String>, kind: Option<String>, subaccount_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

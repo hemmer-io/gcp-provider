@@ -21,7 +21,7 @@ impl<'a> Lead<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, lead: Option<String>, recaptcha_challenge: Option<String>, request_metadata: Option<String>, company_id: String) -> Result<String> {
+    pub async fn create(&self, request_metadata: Option<String>, recaptcha_challenge: Option<String>, lead: Option<String>, company_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

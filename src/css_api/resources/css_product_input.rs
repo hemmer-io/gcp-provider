@@ -21,7 +21,7 @@ impl<'a> Css_product_input<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, final_name: Option<String>, custom_attributes: Option<Vec<String>>, name: Option<String>, raw_provided_id: Option<String>, attributes: Option<String>, freshness_time: Option<String>, content_language: Option<String>, feed_label: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, attributes: Option<String>, freshness_time: Option<String>, raw_provided_id: Option<String>, final_name: Option<String>, content_language: Option<String>, feed_label: Option<String>, custom_attributes: Option<Vec<String>>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -35,7 +35,7 @@ impl<'a> Css_product_input<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, final_name: Option<String>, custom_attributes: Option<Vec<String>>, name: Option<String>, raw_provided_id: Option<String>, attributes: Option<String>, freshness_time: Option<String>, content_language: Option<String>, feed_label: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, attributes: Option<String>, freshness_time: Option<String>, raw_provided_id: Option<String>, final_name: Option<String>, content_language: Option<String>, feed_label: Option<String>, custom_attributes: Option<Vec<String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

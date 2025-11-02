@@ -21,7 +21,7 @@ impl<'a> Flow<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, multi_language_settings: Option<String>, transition_route_groups: Option<Vec<String>>, transition_routes: Option<Vec<String>>, name: Option<String>, output_parameter_definitions: Option<Vec<String>>, description: Option<String>, event_handlers: Option<Vec<String>>, input_parameter_definitions: Option<Vec<String>>, display_name: Option<String>, nlu_settings: Option<String>, advanced_settings: Option<String>, locked: Option<bool>, knowledge_connector_settings: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, multi_language_settings: Option<String>, advanced_settings: Option<String>, description: Option<String>, event_handlers: Option<Vec<String>>, locked: Option<bool>, input_parameter_definitions: Option<Vec<String>>, output_parameter_definitions: Option<Vec<String>>, display_name: Option<String>, name: Option<String>, knowledge_connector_settings: Option<String>, transition_route_groups: Option<Vec<String>>, transition_routes: Option<Vec<String>>, nlu_settings: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Flow<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, multi_language_settings: Option<String>, transition_route_groups: Option<Vec<String>>, transition_routes: Option<Vec<String>>, name: Option<String>, output_parameter_definitions: Option<Vec<String>>, description: Option<String>, event_handlers: Option<Vec<String>>, input_parameter_definitions: Option<Vec<String>>, display_name: Option<String>, nlu_settings: Option<String>, advanced_settings: Option<String>, locked: Option<bool>, knowledge_connector_settings: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, multi_language_settings: Option<String>, advanced_settings: Option<String>, description: Option<String>, event_handlers: Option<Vec<String>>, locked: Option<bool>, input_parameter_definitions: Option<Vec<String>>, output_parameter_definitions: Option<Vec<String>>, display_name: Option<String>, name: Option<String>, knowledge_connector_settings: Option<String>, transition_route_groups: Option<Vec<String>>, transition_routes: Option<Vec<String>>, nlu_settings: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

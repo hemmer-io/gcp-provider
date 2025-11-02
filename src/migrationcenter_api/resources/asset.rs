@@ -1,6 +1,6 @@
 //! Asset resource
 //!
-//! Aggregates the requested fields based on provided function.
+//! Reports a set of frames.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Asset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, aggregations: Option<Vec<String>>, filter: Option<String>, show_hidden: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, frames_data: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Asset<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, aggregations: Option<Vec<String>>, filter: Option<String>, show_hidden: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, frames_data: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

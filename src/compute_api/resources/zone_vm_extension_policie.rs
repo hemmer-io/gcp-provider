@@ -21,7 +21,7 @@ impl<'a> Zone_vm_extension_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, instance_selectors: Option<Vec<String>>, priority: Option<i64>, update_timestamp: Option<String>, description: Option<String>, id: Option<String>, kind: Option<String>, extension_policies: Option<HashMap<String, String>>, global_resource_link: Option<String>, managed_by_global: Option<bool>, name: Option<String>, self_link_with_id: Option<String>, state: Option<String>, self_link: Option<String>, creation_timestamp: Option<String>, zone: String, project: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, description: Option<String>, global_resource_link: Option<String>, managed_by_global: Option<bool>, priority: Option<i64>, kind: Option<String>, extension_policies: Option<HashMap<String, String>>, self_link_with_id: Option<String>, state: Option<String>, update_timestamp: Option<String>, creation_timestamp: Option<String>, name: Option<String>, self_link: Option<String>, instance_selectors: Option<Vec<String>>, zone: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Zone_vm_extension_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, instance_selectors: Option<Vec<String>>, priority: Option<i64>, update_timestamp: Option<String>, description: Option<String>, id: Option<String>, kind: Option<String>, extension_policies: Option<HashMap<String, String>>, global_resource_link: Option<String>, managed_by_global: Option<bool>, name: Option<String>, self_link_with_id: Option<String>, state: Option<String>, self_link: Option<String>, creation_timestamp: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, description: Option<String>, global_resource_link: Option<String>, managed_by_global: Option<bool>, priority: Option<i64>, kind: Option<String>, extension_policies: Option<HashMap<String, String>>, self_link_with_id: Option<String>, state: Option<String>, update_timestamp: Option<String>, creation_timestamp: Option<String>, name: Option<String>, self_link: Option<String>, instance_selectors: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

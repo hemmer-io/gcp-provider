@@ -1,6 +1,6 @@
 //! Urlchannel resource
 //!
-//! List all URL channels in the specified ad client for this AdSense account.
+//! List all URL channels in the specified ad client for the specified account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

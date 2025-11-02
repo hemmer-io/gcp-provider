@@ -34,7 +34,7 @@ impl<'a> Model<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, creation_time: Option<String>, best_trial_id: Option<String>, location: Option<String>, transform_columns: Option<Vec<String>>, model_type: Option<String>, training_runs: Option<Vec<String>>, labels: Option<HashMap<String, String>>, hparam_trials: Option<Vec<String>>, hparam_search_spaces: Option<String>, encryption_configuration: Option<String>, feature_columns: Option<Vec<String>>, model_reference: Option<String>, optimal_trial_ids: Option<Vec<String>>, expiration_time: Option<String>, description: Option<String>, remote_model_info: Option<String>, label_columns: Option<Vec<String>>, default_trial_id: Option<String>, last_modified_time: Option<String>, friendly_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, feature_columns: Option<Vec<String>>, etag: Option<String>, label_columns: Option<Vec<String>>, best_trial_id: Option<String>, description: Option<String>, training_runs: Option<Vec<String>>, model_reference: Option<String>, model_type: Option<String>, hparam_search_spaces: Option<String>, friendly_name: Option<String>, expiration_time: Option<String>, hparam_trials: Option<Vec<String>>, transform_columns: Option<Vec<String>>, location: Option<String>, encryption_configuration: Option<String>, remote_model_info: Option<String>, optimal_trial_ids: Option<Vec<String>>, last_modified_time: Option<String>, creation_time: Option<String>, default_trial_id: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

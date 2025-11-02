@@ -1,38 +1,184 @@
-//! Mybusinessqanda_api Service
+//! Mybusinessqanda_api service for Gcp provider
 //!
-//! Auto-generated service module for mybusinessqanda_api
+//! This module handles all mybusinessqanda_api resources and their CRUD operations.
 
-pub mod resources;
+use hemmer_core::Result;
+use hemmer_provider::{ResourceInput, ResourceOutput, ResourcePlan};
 
-use crate::{ProviderError, Result};
-
-/// Service handler for mybusinessqanda_api
+/// Mybusinessqanda_api service handler
 pub struct Mybusinessqanda_apiService<'a> {
     provider: &'a crate::GcpProvider,
 }
 
 impl<'a> Mybusinessqanda_apiService<'a> {
-    pub(crate) fn new(provider: &'a crate::GcpProvider) -> Self {
+    /// Create a new service handler
+    pub fn new(provider: &'a crate::GcpProvider) -> Self {
         Self { provider }
     }
 
-    /// Get answer resource handler
-    pub fn answer(&self) -> resources::Answer<'_> {
-        resources::Answer::new(self.provider)
+    /// Plan changes to a resource
+    pub async fn plan_resource(
+        &self,
+        resource_name: &str,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        match resource_name {
+            "question" => self.plan_question(current_state, desired_input).await,
+            "answer" => self.plan_answer(current_state, desired_input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "mybusinessqanda_api", resource_name
+            ))),
+        }
     }
-    /// Get question resource handler
-    pub fn question(&self) -> resources::Question<'_> {
-        resources::Question::new(self.provider)
+
+    /// Create a new resource
+    pub async fn create_resource(
+        &self,
+        resource_name: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "question" => self.create_question(input).await,
+            "answer" => self.create_answer(input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "mybusinessqanda_api", resource_name
+            ))),
+        }
     }
 
-}
+    /// Read resource state
+    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+        match resource_name {
+            "question" => self.read_question(id).await,
+            "answer" => self.read_answer(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "mybusinessqanda_api", resource_name
+            ))),
+        }
+    }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+    /// Update an existing resource
+    pub async fn update_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "question" => self.update_question(id, input).await,
+            "answer" => self.update_answer(id, input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "mybusinessqanda_api", resource_name
+            ))),
+        }
+    }
 
-    #[test]
-    fn test_service_creation() {
-        // Service creation test
+    /// Delete a resource
+    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+        match resource_name {
+            "question" => self.delete_question(id).await,
+            "answer" => self.delete_answer(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "mybusinessqanda_api", resource_name
+            ))),
+        }
+    }
+
+    // ========================================================================
+    // Resource-specific CRUD implementations
+    // ========================================================================
+
+    // ------------------------------------------------------------------------
+    // Question resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a question resource
+    async fn plan_question(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new question resource
+    async fn create_question(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a question resource
+    async fn read_question(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a question resource
+    async fn update_question(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a question resource
+    async fn delete_question(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+    // ------------------------------------------------------------------------
+    // Answer resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a answer resource
+    async fn plan_answer(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new answer resource
+    async fn create_answer(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a answer resource
+    async fn read_answer(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a answer resource
+    async fn update_answer(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a answer resource
+    async fn delete_answer(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
     }
 }

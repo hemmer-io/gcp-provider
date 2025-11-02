@@ -21,7 +21,7 @@ impl<'a> Query<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, data_source_restrictions: Option<Vec<String>>, start: Option<i64>, context_attributes: Option<Vec<String>>, sort_options: Option<String>, query_interpretation_options: Option<String>, request_options: Option<String>, facet_options: Option<Vec<String>>, query: Option<String>, page_size: Option<i64>) -> Result<String> {
+    pub async fn create(&self, request_options: Option<String>, page_size: Option<i64>, start: Option<i64>, data_source_restrictions: Option<Vec<String>>, context_attributes: Option<Vec<String>>, sort_options: Option<String>, query: Option<String>, facet_options: Option<Vec<String>>, query_interpretation_options: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

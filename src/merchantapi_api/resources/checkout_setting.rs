@@ -21,7 +21,7 @@ impl<'a> Checkout_setting<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, uri_settings: Option<String>, effective_uri_settings: Option<String>, name: Option<String>, effective_enrollment_state: Option<String>, enrollment_state: Option<String>, eligible_destinations: Option<Vec<String>>, review_state: Option<String>, effective_review_state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, effective_uri_settings: Option<String>, enrollment_state: Option<String>, review_state: Option<String>, name: Option<String>, eligible_destinations: Option<Vec<String>>, effective_enrollment_state: Option<String>, uri_settings: Option<String>, effective_review_state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Checkout_setting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, uri_settings: Option<String>, effective_uri_settings: Option<String>, name: Option<String>, effective_enrollment_state: Option<String>, enrollment_state: Option<String>, eligible_destinations: Option<Vec<String>>, review_state: Option<String>, effective_review_state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, effective_uri_settings: Option<String>, enrollment_state: Option<String>, review_state: Option<String>, name: Option<String>, eligible_destinations: Option<Vec<String>>, effective_enrollment_state: Option<String>, uri_settings: Option<String>, effective_review_state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

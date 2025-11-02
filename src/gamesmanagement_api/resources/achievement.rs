@@ -1,6 +1,6 @@
 //! Achievement resource
 //!
-//! Resets all achievements for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
+//! Resets the achievement with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Achievement<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self) -> Result<String> {
+    pub async fn create(&self, achievement_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -1,6 +1,6 @@
 //! Model resource
 //!
-//! Perform a streaming online prediction with an arbitrary HTTP payload.
+//! Perform an online prediction.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Model<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, http_body: Option<String>, endpoint: String) -> Result<String> {
+    pub async fn create(&self, instances: Option<Vec<String>>, parameters: Option<String>, endpoint: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Model<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, http_body: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, instances: Option<Vec<String>>, parameters: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

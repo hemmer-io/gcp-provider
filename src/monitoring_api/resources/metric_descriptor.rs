@@ -21,7 +21,7 @@ impl<'a> Metric_descriptor<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, unit: Option<String>, monitored_resource_types: Option<Vec<String>>, launch_stage: Option<String>, value_type: Option<String>, description: Option<String>, name: Option<String>, labels: Option<Vec<String>>, display_name: Option<String>, metadata: Option<String>, metric_kind: Option<String>, type: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, metric_kind: Option<String>, name: Option<String>, unit: Option<String>, metadata: Option<String>, monitored_resource_types: Option<Vec<String>>, value_type: Option<String>, description: Option<String>, display_name: Option<String>, type: Option<String>, labels: Option<Vec<String>>, launch_stage: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

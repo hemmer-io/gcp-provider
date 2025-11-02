@@ -21,7 +21,7 @@ impl<'a> Catalog_item<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, title: Option<String>, product_metadata: Option<String>, tags: Option<Vec<String>>, item_attributes: Option<String>, id: Option<String>, description: Option<String>, category_hierarchies: Option<Vec<String>>, language_code: Option<String>, item_group_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, title: Option<String>, product_metadata: Option<String>, description: Option<String>, category_hierarchies: Option<Vec<String>>, item_attributes: Option<String>, item_group_id: Option<String>, tags: Option<Vec<String>>, language_code: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Catalog_item<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, title: Option<String>, product_metadata: Option<String>, tags: Option<Vec<String>>, item_attributes: Option<String>, id: Option<String>, description: Option<String>, category_hierarchies: Option<Vec<String>>, language_code: Option<String>, item_group_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, title: Option<String>, product_metadata: Option<String>, description: Option<String>, category_hierarchies: Option<Vec<String>>, item_attributes: Option<String>, item_group_id: Option<String>, tags: Option<Vec<String>>, language_code: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

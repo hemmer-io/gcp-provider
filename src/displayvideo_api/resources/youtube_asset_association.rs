@@ -1,6 +1,6 @@
 //! Youtube_asset_association resource
 //!
-//! Creates a new association between an entity (line item or ad group) and a YouTube asset. Returns the newly created association if successful.
+//! Creates a new association between the identified resource and a YouTube asset. Returns the newly-created association. *Warning:* This method is only available to an informed subset of users.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Youtube_asset_association<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, linked_youtube_asset: Option<String>, name: Option<String>, youtube_asset_type: Option<String>, line_item_id: String, advertiser_id: String, youtube_asset_type: String) -> Result<String> {
+    pub async fn create(&self, youtube_asset_type: Option<String>, name: Option<String>, linked_youtube_asset: Option<String>, advertiser_id: String, line_item_id: String, youtube_asset_type: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

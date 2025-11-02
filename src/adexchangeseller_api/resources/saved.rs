@@ -1,6 +1,6 @@
 //! Saved resource
 //!
-//! Generate an Ad Exchange report based on the saved report ID sent in the query parameters.
+//! List all saved reports in this Ad Exchange account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -21,7 +21,7 @@ impl<'a> Case<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, contact_email: Option<String>, display_name: Option<String>, state: Option<String>, time_zone: Option<String>, description: Option<String>, subscriber_email_addresses: Option<Vec<String>>, language_code: Option<String>, name: Option<String>, priority: Option<String>, create_time: Option<String>, creator: Option<String>, classification: Option<String>, test_case: Option<bool>, escalated: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, creator: Option<String>, contact_email: Option<String>, create_time: Option<String>, language_code: Option<String>, time_zone: Option<String>, description: Option<String>, classification: Option<String>, priority: Option<String>, state: Option<String>, subscriber_email_addresses: Option<Vec<String>>, test_case: Option<bool>, name: Option<String>, escalated: Option<bool>, update_time: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Case<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, contact_email: Option<String>, display_name: Option<String>, state: Option<String>, time_zone: Option<String>, description: Option<String>, subscriber_email_addresses: Option<Vec<String>>, language_code: Option<String>, name: Option<String>, priority: Option<String>, create_time: Option<String>, creator: Option<String>, classification: Option<String>, test_case: Option<bool>, escalated: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, creator: Option<String>, contact_email: Option<String>, create_time: Option<String>, language_code: Option<String>, time_zone: Option<String>, description: Option<String>, classification: Option<String>, priority: Option<String>, state: Option<String>, subscriber_email_addresses: Option<Vec<String>>, test_case: Option<bool>, name: Option<String>, escalated: Option<bool>, update_time: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

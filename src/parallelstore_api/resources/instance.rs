@@ -21,7 +21,7 @@ impl<'a> Instance<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, directory_stripe_level: Option<String>, file_stripe_level: Option<String>, daos_version: Option<String>, name: Option<String>, network: Option<String>, description: Option<String>, capacity_gib: Option<String>, effective_reserved_ip_range: Option<String>, deployment_type: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, access_points: Option<Vec<String>>, state: Option<String>, reserved_ip_range: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, reserved_ip_range: Option<String>, capacity_gib: Option<String>, deployment_type: Option<String>, name: Option<String>, state: Option<String>, daos_version: Option<String>, access_points: Option<Vec<String>>, description: Option<String>, file_stripe_level: Option<String>, labels: Option<HashMap<String, String>>, effective_reserved_ip_range: Option<String>, network: Option<String>, update_time: Option<String>, directory_stripe_level: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Instance<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, directory_stripe_level: Option<String>, file_stripe_level: Option<String>, daos_version: Option<String>, name: Option<String>, network: Option<String>, description: Option<String>, capacity_gib: Option<String>, effective_reserved_ip_range: Option<String>, deployment_type: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, access_points: Option<Vec<String>>, state: Option<String>, reserved_ip_range: Option<String>, create_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, reserved_ip_range: Option<String>, capacity_gib: Option<String>, deployment_type: Option<String>, name: Option<String>, state: Option<String>, daos_version: Option<String>, access_points: Option<Vec<String>>, description: Option<String>, file_stripe_level: Option<String>, labels: Option<HashMap<String, String>>, effective_reserved_ip_range: Option<String>, network: Option<String>, update_time: Option<String>, directory_stripe_level: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

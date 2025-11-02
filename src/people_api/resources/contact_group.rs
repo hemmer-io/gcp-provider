@@ -21,7 +21,7 @@ impl<'a> Contact_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, read_group_fields: Option<String>, contact_group: Option<String>) -> Result<String> {
+    pub async fn create(&self, contact_group: Option<String>, read_group_fields: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Contact_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, read_group_fields: Option<String>, contact_group: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, contact_group: Option<String>, read_group_fields: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

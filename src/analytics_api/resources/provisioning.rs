@@ -1,6 +1,6 @@
 //! Provisioning resource
 //!
-//! Creates an account ticket.
+//! Provision account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Provisioning<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, redirect_uri: Option<String>, account: Option<String>, id: Option<String>, webproperty: Option<String>, profile: Option<String>) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, timezone: Option<String>, account_name: Option<String>, webproperty_name: Option<String>, website_url: Option<String>, profile_name: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

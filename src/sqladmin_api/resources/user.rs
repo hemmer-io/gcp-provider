@@ -21,7 +21,7 @@ impl<'a> User<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, iam_status: Option<String>, password_policy: Option<String>, iam_email: Option<String>, type: Option<String>, kind: Option<String>, instance: Option<String>, etag: Option<String>, sqlserver_user_details: Option<String>, host: Option<String>, password: Option<String>, project: Option<String>, dual_password_type: Option<String>, name: Option<String>, project: String, instance: String) -> Result<String> {
+    pub async fn create(&self, instance: Option<String>, dual_password_type: Option<String>, etag: Option<String>, iam_email: Option<String>, host: Option<String>, name: Option<String>, password_policy: Option<String>, project: Option<String>, sqlserver_user_details: Option<String>, kind: Option<String>, password: Option<String>, type: Option<String>, iam_status: Option<String>, project: String, instance: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> User<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, iam_status: Option<String>, password_policy: Option<String>, iam_email: Option<String>, type: Option<String>, kind: Option<String>, instance: Option<String>, etag: Option<String>, sqlserver_user_details: Option<String>, host: Option<String>, password: Option<String>, project: Option<String>, dual_password_type: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, instance: Option<String>, dual_password_type: Option<String>, etag: Option<String>, iam_email: Option<String>, host: Option<String>, name: Option<String>, password_policy: Option<String>, project: Option<String>, sqlserver_user_details: Option<String>, kind: Option<String>, password: Option<String>, type: Option<String>, iam_status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

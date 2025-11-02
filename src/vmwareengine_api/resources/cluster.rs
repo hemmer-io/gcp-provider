@@ -21,7 +21,7 @@ impl<'a> Cluster<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, autoscaling_settings: Option<String>, create_time: Option<String>, name: Option<String>, uid: Option<String>, node_type_configs: Option<HashMap<String, String>>, stretched_cluster_config: Option<String>, update_time: Option<String>, state: Option<String>, management: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, stretched_cluster_config: Option<String>, create_time: Option<String>, name: Option<String>, node_type_configs: Option<HashMap<String, String>>, uid: Option<String>, update_time: Option<String>, autoscaling_settings: Option<String>, state: Option<String>, management: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Cluster<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, autoscaling_settings: Option<String>, create_time: Option<String>, name: Option<String>, uid: Option<String>, node_type_configs: Option<HashMap<String, String>>, stretched_cluster_config: Option<String>, update_time: Option<String>, state: Option<String>, management: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, stretched_cluster_config: Option<String>, create_time: Option<String>, name: Option<String>, node_type_configs: Option<HashMap<String, String>>, uid: Option<String>, update_time: Option<String>, autoscaling_settings: Option<String>, state: Option<String>, management: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

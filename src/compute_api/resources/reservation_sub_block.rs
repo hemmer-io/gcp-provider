@@ -21,7 +21,7 @@ impl<'a> Reservation_sub_block<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, permissions: Option<Vec<String>>, resource: String, project: String, parent_resource: String, zone: String) -> Result<String> {
+    pub async fn create(&self, permissions: Option<Vec<String>>, project: String, parent_resource: String, resource: String, zone: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

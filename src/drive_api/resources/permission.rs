@@ -21,7 +21,7 @@ impl<'a> Permission<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, domain: Option<String>, email_address: Option<String>, team_drive_permission_details: Option<Vec<String>>, id: Option<String>, allow_file_discovery: Option<bool>, kind: Option<String>, view: Option<String>, inherited_permissions_disabled: Option<bool>, display_name: Option<String>, expiration_time: Option<String>, permission_details: Option<Vec<String>>, pending_owner: Option<bool>, deleted: Option<bool>, type: Option<String>, role: Option<String>, photo_link: Option<String>, file_id: String) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, id: Option<String>, pending_owner: Option<bool>, allow_file_discovery: Option<bool>, deleted: Option<bool>, type: Option<String>, role: Option<String>, display_name: Option<String>, inherited_permissions_disabled: Option<bool>, expiration_time: Option<String>, domain: Option<String>, team_drive_permission_details: Option<Vec<String>>, photo_link: Option<String>, email_address: Option<String>, view: Option<String>, permission_details: Option<Vec<String>>, file_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Permission<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, domain: Option<String>, email_address: Option<String>, team_drive_permission_details: Option<Vec<String>>, id: Option<String>, allow_file_discovery: Option<bool>, kind: Option<String>, view: Option<String>, inherited_permissions_disabled: Option<bool>, display_name: Option<String>, expiration_time: Option<String>, permission_details: Option<Vec<String>>, pending_owner: Option<bool>, deleted: Option<bool>, type: Option<String>, role: Option<String>, photo_link: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kind: Option<String>, id: Option<String>, pending_owner: Option<bool>, allow_file_discovery: Option<bool>, deleted: Option<bool>, type: Option<String>, role: Option<String>, display_name: Option<String>, inherited_permissions_disabled: Option<bool>, expiration_time: Option<String>, domain: Option<String>, team_drive_permission_details: Option<Vec<String>>, photo_link: Option<String>, email_address: Option<String>, view: Option<String>, permission_details: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

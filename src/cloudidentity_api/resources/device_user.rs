@@ -1,6 +1,6 @@
 //! Device_user resource
 //!
-//! Approves device to access user data.
+//! Wipes the user's account on a device.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -21,7 +21,7 @@ impl<'a> Subscription<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, etag: Option<String>, create_time: Option<String>, expire_time: Option<String>, payload_options: Option<String>, uid: Option<String>, suspension_reason: Option<String>, reconciling: Option<bool>, notification_endpoint: Option<String>, name: Option<String>, authority: Option<String>, target_resource: Option<String>, event_types: Option<Vec<String>>, state: Option<String>, ttl: Option<String>) -> Result<String> {
+    pub async fn create(&self, reconciling: Option<bool>, target_resource: Option<String>, create_time: Option<String>, uid: Option<String>, expire_time: Option<String>, payload_options: Option<String>, event_types: Option<Vec<String>>, authority: Option<String>, notification_endpoint: Option<String>, state: Option<String>, suspension_reason: Option<String>, ttl: Option<String>, etag: Option<String>, update_time: Option<String>, name: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Subscription<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, etag: Option<String>, create_time: Option<String>, expire_time: Option<String>, payload_options: Option<String>, uid: Option<String>, suspension_reason: Option<String>, reconciling: Option<bool>, notification_endpoint: Option<String>, name: Option<String>, authority: Option<String>, target_resource: Option<String>, event_types: Option<Vec<String>>, state: Option<String>, ttl: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, reconciling: Option<bool>, target_resource: Option<String>, create_time: Option<String>, uid: Option<String>, expire_time: Option<String>, payload_options: Option<String>, event_types: Option<Vec<String>>, authority: Option<String>, notification_endpoint: Option<String>, state: Option<String>, suspension_reason: Option<String>, ttl: Option<String>, etag: Option<String>, update_time: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -34,7 +34,7 @@ impl<'a> Account<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, number_active_creatives: Option<i64>, id: Option<i64>, kind: Option<String>, maximum_total_qps: Option<i64>, cookie_matching_url: Option<String>, cookie_matching_nid: Option<String>, bidder_location: Option<Vec<String>>, maximum_active_creatives: Option<i64>) -> Result<()> {
+    pub async fn update(&self, id: &str, number_active_creatives: Option<i64>, id: Option<i64>, cookie_matching_nid: Option<String>, kind: Option<String>, maximum_total_qps: Option<i64>, bidder_location: Option<Vec<String>>, maximum_active_creatives: Option<i64>, cookie_matching_url: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

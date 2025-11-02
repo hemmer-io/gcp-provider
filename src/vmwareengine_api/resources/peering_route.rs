@@ -1,6 +1,6 @@
 //! Peering_route resource
 //!
-//! Lists the private connection routes exchanged over a peering connection.
+//! Lists the network peering routes exchanged over a peering connection. NetworkPeering is a global resource and location can only be global.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

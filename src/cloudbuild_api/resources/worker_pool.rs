@@ -21,7 +21,7 @@ impl<'a> Worker_pool<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, project_id: Option<String>, service_account_email: Option<String>, name: Option<String>, create_time: Option<String>, regions: Option<Vec<String>>, update_time: Option<String>, worker_count: Option<String>, status: Option<String>, worker_config: Option<String>, delete_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, worker_count: Option<String>, create_time: Option<String>, project_id: Option<String>, delete_time: Option<String>, regions: Option<Vec<String>>, worker_config: Option<String>, service_account_email: Option<String>, update_time: Option<String>, status: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Worker_pool<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, project_id: Option<String>, service_account_email: Option<String>, name: Option<String>, create_time: Option<String>, regions: Option<Vec<String>>, update_time: Option<String>, worker_count: Option<String>, status: Option<String>, worker_config: Option<String>, delete_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, worker_count: Option<String>, create_time: Option<String>, project_id: Option<String>, delete_time: Option<String>, regions: Option<Vec<String>>, worker_config: Option<String>, service_account_email: Option<String>, update_time: Option<String>, status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

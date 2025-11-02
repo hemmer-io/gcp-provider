@@ -1,6 +1,6 @@
 //! Cloudloading resource
 //!
-//! Add a user-upload volume and triggers processing.
+//! Remove the book and its contents
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

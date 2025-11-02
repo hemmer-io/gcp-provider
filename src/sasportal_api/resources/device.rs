@@ -21,7 +21,7 @@ impl<'a> Device<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, preloaded_config: Option<String>, state: Option<String>, grant_range_allowlists: Option<Vec<String>>, serial_number: Option<String>, device_metadata: Option<String>, grants: Option<Vec<String>>, name: Option<String>, display_name: Option<String>, active_config: Option<String>, current_channels: Option<Vec<String>>, fcc_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, preloaded_config: Option<String>, active_config: Option<String>, serial_number: Option<String>, name: Option<String>, state: Option<String>, current_channels: Option<Vec<String>>, display_name: Option<String>, grants: Option<Vec<String>>, fcc_id: Option<String>, grant_range_allowlists: Option<Vec<String>>, device_metadata: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Device<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, preloaded_config: Option<String>, state: Option<String>, grant_range_allowlists: Option<Vec<String>>, serial_number: Option<String>, device_metadata: Option<String>, grants: Option<Vec<String>>, name: Option<String>, display_name: Option<String>, active_config: Option<String>, current_channels: Option<Vec<String>>, fcc_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, preloaded_config: Option<String>, active_config: Option<String>, serial_number: Option<String>, name: Option<String>, state: Option<String>, current_channels: Option<Vec<String>>, display_name: Option<String>, grants: Option<Vec<String>>, fcc_id: Option<String>, grant_range_allowlists: Option<Vec<String>>, device_metadata: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Auth_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, valid_time: Option<String>, reason: Option<String>, name: Option<String>, decrypted_credential: Option<String>, override_valid_time: Option<String>, certificate_id: Option<String>, create_time: Option<String>, creator_email: Option<String>, expiry_notification_duration: Option<Vec<String>>, visibility: Option<String>, description: Option<String>, state: Option<String>, credential_type: Option<String>, encrypted_credential: Option<String>, last_modifier_email: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, description: Option<String>, create_time: Option<String>, visibility: Option<String>, expiry_notification_duration: Option<Vec<String>>, certificate_id: Option<String>, credential_type: Option<String>, decrypted_credential: Option<String>, encrypted_credential: Option<String>, last_modifier_email: Option<String>, valid_time: Option<String>, name: Option<String>, reason: Option<String>, override_valid_time: Option<String>, state: Option<String>, creator_email: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Auth_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, valid_time: Option<String>, reason: Option<String>, name: Option<String>, decrypted_credential: Option<String>, override_valid_time: Option<String>, certificate_id: Option<String>, create_time: Option<String>, creator_email: Option<String>, expiry_notification_duration: Option<Vec<String>>, visibility: Option<String>, description: Option<String>, state: Option<String>, credential_type: Option<String>, encrypted_credential: Option<String>, last_modifier_email: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, description: Option<String>, create_time: Option<String>, visibility: Option<String>, expiry_notification_duration: Option<Vec<String>>, certificate_id: Option<String>, credential_type: Option<String>, decrypted_credential: Option<String>, encrypted_credential: Option<String>, last_modifier_email: Option<String>, valid_time: Option<String>, name: Option<String>, reason: Option<String>, override_valid_time: Option<String>, state: Option<String>, creator_email: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Document resource
 //!
-//! LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format.
+//! Processes a single document.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Document<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, requests: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, form_extraction_params: Option<String>, table_extraction_params: Option<String>, document_type: Option<String>, ocr_params: Option<String>, parent: Option<String>, input_config: Option<String>, automl_params: Option<String>, output_config: Option<String>, entity_extraction_params: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

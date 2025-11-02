@@ -21,7 +21,7 @@ impl<'a> Item<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, connector_name: Option<String>, debug_options: Option<String>, queue: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, debug_options: Option<String>, connector_name: Option<String>, queue: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

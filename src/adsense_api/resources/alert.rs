@@ -1,6 +1,6 @@
 //! Alert resource
 //!
-//! List the alerts for this AdSense account.
+//! List the alerts for the specified AdSense account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

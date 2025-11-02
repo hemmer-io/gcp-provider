@@ -1,6 +1,6 @@
 //! Issueresolution resource
 //!
-//! Provide a list of issues for business's product with an issue resolution content and available actions. This content and actions are meant to be rendered and shown in third-party applications.
+//! Provide a list of business's account issues with an issue resolution content and available actions. This content and actions are meant to be rendered and shown in third-party applications.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

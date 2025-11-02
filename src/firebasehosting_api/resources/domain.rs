@@ -21,7 +21,7 @@ impl<'a> Domain<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, domain_redirect: Option<String>, domain_name: Option<String>, update_time: Option<String>, site: Option<String>, provisioning: Option<String>, status: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, domain_name: Option<String>, status: Option<String>, domain_redirect: Option<String>, provisioning: Option<String>, site: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Domain<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, domain_redirect: Option<String>, domain_name: Option<String>, update_time: Option<String>, site: Option<String>, provisioning: Option<String>, status: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, domain_name: Option<String>, status: Option<String>, domain_redirect: Option<String>, provisioning: Option<String>, site: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

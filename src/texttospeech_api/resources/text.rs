@@ -21,7 +21,7 @@ impl<'a> Text<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, audio_config: Option<String>, enable_time_pointing: Option<Vec<String>>, input: Option<String>, voice: Option<String>, advanced_voice_options: Option<String>) -> Result<String> {
+    pub async fn create(&self, input: Option<String>, enable_time_pointing: Option<Vec<String>>, advanced_voice_options: Option<String>, audio_config: Option<String>, voice: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

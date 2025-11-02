@@ -21,7 +21,7 @@ impl<'a> Target<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, custom_target: Option<String>, deploy_parameters: Option<HashMap<String, String>>, create_time: Option<String>, associated_entities: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, target_id: Option<String>, update_time: Option<String>, annotations: Option<HashMap<String, String>>, name: Option<String>, uid: Option<String>, gke: Option<String>, require_approval: Option<bool>, description: Option<String>, execution_configs: Option<Vec<String>>, multi_target: Option<String>, run: Option<String>, anthos_cluster: Option<String>, etag: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, custom_target: Option<String>, gke: Option<String>, require_approval: Option<bool>, name: Option<String>, create_time: Option<String>, run: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, multi_target: Option<String>, anthos_cluster: Option<String>, deploy_parameters: Option<HashMap<String, String>>, execution_configs: Option<Vec<String>>, target_id: Option<String>, associated_entities: Option<HashMap<String, String>>, uid: Option<String>, annotations: Option<HashMap<String, String>>, description: Option<String>, etag: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Target<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, custom_target: Option<String>, deploy_parameters: Option<HashMap<String, String>>, create_time: Option<String>, associated_entities: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, target_id: Option<String>, update_time: Option<String>, annotations: Option<HashMap<String, String>>, name: Option<String>, uid: Option<String>, gke: Option<String>, require_approval: Option<bool>, description: Option<String>, execution_configs: Option<Vec<String>>, multi_target: Option<String>, run: Option<String>, anthos_cluster: Option<String>, etag: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, custom_target: Option<String>, gke: Option<String>, require_approval: Option<bool>, name: Option<String>, create_time: Option<String>, run: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, multi_target: Option<String>, anthos_cluster: Option<String>, deploy_parameters: Option<HashMap<String, String>>, execution_configs: Option<Vec<String>>, target_id: Option<String>, associated_entities: Option<HashMap<String, String>>, uid: Option<String>, annotations: Option<HashMap<String, String>>, description: Option<String>, etag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

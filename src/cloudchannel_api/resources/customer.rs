@@ -21,7 +21,7 @@ impl<'a> Customer<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cloud_identity_info: Option<String>, org_postal_address: Option<String>, create_time: Option<String>, org_display_name: Option<String>, language_code: Option<String>, name: Option<String>, channel_partner_id: Option<String>, domain: Option<String>, primary_contact_info: Option<String>, update_time: Option<String>, cloud_identity_id: Option<String>, alternate_email: Option<String>, customer_attestation_state: Option<String>, correlation_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, org_postal_address: Option<String>, primary_contact_info: Option<String>, org_display_name: Option<String>, name: Option<String>, update_time: Option<String>, correlation_id: Option<String>, alternate_email: Option<String>, cloud_identity_id: Option<String>, cloud_identity_info: Option<String>, create_time: Option<String>, customer_attestation_state: Option<String>, channel_partner_id: Option<String>, domain: Option<String>, language_code: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Customer<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, cloud_identity_info: Option<String>, org_postal_address: Option<String>, create_time: Option<String>, org_display_name: Option<String>, language_code: Option<String>, name: Option<String>, channel_partner_id: Option<String>, domain: Option<String>, primary_contact_info: Option<String>, update_time: Option<String>, cloud_identity_id: Option<String>, alternate_email: Option<String>, customer_attestation_state: Option<String>, correlation_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, org_postal_address: Option<String>, primary_contact_info: Option<String>, org_display_name: Option<String>, name: Option<String>, update_time: Option<String>, correlation_id: Option<String>, alternate_email: Option<String>, cloud_identity_id: Option<String>, cloud_identity_info: Option<String>, create_time: Option<String>, customer_attestation_state: Option<String>, channel_partner_id: Option<String>, domain: Option<String>, language_code: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

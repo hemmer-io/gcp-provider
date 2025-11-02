@@ -21,7 +21,7 @@ impl<'a> Web_property_ad_words_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, entity: Option<String>, profile_ids: Option<Vec<String>>, kind: Option<String>, self_link: Option<String>, id: Option<String>, ad_words_accounts: Option<Vec<String>>, account_id: String, web_property_id: String) -> Result<String> {
+    pub async fn create(&self, entity: Option<String>, id: Option<String>, self_link: Option<String>, ad_words_accounts: Option<Vec<String>>, kind: Option<String>, profile_ids: Option<Vec<String>>, name: Option<String>, web_property_id: String, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Web_property_ad_words_link<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, entity: Option<String>, profile_ids: Option<Vec<String>>, kind: Option<String>, self_link: Option<String>, id: Option<String>, ad_words_accounts: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, entity: Option<String>, id: Option<String>, self_link: Option<String>, ad_words_accounts: Option<Vec<String>>, kind: Option<String>, profile_ids: Option<Vec<String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Consent_store<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, default_consent_ttl: Option<String>, name: Option<String>, enable_consent_create_on_update: Option<bool>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, default_consent_ttl: Option<String>, labels: Option<HashMap<String, String>>, enable_consent_create_on_update: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Consent_store<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, default_consent_ttl: Option<String>, name: Option<String>, enable_consent_create_on_update: Option<bool>, labels: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, default_consent_ttl: Option<String>, labels: Option<HashMap<String, String>>, enable_consent_create_on_update: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

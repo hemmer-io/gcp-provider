@@ -21,7 +21,7 @@ impl<'a> Android_app<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, api_key_id: Option<String>, app_id: Option<String>, project_id: Option<String>, name: Option<String>, sha256_hashes: Option<Vec<String>>, sha1_hashes: Option<Vec<String>>, state: Option<String>, package_name: Option<String>, expire_time: Option<String>, display_name: Option<String>, etag: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, package_name: Option<String>, project_id: Option<String>, sha1_hashes: Option<Vec<String>>, expire_time: Option<String>, state: Option<String>, api_key_id: Option<String>, name: Option<String>, etag: Option<String>, sha256_hashes: Option<Vec<String>>, app_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Android_app<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, api_key_id: Option<String>, app_id: Option<String>, project_id: Option<String>, name: Option<String>, sha256_hashes: Option<Vec<String>>, sha1_hashes: Option<Vec<String>>, state: Option<String>, package_name: Option<String>, expire_time: Option<String>, display_name: Option<String>, etag: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, package_name: Option<String>, project_id: Option<String>, sha1_hashes: Option<Vec<String>>, expire_time: Option<String>, state: Option<String>, api_key_id: Option<String>, name: Option<String>, etag: Option<String>, sha256_hashes: Option<Vec<String>>, app_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

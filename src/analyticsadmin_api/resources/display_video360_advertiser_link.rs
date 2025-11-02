@@ -21,7 +21,7 @@ impl<'a> Display_video360_advertiser_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, ads_personalization_enabled: Option<bool>, advertiser_display_name: Option<String>, cost_data_sharing_enabled: Option<bool>, name: Option<String>, advertiser_id: Option<String>, campaign_data_sharing_enabled: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, campaign_data_sharing_enabled: Option<bool>, ads_personalization_enabled: Option<bool>, advertiser_id: Option<String>, advertiser_display_name: Option<String>, cost_data_sharing_enabled: Option<bool>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Display_video360_advertiser_link<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, ads_personalization_enabled: Option<bool>, advertiser_display_name: Option<String>, cost_data_sharing_enabled: Option<bool>, name: Option<String>, advertiser_id: Option<String>, campaign_data_sharing_enabled: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, campaign_data_sharing_enabled: Option<bool>, ads_personalization_enabled: Option<bool>, advertiser_id: Option<String>, advertiser_display_name: Option<String>, cost_data_sharing_enabled: Option<bool>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

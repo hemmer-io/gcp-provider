@@ -34,7 +34,7 @@ impl<'a> Subnet<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, gateway_ip: Option<String>, state: Option<String>, ip_cidr_range: Option<String>, name: Option<String>, vlan_id: Option<i64>, type: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, type: Option<String>, name: Option<String>, state: Option<String>, vlan_id: Option<i64>, ip_cidr_range: Option<String>, gateway_ip: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

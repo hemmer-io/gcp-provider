@@ -21,7 +21,7 @@ impl<'a> Fhir<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, content_type: Option<String>, extensions: Option<Vec<HashMap<String, String>>>, data: Option<String>, type: String, parent: String) -> Result<String> {
+    pub async fn create(&self, data: Option<String>, content_type: Option<String>, extensions: Option<Vec<HashMap<String, String>>>, type: String, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Fhir<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, content_type: Option<String>, extensions: Option<Vec<HashMap<String, String>>>, data: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, data: Option<String>, content_type: Option<String>, extensions: Option<Vec<HashMap<String, String>>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

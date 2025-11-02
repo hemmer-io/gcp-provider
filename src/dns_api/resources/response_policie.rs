@@ -21,7 +21,7 @@ impl<'a> Response_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, response_policy_name: Option<String>, networks: Option<Vec<String>>, id: Option<String>, gke_clusters: Option<Vec<String>>, kind: Option<String>, location: String, project: String) -> Result<String> {
+    pub async fn create(&self, gke_clusters: Option<Vec<String>>, id: Option<String>, kind: Option<String>, response_policy_name: Option<String>, description: Option<String>, networks: Option<Vec<String>>, project: String, location: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Response_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, response_policy_name: Option<String>, networks: Option<Vec<String>>, id: Option<String>, gke_clusters: Option<Vec<String>>, kind: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, gke_clusters: Option<Vec<String>>, id: Option<String>, kind: Option<String>, response_policy_name: Option<String>, description: Option<String>, networks: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

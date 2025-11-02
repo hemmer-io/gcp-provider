@@ -21,7 +21,7 @@ impl<'a> Custom_connector_version<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, spec_server_urls: Option<Vec<String>>, partner_metadata: Option<String>, destination_configs: Option<Vec<String>>, backend_variable_templates: Option<Vec<String>>, state: Option<String>, name: Option<String>, enable_backend_destination_config: Option<bool>, service_account: Option<String>, create_time: Option<String>, spec_location: Option<String>, auth_config: Option<String>, publish_status: Option<String>, auth_config_templates: Option<Vec<String>>, labels: Option<HashMap<String, String>>, async_operations_support: Option<bool>, auth_override_support: Option<bool>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, async_operations_support: Option<bool>, update_time: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, name: Option<String>, backend_variable_templates: Option<Vec<String>>, create_time: Option<String>, auth_config: Option<String>, partner_metadata: Option<String>, auth_config_templates: Option<Vec<String>>, auth_override_support: Option<bool>, enable_backend_destination_config: Option<bool>, publish_status: Option<String>, service_account: Option<String>, spec_location: Option<String>, spec_server_urls: Option<Vec<String>>, destination_configs: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

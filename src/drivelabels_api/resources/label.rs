@@ -21,7 +21,7 @@ impl<'a> Label<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, applied_label_policy: Option<String>, display_hints: Option<String>, label_type: Option<String>, publish_time: Option<String>, publisher: Option<String>, schema_capabilities: Option<String>, revision_creator: Option<String>, customer: Option<String>, revision_id: Option<String>, creator: Option<String>, disable_time: Option<String>, enabled_app_settings: Option<String>, id: Option<String>, applied_capabilities: Option<String>, revision_create_time: Option<String>, lifecycle: Option<String>, fields: Option<Vec<String>>, learn_more_uri: Option<String>, lock_status: Option<String>, name: Option<String>, disabler: Option<String>, create_time: Option<String>, properties: Option<String>) -> Result<String> {
+    pub async fn create(&self, display_hints: Option<String>, learn_more_uri: Option<String>, applied_label_policy: Option<String>, properties: Option<String>, enabled_app_settings: Option<String>, label_type: Option<String>, create_time: Option<String>, lock_status: Option<String>, disabler: Option<String>, revision_create_time: Option<String>, revision_creator: Option<String>, creator: Option<String>, lifecycle: Option<String>, publish_time: Option<String>, revision_id: Option<String>, customer: Option<String>, id: Option<String>, schema_capabilities: Option<String>, publisher: Option<String>, applied_capabilities: Option<String>, fields: Option<Vec<String>>, disable_time: Option<String>, name: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Label<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, applied_label_policy: Option<String>, display_hints: Option<String>, label_type: Option<String>, publish_time: Option<String>, publisher: Option<String>, schema_capabilities: Option<String>, revision_creator: Option<String>, customer: Option<String>, revision_id: Option<String>, creator: Option<String>, disable_time: Option<String>, enabled_app_settings: Option<String>, id: Option<String>, applied_capabilities: Option<String>, revision_create_time: Option<String>, lifecycle: Option<String>, fields: Option<Vec<String>>, learn_more_uri: Option<String>, lock_status: Option<String>, name: Option<String>, disabler: Option<String>, create_time: Option<String>, properties: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_hints: Option<String>, learn_more_uri: Option<String>, applied_label_policy: Option<String>, properties: Option<String>, enabled_app_settings: Option<String>, label_type: Option<String>, create_time: Option<String>, lock_status: Option<String>, disabler: Option<String>, revision_create_time: Option<String>, revision_creator: Option<String>, creator: Option<String>, lifecycle: Option<String>, publish_time: Option<String>, revision_id: Option<String>, customer: Option<String>, id: Option<String>, schema_capabilities: Option<String>, publisher: Option<String>, applied_capabilities: Option<String>, fields: Option<Vec<String>>, disable_time: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

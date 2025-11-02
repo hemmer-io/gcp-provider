@@ -1,7 +1,6 @@
 //! Recoverable_snapshot resource
 //!
-//! Sets the access control policy on the specified resource.
-Replaces any existing policy.
+//! Returns permissions that a caller has on the specified resource.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -22,7 +21,7 @@ impl<'a> Recoverable_snapshot<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, etag: Option<String>, bindings: Option<Vec<String>>, policy: Option<String>, project: String, resource: String) -> Result<String> {
+    pub async fn create(&self, permissions: Option<Vec<String>>, project: String, resource: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -1,9 +1,7 @@
 //! Beacon resource
 //!
-//! Decommissions the specified beacon in the service. This beacon will no
-longer be returned from `beaconinfo.getforobserved`. This operation is
-permanent -- you will not be able to re-register a beacon with this ID
-again.
+//! Registers a previously unregistered beacon given its `advertisedId`.
+These IDs are unique within the system. An ID can be registered only once.
 
 Authenticate using an [OAuth access
 token](https://developers.google.com/identity/protocols/OAuth2) from a
@@ -29,7 +27,7 @@ impl<'a> Beacon<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, beacon_name: String) -> Result<String> {
+    pub async fn create(&self, beacon_name: Option<String>, provisioning_key: Option<String>, ephemeral_id_registration: Option<String>, indoor_level: Option<String>, properties: Option<HashMap<String, String>>, description: Option<String>, expected_stability: Option<String>, place_id: Option<String>, status: Option<String>, lat_lng: Option<String>, advertised_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -53,7 +51,7 @@ impl<'a> Beacon<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str) -> Result<()> {
+    pub async fn update(&self, id: &str, beacon_name: Option<String>, provisioning_key: Option<String>, ephemeral_id_registration: Option<String>, indoor_level: Option<String>, properties: Option<HashMap<String, String>>, description: Option<String>, expected_stability: Option<String>, place_id: Option<String>, status: Option<String>, lat_lng: Option<String>, advertised_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

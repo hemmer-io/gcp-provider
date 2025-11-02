@@ -21,7 +21,7 @@ impl<'a> Live_broadcast<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, etag: Option<String>, id: Option<String>, status: Option<String>, kind: Option<String>, content_details: Option<String>, monetization_details: Option<String>, snippet: Option<String>, statistics: Option<String>) -> Result<String> {
+    pub async fn create(&self, statistics: Option<String>, content_details: Option<String>, etag: Option<String>, monetization_details: Option<String>, kind: Option<String>, snippet: Option<String>, status: Option<String>, id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Live_broadcast<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, id: Option<String>, status: Option<String>, kind: Option<String>, content_details: Option<String>, monetization_details: Option<String>, snippet: Option<String>, statistics: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, statistics: Option<String>, content_details: Option<String>, etag: Option<String>, monetization_details: Option<String>, kind: Option<String>, snippet: Option<String>, status: Option<String>, id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

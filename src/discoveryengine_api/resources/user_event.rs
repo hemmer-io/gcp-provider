@@ -1,6 +1,6 @@
 //! User_event resource
 //!
-//! Bulk import of user events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events. Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully inserted. Operation.metadata is of type ImportMetadata.
+//! Writes a single user event.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> User_event<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, error_config: Option<String>, gcs_source: Option<String>, bigquery_source: Option<String>, inline_source: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, media_info: Option<String>, transaction_info: Option<String>, session_id: Option<String>, filter: Option<String>, panel: Option<String>, promotion_ids: Option<Vec<String>>, user_info: Option<String>, event_type: Option<String>, user_pseudo_id: Option<String>, attributes: Option<HashMap<String, String>>, engine: Option<String>, direct_user_request: Option<bool>, data_store: Option<String>, tag_ids: Option<Vec<String>>, page_info: Option<String>, documents: Option<Vec<String>>, conversion_type: Option<String>, event_time: Option<String>, attribution_token: Option<String>, search_info: Option<String>, completion_info: Option<String>, panels: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -34,7 +34,7 @@ impl<'a> Pubsubnotificationsetting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, registered_events: Option<Vec<String>>, cloud_topic_name: Option<String>, kind: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, registered_events: Option<Vec<String>>, kind: Option<String>, cloud_topic_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

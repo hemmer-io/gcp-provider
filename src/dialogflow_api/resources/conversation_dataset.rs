@@ -21,7 +21,7 @@ impl<'a> Conversation_dataset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, description: Option<String>, input_config: Option<String>, conversation_info: Option<String>, display_name: Option<String>, name: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, conversation_count: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, create_time: Option<String>, description: Option<String>, display_name: Option<String>, satisfies_pzs: Option<bool>, input_config: Option<String>, conversation_info: Option<String>, conversation_count: Option<String>, satisfies_pzi: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

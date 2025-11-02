@@ -21,7 +21,7 @@ impl<'a> Spec<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, contents: Option<String>, attributes: Option<HashMap<String, String>>, details: Option<String>, lint_response: Option<String>, display_name: Option<String>, create_time: Option<String>, source_metadata: Option<Vec<String>>, documentation: Option<String>, source_uri: Option<String>, parsing_mode: Option<String>, spec_type: Option<String>, update_time: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, source_uri: Option<String>, attributes: Option<HashMap<String, String>>, create_time: Option<String>, spec_type: Option<String>, update_time: Option<String>, documentation: Option<String>, name: Option<String>, parsing_mode: Option<String>, lint_response: Option<String>, contents: Option<String>, source_metadata: Option<Vec<String>>, display_name: Option<String>, details: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Spec<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, contents: Option<String>, attributes: Option<HashMap<String, String>>, details: Option<String>, lint_response: Option<String>, display_name: Option<String>, create_time: Option<String>, source_metadata: Option<Vec<String>>, documentation: Option<String>, source_uri: Option<String>, parsing_mode: Option<String>, spec_type: Option<String>, update_time: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, source_uri: Option<String>, attributes: Option<HashMap<String, String>>, create_time: Option<String>, spec_type: Option<String>, update_time: Option<String>, documentation: Option<String>, name: Option<String>, parsing_mode: Option<String>, lint_response: Option<String>, contents: Option<String>, source_metadata: Option<Vec<String>>, display_name: Option<String>, details: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

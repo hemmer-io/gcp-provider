@@ -34,7 +34,7 @@ impl<'a> Subproperty_sync_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, apply_to_property: Option<String>, custom_dimension_and_metric_sync_mode: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, apply_to_property: Option<String>, custom_dimension_and_metric_sync_mode: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

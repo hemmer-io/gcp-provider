@@ -1,6 +1,6 @@
 //! Speech resource
 //!
-//! Performs synchronous speech recognition: receive results after all audio has been sent and processed.
+//! Performs asynchronous speech recognition: receive results via the google.longrunning.Operations interface. Returns either an `Operation.error` or an `Operation.response` which contains a `LongRunningRecognizeResponse` message. For more information on asynchronous speech recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Speech<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, config: Option<String>, audio: Option<String>) -> Result<String> {
+    pub async fn create(&self, output_config: Option<String>, audio: Option<String>, config: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Managed_zone<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, description: Option<String>, name: Option<String>, target_project: Option<String>, dns: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, target_vpc: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, update_time: Option<String>, target_project: Option<String>, description: Option<String>, target_vpc: Option<String>, dns: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Managed_zone<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, description: Option<String>, name: Option<String>, target_project: Option<String>, dns: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, target_vpc: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, update_time: Option<String>, target_project: Option<String>, description: Option<String>, target_vpc: Option<String>, dns: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

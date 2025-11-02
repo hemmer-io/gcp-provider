@@ -1,6 +1,6 @@
 //! Location resource
 //!
-//! Gets the client configuration for the given project and location resource name
+//! This is a UI only method and will be moved away. Returns a list of common tasks.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

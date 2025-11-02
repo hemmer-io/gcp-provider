@@ -1,6 +1,6 @@
 //! Adclient resource
 //!
-//! List all ad clients in this AdSense account.
+//! List all ad clients in the specified account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

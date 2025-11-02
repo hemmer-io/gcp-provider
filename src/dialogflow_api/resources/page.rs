@@ -21,7 +21,7 @@ impl<'a> Page<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, knowledge_connector_settings: Option<String>, advanced_settings: Option<String>, transition_route_groups: Option<Vec<String>>, display_name: Option<String>, form: Option<String>, entry_fulfillment: Option<String>, name: Option<String>, transition_routes: Option<Vec<String>>, description: Option<String>, event_handlers: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, event_handlers: Option<Vec<String>>, description: Option<String>, entry_fulfillment: Option<String>, display_name: Option<String>, form: Option<String>, transition_route_groups: Option<Vec<String>>, advanced_settings: Option<String>, name: Option<String>, transition_routes: Option<Vec<String>>, knowledge_connector_settings: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Page<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, knowledge_connector_settings: Option<String>, advanced_settings: Option<String>, transition_route_groups: Option<Vec<String>>, display_name: Option<String>, form: Option<String>, entry_fulfillment: Option<String>, name: Option<String>, transition_routes: Option<Vec<String>>, description: Option<String>, event_handlers: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, event_handlers: Option<Vec<String>>, description: Option<String>, entry_fulfillment: Option<String>, display_name: Option<String>, form: Option<String>, transition_route_groups: Option<Vec<String>>, advanced_settings: Option<String>, name: Option<String>, transition_routes: Option<Vec<String>>, knowledge_connector_settings: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

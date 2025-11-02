@@ -34,7 +34,7 @@ impl<'a> Serie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, content_type: Option<String>, extensions: Option<Vec<HashMap<String, String>>>, data: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, data: Option<String>, content_type: Option<String>, extensions: Option<Vec<HashMap<String, String>>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

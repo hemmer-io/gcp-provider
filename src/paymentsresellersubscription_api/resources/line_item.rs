@@ -24,7 +24,7 @@ impl<'a> Line_item<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, finite_billing_cycle_details: Option<String>, line_item_promotion_specs: Option<Vec<String>>, bundle_details: Option<String>, one_time_recurrence_details: Option<String>, product: Option<String>, description: Option<String>, line_item_free_trial_end_time: Option<String>, product_payload: Option<String>, state: Option<String>, name: Option<String>, recurrence_type: Option<String>, line_item_index: Option<i64>, amount: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, one_time_recurrence_details: Option<String>, finite_billing_cycle_details: Option<String>, product: Option<String>, line_item_free_trial_end_time: Option<String>, product_payload: Option<String>, state: Option<String>, name: Option<String>, line_item_index: Option<i64>, recurrence_type: Option<String>, amount: Option<String>, description: Option<String>, bundle_details: Option<String>, line_item_promotion_specs: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

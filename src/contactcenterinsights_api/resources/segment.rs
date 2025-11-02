@@ -21,7 +21,7 @@ impl<'a> Segment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, filter: Option<String>, annotator_selector: Option<String>, parent: Option<String>, analysis_percentage: Option<f64>, parent: String) -> Result<String> {
+    pub async fn create(&self, annotator_selector: Option<String>, filter: Option<String>, analysis_percentage: Option<f64>, parent: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

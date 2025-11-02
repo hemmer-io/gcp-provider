@@ -21,7 +21,7 @@ impl<'a> Notification_channel<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, enabled: Option<bool>, verification_status: Option<String>, type: Option<String>, labels: Option<HashMap<String, String>>, user_labels: Option<HashMap<String, String>>, description: Option<String>, name: Option<String>, creation_record: Option<String>, display_name: Option<String>, mutation_records: Option<Vec<String>>, name: String) -> Result<String> {
+    pub async fn create(&self, verification_status: Option<String>, enabled: Option<bool>, description: Option<String>, display_name: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, mutation_records: Option<Vec<String>>, creation_record: Option<String>, type: Option<String>, user_labels: Option<HashMap<String, String>>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Notification_channel<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, enabled: Option<bool>, verification_status: Option<String>, type: Option<String>, labels: Option<HashMap<String, String>>, user_labels: Option<HashMap<String, String>>, description: Option<String>, name: Option<String>, creation_record: Option<String>, display_name: Option<String>, mutation_records: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, verification_status: Option<String>, enabled: Option<bool>, description: Option<String>, display_name: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, mutation_records: Option<Vec<String>>, creation_record: Option<String>, type: Option<String>, user_labels: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

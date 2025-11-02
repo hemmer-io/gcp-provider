@@ -1,6 +1,6 @@
 //! Group resource
 //!
-//! Delete multiple policy values that are applied to a specific group. All targets must have the same target format. That is to say that they must point to the same target resource and must have the same keys specified in `additionalTargetKeyNames`, though the values for those keys may be different. On failure the request will return the error details as part of the google.rpc.Status.
+//! Update a group priority ordering for an app. The target app must be supplied in `additionalTargetKeyNames` in the PolicyTargetKey. On failure the request will return the error details as part of the google.rpc.Status.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, requests: Option<Vec<String>>, customer: String) -> Result<String> {
+    pub async fn create(&self, group_ids: Option<Vec<String>>, policy_target_key: Option<String>, policy_namespace: Option<String>, policy_schema: Option<String>, customer: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

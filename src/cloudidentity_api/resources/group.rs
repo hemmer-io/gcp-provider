@@ -21,7 +21,7 @@ impl<'a> Group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, parent: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, group_key: Option<String>, display_name: Option<String>, description: Option<String>, dynamic_group_metadata: Option<String>, posix_groups: Option<Vec<String>>, labels: Option<HashMap<String, String>>, additional_group_keys: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, parent: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, posix_groups: Option<Vec<String>>, additional_group_keys: Option<Vec<String>>, create_time: Option<String>, display_name: Option<String>, update_time: Option<String>, dynamic_group_metadata: Option<String>, group_key: Option<String>, name: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, parent: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, group_key: Option<String>, display_name: Option<String>, description: Option<String>, dynamic_group_metadata: Option<String>, posix_groups: Option<Vec<String>>, labels: Option<HashMap<String, String>>, additional_group_keys: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, parent: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, posix_groups: Option<Vec<String>>, additional_group_keys: Option<Vec<String>>, create_time: Option<String>, display_name: Option<String>, update_time: Option<String>, dynamic_group_metadata: Option<String>, group_key: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

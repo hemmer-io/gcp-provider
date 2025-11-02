@@ -34,7 +34,7 @@ impl<'a> Global<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, tenant_project_id: Option<String>, name: Option<String>, vpcsc: Option<bool>, payg: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, tenant_project_id: Option<String>, payg: Option<bool>, name: Option<String>, vpcsc: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Genericclas<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, class_template_info: Option<String>, merchant_locations: Option<Vec<String>>, image_modules_data: Option<Vec<String>>, text_modules_data: Option<Vec<String>>, value_added_module_data: Option<Vec<String>>, enable_smart_tap: Option<bool>, view_unlock_requirement: Option<String>, messages: Option<Vec<String>>, redemption_issuers: Option<Vec<String>>, app_link_data: Option<String>, multiple_devices_and_holders_allowed_status: Option<String>, security_animation: Option<String>, id: Option<String>, links_module_data: Option<String>, callback_options: Option<String>) -> Result<String> {
+    pub async fn create(&self, enable_smart_tap: Option<bool>, id: Option<String>, messages: Option<Vec<String>>, redemption_issuers: Option<Vec<String>>, text_modules_data: Option<Vec<String>>, app_link_data: Option<String>, links_module_data: Option<String>, view_unlock_requirement: Option<String>, callback_options: Option<String>, value_added_module_data: Option<Vec<String>>, class_template_info: Option<String>, security_animation: Option<String>, merchant_locations: Option<Vec<String>>, multiple_devices_and_holders_allowed_status: Option<String>, image_modules_data: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Genericclas<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, class_template_info: Option<String>, merchant_locations: Option<Vec<String>>, image_modules_data: Option<Vec<String>>, text_modules_data: Option<Vec<String>>, value_added_module_data: Option<Vec<String>>, enable_smart_tap: Option<bool>, view_unlock_requirement: Option<String>, messages: Option<Vec<String>>, redemption_issuers: Option<Vec<String>>, app_link_data: Option<String>, multiple_devices_and_holders_allowed_status: Option<String>, security_animation: Option<String>, id: Option<String>, links_module_data: Option<String>, callback_options: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, enable_smart_tap: Option<bool>, id: Option<String>, messages: Option<Vec<String>>, redemption_issuers: Option<Vec<String>>, text_modules_data: Option<Vec<String>>, app_link_data: Option<String>, links_module_data: Option<String>, view_unlock_requirement: Option<String>, callback_options: Option<String>, value_added_module_data: Option<Vec<String>>, class_template_info: Option<String>, security_animation: Option<String>, merchant_locations: Option<Vec<String>>, multiple_devices_and_holders_allowed_status: Option<String>, image_modules_data: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

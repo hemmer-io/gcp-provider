@@ -1,6 +1,6 @@
 //! Product resource
 //!
-//! Unapproves the specified product (and the relevant app permissions, if any) **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations.
+//!  Approves the specified product and the relevant app permissions, if any. The maximum number of products that you can approve per enterprise customer is 1,000. To learn how to use managed Google Play to design and create a store layout to display approved products to your users, see Store Layout Design. **Note:** This item has been deprecated. New integrations cannot use this method and can refer to our new recommendations. 
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Product<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, enterprise_id: String, product_id: String) -> Result<String> {
+    pub async fn create(&self, approval_url_info: Option<String>, approved_permissions: Option<String>, enterprise_id: String, product_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

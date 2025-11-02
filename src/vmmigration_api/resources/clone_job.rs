@@ -21,7 +21,7 @@ impl<'a> Clone_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, compute_engine_target_details: Option<String>, compute_engine_vm_details: Option<String>, error: Option<String>, name: Option<String>, compute_engine_disks_target_details: Option<String>, state_time: Option<String>, end_time: Option<String>, create_time: Option<String>, target_details: Option<String>, state: Option<String>, steps: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, compute_engine_vm_details: Option<String>, create_time: Option<String>, error: Option<String>, name: Option<String>, end_time: Option<String>, state_time: Option<String>, steps: Option<Vec<String>>, target_details: Option<String>, state: Option<String>, compute_engine_disks_target_details: Option<String>, compute_engine_target_details: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

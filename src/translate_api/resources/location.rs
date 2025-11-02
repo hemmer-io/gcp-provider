@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, glossary_config: Option<String>, content: Option<Vec<String>>, reference_sentence_config: Option<String>, dataset: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, reference_sentence_config: Option<String>, content: Option<Vec<String>>, dataset: Option<String>, glossary_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

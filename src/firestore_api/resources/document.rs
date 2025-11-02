@@ -1,6 +1,6 @@
 //! Document resource
 //!
-//! Partitions a query by returning partition cursors that can be used to run the query in parallel. The returned partition cursors are split points that can be used by RunQuery as starting/end points for the query results.
+//! Creates a new document.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Document<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, page_token: Option<String>, page_size: Option<i64>, structured_query: Option<String>, read_time: Option<String>, partition_count: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, fields: Option<HashMap<String, String>>, create_time: Option<String>, name: Option<String>, update_time: Option<String>, parent: String, collection_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Document<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, page_token: Option<String>, page_size: Option<i64>, structured_query: Option<String>, read_time: Option<String>, partition_count: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, fields: Option<HashMap<String, String>>, create_time: Option<String>, name: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

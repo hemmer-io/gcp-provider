@@ -24,7 +24,7 @@ impl<'a> License<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, allowed_replacement_licenses: Option<Vec<String>>, creation_timestamp: Option<String>, resource_requirements: Option<String>, sole_tenant_only: Option<bool>, transferable: Option<bool>, id: Option<String>, os_license: Option<bool>, incompatible_licenses: Option<Vec<String>>, update_timestamp: Option<String>, license_code: Option<String>, name: Option<String>, appendable_to_disk: Option<bool>, description: Option<String>, charges_use_fee: Option<bool>, multi_tenant_only: Option<bool>, removable_from_disk: Option<bool>, self_link: Option<String>, self_link_with_id: Option<String>, kind: Option<String>, minimum_retention: Option<String>, required_coattached_licenses: Option<Vec<String>>, project: String) -> Result<String> {
+    pub async fn create(&self, charges_use_fee: Option<bool>, appendable_to_disk: Option<bool>, id: Option<String>, name: Option<String>, self_link_with_id: Option<String>, update_timestamp: Option<String>, creation_timestamp: Option<String>, os_license: Option<bool>, removable_from_disk: Option<bool>, required_coattached_licenses: Option<Vec<String>>, multi_tenant_only: Option<bool>, license_code: Option<String>, minimum_retention: Option<String>, transferable: Option<bool>, sole_tenant_only: Option<bool>, kind: Option<String>, description: Option<String>, allowed_replacement_licenses: Option<Vec<String>>, incompatible_licenses: Option<Vec<String>>, self_link: Option<String>, resource_requirements: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -48,7 +48,7 @@ impl<'a> License<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, allowed_replacement_licenses: Option<Vec<String>>, creation_timestamp: Option<String>, resource_requirements: Option<String>, sole_tenant_only: Option<bool>, transferable: Option<bool>, id: Option<String>, os_license: Option<bool>, incompatible_licenses: Option<Vec<String>>, update_timestamp: Option<String>, license_code: Option<String>, name: Option<String>, appendable_to_disk: Option<bool>, description: Option<String>, charges_use_fee: Option<bool>, multi_tenant_only: Option<bool>, removable_from_disk: Option<bool>, self_link: Option<String>, self_link_with_id: Option<String>, kind: Option<String>, minimum_retention: Option<String>, required_coattached_licenses: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, charges_use_fee: Option<bool>, appendable_to_disk: Option<bool>, id: Option<String>, name: Option<String>, self_link_with_id: Option<String>, update_timestamp: Option<String>, creation_timestamp: Option<String>, os_license: Option<bool>, removable_from_disk: Option<bool>, required_coattached_licenses: Option<Vec<String>>, multi_tenant_only: Option<bool>, license_code: Option<String>, minimum_retention: Option<String>, transferable: Option<bool>, sole_tenant_only: Option<bool>, kind: Option<String>, description: Option<String>, allowed_replacement_licenses: Option<Vec<String>>, incompatible_licenses: Option<Vec<String>>, self_link: Option<String>, resource_requirements: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

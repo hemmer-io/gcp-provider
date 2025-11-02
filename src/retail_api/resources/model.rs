@@ -21,7 +21,7 @@ impl<'a> Model<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, last_tune_time: Option<String>, type: Option<String>, filtering_option: Option<String>, update_time: Option<String>, page_optimization_config: Option<String>, create_time: Option<String>, optimization_objective: Option<String>, periodic_tuning_state: Option<String>, tuning_operation: Option<String>, name: Option<String>, serving_state: Option<String>, model_features_config: Option<String>, serving_config_lists: Option<Vec<String>>, training_state: Option<String>, display_name: Option<String>, data_state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, type: Option<String>, model_features_config: Option<String>, display_name: Option<String>, filtering_option: Option<String>, name: Option<String>, data_state: Option<String>, create_time: Option<String>, serving_config_lists: Option<Vec<String>>, periodic_tuning_state: Option<String>, training_state: Option<String>, tuning_operation: Option<String>, update_time: Option<String>, serving_state: Option<String>, page_optimization_config: Option<String>, optimization_objective: Option<String>, last_tune_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Model<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, last_tune_time: Option<String>, type: Option<String>, filtering_option: Option<String>, update_time: Option<String>, page_optimization_config: Option<String>, create_time: Option<String>, optimization_objective: Option<String>, periodic_tuning_state: Option<String>, tuning_operation: Option<String>, name: Option<String>, serving_state: Option<String>, model_features_config: Option<String>, serving_config_lists: Option<Vec<String>>, training_state: Option<String>, display_name: Option<String>, data_state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, type: Option<String>, model_features_config: Option<String>, display_name: Option<String>, filtering_option: Option<String>, name: Option<String>, data_state: Option<String>, create_time: Option<String>, serving_config_lists: Option<Vec<String>>, periodic_tuning_state: Option<String>, training_state: Option<String>, tuning_operation: Option<String>, update_time: Option<String>, serving_state: Option<String>, page_optimization_config: Option<String>, optimization_objective: Option<String>, last_tune_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

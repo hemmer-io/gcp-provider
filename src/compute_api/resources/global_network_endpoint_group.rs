@@ -22,7 +22,7 @@ impl<'a> Global_network_endpoint_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, self_link: Option<String>, serverless_deployment: Option<String>, default_port: Option<i64>, cloud_function: Option<String>, annotations: Option<HashMap<String, String>>, load_balancer: Option<String>, cloud_run: Option<String>, region: Option<String>, name: Option<String>, psc_target_service: Option<String>, description: Option<String>, id: Option<String>, size: Option<i64>, app_engine: Option<String>, kind: Option<String>, network: Option<String>, subnetwork: Option<String>, network_endpoint_type: Option<String>, creation_timestamp: Option<String>, psc_data: Option<String>, zone: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, annotations: Option<HashMap<String, String>>, subnetwork: Option<String>, network: Option<String>, cloud_function: Option<String>, id: Option<String>, load_balancer: Option<String>, app_engine: Option<String>, cloud_run: Option<String>, network_endpoint_type: Option<String>, description: Option<String>, creation_timestamp: Option<String>, region: Option<String>, psc_data: Option<String>, self_link: Option<String>, kind: Option<String>, default_port: Option<i64>, name: Option<String>, psc_target_service: Option<String>, serverless_deployment: Option<String>, size: Option<i64>, zone: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

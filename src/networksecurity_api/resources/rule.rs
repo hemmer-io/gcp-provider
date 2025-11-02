@@ -21,7 +21,7 @@ impl<'a> Rule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, session_matcher: Option<String>, enabled: Option<bool>, tls_inspection_enabled: Option<bool>, description: Option<String>, priority: Option<i64>, create_time: Option<String>, application_matcher: Option<String>, update_time: Option<String>, basic_profile: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, basic_profile: Option<String>, create_time: Option<String>, session_matcher: Option<String>, update_time: Option<String>, application_matcher: Option<String>, tls_inspection_enabled: Option<bool>, priority: Option<i64>, name: Option<String>, enabled: Option<bool>, description: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Rule<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, session_matcher: Option<String>, enabled: Option<bool>, tls_inspection_enabled: Option<bool>, description: Option<String>, priority: Option<i64>, create_time: Option<String>, application_matcher: Option<String>, update_time: Option<String>, basic_profile: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, basic_profile: Option<String>, create_time: Option<String>, session_matcher: Option<String>, update_time: Option<String>, application_matcher: Option<String>, tls_inspection_enabled: Option<bool>, priority: Option<i64>, name: Option<String>, enabled: Option<bool>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

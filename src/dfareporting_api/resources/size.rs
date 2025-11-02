@@ -21,7 +21,7 @@ impl<'a> Size<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, iab: Option<bool>, kind: Option<String>, width: Option<i64>, height: Option<i64>, id: Option<String>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, iab: Option<bool>, height: Option<i64>, width: Option<i64>, id: Option<String>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

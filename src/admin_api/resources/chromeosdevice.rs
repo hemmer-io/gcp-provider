@@ -1,6 +1,6 @@
 //! Chromeosdevice resource
 //!
-//! Moves or inserts multiple Chrome OS devices to an organizational unit. You can move up to 50 devices at once.
+//! Use [BatchChangeChromeOsDeviceStatus](https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos/batchChangeStatus) instead. Takes an action that affects a Chrome OS Device. This includes deprovisioning, disabling, and re-enabling devices. *Warning:* * Deprovisioning a device will stop device policy syncing and remove device-level printers. After a device is deprovisioned, it must be wiped before it can be re-enrolled. * Lost or stolen devices should use the disable action. * Re-enabling a disabled device will consume a device license. If you do not have sufficient licenses available when completing the re-enable action, you will receive an error. For more information about deprovisioning and disabling devices, visit the [help center](https://support.google.com/chrome/a/answer/3523633).
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Chromeosdevice<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, device_ids: Option<Vec<String>>, customer_id: String) -> Result<String> {
+    pub async fn create(&self, action: Option<String>, deprovision_reason: Option<String>, resource_id: String, customer_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Chromeosdevice<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, device_ids: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, action: Option<String>, deprovision_reason: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

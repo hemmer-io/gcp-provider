@@ -25,7 +25,7 @@ impl<'a> Machine_image<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, labels: Option<HashMap<String, String>>, saved_disks: Option<Vec<String>>, id: Option<String>, label_fingerprint: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, source_instance: Option<String>, status: Option<String>, guest_flush: Option<bool>, creation_timestamp: Option<String>, kind: Option<String>, machine_image_encryption_key: Option<String>, instance_properties: Option<String>, self_link: Option<String>, description: Option<String>, source_disk_encryption_keys: Option<Vec<String>>, source_instance_properties: Option<String>, storage_locations: Option<Vec<String>>, total_storage_bytes: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, storage_locations: Option<Vec<String>>, instance_properties: Option<String>, self_link: Option<String>, total_storage_bytes: Option<String>, kind: Option<String>, satisfies_pzs: Option<bool>, status: Option<String>, machine_image_encryption_key: Option<String>, source_instance: Option<String>, source_disk_encryption_keys: Option<Vec<String>>, id: Option<String>, source_instance_properties: Option<String>, name: Option<String>, description: Option<String>, saved_disks: Option<Vec<String>>, guest_flush: Option<bool>, label_fingerprint: Option<String>, creation_timestamp: Option<String>, labels: Option<HashMap<String, String>>, satisfies_pzi: Option<bool>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

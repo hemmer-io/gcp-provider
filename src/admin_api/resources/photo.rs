@@ -34,7 +34,7 @@ impl<'a> Photo<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, kind: Option<String>, primary_email: Option<String>, mime_type: Option<String>, height: Option<i64>, width: Option<i64>, id: Option<String>, photo_data: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, width: Option<i64>, photo_data: Option<String>, primary_email: Option<String>, kind: Option<String>, mime_type: Option<String>, height: Option<i64>, etag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

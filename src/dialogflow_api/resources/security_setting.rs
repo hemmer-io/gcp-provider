@@ -21,7 +21,7 @@ impl<'a> Security_setting<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, purge_data_types: Option<Vec<String>>, redaction_scope: Option<String>, audio_export_settings: Option<String>, inspect_template: Option<String>, name: Option<String>, retention_window_days: Option<i64>, display_name: Option<String>, insights_export_settings: Option<String>, deidentify_template: Option<String>, redaction_strategy: Option<String>, retention_strategy: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, insights_export_settings: Option<String>, deidentify_template: Option<String>, inspect_template: Option<String>, retention_window_days: Option<i64>, redaction_strategy: Option<String>, audio_export_settings: Option<String>, display_name: Option<String>, redaction_scope: Option<String>, purge_data_types: Option<Vec<String>>, retention_strategy: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Security_setting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, purge_data_types: Option<Vec<String>>, redaction_scope: Option<String>, audio_export_settings: Option<String>, inspect_template: Option<String>, name: Option<String>, retention_window_days: Option<i64>, display_name: Option<String>, insights_export_settings: Option<String>, deidentify_template: Option<String>, redaction_strategy: Option<String>, retention_strategy: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, insights_export_settings: Option<String>, deidentify_template: Option<String>, inspect_template: Option<String>, retention_window_days: Option<i64>, redaction_strategy: Option<String>, audio_export_settings: Option<String>, display_name: Option<String>, redaction_scope: Option<String>, purge_data_types: Option<Vec<String>>, retention_strategy: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

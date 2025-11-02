@@ -21,7 +21,7 @@ impl<'a> Photo_sequence<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, processing_state: Option<String>, raw_gps_timeline: Option<Vec<String>>, failure_reason: Option<String>, imu: Option<String>, upload_time: Option<String>, gps_source: Option<String>, id: Option<String>, capture_time_override: Option<String>, failure_details: Option<String>, filename: Option<String>, sequence_bounds: Option<String>, view_count: Option<String>, distance_meters: Option<f64>, upload_reference: Option<String>, photos: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, failure_reason: Option<String>, upload_time: Option<String>, id: Option<String>, failure_details: Option<String>, gps_source: Option<String>, filename: Option<String>, distance_meters: Option<f64>, upload_reference: Option<String>, view_count: Option<String>, processing_state: Option<String>, raw_gps_timeline: Option<Vec<String>>, sequence_bounds: Option<String>, imu: Option<String>, capture_time_override: Option<String>, photos: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

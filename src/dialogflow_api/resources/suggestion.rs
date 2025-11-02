@@ -1,6 +1,6 @@
 //! Suggestion resource
 //!
-//! Generates and returns a summary for a conversation that does not have a resource created for it.
+//! Suggests summary for a conversation based on specific historical messages. The range of the messages to be used for summary can be specified in the request.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Suggestion<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, conversation_profile: Option<String>, max_context_size: Option<i64>, stateless_conversation: Option<String>, latest_message: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, assist_query_params: Option<String>, context_size: Option<i64>, latest_message: Option<String>, conversation: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

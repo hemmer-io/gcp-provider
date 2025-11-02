@@ -21,7 +21,7 @@ impl<'a> Queued_resource<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, reservation_name: Option<String>, guaranteed: Option<String>, run_duration: Option<String>, state: Option<String>, create_time: Option<String>, provisioning_model: Option<String>, name: Option<String>, best_effort: Option<String>, queueing_policy: Option<String>, spot: Option<String>, tpu: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, spot: Option<String>, provisioning_model: Option<String>, run_duration: Option<String>, reservation_name: Option<String>, guaranteed: Option<String>, best_effort: Option<String>, state: Option<String>, create_time: Option<String>, queueing_policy: Option<String>, tpu: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

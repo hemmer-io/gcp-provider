@@ -21,7 +21,7 @@ impl<'a> Translation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, source: Option<String>, q: Option<Vec<String>>, model: Option<String>, target: Option<String>, format: Option<String>) -> Result<String> {
+    pub async fn create(&self, q: Option<Vec<String>>, source: Option<String>, format: Option<String>, target: Option<String>, model: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

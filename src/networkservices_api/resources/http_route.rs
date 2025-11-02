@@ -21,7 +21,7 @@ impl<'a> Http_route<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, create_time: Option<String>, self_link: Option<String>, gateways: Option<Vec<String>>, hostnames: Option<Vec<String>>, meshes: Option<Vec<String>>, rules: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, hostnames: Option<Vec<String>>, meshes: Option<Vec<String>>, labels: Option<HashMap<String, String>>, name: Option<String>, gateways: Option<Vec<String>>, self_link: Option<String>, update_time: Option<String>, create_time: Option<String>, rules: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Http_route<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, create_time: Option<String>, self_link: Option<String>, gateways: Option<Vec<String>>, hostnames: Option<Vec<String>>, meshes: Option<Vec<String>>, rules: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, hostnames: Option<Vec<String>>, meshes: Option<Vec<String>>, labels: Option<HashMap<String, String>>, name: Option<String>, gateways: Option<Vec<String>>, self_link: Option<String>, update_time: Option<String>, create_time: Option<String>, rules: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

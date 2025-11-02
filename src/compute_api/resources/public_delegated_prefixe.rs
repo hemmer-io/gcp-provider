@@ -22,7 +22,7 @@ impl<'a> Public_delegated_prefixe<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, status: Option<String>, fingerprint: Option<String>, self_link: Option<String>, mode: Option<String>, name: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, public_delegated_sub_prefixs: Option<Vec<String>>, parent_prefix: Option<String>, enable_enhanced_ipv4_allocation: Option<bool>, allocatable_prefix_length: Option<i64>, byoip_api_version: Option<String>, ipv6_access_type: Option<String>, description: Option<String>, ip_cidr_range: Option<String>, region: Option<String>, is_live_migration: Option<bool>, id: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, byoip_api_version: Option<String>, description: Option<String>, public_delegated_sub_prefixs: Option<Vec<String>>, id: Option<String>, creation_timestamp: Option<String>, mode: Option<String>, status: Option<String>, allocatable_prefix_length: Option<i64>, ip_cidr_range: Option<String>, parent_prefix: Option<String>, fingerprint: Option<String>, is_live_migration: Option<bool>, region: Option<String>, enable_enhanced_ipv4_allocation: Option<bool>, ipv6_access_type: Option<String>, self_link: Option<String>, kind: Option<String>, name: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Public_delegated_prefixe<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, status: Option<String>, fingerprint: Option<String>, self_link: Option<String>, mode: Option<String>, name: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, public_delegated_sub_prefixs: Option<Vec<String>>, parent_prefix: Option<String>, enable_enhanced_ipv4_allocation: Option<bool>, allocatable_prefix_length: Option<i64>, byoip_api_version: Option<String>, ipv6_access_type: Option<String>, description: Option<String>, ip_cidr_range: Option<String>, region: Option<String>, is_live_migration: Option<bool>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, byoip_api_version: Option<String>, description: Option<String>, public_delegated_sub_prefixs: Option<Vec<String>>, id: Option<String>, creation_timestamp: Option<String>, mode: Option<String>, status: Option<String>, allocatable_prefix_length: Option<i64>, ip_cidr_range: Option<String>, parent_prefix: Option<String>, fingerprint: Option<String>, is_live_migration: Option<bool>, region: Option<String>, enable_enhanced_ipv4_allocation: Option<bool>, ipv6_access_type: Option<String>, self_link: Option<String>, kind: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

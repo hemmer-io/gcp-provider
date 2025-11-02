@@ -21,7 +21,7 @@ impl<'a> Tabledata<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, ignore_unknown_values: Option<bool>, rows: Option<Vec<String>>, kind: Option<String>, template_suffix: Option<String>, skip_invalid_rows: Option<bool>, trace_id: Option<String>, project_id: String, table_id: String, dataset_id: String) -> Result<String> {
+    pub async fn create(&self, rows: Option<Vec<String>>, ignore_unknown_values: Option<bool>, template_suffix: Option<String>, skip_invalid_rows: Option<bool>, trace_id: Option<String>, kind: Option<String>, project_id: String, table_id: String, dataset_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

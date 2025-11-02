@@ -21,7 +21,7 @@ impl<'a> Test_case<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, prerequisite_test_case: Option<String>, ai_instructions: Option<String>, dependent_test_cases: Option<Vec<String>>, create_time: Option<String>, display_name: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, name: Option<String>, prerequisite_test_case: Option<String>, display_name: Option<String>, ai_instructions: Option<String>, dependent_test_cases: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Test_case<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, prerequisite_test_case: Option<String>, ai_instructions: Option<String>, dependent_test_cases: Option<Vec<String>>, create_time: Option<String>, display_name: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, name: Option<String>, prerequisite_test_case: Option<String>, display_name: Option<String>, ai_instructions: Option<String>, dependent_test_cases: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

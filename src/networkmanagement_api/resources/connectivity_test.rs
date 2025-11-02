@@ -21,7 +21,7 @@ impl<'a> Connectivity_test<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, protocol: Option<String>, probing_details: Option<String>, return_reachability_details: Option<String>, bypass_firewall_checks: Option<bool>, destination: Option<String>, name: Option<String>, related_projects: Option<Vec<String>>, labels: Option<HashMap<String, String>>, display_name: Option<String>, source: Option<String>, description: Option<String>, reachability_details: Option<String>, round_trip: Option<bool>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, bypass_firewall_checks: Option<bool>, reachability_details: Option<String>, destination: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, probing_details: Option<String>, round_trip: Option<bool>, display_name: Option<String>, related_projects: Option<Vec<String>>, create_time: Option<String>, source: Option<String>, protocol: Option<String>, return_reachability_details: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Connectivity_test<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_time: Option<String>, protocol: Option<String>, probing_details: Option<String>, return_reachability_details: Option<String>, bypass_firewall_checks: Option<bool>, destination: Option<String>, name: Option<String>, related_projects: Option<Vec<String>>, labels: Option<HashMap<String, String>>, display_name: Option<String>, source: Option<String>, description: Option<String>, reachability_details: Option<String>, round_trip: Option<bool>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, bypass_firewall_checks: Option<bool>, reachability_details: Option<String>, destination: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, probing_details: Option<String>, round_trip: Option<bool>, display_name: Option<String>, related_projects: Option<Vec<String>>, create_time: Option<String>, source: Option<String>, protocol: Option<String>, return_reachability_details: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

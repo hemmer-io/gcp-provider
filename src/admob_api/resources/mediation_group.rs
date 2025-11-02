@@ -21,7 +21,7 @@ impl<'a> Mediation_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, state: Option<String>, targeting: Option<String>, name: Option<String>, mediation_group_lines: Option<HashMap<String, String>>, mediation_ab_experiment_state: Option<String>, mediation_group_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, mediation_group_id: Option<String>, name: Option<String>, state: Option<String>, targeting: Option<String>, mediation_group_lines: Option<HashMap<String, String>>, mediation_ab_experiment_state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Mediation_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, state: Option<String>, targeting: Option<String>, name: Option<String>, mediation_group_lines: Option<HashMap<String, String>>, mediation_ab_experiment_state: Option<String>, mediation_group_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, mediation_group_id: Option<String>, name: Option<String>, state: Option<String>, targeting: Option<String>, mediation_group_lines: Option<HashMap<String, String>>, mediation_ab_experiment_state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

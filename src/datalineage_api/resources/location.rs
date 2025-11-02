@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, page_token: Option<String>, target: Option<String>, page_size: Option<i64>, source: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, page_token: Option<String>, source: Option<String>, page_size: Option<i64>, target: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

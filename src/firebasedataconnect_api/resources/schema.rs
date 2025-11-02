@@ -21,7 +21,7 @@ impl<'a> Schema<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, datasources: Option<Vec<String>>, annotations: Option<HashMap<String, String>>, etag: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, create_time: Option<String>, source: Option<String>, uid: Option<String>, reconciling: Option<bool>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, annotations: Option<HashMap<String, String>>, create_time: Option<String>, reconciling: Option<bool>, uid: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, datasources: Option<Vec<String>>, update_time: Option<String>, name: Option<String>, source: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Schema<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, datasources: Option<Vec<String>>, annotations: Option<HashMap<String, String>>, etag: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, create_time: Option<String>, source: Option<String>, uid: Option<String>, reconciling: Option<bool>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, annotations: Option<HashMap<String, String>>, create_time: Option<String>, reconciling: Option<bool>, uid: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, datasources: Option<Vec<String>>, update_time: Option<String>, name: Option<String>, source: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

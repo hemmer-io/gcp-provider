@@ -21,7 +21,7 @@ impl<'a> Threat_matche<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, threat_info: Option<String>, client: Option<String>) -> Result<String> {
+    pub async fn create(&self, client: Option<String>, threat_info: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

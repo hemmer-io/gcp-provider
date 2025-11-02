@@ -34,7 +34,7 @@ impl<'a> Action_result<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, stdout_digest: Option<String>, output_directories: Option<Vec<String>>, execution_metadata: Option<String>, output_directory_symlinks: Option<Vec<String>>, exit_code: Option<i64>, stderr_digest: Option<String>, stdout_raw: Option<String>, output_files: Option<Vec<String>>, output_file_symlinks: Option<Vec<String>>, output_symlinks: Option<Vec<String>>, stderr_raw: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, output_directory_symlinks: Option<Vec<String>>, output_file_symlinks: Option<Vec<String>>, exit_code: Option<i64>, output_symlinks: Option<Vec<String>>, stderr_digest: Option<String>, stdout_raw: Option<String>, execution_metadata: Option<String>, stdout_digest: Option<String>, output_directories: Option<Vec<String>>, stderr_raw: Option<String>, output_files: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

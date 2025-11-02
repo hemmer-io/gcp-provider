@@ -1,6 +1,6 @@
 //! Cluster resource
 //!
-//! Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. By default, the cluster is created in the project's [default network](https://{$universe.dns_names.final_documentation_domain}/compute/docs/networks-and-firewalls#networks). One firewall is added for the cluster. After cluster creation, the Kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster. Finally, an entry is added to the project's global metadata indicating which CIDR range the cluster is using.
+//! Creates a cluster, consisting of the specified number and type of Google Compute Engine instances. By default, the cluster is created in the project's [default network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks). One firewall is added for the cluster. After cluster creation, the kubelet creates routes for each node to allow the containers on that node to communicate with all other instances in the cluster. Finally, an entry is added to the project's global metadata indicating which CIDR range the cluster is using.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Cluster<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, zone: Option<String>, cluster: Option<String>, parent: Option<String>, project_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, parent: Option<String>, project_id: Option<String>, cluster: Option<String>, zone: Option<String>, project_id: String, zone: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Cluster<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, zone: Option<String>, cluster: Option<String>, parent: Option<String>, project_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, parent: Option<String>, project_id: Option<String>, cluster: Option<String>, zone: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

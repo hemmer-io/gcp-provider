@@ -34,7 +34,7 @@ impl<'a> Tag_binding_collection<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, tags: Option<HashMap<String, String>>, name: Option<String>, full_resource_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, tags: Option<HashMap<String, String>>, full_resource_name: Option<String>, name: Option<String>, etag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

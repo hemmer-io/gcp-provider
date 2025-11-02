@@ -21,7 +21,7 @@ impl<'a> Action<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, skip_cache_lookup: Option<bool>, execution_policy: Option<String>, action_digest: Option<String>, results_cache_policy: Option<String>, instance_name: String) -> Result<String> {
+    pub async fn create(&self, action_digest: Option<String>, results_cache_policy: Option<String>, skip_cache_lookup: Option<bool>, execution_policy: Option<String>, instance_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

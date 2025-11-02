@@ -21,7 +21,7 @@ impl<'a> Backup_vault<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, source_region: Option<String>, destination_backup_vault: Option<String>, backup_region: Option<String>, backup_retention_policy: Option<String>, name: Option<String>, source_backup_vault: Option<String>, state: Option<String>, backup_vault_type: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, destination_backup_vault: Option<String>, description: Option<String>, name: Option<String>, backup_region: Option<String>, source_region: Option<String>, labels: Option<HashMap<String, String>>, source_backup_vault: Option<String>, state: Option<String>, backup_vault_type: Option<String>, create_time: Option<String>, backup_retention_policy: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup_vault<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, source_region: Option<String>, destination_backup_vault: Option<String>, backup_region: Option<String>, backup_retention_policy: Option<String>, name: Option<String>, source_backup_vault: Option<String>, state: Option<String>, backup_vault_type: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, destination_backup_vault: Option<String>, description: Option<String>, name: Option<String>, backup_region: Option<String>, source_region: Option<String>, labels: Option<HashMap<String, String>>, source_backup_vault: Option<String>, state: Option<String>, backup_vault_type: Option<String>, create_time: Option<String>, backup_retention_policy: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

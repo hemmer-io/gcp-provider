@@ -21,7 +21,7 @@ impl<'a> Image<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, image_classification_config: Option<String>, polyline_config: Option<String>, feature: Option<String>, basic_config: Option<String>, segmentation_config: Option<String>, bounding_poly_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, polyline_config: Option<String>, basic_config: Option<String>, bounding_poly_config: Option<String>, segmentation_config: Option<String>, image_classification_config: Option<String>, feature: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

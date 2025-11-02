@@ -21,7 +21,7 @@ impl<'a> Endpoint<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, address: Option<String>, uid: Option<String>, create_time: Option<String>, metadata: Option<HashMap<String, String>>, name: Option<String>, network: Option<String>, port: Option<i64>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, uid: Option<String>, update_time: Option<String>, metadata: Option<HashMap<String, String>>, name: Option<String>, address: Option<String>, create_time: Option<String>, network: Option<String>, port: Option<i64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Endpoint<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, address: Option<String>, uid: Option<String>, create_time: Option<String>, metadata: Option<HashMap<String, String>>, name: Option<String>, network: Option<String>, port: Option<i64>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, uid: Option<String>, update_time: Option<String>, metadata: Option<HashMap<String, String>>, name: Option<String>, address: Option<String>, create_time: Option<String>, network: Option<String>, port: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

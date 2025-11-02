@@ -21,7 +21,7 @@ impl<'a> Key<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, service_account_email: Option<String>, restrictions: Option<String>, key_string: Option<String>, create_time: Option<String>, uid: Option<String>, delete_time: Option<String>, name: Option<String>, update_time: Option<String>, etag: Option<String>, annotations: Option<HashMap<String, String>>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, restrictions: Option<String>, annotations: Option<HashMap<String, String>>, display_name: Option<String>, delete_time: Option<String>, etag: Option<String>, name: Option<String>, service_account_email: Option<String>, uid: Option<String>, update_time: Option<String>, key_string: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Key<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, service_account_email: Option<String>, restrictions: Option<String>, key_string: Option<String>, create_time: Option<String>, uid: Option<String>, delete_time: Option<String>, name: Option<String>, update_time: Option<String>, etag: Option<String>, annotations: Option<HashMap<String, String>>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, restrictions: Option<String>, annotations: Option<HashMap<String, String>>, display_name: Option<String>, delete_time: Option<String>, etag: Option<String>, name: Option<String>, service_account_email: Option<String>, uid: Option<String>, update_time: Option<String>, key_string: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

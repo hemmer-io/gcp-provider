@@ -21,7 +21,7 @@ impl<'a> Sheet<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, destination_spreadsheet_id: Option<String>, spreadsheet_id: String, sheet_id: i64) -> Result<String> {
+    pub async fn create(&self, destination_spreadsheet_id: Option<String>, sheet_id: i64, spreadsheet_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

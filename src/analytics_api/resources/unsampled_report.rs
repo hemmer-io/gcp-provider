@@ -21,7 +21,7 @@ impl<'a> Unsampled_report<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cloud_storage_download_details: Option<String>, download_type: Option<String>, self_link: Option<String>, status: Option<String>, created: Option<String>, kind: Option<String>, profile_id: Option<String>, web_property_id: Option<String>, dimensions: Option<String>, end_date: Option<String>, updated: Option<String>, metrics: Option<String>, start_date: Option<String>, account_id: Option<String>, id: Option<String>, segment: Option<String>, drive_download_details: Option<String>, filters: Option<String>, title: Option<String>, profile_id: String, web_property_id: String, account_id: String) -> Result<String> {
+    pub async fn create(&self, cloud_storage_download_details: Option<String>, created: Option<String>, web_property_id: Option<String>, profile_id: Option<String>, end_date: Option<String>, self_link: Option<String>, start_date: Option<String>, status: Option<String>, filters: Option<String>, kind: Option<String>, download_type: Option<String>, title: Option<String>, dimensions: Option<String>, segment: Option<String>, id: Option<String>, updated: Option<String>, drive_download_details: Option<String>, account_id: Option<String>, metrics: Option<String>, profile_id: String, account_id: String, web_property_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

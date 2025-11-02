@@ -1,6 +1,6 @@
 //! Generatedapk resource
 //!
-//! Returns download metadata for all APKs that were generated from a given app bundle.
+//! Downloads a single signed APK generated from an app bundle.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

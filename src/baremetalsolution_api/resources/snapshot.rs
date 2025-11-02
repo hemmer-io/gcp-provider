@@ -21,7 +21,7 @@ impl<'a> Snapshot<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, type: Option<String>, id: Option<String>, storage_volume: Option<String>, create_time: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, name: Option<String>, storage_volume: Option<String>, id: Option<String>, type: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Data_exchange<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, primary_contact: Option<String>, name: Option<String>, icon: Option<String>, documentation: Option<String>, listing_count: Option<i64>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, primary_contact: Option<String>, display_name: Option<String>, documentation: Option<String>, description: Option<String>, listing_count: Option<i64>, name: Option<String>, icon: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Data_exchange<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, primary_contact: Option<String>, name: Option<String>, icon: Option<String>, documentation: Option<String>, listing_count: Option<i64>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, primary_contact: Option<String>, display_name: Option<String>, documentation: Option<String>, description: Option<String>, listing_count: Option<i64>, name: Option<String>, icon: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

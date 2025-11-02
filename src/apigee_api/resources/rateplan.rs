@@ -21,7 +21,7 @@ impl<'a> Rateplan<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, apiproduct: Option<String>, setup_fee: Option<String>, last_modified_at: Option<String>, consumption_pricing_rates: Option<Vec<String>>, end_time: Option<String>, fixed_recurring_fee: Option<String>, display_name: Option<String>, description: Option<String>, revenue_share_rates: Option<Vec<String>>, billing_period: Option<String>, fixed_fee_frequency: Option<i64>, name: Option<String>, revenue_share_type: Option<String>, payment_funding_model: Option<String>, created_at: Option<String>, state: Option<String>, consumption_pricing_type: Option<String>, start_time: Option<String>, currency_code: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, currency_code: Option<String>, fixed_recurring_fee: Option<String>, name: Option<String>, consumption_pricing_rates: Option<Vec<String>>, setup_fee: Option<String>, revenue_share_rates: Option<Vec<String>>, billing_period: Option<String>, start_time: Option<String>, last_modified_at: Option<String>, state: Option<String>, description: Option<String>, revenue_share_type: Option<String>, created_at: Option<String>, payment_funding_model: Option<String>, display_name: Option<String>, consumption_pricing_type: Option<String>, fixed_fee_frequency: Option<i64>, apiproduct: Option<String>, end_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Rateplan<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, apiproduct: Option<String>, setup_fee: Option<String>, last_modified_at: Option<String>, consumption_pricing_rates: Option<Vec<String>>, end_time: Option<String>, fixed_recurring_fee: Option<String>, display_name: Option<String>, description: Option<String>, revenue_share_rates: Option<Vec<String>>, billing_period: Option<String>, fixed_fee_frequency: Option<i64>, name: Option<String>, revenue_share_type: Option<String>, payment_funding_model: Option<String>, created_at: Option<String>, state: Option<String>, consumption_pricing_type: Option<String>, start_time: Option<String>, currency_code: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, currency_code: Option<String>, fixed_recurring_fee: Option<String>, name: Option<String>, consumption_pricing_rates: Option<Vec<String>>, setup_fee: Option<String>, revenue_share_rates: Option<Vec<String>>, billing_period: Option<String>, start_time: Option<String>, last_modified_at: Option<String>, state: Option<String>, description: Option<String>, revenue_share_type: Option<String>, created_at: Option<String>, payment_funding_model: Option<String>, display_name: Option<String>, consumption_pricing_type: Option<String>, fixed_fee_frequency: Option<i64>, apiproduct: Option<String>, end_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

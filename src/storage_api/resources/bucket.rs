@@ -21,7 +21,7 @@ impl<'a> Bucket<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, default_object_acl: Option<Vec<String>>, kind: Option<String>, location: Option<String>, website: Option<String>, id: Option<String>, self_link: Option<String>, time_created: Option<String>, project_id: Option<String>, acl: Option<Vec<String>>, owner: Option<String>) -> Result<String> {
+    pub async fn create(&self, project_id: Option<String>, owner: Option<String>, acl: Option<Vec<String>>, location: Option<String>, kind: Option<String>, self_link: Option<String>, default_object_acl: Option<Vec<String>>, id: Option<String>, time_created: Option<String>, website: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Bucket<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, default_object_acl: Option<Vec<String>>, kind: Option<String>, location: Option<String>, website: Option<String>, id: Option<String>, self_link: Option<String>, time_created: Option<String>, project_id: Option<String>, acl: Option<Vec<String>>, owner: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, project_id: Option<String>, owner: Option<String>, acl: Option<Vec<String>>, location: Option<String>, kind: Option<String>, self_link: Option<String>, default_object_acl: Option<Vec<String>>, id: Option<String>, time_created: Option<String>, website: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

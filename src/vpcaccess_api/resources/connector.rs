@@ -21,7 +21,7 @@ impl<'a> Connector<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, last_restart_time: Option<String>, max_throughput: Option<i64>, create_time: Option<String>, min_instances: Option<i64>, name: Option<String>, ip_cidr_range: Option<String>, min_throughput: Option<i64>, subnet: Option<String>, connected_projects: Option<Vec<String>>, state: Option<String>, network: Option<String>, max_instances: Option<i64>, machine_type: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, max_instances: Option<i64>, network: Option<String>, create_time: Option<String>, connected_projects: Option<Vec<String>>, ip_cidr_range: Option<String>, name: Option<String>, state: Option<String>, max_throughput: Option<i64>, subnet: Option<String>, machine_type: Option<String>, last_restart_time: Option<String>, min_instances: Option<i64>, min_throughput: Option<i64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Connector<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, last_restart_time: Option<String>, max_throughput: Option<i64>, create_time: Option<String>, min_instances: Option<i64>, name: Option<String>, ip_cidr_range: Option<String>, min_throughput: Option<i64>, subnet: Option<String>, connected_projects: Option<Vec<String>>, state: Option<String>, network: Option<String>, max_instances: Option<i64>, machine_type: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, max_instances: Option<i64>, network: Option<String>, create_time: Option<String>, connected_projects: Option<Vec<String>>, ip_cidr_range: Option<String>, name: Option<String>, state: Option<String>, max_throughput: Option<i64>, subnet: Option<String>, machine_type: Option<String>, last_restart_time: Option<String>, min_instances: Option<i64>, min_throughput: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

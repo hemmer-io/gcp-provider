@@ -21,7 +21,7 @@ impl<'a> App<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, scopes: Option<Vec<String>>, callback_url: Option<String>, status: Option<String>, credentials: Option<Vec<String>>, attributes: Option<Vec<String>>, created_at: Option<String>, api_products: Option<Vec<String>>, app_group: Option<String>, app_id: Option<String>, key_expires_in: Option<String>, last_modified_at: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, callback_url: Option<String>, app_group: Option<String>, scopes: Option<Vec<String>>, created_at: Option<String>, api_products: Option<Vec<String>>, app_id: Option<String>, attributes: Option<Vec<String>>, last_modified_at: Option<String>, status: Option<String>, name: Option<String>, key_expires_in: Option<String>, credentials: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> App<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, scopes: Option<Vec<String>>, callback_url: Option<String>, status: Option<String>, credentials: Option<Vec<String>>, attributes: Option<Vec<String>>, created_at: Option<String>, api_products: Option<Vec<String>>, app_group: Option<String>, app_id: Option<String>, key_expires_in: Option<String>, last_modified_at: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, callback_url: Option<String>, app_group: Option<String>, scopes: Option<Vec<String>>, created_at: Option<String>, api_products: Option<Vec<String>>, app_id: Option<String>, attributes: Option<Vec<String>>, last_modified_at: Option<String>, status: Option<String>, name: Option<String>, key_expires_in: Option<String>, credentials: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

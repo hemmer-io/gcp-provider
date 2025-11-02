@@ -21,7 +21,7 @@ impl<'a> Ios_app<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, app_store_id: Option<String>, state: Option<String>, name: Option<String>, api_key_id: Option<String>, project_id: Option<String>, display_name: Option<String>, app_id: Option<String>, etag: Option<String>, team_id: Option<String>, bundle_id: Option<String>, expire_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, display_name: Option<String>, api_key_id: Option<String>, project_id: Option<String>, team_id: Option<String>, app_id: Option<String>, name: Option<String>, state: Option<String>, app_store_id: Option<String>, bundle_id: Option<String>, expire_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Ios_app<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, app_store_id: Option<String>, state: Option<String>, name: Option<String>, api_key_id: Option<String>, project_id: Option<String>, display_name: Option<String>, app_id: Option<String>, etag: Option<String>, team_id: Option<String>, bundle_id: Option<String>, expire_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, display_name: Option<String>, api_key_id: Option<String>, project_id: Option<String>, team_id: Option<String>, app_id: Option<String>, name: Option<String>, state: Option<String>, app_store_id: Option<String>, bundle_id: Option<String>, expire_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

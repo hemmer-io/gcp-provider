@@ -21,7 +21,7 @@ impl<'a> Certificate<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, self_managed: Option<String>, pem_certificate: Option<String>, update_time: Option<String>, scope: Option<String>, description: Option<String>, expire_time: Option<String>, san_dnsnames: Option<Vec<String>>, labels: Option<HashMap<String, String>>, create_time: Option<String>, managed: Option<String>, name: Option<String>, used_by: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, used_by: Option<Vec<String>>, self_managed: Option<String>, expire_time: Option<String>, san_dnsnames: Option<Vec<String>>, managed: Option<String>, description: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, pem_certificate: Option<String>, scope: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Certificate<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, self_managed: Option<String>, pem_certificate: Option<String>, update_time: Option<String>, scope: Option<String>, description: Option<String>, expire_time: Option<String>, san_dnsnames: Option<Vec<String>>, labels: Option<HashMap<String, String>>, create_time: Option<String>, managed: Option<String>, name: Option<String>, used_by: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, used_by: Option<Vec<String>>, self_managed: Option<String>, expire_time: Option<String>, san_dnsnames: Option<Vec<String>>, managed: Option<String>, description: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, pem_certificate: Option<String>, scope: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Product<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, asset_type: Option<String>, create_time: Option<String>, display_metadata: Option<HashMap<String, String>>, icon_uri: Option<String>, name: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, asset_type: Option<String>, create_time: Option<String>, name: Option<String>, icon_uri: Option<String>, display_metadata: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Product<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, asset_type: Option<String>, create_time: Option<String>, display_metadata: Option<HashMap<String, String>>, icon_uri: Option<String>, name: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, asset_type: Option<String>, create_time: Option<String>, name: Option<String>, icon_uri: Option<String>, display_metadata: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

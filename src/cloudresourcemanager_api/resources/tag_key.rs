@@ -21,7 +21,7 @@ impl<'a> Tag_key<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, parent: Option<String>, etag: Option<String>, description: Option<String>, purpose_data: Option<HashMap<String, String>>, namespaced_name: Option<String>, purpose: Option<String>, create_time: Option<String>, name: Option<String>, short_name: Option<String>) -> Result<String> {
+    pub async fn create(&self, namespaced_name: Option<String>, parent: Option<String>, short_name: Option<String>, purpose_data: Option<HashMap<String, String>>, purpose: Option<String>, etag: Option<String>, update_time: Option<String>, description: Option<String>, name: Option<String>, create_time: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Tag_key<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, parent: Option<String>, etag: Option<String>, description: Option<String>, purpose_data: Option<HashMap<String, String>>, namespaced_name: Option<String>, purpose: Option<String>, create_time: Option<String>, name: Option<String>, short_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, namespaced_name: Option<String>, parent: Option<String>, short_name: Option<String>, purpose_data: Option<HashMap<String, String>>, purpose: Option<String>, etag: Option<String>, update_time: Option<String>, description: Option<String>, name: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

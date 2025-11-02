@@ -1,38 +1,184 @@
-//! Clouddebugger_api Service
+//! Clouddebugger_api service for Gcp provider
 //!
-//! Auto-generated service module for clouddebugger_api
+//! This module handles all clouddebugger_api resources and their CRUD operations.
 
-pub mod resources;
+use hemmer_core::Result;
+use hemmer_provider::{ResourceInput, ResourceOutput, ResourcePlan};
 
-use crate::{ProviderError, Result};
-
-/// Service handler for clouddebugger_api
+/// Clouddebugger_api service handler
 pub struct Clouddebugger_apiService<'a> {
     provider: &'a crate::GcpProvider,
 }
 
 impl<'a> Clouddebugger_apiService<'a> {
-    pub(crate) fn new(provider: &'a crate::GcpProvider) -> Self {
+    /// Create a new service handler
+    pub fn new(provider: &'a crate::GcpProvider) -> Self {
         Self { provider }
     }
 
-    /// Get debuggee resource handler
-    pub fn debuggee(&self) -> resources::Debuggee<'_> {
-        resources::Debuggee::new(self.provider)
+    /// Plan changes to a resource
+    pub async fn plan_resource(
+        &self,
+        resource_name: &str,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        match resource_name {
+            "breakpoint" => self.plan_breakpoint(current_state, desired_input).await,
+            "debuggee" => self.plan_debuggee(current_state, desired_input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "clouddebugger_api", resource_name
+            ))),
+        }
     }
-    /// Get breakpoint resource handler
-    pub fn breakpoint(&self) -> resources::Breakpoint<'_> {
-        resources::Breakpoint::new(self.provider)
+
+    /// Create a new resource
+    pub async fn create_resource(
+        &self,
+        resource_name: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "breakpoint" => self.create_breakpoint(input).await,
+            "debuggee" => self.create_debuggee(input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "clouddebugger_api", resource_name
+            ))),
+        }
     }
 
-}
+    /// Read resource state
+    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+        match resource_name {
+            "breakpoint" => self.read_breakpoint(id).await,
+            "debuggee" => self.read_debuggee(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "clouddebugger_api", resource_name
+            ))),
+        }
+    }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+    /// Update an existing resource
+    pub async fn update_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "breakpoint" => self.update_breakpoint(id, input).await,
+            "debuggee" => self.update_debuggee(id, input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "clouddebugger_api", resource_name
+            ))),
+        }
+    }
 
-    #[test]
-    fn test_service_creation() {
-        // Service creation test
+    /// Delete a resource
+    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+        match resource_name {
+            "breakpoint" => self.delete_breakpoint(id).await,
+            "debuggee" => self.delete_debuggee(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "clouddebugger_api", resource_name
+            ))),
+        }
+    }
+
+    // ========================================================================
+    // Resource-specific CRUD implementations
+    // ========================================================================
+
+    // ------------------------------------------------------------------------
+    // Breakpoint resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a breakpoint resource
+    async fn plan_breakpoint(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new breakpoint resource
+    async fn create_breakpoint(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a breakpoint resource
+    async fn read_breakpoint(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a breakpoint resource
+    async fn update_breakpoint(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a breakpoint resource
+    async fn delete_breakpoint(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+    // ------------------------------------------------------------------------
+    // Debuggee resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a debuggee resource
+    async fn plan_debuggee(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new debuggee resource
+    async fn create_debuggee(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a debuggee resource
+    async fn read_debuggee(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a debuggee resource
+    async fn update_debuggee(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a debuggee resource
+    async fn delete_debuggee(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
     }
 }

@@ -21,7 +21,7 @@ impl<'a> Provisioning_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, networks: Option<Vec<String>>, email: Option<String>, status_message: Option<String>, volumes: Option<Vec<String>>, name: Option<String>, update_time: Option<String>, handover_service_account: Option<String>, cloud_console_uri: Option<String>, custom_id: Option<String>, instances: Option<Vec<String>>, vpc_sc_enabled: Option<bool>, pod: Option<String>, ticket_id: Option<String>, state: Option<String>, location: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, instances: Option<Vec<String>>, handover_service_account: Option<String>, status_message: Option<String>, vpc_sc_enabled: Option<bool>, volumes: Option<Vec<String>>, name: Option<String>, email: Option<String>, update_time: Option<String>, networks: Option<Vec<String>>, state: Option<String>, location: Option<String>, custom_id: Option<String>, ticket_id: Option<String>, cloud_console_uri: Option<String>, pod: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Provisioning_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, networks: Option<Vec<String>>, email: Option<String>, status_message: Option<String>, volumes: Option<Vec<String>>, name: Option<String>, update_time: Option<String>, handover_service_account: Option<String>, cloud_console_uri: Option<String>, custom_id: Option<String>, instances: Option<Vec<String>>, vpc_sc_enabled: Option<bool>, pod: Option<String>, ticket_id: Option<String>, state: Option<String>, location: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, instances: Option<Vec<String>>, handover_service_account: Option<String>, status_message: Option<String>, vpc_sc_enabled: Option<bool>, volumes: Option<Vec<String>>, name: Option<String>, email: Option<String>, update_time: Option<String>, networks: Option<Vec<String>>, state: Option<String>, location: Option<String>, custom_id: Option<String>, ticket_id: Option<String>, cloud_console_uri: Option<String>, pod: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

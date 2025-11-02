@@ -36,7 +36,7 @@ impl<'a> Project<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, conditions: Option<Vec<String>>, parameters: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, parameters: Option<HashMap<String, String>>, conditions: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

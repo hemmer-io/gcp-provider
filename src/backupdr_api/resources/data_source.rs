@@ -1,6 +1,6 @@
 //! Data_source resource
 //!
-//! Internal only. Fetch access token for a given data source.
+//! Sets the internal status of a DataSource.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Data_source<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, generation_id: Option<i64>, name: String) -> Result<String> {
+    pub async fn create(&self, value: Option<String>, backup_config_state: Option<String>, request_id: Option<String>, data_source: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Data_source<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, generation_id: Option<i64>) -> Result<()> {
+    pub async fn update(&self, id: &str, value: Option<String>, backup_config_state: Option<String>, request_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

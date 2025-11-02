@@ -21,7 +21,7 @@ impl<'a> Ad_sense_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, ad_client_code: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, ad_client_code: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

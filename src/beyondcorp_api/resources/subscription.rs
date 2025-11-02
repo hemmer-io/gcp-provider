@@ -21,7 +21,7 @@ impl<'a> Subscription<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, sku: Option<String>, billing_account: Option<String>, name: Option<String>, start_time: Option<String>, create_time: Option<String>, subscriber_type: Option<String>, type: Option<String>, csg_customer: Option<bool>, auto_renew_enabled: Option<bool>, seat_count: Option<String>, state: Option<String>, end_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, sku: Option<String>, seat_count: Option<String>, end_time: Option<String>, state: Option<String>, subscriber_type: Option<String>, type: Option<String>, name: Option<String>, auto_renew_enabled: Option<bool>, billing_account: Option<String>, start_time: Option<String>, csg_customer: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Subscription<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, sku: Option<String>, billing_account: Option<String>, name: Option<String>, start_time: Option<String>, create_time: Option<String>, subscriber_type: Option<String>, type: Option<String>, csg_customer: Option<bool>, auto_renew_enabled: Option<bool>, seat_count: Option<String>, state: Option<String>, end_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, sku: Option<String>, seat_count: Option<String>, end_time: Option<String>, state: Option<String>, subscriber_type: Option<String>, type: Option<String>, name: Option<String>, auto_renew_enabled: Option<bool>, billing_account: Option<String>, start_time: Option<String>, csg_customer: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

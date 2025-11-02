@@ -21,7 +21,7 @@ impl<'a> Filter<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, parent_link: Option<String>, type: Option<String>, id: Option<String>, updated: Option<String>, search_and_replace_details: Option<String>, account_id: Option<String>, self_link: Option<String>, name: Option<String>, kind: Option<String>, exclude_details: Option<String>, advanced_details: Option<String>, include_details: Option<String>, created: Option<String>, uppercase_details: Option<String>, lowercase_details: Option<String>, account_id: String) -> Result<String> {
+    pub async fn create(&self, uppercase_details: Option<String>, parent_link: Option<String>, lowercase_details: Option<String>, kind: Option<String>, advanced_details: Option<String>, name: Option<String>, include_details: Option<String>, updated: Option<String>, created: Option<String>, account_id: Option<String>, id: Option<String>, exclude_details: Option<String>, search_and_replace_details: Option<String>, type: Option<String>, self_link: Option<String>, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Filter<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, parent_link: Option<String>, type: Option<String>, id: Option<String>, updated: Option<String>, search_and_replace_details: Option<String>, account_id: Option<String>, self_link: Option<String>, name: Option<String>, kind: Option<String>, exclude_details: Option<String>, advanced_details: Option<String>, include_details: Option<String>, created: Option<String>, uppercase_details: Option<String>, lowercase_details: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, uppercase_details: Option<String>, parent_link: Option<String>, lowercase_details: Option<String>, kind: Option<String>, advanced_details: Option<String>, name: Option<String>, include_details: Option<String>, updated: Option<String>, created: Option<String>, account_id: Option<String>, id: Option<String>, exclude_details: Option<String>, search_and_replace_details: Option<String>, type: Option<String>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

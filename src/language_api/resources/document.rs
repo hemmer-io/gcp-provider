@@ -1,6 +1,6 @@
 //! Document resource
 //!
-//! Analyzes the syntax of the text and provides sentence boundaries and tokenization along with part of speech tags, dependency trees, and other properties.
+//! Finds named entities (currently proper names and common nouns) in the text along with entity types, salience, mentions for each entity, and other properties.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

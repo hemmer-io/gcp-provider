@@ -1,6 +1,6 @@
 //! File resource
 //!
-//! Lists metadata for all files in the current session.
+//! Imports a file to an Agent. Currently only No-Code agents are supported.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -15,6 +15,17 @@ impl<'a> File<'a> {
         Self { provider }
     }
 
+
+    /// Create a new file
+    ///
+    /// Note: Parameter types are simplified. SDK may require specific enums/types.
+    /// TODO: Convert String parameters to appropriate SDK types as needed.
+    #[allow(unused_variables)]
+    pub async fn create(&self, file_name: Option<String>, mime_type: Option<String>, parent: String) -> Result<String> {
+
+        todo!("Implement create for Gcp")
+
+    }
 
 
 

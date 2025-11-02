@@ -34,7 +34,7 @@ impl<'a> Account<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, path: Option<String>, share_data: Option<bool>, name: Option<String>, features: Option<String>, tag_manager_url: Option<String>, fingerprint: Option<String>, account_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, fingerprint: Option<String>, name: Option<String>, features: Option<String>, path: Option<String>, tag_manager_url: Option<String>, account_id: Option<String>, share_data: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

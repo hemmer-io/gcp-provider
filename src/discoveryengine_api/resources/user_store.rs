@@ -21,7 +21,7 @@ impl<'a> User_store<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, enable_expired_license_auto_update: Option<bool>, display_name: Option<String>, name: Option<String>, enable_license_auto_register: Option<bool>, default_license_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, default_license_config: Option<String>, display_name: Option<String>, enable_license_auto_register: Option<bool>, name: Option<String>, enable_expired_license_auto_update: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> User_store<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, enable_expired_license_auto_update: Option<bool>, display_name: Option<String>, name: Option<String>, enable_license_auto_register: Option<bool>, default_license_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, default_license_config: Option<String>, display_name: Option<String>, enable_license_auto_register: Option<bool>, name: Option<String>, enable_expired_license_auto_update: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

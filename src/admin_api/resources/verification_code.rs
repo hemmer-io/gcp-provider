@@ -1,6 +1,6 @@
 //! Verification_code resource
 //!
-//! Generates new backup verification codes for the user.
+//! Invalidates the current backup verification codes for the user.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

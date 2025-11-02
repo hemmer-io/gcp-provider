@@ -1,6 +1,6 @@
 //! Orderinvoice resource
 //!
-//! Creates a refund invoice for one or more shipment groups, and triggers a refund for orderinvoice enabled orders. This can only be used for line items that have previously been charged using `createChargeInvoice`. All amounts (except for the summary) are incremental with respect to the previous invoice.
+//! Creates a charge invoice for a shipment group, and triggers a charge capture for orderinvoice enabled orders.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Orderinvoice<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, refund_only_option: Option<String>, invoice_id: Option<String>, shipment_invoices: Option<Vec<String>>, operation_id: Option<String>, return_option: Option<String>, merchant_id: String, order_id: String) -> Result<String> {
+    pub async fn create(&self, operation_id: Option<String>, shipment_group_id: Option<String>, line_item_invoices: Option<Vec<String>>, invoice_id: Option<String>, invoice_summary: Option<String>, merchant_id: String, order_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

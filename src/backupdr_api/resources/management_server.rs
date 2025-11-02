@@ -21,7 +21,7 @@ impl<'a> Management_server<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, management_uri: Option<String>, labels: Option<HashMap<String, String>>, workforce_identity_based_management_uri: Option<String>, update_time: Option<String>, description: Option<String>, satisfies_pzs: Option<bool>, ba_proxy_uri: Option<Vec<String>>, state: Option<String>, networks: Option<Vec<String>>, satisfies_pzi: Option<bool>, create_time: Option<String>, type: Option<String>, etag: Option<String>, name: Option<String>, oauth2_client_id: Option<String>, workforce_identity_based_oauth2_client_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, workforce_identity_based_oauth2_client_id: Option<String>, networks: Option<Vec<String>>, labels: Option<HashMap<String, String>>, create_time: Option<String>, ba_proxy_uri: Option<Vec<String>>, satisfies_pzi: Option<bool>, update_time: Option<String>, workforce_identity_based_management_uri: Option<String>, description: Option<String>, name: Option<String>, satisfies_pzs: Option<bool>, management_uri: Option<String>, type: Option<String>, oauth2_client_id: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

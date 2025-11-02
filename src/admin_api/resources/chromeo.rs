@@ -21,7 +21,7 @@ impl<'a> Chromeo<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, payload: Option<String>, command_type: Option<String>, device_id: String, customer_id: String) -> Result<String> {
+    pub async fn create(&self, command_type: Option<String>, payload: Option<String>, customer_id: String, device_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

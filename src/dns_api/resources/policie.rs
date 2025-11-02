@@ -21,7 +21,7 @@ impl<'a> Policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, alternative_name_server_config: Option<String>, description: Option<String>, enable_inbound_forwarding: Option<bool>, name: Option<String>, kind: Option<String>, id: Option<String>, networks: Option<Vec<String>>, enable_logging: Option<bool>, location: String, project: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, id: Option<String>, enable_inbound_forwarding: Option<bool>, kind: Option<String>, enable_logging: Option<bool>, alternative_name_server_config: Option<String>, description: Option<String>, networks: Option<Vec<String>>, location: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, alternative_name_server_config: Option<String>, description: Option<String>, enable_inbound_forwarding: Option<bool>, name: Option<String>, kind: Option<String>, id: Option<String>, networks: Option<Vec<String>>, enable_logging: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, id: Option<String>, enable_inbound_forwarding: Option<bool>, kind: Option<String>, enable_logging: Option<bool>, alternative_name_server_config: Option<String>, description: Option<String>, networks: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

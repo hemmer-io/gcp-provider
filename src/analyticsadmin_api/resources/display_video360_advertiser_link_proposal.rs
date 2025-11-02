@@ -21,7 +21,7 @@ impl<'a> Display_video360_advertiser_link_proposal<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, advertiser_id: Option<String>, campaign_data_sharing_enabled: Option<bool>, advertiser_display_name: Option<String>, cost_data_sharing_enabled: Option<bool>, name: Option<String>, ads_personalization_enabled: Option<bool>, validation_email: Option<String>, link_proposal_status_details: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, link_proposal_status_details: Option<String>, cost_data_sharing_enabled: Option<bool>, name: Option<String>, ads_personalization_enabled: Option<bool>, validation_email: Option<String>, advertiser_display_name: Option<String>, campaign_data_sharing_enabled: Option<bool>, advertiser_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

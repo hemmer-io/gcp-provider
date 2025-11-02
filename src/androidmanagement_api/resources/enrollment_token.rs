@@ -21,7 +21,7 @@ impl<'a> Enrollment_token<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, additional_data: Option<String>, user: Option<String>, policy_name: Option<String>, duration: Option<String>, allow_personal_usage: Option<String>, one_time_only: Option<bool>, expiration_timestamp: Option<String>, qr_code: Option<String>, value: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, policy_name: Option<String>, name: Option<String>, allow_personal_usage: Option<String>, one_time_only: Option<bool>, expiration_timestamp: Option<String>, duration: Option<String>, value: Option<String>, additional_data: Option<String>, qr_code: Option<String>, user: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

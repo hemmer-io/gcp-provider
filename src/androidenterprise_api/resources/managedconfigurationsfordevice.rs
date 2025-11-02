@@ -34,7 +34,7 @@ impl<'a> Managedconfigurationsfordevice<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, managed_property: Option<Vec<String>>, configuration_variables: Option<String>, kind: Option<String>, product_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kind: Option<String>, managed_property: Option<Vec<String>>, product_id: Option<String>, configuration_variables: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

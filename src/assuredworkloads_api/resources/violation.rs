@@ -21,7 +21,7 @@ impl<'a> Violation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, non_compliant_org_policy: Option<String>, comment: Option<String>, acknowledge_type: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, non_compliant_org_policy: Option<String>, acknowledge_type: Option<String>, comment: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

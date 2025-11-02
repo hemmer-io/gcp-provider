@@ -21,7 +21,7 @@ impl<'a> Image<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, image_type: String, edit_id: String, language: String, package_name: String) -> Result<String> {
+    pub async fn create(&self, image_type: String, package_name: String, language: String, edit_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

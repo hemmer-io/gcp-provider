@@ -21,7 +21,7 @@ impl<'a> Nas_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, nas_job_spec: Option<String>, nas_job_output: Option<String>, satisfies_pzs: Option<bool>, start_time: Option<String>, end_time: Option<String>, satisfies_pzi: Option<bool>, encryption_spec: Option<String>, state: Option<String>, display_name: Option<String>, enable_restricted_image_training: Option<bool>, create_time: Option<String>, error: Option<String>, name: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, nas_job_spec: Option<String>, end_time: Option<String>, satisfies_pzi: Option<bool>, error: Option<String>, encryption_spec: Option<String>, start_time: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, enable_restricted_image_training: Option<bool>, name: Option<String>, nas_job_output: Option<String>, state: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Role_assignment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, assignee_type: Option<String>, kind: Option<String>, assigned_to: Option<String>, condition: Option<String>, role_assignment_id: Option<String>, scope_type: Option<String>, role_id: Option<String>, etag: Option<String>, org_unit_id: Option<String>, customer: String) -> Result<String> {
+    pub async fn create(&self, scope_type: Option<String>, assignee_type: Option<String>, etag: Option<String>, assigned_to: Option<String>, kind: Option<String>, condition: Option<String>, org_unit_id: Option<String>, role_assignment_id: Option<String>, role_id: Option<String>, customer: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

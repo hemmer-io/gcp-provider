@@ -21,7 +21,7 @@ impl<'a> Consent<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, expire_time: Option<String>, ttl: Option<String>, revision_id: Option<String>, state: Option<String>, metadata: Option<HashMap<String, String>>, name: Option<String>, revision_create_time: Option<String>, user_id: Option<String>, consent_artifact: Option<String>, policies: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, revision_id: Option<String>, policies: Option<Vec<String>>, name: Option<String>, state: Option<String>, expire_time: Option<String>, ttl: Option<String>, revision_create_time: Option<String>, user_id: Option<String>, metadata: Option<HashMap<String, String>>, consent_artifact: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Consent<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, expire_time: Option<String>, ttl: Option<String>, revision_id: Option<String>, state: Option<String>, metadata: Option<HashMap<String, String>>, name: Option<String>, revision_create_time: Option<String>, user_id: Option<String>, consent_artifact: Option<String>, policies: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, revision_id: Option<String>, policies: Option<Vec<String>>, name: Option<String>, state: Option<String>, expire_time: Option<String>, ttl: Option<String>, revision_create_time: Option<String>, user_id: Option<String>, metadata: Option<HashMap<String, String>>, consent_artifact: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

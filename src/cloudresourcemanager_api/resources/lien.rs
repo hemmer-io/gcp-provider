@@ -21,7 +21,7 @@ impl<'a> Lien<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, restrictions: Option<Vec<String>>, origin: Option<String>, parent: Option<String>, create_time: Option<String>, reason: Option<String>) -> Result<String> {
+    pub async fn create(&self, reason: Option<String>, restrictions: Option<Vec<String>>, name: Option<String>, origin: Option<String>, create_time: Option<String>, parent: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

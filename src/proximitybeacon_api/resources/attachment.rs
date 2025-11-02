@@ -37,7 +37,7 @@ impl<'a> Attachment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, max_distance_meters: Option<f64>, creation_time_ms: Option<String>, data: Option<String>, namespaced_type: Option<String>, attachment_name: Option<String>, beacon_name: String) -> Result<String> {
+    pub async fn create(&self, attachment_name: Option<String>, namespaced_type: Option<String>, data: Option<String>, max_distance_meters: Option<f64>, creation_time_ms: Option<String>, beacon_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

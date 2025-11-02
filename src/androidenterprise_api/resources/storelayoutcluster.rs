@@ -21,7 +21,7 @@ impl<'a> Storelayoutcluster<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<String>, order_in_page: Option<String>, product_id: Option<Vec<String>>, name: Option<Vec<String>>, enterprise_id: String, page_id: String) -> Result<String> {
+    pub async fn create(&self, order_in_page: Option<String>, id: Option<String>, product_id: Option<Vec<String>>, name: Option<Vec<String>>, enterprise_id: String, page_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Storelayoutcluster<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, id: Option<String>, order_in_page: Option<String>, product_id: Option<Vec<String>>, name: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, order_in_page: Option<String>, id: Option<String>, product_id: Option<Vec<String>>, name: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

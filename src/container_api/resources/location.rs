@@ -1,6 +1,6 @@
 //! Location resource
 //!
-//! Returns configuration info about the Google Kubernetes Engine service.
+//! Fetches locations that offer Google Kubernetes Engine.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

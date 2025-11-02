@@ -21,7 +21,7 @@ impl<'a> Schema<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, etag: Option<String>, fields: Option<Vec<String>>, kind: Option<String>, schema_id: Option<String>, display_name: Option<String>, schema_name: Option<String>, customer_id: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, display_name: Option<String>, fields: Option<Vec<String>>, kind: Option<String>, schema_id: Option<String>, schema_name: Option<String>, customer_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Schema<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, fields: Option<Vec<String>>, kind: Option<String>, schema_id: Option<String>, display_name: Option<String>, schema_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, display_name: Option<String>, fields: Option<Vec<String>>, kind: Option<String>, schema_id: Option<String>, schema_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

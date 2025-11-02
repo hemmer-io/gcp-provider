@@ -21,7 +21,7 @@ impl<'a> Message<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, history_id: Option<String>, raw: Option<String>, internal_date: Option<String>, id: Option<String>, label_ids: Option<Vec<String>>, payload: Option<String>, snippet: Option<String>, thread_id: Option<String>, size_estimate: Option<i64>, user_id: String) -> Result<String> {
+    pub async fn create(&self, label_ids: Option<Vec<String>>, payload: Option<String>, snippet: Option<String>, internal_date: Option<String>, history_id: Option<String>, raw: Option<String>, id: Option<String>, size_estimate: Option<i64>, thread_id: Option<String>, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

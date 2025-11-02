@@ -21,7 +21,7 @@ impl<'a> Entity_type<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, etag: Option<String>, update_time: Option<String>, satisfies_pzs: Option<bool>, name: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, monitoring_config: Option<String>, offline_storage_ttl_days: Option<i64>, satisfies_pzi: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, name: Option<String>, description: Option<String>, offline_storage_ttl_days: Option<i64>, create_time: Option<String>, etag: Option<String>, monitoring_config: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Entity_type<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, update_time: Option<String>, satisfies_pzs: Option<bool>, name: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, monitoring_config: Option<String>, offline_storage_ttl_days: Option<i64>, satisfies_pzi: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, name: Option<String>, description: Option<String>, offline_storage_ttl_days: Option<i64>, create_time: Option<String>, etag: Option<String>, monitoring_config: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

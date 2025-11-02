@@ -21,7 +21,7 @@ impl<'a> Datacenter_connector<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, upgrade_status: Option<String>, available_versions: Option<String>, name: Option<String>, create_time: Option<String>, error: Option<String>, service_account: Option<String>, appliance_infrastructure_version: Option<String>, bucket: Option<String>, state_time: Option<String>, update_time: Option<String>, version: Option<String>, registration_id: Option<String>, appliance_software_version: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, registration_id: Option<String>, error: Option<String>, state_time: Option<String>, version: Option<String>, name: Option<String>, upgrade_status: Option<String>, available_versions: Option<String>, create_time: Option<String>, bucket: Option<String>, service_account: Option<String>, appliance_infrastructure_version: Option<String>, appliance_software_version: Option<String>, update_time: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

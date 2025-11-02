@@ -21,7 +21,7 @@ impl<'a> Api<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, documentation: Option<String>, api_functional_requirements: Option<String>, api_style: Option<String>, target_user: Option<String>, maturity_level: Option<String>, team: Option<String>, update_time: Option<String>, description: Option<String>, attributes: Option<HashMap<String, String>>, selected_version: Option<String>, name: Option<String>, api_requirements: Option<String>, business_unit: Option<String>, source_metadata: Option<Vec<String>>, owner: Option<String>, fingerprint: Option<String>, api_technical_requirements: Option<String>, create_time: Option<String>, versions: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, owner: Option<String>, name: Option<String>, attributes: Option<HashMap<String, String>>, documentation: Option<String>, business_unit: Option<String>, create_time: Option<String>, api_technical_requirements: Option<String>, update_time: Option<String>, team: Option<String>, target_user: Option<String>, maturity_level: Option<String>, selected_version: Option<String>, api_requirements: Option<String>, fingerprint: Option<String>, api_functional_requirements: Option<String>, description: Option<String>, display_name: Option<String>, source_metadata: Option<Vec<String>>, versions: Option<Vec<String>>, api_style: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Api<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, documentation: Option<String>, api_functional_requirements: Option<String>, api_style: Option<String>, target_user: Option<String>, maturity_level: Option<String>, team: Option<String>, update_time: Option<String>, description: Option<String>, attributes: Option<HashMap<String, String>>, selected_version: Option<String>, name: Option<String>, api_requirements: Option<String>, business_unit: Option<String>, source_metadata: Option<Vec<String>>, owner: Option<String>, fingerprint: Option<String>, api_technical_requirements: Option<String>, create_time: Option<String>, versions: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, owner: Option<String>, name: Option<String>, attributes: Option<HashMap<String, String>>, documentation: Option<String>, business_unit: Option<String>, create_time: Option<String>, api_technical_requirements: Option<String>, update_time: Option<String>, team: Option<String>, target_user: Option<String>, maturity_level: Option<String>, selected_version: Option<String>, api_requirements: Option<String>, fingerprint: Option<String>, api_functional_requirements: Option<String>, description: Option<String>, display_name: Option<String>, source_metadata: Option<Vec<String>>, versions: Option<Vec<String>>, api_style: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

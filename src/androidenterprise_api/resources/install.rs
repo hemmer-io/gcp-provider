@@ -34,7 +34,7 @@ impl<'a> Install<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, product_id: Option<String>, version_code: Option<i64>, install_state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, product_id: Option<String>, install_state: Option<String>, version_code: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Database<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, proto_descriptors: Option<String>, database_dialect: Option<String>, create_statement: Option<String>, extra_statements: Option<Vec<String>>, encryption_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, database_dialect: Option<String>, create_statement: Option<String>, extra_statements: Option<Vec<String>>, proto_descriptors: Option<String>, encryption_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Database<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, proto_descriptors: Option<String>, database_dialect: Option<String>, create_statement: Option<String>, extra_statements: Option<Vec<String>>, encryption_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, database_dialect: Option<String>, create_statement: Option<String>, extra_statements: Option<Vec<String>>, proto_descriptors: Option<String>, encryption_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> User_activity<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, activity_types: Option<Vec<String>>, page_size: Option<i64>, date_range: Option<String>, page_token: Option<String>, user: Option<String>, view_id: Option<String>) -> Result<String> {
+    pub async fn create(&self, activity_types: Option<Vec<String>>, date_range: Option<String>, page_size: Option<i64>, view_id: Option<String>, page_token: Option<String>, user: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Activity<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, item_name: Option<String>, page_token: Option<String>, page_size: Option<i64>, filter: Option<String>, ancestor_name: Option<String>, consolidation_strategy: Option<String>) -> Result<String> {
+    pub async fn create(&self, filter: Option<String>, ancestor_name: Option<String>, consolidation_strategy: Option<String>, item_name: Option<String>, page_size: Option<i64>, page_token: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

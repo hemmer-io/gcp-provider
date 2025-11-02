@@ -21,7 +21,7 @@ impl<'a> Space<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, active_conference: Option<String>, config: Option<String>, name: Option<String>, meeting_uri: Option<String>, meeting_code: Option<String>) -> Result<String> {
+    pub async fn create(&self, meeting_uri: Option<String>, name: Option<String>, active_conference: Option<String>, config: Option<String>, meeting_code: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Space<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, active_conference: Option<String>, config: Option<String>, name: Option<String>, meeting_uri: Option<String>, meeting_code: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, meeting_uri: Option<String>, name: Option<String>, active_conference: Option<String>, config: Option<String>, meeting_code: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

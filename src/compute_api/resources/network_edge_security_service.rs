@@ -22,7 +22,7 @@ impl<'a> Network_edge_security_service<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, id: Option<String>, region: Option<String>, self_link_with_id: Option<String>, name: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>, fingerprint: Option<String>, description: Option<String>, security_policy: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, self_link: Option<String>, id: Option<String>, region: Option<String>, fingerprint: Option<String>, creation_timestamp: Option<String>, description: Option<String>, name: Option<String>, security_policy: Option<String>, self_link_with_id: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Network_edge_security_service<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, kind: Option<String>, id: Option<String>, region: Option<String>, self_link_with_id: Option<String>, name: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>, fingerprint: Option<String>, description: Option<String>, security_policy: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kind: Option<String>, self_link: Option<String>, id: Option<String>, region: Option<String>, fingerprint: Option<String>, creation_timestamp: Option<String>, description: Option<String>, name: Option<String>, security_policy: Option<String>, self_link_with_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

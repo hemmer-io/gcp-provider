@@ -21,7 +21,7 @@ impl<'a> Ca_pool<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, encryption_spec: Option<String>, name: Option<String>, publishing_options: Option<String>, tier: Option<String>, labels: Option<HashMap<String, String>>, issuance_policy: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, publishing_options: Option<String>, tier: Option<String>, issuance_policy: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, encryption_spec: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Ca_pool<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, encryption_spec: Option<String>, name: Option<String>, publishing_options: Option<String>, tier: Option<String>, labels: Option<HashMap<String, String>>, issuance_policy: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, publishing_options: Option<String>, tier: Option<String>, issuance_policy: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, encryption_spec: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

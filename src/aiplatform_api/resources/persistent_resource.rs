@@ -21,7 +21,7 @@ impl<'a> Persistent_resource<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, name: Option<String>, state: Option<String>, resource_runtime_spec: Option<String>, encryption_spec: Option<String>, psc_interface_config: Option<String>, resource_runtime: Option<String>, network: Option<String>, labels: Option<HashMap<String, String>>, error: Option<String>, display_name: Option<String>, create_time: Option<String>, reserved_ip_ranges: Option<Vec<String>>, resource_pools: Option<Vec<String>>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, start_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, start_time: Option<String>, resource_pools: Option<Vec<String>>, reserved_ip_ranges: Option<Vec<String>>, state: Option<String>, encryption_spec: Option<String>, name: Option<String>, resource_runtime: Option<String>, psc_interface_config: Option<String>, display_name: Option<String>, resource_runtime_spec: Option<String>, create_time: Option<String>, satisfies_pzi: Option<bool>, update_time: Option<String>, error: Option<String>, satisfies_pzs: Option<bool>, network: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Persistent_resource<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, name: Option<String>, state: Option<String>, resource_runtime_spec: Option<String>, encryption_spec: Option<String>, psc_interface_config: Option<String>, resource_runtime: Option<String>, network: Option<String>, labels: Option<HashMap<String, String>>, error: Option<String>, display_name: Option<String>, create_time: Option<String>, reserved_ip_ranges: Option<Vec<String>>, resource_pools: Option<Vec<String>>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, start_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, start_time: Option<String>, resource_pools: Option<Vec<String>>, reserved_ip_ranges: Option<Vec<String>>, state: Option<String>, encryption_spec: Option<String>, name: Option<String>, resource_runtime: Option<String>, psc_interface_config: Option<String>, display_name: Option<String>, resource_runtime_spec: Option<String>, create_time: Option<String>, satisfies_pzi: Option<bool>, update_time: Option<String>, error: Option<String>, satisfies_pzs: Option<bool>, network: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

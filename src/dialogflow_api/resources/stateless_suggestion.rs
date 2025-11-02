@@ -21,7 +21,7 @@ impl<'a> Stateless_suggestion<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, generator_name: Option<String>, context_references: Option<HashMap<String, String>>, generator: Option<String>, conversation_context: Option<String>, security_settings: Option<String>, trigger_events: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, context_references: Option<HashMap<String, String>>, generator_name: Option<String>, trigger_events: Option<Vec<String>>, generator: Option<String>, security_settings: Option<String>, conversation_context: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

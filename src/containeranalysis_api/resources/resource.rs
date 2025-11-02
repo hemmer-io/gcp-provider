@@ -1,6 +1,6 @@
 //! Resource resource
 //!
-//! Gets a summary of the packages within a given resource.
+//! Generates an SBOM and other dependency information for the given resource.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

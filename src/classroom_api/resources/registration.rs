@@ -21,7 +21,7 @@ impl<'a> Registration<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, registration_id: Option<String>, cloud_pubsub_topic: Option<String>, expiry_time: Option<String>, feed: Option<String>) -> Result<String> {
+    pub async fn create(&self, expiry_time: Option<String>, cloud_pubsub_topic: Option<String>, feed: Option<String>, registration_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

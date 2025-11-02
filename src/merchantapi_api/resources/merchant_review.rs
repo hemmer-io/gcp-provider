@@ -21,7 +21,7 @@ impl<'a> Merchant_review<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, merchant_review_status: Option<String>, name: Option<String>, data_source: Option<String>, merchant_review_attributes: Option<String>, merchant_review_id: Option<String>, custom_attributes: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, data_source: Option<String>, merchant_review_attributes: Option<String>, merchant_review_status: Option<String>, merchant_review_id: Option<String>, custom_attributes: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

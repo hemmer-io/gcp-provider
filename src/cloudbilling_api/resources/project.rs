@@ -1,6 +1,6 @@
 //! Project resource
 //!
-//! Gets the billing information for a project. The current authenticated user must have the `resourcemanager.projects.get` permission for the project, which can be granted by assigning the [Project Viewer](https://cloud.google.com/iam/docs/understanding-roles#predefined_roles) role.
+//! Lists the projects associated with a billing account. The current authenticated user must have the `billing.resourceAssociations.list` IAM permission, which is often given to billing account [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -34,7 +34,7 @@ impl<'a> Project<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, billing_enabled: Option<bool>, project_id: Option<String>, billing_account_name: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, billing_account_name: Option<String>, name: Option<String>, billing_enabled: Option<bool>, project_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

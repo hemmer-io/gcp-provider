@@ -1,6 +1,6 @@
 //! Event resource
 //!
-//! Resets all player progress on all events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
+//! Resets events with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft events may be reset.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Event<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self) -> Result<String> {
+    pub async fn create(&self, event_ids: Option<Vec<String>>, kind: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

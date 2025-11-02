@@ -21,7 +21,7 @@ impl<'a> Security_assessment_result<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, page_size: Option<i64>, page_token: Option<String>, include: Option<String>, profile: Option<String>, include_all_resources: Option<String>, scope: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, include: Option<String>, page_token: Option<String>, include_all_resources: Option<String>, scope: Option<String>, page_size: Option<i64>, profile: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

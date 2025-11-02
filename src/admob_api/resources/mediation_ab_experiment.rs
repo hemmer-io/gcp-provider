@@ -21,7 +21,7 @@ impl<'a> Mediation_ab_experiment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, start_time: Option<String>, experiment_id: Option<String>, mediation_group_id: Option<String>, variant_leader: Option<String>, end_time: Option<String>, state: Option<String>, treatment_traffic_percentage: Option<String>, display_name: Option<String>, control_mediation_lines: Option<Vec<String>>, name: Option<String>, treatment_mediation_lines: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, start_time: Option<String>, state: Option<String>, experiment_id: Option<String>, variant_leader: Option<String>, control_mediation_lines: Option<Vec<String>>, display_name: Option<String>, treatment_mediation_lines: Option<Vec<String>>, mediation_group_id: Option<String>, treatment_traffic_percentage: Option<String>, end_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

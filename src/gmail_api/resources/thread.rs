@@ -1,6 +1,6 @@
 //! Thread resource
 //!
-//! Modifies the labels applied to the thread. This applies to all messages in the thread.
+//! Moves the specified thread to the trash. Any messages that belong to the thread are also moved to the trash.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Thread<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, add_label_ids: Option<Vec<String>>, remove_label_ids: Option<Vec<String>>, user_id: String, id: String) -> Result<String> {
+    pub async fn create(&self, user_id: String, id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

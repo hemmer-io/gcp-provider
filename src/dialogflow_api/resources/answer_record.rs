@@ -34,7 +34,7 @@ impl<'a> Answer_record<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, agent_assistant_record: Option<String>, answer_feedback: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, answer_feedback: Option<String>, agent_assistant_record: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 
