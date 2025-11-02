@@ -21,7 +21,7 @@ impl<'a> Channel_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, description: Option<String>, grouping_rule: Option<Vec<String>>, name: Option<String>, primary: Option<bool>, system_defined: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, grouping_rule: Option<Vec<String>>, name: Option<String>, system_defined: Option<bool>, description: Option<String>, primary: Option<bool>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Channel_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, description: Option<String>, grouping_rule: Option<Vec<String>>, name: Option<String>, primary: Option<bool>, system_defined: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, grouping_rule: Option<Vec<String>>, name: Option<String>, system_defined: Option<bool>, description: Option<String>, primary: Option<bool>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

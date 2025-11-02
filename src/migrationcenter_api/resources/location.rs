@@ -34,7 +34,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, preference_set: Option<String>, name: Option<String>, customer_consent_for_google_sales_to_access_migration_center: Option<bool>, disable_cloud_logging: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, disable_cloud_logging: Option<bool>, name: Option<String>, customer_consent_for_google_sales_to_access_migration_center: Option<bool>, preference_set: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

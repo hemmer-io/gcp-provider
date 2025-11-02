@@ -21,7 +21,7 @@ impl<'a> Authorized_orgs_desc<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, authorization_direction: Option<String>, authorization_type: Option<String>, asset_type: Option<String>, name: Option<String>, orgs: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, authorization_direction: Option<String>, name: Option<String>, authorization_type: Option<String>, orgs: Option<Vec<String>>, asset_type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Authorized_orgs_desc<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, authorization_direction: Option<String>, authorization_type: Option<String>, asset_type: Option<String>, name: Option<String>, orgs: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, authorization_direction: Option<String>, name: Option<String>, authorization_type: Option<String>, orgs: Option<Vec<String>>, asset_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

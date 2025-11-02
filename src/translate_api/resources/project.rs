@@ -1,6 +1,6 @@
 //! Project resource
 //!
-//! Detects the language of text within a request.
+//! Translates input text and returns translated text.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Project<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, model: Option<String>, content: Option<String>, mime_type: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, target_language_code: Option<String>, source_language_code: Option<String>, transliteration_config: Option<String>, model: Option<String>, contents: Option<Vec<String>>, mime_type: Option<String>, glossary_config: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

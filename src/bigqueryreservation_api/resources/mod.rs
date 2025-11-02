@@ -1,11 +1,31 @@
 //! Resource modules
 
+pub mod location;
+pub use location::Location;
+pub mod reservation_group;
+pub use reservation_group::Reservation_group;
+pub mod reservation;
+pub use reservation::Reservation;
 pub mod assignment;
 pub use assignment::Assignment;
 pub mod capacity_commitment;
 pub use capacity_commitment::Capacity_commitment;
-pub mod location;
-pub use location::Location;
+pub mod reservation_grant;
+pub use reservation_grant::Reservation_grant;
+pub mod operation;
+pub use operation::Operation;
 pub mod reservation;
 pub use reservation::Reservation;
+pub mod slot_pool;
+pub use slot_pool::Slot_pool;
+pub mod location;
+pub use location::Location;
+pub mod assignment;
+pub use assignment::Assignment;
+pub mod reservation;
+pub use reservation::Reservation;
+pub mod location;
+pub use location::Location;
+pub mod capacity_commitment;
+pub use capacity_commitment::Capacity_commitment;
 

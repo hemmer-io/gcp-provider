@@ -21,7 +21,7 @@ impl<'a> Breakpoint<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, status: Option<String>, condition: Option<String>, location: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, log_level: Option<String>, evaluated_expressions: Option<Vec<String>>, expressions: Option<Vec<String>>, is_final_state: Option<bool>, stack_frames: Option<Vec<String>>, create_time: Option<String>, final_time: Option<String>, log_message_format: Option<String>, user_email: Option<String>, canary_expire_time: Option<String>, action: Option<String>, variable_table: Option<Vec<String>>, id: Option<String>, debuggee_id: String) -> Result<String> {
+    pub async fn create(&self, log_level: Option<String>, stack_frames: Option<Vec<String>>, evaluated_expressions: Option<Vec<String>>, create_time: Option<String>, user_email: Option<String>, is_final_state: Option<bool>, action: Option<String>, canary_expire_time: Option<String>, location: Option<String>, log_message_format: Option<String>, expressions: Option<Vec<String>>, condition: Option<String>, status: Option<String>, id: Option<String>, labels: Option<HashMap<String, String>>, final_time: Option<String>, variable_table: Option<Vec<String>>, state: Option<String>, debuggee_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Breakpoint<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, status: Option<String>, condition: Option<String>, location: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, log_level: Option<String>, evaluated_expressions: Option<Vec<String>>, expressions: Option<Vec<String>>, is_final_state: Option<bool>, stack_frames: Option<Vec<String>>, create_time: Option<String>, final_time: Option<String>, log_message_format: Option<String>, user_email: Option<String>, canary_expire_time: Option<String>, action: Option<String>, variable_table: Option<Vec<String>>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, log_level: Option<String>, stack_frames: Option<Vec<String>>, evaluated_expressions: Option<Vec<String>>, create_time: Option<String>, user_email: Option<String>, is_final_state: Option<bool>, action: Option<String>, canary_expire_time: Option<String>, location: Option<String>, log_message_format: Option<String>, expressions: Option<Vec<String>>, condition: Option<String>, status: Option<String>, id: Option<String>, labels: Option<HashMap<String, String>>, final_time: Option<String>, variable_table: Option<Vec<String>>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

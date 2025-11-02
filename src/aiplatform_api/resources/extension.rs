@@ -1,6 +1,6 @@
 //! Extension resource
 //!
-//! Executes the request against a given extension.
+//! Imports an Extension.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Extension<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, operation_params: Option<HashMap<String, String>>, runtime_auth_config: Option<String>, operation_id: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, manifest: Option<String>, create_time: Option<String>, name: Option<String>, private_service_connect_config: Option<String>, tool_use_examples: Option<Vec<String>>, display_name: Option<String>, satisfies_pzi: Option<bool>, runtime_config: Option<String>, description: Option<String>, update_time: Option<String>, extension_operations: Option<Vec<String>>, satisfies_pzs: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Extension<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, operation_params: Option<HashMap<String, String>>, runtime_auth_config: Option<String>, operation_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, manifest: Option<String>, create_time: Option<String>, name: Option<String>, private_service_connect_config: Option<String>, tool_use_examples: Option<Vec<String>>, display_name: Option<String>, satisfies_pzi: Option<bool>, runtime_config: Option<String>, description: Option<String>, update_time: Option<String>, extension_operations: Option<Vec<String>>, satisfies_pzs: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

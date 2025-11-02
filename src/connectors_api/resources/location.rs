@@ -34,7 +34,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, network_config: Option<String>, encryption_config: Option<String>, provisioned: Option<bool>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, provisioned: Option<bool>, encryption_config: Option<String>, name: Option<String>, network_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

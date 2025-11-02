@@ -21,7 +21,7 @@ impl<'a> Transfer_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, dataset_region: Option<String>, encryption_configuration: Option<String>, name: Option<String>, data_refresh_window_days: Option<i64>, display_name: Option<String>, state: Option<String>, update_time: Option<String>, notification_pubsub_topic: Option<String>, owner_info: Option<String>, disabled: Option<bool>, params: Option<HashMap<String, String>>, managed_table_type: Option<String>, schedule_options: Option<String>, schedule_options_v2: Option<String>, user_id: Option<String>, email_preferences: Option<String>, next_run_time: Option<String>, data_source_id: Option<String>, schedule: Option<String>, error: Option<String>, destination_dataset_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, params: Option<HashMap<String, String>>, email_preferences: Option<String>, disabled: Option<bool>, notification_pubsub_topic: Option<String>, state: Option<String>, schedule: Option<String>, owner_info: Option<String>, next_run_time: Option<String>, data_refresh_window_days: Option<i64>, encryption_configuration: Option<String>, name: Option<String>, schedule_options_v2: Option<String>, schedule_options: Option<String>, display_name: Option<String>, managed_table_type: Option<String>, update_time: Option<String>, user_id: Option<String>, data_source_id: Option<String>, dataset_region: Option<String>, destination_dataset_id: Option<String>, error: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Transfer_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, dataset_region: Option<String>, encryption_configuration: Option<String>, name: Option<String>, data_refresh_window_days: Option<i64>, display_name: Option<String>, state: Option<String>, update_time: Option<String>, notification_pubsub_topic: Option<String>, owner_info: Option<String>, disabled: Option<bool>, params: Option<HashMap<String, String>>, managed_table_type: Option<String>, schedule_options: Option<String>, schedule_options_v2: Option<String>, user_id: Option<String>, email_preferences: Option<String>, next_run_time: Option<String>, data_source_id: Option<String>, schedule: Option<String>, error: Option<String>, destination_dataset_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, params: Option<HashMap<String, String>>, email_preferences: Option<String>, disabled: Option<bool>, notification_pubsub_topic: Option<String>, state: Option<String>, schedule: Option<String>, owner_info: Option<String>, next_run_time: Option<String>, data_refresh_window_days: Option<i64>, encryption_configuration: Option<String>, name: Option<String>, schedule_options_v2: Option<String>, schedule_options: Option<String>, display_name: Option<String>, managed_table_type: Option<String>, update_time: Option<String>, user_id: Option<String>, data_source_id: Option<String>, dataset_region: Option<String>, destination_dataset_id: Option<String>, error: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

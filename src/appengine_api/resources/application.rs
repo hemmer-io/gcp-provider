@@ -24,7 +24,7 @@ impl<'a> Application<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, serving_status: Option<String>, auth_domain: Option<String>, database_type: Option<String>, name: Option<String>, id: Option<String>, default_bucket: Option<String>, default_hostname: Option<String>, dispatch_rules: Option<Vec<String>>, iap: Option<String>, generated_customer_metadata: Option<HashMap<String, String>>, feature_settings: Option<String>, code_bucket: Option<String>, default_cookie_expiration: Option<String>, location_id: Option<String>, service_account: Option<String>, gcr_domain: Option<String>, ssl_policy: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, database_type: Option<String>, code_bucket: Option<String>, default_bucket: Option<String>, generated_customer_metadata: Option<HashMap<String, String>>, id: Option<String>, serving_status: Option<String>, default_cookie_expiration: Option<String>, location_id: Option<String>, iap: Option<String>, auth_domain: Option<String>, default_hostname: Option<String>, gcr_domain: Option<String>, ssl_policy: Option<String>, feature_settings: Option<String>, dispatch_rules: Option<Vec<String>>, name: Option<String>, service_account: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

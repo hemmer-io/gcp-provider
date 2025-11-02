@@ -21,7 +21,7 @@ impl<'a> Unit_kind<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, uid: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, etag: Option<String>, output_variable_mappings: Option<Vec<String>>, saas: Option<String>, annotations: Option<HashMap<String, String>>, update_time: Option<String>, create_time: Option<String>, default_release: Option<String>, input_variable_mappings: Option<Vec<String>>, dependencies: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, name: Option<String>, create_time: Option<String>, output_variable_mappings: Option<Vec<String>>, annotations: Option<HashMap<String, String>>, default_release: Option<String>, dependencies: Option<Vec<String>>, etag: Option<String>, input_variable_mappings: Option<Vec<String>>, saas: Option<String>, uid: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Unit_kind<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, uid: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, etag: Option<String>, output_variable_mappings: Option<Vec<String>>, saas: Option<String>, annotations: Option<HashMap<String, String>>, update_time: Option<String>, create_time: Option<String>, default_release: Option<String>, input_variable_mappings: Option<Vec<String>>, dependencies: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, name: Option<String>, create_time: Option<String>, output_variable_mappings: Option<Vec<String>>, annotations: Option<HashMap<String, String>>, default_release: Option<String>, dependencies: Option<Vec<String>>, etag: Option<String>, input_variable_mappings: Option<Vec<String>>, saas: Option<String>, uid: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

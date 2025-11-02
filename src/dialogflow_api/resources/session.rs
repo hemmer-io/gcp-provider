@@ -1,6 +1,6 @@
 //! Session resource
 //!
-//! Processes a natural language query and returns structured, actionable data as a result. This method is not idempotent, because it may cause session entity types to be updated, which in turn might affect results of future queries. Note: Always use agent versions for production traffic. See [Versions and environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+//! Fulfills a matched intent returned by MatchIntent. Must be called after MatchIntent, with input from MatchIntentResponse. Otherwise, the behavior is undefined.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Session<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, output_audio_config: Option<String>, query_params: Option<String>, query_input: Option<String>, session: String) -> Result<String> {
+    pub async fn create(&self, match: Option<String>, output_audio_config: Option<String>, match_intent_request: Option<String>, session: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -23,7 +23,7 @@ impl<'a> Annotation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, image_annotation: Option<String>, resource_annotation: Option<String>, text_annotation: Option<String>, annotation_source: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, annotation_source: Option<String>, text_annotation: Option<String>, resource_annotation: Option<String>, image_annotation: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -47,7 +47,7 @@ impl<'a> Annotation<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, image_annotation: Option<String>, resource_annotation: Option<String>, text_annotation: Option<String>, annotation_source: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, annotation_source: Option<String>, text_annotation: Option<String>, resource_annotation: Option<String>, image_annotation: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Effective_custom_module resource
 //!
-//! Retrieves an EffectiveSecurityHealthAnalyticsCustomModule.
+//! Gets an effective Event Threat Detection custom module at the given level.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

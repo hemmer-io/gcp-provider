@@ -21,7 +21,7 @@ impl<'a> Conversation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, telephony_connection_info: Option<String>, start_time: Option<String>, ingested_context_references: Option<HashMap<String, String>>, conversation_stage: Option<String>, phone_number: Option<String>, name: Option<String>, end_time: Option<String>, conversation_profile: Option<String>, lifecycle_state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, telephony_connection_info: Option<String>, phone_number: Option<String>, ingested_context_references: Option<HashMap<String, String>>, lifecycle_state: Option<String>, end_time: Option<String>, name: Option<String>, conversation_profile: Option<String>, conversation_stage: Option<String>, start_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

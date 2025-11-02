@@ -21,7 +21,7 @@ impl<'a> Fhir_store<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, disable_resource_versioning: Option<bool>, enable_history_modifications: Option<bool>, labels: Option<HashMap<String, String>>, consent_config: Option<String>, name: Option<String>, stream_configs: Option<Vec<String>>, validation_config: Option<String>, disable_referential_integrity: Option<bool>, bulk_export_gcs_destination: Option<String>, default_search_handling_strict: Option<bool>, search_config: Option<String>, notification_configs: Option<Vec<String>>, complex_data_type_reference_parsing: Option<String>, enable_update_create: Option<bool>, notification_config: Option<String>, version: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, validation_config: Option<String>, enable_update_create: Option<bool>, disable_referential_integrity: Option<bool>, labels: Option<HashMap<String, String>>, search_config: Option<String>, complex_data_type_reference_parsing: Option<String>, disable_resource_versioning: Option<bool>, stream_configs: Option<Vec<String>>, notification_config: Option<String>, notification_configs: Option<Vec<String>>, bulk_export_gcs_destination: Option<String>, consent_config: Option<String>, enable_history_modifications: Option<bool>, name: Option<String>, version: Option<String>, default_search_handling_strict: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Fhir_store<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, disable_resource_versioning: Option<bool>, enable_history_modifications: Option<bool>, labels: Option<HashMap<String, String>>, consent_config: Option<String>, name: Option<String>, stream_configs: Option<Vec<String>>, validation_config: Option<String>, disable_referential_integrity: Option<bool>, bulk_export_gcs_destination: Option<String>, default_search_handling_strict: Option<bool>, search_config: Option<String>, notification_configs: Option<Vec<String>>, complex_data_type_reference_parsing: Option<String>, enable_update_create: Option<bool>, notification_config: Option<String>, version: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, validation_config: Option<String>, enable_update_create: Option<bool>, disable_referential_integrity: Option<bool>, labels: Option<HashMap<String, String>>, search_config: Option<String>, complex_data_type_reference_parsing: Option<String>, disable_resource_versioning: Option<bool>, stream_configs: Option<Vec<String>>, notification_config: Option<String>, notification_configs: Option<Vec<String>>, bulk_export_gcs_destination: Option<String>, consent_config: Option<String>, enable_history_modifications: Option<bool>, name: Option<String>, version: Option<String>, default_search_handling_strict: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

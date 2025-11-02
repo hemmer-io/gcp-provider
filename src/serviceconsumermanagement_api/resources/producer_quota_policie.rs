@@ -21,7 +21,7 @@ impl<'a> Producer_quota_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, unit: Option<String>, metric: Option<String>, dimensions: Option<HashMap<String, String>>, name: Option<String>, policy_value: Option<String>, container: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, unit: Option<String>, dimensions: Option<HashMap<String, String>>, metric: Option<String>, policy_value: Option<String>, name: Option<String>, container: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Producer_quota_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, unit: Option<String>, metric: Option<String>, dimensions: Option<HashMap<String, String>>, name: Option<String>, policy_value: Option<String>, container: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, unit: Option<String>, dimensions: Option<HashMap<String, String>>, metric: Option<String>, policy_value: Option<String>, name: Option<String>, container: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

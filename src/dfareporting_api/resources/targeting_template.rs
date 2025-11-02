@@ -21,7 +21,7 @@ impl<'a> Targeting_template<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, advertiser_id_dimension_value: Option<String>, day_part_targeting: Option<String>, list_targeting_expression: Option<String>, technology_targeting: Option<String>, id: Option<String>, geo_targeting: Option<String>, account_id: Option<String>, kind: Option<String>, language_targeting: Option<String>, subaccount_id: Option<String>, name: Option<String>, advertiser_id: Option<String>, key_value_targeting_expression: Option<String>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, advertiser_id: Option<String>, account_id: Option<String>, day_part_targeting: Option<String>, id: Option<String>, key_value_targeting_expression: Option<String>, kind: Option<String>, language_targeting: Option<String>, name: Option<String>, subaccount_id: Option<String>, technology_targeting: Option<String>, list_targeting_expression: Option<String>, advertiser_id_dimension_value: Option<String>, geo_targeting: Option<String>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Targeting_template<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, advertiser_id_dimension_value: Option<String>, day_part_targeting: Option<String>, list_targeting_expression: Option<String>, technology_targeting: Option<String>, id: Option<String>, geo_targeting: Option<String>, account_id: Option<String>, kind: Option<String>, language_targeting: Option<String>, subaccount_id: Option<String>, name: Option<String>, advertiser_id: Option<String>, key_value_targeting_expression: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, advertiser_id: Option<String>, account_id: Option<String>, day_part_targeting: Option<String>, id: Option<String>, key_value_targeting_expression: Option<String>, kind: Option<String>, language_targeting: Option<String>, name: Option<String>, subaccount_id: Option<String>, technology_targeting: Option<String>, list_targeting_expression: Option<String>, advertiser_id_dimension_value: Option<String>, geo_targeting: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

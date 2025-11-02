@@ -21,7 +21,7 @@ impl<'a> Project<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, create_time: Option<String>, project_id: Option<String>, update_time: Option<String>, configured_capabilities: Option<Vec<String>>, delete_time: Option<String>, display_name: Option<String>, labels: Option<HashMap<String, String>>, etag: Option<String>, tags: Option<HashMap<String, String>>, state: Option<String>, parent: Option<String>) -> Result<String> {
+    pub async fn create(&self, parent: Option<String>, state: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, delete_time: Option<String>, display_name: Option<String>, configured_capabilities: Option<Vec<String>>, create_time: Option<String>, project_id: Option<String>, tags: Option<HashMap<String, String>>, update_time: Option<String>, etag: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Project<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, create_time: Option<String>, project_id: Option<String>, update_time: Option<String>, configured_capabilities: Option<Vec<String>>, delete_time: Option<String>, display_name: Option<String>, labels: Option<HashMap<String, String>>, etag: Option<String>, tags: Option<HashMap<String, String>>, state: Option<String>, parent: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, parent: Option<String>, state: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, delete_time: Option<String>, display_name: Option<String>, configured_capabilities: Option<Vec<String>>, create_time: Option<String>, project_id: Option<String>, tags: Option<HashMap<String, String>>, update_time: Option<String>, etag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

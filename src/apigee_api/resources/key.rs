@@ -21,7 +21,7 @@ impl<'a> Key<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, consumer_secret: Option<String>, issued_at: Option<String>, scopes: Option<Vec<String>>, expires_at: Option<String>, status: Option<String>, attributes: Option<Vec<String>>, expires_in_seconds: Option<String>, api_products: Option<Vec<String>>, consumer_key: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, api_products: Option<Vec<String>>, expires_in_seconds: Option<String>, expires_at: Option<String>, issued_at: Option<String>, scopes: Option<Vec<String>>, status: Option<String>, consumer_key: Option<String>, consumer_secret: Option<String>, attributes: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Key<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, consumer_secret: Option<String>, issued_at: Option<String>, scopes: Option<Vec<String>>, expires_at: Option<String>, status: Option<String>, attributes: Option<Vec<String>>, expires_in_seconds: Option<String>, api_products: Option<Vec<String>>, consumer_key: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, api_products: Option<Vec<String>>, expires_in_seconds: Option<String>, expires_at: Option<String>, issued_at: Option<String>, scopes: Option<Vec<String>>, status: Option<String>, consumer_key: Option<String>, consumer_secret: Option<String>, attributes: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

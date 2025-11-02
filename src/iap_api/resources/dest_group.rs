@@ -21,7 +21,7 @@ impl<'a> Dest_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, cidrs: Option<Vec<String>>, fqdns: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, fqdns: Option<Vec<String>>, cidrs: Option<Vec<String>>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Dest_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, cidrs: Option<Vec<String>>, fqdns: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, fqdns: Option<Vec<String>>, cidrs: Option<Vec<String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

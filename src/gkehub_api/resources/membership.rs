@@ -21,7 +21,7 @@ impl<'a> Membership<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, monitoring_config: Option<String>, name: Option<String>, delete_time: Option<String>, authority: Option<String>, create_time: Option<String>, endpoint: Option<String>, unique_id: Option<String>, labels: Option<HashMap<String, String>>, infrastructure_type: Option<String>, membership_type: Option<String>, update_time: Option<String>, description: Option<String>, last_connection_time: Option<String>, external_id: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, state: Option<String>, update_time: Option<String>, authority: Option<String>, infrastructure_type: Option<String>, external_id: Option<String>, unique_id: Option<String>, delete_time: Option<String>, name: Option<String>, description: Option<String>, membership_type: Option<String>, endpoint: Option<String>, monitoring_config: Option<String>, last_connection_time: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Membership<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, monitoring_config: Option<String>, name: Option<String>, delete_time: Option<String>, authority: Option<String>, create_time: Option<String>, endpoint: Option<String>, unique_id: Option<String>, labels: Option<HashMap<String, String>>, infrastructure_type: Option<String>, membership_type: Option<String>, update_time: Option<String>, description: Option<String>, last_connection_time: Option<String>, external_id: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, state: Option<String>, update_time: Option<String>, authority: Option<String>, infrastructure_type: Option<String>, external_id: Option<String>, unique_id: Option<String>, delete_time: Option<String>, name: Option<String>, description: Option<String>, membership_type: Option<String>, endpoint: Option<String>, monitoring_config: Option<String>, last_connection_time: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

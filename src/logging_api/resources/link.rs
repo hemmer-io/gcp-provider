@@ -21,7 +21,7 @@ impl<'a> Link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, lifecycle_state: Option<String>, bigquery_dataset: Option<String>, name: Option<String>, create_time: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, bigquery_dataset: Option<String>, description: Option<String>, lifecycle_state: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

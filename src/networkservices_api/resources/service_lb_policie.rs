@@ -21,7 +21,7 @@ impl<'a> Service_lb_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, name: Option<String>, failover_config: Option<String>, load_balancing_algorithm: Option<String>, update_time: Option<String>, isolation_config: Option<String>, description: Option<String>, create_time: Option<String>, auto_capacity_drain: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, update_time: Option<String>, isolation_config: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, failover_config: Option<String>, load_balancing_algorithm: Option<String>, auto_capacity_drain: Option<String>, description: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Service_lb_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, name: Option<String>, failover_config: Option<String>, load_balancing_algorithm: Option<String>, update_time: Option<String>, isolation_config: Option<String>, description: Option<String>, create_time: Option<String>, auto_capacity_drain: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, update_time: Option<String>, isolation_config: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, failover_config: Option<String>, load_balancing_algorithm: Option<String>, auto_capacity_drain: Option<String>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, start_time: Option<String>, job_id: Option<String>, error_message: Option<String>, labels: Option<HashMap<String, String>>, prediction_input: Option<String>, prediction_output: Option<String>, training_input: Option<String>, end_time: Option<String>, create_time: Option<String>, training_output: Option<String>, etag: Option<String>, job_position: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, training_output: Option<String>, job_position: Option<String>, prediction_input: Option<String>, error_message: Option<String>, job_id: Option<String>, end_time: Option<String>, prediction_output: Option<String>, labels: Option<HashMap<String, String>>, etag: Option<String>, start_time: Option<String>, create_time: Option<String>, state: Option<String>, training_input: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Job<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, start_time: Option<String>, job_id: Option<String>, error_message: Option<String>, labels: Option<HashMap<String, String>>, prediction_input: Option<String>, prediction_output: Option<String>, training_input: Option<String>, end_time: Option<String>, create_time: Option<String>, training_output: Option<String>, etag: Option<String>, job_position: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, training_output: Option<String>, job_position: Option<String>, prediction_input: Option<String>, error_message: Option<String>, job_id: Option<String>, end_time: Option<String>, prediction_output: Option<String>, labels: Option<HashMap<String, String>>, etag: Option<String>, start_time: Option<String>, create_time: Option<String>, state: Option<String>, training_input: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

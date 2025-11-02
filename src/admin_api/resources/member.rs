@@ -21,7 +21,7 @@ impl<'a> Member<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, email: Option<String>, delivery_settings: Option<String>, kind: Option<String>, role: Option<String>, status: Option<String>, type: Option<String>, etag: Option<String>, id: Option<String>, group_key: String) -> Result<String> {
+    pub async fn create(&self, email: Option<String>, type: Option<String>, delivery_settings: Option<String>, kind: Option<String>, status: Option<String>, id: Option<String>, role: Option<String>, etag: Option<String>, group_key: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Member<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, email: Option<String>, delivery_settings: Option<String>, kind: Option<String>, role: Option<String>, status: Option<String>, type: Option<String>, etag: Option<String>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, email: Option<String>, type: Option<String>, delivery_settings: Option<String>, kind: Option<String>, status: Option<String>, id: Option<String>, role: Option<String>, etag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

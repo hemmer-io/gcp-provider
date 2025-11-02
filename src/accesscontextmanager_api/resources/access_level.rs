@@ -21,7 +21,7 @@ impl<'a> Access_level<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, custom: Option<String>, description: Option<String>, name: Option<String>, basic: Option<String>, title: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, basic: Option<String>, custom: Option<String>, description: Option<String>, title: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Access_level<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, custom: Option<String>, description: Option<String>, name: Option<String>, basic: Option<String>, title: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, basic: Option<String>, custom: Option<String>, description: Option<String>, title: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

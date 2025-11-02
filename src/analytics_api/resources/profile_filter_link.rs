@@ -21,7 +21,7 @@ impl<'a> Profile_filter_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, rank: Option<i64>, profile_ref: Option<String>, self_link: Option<String>, filter_ref: Option<String>, kind: Option<String>, id: Option<String>, account_id: String, profile_id: String, web_property_id: String) -> Result<String> {
+    pub async fn create(&self, filter_ref: Option<String>, kind: Option<String>, rank: Option<i64>, id: Option<String>, profile_ref: Option<String>, self_link: Option<String>, profile_id: String, account_id: String, web_property_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Profile_filter_link<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, rank: Option<i64>, profile_ref: Option<String>, self_link: Option<String>, filter_ref: Option<String>, kind: Option<String>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, filter_ref: Option<String>, kind: Option<String>, rank: Option<i64>, id: Option<String>, profile_ref: Option<String>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

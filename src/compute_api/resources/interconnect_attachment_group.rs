@@ -22,7 +22,7 @@ impl<'a> Interconnect_attachment_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, attachments: Option<HashMap<String, String>>, creation_timestamp: Option<String>, self_link: Option<String>, etag: Option<String>, kind: Option<String>, description: Option<String>, intent: Option<String>, id: Option<String>, interconnect_group: Option<String>, logical_structure: Option<String>, name: Option<String>, configured: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, interconnect_group: Option<String>, kind: Option<String>, intent: Option<String>, attachments: Option<HashMap<String, String>>, self_link: Option<String>, id: Option<String>, logical_structure: Option<String>, configured: Option<String>, name: Option<String>, description: Option<String>, etag: Option<String>, creation_timestamp: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Interconnect_attachment_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, attachments: Option<HashMap<String, String>>, creation_timestamp: Option<String>, self_link: Option<String>, etag: Option<String>, kind: Option<String>, description: Option<String>, intent: Option<String>, id: Option<String>, interconnect_group: Option<String>, logical_structure: Option<String>, name: Option<String>, configured: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, interconnect_group: Option<String>, kind: Option<String>, intent: Option<String>, attachments: Option<HashMap<String, String>>, self_link: Option<String>, id: Option<String>, logical_structure: Option<String>, configured: Option<String>, name: Option<String>, description: Option<String>, etag: Option<String>, creation_timestamp: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

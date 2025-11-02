@@ -21,7 +21,7 @@ impl<'a> Document<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, content_uri: Option<String>, name: Option<String>, mime_type: Option<String>, raw_content: Option<String>, latest_reload_status: Option<String>, state: Option<String>, enable_auto_reload: Option<bool>, metadata: Option<HashMap<String, String>>, display_name: Option<String>, knowledge_types: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, enable_auto_reload: Option<bool>, state: Option<String>, content_uri: Option<String>, name: Option<String>, knowledge_types: Option<Vec<String>>, metadata: Option<HashMap<String, String>>, latest_reload_status: Option<String>, mime_type: Option<String>, raw_content: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Document<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, content_uri: Option<String>, name: Option<String>, mime_type: Option<String>, raw_content: Option<String>, latest_reload_status: Option<String>, state: Option<String>, enable_auto_reload: Option<bool>, metadata: Option<HashMap<String, String>>, display_name: Option<String>, knowledge_types: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, enable_auto_reload: Option<bool>, state: Option<String>, content_uri: Option<String>, name: Option<String>, knowledge_types: Option<Vec<String>>, metadata: Option<HashMap<String, String>>, latest_reload_status: Option<String>, mime_type: Option<String>, raw_content: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

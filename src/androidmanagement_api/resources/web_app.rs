@@ -21,7 +21,7 @@ impl<'a> Web_app<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, icons: Option<Vec<String>>, name: Option<String>, version_code: Option<String>, display_mode: Option<String>, title: Option<String>, start_url: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, icons: Option<Vec<String>>, title: Option<String>, name: Option<String>, display_mode: Option<String>, start_url: Option<String>, version_code: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Web_app<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, icons: Option<Vec<String>>, name: Option<String>, version_code: Option<String>, display_mode: Option<String>, title: Option<String>, start_url: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, icons: Option<Vec<String>>, title: Option<String>, name: Option<String>, display_mode: Option<String>, start_url: Option<String>, version_code: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

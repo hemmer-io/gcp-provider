@@ -21,7 +21,7 @@ impl<'a> Member<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, resource_names_to_add: Option<Vec<String>>, resource_names_to_remove: Option<Vec<String>>, resource_name: String) -> Result<String> {
+    pub async fn create(&self, resource_names_to_remove: Option<Vec<String>>, resource_names_to_add: Option<Vec<String>>, resource_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

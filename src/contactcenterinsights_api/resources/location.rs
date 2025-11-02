@@ -1,6 +1,6 @@
 //! Location resource
 //!
-//! Query metrics.
+//! Generates a summary of predefined performance metrics for a set of conversations. Conversations can be specified by specifying a time window and an agent id, for now. The summary includes a comparison of metrics computed for conversations in the previous time period, and also a comparison with peers in the same time period.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, filter: Option<String>, time_granularity: Option<String>, measure_mask: Option<String>, dimensions: Option<Vec<String>>, location: String) -> Result<String> {
+    pub async fn create(&self, agent_performance_source: Option<String>, filter: Option<String>, comparison_query_interval: Option<String>, query_interval: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, filter: Option<String>, time_granularity: Option<String>, measure_mask: Option<String>, dimensions: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, agent_performance_source: Option<String>, filter: Option<String>, comparison_query_interval: Option<String>, query_interval: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> App_connection<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, uid: Option<String>, name: Option<String>, type: Option<String>, satisfies_pzs: Option<bool>, update_time: Option<String>, connectors: Option<Vec<String>>, labels: Option<HashMap<String, String>>, create_time: Option<String>, application_endpoint: Option<String>, display_name: Option<String>, gateway: Option<String>, state: Option<String>, satisfies_pzi: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, application_endpoint: Option<String>, satisfies_pzs: Option<bool>, create_time: Option<String>, gateway: Option<String>, name: Option<String>, update_time: Option<String>, type: Option<String>, labels: Option<HashMap<String, String>>, connectors: Option<Vec<String>>, state: Option<String>, satisfies_pzi: Option<bool>, uid: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> App_connection<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, uid: Option<String>, name: Option<String>, type: Option<String>, satisfies_pzs: Option<bool>, update_time: Option<String>, connectors: Option<Vec<String>>, labels: Option<HashMap<String, String>>, create_time: Option<String>, application_endpoint: Option<String>, display_name: Option<String>, gateway: Option<String>, state: Option<String>, satisfies_pzi: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, application_endpoint: Option<String>, satisfies_pzs: Option<bool>, create_time: Option<String>, gateway: Option<String>, name: Option<String>, update_time: Option<String>, type: Option<String>, labels: Option<HashMap<String, String>>, connectors: Option<Vec<String>>, state: Option<String>, satisfies_pzi: Option<bool>, uid: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

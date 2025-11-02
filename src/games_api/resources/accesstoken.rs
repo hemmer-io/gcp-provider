@@ -1,6 +1,6 @@
 //! Accesstoken resource
 //!
-//! Generates a Play Grouping API token for the PGS user identified by the attached credential.
+//! Generates a Play Grouping API token for the PGS user identified by the Recall session ID provided in the request.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

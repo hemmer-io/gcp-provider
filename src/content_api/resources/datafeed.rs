@@ -21,7 +21,7 @@ impl<'a> Datafeed<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, target_country: Option<String>, kind: Option<String>, format: Option<String>, targets: Option<Vec<String>>, attribute_language: Option<String>, content_type: Option<String>, id: Option<String>, content_language: Option<String>, fetch_schedule: Option<String>, name: Option<String>, intended_destinations: Option<Vec<String>>, file_name: Option<String>, merchant_id: String) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, target_country: Option<String>, id: Option<String>, content_language: Option<String>, file_name: Option<String>, format: Option<String>, intended_destinations: Option<Vec<String>>, targets: Option<Vec<String>>, content_type: Option<String>, attribute_language: Option<String>, name: Option<String>, fetch_schedule: Option<String>, merchant_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Datafeed<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, target_country: Option<String>, kind: Option<String>, format: Option<String>, targets: Option<Vec<String>>, attribute_language: Option<String>, content_type: Option<String>, id: Option<String>, content_language: Option<String>, fetch_schedule: Option<String>, name: Option<String>, intended_destinations: Option<Vec<String>>, file_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kind: Option<String>, target_country: Option<String>, id: Option<String>, content_language: Option<String>, file_name: Option<String>, format: Option<String>, intended_destinations: Option<Vec<String>>, targets: Option<Vec<String>>, content_type: Option<String>, attribute_language: Option<String>, name: Option<String>, fetch_schedule: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

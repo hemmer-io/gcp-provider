@@ -1,6 +1,6 @@
 //! Notebook_runtime resource
 //!
-//! Stops a NotebookRuntime.
+//! Starts a NotebookRuntime.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

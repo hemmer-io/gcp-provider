@@ -21,7 +21,7 @@ impl<'a> Device<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, enterprise_id: String, user_id: String, device_id: String) -> Result<String> {
+    pub async fn create(&self, device_id: String, enterprise_id: String, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

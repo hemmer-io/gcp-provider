@@ -1,5 +1,27 @@
 //! Resource modules
 
+pub mod location;
+pub use location::Location;
+pub mod provider;
+pub use provider::Provider;
+pub mod enrollment;
+pub use enrollment::Enrollment;
+pub mod channel_connection;
+pub use channel_connection::Channel_connection;
+pub mod pipeline;
+pub use pipeline::Pipeline;
+pub mod kafka_source;
+pub use kafka_source::Kafka_source;
+pub mod trigger;
+pub use trigger::Trigger;
+pub mod operation;
+pub use operation::Operation;
+pub mod channel;
+pub use channel::Channel;
+pub mod message_buse;
+pub use message_buse::Message_buse;
+pub mod google_api_source;
+pub use google_api_source::Google_api_source;
 pub mod operation;
 pub use operation::Operation;
 pub mod trigger;

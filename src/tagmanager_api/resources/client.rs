@@ -21,7 +21,7 @@ impl<'a> Client<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, workspace_id: Option<String>, tag_manager_url: Option<String>, name: Option<String>, account_id: Option<String>, parent_folder_id: Option<String>, client_id: Option<String>, priority: Option<i64>, type: Option<String>, fingerprint: Option<String>, container_id: Option<String>, parameter: Option<Vec<String>>, path: Option<String>, notes: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, account_id: Option<String>, client_id: Option<String>, parameter: Option<Vec<String>>, priority: Option<i64>, name: Option<String>, type: Option<String>, workspace_id: Option<String>, parent_folder_id: Option<String>, container_id: Option<String>, notes: Option<String>, path: Option<String>, tag_manager_url: Option<String>, fingerprint: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Client<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, workspace_id: Option<String>, tag_manager_url: Option<String>, name: Option<String>, account_id: Option<String>, parent_folder_id: Option<String>, client_id: Option<String>, priority: Option<i64>, type: Option<String>, fingerprint: Option<String>, container_id: Option<String>, parameter: Option<Vec<String>>, path: Option<String>, notes: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, account_id: Option<String>, client_id: Option<String>, parameter: Option<Vec<String>>, priority: Option<i64>, name: Option<String>, type: Option<String>, workspace_id: Option<String>, parent_folder_id: Option<String>, container_id: Option<String>, notes: Option<String>, path: Option<String>, tag_manager_url: Option<String>, fingerprint: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

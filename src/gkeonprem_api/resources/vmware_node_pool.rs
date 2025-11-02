@@ -21,7 +21,7 @@ impl<'a> Vmware_node_pool<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, name: Option<String>, state: Option<String>, node_pool_autoscaling: Option<String>, delete_time: Option<String>, display_name: Option<String>, on_prem_version: Option<String>, annotations: Option<HashMap<String, String>>, reconciling: Option<bool>, status: Option<String>, uid: Option<String>, config: Option<String>, etag: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, reconciling: Option<bool>, update_time: Option<String>, annotations: Option<HashMap<String, String>>, delete_time: Option<String>, name: Option<String>, display_name: Option<String>, config: Option<String>, on_prem_version: Option<String>, state: Option<String>, etag: Option<String>, node_pool_autoscaling: Option<String>, status: Option<String>, uid: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Vmware_node_pool<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_time: Option<String>, name: Option<String>, state: Option<String>, node_pool_autoscaling: Option<String>, delete_time: Option<String>, display_name: Option<String>, on_prem_version: Option<String>, annotations: Option<HashMap<String, String>>, reconciling: Option<bool>, status: Option<String>, uid: Option<String>, config: Option<String>, etag: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, reconciling: Option<bool>, update_time: Option<String>, annotations: Option<HashMap<String, String>>, delete_time: Option<String>, name: Option<String>, display_name: Option<String>, config: Option<String>, on_prem_version: Option<String>, state: Option<String>, etag: Option<String>, node_pool_autoscaling: Option<String>, status: Option<String>, uid: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

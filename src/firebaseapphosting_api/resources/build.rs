@@ -21,7 +21,7 @@ impl<'a> Build<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, state: Option<String>, uid: Option<String>, update_time: Option<String>, image: Option<String>, environment: Option<String>, error: Option<String>, build_logs_uri: Option<String>, config: Option<String>, errors: Option<Vec<String>>, source: Option<String>, display_name: Option<String>, name: Option<String>, delete_time: Option<String>, annotations: Option<HashMap<String, String>>, etag: Option<String>, error_source: Option<String>, reconciling: Option<bool>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, annotations: Option<HashMap<String, String>>, display_name: Option<String>, state: Option<String>, delete_time: Option<String>, error: Option<String>, config: Option<String>, error_source: Option<String>, reconciling: Option<bool>, environment: Option<String>, update_time: Option<String>, uid: Option<String>, create_time: Option<String>, image: Option<String>, name: Option<String>, errors: Option<Vec<String>>, labels: Option<HashMap<String, String>>, build_logs_uri: Option<String>, source: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

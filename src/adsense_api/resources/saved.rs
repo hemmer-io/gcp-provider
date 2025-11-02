@@ -1,6 +1,6 @@
 //! Saved resource
 //!
-//! List all saved reports in the specified AdSense account.
+//! List all saved reports in this AdSense account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -21,7 +21,7 @@ impl<'a> Generic_artifact<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, filename: Option<String>, version_id: Option<String>, package_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, package_id: Option<String>, version_id: Option<String>, filename: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

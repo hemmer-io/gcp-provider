@@ -21,7 +21,7 @@ impl<'a> Deobfuscationfile<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, deobfuscation_file_type: String, apk_version_code: i64, edit_id: String, package_name: String) -> Result<String> {
+    pub async fn create(&self, edit_id: String, package_name: String, deobfuscation_file_type: String, apk_version_code: i64) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

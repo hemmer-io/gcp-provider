@@ -1,6 +1,6 @@
 //! Ad_asset resource
 //!
-//! Create a video asset for Ad. Only supports youtube video assets for now.
+//! Creates an ad asset. Returns the newly-created ad asset if successful. Only supports the creation of assets of AdAssetType `AD_ASSET_TYPE_YOUTUBE_VIDEO`.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

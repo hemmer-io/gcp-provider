@@ -1,6 +1,6 @@
 //! Liasetting resource
 //!
-//! Requests access to a specified Google My Business account.
+//! Sets the POS data provider for the specified country.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

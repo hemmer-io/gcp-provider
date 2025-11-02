@@ -21,7 +21,7 @@ impl<'a> Tag<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, tags: Option<Vec<String>>, app_package: String, token: String) -> Result<String> {
+    pub async fn create(&self, tags: Option<Vec<String>>, token: String, app_package: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

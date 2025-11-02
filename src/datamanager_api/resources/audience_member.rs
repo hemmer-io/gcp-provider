@@ -21,7 +21,7 @@ impl<'a> Audience_member<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, terms_of_service: Option<String>, destinations: Option<Vec<String>>, encryption_info: Option<String>, validate_only: Option<bool>, audience_members: Option<Vec<String>>, encoding: Option<String>, consent: Option<String>) -> Result<String> {
+    pub async fn create(&self, encryption_info: Option<String>, consent: Option<String>, destinations: Option<Vec<String>>, audience_members: Option<Vec<String>>, encoding: Option<String>, terms_of_service: Option<String>, validate_only: Option<bool>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

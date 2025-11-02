@@ -21,7 +21,7 @@ impl<'a> Gateway<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, gateway_security_policy: Option<String>, ports: Option<Vec<i64>>, server_tls_policy: Option<String>, routing_mode: Option<String>, self_link: Option<String>, update_time: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, scope: Option<String>, envoy_headers: Option<String>, addresses: Option<Vec<String>>, network: Option<String>, ip_version: Option<String>, type: Option<String>, name: Option<String>, certificate_urls: Option<Vec<String>>, subnetwork: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, self_link: Option<String>, ports: Option<Vec<i64>>, gateway_security_policy: Option<String>, type: Option<String>, labels: Option<HashMap<String, String>>, server_tls_policy: Option<String>, scope: Option<String>, envoy_headers: Option<String>, subnetwork: Option<String>, update_time: Option<String>, ip_version: Option<String>, network: Option<String>, certificate_urls: Option<Vec<String>>, description: Option<String>, create_time: Option<String>, addresses: Option<Vec<String>>, name: Option<String>, routing_mode: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Gateway<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, gateway_security_policy: Option<String>, ports: Option<Vec<i64>>, server_tls_policy: Option<String>, routing_mode: Option<String>, self_link: Option<String>, update_time: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, scope: Option<String>, envoy_headers: Option<String>, addresses: Option<Vec<String>>, network: Option<String>, ip_version: Option<String>, type: Option<String>, name: Option<String>, certificate_urls: Option<Vec<String>>, subnetwork: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, self_link: Option<String>, ports: Option<Vec<i64>>, gateway_security_policy: Option<String>, type: Option<String>, labels: Option<HashMap<String, String>>, server_tls_policy: Option<String>, scope: Option<String>, envoy_headers: Option<String>, subnetwork: Option<String>, update_time: Option<String>, ip_version: Option<String>, network: Option<String>, certificate_urls: Option<Vec<String>>, description: Option<String>, create_time: Option<String>, addresses: Option<Vec<String>>, name: Option<String>, routing_mode: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

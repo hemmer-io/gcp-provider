@@ -21,7 +21,7 @@ impl<'a> Schedule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_notebook_execution_job_request: Option<String>, create_pipeline_job_request: Option<String>, end_time: Option<String>, last_resume_time: Option<String>, start_time: Option<String>, started_run_count: Option<String>, update_time: Option<String>, cron: Option<String>, allow_queueing: Option<bool>, next_run_time: Option<String>, last_scheduled_run_response: Option<String>, display_name: Option<String>, last_pause_time: Option<String>, name: Option<String>, catch_up: Option<bool>, max_run_count: Option<String>, create_model_monitoring_job_request: Option<String>, state: Option<String>, create_time: Option<String>, max_concurrent_run_count: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_pipeline_job_request: Option<String>, create_time: Option<String>, end_time: Option<String>, display_name: Option<String>, started_run_count: Option<String>, name: Option<String>, update_time: Option<String>, state: Option<String>, last_scheduled_run_response: Option<String>, last_pause_time: Option<String>, next_run_time: Option<String>, catch_up: Option<bool>, start_time: Option<String>, last_resume_time: Option<String>, max_concurrent_run_count: Option<String>, create_notebook_execution_job_request: Option<String>, cron: Option<String>, create_model_monitoring_job_request: Option<String>, max_run_count: Option<String>, allow_queueing: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Schedule<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_notebook_execution_job_request: Option<String>, create_pipeline_job_request: Option<String>, end_time: Option<String>, last_resume_time: Option<String>, start_time: Option<String>, started_run_count: Option<String>, update_time: Option<String>, cron: Option<String>, allow_queueing: Option<bool>, next_run_time: Option<String>, last_scheduled_run_response: Option<String>, display_name: Option<String>, last_pause_time: Option<String>, name: Option<String>, catch_up: Option<bool>, max_run_count: Option<String>, create_model_monitoring_job_request: Option<String>, state: Option<String>, create_time: Option<String>, max_concurrent_run_count: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_pipeline_job_request: Option<String>, create_time: Option<String>, end_time: Option<String>, display_name: Option<String>, started_run_count: Option<String>, name: Option<String>, update_time: Option<String>, state: Option<String>, last_scheduled_run_response: Option<String>, last_pause_time: Option<String>, next_run_time: Option<String>, catch_up: Option<bool>, start_time: Option<String>, last_resume_time: Option<String>, max_concurrent_run_count: Option<String>, create_notebook_execution_job_request: Option<String>, cron: Option<String>, create_model_monitoring_job_request: Option<String>, max_run_count: Option<String>, allow_queueing: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

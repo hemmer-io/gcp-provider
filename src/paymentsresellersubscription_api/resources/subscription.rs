@@ -21,7 +21,7 @@ impl<'a> Subscription<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, end_user_entitled: Option<bool>, line_items: Option<Vec<String>>, free_trial_end_time: Option<String>, processing_state: Option<String>, cycle_end_time: Option<String>, name: Option<String>, update_time: Option<String>, create_time: Option<String>, upgrade_downgrade_details: Option<String>, promotions: Option<Vec<String>>, state: Option<String>, products: Option<Vec<String>>, renewal_time: Option<String>, migration_details: Option<String>, promotion_specs: Option<Vec<String>>, cancellation_details: Option<String>, partner_user_token: Option<String>, purchase_time: Option<String>, redirect_uri: Option<String>, service_location: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, migration_details: Option<String>, renewal_time: Option<String>, promotion_specs: Option<Vec<String>>, state: Option<String>, cancellation_details: Option<String>, cycle_end_time: Option<String>, update_time: Option<String>, create_time: Option<String>, end_user_entitled: Option<bool>, free_trial_end_time: Option<String>, purchase_time: Option<String>, line_items: Option<Vec<String>>, service_location: Option<String>, products: Option<Vec<String>>, upgrade_downgrade_details: Option<String>, redirect_uri: Option<String>, partner_user_token: Option<String>, name: Option<String>, promotions: Option<Vec<String>>, processing_state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

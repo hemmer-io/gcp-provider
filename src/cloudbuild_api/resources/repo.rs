@@ -1,6 +1,6 @@
 //! Repo resource
 //!
-//! List all repositories for a given `GitLabConfig`. This API is experimental
+//! List all repositories for a given `BitbucketServerConfig`. This API is experimental.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

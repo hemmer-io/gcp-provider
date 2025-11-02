@@ -1,6 +1,6 @@
 //! Dataset resource
 //!
-//! Deletes a set of documents.
+//! Returns a list of documents present in the dataset.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Dataset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, dataset_documents: Option<String>, dataset: String) -> Result<String> {
+    pub async fn create(&self, return_total_size: Option<bool>, page_token: Option<String>, filter: Option<String>, page_size: Option<i64>, skip: Option<i64>, dataset: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Dataset<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, dataset_documents: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, return_total_size: Option<bool>, page_token: Option<String>, filter: Option<String>, page_size: Option<i64>, skip: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Trust_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, etag: Option<String>, description: Option<String>, update_time: Option<String>, trust_stores: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, allowlisted_certificates: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, allowlisted_certificates: Option<Vec<String>>, update_time: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, etag: Option<String>, trust_stores: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Trust_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, etag: Option<String>, description: Option<String>, update_time: Option<String>, trust_stores: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, allowlisted_certificates: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, allowlisted_certificates: Option<Vec<String>>, update_time: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, etag: Option<String>, trust_stores: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Stored_info_type<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, stored_info_type_id: Option<String>, config: Option<String>, location_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, config: Option<String>, stored_info_type_id: Option<String>, location_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Stored_info_type<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, stored_info_type_id: Option<String>, config: Option<String>, location_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, config: Option<String>, stored_info_type_id: Option<String>, location_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

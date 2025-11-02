@@ -21,7 +21,7 @@ impl<'a> Gcp_user_access_binding<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, group_key: Option<String>, session_settings: Option<String>, name: Option<String>, scoped_access_settings: Option<Vec<String>>, restricted_client_applications: Option<Vec<String>>, dry_run_access_levels: Option<Vec<String>>, access_levels: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, scoped_access_settings: Option<Vec<String>>, name: Option<String>, group_key: Option<String>, session_settings: Option<String>, access_levels: Option<Vec<String>>, dry_run_access_levels: Option<Vec<String>>, restricted_client_applications: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Gcp_user_access_binding<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, group_key: Option<String>, session_settings: Option<String>, name: Option<String>, scoped_access_settings: Option<Vec<String>>, restricted_client_applications: Option<Vec<String>>, dry_run_access_levels: Option<Vec<String>>, access_levels: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, scoped_access_settings: Option<Vec<String>>, name: Option<String>, group_key: Option<String>, session_settings: Option<String>, access_levels: Option<Vec<String>>, dry_run_access_levels: Option<Vec<String>>, restricted_client_applications: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Price resource
 //!
-//! Gets the latest price for the given SKU.
+//! Gets the latest price for SKUs available to your Cloud Billing account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

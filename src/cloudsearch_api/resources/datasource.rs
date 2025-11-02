@@ -21,7 +21,7 @@ impl<'a> Datasource<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, disable_serving: Option<bool>, return_thumbnail_urls: Option<bool>, operation_ids: Option<Vec<String>>, short_name: Option<String>, items_visibility: Option<Vec<String>>, name: Option<String>, disable_modifications: Option<bool>, display_name: Option<String>, indexing_service_accounts: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, operation_ids: Option<Vec<String>>, disable_serving: Option<bool>, items_visibility: Option<Vec<String>>, name: Option<String>, return_thumbnail_urls: Option<bool>, display_name: Option<String>, short_name: Option<String>, indexing_service_accounts: Option<Vec<String>>, disable_modifications: Option<bool>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Datasource<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, disable_serving: Option<bool>, return_thumbnail_urls: Option<bool>, operation_ids: Option<Vec<String>>, short_name: Option<String>, items_visibility: Option<Vec<String>>, name: Option<String>, disable_modifications: Option<bool>, display_name: Option<String>, indexing_service_accounts: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, operation_ids: Option<Vec<String>>, disable_serving: Option<bool>, items_visibility: Option<Vec<String>>, name: Option<String>, return_thumbnail_urls: Option<bool>, display_name: Option<String>, short_name: Option<String>, indexing_service_accounts: Option<Vec<String>>, disable_modifications: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

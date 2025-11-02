@@ -21,7 +21,7 @@ impl<'a> Connector<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, task_restart_policy: Option<String>, state: Option<String>, configs: Option<HashMap<String, String>>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, configs: Option<HashMap<String, String>>, name: Option<String>, task_restart_policy: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Connector<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, task_restart_policy: Option<String>, state: Option<String>, configs: Option<HashMap<String, String>>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, configs: Option<HashMap<String, String>>, name: Option<String>, task_restart_policy: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Consumer_quota_metric<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, force_only: Option<Vec<String>>, force: Option<bool>, inline_source: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, force: Option<bool>, force_only: Option<Vec<String>>, inline_source: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

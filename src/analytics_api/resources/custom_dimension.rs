@@ -21,7 +21,7 @@ impl<'a> Custom_dimension<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, web_property_id: Option<String>, created: Option<String>, index: Option<i64>, active: Option<bool>, id: Option<String>, self_link: Option<String>, account_id: Option<String>, name: Option<String>, scope: Option<String>, parent_link: Option<String>, updated: Option<String>, account_id: String, web_property_id: String) -> Result<String> {
+    pub async fn create(&self, parent_link: Option<String>, active: Option<bool>, kind: Option<String>, id: Option<String>, index: Option<i64>, self_link: Option<String>, updated: Option<String>, created: Option<String>, account_id: Option<String>, web_property_id: Option<String>, name: Option<String>, scope: Option<String>, web_property_id: String, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Custom_dimension<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, kind: Option<String>, web_property_id: Option<String>, created: Option<String>, index: Option<i64>, active: Option<bool>, id: Option<String>, self_link: Option<String>, account_id: Option<String>, name: Option<String>, scope: Option<String>, parent_link: Option<String>, updated: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, parent_link: Option<String>, active: Option<bool>, kind: Option<String>, id: Option<String>, index: Option<i64>, self_link: Option<String>, updated: Option<String>, created: Option<String>, account_id: Option<String>, web_property_id: Option<String>, name: Option<String>, scope: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

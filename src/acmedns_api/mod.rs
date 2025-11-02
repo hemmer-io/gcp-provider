@@ -1,34 +1,142 @@
-//! Acmedns_api Service
+//! Acmedns_api service for Gcp provider
 //!
-//! Auto-generated service module for acmedns_api
+//! This module handles all acmedns_api resources and their CRUD operations.
 
-pub mod resources;
+use hemmer_core::Result;
+use hemmer_provider::{ResourceInput, ResourceOutput, ResourcePlan};
 
-use crate::{ProviderError, Result};
-
-/// Service handler for acmedns_api
+/// Acmedns_api service handler
 pub struct Acmedns_apiService<'a> {
     provider: &'a crate::GcpProvider,
 }
 
 impl<'a> Acmedns_apiService<'a> {
-    pub(crate) fn new(provider: &'a crate::GcpProvider) -> Self {
+    /// Create a new service handler
+    pub fn new(provider: &'a crate::GcpProvider) -> Self {
         Self { provider }
     }
 
-    /// Get acme_challenge_set resource handler
-    pub fn acme_challenge_set(&self) -> resources::Acme_challenge_set<'_> {
-        resources::Acme_challenge_set::new(self.provider)
+    /// Plan changes to a resource
+    pub async fn plan_resource(
+        &self,
+        resource_name: &str,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        match resource_name {
+            "acme_challenge_set" => {
+                self.plan_acme_challenge_set(current_state, desired_input)
+                    .await
+            }
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "acmedns_api", resource_name
+            ))),
+        }
     }
 
-}
+    /// Create a new resource
+    pub async fn create_resource(
+        &self,
+        resource_name: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "acme_challenge_set" => self.create_acme_challenge_set(input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "acmedns_api", resource_name
+            ))),
+        }
+    }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+    /// Read resource state
+    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+        match resource_name {
+            "acme_challenge_set" => self.read_acme_challenge_set(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "acmedns_api", resource_name
+            ))),
+        }
+    }
 
-    #[test]
-    fn test_service_creation() {
-        // Service creation test
+    /// Update an existing resource
+    pub async fn update_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "acme_challenge_set" => self.update_acme_challenge_set(id, input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "acmedns_api", resource_name
+            ))),
+        }
+    }
+
+    /// Delete a resource
+    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+        match resource_name {
+            "acme_challenge_set" => self.delete_acme_challenge_set(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "acmedns_api", resource_name
+            ))),
+        }
+    }
+
+    // ========================================================================
+    // Resource-specific CRUD implementations
+    // ========================================================================
+
+    // ------------------------------------------------------------------------
+    // Acme_challenge_set resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a acme_challenge_set resource
+    async fn plan_acme_challenge_set(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new acme_challenge_set resource
+    async fn create_acme_challenge_set(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a acme_challenge_set resource
+    async fn read_acme_challenge_set(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a acme_challenge_set resource
+    async fn update_acme_challenge_set(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a acme_challenge_set resource
+    async fn delete_acme_challenge_set(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
     }
 }

@@ -21,7 +21,7 @@ impl<'a> Group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, aliases: Option<Vec<String>>, kind: Option<String>, email: Option<String>, id: Option<String>, name: Option<String>, admin_created: Option<bool>, etag: Option<String>, non_editable_aliases: Option<Vec<String>>, description: Option<String>, direct_members_count: Option<String>) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, kind: Option<String>, non_editable_aliases: Option<Vec<String>>, direct_members_count: Option<String>, description: Option<String>, email: Option<String>, id: Option<String>, admin_created: Option<bool>, name: Option<String>, aliases: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, aliases: Option<Vec<String>>, kind: Option<String>, email: Option<String>, id: Option<String>, name: Option<String>, admin_created: Option<bool>, etag: Option<String>, non_editable_aliases: Option<Vec<String>>, description: Option<String>, direct_members_count: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, kind: Option<String>, non_editable_aliases: Option<Vec<String>>, direct_members_count: Option<String>, description: Option<String>, email: Option<String>, id: Option<String>, admin_created: Option<bool>, name: Option<String>, aliases: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

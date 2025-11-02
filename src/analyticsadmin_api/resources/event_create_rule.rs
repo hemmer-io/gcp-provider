@@ -21,7 +21,7 @@ impl<'a> Event_create_rule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, parameter_mutations: Option<Vec<String>>, source_copy_parameters: Option<bool>, destination_event: Option<String>, event_conditions: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, event_conditions: Option<Vec<String>>, name: Option<String>, parameter_mutations: Option<Vec<String>>, destination_event: Option<String>, source_copy_parameters: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Event_create_rule<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, parameter_mutations: Option<Vec<String>>, source_copy_parameters: Option<bool>, destination_event: Option<String>, event_conditions: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, event_conditions: Option<Vec<String>>, name: Option<String>, parameter_mutations: Option<Vec<String>>, destination_event: Option<String>, source_copy_parameters: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

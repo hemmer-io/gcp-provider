@@ -1,6 +1,6 @@
 //! Achievement resource
 //!
-//! Sets the steps for the currently authenticated player towards unlocking an achievement. If the steps parameter is less than the current number of steps that the player already gained for the achievement, the achievement is not modified.
+//! Increments the steps of the achievement with the given ID for the currently authenticated player.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

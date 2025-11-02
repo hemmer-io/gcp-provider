@@ -21,7 +21,7 @@ impl<'a> Short_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, long_dynamic_link: Option<String>, dynamic_link_info: Option<String>, suffix: Option<String>, sdk_version: Option<String>) -> Result<String> {
+    pub async fn create(&self, suffix: Option<String>, long_dynamic_link: Option<String>, sdk_version: Option<String>, dynamic_link_info: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

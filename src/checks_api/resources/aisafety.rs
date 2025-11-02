@@ -21,7 +21,7 @@ impl<'a> Aisafety<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, policies: Option<Vec<String>>, context: Option<String>, classifier_version: Option<String>, input: Option<String>) -> Result<String> {
+    pub async fn create(&self, policies: Option<Vec<String>>, classifier_version: Option<String>, input: Option<String>, context: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Custom_metric<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, parameter_name: Option<String>, description: Option<String>, display_name: Option<String>, measurement_unit: Option<String>, name: Option<String>, scope: Option<String>, restricted_metric_type: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, restricted_metric_type: Option<Vec<String>>, display_name: Option<String>, scope: Option<String>, description: Option<String>, measurement_unit: Option<String>, name: Option<String>, parameter_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Custom_metric<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, parameter_name: Option<String>, description: Option<String>, display_name: Option<String>, measurement_unit: Option<String>, name: Option<String>, scope: Option<String>, restricted_metric_type: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, restricted_metric_type: Option<Vec<String>>, display_name: Option<String>, scope: Option<String>, description: Option<String>, measurement_unit: Option<String>, name: Option<String>, parameter_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

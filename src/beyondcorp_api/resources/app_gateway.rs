@@ -21,7 +21,7 @@ impl<'a> App_gateway<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, state: Option<String>, uid: Option<String>, type: Option<String>, display_name: Option<String>, allocated_connections: Option<Vec<String>>, create_time: Option<String>, host_type: Option<String>, name: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, update_time: Option<String>, uri: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, type: Option<String>, allocated_connections: Option<Vec<String>>, satisfies_pzi: Option<bool>, update_time: Option<String>, uri: Option<String>, uid: Option<String>, host_type: Option<String>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, create_time: Option<String>, display_name: Option<String>, state: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Branch_rule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, allow_stale_reviews: Option<bool>, create_time: Option<String>, disabled: Option<bool>, require_pull_request: Option<bool>, minimum_reviews_count: Option<i64>, require_comments_resolved: Option<bool>, include_pattern: Option<String>, uid: Option<String>, name: Option<String>, minimum_approvals_count: Option<i64>, required_status_checks: Option<Vec<String>>, etag: Option<String>, update_time: Option<String>, require_linear_history: Option<bool>, annotations: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, include_pattern: Option<String>, minimum_reviews_count: Option<i64>, required_status_checks: Option<Vec<String>>, disabled: Option<bool>, minimum_approvals_count: Option<i64>, uid: Option<String>, update_time: Option<String>, name: Option<String>, annotations: Option<HashMap<String, String>>, create_time: Option<String>, require_linear_history: Option<bool>, allow_stale_reviews: Option<bool>, require_comments_resolved: Option<bool>, etag: Option<String>, require_pull_request: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Branch_rule<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, allow_stale_reviews: Option<bool>, create_time: Option<String>, disabled: Option<bool>, require_pull_request: Option<bool>, minimum_reviews_count: Option<i64>, require_comments_resolved: Option<bool>, include_pattern: Option<String>, uid: Option<String>, name: Option<String>, minimum_approvals_count: Option<i64>, required_status_checks: Option<Vec<String>>, etag: Option<String>, update_time: Option<String>, require_linear_history: Option<bool>, annotations: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, include_pattern: Option<String>, minimum_reviews_count: Option<i64>, required_status_checks: Option<Vec<String>>, disabled: Option<bool>, minimum_approvals_count: Option<i64>, uid: Option<String>, update_time: Option<String>, name: Option<String>, annotations: Option<HashMap<String, String>>, create_time: Option<String>, require_linear_history: Option<bool>, allow_stale_reviews: Option<bool>, require_comments_resolved: Option<bool>, etag: Option<String>, require_pull_request: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

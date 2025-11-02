@@ -21,7 +21,7 @@ impl<'a> Custom_metric<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, account_id: Option<String>, web_property_id: Option<String>, active: Option<bool>, index: Option<i64>, name: Option<String>, kind: Option<String>, created: Option<String>, id: Option<String>, parent_link: Option<String>, updated: Option<String>, max_value: Option<String>, min_value: Option<String>, scope: Option<String>, self_link: Option<String>, type: Option<String>, account_id: String, web_property_id: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, id: Option<String>, updated: Option<String>, scope: Option<String>, web_property_id: Option<String>, index: Option<i64>, max_value: Option<String>, parent_link: Option<String>, min_value: Option<String>, created: Option<String>, kind: Option<String>, active: Option<bool>, type: Option<String>, self_link: Option<String>, account_id: Option<String>, web_property_id: String, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Custom_metric<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, account_id: Option<String>, web_property_id: Option<String>, active: Option<bool>, index: Option<i64>, name: Option<String>, kind: Option<String>, created: Option<String>, id: Option<String>, parent_link: Option<String>, updated: Option<String>, max_value: Option<String>, min_value: Option<String>, scope: Option<String>, self_link: Option<String>, type: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, id: Option<String>, updated: Option<String>, scope: Option<String>, web_property_id: Option<String>, index: Option<i64>, max_value: Option<String>, parent_link: Option<String>, min_value: Option<String>, created: Option<String>, kind: Option<String>, active: Option<bool>, type: Option<String>, self_link: Option<String>, account_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> User<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, account_type: Option<String>, display_name: Option<String>, management_type: Option<String>, account_identifier: Option<String>, id: Option<String>, primary_email: Option<String>, enterprise_id: String) -> Result<String> {
+    pub async fn create(&self, management_type: Option<String>, primary_email: Option<String>, display_name: Option<String>, id: Option<String>, account_identifier: Option<String>, account_type: Option<String>, enterprise_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> User<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, account_type: Option<String>, display_name: Option<String>, management_type: Option<String>, account_identifier: Option<String>, id: Option<String>, primary_email: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, management_type: Option<String>, primary_email: Option<String>, display_name: Option<String>, id: Option<String>, account_identifier: Option<String>, account_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

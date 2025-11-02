@@ -21,7 +21,7 @@ impl<'a> Annotation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, volume_id: Option<String>, client_version_ranges: Option<String>, created: Option<String>, before_selected_text: Option<String>, selected_text: Option<String>, after_selected_text: Option<String>, layer_id: Option<String>, self_link: Option<String>, deleted: Option<bool>, id: Option<String>, updated: Option<String>, page_ids: Option<Vec<String>>, data: Option<String>, highlight_style: Option<String>, current_version_ranges: Option<String>, kind: Option<String>, layer_summary: Option<String>) -> Result<String> {
+    pub async fn create(&self, page_ids: Option<Vec<String>>, self_link: Option<String>, layer_summary: Option<String>, highlight_style: Option<String>, data: Option<String>, kind: Option<String>, layer_id: Option<String>, client_version_ranges: Option<String>, before_selected_text: Option<String>, id: Option<String>, updated: Option<String>, selected_text: Option<String>, volume_id: Option<String>, created: Option<String>, after_selected_text: Option<String>, current_version_ranges: Option<String>, deleted: Option<bool>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Annotation<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, volume_id: Option<String>, client_version_ranges: Option<String>, created: Option<String>, before_selected_text: Option<String>, selected_text: Option<String>, after_selected_text: Option<String>, layer_id: Option<String>, self_link: Option<String>, deleted: Option<bool>, id: Option<String>, updated: Option<String>, page_ids: Option<Vec<String>>, data: Option<String>, highlight_style: Option<String>, current_version_ranges: Option<String>, kind: Option<String>, layer_summary: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, page_ids: Option<Vec<String>>, self_link: Option<String>, layer_summary: Option<String>, highlight_style: Option<String>, data: Option<String>, kind: Option<String>, layer_id: Option<String>, client_version_ranges: Option<String>, before_selected_text: Option<String>, id: Option<String>, updated: Option<String>, selected_text: Option<String>, volume_id: Option<String>, created: Option<String>, after_selected_text: Option<String>, current_version_ranges: Option<String>, deleted: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

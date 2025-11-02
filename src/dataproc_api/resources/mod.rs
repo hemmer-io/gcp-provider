@@ -1,13 +1,33 @@
 //! Resource modules
 
-pub mod cluster;
-pub use cluster::Cluster;
-pub mod job;
-pub use job::Job;
 pub mod operation;
 pub use operation::Operation;
 pub mod workflow_template;
 pub use workflow_template::Workflow_template;
+pub mod node_group;
+pub use node_group::Node_group;
+pub mod job;
+pub use job::Job;
 pub mod autoscaling_policie;
 pub use autoscaling_policie::Autoscaling_policie;
+pub mod batche;
+pub use batche::Batche;
+pub mod session_template;
+pub use session_template::Session_template;
+pub mod session;
+pub use session::Session;
+pub mod spark_application;
+pub use spark_application::Spark_application;
+pub mod cluster;
+pub use cluster::Cluster;
+pub mod autoscaling_policie;
+pub use autoscaling_policie::Autoscaling_policie;
+pub mod cluster;
+pub use cluster::Cluster;
+pub mod operation;
+pub use operation::Operation;
+pub mod workflow_template;
+pub use workflow_template::Workflow_template;
+pub mod job;
+pub use job::Job;
 

@@ -21,7 +21,7 @@ impl<'a> Training_pipeline<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, parent_model: Option<String>, training_task_definition: Option<String>, create_time: Option<String>, start_time: Option<String>, training_task_inputs: Option<String>, labels: Option<HashMap<String, String>>, encryption_spec: Option<String>, update_time: Option<String>, display_name: Option<String>, end_time: Option<String>, input_data_config: Option<String>, model_id: Option<String>, model_to_upload: Option<String>, state: Option<String>, training_task_metadata: Option<String>, error: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, model_to_upload: Option<String>, training_task_metadata: Option<String>, model_id: Option<String>, name: Option<String>, input_data_config: Option<String>, encryption_spec: Option<String>, start_time: Option<String>, training_task_definition: Option<String>, error: Option<String>, parent_model: Option<String>, training_task_inputs: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, update_time: Option<String>, end_time: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

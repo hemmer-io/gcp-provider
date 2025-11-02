@@ -21,7 +21,7 @@ impl<'a> Glossary_entrie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, terms_set: Option<String>, name: Option<String>, description: Option<String>, terms_pair: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, description: Option<String>, terms_set: Option<String>, terms_pair: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Glossary_entrie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, terms_set: Option<String>, name: Option<String>, description: Option<String>, terms_pair: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, description: Option<String>, terms_set: Option<String>, terms_pair: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

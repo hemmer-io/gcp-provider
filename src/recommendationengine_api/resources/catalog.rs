@@ -34,7 +34,7 @@ impl<'a> Catalog<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, display_name: Option<String>, catalog_item_level_config: Option<String>, default_event_store_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, default_event_store_id: Option<String>, name: Option<String>, catalog_item_level_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

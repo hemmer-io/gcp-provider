@@ -21,7 +21,7 @@ impl<'a> Bitbucket_server_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, secrets: Option<String>, peered_network_ip_range: Option<String>, webhook_key: Option<String>, connected_repositories: Option<Vec<String>>, api_key: Option<String>, create_time: Option<String>, peered_network: Option<String>, username: Option<String>, ssl_ca: Option<String>, host_uri: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, peered_network_ip_range: Option<String>, connected_repositories: Option<Vec<String>>, host_uri: Option<String>, ssl_ca: Option<String>, username: Option<String>, peered_network: Option<String>, webhook_key: Option<String>, name: Option<String>, api_key: Option<String>, create_time: Option<String>, secrets: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Bitbucket_server_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, secrets: Option<String>, peered_network_ip_range: Option<String>, webhook_key: Option<String>, connected_repositories: Option<Vec<String>>, api_key: Option<String>, create_time: Option<String>, peered_network: Option<String>, username: Option<String>, ssl_ca: Option<String>, host_uri: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, peered_network_ip_range: Option<String>, connected_repositories: Option<Vec<String>>, host_uri: Option<String>, ssl_ca: Option<String>, username: Option<String>, peered_network: Option<String>, webhook_key: Option<String>, name: Option<String>, api_key: Option<String>, create_time: Option<String>, secrets: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

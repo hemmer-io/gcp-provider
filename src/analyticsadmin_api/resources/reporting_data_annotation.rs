@@ -21,7 +21,7 @@ impl<'a> Reporting_data_annotation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, annotation_date_range: Option<String>, system_generated: Option<bool>, description: Option<String>, title: Option<String>, annotation_date: Option<String>, name: Option<String>, color: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, system_generated: Option<bool>, annotation_date: Option<String>, color: Option<String>, description: Option<String>, title: Option<String>, annotation_date_range: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Reporting_data_annotation<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, annotation_date_range: Option<String>, system_generated: Option<bool>, description: Option<String>, title: Option<String>, annotation_date: Option<String>, name: Option<String>, color: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, system_generated: Option<bool>, annotation_date: Option<String>, color: Option<String>, description: Option<String>, title: Option<String>, annotation_date_range: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

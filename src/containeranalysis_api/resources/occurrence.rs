@@ -21,7 +21,7 @@ impl<'a> Occurrence<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, note_name: Option<String>, secret: Option<String>, create_time: Option<String>, dsse_attestation: Option<String>, spdx_relationship: Option<String>, discovered: Option<String>, update_time: Option<String>, kind: Option<String>, compliance: Option<String>, deployment: Option<String>, build_details: Option<String>, upgrade: Option<String>, spdx_file: Option<String>, spdx_package: Option<String>, installation: Option<String>, remediation: Option<String>, sbom: Option<String>, derived_image: Option<String>, resource: Option<String>, resource_url: Option<String>, name: Option<String>, sbom_reference: Option<String>, attestation: Option<String>, envelope: Option<String>, vulnerability_details: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, vulnerability_details: Option<String>, create_time: Option<String>, upgrade: Option<String>, derived_image: Option<String>, installation: Option<String>, resource_url: Option<String>, name: Option<String>, compliance: Option<String>, discovered: Option<String>, sbom_reference: Option<String>, attestation: Option<String>, build_details: Option<String>, dsse_attestation: Option<String>, envelope: Option<String>, deployment: Option<String>, kind: Option<String>, sbom: Option<String>, note_name: Option<String>, remediation: Option<String>, resource: Option<String>, secret: Option<String>, spdx_package: Option<String>, spdx_file: Option<String>, spdx_relationship: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Occurrence<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, note_name: Option<String>, secret: Option<String>, create_time: Option<String>, dsse_attestation: Option<String>, spdx_relationship: Option<String>, discovered: Option<String>, update_time: Option<String>, kind: Option<String>, compliance: Option<String>, deployment: Option<String>, build_details: Option<String>, upgrade: Option<String>, spdx_file: Option<String>, spdx_package: Option<String>, installation: Option<String>, remediation: Option<String>, sbom: Option<String>, derived_image: Option<String>, resource: Option<String>, resource_url: Option<String>, name: Option<String>, sbom_reference: Option<String>, attestation: Option<String>, envelope: Option<String>, vulnerability_details: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, vulnerability_details: Option<String>, create_time: Option<String>, upgrade: Option<String>, derived_image: Option<String>, installation: Option<String>, resource_url: Option<String>, name: Option<String>, compliance: Option<String>, discovered: Option<String>, sbom_reference: Option<String>, attestation: Option<String>, build_details: Option<String>, dsse_attestation: Option<String>, envelope: Option<String>, deployment: Option<String>, kind: Option<String>, sbom: Option<String>, note_name: Option<String>, remediation: Option<String>, resource: Option<String>, secret: Option<String>, spdx_package: Option<String>, spdx_file: Option<String>, spdx_relationship: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

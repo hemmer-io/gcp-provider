@@ -1,6 +1,6 @@
 //! App resource
 //!
-//! Get a list of devices that have requested to install an extension.
+//! Generate summary of app installation requests.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

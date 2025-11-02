@@ -21,7 +21,7 @@ impl<'a> Hyperparameter_tuning_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, create_time: Option<String>, max_trial_count: Option<i64>, display_name: Option<String>, parallel_trial_count: Option<i64>, state: Option<String>, satisfies_pzs: Option<bool>, encryption_spec: Option<String>, study_spec: Option<String>, trials: Option<Vec<String>>, error: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, satisfies_pzi: Option<bool>, start_time: Option<String>, trial_job_spec: Option<String>, max_failed_trial_count: Option<i64>, end_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, trial_job_spec: Option<String>, study_spec: Option<String>, error: Option<String>, max_failed_trial_count: Option<i64>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, start_time: Option<String>, name: Option<String>, state: Option<String>, trials: Option<Vec<String>>, parallel_trial_count: Option<i64>, end_time: Option<String>, max_trial_count: Option<i64>, satisfies_pzi: Option<bool>, create_time: Option<String>, update_time: Option<String>, encryption_spec: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

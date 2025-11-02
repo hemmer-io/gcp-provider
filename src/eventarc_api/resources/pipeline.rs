@@ -21,7 +21,7 @@ impl<'a> Pipeline<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, annotations: Option<HashMap<String, String>>, crypto_key_name: Option<String>, retry_policy: Option<String>, mediations: Option<Vec<String>>, logging_config: Option<String>, etag: Option<String>, create_time: Option<String>, destinations: Option<Vec<String>>, input_payload_format: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, satisfies_pzs: Option<bool>, uid: Option<String>, name: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, mediations: Option<Vec<String>>, name: Option<String>, update_time: Option<String>, create_time: Option<String>, uid: Option<String>, input_payload_format: Option<String>, crypto_key_name: Option<String>, annotations: Option<HashMap<String, String>>, destinations: Option<Vec<String>>, etag: Option<String>, labels: Option<HashMap<String, String>>, retry_policy: Option<String>, satisfies_pzs: Option<bool>, display_name: Option<String>, logging_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Pipeline<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, annotations: Option<HashMap<String, String>>, crypto_key_name: Option<String>, retry_policy: Option<String>, mediations: Option<Vec<String>>, logging_config: Option<String>, etag: Option<String>, create_time: Option<String>, destinations: Option<Vec<String>>, input_payload_format: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, satisfies_pzs: Option<bool>, uid: Option<String>, name: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, mediations: Option<Vec<String>>, name: Option<String>, update_time: Option<String>, create_time: Option<String>, uid: Option<String>, input_payload_format: Option<String>, crypto_key_name: Option<String>, annotations: Option<HashMap<String, String>>, destinations: Option<Vec<String>>, etag: Option<String>, labels: Option<HashMap<String, String>>, retry_policy: Option<String>, satisfies_pzs: Option<bool>, display_name: Option<String>, logging_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

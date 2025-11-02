@@ -21,7 +21,7 @@ impl<'a> Course<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, owner_id: Option<String>, enrollment_code: Option<String>, calendar_id: Option<String>, gradebook_settings: Option<String>, teacher_group_email: Option<String>, course_state: Option<String>, update_time: Option<String>, description: Option<String>, section: Option<String>, course_group_email: Option<String>, name: Option<String>, creation_time: Option<String>, course_material_sets: Option<Vec<String>>, guardians_enabled: Option<bool>, alternate_link: Option<String>, description_heading: Option<String>, teacher_folder: Option<String>, id: Option<String>, room: Option<String>) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, teacher_folder: Option<String>, guardians_enabled: Option<bool>, course_material_sets: Option<Vec<String>>, description: Option<String>, id: Option<String>, creation_time: Option<String>, course_group_email: Option<String>, section: Option<String>, description_heading: Option<String>, alternate_link: Option<String>, update_time: Option<String>, room: Option<String>, course_state: Option<String>, teacher_group_email: Option<String>, calendar_id: Option<String>, enrollment_code: Option<String>, owner_id: Option<String>, gradebook_settings: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Course<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, owner_id: Option<String>, enrollment_code: Option<String>, calendar_id: Option<String>, gradebook_settings: Option<String>, teacher_group_email: Option<String>, course_state: Option<String>, update_time: Option<String>, description: Option<String>, section: Option<String>, course_group_email: Option<String>, name: Option<String>, creation_time: Option<String>, course_material_sets: Option<Vec<String>>, guardians_enabled: Option<bool>, alternate_link: Option<String>, description_heading: Option<String>, teacher_folder: Option<String>, id: Option<String>, room: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, teacher_folder: Option<String>, guardians_enabled: Option<bool>, course_material_sets: Option<Vec<String>>, description: Option<String>, id: Option<String>, creation_time: Option<String>, course_group_email: Option<String>, section: Option<String>, description_heading: Option<String>, alternate_link: Option<String>, update_time: Option<String>, room: Option<String>, course_state: Option<String>, teacher_group_email: Option<String>, calendar_id: Option<String>, enrollment_code: Option<String>, owner_id: Option<String>, gradebook_settings: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

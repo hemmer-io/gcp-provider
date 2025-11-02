@@ -1,6 +1,6 @@
 //! Aliase resource
 //!
-//! Adds an alias.
+//! Adds an alias for the group.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Aliase<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, primary_email: Option<String>, alias: Option<String>, kind: Option<String>, id: Option<String>, etag: Option<String>, user_key: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, primary_email: Option<String>, id: Option<String>, alias: Option<String>, kind: Option<String>, group_key: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

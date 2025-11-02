@@ -1,6 +1,6 @@
 //! Connection resource
 //!
-//! Lists the available entities and actions associated with a Connection.
+//! Lists Connections in a given project and location.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

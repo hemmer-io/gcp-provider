@@ -21,7 +21,7 @@ impl<'a> Certificate_template<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, identity_constraints: Option<String>, passthrough_extensions: Option<String>, maximum_lifetime: Option<String>, predefined_values: Option<String>, description: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, maximum_lifetime: Option<String>, update_time: Option<String>, create_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, identity_constraints: Option<String>, name: Option<String>, passthrough_extensions: Option<String>, predefined_values: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Certificate_template<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, identity_constraints: Option<String>, passthrough_extensions: Option<String>, maximum_lifetime: Option<String>, predefined_values: Option<String>, description: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, maximum_lifetime: Option<String>, update_time: Option<String>, create_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, identity_constraints: Option<String>, name: Option<String>, passthrough_extensions: Option<String>, predefined_values: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

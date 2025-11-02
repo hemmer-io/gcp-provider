@@ -2,4 +2,6 @@
 
 pub mod discovery;
 pub use discovery::Discovery;
+pub mod discovery;
+pub use discovery::Discovery;
 

@@ -21,7 +21,7 @@ impl<'a> Patch_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, instance_filter: Option<String>, patch_config: Option<String>, rollout: Option<String>, duration: Option<String>, description: Option<String>, display_name: Option<String>, dry_run: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, patch_config: Option<String>, dry_run: Option<bool>, instance_filter: Option<String>, duration: Option<String>, rollout: Option<String>, display_name: Option<String>, description: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

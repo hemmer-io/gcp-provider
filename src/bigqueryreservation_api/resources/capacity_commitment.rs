@@ -21,7 +21,7 @@ impl<'a> Capacity_commitment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, commitment_start_time: Option<String>, slot_count: Option<String>, name: Option<String>, plan: Option<String>, multi_region_auxiliary: Option<bool>, renewal_plan: Option<String>, failure_status: Option<String>, state: Option<String>, commitment_end_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, failure_status: Option<String>, slot_count: Option<String>, renewal_plan: Option<String>, plan: Option<String>, state: Option<String>, commitment_start_time: Option<String>, commitment_end_time: Option<String>, name: Option<String>, multi_region_auxiliary: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Capacity_commitment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, commitment_start_time: Option<String>, slot_count: Option<String>, name: Option<String>, plan: Option<String>, multi_region_auxiliary: Option<bool>, renewal_plan: Option<String>, failure_status: Option<String>, state: Option<String>, commitment_end_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, failure_status: Option<String>, slot_count: Option<String>, renewal_plan: Option<String>, plan: Option<String>, state: Option<String>, commitment_start_time: Option<String>, commitment_end_time: Option<String>, name: Option<String>, multi_region_auxiliary: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

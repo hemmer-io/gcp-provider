@@ -21,7 +21,7 @@ impl<'a> Conversation_profile<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, human_agent_handoff_config: Option<String>, time_zone: Option<String>, security_settings: Option<String>, new_recognition_result_notification_config: Option<String>, notification_config: Option<String>, tts_config: Option<String>, language_code: Option<String>, create_time: Option<String>, logging_config: Option<String>, human_agent_assistant_config: Option<String>, display_name: Option<String>, name: Option<String>, update_time: Option<String>, stt_config: Option<String>, automated_agent_config: Option<String>, new_message_event_notification_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, update_time: Option<String>, new_recognition_result_notification_config: Option<String>, tts_config: Option<String>, automated_agent_config: Option<String>, logging_config: Option<String>, security_settings: Option<String>, language_code: Option<String>, human_agent_handoff_config: Option<String>, human_agent_assistant_config: Option<String>, stt_config: Option<String>, create_time: Option<String>, notification_config: Option<String>, new_message_event_notification_config: Option<String>, time_zone: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Conversation_profile<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, human_agent_handoff_config: Option<String>, time_zone: Option<String>, security_settings: Option<String>, new_recognition_result_notification_config: Option<String>, notification_config: Option<String>, tts_config: Option<String>, language_code: Option<String>, create_time: Option<String>, logging_config: Option<String>, human_agent_assistant_config: Option<String>, display_name: Option<String>, name: Option<String>, update_time: Option<String>, stt_config: Option<String>, automated_agent_config: Option<String>, new_message_event_notification_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, update_time: Option<String>, new_recognition_result_notification_config: Option<String>, tts_config: Option<String>, automated_agent_config: Option<String>, logging_config: Option<String>, security_settings: Option<String>, language_code: Option<String>, human_agent_handoff_config: Option<String>, human_agent_assistant_config: Option<String>, stt_config: Option<String>, create_time: Option<String>, notification_config: Option<String>, new_message_event_notification_config: Option<String>, time_zone: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

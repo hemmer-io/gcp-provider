@@ -21,7 +21,7 @@ impl<'a> Rolling_update<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<String>, status_message: Option<String>, instance_group_manager: Option<String>, action_type: Option<String>, description: Option<String>, user: Option<String>, status: Option<String>, instance_template: Option<String>, policy: Option<String>, kind: Option<String>, error: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>, instance_group: Option<String>, old_instance_template: Option<String>, progress: Option<i64>, zone: String, project: String) -> Result<String> {
+    pub async fn create(&self, old_instance_template: Option<String>, action_type: Option<String>, status: Option<String>, instance_group: Option<String>, kind: Option<String>, error: Option<String>, instance_template: Option<String>, creation_timestamp: Option<String>, status_message: Option<String>, progress: Option<i64>, user: Option<String>, policy: Option<String>, description: Option<String>, self_link: Option<String>, id: Option<String>, instance_group_manager: Option<String>, zone: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Hcx_activation_key<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, activation_key: Option<String>, create_time: Option<String>, uid: Option<String>, state: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, state: Option<String>, uid: Option<String>, create_time: Option<String>, activation_key: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

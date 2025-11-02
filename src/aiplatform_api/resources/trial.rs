@@ -21,7 +21,7 @@ impl<'a> Trial<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, client_id: Option<String>, end_time: Option<String>, parameters: Option<Vec<String>>, start_time: Option<String>, name: Option<String>, infeasible_reason: Option<String>, state: Option<String>, final_measurement: Option<String>, custom_job: Option<String>, id: Option<String>, measurements: Option<Vec<String>>, web_access_uris: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, custom_job: Option<String>, start_time: Option<String>, state: Option<String>, client_id: Option<String>, web_access_uris: Option<HashMap<String, String>>, parameters: Option<Vec<String>>, infeasible_reason: Option<String>, end_time: Option<String>, final_measurement: Option<String>, id: Option<String>, name: Option<String>, measurements: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

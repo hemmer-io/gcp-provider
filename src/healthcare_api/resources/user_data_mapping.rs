@@ -21,7 +21,7 @@ impl<'a> User_data_mapping<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, archived: Option<bool>, name: Option<String>, resource_attributes: Option<Vec<String>>, archive_time: Option<String>, user_id: Option<String>, data_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, archived: Option<bool>, archive_time: Option<String>, resource_attributes: Option<Vec<String>>, user_id: Option<String>, data_id: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> User_data_mapping<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, archived: Option<bool>, name: Option<String>, resource_attributes: Option<Vec<String>>, archive_time: Option<String>, user_id: Option<String>, data_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, archived: Option<bool>, archive_time: Option<String>, resource_attributes: Option<Vec<String>>, user_id: Option<String>, data_id: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

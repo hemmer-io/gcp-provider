@@ -21,7 +21,7 @@ impl<'a> Dynamic_profile<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_info: Option<String>, archive_status: Option<String>, kind: Option<String>, dynamic_profile_id: Option<String>, description: Option<String>, studio_advertiser_id: Option<String>, name: Option<String>, active: Option<String>, draft: Option<String>, status: Option<String>, last_modified_info: Option<String>) -> Result<String> {
+    pub async fn create(&self, archive_status: Option<String>, description: Option<String>, active: Option<String>, last_modified_info: Option<String>, draft: Option<String>, kind: Option<String>, name: Option<String>, status: Option<String>, studio_advertiser_id: Option<String>, create_info: Option<String>, dynamic_profile_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Dynamic_profile<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_info: Option<String>, archive_status: Option<String>, kind: Option<String>, dynamic_profile_id: Option<String>, description: Option<String>, studio_advertiser_id: Option<String>, name: Option<String>, active: Option<String>, draft: Option<String>, status: Option<String>, last_modified_info: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, archive_status: Option<String>, description: Option<String>, active: Option<String>, last_modified_info: Option<String>, draft: Option<String>, kind: Option<String>, name: Option<String>, status: Option<String>, studio_advertiser_id: Option<String>, create_info: Option<String>, dynamic_profile_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

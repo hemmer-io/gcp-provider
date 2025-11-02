@@ -1,7 +1,6 @@
 //! Binding resource
 //!
-//! Returns the state of the last operation for the binding.
-Only last (or current) operation can be polled.
+//! Lists all the bindings in the instance.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

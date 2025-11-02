@@ -21,7 +21,7 @@ impl<'a> Transition_route_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, name: Option<String>, transition_routes: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, transition_routes: Option<Vec<String>>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Transition_route_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, name: Option<String>, transition_routes: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, transition_routes: Option<Vec<String>>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Account<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, account: Option<String>, service: Option<Vec<String>>, user: Option<Vec<String>>, users: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, service: Option<Vec<String>>, account: Option<String>, users: Option<Vec<String>>, user: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Account<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, account: Option<String>, service: Option<Vec<String>>, user: Option<Vec<String>>, users: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, service: Option<Vec<String>>, account: Option<String>, users: Option<Vec<String>>, user: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

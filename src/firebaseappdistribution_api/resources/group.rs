@@ -21,7 +21,7 @@ impl<'a> Group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, release_count: Option<i64>, tester_count: Option<i64>, invite_link_count: Option<i64>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, release_count: Option<i64>, tester_count: Option<i64>, invite_link_count: Option<i64>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, release_count: Option<i64>, tester_count: Option<i64>, invite_link_count: Option<i64>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, release_count: Option<i64>, tester_count: Option<i64>, invite_link_count: Option<i64>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

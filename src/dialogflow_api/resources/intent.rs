@@ -21,7 +21,7 @@ impl<'a> Intent<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, description: Option<String>, is_fallback: Option<bool>, parameters: Option<Vec<String>>, labels: Option<HashMap<String, String>>, priority: Option<i64>, display_name: Option<String>, training_phrases: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, is_fallback: Option<bool>, description: Option<String>, training_phrases: Option<Vec<String>>, priority: Option<i64>, labels: Option<HashMap<String, String>>, parameters: Option<Vec<String>>, display_name: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Intent<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, description: Option<String>, is_fallback: Option<bool>, parameters: Option<Vec<String>>, labels: Option<HashMap<String, String>>, priority: Option<i64>, display_name: Option<String>, training_phrases: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, is_fallback: Option<bool>, description: Option<String>, training_phrases: Option<Vec<String>>, priority: Option<i64>, labels: Option<HashMap<String, String>>, parameters: Option<Vec<String>>, display_name: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Security_gateway<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, external_ips: Option<Vec<String>>, hubs: Option<HashMap<String, String>>, delegating_service_account: Option<String>, create_time: Option<String>, update_time: Option<String>, name: Option<String>, display_name: Option<String>, proxy_protocol_config: Option<String>, service_discovery: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, delegating_service_account: Option<String>, display_name: Option<String>, name: Option<String>, proxy_protocol_config: Option<String>, external_ips: Option<Vec<String>>, hubs: Option<HashMap<String, String>>, service_discovery: Option<String>, update_time: Option<String>, create_time: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Security_gateway<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, external_ips: Option<Vec<String>>, hubs: Option<HashMap<String, String>>, delegating_service_account: Option<String>, create_time: Option<String>, update_time: Option<String>, name: Option<String>, display_name: Option<String>, proxy_protocol_config: Option<String>, service_discovery: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, delegating_service_account: Option<String>, display_name: Option<String>, name: Option<String>, proxy_protocol_config: Option<String>, external_ips: Option<Vec<String>>, hubs: Option<HashMap<String, String>>, service_discovery: Option<String>, update_time: Option<String>, create_time: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

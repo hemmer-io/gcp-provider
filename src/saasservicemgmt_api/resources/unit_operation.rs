@@ -21,7 +21,7 @@ impl<'a> Unit_operation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, engine_state: Option<String>, update_time: Option<String>, uid: Option<String>, schedule: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, annotations: Option<HashMap<String, String>>, rollout: Option<String>, etag: Option<String>, parent_unit_operation: Option<String>, create_time: Option<String>, cancel: Option<bool>, upgrade: Option<String>, error_category: Option<String>, deprovision: Option<String>, provision: Option<String>, name: Option<String>, conditions: Option<Vec<String>>, unit: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, schedule: Option<String>, update_time: Option<String>, parent_unit_operation: Option<String>, provision: Option<String>, deprovision: Option<String>, name: Option<String>, engine_state: Option<String>, state: Option<String>, uid: Option<String>, conditions: Option<Vec<String>>, etag: Option<String>, labels: Option<HashMap<String, String>>, rollout: Option<String>, error_category: Option<String>, cancel: Option<bool>, unit: Option<String>, upgrade: Option<String>, create_time: Option<String>, annotations: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Unit_operation<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, engine_state: Option<String>, update_time: Option<String>, uid: Option<String>, schedule: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, annotations: Option<HashMap<String, String>>, rollout: Option<String>, etag: Option<String>, parent_unit_operation: Option<String>, create_time: Option<String>, cancel: Option<bool>, upgrade: Option<String>, error_category: Option<String>, deprovision: Option<String>, provision: Option<String>, name: Option<String>, conditions: Option<Vec<String>>, unit: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, schedule: Option<String>, update_time: Option<String>, parent_unit_operation: Option<String>, provision: Option<String>, deprovision: Option<String>, name: Option<String>, engine_state: Option<String>, state: Option<String>, uid: Option<String>, conditions: Option<Vec<String>>, etag: Option<String>, labels: Option<HashMap<String, String>>, rollout: Option<String>, error_category: Option<String>, cancel: Option<bool>, unit: Option<String>, upgrade: Option<String>, create_time: Option<String>, annotations: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

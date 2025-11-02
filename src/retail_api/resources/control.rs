@@ -21,7 +21,7 @@ impl<'a> Control<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, associated_serving_config_ids: Option<Vec<String>>, name: Option<String>, rule: Option<String>, search_solution_use_case: Option<Vec<String>>, solution_types: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, associated_serving_config_ids: Option<Vec<String>>, search_solution_use_case: Option<Vec<String>>, rule: Option<String>, solution_types: Option<Vec<String>>, name: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Control<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, associated_serving_config_ids: Option<Vec<String>>, name: Option<String>, rule: Option<String>, search_solution_use_case: Option<Vec<String>>, solution_types: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, associated_serving_config_ids: Option<Vec<String>>, search_solution_use_case: Option<Vec<String>>, rule: Option<String>, solution_types: Option<Vec<String>>, name: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

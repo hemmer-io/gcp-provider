@@ -21,7 +21,7 @@ impl<'a> Service<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, requested_address: Option<String>, consumer: Option<String>, region: Option<String>, subnetwork_users: Option<Vec<String>>, ip_prefix_length: Option<i64>, subnetwork: Option<String>, consumer_network: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, consumer_network: Option<String>, subnetwork_users: Option<Vec<String>>, region: Option<String>, ip_prefix_length: Option<i64>, description: Option<String>, consumer: Option<String>, subnetwork: Option<String>, requested_address: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -35,7 +35,7 @@ impl<'a> Service<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, requested_address: Option<String>, consumer: Option<String>, region: Option<String>, subnetwork_users: Option<Vec<String>>, ip_prefix_length: Option<i64>, subnetwork: Option<String>, consumer_network: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, consumer_network: Option<String>, subnetwork_users: Option<Vec<String>>, region: Option<String>, ip_prefix_length: Option<i64>, description: Option<String>, consumer: Option<String>, subnetwork: Option<String>, requested_address: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

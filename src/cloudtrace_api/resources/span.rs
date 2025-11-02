@@ -21,7 +21,7 @@ impl<'a> Span<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, status: Option<String>, time_events: Option<String>, stack_trace: Option<String>, parent_span_id: Option<String>, display_name: Option<String>, name: Option<String>, attributes: Option<String>, same_process_as_parent_span: Option<bool>, span_id: Option<String>, start_time: Option<String>, span_kind: Option<String>, child_span_count: Option<i64>, end_time: Option<String>, links: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, child_span_count: Option<i64>, status: Option<String>, parent_span_id: Option<String>, attributes: Option<String>, end_time: Option<String>, links: Option<String>, same_process_as_parent_span: Option<bool>, span_kind: Option<String>, stack_trace: Option<String>, start_time: Option<String>, time_events: Option<String>, name: Option<String>, display_name: Option<String>, span_id: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

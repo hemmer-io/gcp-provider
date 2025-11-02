@@ -21,7 +21,7 @@ impl<'a> Table<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, table_id: Option<String>, kind: Option<String>, table_properties_json: Option<String>, columns: Option<Vec<String>>, attribution: Option<String>, table_properties_json_schema: Option<String>, attribution_link: Option<String>, base_table_ids: Option<Vec<String>>, is_exportable: Option<bool>, description: Option<String>, name: Option<String>, sql: Option<String>, column_properties_json_schema: Option<String>) -> Result<String> {
+    pub async fn create(&self, is_exportable: Option<bool>, sql: Option<String>, base_table_ids: Option<Vec<String>>, description: Option<String>, columns: Option<Vec<String>>, table_properties_json: Option<String>, table_properties_json_schema: Option<String>, attribution_link: Option<String>, table_id: Option<String>, attribution: Option<String>, kind: Option<String>, column_properties_json_schema: Option<String>, name: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Table<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, table_id: Option<String>, kind: Option<String>, table_properties_json: Option<String>, columns: Option<Vec<String>>, attribution: Option<String>, table_properties_json_schema: Option<String>, attribution_link: Option<String>, base_table_ids: Option<Vec<String>>, is_exportable: Option<bool>, description: Option<String>, name: Option<String>, sql: Option<String>, column_properties_json_schema: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, is_exportable: Option<bool>, sql: Option<String>, base_table_ids: Option<Vec<String>>, description: Option<String>, columns: Option<Vec<String>>, table_properties_json: Option<String>, table_properties_json_schema: Option<String>, attribution_link: Option<String>, table_id: Option<String>, attribution: Option<String>, kind: Option<String>, column_properties_json_schema: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

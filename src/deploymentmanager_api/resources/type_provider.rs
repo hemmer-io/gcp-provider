@@ -21,7 +21,7 @@ impl<'a> Type_provider<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, credential: Option<String>, collection_overrides: Option<Vec<String>>, descriptor_url: Option<String>, insert_time: Option<String>, self_link: Option<String>, custom_certificate_authority_roots: Option<Vec<String>>, id: Option<String>, labels: Option<Vec<String>>, description: Option<String>, name: Option<String>, operation: Option<String>, options: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<Vec<String>>, name: Option<String>, custom_certificate_authority_roots: Option<Vec<String>>, options: Option<String>, operation: Option<String>, self_link: Option<String>, description: Option<String>, id: Option<String>, insert_time: Option<String>, credential: Option<String>, collection_overrides: Option<Vec<String>>, descriptor_url: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Type_provider<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, credential: Option<String>, collection_overrides: Option<Vec<String>>, descriptor_url: Option<String>, insert_time: Option<String>, self_link: Option<String>, custom_certificate_authority_roots: Option<Vec<String>>, id: Option<String>, labels: Option<Vec<String>>, description: Option<String>, name: Option<String>, operation: Option<String>, options: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<Vec<String>>, name: Option<String>, custom_certificate_authority_roots: Option<Vec<String>>, options: Option<String>, operation: Option<String>, self_link: Option<String>, description: Option<String>, id: Option<String>, insert_time: Option<String>, credential: Option<String>, collection_overrides: Option<Vec<String>>, descriptor_url: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

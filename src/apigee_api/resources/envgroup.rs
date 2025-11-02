@@ -21,7 +21,7 @@ impl<'a> Envgroup<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, last_modified_at: Option<String>, hostnames: Option<Vec<String>>, name: Option<String>, created_at: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, state: Option<String>, created_at: Option<String>, hostnames: Option<Vec<String>>, last_modified_at: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Envgroup<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, last_modified_at: Option<String>, hostnames: Option<Vec<String>>, name: Option<String>, created_at: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, state: Option<String>, created_at: Option<String>, hostnames: Option<Vec<String>>, last_modified_at: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

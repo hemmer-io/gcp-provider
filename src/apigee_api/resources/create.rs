@@ -21,7 +21,7 @@ impl<'a> Create<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, attributes: Option<Vec<String>>, expires_in_seconds: Option<String>, consumer_key: Option<String>, expires_at: Option<String>, scopes: Option<Vec<String>>, status: Option<String>, issued_at: Option<String>, api_products: Option<Vec<String>>, consumer_secret: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, scopes: Option<Vec<String>>, issued_at: Option<String>, expires_at: Option<String>, status: Option<String>, api_products: Option<Vec<String>>, expires_in_seconds: Option<String>, consumer_key: Option<String>, attributes: Option<Vec<String>>, consumer_secret: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

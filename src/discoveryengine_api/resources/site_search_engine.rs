@@ -1,6 +1,6 @@
 //! Site_search_engine resource
 //!
-//! Request on-demand recrawl for a list of URIs.
+//! Upgrade from basic site search to advanced site search.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Site_search_engine<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, site_credential: Option<String>, uris: Option<Vec<String>>, site_search_engine: String) -> Result<String> {
+    pub async fn create(&self, site_search_engine: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

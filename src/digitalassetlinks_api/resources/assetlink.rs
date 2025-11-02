@@ -21,7 +21,7 @@ impl<'a> Assetlink<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, default_source: Option<String>, default_relation: Option<String>, default_target: Option<String>, statements: Option<Vec<String>>, return_relation_extensions: Option<bool>) -> Result<String> {
+    pub async fn create(&self, default_relation: Option<String>, statements: Option<Vec<String>>, return_relation_extensions: Option<bool>, default_target: Option<String>, default_source: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

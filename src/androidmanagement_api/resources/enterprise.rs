@@ -21,7 +21,7 @@ impl<'a> Enterprise<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, logo: Option<String>, managed_google_domain_type: Option<String>, managed_google_play_accounts_enterprise_type: Option<String>, name: Option<String>, terms_and_conditions: Option<Vec<String>>, primary_color: Option<i64>, signin_details: Option<Vec<String>>, enabled_notification_types: Option<Vec<String>>, pubsub_topic: Option<String>, app_auto_approval_enabled: Option<bool>, contact_info: Option<String>, enterprise_display_name: Option<String>, enterprise_type: Option<String>, google_authentication_settings: Option<String>) -> Result<String> {
+    pub async fn create(&self, logo: Option<String>, contact_info: Option<String>, managed_google_domain_type: Option<String>, primary_color: Option<i64>, pubsub_topic: Option<String>, terms_and_conditions: Option<Vec<String>>, enterprise_display_name: Option<String>, app_auto_approval_enabled: Option<bool>, enabled_notification_types: Option<Vec<String>>, signin_details: Option<Vec<String>>, managed_google_play_accounts_enterprise_type: Option<String>, google_authentication_settings: Option<String>, name: Option<String>, enterprise_type: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Enterprise<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, logo: Option<String>, managed_google_domain_type: Option<String>, managed_google_play_accounts_enterprise_type: Option<String>, name: Option<String>, terms_and_conditions: Option<Vec<String>>, primary_color: Option<i64>, signin_details: Option<Vec<String>>, enabled_notification_types: Option<Vec<String>>, pubsub_topic: Option<String>, app_auto_approval_enabled: Option<bool>, contact_info: Option<String>, enterprise_display_name: Option<String>, enterprise_type: Option<String>, google_authentication_settings: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, logo: Option<String>, contact_info: Option<String>, managed_google_domain_type: Option<String>, primary_color: Option<i64>, pubsub_topic: Option<String>, terms_and_conditions: Option<Vec<String>>, enterprise_display_name: Option<String>, app_auto_approval_enabled: Option<bool>, enabled_notification_types: Option<Vec<String>>, signin_details: Option<Vec<String>>, managed_google_play_accounts_enterprise_type: Option<String>, google_authentication_settings: Option<String>, name: Option<String>, enterprise_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

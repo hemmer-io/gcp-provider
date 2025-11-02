@@ -21,7 +21,7 @@ impl<'a> Hook<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, target_uri: Option<String>, push_option: Option<String>, update_time: Option<String>, events: Option<Vec<String>>, uid: Option<String>, name: Option<String>, create_time: Option<String>, sensitive_query_string: Option<String>, disabled: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, sensitive_query_string: Option<String>, create_time: Option<String>, uid: Option<String>, update_time: Option<String>, push_option: Option<String>, events: Option<Vec<String>>, name: Option<String>, disabled: Option<bool>, target_uri: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Hook<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, target_uri: Option<String>, push_option: Option<String>, update_time: Option<String>, events: Option<Vec<String>>, uid: Option<String>, name: Option<String>, create_time: Option<String>, sensitive_query_string: Option<String>, disabled: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, sensitive_query_string: Option<String>, create_time: Option<String>, uid: Option<String>, update_time: Option<String>, push_option: Option<String>, events: Option<Vec<String>>, name: Option<String>, disabled: Option<bool>, target_uri: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

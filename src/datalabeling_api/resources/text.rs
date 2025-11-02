@@ -21,7 +21,7 @@ impl<'a> Text<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, feature: Option<String>, basic_config: Option<String>, text_classification_config: Option<String>, text_entity_extraction_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, text_classification_config: Option<String>, basic_config: Option<String>, feature: Option<String>, text_entity_extraction_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

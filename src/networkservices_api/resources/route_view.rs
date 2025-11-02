@@ -1,6 +1,6 @@
 //! Route_view resource
 //!
-//! Get a single RouteView of a Gateway.
+//! Get a single RouteView of a Mesh.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

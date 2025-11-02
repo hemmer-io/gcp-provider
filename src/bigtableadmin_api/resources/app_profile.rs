@@ -21,7 +21,7 @@ impl<'a> App_profile<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, standard_isolation: Option<String>, etag: Option<String>, multi_cluster_routing_use_any: Option<String>, name: Option<String>, priority: Option<String>, single_cluster_routing: Option<String>, data_boost_isolation_read_only: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, standard_isolation: Option<String>, description: Option<String>, single_cluster_routing: Option<String>, data_boost_isolation_read_only: Option<String>, name: Option<String>, etag: Option<String>, multi_cluster_routing_use_any: Option<String>, priority: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> App_profile<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, standard_isolation: Option<String>, etag: Option<String>, multi_cluster_routing_use_any: Option<String>, name: Option<String>, priority: Option<String>, single_cluster_routing: Option<String>, data_boost_isolation_read_only: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, standard_isolation: Option<String>, description: Option<String>, single_cluster_routing: Option<String>, data_boost_isolation_read_only: Option<String>, name: Option<String>, etag: Option<String>, multi_cluster_routing_use_any: Option<String>, priority: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

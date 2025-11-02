@@ -21,7 +21,7 @@ impl<'a> Managed_zone<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, name_server_set: Option<String>, name_servers: Option<Vec<String>>, visibility: Option<String>, reverse_lookup_config: Option<String>, kind: Option<String>, dnssec_config: Option<String>, id: Option<String>, labels: Option<HashMap<String, String>>, service_directory_config: Option<String>, forwarding_config: Option<String>, peering_config: Option<String>, description: Option<String>, private_visibility_config: Option<String>, cloud_logging_config: Option<String>, creation_time: Option<String>, dns_name: Option<String>, location: String, project: String) -> Result<String> {
+    pub async fn create(&self, forwarding_config: Option<String>, peering_config: Option<String>, creation_time: Option<String>, name_server_set: Option<String>, reverse_lookup_config: Option<String>, service_directory_config: Option<String>, dns_name: Option<String>, description: Option<String>, kind: Option<String>, name_servers: Option<Vec<String>>, dnssec_config: Option<String>, visibility: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, id: Option<String>, cloud_logging_config: Option<String>, private_visibility_config: Option<String>, location: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Managed_zone<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, name_server_set: Option<String>, name_servers: Option<Vec<String>>, visibility: Option<String>, reverse_lookup_config: Option<String>, kind: Option<String>, dnssec_config: Option<String>, id: Option<String>, labels: Option<HashMap<String, String>>, service_directory_config: Option<String>, forwarding_config: Option<String>, peering_config: Option<String>, description: Option<String>, private_visibility_config: Option<String>, cloud_logging_config: Option<String>, creation_time: Option<String>, dns_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, forwarding_config: Option<String>, peering_config: Option<String>, creation_time: Option<String>, name_server_set: Option<String>, reverse_lookup_config: Option<String>, service_directory_config: Option<String>, dns_name: Option<String>, description: Option<String>, kind: Option<String>, name_servers: Option<Vec<String>>, dnssec_config: Option<String>, visibility: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, id: Option<String>, cloud_logging_config: Option<String>, private_visibility_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

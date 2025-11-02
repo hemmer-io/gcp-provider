@@ -21,7 +21,7 @@ impl<'a> Data_connector<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, sync_identity: Option<bool>, sync_since_timestamp: Option<String>, healthcare_fhir_resource_types: Option<Vec<String>>, force_refresh_content: Option<bool>, entities: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, sync_identity: Option<bool>, force_refresh_content: Option<bool>, sync_since_timestamp: Option<String>, healthcare_fhir_resource_types: Option<Vec<String>>, entities: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

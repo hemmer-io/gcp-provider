@@ -21,7 +21,7 @@ impl<'a> Security_profile<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, scoring_configs: Option<Vec<String>>, environments: Option<Vec<String>>, max_score: Option<i64>, revision_publish_time: Option<String>, revision_update_time: Option<String>, name: Option<String>, description: Option<String>, min_score: Option<i64>, profile_config: Option<String>, revision_create_time: Option<String>, revision_id: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, revision_publish_time: Option<String>, display_name: Option<String>, revision_id: Option<String>, min_score: Option<i64>, scoring_configs: Option<Vec<String>>, environments: Option<Vec<String>>, profile_config: Option<String>, name: Option<String>, revision_create_time: Option<String>, revision_update_time: Option<String>, max_score: Option<i64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Security_profile<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, scoring_configs: Option<Vec<String>>, environments: Option<Vec<String>>, max_score: Option<i64>, revision_publish_time: Option<String>, revision_update_time: Option<String>, name: Option<String>, description: Option<String>, min_score: Option<i64>, profile_config: Option<String>, revision_create_time: Option<String>, revision_id: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, revision_publish_time: Option<String>, display_name: Option<String>, revision_id: Option<String>, min_score: Option<i64>, scoring_configs: Option<Vec<String>>, environments: Option<Vec<String>>, profile_config: Option<String>, name: Option<String>, revision_create_time: Option<String>, revision_update_time: Option<String>, max_score: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Workflow_invocation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, state: Option<String>, invocation_config: Option<String>, compilation_result: Option<String>, invocation_timing: Option<String>, data_encryption_state: Option<String>, resolved_compilation_result: Option<String>, internal_metadata: Option<String>, workflow_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, compilation_result: Option<String>, internal_metadata: Option<String>, resolved_compilation_result: Option<String>, data_encryption_state: Option<String>, workflow_config: Option<String>, invocation_config: Option<String>, state: Option<String>, invocation_timing: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Product<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, bundle_id: Option<String>, secondary_customer_org_id: Option<String>, integrations: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, bundle_id: Option<String>, integrations: Option<Vec<String>>, secondary_customer_org_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

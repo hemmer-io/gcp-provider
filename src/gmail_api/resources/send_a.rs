@@ -21,7 +21,7 @@ impl<'a> Send_a<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, is_default: Option<bool>, is_primary: Option<bool>, treat_as_alias: Option<bool>, send_as_email: Option<String>, signature: Option<String>, verification_status: Option<String>, reply_to_address: Option<String>, display_name: Option<String>, smtp_msa: Option<String>, user_id: String) -> Result<String> {
+    pub async fn create(&self, signature: Option<String>, smtp_msa: Option<String>, display_name: Option<String>, is_primary: Option<bool>, treat_as_alias: Option<bool>, reply_to_address: Option<String>, is_default: Option<bool>, verification_status: Option<String>, send_as_email: Option<String>, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Send_a<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, is_default: Option<bool>, is_primary: Option<bool>, treat_as_alias: Option<bool>, send_as_email: Option<String>, signature: Option<String>, verification_status: Option<String>, reply_to_address: Option<String>, display_name: Option<String>, smtp_msa: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, signature: Option<String>, smtp_msa: Option<String>, display_name: Option<String>, is_primary: Option<bool>, treat_as_alias: Option<bool>, reply_to_address: Option<String>, is_default: Option<bool>, verification_status: Option<String>, send_as_email: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

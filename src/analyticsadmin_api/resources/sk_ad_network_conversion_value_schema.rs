@@ -21,7 +21,7 @@ impl<'a> Sk_ad_network_conversion_value_schema<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, apply_conversion_values: Option<bool>, postback_window_three: Option<String>, postback_window_one: Option<String>, postback_window_two: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, postback_window_one: Option<String>, name: Option<String>, apply_conversion_values: Option<bool>, postback_window_two: Option<String>, postback_window_three: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Sk_ad_network_conversion_value_schema<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, apply_conversion_values: Option<bool>, postback_window_three: Option<String>, postback_window_one: Option<String>, postback_window_two: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, postback_window_one: Option<String>, name: Option<String>, apply_conversion_values: Option<bool>, postback_window_two: Option<String>, postback_window_three: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

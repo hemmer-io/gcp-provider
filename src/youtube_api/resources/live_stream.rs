@@ -21,7 +21,7 @@ impl<'a> Live_stream<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, etag: Option<String>, kind: Option<String>, status: Option<String>, snippet: Option<String>, cdn: Option<String>, id: Option<String>, content_details: Option<String>) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, id: Option<String>, content_details: Option<String>, cdn: Option<String>, kind: Option<String>, snippet: Option<String>, status: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Live_stream<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, kind: Option<String>, status: Option<String>, snippet: Option<String>, cdn: Option<String>, id: Option<String>, content_details: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, id: Option<String>, content_details: Option<String>, cdn: Option<String>, kind: Option<String>, snippet: Option<String>, status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

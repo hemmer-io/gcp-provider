@@ -21,7 +21,7 @@ impl<'a> Processor<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, satisfies_pzs: Option<bool>, state: Option<String>, type: Option<String>, processor_version_aliases: Option<Vec<String>>, process_endpoint: Option<String>, active_schema_version: Option<String>, create_time: Option<String>, default_processor_version: Option<String>, display_name: Option<String>, kms_key_name: Option<String>, name: Option<String>, satisfies_pzi: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, process_endpoint: Option<String>, display_name: Option<String>, kms_key_name: Option<String>, create_time: Option<String>, default_processor_version: Option<String>, active_schema_version: Option<String>, name: Option<String>, processor_version_aliases: Option<Vec<String>>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, state: Option<String>, type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

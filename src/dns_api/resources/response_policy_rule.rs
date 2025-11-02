@@ -21,7 +21,7 @@ impl<'a> Response_policy_rule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, rule_name: Option<String>, dns_name: Option<String>, behavior: Option<String>, kind: Option<String>, local_data: Option<String>, response_policy: String, project: String, location: String) -> Result<String> {
+    pub async fn create(&self, local_data: Option<String>, behavior: Option<String>, kind: Option<String>, dns_name: Option<String>, rule_name: Option<String>, response_policy: String, project: String, location: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Response_policy_rule<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, rule_name: Option<String>, dns_name: Option<String>, behavior: Option<String>, kind: Option<String>, local_data: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, local_data: Option<String>, behavior: Option<String>, kind: Option<String>, dns_name: Option<String>, rule_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

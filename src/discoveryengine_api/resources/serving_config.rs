@@ -1,6 +1,6 @@
 //! Serving_config resource
 //!
-//! Answer query method (streaming). It takes one AnswerQueryRequest and returns multiple AnswerQueryResponse messages in a stream.
+//! Performs a search.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Serving_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, end_user_spec: Option<String>, answer_generation_spec: Option<String>, grounding_spec: Option<String>, query_understanding_spec: Option<String>, safety_spec: Option<String>, search_spec: Option<String>, session: Option<String>, user_pseudo_id: Option<String>, query: Option<String>, asynchronous_mode: Option<bool>, related_questions_spec: Option<String>, user_labels: Option<HashMap<String, String>>, serving_config: String) -> Result<String> {
+    pub async fn create(&self, search_addon_spec: Option<String>, session: Option<String>, spell_correction_spec: Option<String>, page_token: Option<String>, language_code: Option<String>, search_as_you_type_spec: Option<String>, boost_spec: Option<String>, order_by: Option<String>, one_box_page_size: Option<i64>, page_size: Option<i64>, query: Option<String>, display_spec: Option<String>, canonical_filter: Option<String>, region_code: Option<String>, data_store_specs: Option<Vec<String>>, user_info: Option<String>, natural_language_query_understanding_spec: Option<String>, personalization_spec: Option<String>, content_search_spec: Option<String>, query_expansion_spec: Option<String>, branch: Option<String>, offset: Option<i64>, facet_specs: Option<Vec<String>>, params: Option<HashMap<String, String>>, relevance_threshold: Option<String>, embedding_spec: Option<String>, user_labels: Option<HashMap<String, String>>, serving_config: Option<String>, relevance_score_spec: Option<String>, filter: Option<String>, image_query: Option<String>, user_pseudo_id: Option<String>, session_spec: Option<String>, ranking_expression_backend: Option<String>, safe_search: Option<bool>, ranking_expression: Option<String>, serving_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Serving_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, end_user_spec: Option<String>, answer_generation_spec: Option<String>, grounding_spec: Option<String>, query_understanding_spec: Option<String>, safety_spec: Option<String>, search_spec: Option<String>, session: Option<String>, user_pseudo_id: Option<String>, query: Option<String>, asynchronous_mode: Option<bool>, related_questions_spec: Option<String>, user_labels: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, search_addon_spec: Option<String>, session: Option<String>, spell_correction_spec: Option<String>, page_token: Option<String>, language_code: Option<String>, search_as_you_type_spec: Option<String>, boost_spec: Option<String>, order_by: Option<String>, one_box_page_size: Option<i64>, page_size: Option<i64>, query: Option<String>, display_spec: Option<String>, canonical_filter: Option<String>, region_code: Option<String>, data_store_specs: Option<Vec<String>>, user_info: Option<String>, natural_language_query_understanding_spec: Option<String>, personalization_spec: Option<String>, content_search_spec: Option<String>, query_expansion_spec: Option<String>, branch: Option<String>, offset: Option<i64>, facet_specs: Option<Vec<String>>, params: Option<HashMap<String, String>>, relevance_threshold: Option<String>, embedding_spec: Option<String>, user_labels: Option<HashMap<String, String>>, serving_config: Option<String>, relevance_score_spec: Option<String>, filter: Option<String>, image_query: Option<String>, user_pseudo_id: Option<String>, session_spec: Option<String>, ranking_expression_backend: Option<String>, safe_search: Option<bool>, ranking_expression: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

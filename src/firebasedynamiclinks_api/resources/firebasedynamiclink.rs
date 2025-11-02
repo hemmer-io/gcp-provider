@@ -1,6 +1,6 @@
 //! Firebasedynamiclink resource
 //!
-//! Get iOS reopen attribution for app universal link open deeplinking.
+//! Get iOS strong/weak-match info for post-install attribution.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Firebasedynamiclink<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, bundle_id: Option<String>, requested_link: Option<String>, sdk_version: Option<String>) -> Result<String> {
+    pub async fn create(&self, unique_match_link_to_check: Option<String>, visual_style: Option<String>, app_installation_time: Option<String>, sdk_version: Option<String>, retrieval_method: Option<String>, bundle_id: Option<String>, ios_version: Option<String>, device: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Security_profiles_v2<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, description: Option<String>, google_defined: Option<bool>, profile_assessment_configs: Option<HashMap<String, String>>, create_time: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, google_defined: Option<bool>, create_time: Option<String>, name: Option<String>, description: Option<String>, profile_assessment_configs: Option<HashMap<String, String>>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Security_profiles_v2<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, description: Option<String>, google_defined: Option<bool>, profile_assessment_configs: Option<HashMap<String, String>>, create_time: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, google_defined: Option<bool>, create_time: Option<String>, name: Option<String>, description: Option<String>, profile_assessment_configs: Option<HashMap<String, String>>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

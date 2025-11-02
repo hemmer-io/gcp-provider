@@ -1,6 +1,6 @@
 //! Job resource
 //!
-//! Generates recommended data quality rules based on the results of a data profiling scan.Use the recommendations to build rules for a data quality scan.
+//! Cancel jobs running for the task resource.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

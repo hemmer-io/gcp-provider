@@ -21,7 +21,7 @@ impl<'a> Google_ads_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, can_manage_clients: Option<bool>, creator_email_address: Option<String>, create_time: Option<String>, ads_personalization_enabled: Option<bool>, customer_id: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, can_manage_clients: Option<bool>, create_time: Option<String>, creator_email_address: Option<String>, update_time: Option<String>, name: Option<String>, ads_personalization_enabled: Option<bool>, customer_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Google_ads_link<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, can_manage_clients: Option<bool>, creator_email_address: Option<String>, create_time: Option<String>, ads_personalization_enabled: Option<bool>, customer_id: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, can_manage_clients: Option<bool>, create_time: Option<String>, creator_email_address: Option<String>, update_time: Option<String>, name: Option<String>, ads_personalization_enabled: Option<bool>, customer_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Student_submission<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, add_attachments: Option<Vec<String>>, course_id: String, id: String, course_work_id: String) -> Result<String> {
+    pub async fn create(&self, add_attachments: Option<Vec<String>>, course_work_id: String, id: String, course_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

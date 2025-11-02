@@ -1,6 +1,6 @@
 //! Evaluation resource
 //!
-//! Creates evaluation of a generator.
+//! Creates evaluation of a conversation model.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Evaluation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, initial_generator: Option<String>, display_name: Option<String>, satisfies_pzi: Option<bool>, generator_evaluation_config: Option<String>, create_time: Option<String>, name: Option<String>, satisfies_pzs: Option<bool>, summarization_metrics: Option<String>, complete_time: Option<String>, evaluation_status: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, conversation_model_evaluation: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

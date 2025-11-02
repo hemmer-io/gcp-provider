@@ -34,7 +34,7 @@ impl<'a> Business_identity<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, veteran_owned: Option<String>, small_business: Option<String>, name: Option<String>, latino_owned: Option<String>, promotions_consent: Option<String>, women_owned: Option<String>, black_owned: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, latino_owned: Option<String>, promotions_consent: Option<String>, women_owned: Option<String>, black_owned: Option<String>, name: Option<String>, veteran_owned: Option<String>, small_business: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

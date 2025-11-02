@@ -1,46 +1,282 @@
-//! Rapidmigrationassessment_api Service
+//! Rapidmigrationassessment_api service for Gcp provider
 //!
-//! Auto-generated service module for rapidmigrationassessment_api
+//! This module handles all rapidmigrationassessment_api resources and their CRUD operations.
 
-pub mod resources;
+use hemmer_core::Result;
+use hemmer_provider::{ResourceInput, ResourceOutput, ResourcePlan};
 
-use crate::{ProviderError, Result};
-
-/// Service handler for rapidmigrationassessment_api
+/// Rapidmigrationassessment_api service handler
 pub struct Rapidmigrationassessment_apiService<'a> {
     provider: &'a crate::GcpProvider,
 }
 
 impl<'a> Rapidmigrationassessment_apiService<'a> {
-    pub(crate) fn new(provider: &'a crate::GcpProvider) -> Self {
+    /// Create a new service handler
+    pub fn new(provider: &'a crate::GcpProvider) -> Self {
         Self { provider }
     }
 
-    /// Get location resource handler
-    pub fn location(&self) -> resources::Location<'_> {
-        resources::Location::new(self.provider)
-    }
-    /// Get operation resource handler
-    pub fn operation(&self) -> resources::Operation<'_> {
-        resources::Operation::new(self.provider)
-    }
-    /// Get annotation resource handler
-    pub fn annotation(&self) -> resources::Annotation<'_> {
-        resources::Annotation::new(self.provider)
-    }
-    /// Get collector resource handler
-    pub fn collector(&self) -> resources::Collector<'_> {
-        resources::Collector::new(self.provider)
+    /// Plan changes to a resource
+    pub async fn plan_resource(
+        &self,
+        resource_name: &str,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        match resource_name {
+            "location" => self.plan_location(current_state, desired_input).await,
+            "annotation" => self.plan_annotation(current_state, desired_input).await,
+            "operation" => self.plan_operation(current_state, desired_input).await,
+            "collector" => self.plan_collector(current_state, desired_input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "rapidmigrationassessment_api", resource_name
+            ))),
+        }
     }
 
-}
+    /// Create a new resource
+    pub async fn create_resource(
+        &self,
+        resource_name: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "location" => self.create_location(input).await,
+            "annotation" => self.create_annotation(input).await,
+            "operation" => self.create_operation(input).await,
+            "collector" => self.create_collector(input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "rapidmigrationassessment_api", resource_name
+            ))),
+        }
+    }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+    /// Read resource state
+    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+        match resource_name {
+            "location" => self.read_location(id).await,
+            "annotation" => self.read_annotation(id).await,
+            "operation" => self.read_operation(id).await,
+            "collector" => self.read_collector(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "rapidmigrationassessment_api", resource_name
+            ))),
+        }
+    }
 
-    #[test]
-    fn test_service_creation() {
-        // Service creation test
+    /// Update an existing resource
+    pub async fn update_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "location" => self.update_location(id, input).await,
+            "annotation" => self.update_annotation(id, input).await,
+            "operation" => self.update_operation(id, input).await,
+            "collector" => self.update_collector(id, input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "rapidmigrationassessment_api", resource_name
+            ))),
+        }
+    }
+
+    /// Delete a resource
+    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+        match resource_name {
+            "location" => self.delete_location(id).await,
+            "annotation" => self.delete_annotation(id).await,
+            "operation" => self.delete_operation(id).await,
+            "collector" => self.delete_collector(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "rapidmigrationassessment_api", resource_name
+            ))),
+        }
+    }
+
+    // ========================================================================
+    // Resource-specific CRUD implementations
+    // ========================================================================
+
+    // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+    // ------------------------------------------------------------------------
+    // Annotation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a annotation resource
+    async fn plan_annotation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new annotation resource
+    async fn create_annotation(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a annotation resource
+    async fn read_annotation(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a annotation resource
+    async fn update_annotation(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a annotation resource
+    async fn delete_annotation(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+    // ------------------------------------------------------------------------
+    // Collector resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a collector resource
+    async fn plan_collector(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new collector resource
+    async fn create_collector(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a collector resource
+    async fn read_collector(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a collector resource
+    async fn update_collector(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a collector resource
+    async fn delete_collector(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
     }
 }

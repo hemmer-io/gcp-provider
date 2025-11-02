@@ -1,6 +1,6 @@
 //! Myconfig resource
 //!
-//! Request concurrent and download access restrictions.
+//! Release downloaded content access restriction.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -34,7 +34,7 @@ impl<'a> Client_state<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, asset_tags: Option<Vec<String>>, health_score: Option<String>, custom_id: Option<String>, etag: Option<String>, owner_type: Option<String>, managed: Option<String>, compliance_state: Option<String>, create_time: Option<String>, last_update_time: Option<String>, score_reason: Option<String>, name: Option<String>, key_value_pairs: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, key_value_pairs: Option<HashMap<String, String>>, last_update_time: Option<String>, managed: Option<String>, owner_type: Option<String>, create_time: Option<String>, asset_tags: Option<Vec<String>>, name: Option<String>, score_reason: Option<String>, custom_id: Option<String>, compliance_state: Option<String>, health_score: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

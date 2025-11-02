@@ -1,6 +1,6 @@
 //! Userinvitation resource
 //!
-//! Sends a UserInvitation to email. If the `UserInvitation` does not exist for this request and it is a valid request, the request creates a `UserInvitation`. **Note:** The `get` and `list` methods have a 48-hour delay where newly-created consumer accounts will not appear in the results. You can still send a `UserInvitation` to those accounts if you know the unmanaged email address and IsInvitableUser==True.
+//! Cancels a UserInvitation that was already sent.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

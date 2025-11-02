@@ -21,7 +21,7 @@ impl<'a> Smime_info<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, issuer_cn: Option<String>, encrypted_key_password: Option<String>, is_default: Option<bool>, pem: Option<String>, pkcs12: Option<String>, expiration: Option<String>, id: Option<String>, send_as_email: String, user_id: String) -> Result<String> {
+    pub async fn create(&self, pkcs12: Option<String>, issuer_cn: Option<String>, pem: Option<String>, is_default: Option<bool>, encrypted_key_password: Option<String>, id: Option<String>, expiration: Option<String>, send_as_email: String, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

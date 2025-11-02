@@ -34,7 +34,7 @@ impl<'a> Scope<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, log_scope: Option<String>, name: Option<String>, trace_scope: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, trace_scope: Option<String>, name: Option<String>, log_scope: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

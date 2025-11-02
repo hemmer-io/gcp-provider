@@ -21,7 +21,7 @@ impl<'a> Listing<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, bigquery_dataset: Option<String>, icon: Option<String>, categories: Option<Vec<String>>, allow_only_metadata_sharing: Option<bool>, name: Option<String>, primary_contact: Option<String>, request_access: Option<String>, display_name: Option<String>, description: Option<String>, publisher: Option<String>, documentation: Option<String>, data_provider: Option<String>, restricted_export_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, categories: Option<Vec<String>>, description: Option<String>, name: Option<String>, primary_contact: Option<String>, request_access: Option<String>, bigquery_dataset: Option<String>, restricted_export_config: Option<String>, documentation: Option<String>, icon: Option<String>, data_provider: Option<String>, allow_only_metadata_sharing: Option<bool>, publisher: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Listing<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, bigquery_dataset: Option<String>, icon: Option<String>, categories: Option<Vec<String>>, allow_only_metadata_sharing: Option<bool>, name: Option<String>, primary_contact: Option<String>, request_access: Option<String>, display_name: Option<String>, description: Option<String>, publisher: Option<String>, documentation: Option<String>, data_provider: Option<String>, restricted_export_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, categories: Option<Vec<String>>, description: Option<String>, name: Option<String>, primary_contact: Option<String>, request_access: Option<String>, bigquery_dataset: Option<String>, restricted_export_config: Option<String>, documentation: Option<String>, icon: Option<String>, data_provider: Option<String>, allow_only_metadata_sharing: Option<bool>, publisher: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

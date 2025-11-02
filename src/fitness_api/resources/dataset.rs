@@ -21,7 +21,7 @@ impl<'a> Dataset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, aggregate_by: Option<Vec<String>>, bucket_by_activity_type: Option<String>, bucket_by_time: Option<String>, start_time_millis: Option<String>, bucket_by_session: Option<String>, end_time_millis: Option<String>, bucket_by_activity_segment: Option<String>, filtered_data_quality_standard: Option<Vec<String>>, user_id: String) -> Result<String> {
+    pub async fn create(&self, start_time_millis: Option<String>, bucket_by_session: Option<String>, aggregate_by: Option<Vec<String>>, bucket_by_activity_type: Option<String>, bucket_by_activity_segment: Option<String>, end_time_millis: Option<String>, filtered_data_quality_standard: Option<Vec<String>>, bucket_by_time: Option<String>, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Dataset<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, aggregate_by: Option<Vec<String>>, bucket_by_activity_type: Option<String>, bucket_by_time: Option<String>, start_time_millis: Option<String>, bucket_by_session: Option<String>, end_time_millis: Option<String>, bucket_by_activity_segment: Option<String>, filtered_data_quality_standard: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, start_time_millis: Option<String>, bucket_by_session: Option<String>, aggregate_by: Option<Vec<String>>, bucket_by_activity_type: Option<String>, bucket_by_activity_segment: Option<String>, end_time_millis: Option<String>, filtered_data_quality_standard: Option<Vec<String>>, bucket_by_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -34,7 +34,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, notification_settings: Option<HashMap<String, String>>, name: Option<String>, etag: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, etag: Option<String>, notification_settings: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

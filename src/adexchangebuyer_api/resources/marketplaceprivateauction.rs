@@ -21,7 +21,7 @@ impl<'a> Marketplaceprivateauction<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, external_deal_id: Option<String>, proposal_revision_number: Option<String>, update_action: Option<String>, note: Option<String>, private_auction_id: String) -> Result<String> {
+    pub async fn create(&self, note: Option<String>, update_action: Option<String>, proposal_revision_number: Option<String>, external_deal_id: Option<String>, private_auction_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

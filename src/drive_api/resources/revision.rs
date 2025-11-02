@@ -34,7 +34,7 @@ impl<'a> Revision<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, published_outside_domain: Option<bool>, export_links: Option<HashMap<String, String>>, md5_checksum: Option<String>, kind: Option<String>, mime_type: Option<String>, keep_forever: Option<bool>, modified_time: Option<String>, published: Option<bool>, id: Option<String>, last_modifying_user: Option<String>, publish_auto: Option<bool>, size: Option<String>, original_filename: Option<String>, published_link: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, keep_forever: Option<bool>, published: Option<bool>, export_links: Option<HashMap<String, String>>, id: Option<String>, mime_type: Option<String>, modified_time: Option<String>, original_filename: Option<String>, published_link: Option<String>, published_outside_domain: Option<bool>, last_modifying_user: Option<String>, size: Option<String>, md5_checksum: Option<String>, kind: Option<String>, publish_auto: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

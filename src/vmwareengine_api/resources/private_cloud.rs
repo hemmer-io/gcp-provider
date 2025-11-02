@@ -21,7 +21,7 @@ impl<'a> Private_cloud<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, management_cluster: Option<String>, state: Option<String>, hcx: Option<String>, network_config: Option<String>, type: Option<String>, uid: Option<String>, update_time: Option<String>, vcenter: Option<String>, nsx: Option<String>, description: Option<String>, delete_time: Option<String>, create_time: Option<String>, expire_time: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, delete_time: Option<String>, description: Option<String>, create_time: Option<String>, hcx: Option<String>, nsx: Option<String>, network_config: Option<String>, state: Option<String>, type: Option<String>, vcenter: Option<String>, name: Option<String>, update_time: Option<String>, expire_time: Option<String>, management_cluster: Option<String>, uid: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Private_cloud<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, management_cluster: Option<String>, state: Option<String>, hcx: Option<String>, network_config: Option<String>, type: Option<String>, uid: Option<String>, update_time: Option<String>, vcenter: Option<String>, nsx: Option<String>, description: Option<String>, delete_time: Option<String>, create_time: Option<String>, expire_time: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, delete_time: Option<String>, description: Option<String>, create_time: Option<String>, hcx: Option<String>, nsx: Option<String>, network_config: Option<String>, state: Option<String>, type: Option<String>, vcenter: Option<String>, name: Option<String>, update_time: Option<String>, expire_time: Option<String>, management_cluster: Option<String>, uid: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

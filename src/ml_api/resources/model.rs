@@ -21,7 +21,7 @@ impl<'a> Model<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, online_prediction_logging: Option<bool>, name: Option<String>, online_prediction_console_logging: Option<bool>, default_version: Option<String>, regions: Option<Vec<String>>, etag: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, online_prediction_logging: Option<bool>, online_prediction_console_logging: Option<bool>, labels: Option<HashMap<String, String>>, default_version: Option<String>, etag: Option<String>, regions: Option<Vec<String>>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Model<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, online_prediction_logging: Option<bool>, name: Option<String>, online_prediction_console_logging: Option<bool>, default_version: Option<String>, regions: Option<Vec<String>>, etag: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, online_prediction_logging: Option<bool>, online_prediction_console_logging: Option<bool>, labels: Option<HashMap<String, String>>, default_version: Option<String>, etag: Option<String>, regions: Option<Vec<String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

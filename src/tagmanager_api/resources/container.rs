@@ -21,7 +21,7 @@ impl<'a> Container<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, domain_name: Option<Vec<String>>, fingerprint: Option<String>, tagging_server_urls: Option<Vec<String>>, usage_context: Option<Vec<String>>, features: Option<String>, account_id: Option<String>, notes: Option<String>, container_id: Option<String>, path: Option<String>, tag_ids: Option<Vec<String>>, tag_manager_url: Option<String>, public_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, fingerprint: Option<String>, public_id: Option<String>, account_id: Option<String>, name: Option<String>, features: Option<String>, tag_ids: Option<Vec<String>>, notes: Option<String>, container_id: Option<String>, tag_manager_url: Option<String>, domain_name: Option<Vec<String>>, tagging_server_urls: Option<Vec<String>>, path: Option<String>, usage_context: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Container<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, domain_name: Option<Vec<String>>, fingerprint: Option<String>, tagging_server_urls: Option<Vec<String>>, usage_context: Option<Vec<String>>, features: Option<String>, account_id: Option<String>, notes: Option<String>, container_id: Option<String>, path: Option<String>, tag_ids: Option<Vec<String>>, tag_manager_url: Option<String>, public_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, fingerprint: Option<String>, public_id: Option<String>, account_id: Option<String>, name: Option<String>, features: Option<String>, tag_ids: Option<Vec<String>>, notes: Option<String>, container_id: Option<String>, tag_manager_url: Option<String>, domain_name: Option<Vec<String>>, tagging_server_urls: Option<Vec<String>>, path: Option<String>, usage_context: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

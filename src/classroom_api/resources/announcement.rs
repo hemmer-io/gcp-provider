@@ -21,7 +21,7 @@ impl<'a> Announcement<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, individual_students_options: Option<String>, materials: Option<Vec<String>>, creator_user_id: Option<String>, assignee_mode: Option<String>, course_id: Option<String>, scheduled_time: Option<String>, text: Option<String>, update_time: Option<String>, id: Option<String>, state: Option<String>, alternate_link: Option<String>, creation_time: Option<String>, course_id: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, text: Option<String>, assignee_mode: Option<String>, creation_time: Option<String>, state: Option<String>, alternate_link: Option<String>, scheduled_time: Option<String>, id: Option<String>, individual_students_options: Option<String>, materials: Option<Vec<String>>, course_id: Option<String>, creator_user_id: Option<String>, course_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Announcement<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, individual_students_options: Option<String>, materials: Option<Vec<String>>, creator_user_id: Option<String>, assignee_mode: Option<String>, course_id: Option<String>, scheduled_time: Option<String>, text: Option<String>, update_time: Option<String>, id: Option<String>, state: Option<String>, alternate_link: Option<String>, creation_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, text: Option<String>, assignee_mode: Option<String>, creation_time: Option<String>, state: Option<String>, alternate_link: Option<String>, scheduled_time: Option<String>, id: Option<String>, individual_students_options: Option<String>, materials: Option<Vec<String>>, course_id: Option<String>, creator_user_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

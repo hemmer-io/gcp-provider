@@ -21,7 +21,7 @@ impl<'a> Domain<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, creation_time: Option<String>, domain_name: Option<String>, kind: Option<String>, etag: Option<String>, is_primary: Option<bool>, verified: Option<bool>, domain_aliases: Option<Vec<String>>, customer: String) -> Result<String> {
+    pub async fn create(&self, is_primary: Option<bool>, domain_name: Option<String>, domain_aliases: Option<Vec<String>>, etag: Option<String>, kind: Option<String>, verified: Option<bool>, creation_time: Option<String>, customer: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

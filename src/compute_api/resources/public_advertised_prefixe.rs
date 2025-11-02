@@ -22,7 +22,7 @@ impl<'a> Public_advertised_prefixe<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, pdp_scope: Option<String>, kind: Option<String>, name: Option<String>, shared_secret: Option<String>, id: Option<String>, description: Option<String>, ipv6_access_type: Option<String>, fingerprint: Option<String>, creation_timestamp: Option<String>, public_delegated_prefixs: Option<Vec<String>>, self_link: Option<String>, ip_cidr_range: Option<String>, status: Option<String>, byoip_api_version: Option<String>, dns_verification_ip: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, byoip_api_version: Option<String>, ip_cidr_range: Option<String>, pdp_scope: Option<String>, status: Option<String>, shared_secret: Option<String>, creation_timestamp: Option<String>, fingerprint: Option<String>, dns_verification_ip: Option<String>, kind: Option<String>, description: Option<String>, public_delegated_prefixs: Option<Vec<String>>, id: Option<String>, name: Option<String>, self_link: Option<String>, ipv6_access_type: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Public_advertised_prefixe<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, pdp_scope: Option<String>, kind: Option<String>, name: Option<String>, shared_secret: Option<String>, id: Option<String>, description: Option<String>, ipv6_access_type: Option<String>, fingerprint: Option<String>, creation_timestamp: Option<String>, public_delegated_prefixs: Option<Vec<String>>, self_link: Option<String>, ip_cidr_range: Option<String>, status: Option<String>, byoip_api_version: Option<String>, dns_verification_ip: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, byoip_api_version: Option<String>, ip_cidr_range: Option<String>, pdp_scope: Option<String>, status: Option<String>, shared_secret: Option<String>, creation_timestamp: Option<String>, fingerprint: Option<String>, dns_verification_ip: Option<String>, kind: Option<String>, description: Option<String>, public_delegated_prefixs: Option<Vec<String>>, id: Option<String>, name: Option<String>, self_link: Option<String>, ipv6_access_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

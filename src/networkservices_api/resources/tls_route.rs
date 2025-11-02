@@ -21,7 +21,7 @@ impl<'a> Tls_route<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, labels: Option<HashMap<String, String>>, meshes: Option<Vec<String>>, self_link: Option<String>, create_time: Option<String>, gateways: Option<Vec<String>>, name: Option<String>, rules: Option<Vec<String>>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, rules: Option<Vec<String>>, create_time: Option<String>, update_time: Option<String>, meshes: Option<Vec<String>>, labels: Option<HashMap<String, String>>, description: Option<String>, name: Option<String>, self_link: Option<String>, gateways: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Tls_route<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, labels: Option<HashMap<String, String>>, meshes: Option<Vec<String>>, self_link: Option<String>, create_time: Option<String>, gateways: Option<Vec<String>>, name: Option<String>, rules: Option<Vec<String>>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, rules: Option<Vec<String>>, create_time: Option<String>, update_time: Option<String>, meshes: Option<Vec<String>>, labels: Option<HashMap<String, String>>, description: Option<String>, name: Option<String>, self_link: Option<String>, gateways: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

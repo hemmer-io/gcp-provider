@@ -21,7 +21,7 @@ impl<'a> Region<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, shipping_eligible: Option<bool>, display_name: Option<String>, geotarget_area: Option<String>, name: Option<String>, postal_code_area: Option<String>, regional_inventory_eligible: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, postal_code_area: Option<String>, regional_inventory_eligible: Option<bool>, shipping_eligible: Option<bool>, name: Option<String>, geotarget_area: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Region<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, shipping_eligible: Option<bool>, display_name: Option<String>, geotarget_area: Option<String>, name: Option<String>, postal_code_area: Option<String>, regional_inventory_eligible: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, postal_code_area: Option<String>, regional_inventory_eligible: Option<bool>, shipping_eligible: Option<bool>, name: Option<String>, geotarget_area: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

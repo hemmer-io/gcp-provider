@@ -21,7 +21,7 @@ impl<'a> Requirement<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, resources: Option<Vec<String>>, requirement_type: Option<String>, location: String) -> Result<String> {
+    pub async fn create(&self, requirement_type: Option<String>, resources: Option<Vec<String>>, location: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

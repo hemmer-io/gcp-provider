@@ -1,6 +1,6 @@
 //! Group resource
 //!
-//! Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+//! Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, options: Option<String>, resource: String) -> Result<String> {
+    pub async fn create(&self, permissions: Option<Vec<String>>, resource: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

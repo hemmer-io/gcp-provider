@@ -21,7 +21,7 @@ impl<'a> External_access_rule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, uid: Option<String>, action: Option<String>, description: Option<String>, destination_ip_ranges: Option<Vec<String>>, priority: Option<i64>, source_ports: Option<Vec<String>>, name: Option<String>, destination_ports: Option<Vec<String>>, create_time: Option<String>, source_ip_ranges: Option<Vec<String>>, state: Option<String>, update_time: Option<String>, ip_protocol: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, uid: Option<String>, destination_ports: Option<Vec<String>>, action: Option<String>, priority: Option<i64>, source_ip_ranges: Option<Vec<String>>, ip_protocol: Option<String>, description: Option<String>, create_time: Option<String>, source_ports: Option<Vec<String>>, state: Option<String>, update_time: Option<String>, destination_ip_ranges: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> External_access_rule<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, uid: Option<String>, action: Option<String>, description: Option<String>, destination_ip_ranges: Option<Vec<String>>, priority: Option<i64>, source_ports: Option<Vec<String>>, name: Option<String>, destination_ports: Option<Vec<String>>, create_time: Option<String>, source_ip_ranges: Option<Vec<String>>, state: Option<String>, update_time: Option<String>, ip_protocol: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, uid: Option<String>, destination_ports: Option<Vec<String>>, action: Option<String>, priority: Option<i64>, source_ip_ranges: Option<Vec<String>>, ip_protocol: Option<String>, description: Option<String>, create_time: Option<String>, source_ports: Option<Vec<String>>, state: Option<String>, update_time: Option<String>, destination_ip_ranges: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

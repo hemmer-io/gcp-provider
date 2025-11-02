@@ -21,7 +21,7 @@ impl<'a> Stream<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, customer_managed_encryption_key: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, errors: Option<Vec<String>>, create_time: Option<String>, backfill_all: Option<String>, destination_config: Option<String>, display_name: Option<String>, name: Option<String>, source_config: Option<String>, backfill_none: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, backfill_none: Option<String>, create_time: Option<String>, backfill_all: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, display_name: Option<String>, errors: Option<Vec<String>>, source_config: Option<String>, state: Option<String>, update_time: Option<String>, destination_config: Option<String>, customer_managed_encryption_key: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Stream<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, customer_managed_encryption_key: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, errors: Option<Vec<String>>, create_time: Option<String>, backfill_all: Option<String>, destination_config: Option<String>, display_name: Option<String>, name: Option<String>, source_config: Option<String>, backfill_none: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, backfill_none: Option<String>, create_time: Option<String>, backfill_all: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, display_name: Option<String>, errors: Option<Vec<String>>, source_config: Option<String>, state: Option<String>, update_time: Option<String>, destination_config: Option<String>, customer_managed_encryption_key: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

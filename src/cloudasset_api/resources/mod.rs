@@ -1,7 +1,35 @@
 //! Resource modules
 
-pub mod iam_policie;
-pub use iam_policie::Iam_policie;
+pub mod effective_iam_policie;
+pub use effective_iam_policie::Effective_iam_policie;
+pub mod cloudasset;
+pub use cloudasset::Cloudasset;
+pub mod feed;
+pub use feed::Feed;
+pub mod asset;
+pub use asset::Asset;
+pub mod saved_querie;
+pub use saved_querie::Saved_querie;
+pub mod operation;
+pub use operation::Operation;
+pub mod asset;
+pub use asset::Asset;
+pub mod cloudasset;
+pub use cloudasset::Cloudasset;
+pub mod cloudasset;
+pub use cloudasset::Cloudasset;
+pub mod operation;
+pub use operation::Operation;
+pub mod folder;
+pub use folder::Folder;
+pub mod organization;
+pub use organization::Organization;
+pub mod project;
+pub use project::Project;
+pub mod operation;
+pub use operation::Operation;
 pub mod resource;
 pub use resource::Resource;
+pub mod iam_policie;
+pub use iam_policie::Iam_policie;
 

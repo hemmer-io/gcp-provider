@@ -21,7 +21,7 @@ impl<'a> Backup_plan<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, revision_id: Option<String>, log_retention_days: Option<String>, description: Option<String>, backup_vault_service_account: Option<String>, etag: Option<String>, backup_rules: Option<Vec<String>>, labels: Option<HashMap<String, String>>, supported_resource_types: Option<Vec<String>>, state: Option<String>, create_time: Option<String>, revision_name: Option<String>, resource_type: Option<String>, update_time: Option<String>, backup_vault: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, supported_resource_types: Option<Vec<String>>, backup_vault: Option<String>, etag: Option<String>, max_custom_on_demand_retention_days: Option<i64>, revision_id: Option<String>, labels: Option<HashMap<String, String>>, backup_rules: Option<Vec<String>>, name: Option<String>, description: Option<String>, resource_type: Option<String>, revision_name: Option<String>, create_time: Option<String>, backup_vault_service_account: Option<String>, log_retention_days: Option<String>, state: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup_plan<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, revision_id: Option<String>, log_retention_days: Option<String>, description: Option<String>, backup_vault_service_account: Option<String>, etag: Option<String>, backup_rules: Option<Vec<String>>, labels: Option<HashMap<String, String>>, supported_resource_types: Option<Vec<String>>, state: Option<String>, create_time: Option<String>, revision_name: Option<String>, resource_type: Option<String>, update_time: Option<String>, backup_vault: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, supported_resource_types: Option<Vec<String>>, backup_vault: Option<String>, etag: Option<String>, max_custom_on_demand_retention_days: Option<i64>, revision_id: Option<String>, labels: Option<HashMap<String, String>>, backup_rules: Option<Vec<String>>, name: Option<String>, description: Option<String>, resource_type: Option<String>, revision_name: Option<String>, create_time: Option<String>, backup_vault_service_account: Option<String>, log_retention_days: Option<String>, state: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Task<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, deleted: Option<bool>, hidden: Option<bool>, parent: Option<String>, title: Option<String>, kind: Option<String>, self_link: Option<String>, status: Option<String>, assignment_info: Option<String>, position: Option<String>, due: Option<String>, updated: Option<String>, web_view_link: Option<String>, notes: Option<String>, completed: Option<String>, etag: Option<String>, links: Option<Vec<String>>, id: Option<String>, tasklist: String) -> Result<String> {
+    pub async fn create(&self, completed: Option<String>, updated: Option<String>, kind: Option<String>, id: Option<String>, self_link: Option<String>, etag: Option<String>, assignment_info: Option<String>, status: Option<String>, links: Option<Vec<String>>, title: Option<String>, position: Option<String>, web_view_link: Option<String>, parent: Option<String>, deleted: Option<bool>, due: Option<String>, hidden: Option<bool>, notes: Option<String>, tasklist: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Task<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, deleted: Option<bool>, hidden: Option<bool>, parent: Option<String>, title: Option<String>, kind: Option<String>, self_link: Option<String>, status: Option<String>, assignment_info: Option<String>, position: Option<String>, due: Option<String>, updated: Option<String>, web_view_link: Option<String>, notes: Option<String>, completed: Option<String>, etag: Option<String>, links: Option<Vec<String>>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, completed: Option<String>, updated: Option<String>, kind: Option<String>, id: Option<String>, self_link: Option<String>, etag: Option<String>, assignment_info: Option<String>, status: Option<String>, links: Option<Vec<String>>, title: Option<String>, position: Option<String>, web_view_link: Option<String>, parent: Option<String>, deleted: Option<bool>, due: Option<String>, hidden: Option<bool>, notes: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

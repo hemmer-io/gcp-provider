@@ -1,6 +1,6 @@
 //! Processor_version resource
 //!
-//! LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in the [Document] format.
+//! Undeploys the processor version.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Processor_version<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, document_output_config: Option<String>, process_options: Option<String>, skip_human_review: Option<bool>, input_documents: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

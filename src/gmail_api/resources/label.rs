@@ -21,7 +21,7 @@ impl<'a> Label<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, threads_total: Option<i64>, messages_unread: Option<i64>, id: Option<String>, message_list_visibility: Option<String>, label_list_visibility: Option<String>, name: Option<String>, color: Option<String>, type: Option<String>, messages_total: Option<i64>, threads_unread: Option<i64>, user_id: String) -> Result<String> {
+    pub async fn create(&self, message_list_visibility: Option<String>, threads_unread: Option<i64>, messages_unread: Option<i64>, threads_total: Option<i64>, type: Option<String>, color: Option<String>, label_list_visibility: Option<String>, name: Option<String>, messages_total: Option<i64>, id: Option<String>, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Label<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, threads_total: Option<i64>, messages_unread: Option<i64>, id: Option<String>, message_list_visibility: Option<String>, label_list_visibility: Option<String>, name: Option<String>, color: Option<String>, type: Option<String>, messages_total: Option<i64>, threads_unread: Option<i64>) -> Result<()> {
+    pub async fn update(&self, id: &str, message_list_visibility: Option<String>, threads_unread: Option<i64>, messages_unread: Option<i64>, threads_total: Option<i64>, type: Option<String>, color: Option<String>, label_list_visibility: Option<String>, name: Option<String>, messages_total: Option<i64>, id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

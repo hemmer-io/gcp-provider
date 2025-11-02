@@ -21,7 +21,7 @@ impl<'a> Scan_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, starting_urls: Option<Vec<String>>, authentication: Option<String>, name: Option<String>, managed_scan: Option<bool>, user_agent: Option<String>, max_qps: Option<i64>, display_name: Option<String>, ignore_http_status_errors: Option<bool>, export_to_security_command_center: Option<String>, latest_run: Option<String>, blacklist_patterns: Option<Vec<String>>, schedule: Option<String>, risk_level: Option<String>, static_ip_scan: Option<bool>, target_platforms: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, latest_run: Option<String>, starting_urls: Option<Vec<String>>, schedule: Option<String>, authentication: Option<String>, blacklist_patterns: Option<Vec<String>>, name: Option<String>, static_ip_scan: Option<bool>, managed_scan: Option<bool>, display_name: Option<String>, max_qps: Option<i64>, target_platforms: Option<Vec<String>>, user_agent: Option<String>, risk_level: Option<String>, ignore_http_status_errors: Option<bool>, export_to_security_command_center: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Scan_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, starting_urls: Option<Vec<String>>, authentication: Option<String>, name: Option<String>, managed_scan: Option<bool>, user_agent: Option<String>, max_qps: Option<i64>, display_name: Option<String>, ignore_http_status_errors: Option<bool>, export_to_security_command_center: Option<String>, latest_run: Option<String>, blacklist_patterns: Option<Vec<String>>, schedule: Option<String>, risk_level: Option<String>, static_ip_scan: Option<bool>, target_platforms: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, latest_run: Option<String>, starting_urls: Option<Vec<String>>, schedule: Option<String>, authentication: Option<String>, blacklist_patterns: Option<Vec<String>>, name: Option<String>, static_ip_scan: Option<bool>, managed_scan: Option<bool>, display_name: Option<String>, max_qps: Option<i64>, target_platforms: Option<Vec<String>>, user_agent: Option<String>, risk_level: Option<String>, ignore_http_status_errors: Option<bool>, export_to_security_command_center: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

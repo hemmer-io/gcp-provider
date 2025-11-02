@@ -21,7 +21,7 @@ impl<'a> Orgunit<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, block_inheritance: Option<bool>, name: Option<String>, org_unit_path: Option<String>, parent_org_unit_id: Option<String>, etag: Option<String>, parent_org_unit_path: Option<String>, kind: Option<String>, org_unit_id: Option<String>, description: Option<String>, customer_id: String) -> Result<String> {
+    pub async fn create(&self, org_unit_id: Option<String>, description: Option<String>, kind: Option<String>, etag: Option<String>, name: Option<String>, parent_org_unit_id: Option<String>, org_unit_path: Option<String>, block_inheritance: Option<bool>, parent_org_unit_path: Option<String>, customer_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Orgunit<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, block_inheritance: Option<bool>, name: Option<String>, org_unit_path: Option<String>, parent_org_unit_id: Option<String>, etag: Option<String>, parent_org_unit_path: Option<String>, kind: Option<String>, org_unit_id: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, org_unit_id: Option<String>, description: Option<String>, kind: Option<String>, etag: Option<String>, name: Option<String>, parent_org_unit_id: Option<String>, org_unit_path: Option<String>, block_inheritance: Option<bool>, parent_org_unit_path: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

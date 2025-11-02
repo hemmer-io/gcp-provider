@@ -21,7 +21,7 @@ impl<'a> User<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, expiration_time: Option<String>, developer_account_permissions: Option<Vec<String>>, email: Option<String>, grants: Option<Vec<String>>, access_state: Option<String>, name: Option<String>, partial: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, partial: Option<bool>, expiration_time: Option<String>, grants: Option<Vec<String>>, developer_account_permissions: Option<Vec<String>>, access_state: Option<String>, email: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> User<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, expiration_time: Option<String>, developer_account_permissions: Option<Vec<String>>, email: Option<String>, grants: Option<Vec<String>>, access_state: Option<String>, name: Option<String>, partial: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, partial: Option<bool>, expiration_time: Option<String>, grants: Option<Vec<String>>, developer_account_permissions: Option<Vec<String>>, access_state: Option<String>, email: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

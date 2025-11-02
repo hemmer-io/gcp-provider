@@ -1,6 +1,6 @@
 //! Device resource
 //!
-//! Claims a device for a customer and adds it to zero-touch enrollment. If the device is already claimed by another customer, the call returns an error.
+//! Updates reseller metadata associated with the device. Android devices only.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Device<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, device_metadata: Option<String>, pre_provisioning_token: Option<String>, simlock_profile_id: Option<String>, section_type: Option<String>, customer_id: Option<String>, configuration_id: Option<String>, google_workspace_customer_id: Option<String>, device_identifier: Option<String>, partner_id: String) -> Result<String> {
+    pub async fn create(&self, device_metadata: Option<String>, device_id: String, metadata_owner_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

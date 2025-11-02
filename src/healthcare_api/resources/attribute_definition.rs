@@ -21,7 +21,7 @@ impl<'a> Attribute_definition<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, allowed_values: Option<Vec<String>>, category: Option<String>, description: Option<String>, name: Option<String>, consent_default_values: Option<Vec<String>>, data_mapping_default_value: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, category: Option<String>, allowed_values: Option<Vec<String>>, consent_default_values: Option<Vec<String>>, data_mapping_default_value: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Attribute_definition<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, allowed_values: Option<Vec<String>>, category: Option<String>, description: Option<String>, name: Option<String>, consent_default_values: Option<Vec<String>>, data_mapping_default_value: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, category: Option<String>, allowed_values: Option<Vec<String>>, consent_default_values: Option<Vec<String>>, data_mapping_default_value: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

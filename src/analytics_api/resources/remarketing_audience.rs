@@ -21,7 +21,7 @@ impl<'a> Remarketing_audience<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, internal_web_property_id: Option<String>, audience_definition: Option<String>, description: Option<String>, id: Option<String>, kind: Option<String>, linked_ad_accounts: Option<Vec<String>>, account_id: Option<String>, audience_type: Option<String>, linked_views: Option<Vec<String>>, name: Option<String>, updated: Option<String>, web_property_id: Option<String>, state_based_audience_definition: Option<String>, created: Option<String>, web_property_id: String, account_id: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, internal_web_property_id: Option<String>, linked_views: Option<Vec<String>>, created: Option<String>, audience_type: Option<String>, linked_ad_accounts: Option<Vec<String>>, web_property_id: Option<String>, account_id: Option<String>, audience_definition: Option<String>, description: Option<String>, name: Option<String>, state_based_audience_definition: Option<String>, updated: Option<String>, kind: Option<String>, web_property_id: String, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Remarketing_audience<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, internal_web_property_id: Option<String>, audience_definition: Option<String>, description: Option<String>, id: Option<String>, kind: Option<String>, linked_ad_accounts: Option<Vec<String>>, account_id: Option<String>, audience_type: Option<String>, linked_views: Option<Vec<String>>, name: Option<String>, updated: Option<String>, web_property_id: Option<String>, state_based_audience_definition: Option<String>, created: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, internal_web_property_id: Option<String>, linked_views: Option<Vec<String>>, created: Option<String>, audience_type: Option<String>, linked_ad_accounts: Option<Vec<String>>, web_property_id: Option<String>, account_id: Option<String>, audience_definition: Option<String>, description: Option<String>, name: Option<String>, state_based_audience_definition: Option<String>, updated: Option<String>, kind: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

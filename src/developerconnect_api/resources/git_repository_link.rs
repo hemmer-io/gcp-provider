@@ -21,7 +21,7 @@ impl<'a> Git_repository_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, git_proxy_uri: Option<String>, webhook_id: Option<String>, delete_time: Option<String>, update_time: Option<String>, annotations: Option<HashMap<String, String>>, etag: Option<String>, labels: Option<HashMap<String, String>>, reconciling: Option<bool>, uid: Option<String>, name: Option<String>, create_time: Option<String>, clone_uri: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, labels: Option<HashMap<String, String>>, uid: Option<String>, delete_time: Option<String>, etag: Option<String>, clone_uri: Option<String>, webhook_id: Option<String>, update_time: Option<String>, annotations: Option<HashMap<String, String>>, create_time: Option<String>, git_proxy_uri: Option<String>, reconciling: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

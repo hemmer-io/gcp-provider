@@ -21,7 +21,7 @@ impl<'a> Customchannel<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, code: Option<String>, name: Option<String>, kind: Option<String>, id: Option<String>, ad_client_id: String) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, name: Option<String>, id: Option<String>, code: Option<String>, ad_client_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Customchannel<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, code: Option<String>, name: Option<String>, kind: Option<String>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kind: Option<String>, name: Option<String>, id: Option<String>, code: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

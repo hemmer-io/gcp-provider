@@ -34,7 +34,7 @@ impl<'a> App<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, test_devices: Option<Vec<String>>, name: Option<String>, robo_crawler: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, test_devices: Option<Vec<String>>, name: Option<String>, robo_crawler: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Challenge resource
 //!
-//! Generates a new challenge.
+//! Verifies the challenge response.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Challenge<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self) -> Result<String> {
+    pub async fn create(&self, expected_identity: Option<String>, challenge_response: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

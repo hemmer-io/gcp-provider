@@ -21,7 +21,7 @@ impl<'a> Building<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, building_id: Option<String>, coordinates: Option<String>, address: Option<String>, floor_names: Option<Vec<String>>, etags: Option<String>, description: Option<String>, kind: Option<String>, building_name: Option<String>, customer: String) -> Result<String> {
+    pub async fn create(&self, address: Option<String>, building_id: Option<String>, description: Option<String>, kind: Option<String>, building_name: Option<String>, etags: Option<String>, floor_names: Option<Vec<String>>, coordinates: Option<String>, customer: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Building<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, building_id: Option<String>, coordinates: Option<String>, address: Option<String>, floor_names: Option<Vec<String>>, etags: Option<String>, description: Option<String>, kind: Option<String>, building_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, address: Option<String>, building_id: Option<String>, description: Option<String>, kind: Option<String>, building_name: Option<String>, etags: Option<String>, floor_names: Option<Vec<String>>, coordinates: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

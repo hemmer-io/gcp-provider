@@ -21,7 +21,7 @@ impl<'a> Full_hashe<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, threat_info: Option<String>, client: Option<String>, client_states: Option<Vec<String>>, api_client: Option<String>) -> Result<String> {
+    pub async fn create(&self, client_states: Option<Vec<String>>, threat_info: Option<String>, api_client: Option<String>, client: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

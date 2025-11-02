@@ -21,7 +21,7 @@ impl<'a> Generator<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, llm_model_settings: Option<String>, placeholders: Option<Vec<String>>, model_parameter: Option<String>, display_name: Option<String>, prompt_text: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, model_parameter: Option<String>, prompt_text: Option<String>, display_name: Option<String>, name: Option<String>, llm_model_settings: Option<String>, placeholders: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Generator<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, llm_model_settings: Option<String>, placeholders: Option<Vec<String>>, model_parameter: Option<String>, display_name: Option<String>, prompt_text: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, model_parameter: Option<String>, prompt_text: Option<String>, display_name: Option<String>, name: Option<String>, llm_model_settings: Option<String>, placeholders: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Report resource
 //!
-//! Generate report of the number of devices expiring in each month of the selected time frame. Devices are grouped by auto update expiration date and model. Further information can be found [here](https://support.google.com/chrome/a/answer/10564947).
+//! Get a list of print jobs.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

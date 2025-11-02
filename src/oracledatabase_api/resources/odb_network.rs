@@ -21,7 +21,7 @@ impl<'a> Odb_network<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, entitlement_id: Option<String>, gcp_oracle_zone: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, network: Option<String>, name: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, gcp_oracle_zone: Option<String>, state: Option<String>, entitlement_id: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, network: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

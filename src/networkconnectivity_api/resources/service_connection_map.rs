@@ -21,7 +21,7 @@ impl<'a> Service_connection_map<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, consumer_psc_configs: Option<Vec<String>>, description: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, service_class_uri: Option<String>, name: Option<String>, infrastructure: Option<String>, service_class: Option<String>, update_time: Option<String>, consumer_psc_connections: Option<Vec<String>>, producer_psc_configs: Option<Vec<String>>, token: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, consumer_psc_connections: Option<Vec<String>>, service_class_uri: Option<String>, labels: Option<HashMap<String, String>>, producer_psc_configs: Option<Vec<String>>, service_class: Option<String>, token: Option<String>, etag: Option<String>, update_time: Option<String>, name: Option<String>, consumer_psc_configs: Option<Vec<String>>, create_time: Option<String>, infrastructure: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Service_connection_map<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, consumer_psc_configs: Option<Vec<String>>, description: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, service_class_uri: Option<String>, name: Option<String>, infrastructure: Option<String>, service_class: Option<String>, update_time: Option<String>, consumer_psc_connections: Option<Vec<String>>, producer_psc_configs: Option<Vec<String>>, token: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, consumer_psc_connections: Option<Vec<String>>, service_class_uri: Option<String>, labels: Option<HashMap<String, String>>, producer_psc_configs: Option<Vec<String>>, service_class: Option<String>, token: Option<String>, etag: Option<String>, update_time: Option<String>, name: Option<String>, consumer_psc_configs: Option<Vec<String>>, create_time: Option<String>, infrastructure: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

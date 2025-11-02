@@ -21,7 +21,7 @@ impl<'a> Group_item<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, resource: Option<String>, etag: Option<String>, id: Option<String>, group_id: Option<String>, kind: Option<String>) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, group_id: Option<String>, kind: Option<String>, resource: Option<String>, etag: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

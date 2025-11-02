@@ -21,7 +21,7 @@ impl<'a> Webhook<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, disabled: Option<bool>, timeout: Option<String>, name: Option<String>, service_directory: Option<String>, generic_web_service: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, timeout: Option<String>, display_name: Option<String>, service_directory: Option<String>, disabled: Option<bool>, generic_web_service: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Webhook<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, disabled: Option<bool>, timeout: Option<String>, name: Option<String>, service_directory: Option<String>, generic_web_service: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, timeout: Option<String>, display_name: Option<String>, service_directory: Option<String>, disabled: Option<bool>, generic_web_service: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

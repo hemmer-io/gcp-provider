@@ -21,7 +21,7 @@ impl<'a> Multicloud_data_transfer_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, etag: Option<String>, destinations_active_count: Option<i64>, services: Option<HashMap<String, String>>, create_time: Option<String>, description: Option<String>, name: Option<String>, destinations_count: Option<i64>, uid: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, name: Option<String>, description: Option<String>, destinations_active_count: Option<i64>, etag: Option<String>, services: Option<HashMap<String, String>>, uid: Option<String>, update_time: Option<String>, destinations_count: Option<i64>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Multicloud_data_transfer_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, etag: Option<String>, destinations_active_count: Option<i64>, services: Option<HashMap<String, String>>, create_time: Option<String>, description: Option<String>, name: Option<String>, destinations_count: Option<i64>, uid: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, name: Option<String>, description: Option<String>, destinations_active_count: Option<i64>, etag: Option<String>, services: Option<HashMap<String, String>>, uid: Option<String>, update_time: Option<String>, destinations_count: Option<i64>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

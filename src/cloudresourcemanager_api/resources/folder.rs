@@ -21,7 +21,7 @@ impl<'a> Folder<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, tags: Option<HashMap<String, String>>, update_time: Option<String>, create_time: Option<String>, configured_capabilities: Option<Vec<String>>, delete_time: Option<String>, etag: Option<String>, management_project: Option<String>, parent: Option<String>, state: Option<String>, display_name: Option<String>, name: Option<String>) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, update_time: Option<String>, create_time: Option<String>, configured_capabilities: Option<Vec<String>>, management_project: Option<String>, name: Option<String>, etag: Option<String>, parent: Option<String>, tags: Option<HashMap<String, String>>, state: Option<String>, delete_time: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Folder<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, tags: Option<HashMap<String, String>>, update_time: Option<String>, create_time: Option<String>, configured_capabilities: Option<Vec<String>>, delete_time: Option<String>, etag: Option<String>, management_project: Option<String>, parent: Option<String>, state: Option<String>, display_name: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, update_time: Option<String>, create_time: Option<String>, configured_capabilities: Option<Vec<String>>, management_project: Option<String>, name: Option<String>, etag: Option<String>, parent: Option<String>, tags: Option<HashMap<String, String>>, state: Option<String>, delete_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

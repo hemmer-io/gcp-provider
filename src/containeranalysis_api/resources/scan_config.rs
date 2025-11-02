@@ -34,7 +34,7 @@ impl<'a> Scan_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, name: Option<String>, enabled: Option<bool>, update_time: Option<String>, create_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, create_time: Option<String>, enabled: Option<bool>, update_time: Option<String>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

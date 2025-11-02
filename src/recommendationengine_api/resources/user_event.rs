@@ -1,6 +1,6 @@
 //! User_event resource
 //!
-//! Writes a single user event.
+//! Bulk import of User events. Request processing might be synchronous. Events that already exist are skipped. Use this method for backfilling historical user events. Operation.response is of type ImportResponse. Note that it is possible for a subset of the items to be successfully inserted. Operation.metadata is of type ImportMetadata.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> User_event<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, event_type: Option<String>, event_source: Option<String>, event_time: Option<String>, user_info: Option<String>, event_detail: Option<String>, product_event_detail: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, input_config: Option<String>, request_id: Option<String>, errors_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

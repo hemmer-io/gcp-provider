@@ -21,7 +21,7 @@ impl<'a> Intercept_deployment_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, nested_deployments: Option<Vec<String>>, name: Option<String>, connected_endpoint_groups: Option<Vec<String>>, description: Option<String>, update_time: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, network: Option<String>, reconciling: Option<bool>, locations: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, reconciling: Option<bool>, locations: Option<Vec<String>>, state: Option<String>, update_time: Option<String>, connected_endpoint_groups: Option<Vec<String>>, name: Option<String>, description: Option<String>, network: Option<String>, create_time: Option<String>, nested_deployments: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Intercept_deployment_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, nested_deployments: Option<Vec<String>>, name: Option<String>, connected_endpoint_groups: Option<Vec<String>>, description: Option<String>, update_time: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, network: Option<String>, reconciling: Option<bool>, locations: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, reconciling: Option<bool>, locations: Option<Vec<String>>, state: Option<String>, update_time: Option<String>, connected_endpoint_groups: Option<Vec<String>>, name: Option<String>, description: Option<String>, network: Option<String>, create_time: Option<String>, nested_deployments: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

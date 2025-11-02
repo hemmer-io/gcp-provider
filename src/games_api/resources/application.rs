@@ -1,6 +1,6 @@
 //! Application resource
 //!
-//! Returns a URL for the requested end point type.
+//! Indicate that the currently authenticated user is playing your application.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

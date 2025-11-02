@@ -21,7 +21,7 @@ impl<'a> Mobile_friendly_test<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, url: Option<String>, request_screenshot: Option<bool>) -> Result<String> {
+    pub async fn create(&self, request_screenshot: Option<bool>, url: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

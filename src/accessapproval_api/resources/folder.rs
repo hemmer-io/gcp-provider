@@ -34,7 +34,7 @@ impl<'a> Folder<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, prefer_no_broad_approval_requests: Option<bool>, effective_approval_policy: Option<String>, enrolled_ancestor: Option<bool>, name: Option<String>, request_scope_max_width_preference: Option<String>, notification_emails: Option<Vec<String>>, enrolled_services: Option<Vec<String>>, active_key_version: Option<String>, ancestor_has_active_key_version: Option<bool>, preferred_request_expiration_days: Option<i64>, require_customer_visible_justification: Option<bool>, approval_policy: Option<String>, invalid_key_version: Option<bool>, notification_pubsub_topic: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, require_customer_visible_justification: Option<bool>, approval_policy: Option<String>, enrolled_ancestor: Option<bool>, enrolled_services: Option<Vec<String>>, invalid_key_version: Option<bool>, notification_pubsub_topic: Option<String>, prefer_no_broad_approval_requests: Option<bool>, name: Option<String>, active_key_version: Option<String>, ancestor_has_active_key_version: Option<bool>, effective_approval_policy: Option<String>, notification_emails: Option<Vec<String>>, preferred_request_expiration_days: Option<i64>, request_scope_max_width_preference: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

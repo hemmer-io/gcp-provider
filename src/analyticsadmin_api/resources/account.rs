@@ -21,7 +21,7 @@ impl<'a> Account<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, limit: Option<String>, date_ranges: Option<Vec<String>>, metric_filter: Option<String>, expand_groups: Option<bool>, offset: Option<String>, include_all_users: Option<bool>, time_zone: Option<String>, dimensions: Option<Vec<String>>, metrics: Option<Vec<String>>, order_bys: Option<Vec<String>>, dimension_filter: Option<String>, return_entity_quota: Option<bool>, entity: String) -> Result<String> {
+    pub async fn create(&self, dimension_filter: Option<String>, expand_groups: Option<bool>, metrics: Option<Vec<String>>, order_bys: Option<Vec<String>>, time_zone: Option<String>, metric_filter: Option<String>, offset: Option<String>, include_all_users: Option<bool>, limit: Option<String>, dimensions: Option<Vec<String>>, return_entity_quota: Option<bool>, date_ranges: Option<Vec<String>>, entity: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Account<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, limit: Option<String>, date_ranges: Option<Vec<String>>, metric_filter: Option<String>, expand_groups: Option<bool>, offset: Option<String>, include_all_users: Option<bool>, time_zone: Option<String>, dimensions: Option<Vec<String>>, metrics: Option<Vec<String>>, order_bys: Option<Vec<String>>, dimension_filter: Option<String>, return_entity_quota: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, dimension_filter: Option<String>, expand_groups: Option<bool>, metrics: Option<Vec<String>>, order_bys: Option<Vec<String>>, time_zone: Option<String>, metric_filter: Option<String>, offset: Option<String>, include_all_users: Option<bool>, limit: Option<String>, dimensions: Option<Vec<String>>, return_entity_quota: Option<bool>, date_ranges: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

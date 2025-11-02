@@ -21,7 +21,7 @@ impl<'a> Current_condition<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, universal_aqi: Option<bool>, extra_computations: Option<Vec<String>>, language_code: Option<String>, custom_local_aqis: Option<Vec<String>>, uaqi_color_palette: Option<String>, location: Option<String>) -> Result<String> {
+    pub async fn create(&self, custom_local_aqis: Option<Vec<String>>, extra_computations: Option<Vec<String>>, universal_aqi: Option<bool>, location: Option<String>, uaqi_color_palette: Option<String>, language_code: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

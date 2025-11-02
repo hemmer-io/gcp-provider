@@ -21,7 +21,7 @@ impl<'a> Audience<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, membership_duration_days: Option<i64>, ads_personalization_enabled: Option<bool>, event_trigger: Option<String>, filter_clauses: Option<Vec<String>>, exclusion_duration_mode: Option<String>, create_time: Option<String>, display_name: Option<String>, name: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, event_trigger: Option<String>, exclusion_duration_mode: Option<String>, description: Option<String>, ads_personalization_enabled: Option<bool>, membership_duration_days: Option<i64>, create_time: Option<String>, filter_clauses: Option<Vec<String>>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Audience<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, membership_duration_days: Option<i64>, ads_personalization_enabled: Option<bool>, event_trigger: Option<String>, filter_clauses: Option<Vec<String>>, exclusion_duration_mode: Option<String>, create_time: Option<String>, display_name: Option<String>, name: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, event_trigger: Option<String>, exclusion_duration_mode: Option<String>, description: Option<String>, ads_personalization_enabled: Option<bool>, membership_duration_days: Option<i64>, create_time: Option<String>, filter_clauses: Option<Vec<String>>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Project<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, runtime_location: Option<String>, disable_vpc_peering: Option<bool>, analytics_region: Option<String>, authorized_network: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, authorized_network: Option<String>, analytics_region: Option<String>, disable_vpc_peering: Option<bool>, runtime_location: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

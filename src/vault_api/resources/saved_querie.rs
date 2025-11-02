@@ -21,7 +21,7 @@ impl<'a> Saved_querie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, saved_query_id: Option<String>, create_time: Option<String>, query: Option<String>, display_name: Option<String>, matter_id: Option<String>, matter_id: String) -> Result<String> {
+    pub async fn create(&self, saved_query_id: Option<String>, matter_id: Option<String>, display_name: Option<String>, create_time: Option<String>, query: Option<String>, matter_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

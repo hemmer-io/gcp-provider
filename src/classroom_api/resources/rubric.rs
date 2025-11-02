@@ -21,7 +21,7 @@ impl<'a> Rubric<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, criteria: Option<Vec<String>>, id: Option<String>, source_spreadsheet_id: Option<String>, update_time: Option<String>, course_id: Option<String>, creation_time: Option<String>, course_work_id: Option<String>, course_id: String, course_work_id: String) -> Result<String> {
+    pub async fn create(&self, criteria: Option<Vec<String>>, id: Option<String>, source_spreadsheet_id: Option<String>, course_work_id: Option<String>, creation_time: Option<String>, course_id: Option<String>, update_time: Option<String>, course_id: String, course_work_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Rubric<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, criteria: Option<Vec<String>>, id: Option<String>, source_spreadsheet_id: Option<String>, update_time: Option<String>, course_id: Option<String>, creation_time: Option<String>, course_work_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, criteria: Option<Vec<String>>, id: Option<String>, source_spreadsheet_id: Option<String>, course_work_id: Option<String>, creation_time: Option<String>, course_id: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

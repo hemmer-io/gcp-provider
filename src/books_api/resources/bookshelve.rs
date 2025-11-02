@@ -1,6 +1,6 @@
 //! Bookshelve resource
 //!
-//! Adds a volume to a bookshelf.
+//! Clears all volumes from a bookshelf.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

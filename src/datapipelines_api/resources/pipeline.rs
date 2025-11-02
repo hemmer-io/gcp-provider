@@ -21,7 +21,7 @@ impl<'a> Pipeline<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, workload: Option<String>, create_time: Option<String>, job_count: Option<i64>, name: Option<String>, schedule_info: Option<String>, display_name: Option<String>, pipeline_sources: Option<HashMap<String, String>>, scheduler_service_account_email: Option<String>, last_update_time: Option<String>, type: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, scheduler_service_account_email: Option<String>, schedule_info: Option<String>, type: Option<String>, pipeline_sources: Option<HashMap<String, String>>, workload: Option<String>, display_name: Option<String>, last_update_time: Option<String>, state: Option<String>, name: Option<String>, job_count: Option<i64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Pipeline<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, workload: Option<String>, create_time: Option<String>, job_count: Option<i64>, name: Option<String>, schedule_info: Option<String>, display_name: Option<String>, pipeline_sources: Option<HashMap<String, String>>, scheduler_service_account_email: Option<String>, last_update_time: Option<String>, type: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, scheduler_service_account_email: Option<String>, schedule_info: Option<String>, type: Option<String>, pipeline_sources: Option<HashMap<String, String>>, workload: Option<String>, display_name: Option<String>, last_update_time: Option<String>, state: Option<String>, name: Option<String>, job_count: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

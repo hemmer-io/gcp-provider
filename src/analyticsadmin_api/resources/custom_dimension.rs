@@ -21,7 +21,7 @@ impl<'a> Custom_dimension<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, disallow_ads_personalization: Option<bool>, display_name: Option<String>, parameter_name: Option<String>, description: Option<String>, name: Option<String>, scope: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, parameter_name: Option<String>, scope: Option<String>, display_name: Option<String>, description: Option<String>, name: Option<String>, disallow_ads_personalization: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Custom_dimension<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, disallow_ads_personalization: Option<bool>, display_name: Option<String>, parameter_name: Option<String>, description: Option<String>, name: Option<String>, scope: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, parameter_name: Option<String>, scope: Option<String>, display_name: Option<String>, description: Option<String>, name: Option<String>, disallow_ads_personalization: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

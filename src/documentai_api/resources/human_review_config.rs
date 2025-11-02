@@ -21,7 +21,7 @@ impl<'a> Human_review_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, priority: Option<String>, document_schema: Option<String>, enable_schema_validation: Option<bool>, inline_document: Option<String>, human_review_config: String) -> Result<String> {
+    pub async fn create(&self, enable_schema_validation: Option<bool>, document_schema: Option<String>, priority: Option<String>, inline_document: Option<String>, human_review_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

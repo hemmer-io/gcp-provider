@@ -21,7 +21,7 @@ impl<'a> Cutover_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, progress: Option<i64>, compute_engine_vm_details: Option<String>, steps: Option<Vec<String>>, compute_engine_target_details: Option<String>, error: Option<String>, target_details: Option<String>, name: Option<String>, create_time: Option<String>, progress_percent: Option<i64>, state: Option<String>, state_message: Option<String>, end_time: Option<String>, compute_engine_disks_target_details: Option<String>, state_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, end_time: Option<String>, progress_percent: Option<i64>, state_message: Option<String>, state: Option<String>, state_time: Option<String>, compute_engine_disks_target_details: Option<String>, compute_engine_target_details: Option<String>, compute_engine_vm_details: Option<String>, create_time: Option<String>, steps: Option<Vec<String>>, error: Option<String>, target_details: Option<String>, progress: Option<i64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Note<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, release_notes: Option<String>, mobilesdk_app_id: String, release_id: String) -> Result<String> {
+    pub async fn create(&self, release_notes: Option<String>, release_id: String, mobilesdk_app_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

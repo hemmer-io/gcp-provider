@@ -34,7 +34,7 @@ impl<'a> Permission<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, issuer_id: Option<String>, permissions: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, permissions: Option<Vec<String>>, issuer_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

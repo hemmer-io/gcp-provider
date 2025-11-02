@@ -34,7 +34,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, name: Option<String>, size: Option<String>, preferred_tables: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, preferred_tables: Option<Vec<String>>, name: Option<String>, size: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

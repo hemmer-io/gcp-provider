@@ -21,7 +21,7 @@ impl<'a> Asset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, filter: Option<String>, page_token: Option<String>, compare_duration: Option<String>, group_by: Option<String>, page_size: Option<i64>, read_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, filter: Option<String>, group_by: Option<String>, page_size: Option<i64>, read_time: Option<String>, compare_duration: Option<String>, page_token: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Asset<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, filter: Option<String>, page_token: Option<String>, compare_duration: Option<String>, group_by: Option<String>, page_size: Option<i64>, read_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, filter: Option<String>, group_by: Option<String>, page_size: Option<i64>, read_time: Option<String>, compare_duration: Option<String>, page_token: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

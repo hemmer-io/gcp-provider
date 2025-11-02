@@ -1,42 +1,233 @@
-//! Lifesciences_api Service
+//! Lifesciences_api service for Gcp provider
 //!
-//! Auto-generated service module for lifesciences_api
+//! This module handles all lifesciences_api resources and their CRUD operations.
 
-pub mod resources;
+use hemmer_core::Result;
+use hemmer_provider::{ResourceInput, ResourceOutput, ResourcePlan};
 
-use crate::{ProviderError, Result};
-
-/// Service handler for lifesciences_api
+/// Lifesciences_api service handler
 pub struct Lifesciences_apiService<'a> {
     provider: &'a crate::GcpProvider,
 }
 
 impl<'a> Lifesciences_apiService<'a> {
-    pub(crate) fn new(provider: &'a crate::GcpProvider) -> Self {
+    /// Create a new service handler
+    pub fn new(provider: &'a crate::GcpProvider) -> Self {
         Self { provider }
     }
 
-    /// Get location resource handler
-    pub fn location(&self) -> resources::Location<'_> {
-        resources::Location::new(self.provider)
-    }
-    /// Get pipeline resource handler
-    pub fn pipeline(&self) -> resources::Pipeline<'_> {
-        resources::Pipeline::new(self.provider)
-    }
-    /// Get operation resource handler
-    pub fn operation(&self) -> resources::Operation<'_> {
-        resources::Operation::new(self.provider)
+    /// Plan changes to a resource
+    pub async fn plan_resource(
+        &self,
+        resource_name: &str,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        match resource_name {
+            "operation" => self.plan_operation(current_state, desired_input).await,
+            "location" => self.plan_location(current_state, desired_input).await,
+            "pipeline" => self.plan_pipeline(current_state, desired_input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "lifesciences_api", resource_name
+            ))),
+        }
     }
 
-}
+    /// Create a new resource
+    pub async fn create_resource(
+        &self,
+        resource_name: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "operation" => self.create_operation(input).await,
+            "location" => self.create_location(input).await,
+            "pipeline" => self.create_pipeline(input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "lifesciences_api", resource_name
+            ))),
+        }
+    }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+    /// Read resource state
+    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+        match resource_name {
+            "operation" => self.read_operation(id).await,
+            "location" => self.read_location(id).await,
+            "pipeline" => self.read_pipeline(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "lifesciences_api", resource_name
+            ))),
+        }
+    }
 
-    #[test]
-    fn test_service_creation() {
-        // Service creation test
+    /// Update an existing resource
+    pub async fn update_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        match resource_name {
+            "operation" => self.update_operation(id, input).await,
+            "location" => self.update_location(id, input).await,
+            "pipeline" => self.update_pipeline(id, input).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "lifesciences_api", resource_name
+            ))),
+        }
+    }
+
+    /// Delete a resource
+    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+        match resource_name {
+            "operation" => self.delete_operation(id).await,
+            "location" => self.delete_location(id).await,
+            "pipeline" => self.delete_pipeline(id).await,
+            _ => Err(hemmer_core::HemmerError::Provider(format!(
+                "Unknown resource type: {}.{}",
+                "lifesciences_api", resource_name
+            ))),
+        }
+    }
+
+    // ========================================================================
+    // Resource-specific CRUD implementations
+    // ========================================================================
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+    // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+    // ------------------------------------------------------------------------
+    // Pipeline resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a pipeline resource
+    async fn plan_pipeline(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new pipeline resource
+    async fn create_pipeline(&self, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id("placeholder-id"))
+    }
+
+    /// Read a pipeline resource
+    async fn read_pipeline(&self, id: &str) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Update a pipeline resource
+    async fn update_pipeline(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new().with_id(id))
+    }
+
+    /// Delete a pipeline resource
+    async fn delete_pipeline(&self, id: &str) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
     }
 }

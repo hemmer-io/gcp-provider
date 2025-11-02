@@ -21,7 +21,7 @@ impl<'a> Expanded_data_set<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, data_collection_start_time: Option<String>, metric_names: Option<Vec<String>>, dimension_names: Option<Vec<String>>, display_name: Option<String>, name: Option<String>, dimension_filter_expression: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, data_collection_start_time: Option<String>, dimension_filter_expression: Option<String>, description: Option<String>, dimension_names: Option<Vec<String>>, display_name: Option<String>, metric_names: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Expanded_data_set<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, data_collection_start_time: Option<String>, metric_names: Option<Vec<String>>, dimension_names: Option<Vec<String>>, display_name: Option<String>, name: Option<String>, dimension_filter_expression: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, data_collection_start_time: Option<String>, dimension_filter_expression: Option<String>, description: Option<String>, dimension_names: Option<Vec<String>>, display_name: Option<String>, metric_names: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

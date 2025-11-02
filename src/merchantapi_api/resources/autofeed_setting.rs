@@ -34,7 +34,7 @@ impl<'a> Autofeed_setting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, eligible: Option<bool>, enable_products: Option<bool>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, enable_products: Option<bool>, eligible: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

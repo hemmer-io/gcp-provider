@@ -21,7 +21,7 @@ impl<'a> Example<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, language_code: Option<String>, display_name: Option<String>, description: Option<String>, conversation_state: Option<String>, update_time: Option<String>, playbook_output: Option<String>, name: Option<String>, playbook_input: Option<String>, token_count: Option<String>, actions: Option<Vec<String>>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, update_time: Option<String>, language_code: Option<String>, actions: Option<Vec<String>>, conversation_state: Option<String>, description: Option<String>, name: Option<String>, playbook_output: Option<String>, playbook_input: Option<String>, token_count: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Example<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, language_code: Option<String>, display_name: Option<String>, description: Option<String>, conversation_state: Option<String>, update_time: Option<String>, playbook_output: Option<String>, name: Option<String>, playbook_input: Option<String>, token_count: Option<String>, actions: Option<Vec<String>>, create_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, update_time: Option<String>, language_code: Option<String>, actions: Option<Vec<String>>, conversation_state: Option<String>, description: Option<String>, name: Option<String>, playbook_output: Option<String>, playbook_input: Option<String>, token_count: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

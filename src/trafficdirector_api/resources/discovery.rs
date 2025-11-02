@@ -21,7 +21,7 @@ impl<'a> Discovery<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, exclude_resource_contents: Option<bool>, node: Option<String>, node_matchers: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, exclude_resource_contents: Option<bool>, node_matchers: Option<Vec<String>>, node: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

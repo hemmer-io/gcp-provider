@@ -1,6 +1,6 @@
 //! Entitlement resource
 //!
-//! Rejects an entitlement plan change that is in the EntitlementState.ENTITLEMENT_PENDING_PLAN_CHANGE_APPROVAL state. This method is invoked by the provider to reject the plan change on the entitlement resource.
+//! Rejects an entitlement that is in the EntitlementState.ENTITLEMENT_ACTIVATION_REQUESTED state. This method is invoked by the provider to reject the creation of the entitlement resource.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Entitlement<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, reason: Option<String>, pending_plan_name: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, reason: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Entitlement<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, reason: Option<String>, pending_plan_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, reason: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

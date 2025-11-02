@@ -21,7 +21,7 @@ impl<'a> Utilization_report<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, frame_end_time: Option<String>, state_time: Option<String>, create_time: Option<String>, name: Option<String>, time_frame: Option<String>, state: Option<String>, vm_count: Option<i64>, vms_count: Option<i64>, display_name: Option<String>, error: Option<String>, vms: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, error: Option<String>, name: Option<String>, time_frame: Option<String>, display_name: Option<String>, frame_end_time: Option<String>, vm_count: Option<i64>, vms_count: Option<i64>, create_time: Option<String>, state: Option<String>, vms: Option<Vec<String>>, state_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Notification_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, filter: Option<String>, customer: Option<String>, google_cloud_pubsub_topic: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, filter: Option<String>, google_cloud_pubsub_topic: Option<String>, customer: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

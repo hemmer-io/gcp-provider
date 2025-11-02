@@ -21,7 +21,7 @@ impl<'a> Printer<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, uri: Option<String>, org_unit_id: Option<String>, use_driverless_config: Option<bool>, make_and_model: Option<String>, name: Option<String>, create_time: Option<String>, auxiliary_messages: Option<Vec<String>>, id: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, auxiliary_messages: Option<Vec<String>>, display_name: Option<String>, uri: Option<String>, org_unit_id: Option<String>, description: Option<String>, use_driverless_config: Option<bool>, id: Option<String>, name: Option<String>, make_and_model: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Printer<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, uri: Option<String>, org_unit_id: Option<String>, use_driverless_config: Option<bool>, make_and_model: Option<String>, name: Option<String>, create_time: Option<String>, auxiliary_messages: Option<Vec<String>>, id: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, auxiliary_messages: Option<Vec<String>>, display_name: Option<String>, uri: Option<String>, org_unit_id: Option<String>, description: Option<String>, use_driverless_config: Option<bool>, id: Option<String>, name: Option<String>, make_and_model: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

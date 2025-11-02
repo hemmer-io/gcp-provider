@@ -21,7 +21,7 @@ impl<'a> Import_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, inline_payload: Option<String>, execution_report: Option<String>, create_time: Option<String>, asset_source: Option<String>, update_time: Option<String>, display_name: Option<String>, labels: Option<HashMap<String, String>>, validation_report: Option<String>, gcs_payload: Option<String>, name: Option<String>, complete_time: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, execution_report: Option<String>, complete_time: Option<String>, display_name: Option<String>, inline_payload: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, validation_report: Option<String>, asset_source: Option<String>, create_time: Option<String>, state: Option<String>, name: Option<String>, gcs_payload: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Import_job<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, inline_payload: Option<String>, execution_report: Option<String>, create_time: Option<String>, asset_source: Option<String>, update_time: Option<String>, display_name: Option<String>, labels: Option<HashMap<String, String>>, validation_report: Option<String>, gcs_payload: Option<String>, name: Option<String>, complete_time: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, execution_report: Option<String>, complete_time: Option<String>, display_name: Option<String>, inline_payload: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, validation_report: Option<String>, asset_source: Option<String>, create_time: Option<String>, state: Option<String>, name: Option<String>, gcs_payload: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

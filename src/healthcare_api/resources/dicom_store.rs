@@ -21,7 +21,7 @@ impl<'a> Dicom_store<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, labels: Option<HashMap<String, String>>, notification_configs: Option<Vec<String>>, stream_configs: Option<Vec<String>>, notification_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, notification_configs: Option<Vec<String>>, labels: Option<HashMap<String, String>>, stream_configs: Option<Vec<String>>, notification_config: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Dicom_store<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, labels: Option<HashMap<String, String>>, notification_configs: Option<Vec<String>>, stream_configs: Option<Vec<String>>, notification_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, notification_configs: Option<Vec<String>>, labels: Option<HashMap<String, String>>, stream_configs: Option<Vec<String>>, notification_config: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

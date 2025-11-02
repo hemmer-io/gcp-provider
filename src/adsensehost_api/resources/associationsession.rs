@@ -1,6 +1,6 @@
 //! Associationsession resource
 //!
-//! Create an association session for initiating an association with an AdSense user.
+//! Verify an association session after the association callback returns from AdSense signup.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

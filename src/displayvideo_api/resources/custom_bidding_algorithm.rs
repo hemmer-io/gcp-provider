@@ -21,7 +21,7 @@ impl<'a> Custom_bidding_algorithm<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, custom_bidding_algorithm_type: Option<String>, display_name: Option<String>, shared_advertiser_ids: Option<Vec<String>>, name: Option<String>, entity_status: Option<String>, custom_bidding_algorithm_id: Option<String>, advertiser_id: Option<String>, partner_id: Option<String>, model_details: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, custom_bidding_algorithm_id: Option<String>, custom_bidding_algorithm_type: Option<String>, name: Option<String>, shared_advertiser_ids: Option<Vec<String>>, partner_id: Option<String>, entity_status: Option<String>, advertiser_id: Option<String>, display_name: Option<String>, model_details: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Custom_bidding_algorithm<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, custom_bidding_algorithm_type: Option<String>, display_name: Option<String>, shared_advertiser_ids: Option<Vec<String>>, name: Option<String>, entity_status: Option<String>, custom_bidding_algorithm_id: Option<String>, advertiser_id: Option<String>, partner_id: Option<String>, model_details: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, custom_bidding_algorithm_id: Option<String>, custom_bidding_algorithm_type: Option<String>, name: Option<String>, shared_advertiser_ids: Option<Vec<String>>, partner_id: Option<String>, entity_status: Option<String>, advertiser_id: Option<String>, display_name: Option<String>, model_details: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

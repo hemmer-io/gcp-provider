@@ -21,7 +21,7 @@ impl<'a> Calendar<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, floor_section: Option<String>, etags: Option<String>, kind: Option<String>, resource_name: Option<String>, generated_resource_name: Option<String>, resource_type: Option<String>, feature_instances: Option<String>, capacity: Option<i64>, floor_name: Option<String>, user_visible_description: Option<String>, resource_email: Option<String>, resource_id: Option<String>, building_id: Option<String>, resource_category: Option<String>, resource_description: Option<String>, customer: String) -> Result<String> {
+    pub async fn create(&self, capacity: Option<i64>, kind: Option<String>, user_visible_description: Option<String>, generated_resource_name: Option<String>, etags: Option<String>, resource_description: Option<String>, building_id: Option<String>, resource_email: Option<String>, resource_name: Option<String>, resource_type: Option<String>, resource_id: Option<String>, floor_name: Option<String>, floor_section: Option<String>, feature_instances: Option<String>, resource_category: Option<String>, customer: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Calendar<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, floor_section: Option<String>, etags: Option<String>, kind: Option<String>, resource_name: Option<String>, generated_resource_name: Option<String>, resource_type: Option<String>, feature_instances: Option<String>, capacity: Option<i64>, floor_name: Option<String>, user_visible_description: Option<String>, resource_email: Option<String>, resource_id: Option<String>, building_id: Option<String>, resource_category: Option<String>, resource_description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, capacity: Option<i64>, kind: Option<String>, user_visible_description: Option<String>, generated_resource_name: Option<String>, etags: Option<String>, resource_description: Option<String>, building_id: Option<String>, resource_email: Option<String>, resource_name: Option<String>, resource_type: Option<String>, resource_id: Option<String>, floor_name: Option<String>, floor_section: Option<String>, feature_instances: Option<String>, resource_category: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

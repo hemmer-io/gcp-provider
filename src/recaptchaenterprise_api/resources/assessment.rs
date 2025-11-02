@@ -21,7 +21,7 @@ impl<'a> Assessment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, private_password_leak_verification: Option<String>, risk_analysis: Option<String>, firewall_policy_assessment: Option<String>, fraud_prevention_assessment: Option<String>, account_verification: Option<String>, account_defender_assessment: Option<String>, event: Option<String>, token_properties: Option<String>, assessment_environment: Option<String>, phone_fraud_assessment: Option<String>, fraud_signals: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, private_password_leak_verification: Option<String>, event: Option<String>, name: Option<String>, phone_fraud_assessment: Option<String>, assessment_environment: Option<String>, fraud_signals: Option<String>, firewall_policy_assessment: Option<String>, risk_analysis: Option<String>, token_properties: Option<String>, account_verification: Option<String>, account_defender_assessment: Option<String>, fraud_prevention_assessment: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

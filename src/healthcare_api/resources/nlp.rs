@@ -21,7 +21,7 @@ impl<'a> Nlp<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, alternative_output_format: Option<String>, licensed_vocabularies: Option<Vec<String>>, document_content: Option<String>, nlp_service: String) -> Result<String> {
+    pub async fn create(&self, licensed_vocabularies: Option<Vec<String>>, document_content: Option<String>, alternative_output_format: Option<String>, nlp_service: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

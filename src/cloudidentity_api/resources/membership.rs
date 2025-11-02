@@ -21,7 +21,7 @@ impl<'a> Membership<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, member_key: Option<String>, name: Option<String>, preferred_member_key: Option<String>, roles: Option<Vec<String>>, update_time: Option<String>, type: Option<String>, delivery_setting: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, update_time: Option<String>, preferred_member_key: Option<String>, member_key: Option<String>, type: Option<String>, delivery_setting: Option<String>, roles: Option<Vec<String>>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

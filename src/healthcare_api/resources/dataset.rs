@@ -21,7 +21,7 @@ impl<'a> Dataset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, encryption_spec: Option<String>, satisfies_pzs: Option<bool>, satisfies_pzi: Option<bool>, time_zone: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, satisfies_pzi: Option<bool>, encryption_spec: Option<String>, satisfies_pzs: Option<bool>, time_zone: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Dataset<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, encryption_spec: Option<String>, satisfies_pzs: Option<bool>, satisfies_pzi: Option<bool>, time_zone: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, satisfies_pzi: Option<bool>, encryption_spec: Option<String>, satisfies_pzs: Option<bool>, time_zone: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

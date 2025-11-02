@@ -21,7 +21,7 @@ impl<'a> Video<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, features: Option<Vec<String>>, input_content: Option<String>, output_uri: Option<String>, location_id: Option<String>, video_context: Option<String>, input_uri: Option<String>) -> Result<String> {
+    pub async fn create(&self, features: Option<Vec<String>>, location_id: Option<String>, output_uri: Option<String>, input_uri: Option<String>, video_context: Option<String>, input_content: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

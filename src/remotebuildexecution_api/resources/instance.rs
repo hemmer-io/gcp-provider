@@ -21,7 +21,7 @@ impl<'a> Instance<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, instance: Option<String>, instance_id: Option<String>, parent: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, instance_id: Option<String>, instance: Option<String>, parent: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Instance<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, instance: Option<String>, instance_id: Option<String>, parent: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, instance_id: Option<String>, instance: Option<String>, parent: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

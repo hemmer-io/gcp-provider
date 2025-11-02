@@ -1,6 +1,6 @@
 //! Model resource
 //!
-//! Generate content with multimodal inputs with streaming support.
+//! Generate content with multimodal inputs.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Model<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, system_instruction: Option<String>, tool_config: Option<String>, generation_config: Option<String>, tools: Option<Vec<String>>, labels: Option<HashMap<String, String>>, safety_settings: Option<Vec<String>>, contents: Option<Vec<String>>, cached_content: Option<String>, model_armor_config: Option<String>, model: String) -> Result<String> {
+    pub async fn create(&self, tools: Option<Vec<String>>, model_armor_config: Option<String>, labels: Option<HashMap<String, String>>, safety_settings: Option<Vec<String>>, system_instruction: Option<String>, tool_config: Option<String>, cached_content: Option<String>, contents: Option<Vec<String>>, generation_config: Option<String>, model: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

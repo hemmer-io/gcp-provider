@@ -1,6 +1,6 @@
 //! Attributes_config resource
 //!
-//! Removes the specified CatalogAttribute from the AttributesConfig. If the CatalogAttribute to remove does not exist, a NOT_FOUND error is returned.
+//! Adds the specified CatalogAttribute to the AttributesConfig. If the CatalogAttribute to add already exists, an ALREADY_EXISTS error is returned.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Attributes_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, key: Option<String>, attributes_config: String) -> Result<String> {
+    pub async fn create(&self, catalog_attribute: Option<String>, attributes_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Attribute<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, value: Option<String>, name: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, value: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

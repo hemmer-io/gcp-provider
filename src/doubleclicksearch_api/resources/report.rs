@@ -1,6 +1,6 @@
 //! Report resource
 //!
-//! Inserts a report request into the reporting system.
+//! Generates and returns a report immediately.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Report<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, verify_single_time_zone: Option<bool>, report_scope: Option<String>, include_removed_entities: Option<bool>, row_count: Option<i64>, statistics_currency: Option<String>, filters: Option<Vec<String>>, columns: Option<Vec<String>>, download_format: Option<String>, include_deleted_entities: Option<bool>, report_type: Option<String>, start_row: Option<i64>, max_rows_per_file: Option<i64>, order_by: Option<Vec<String>>, time_range: Option<String>) -> Result<String> {
+    pub async fn create(&self, verify_single_time_zone: Option<bool>, order_by: Option<Vec<String>>, include_removed_entities: Option<bool>, include_deleted_entities: Option<bool>, report_type: Option<String>, max_rows_per_file: Option<i64>, columns: Option<Vec<String>>, report_scope: Option<String>, row_count: Option<i64>, filters: Option<Vec<String>>, start_row: Option<i64>, download_format: Option<String>, statistics_currency: Option<String>, time_range: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

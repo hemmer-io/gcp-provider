@@ -21,7 +21,7 @@ impl<'a> User<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, database_roles: Option<Vec<String>>, keep_extra_roles: Option<bool>, user_type: Option<String>, name: Option<String>, password: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, database_roles: Option<Vec<String>>, keep_extra_roles: Option<bool>, name: Option<String>, user_type: Option<String>, password: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> User<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, database_roles: Option<Vec<String>>, keep_extra_roles: Option<bool>, user_type: Option<String>, name: Option<String>, password: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, database_roles: Option<Vec<String>>, keep_extra_roles: Option<bool>, name: Option<String>, user_type: Option<String>, password: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

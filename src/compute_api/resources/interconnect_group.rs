@@ -22,7 +22,7 @@ impl<'a> Interconnect_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, name: Option<String>, self_link: Option<String>, intent: Option<String>, etag: Option<String>, physical_structure: Option<String>, configured: Option<String>, kind: Option<String>, id: Option<String>, creation_timestamp: Option<String>, interconnects: Option<HashMap<String, String>>, project: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, name: Option<String>, self_link: Option<String>, etag: Option<String>, physical_structure: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, configured: Option<String>, description: Option<String>, intent: Option<String>, interconnects: Option<HashMap<String, String>>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Interconnect_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, name: Option<String>, self_link: Option<String>, intent: Option<String>, etag: Option<String>, physical_structure: Option<String>, configured: Option<String>, kind: Option<String>, id: Option<String>, creation_timestamp: Option<String>, interconnects: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, name: Option<String>, self_link: Option<String>, etag: Option<String>, physical_structure: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, configured: Option<String>, description: Option<String>, intent: Option<String>, interconnects: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

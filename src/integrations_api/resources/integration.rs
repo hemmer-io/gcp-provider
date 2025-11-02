@@ -1,6 +1,6 @@
 //! Integration resource
 //!
-//! Schedules an integration for execution by passing the trigger id and the scheduled time in the request body.
+//! Executes integrations synchronously by passing the trigger id in the request body. The request is not returned until the requested executions are either fulfilled or experienced an error. If the integration name is not specified (passing `-`), all of the associated integration under the given trigger_id will be executed. Otherwise only the specified integration for the given `trigger_id` is executed. This is helpful for execution the integration from UI.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Integration<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, request_id: Option<String>, parameters: Option<String>, schedule_time: Option<String>, parameter_entries: Option<Vec<String>>, trigger_id: Option<String>, input_parameters: Option<HashMap<String, String>>, name: String) -> Result<String> {
+    pub async fn create(&self, request_id: Option<String>, trigger_id: Option<String>, execution_id: Option<String>, input_parameters: Option<HashMap<String, String>>, do_not_propagate_error: Option<bool>, parameters: Option<String>, parameter_entries: Option<Vec<String>>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

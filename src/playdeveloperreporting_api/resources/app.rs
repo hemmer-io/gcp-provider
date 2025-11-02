@@ -1,6 +1,6 @@
 //! App resource
 //!
-//! Describes filtering options for releases.
+//! Searches for Apps accessible by the user.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

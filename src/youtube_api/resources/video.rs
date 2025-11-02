@@ -21,7 +21,7 @@ impl<'a> Video<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, paid_product_placement_details: Option<String>, age_gating: Option<String>, status: Option<String>, topic_details: Option<String>, id: Option<String>, monetization_details: Option<String>, kind: Option<String>, project_details: Option<String>, recording_details: Option<String>, snippet: Option<String>, etag: Option<String>, content_details: Option<String>, file_details: Option<String>, player: Option<String>, live_streaming_details: Option<String>, localizations: Option<HashMap<String, String>>, processing_details: Option<String>, suggestions: Option<String>, statistics: Option<String>) -> Result<String> {
+    pub async fn create(&self, snippet: Option<String>, suggestions: Option<String>, topic_details: Option<String>, monetization_details: Option<String>, paid_product_placement_details: Option<String>, status: Option<String>, project_details: Option<String>, processing_details: Option<String>, content_details: Option<String>, statistics: Option<String>, file_details: Option<String>, age_gating: Option<String>, etag: Option<String>, id: Option<String>, live_streaming_details: Option<String>, player: Option<String>, kind: Option<String>, localizations: Option<HashMap<String, String>>, recording_details: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Video<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, paid_product_placement_details: Option<String>, age_gating: Option<String>, status: Option<String>, topic_details: Option<String>, id: Option<String>, monetization_details: Option<String>, kind: Option<String>, project_details: Option<String>, recording_details: Option<String>, snippet: Option<String>, etag: Option<String>, content_details: Option<String>, file_details: Option<String>, player: Option<String>, live_streaming_details: Option<String>, localizations: Option<HashMap<String, String>>, processing_details: Option<String>, suggestions: Option<String>, statistics: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, snippet: Option<String>, suggestions: Option<String>, topic_details: Option<String>, monetization_details: Option<String>, paid_product_placement_details: Option<String>, status: Option<String>, project_details: Option<String>, processing_details: Option<String>, content_details: Option<String>, statistics: Option<String>, file_details: Option<String>, age_gating: Option<String>, etag: Option<String>, id: Option<String>, live_streaming_details: Option<String>, player: Option<String>, kind: Option<String>, localizations: Option<HashMap<String, String>>, recording_details: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Contact_center<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, saml_params: Option<String>, user_email: Option<String>, release_version: Option<String>, critical: Option<String>, customer_domain_prefix: Option<String>, feature_config: Option<String>, private_access: Option<String>, labels: Option<HashMap<String, String>>, instance_config: Option<String>, normal: Option<String>, admin_user: Option<String>, name: Option<String>, state: Option<String>, uris: Option<String>, kms_key: Option<String>, display_name: Option<String>, advanced_reporting_enabled: Option<bool>, early: Option<String>, private_components: Option<Vec<String>>, ccaip_managed_users: Option<bool>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, admin_user: Option<String>, customer_domain_prefix: Option<String>, private_components: Option<Vec<String>>, uris: Option<String>, create_time: Option<String>, critical: Option<String>, instance_config: Option<String>, name: Option<String>, advanced_reporting_enabled: Option<bool>, ccaip_managed_users: Option<bool>, early: Option<String>, kms_key: Option<String>, display_name: Option<String>, feature_config: Option<String>, release_version: Option<String>, saml_params: Option<String>, state: Option<String>, update_time: Option<String>, user_email: Option<String>, labels: Option<HashMap<String, String>>, normal: Option<String>, private_access: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Contact_center<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_time: Option<String>, saml_params: Option<String>, user_email: Option<String>, release_version: Option<String>, critical: Option<String>, customer_domain_prefix: Option<String>, feature_config: Option<String>, private_access: Option<String>, labels: Option<HashMap<String, String>>, instance_config: Option<String>, normal: Option<String>, admin_user: Option<String>, name: Option<String>, state: Option<String>, uris: Option<String>, kms_key: Option<String>, display_name: Option<String>, advanced_reporting_enabled: Option<bool>, early: Option<String>, private_components: Option<Vec<String>>, ccaip_managed_users: Option<bool>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, admin_user: Option<String>, customer_domain_prefix: Option<String>, private_components: Option<Vec<String>>, uris: Option<String>, create_time: Option<String>, critical: Option<String>, instance_config: Option<String>, name: Option<String>, advanced_reporting_enabled: Option<bool>, ccaip_managed_users: Option<bool>, early: Option<String>, kms_key: Option<String>, display_name: Option<String>, feature_config: Option<String>, release_version: Option<String>, saml_params: Option<String>, state: Option<String>, update_time: Option<String>, user_email: Option<String>, labels: Option<HashMap<String, String>>, normal: Option<String>, private_access: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

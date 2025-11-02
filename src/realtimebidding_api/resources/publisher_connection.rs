@@ -1,6 +1,6 @@
 //! Publisher_connection resource
 //!
-//! Batch rejects multiple publisher connections.
+//! Batch approves multiple publisher connections.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

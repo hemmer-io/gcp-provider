@@ -1,6 +1,6 @@
 //! Version resource
 //!
-//! Undeletes a Container Version.
+//! Sets the latest version used for synchronization of workspaces when detecting conflicts and errors.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

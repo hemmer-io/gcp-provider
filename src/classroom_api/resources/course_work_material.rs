@@ -21,7 +21,7 @@ impl<'a> Course_work_material<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, topic_id: Option<String>, title: Option<String>, description: Option<String>, update_time: Option<String>, creator_user_id: Option<String>, alternate_link: Option<String>, creation_time: Option<String>, assignee_mode: Option<String>, course_id: Option<String>, id: Option<String>, individual_students_options: Option<String>, materials: Option<Vec<String>>, state: Option<String>, scheduled_time: Option<String>, course_id: String) -> Result<String> {
+    pub async fn create(&self, individual_students_options: Option<String>, course_id: Option<String>, description: Option<String>, scheduled_time: Option<String>, creation_time: Option<String>, materials: Option<Vec<String>>, state: Option<String>, assignee_mode: Option<String>, title: Option<String>, topic_id: Option<String>, update_time: Option<String>, alternate_link: Option<String>, creator_user_id: Option<String>, id: Option<String>, course_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Course_work_material<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, topic_id: Option<String>, title: Option<String>, description: Option<String>, update_time: Option<String>, creator_user_id: Option<String>, alternate_link: Option<String>, creation_time: Option<String>, assignee_mode: Option<String>, course_id: Option<String>, id: Option<String>, individual_students_options: Option<String>, materials: Option<Vec<String>>, state: Option<String>, scheduled_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, individual_students_options: Option<String>, course_id: Option<String>, description: Option<String>, scheduled_time: Option<String>, creation_time: Option<String>, materials: Option<Vec<String>>, state: Option<String>, assignee_mode: Option<String>, title: Option<String>, topic_id: Option<String>, update_time: Option<String>, alternate_link: Option<String>, creator_user_id: Option<String>, id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

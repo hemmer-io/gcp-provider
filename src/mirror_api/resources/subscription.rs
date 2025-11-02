@@ -21,7 +21,7 @@ impl<'a> Subscription<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, operation: Option<Vec<String>>, notification: Option<String>, user_token: Option<String>, verify_token: Option<String>, updated: Option<String>, kind: Option<String>, callback_url: Option<String>, id: Option<String>, collection: Option<String>) -> Result<String> {
+    pub async fn create(&self, collection: Option<String>, notification: Option<String>, id: Option<String>, callback_url: Option<String>, verify_token: Option<String>, operation: Option<Vec<String>>, kind: Option<String>, updated: Option<String>, user_token: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Subscription<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, operation: Option<Vec<String>>, notification: Option<String>, user_token: Option<String>, verify_token: Option<String>, updated: Option<String>, kind: Option<String>, callback_url: Option<String>, id: Option<String>, collection: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, collection: Option<String>, notification: Option<String>, id: Option<String>, callback_url: Option<String>, verify_token: Option<String>, operation: Option<Vec<String>>, kind: Option<String>, updated: Option<String>, user_token: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

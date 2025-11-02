@@ -21,7 +21,7 @@ impl<'a> Targetserver<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, host: Option<String>, is_enabled: Option<bool>, name: Option<String>, port: Option<i64>, protocol: Option<String>, s_sl_info: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, is_enabled: Option<bool>, host: Option<String>, s_sl_info: Option<String>, description: Option<String>, name: Option<String>, port: Option<i64>, protocol: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Targetserver<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, host: Option<String>, is_enabled: Option<bool>, name: Option<String>, port: Option<i64>, protocol: Option<String>, s_sl_info: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, is_enabled: Option<bool>, host: Option<String>, s_sl_info: Option<String>, description: Option<String>, name: Option<String>, port: Option<i64>, protocol: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

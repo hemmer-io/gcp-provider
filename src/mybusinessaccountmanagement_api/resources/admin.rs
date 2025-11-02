@@ -1,6 +1,6 @@
 //! Admin resource
 //!
-//! Invites the specified user to become an administrator for the specified account. The invitee must accept the invitation in order to be granted access to the account. See AcceptInvitation to programmatically accept an invitation.
+//! Invites the specified user to become an administrator for the specified location. The invitee must accept the invitation in order to be granted access to the location. See AcceptInvitation to programmatically accept an invitation.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Admin<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, account: Option<String>, pending_invitation: Option<bool>, admin: Option<String>, role: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, admin: Option<String>, account: Option<String>, pending_invitation: Option<bool>, name: Option<String>, role: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Admin<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, account: Option<String>, pending_invitation: Option<bool>, admin: Option<String>, role: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, admin: Option<String>, account: Option<String>, pending_invitation: Option<bool>, name: Option<String>, role: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

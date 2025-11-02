@@ -21,7 +21,7 @@ impl<'a> Assets_export_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, signed_uri_destination: Option<String>, inventory: Option<String>, network_dependencies: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, show_hidden: Option<bool>, create_time: Option<String>, name: Option<String>, condition: Option<String>, performance_data: Option<String>, recent_executions: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, inventory: Option<String>, recent_executions: Option<Vec<String>>, network_dependencies: Option<String>, show_hidden: Option<bool>, performance_data: Option<String>, signed_uri_destination: Option<String>, condition: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

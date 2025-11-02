@@ -21,7 +21,7 @@ impl<'a> Configuration<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, contact_email: Option<String>, custom_message: Option<String>, company_name: Option<String>, contact_phone: Option<String>, dpc_extras: Option<String>, dpc_resource_path: Option<String>, is_default: Option<bool>, configuration_name: Option<String>, forced_reset_time: Option<String>, name: Option<String>, configuration_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, company_name: Option<String>, dpc_resource_path: Option<String>, configuration_name: Option<String>, configuration_id: Option<String>, custom_message: Option<String>, contact_email: Option<String>, contact_phone: Option<String>, name: Option<String>, dpc_extras: Option<String>, forced_reset_time: Option<String>, is_default: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Configuration<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, contact_email: Option<String>, custom_message: Option<String>, company_name: Option<String>, contact_phone: Option<String>, dpc_extras: Option<String>, dpc_resource_path: Option<String>, is_default: Option<bool>, configuration_name: Option<String>, forced_reset_time: Option<String>, name: Option<String>, configuration_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, company_name: Option<String>, dpc_resource_path: Option<String>, configuration_name: Option<String>, configuration_id: Option<String>, custom_message: Option<String>, contact_email: Option<String>, contact_phone: Option<String>, name: Option<String>, dpc_extras: Option<String>, forced_reset_time: Option<String>, is_default: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

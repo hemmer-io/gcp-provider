@@ -21,7 +21,7 @@ impl<'a> User<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, instance: Option<String>, sqlserver_user_details: Option<String>, etag: Option<String>, project: Option<String>, name: Option<String>, password: Option<String>, kind: Option<String>, host: Option<String>, project: String, instance: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, host: Option<String>, password: Option<String>, kind: Option<String>, project: Option<String>, sqlserver_user_details: Option<String>, name: Option<String>, instance: Option<String>, project: String, instance: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> User<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, instance: Option<String>, sqlserver_user_details: Option<String>, etag: Option<String>, project: Option<String>, name: Option<String>, password: Option<String>, kind: Option<String>, host: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, host: Option<String>, password: Option<String>, kind: Option<String>, project: Option<String>, sqlserver_user_details: Option<String>, name: Option<String>, instance: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

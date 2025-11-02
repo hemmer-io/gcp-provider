@@ -24,7 +24,7 @@ impl<'a> Idea_state<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, dismissed: Option<bool>, saved: Option<bool>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, saved: Option<bool>, dismissed: Option<bool>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

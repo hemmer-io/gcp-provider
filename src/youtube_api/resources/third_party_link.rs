@@ -21,7 +21,7 @@ impl<'a> Third_party_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, etag: Option<String>, linking_token: Option<String>, status: Option<String>, snippet: Option<String>, kind: Option<String>) -> Result<String> {
+    pub async fn create(&self, status: Option<String>, kind: Option<String>, linking_token: Option<String>, snippet: Option<String>, etag: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Third_party_link<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, linking_token: Option<String>, status: Option<String>, snippet: Option<String>, kind: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, status: Option<String>, kind: Option<String>, linking_token: Option<String>, snippet: Option<String>, etag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,7 +1,33 @@
 //! Resource modules
 
-pub mod provisioning_quota;
-pub use provisioning_quota::Provisioning_quota;
+pub mod operation;
+pub use operation::Operation;
+pub mod network;
+pub use network::Network;
 pub mod location;
 pub use location::Location;
+pub mod volume;
+pub use volume::Volume;
+pub mod provisioning_config;
+pub use provisioning_config::Provisioning_config;
+pub mod snapshot;
+pub use snapshot::Snapshot;
+pub mod lun;
+pub use lun::Lun;
+pub mod os_image;
+pub use os_image::Os_image;
+pub mod instance;
+pub use instance::Instance;
+pub mod ssh_key;
+pub use ssh_key::Ssh_key;
+pub mod provisioning_quota;
+pub use provisioning_quota::Provisioning_quota;
+pub mod operation;
+pub use operation::Operation;
+pub mod nfs_share;
+pub use nfs_share::Nfs_share;
+pub mod location;
+pub use location::Location;
+pub mod provisioning_quota;
+pub use provisioning_quota::Provisioning_quota;
 

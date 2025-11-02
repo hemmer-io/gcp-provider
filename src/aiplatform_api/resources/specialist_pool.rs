@@ -21,7 +21,7 @@ impl<'a> Specialist_pool<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, pending_data_labeling_jobs: Option<Vec<String>>, specialist_managers_count: Option<i64>, display_name: Option<String>, specialist_manager_emails: Option<Vec<String>>, name: Option<String>, specialist_worker_emails: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, specialist_worker_emails: Option<Vec<String>>, pending_data_labeling_jobs: Option<Vec<String>>, specialist_manager_emails: Option<Vec<String>>, specialist_managers_count: Option<i64>, name: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Specialist_pool<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, pending_data_labeling_jobs: Option<Vec<String>>, specialist_managers_count: Option<i64>, display_name: Option<String>, specialist_manager_emails: Option<Vec<String>>, name: Option<String>, specialist_worker_emails: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, specialist_worker_emails: Option<Vec<String>>, pending_data_labeling_jobs: Option<Vec<String>>, specialist_manager_emails: Option<Vec<String>>, specialist_managers_count: Option<i64>, name: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

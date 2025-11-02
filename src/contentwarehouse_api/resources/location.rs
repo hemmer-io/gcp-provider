@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, access_control_mode: Option<String>, database_type: Option<String>, enable_cal_user_email_logging: Option<bool>, kms_key: Option<String>, document_creator_default_role: Option<String>, location: String) -> Result<String> {
+    pub async fn create(&self, access_control_mode: Option<String>, kms_key: Option<String>, document_creator_default_role: Option<String>, database_type: Option<String>, enable_cal_user_email_logging: Option<bool>, location: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

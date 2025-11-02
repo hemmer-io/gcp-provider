@@ -21,7 +21,7 @@ impl<'a> Function<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, create_time: Option<String>, kms_key_name: Option<String>, event_trigger: Option<String>, service_config: Option<String>, name: Option<String>, description: Option<String>, state: Option<String>, upgrade_info: Option<String>, environment: Option<String>, url: Option<String>, build_config: Option<String>, state_messages: Option<Vec<String>>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, description: Option<String>, environment: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, build_config: Option<String>, kms_key_name: Option<String>, service_config: Option<String>, name: Option<String>, upgrade_info: Option<String>, url: Option<String>, event_trigger: Option<String>, state: Option<String>, state_messages: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Function<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, create_time: Option<String>, kms_key_name: Option<String>, event_trigger: Option<String>, service_config: Option<String>, name: Option<String>, description: Option<String>, state: Option<String>, upgrade_info: Option<String>, environment: Option<String>, url: Option<String>, build_config: Option<String>, state_messages: Option<Vec<String>>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, description: Option<String>, environment: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, build_config: Option<String>, kms_key_name: Option<String>, service_config: Option<String>, name: Option<String>, upgrade_info: Option<String>, url: Option<String>, event_trigger: Option<String>, state: Option<String>, state_messages: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 
