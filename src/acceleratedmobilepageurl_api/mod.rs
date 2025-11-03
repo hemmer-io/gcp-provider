@@ -24,10 +24,13 @@ impl<'a> Acceleratedmobilepageurl_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "amp_url" => self.plan_amp_url(current_state, desired_input).await,
+            "amp_url" => {
+                self.plan_amp_url(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acceleratedmobilepageurl_api", resource_name
+                "acceleratedmobilepageurl_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Acceleratedmobilepageurl_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "amp_url" => self.create_amp_url(input).await,
+            "amp_url" => {
+                self.create_amp_url(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acceleratedmobilepageurl_api", resource_name
+                "acceleratedmobilepageurl_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "amp_url" => self.read_amp_url(id).await,
+            "amp_url" => {
+                self.read_amp_url(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acceleratedmobilepageurl_api", resource_name
+                "acceleratedmobilepageurl_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Acceleratedmobilepageurl_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "amp_url" => self.update_amp_url(id, input).await,
+            "amp_url" => {
+                self.update_amp_url(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acceleratedmobilepageurl_api", resource_name
+                "acceleratedmobilepageurl_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "amp_url" => self.delete_amp_url(id).await,
+            "amp_url" => {
+                self.delete_amp_url(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acceleratedmobilepageurl_api", resource_name
+                "acceleratedmobilepageurl_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Acceleratedmobilepageurl_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Amp_url resource operations
@@ -110,26 +134,44 @@ impl<'a> Acceleratedmobilepageurl_apiService<'a> {
     }
 
     /// Create a new amp_url resource
-    async fn create_amp_url(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_amp_url(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a amp_url resource
-    async fn read_amp_url(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_amp_url(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a amp_url resource
-    async fn update_amp_url(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_amp_url(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a amp_url resource
-    async fn delete_amp_url(&self, id: &str) -> Result<()> {
+    async fn delete_amp_url(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

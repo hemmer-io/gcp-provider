@@ -24,12 +24,19 @@ impl<'a> Webmasters_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "sitemap" => self.plan_sitemap(current_state, desired_input).await,
-            "site" => self.plan_site(current_state, desired_input).await,
-            "searchanalytic" => self.plan_searchanalytic(current_state, desired_input).await,
+            "sitemap" => {
+                self.plan_sitemap(current_state, desired_input).await
+            }
+            "site" => {
+                self.plan_site(current_state, desired_input).await
+            }
+            "searchanalytic" => {
+                self.plan_searchanalytic(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "webmasters_api", resource_name
+                "webmasters_api",
+                resource_name
             ))),
         }
     }
@@ -41,25 +48,43 @@ impl<'a> Webmasters_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "sitemap" => self.create_sitemap(input).await,
-            "site" => self.create_site(input).await,
-            "searchanalytic" => self.create_searchanalytic(input).await,
+            "sitemap" => {
+                self.create_sitemap(input).await
+            }
+            "site" => {
+                self.create_site(input).await
+            }
+            "searchanalytic" => {
+                self.create_searchanalytic(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "webmasters_api", resource_name
+                "webmasters_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "sitemap" => self.read_sitemap(id).await,
-            "site" => self.read_site(id).await,
-            "searchanalytic" => self.read_searchanalytic(id).await,
+            "sitemap" => {
+                self.read_sitemap(id).await
+            }
+            "site" => {
+                self.read_site(id).await
+            }
+            "searchanalytic" => {
+                self.read_searchanalytic(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "webmasters_api", resource_name
+                "webmasters_api",
+                resource_name
             ))),
         }
     }
@@ -72,25 +97,43 @@ impl<'a> Webmasters_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "sitemap" => self.update_sitemap(id, input).await,
-            "site" => self.update_site(id, input).await,
-            "searchanalytic" => self.update_searchanalytic(id, input).await,
+            "sitemap" => {
+                self.update_sitemap(id, input).await
+            }
+            "site" => {
+                self.update_site(id, input).await
+            }
+            "searchanalytic" => {
+                self.update_searchanalytic(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "webmasters_api", resource_name
+                "webmasters_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "sitemap" => self.delete_sitemap(id).await,
-            "site" => self.delete_site(id).await,
-            "searchanalytic" => self.delete_searchanalytic(id).await,
+            "sitemap" => {
+                self.delete_sitemap(id).await
+            }
+            "site" => {
+                self.delete_site(id).await
+            }
+            "searchanalytic" => {
+                self.delete_searchanalytic(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "webmasters_api", resource_name
+                "webmasters_api",
+                resource_name
             ))),
         }
     }
@@ -98,6 +141,7 @@ impl<'a> Webmasters_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Sitemap resource operations
@@ -120,28 +164,45 @@ impl<'a> Webmasters_apiService<'a> {
     }
 
     /// Create a new sitemap resource
-    async fn create_sitemap(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_sitemap(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a sitemap resource
-    async fn read_sitemap(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_sitemap(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a sitemap resource
-    async fn update_sitemap(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_sitemap(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a sitemap resource
-    async fn delete_sitemap(&self, id: &str) -> Result<()> {
+    async fn delete_sitemap(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Site resource operations
@@ -164,28 +225,45 @@ impl<'a> Webmasters_apiService<'a> {
     }
 
     /// Create a new site resource
-    async fn create_site(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_site(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a site resource
-    async fn read_site(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_site(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a site resource
-    async fn update_site(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_site(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a site resource
-    async fn delete_site(&self, id: &str) -> Result<()> {
+    async fn delete_site(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Searchanalytic resource operations
@@ -208,15 +286,23 @@ impl<'a> Webmasters_apiService<'a> {
     }
 
     /// Create a new searchanalytic resource
-    async fn create_searchanalytic(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_searchanalytic(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a searchanalytic resource
-    async fn read_searchanalytic(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_searchanalytic(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a searchanalytic resource
@@ -226,12 +312,18 @@ impl<'a> Webmasters_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a searchanalytic resource
-    async fn delete_searchanalytic(&self, id: &str) -> Result<()> {
+    async fn delete_searchanalytic(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

@@ -24,10 +24,13 @@ impl<'a> Firebaseremoteconfig_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "project" => self.plan_project(current_state, desired_input).await,
+            "project" => {
+                self.plan_project(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebaseremoteconfig_api", resource_name
+                "firebaseremoteconfig_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Firebaseremoteconfig_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "project" => self.create_project(input).await,
+            "project" => {
+                self.create_project(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebaseremoteconfig_api", resource_name
+                "firebaseremoteconfig_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "project" => self.read_project(id).await,
+            "project" => {
+                self.read_project(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebaseremoteconfig_api", resource_name
+                "firebaseremoteconfig_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Firebaseremoteconfig_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "project" => self.update_project(id, input).await,
+            "project" => {
+                self.update_project(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebaseremoteconfig_api", resource_name
+                "firebaseremoteconfig_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "project" => self.delete_project(id).await,
+            "project" => {
+                self.delete_project(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebaseremoteconfig_api", resource_name
+                "firebaseremoteconfig_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Firebaseremoteconfig_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Project resource operations
@@ -110,26 +134,44 @@ impl<'a> Firebaseremoteconfig_apiService<'a> {
     }
 
     /// Create a new project resource
-    async fn create_project(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_project(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a project resource
-    async fn read_project(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_project(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a project resource
-    async fn update_project(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_project(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a project resource
-    async fn delete_project(&self, id: &str) -> Result<()> {
+    async fn delete_project(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

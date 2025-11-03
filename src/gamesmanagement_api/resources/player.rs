@@ -21,7 +21,7 @@ impl<'a> Player<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, player_id: String, application_id: String) -> Result<String> {
+    pub async fn create(&self, application_id: String, player_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Session<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, is_pinned: Option<bool>, labels: Option<Vec<String>>, name: Option<String>, start_time: Option<String>, end_time: Option<String>, turns: Option<Vec<String>>, user_pseudo_id: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, is_pinned: Option<bool>, end_time: Option<String>, state: Option<String>, labels: Option<Vec<String>>, start_time: Option<String>, turns: Option<Vec<String>>, user_pseudo_id: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Session<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, is_pinned: Option<bool>, labels: Option<Vec<String>>, name: Option<String>, start_time: Option<String>, end_time: Option<String>, turns: Option<Vec<String>>, user_pseudo_id: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, is_pinned: Option<bool>, end_time: Option<String>, state: Option<String>, labels: Option<Vec<String>>, start_time: Option<String>, turns: Option<Vec<String>>, user_pseudo_id: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

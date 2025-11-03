@@ -1,6 +1,6 @@
 //! Location resource
 //!
-//! Signs an SSH public key for a user to authenticate to a virtual machine on Google Compute Engine.
+//! Signs an SSH public key for a user to authenticate to an instance.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, ssh_public_key: Option<String>, app_engine_instance: Option<String>, service_account: Option<String>, compute_instance: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, ssh_public_key: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

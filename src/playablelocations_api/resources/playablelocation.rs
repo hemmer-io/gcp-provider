@@ -1,6 +1,6 @@
 //! Playablelocation resource
 //!
-//! Logs new events when playable locations are displayed, and when they are interacted with. Impressions are not partially saved; either all impressions are saved and this request succeeds, or no impressions are saved, and this request fails.
+//! Returns a set of playable locations that lie within a specified area, that satisfy optional filter criteria. Note: Identical `SamplePlayableLocations` requests can return different results as the state of the world changes over time.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Playablelocation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, client_info: Option<String>, request_id: Option<String>, impressions: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, criteria: Option<Vec<String>>, area_filter: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

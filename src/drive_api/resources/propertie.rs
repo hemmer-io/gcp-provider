@@ -21,7 +21,7 @@ impl<'a> Propertie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, visibility: Option<String>, self_link: Option<String>, key: Option<String>, etag: Option<String>, kind: Option<String>, value: Option<String>, file_id: String) -> Result<String> {
+    pub async fn create(&self, visibility: Option<String>, etag: Option<String>, kind: Option<String>, value: Option<String>, key: Option<String>, self_link: Option<String>, file_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Propertie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, visibility: Option<String>, self_link: Option<String>, key: Option<String>, etag: Option<String>, kind: Option<String>, value: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, visibility: Option<String>, etag: Option<String>, kind: Option<String>, value: Option<String>, key: Option<String>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

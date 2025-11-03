@@ -22,7 +22,7 @@ impl<'a> Wire_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, topology: Option<String>, kind: Option<String>, reconciling: Option<bool>, endpoints: Option<HashMap<String, String>>, wire_properties: Option<String>, admin_enabled: Option<bool>, creation_timestamp: Option<String>, id: Option<String>, wire_group_properties: Option<String>, wires: Option<Vec<String>>, description: Option<String>, name: Option<String>, self_link: Option<String>, cross_site_network: String, project: String) -> Result<String> {
+    pub async fn create(&self, topology: Option<String>, id: Option<String>, kind: Option<String>, wires: Option<Vec<String>>, creation_timestamp: Option<String>, reconciling: Option<bool>, name: Option<String>, wire_group_properties: Option<String>, wire_properties: Option<String>, description: Option<String>, self_link: Option<String>, admin_enabled: Option<bool>, endpoints: Option<HashMap<String, String>>, cross_site_network: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Wire_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, topology: Option<String>, kind: Option<String>, reconciling: Option<bool>, endpoints: Option<HashMap<String, String>>, wire_properties: Option<String>, admin_enabled: Option<bool>, creation_timestamp: Option<String>, id: Option<String>, wire_group_properties: Option<String>, wires: Option<Vec<String>>, description: Option<String>, name: Option<String>, self_link: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, topology: Option<String>, id: Option<String>, kind: Option<String>, wires: Option<Vec<String>>, creation_timestamp: Option<String>, reconciling: Option<bool>, name: Option<String>, wire_group_properties: Option<String>, wire_properties: Option<String>, description: Option<String>, self_link: Option<String>, admin_enabled: Option<bool>, endpoints: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

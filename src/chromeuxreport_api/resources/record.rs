@@ -1,6 +1,6 @@
 //! Record resource
 //!
-//! Queries the Chrome User Experience for a single `record` for a given site. Returns a `record` that contains one or more `metrics` corresponding to performance data about the requested site.
+//! Queries the Chrome User Experience Report for a timeseries `history record` for a given site. Returns a `history record` that contains one or more `metric timeseries` corresponding to performance data about the requested site.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Record<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, effective_connection_type: Option<String>, url: Option<String>, form_factor: Option<String>, metrics: Option<Vec<String>>, origin: Option<String>) -> Result<String> {
+    pub async fn create(&self, url: Option<String>, origin: Option<String>, metrics: Option<Vec<String>>, collection_period_count: Option<i64>, form_factor: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

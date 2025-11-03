@@ -24,11 +24,16 @@ impl<'a> Factchecktools_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "page" => self.plan_page(current_state, desired_input).await,
-            "claim" => self.plan_claim(current_state, desired_input).await,
+            "claim" => {
+                self.plan_claim(current_state, desired_input).await
+            }
+            "page" => {
+                self.plan_page(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "factchecktools_api", resource_name
+                "factchecktools_api",
+                resource_name
             ))),
         }
     }
@@ -40,23 +45,37 @@ impl<'a> Factchecktools_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "page" => self.create_page(input).await,
-            "claim" => self.create_claim(input).await,
+            "claim" => {
+                self.create_claim(input).await
+            }
+            "page" => {
+                self.create_page(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "factchecktools_api", resource_name
+                "factchecktools_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "page" => self.read_page(id).await,
-            "claim" => self.read_claim(id).await,
+            "claim" => {
+                self.read_claim(id).await
+            }
+            "page" => {
+                self.read_page(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "factchecktools_api", resource_name
+                "factchecktools_api",
+                resource_name
             ))),
         }
     }
@@ -69,23 +88,37 @@ impl<'a> Factchecktools_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "page" => self.update_page(id, input).await,
-            "claim" => self.update_claim(id, input).await,
+            "claim" => {
+                self.update_claim(id, input).await
+            }
+            "page" => {
+                self.update_page(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "factchecktools_api", resource_name
+                "factchecktools_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "page" => self.delete_page(id).await,
-            "claim" => self.delete_claim(id).await,
+            "claim" => {
+                self.delete_claim(id).await
+            }
+            "page" => {
+                self.delete_page(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "factchecktools_api", resource_name
+                "factchecktools_api",
+                resource_name
             ))),
         }
     }
@@ -94,49 +127,6 @@ impl<'a> Factchecktools_apiService<'a> {
     // Resource-specific CRUD implementations
     // ========================================================================
 
-    // ------------------------------------------------------------------------
-    // Page resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a page resource
-    async fn plan_page(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new page resource
-    async fn create_page(&self, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
-    }
-
-    /// Read a page resource
-    async fn read_page(&self, id: &str) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Update a page resource
-    async fn update_page(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Delete a page resource
-    async fn delete_page(&self, id: &str) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
     // ------------------------------------------------------------------------
     // Claim resource operations
@@ -159,26 +149,105 @@ impl<'a> Factchecktools_apiService<'a> {
     }
 
     /// Create a new claim resource
-    async fn create_claim(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_claim(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a claim resource
-    async fn read_claim(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_claim(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a claim resource
-    async fn update_claim(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_claim(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a claim resource
-    async fn delete_claim(&self, id: &str) -> Result<()> {
+    async fn delete_claim(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
+    // ------------------------------------------------------------------------
+    // Page resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a page resource
+    async fn plan_page(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new page resource
+    async fn create_page(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a page resource
+    async fn read_page(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a page resource
+    async fn update_page(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a page resource
+    async fn delete_page(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
 }

@@ -24,10 +24,13 @@ impl<'a> Fcmdata_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "delivery_data" => self.plan_delivery_data(current_state, desired_input).await,
+            "delivery_data" => {
+                self.plan_delivery_data(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "fcmdata_api", resource_name
+                "fcmdata_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Fcmdata_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "delivery_data" => self.create_delivery_data(input).await,
+            "delivery_data" => {
+                self.create_delivery_data(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "fcmdata_api", resource_name
+                "fcmdata_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "delivery_data" => self.read_delivery_data(id).await,
+            "delivery_data" => {
+                self.read_delivery_data(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "fcmdata_api", resource_name
+                "fcmdata_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Fcmdata_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "delivery_data" => self.update_delivery_data(id, input).await,
+            "delivery_data" => {
+                self.update_delivery_data(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "fcmdata_api", resource_name
+                "fcmdata_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "delivery_data" => self.delete_delivery_data(id).await,
+            "delivery_data" => {
+                self.delete_delivery_data(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "fcmdata_api", resource_name
+                "fcmdata_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Fcmdata_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Delivery_data resource operations
@@ -110,26 +134,44 @@ impl<'a> Fcmdata_apiService<'a> {
     }
 
     /// Create a new delivery_data resource
-    async fn create_delivery_data(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_delivery_data(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a delivery_data resource
-    async fn read_delivery_data(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_delivery_data(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a delivery_data resource
-    async fn update_delivery_data(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_delivery_data(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a delivery_data resource
-    async fn delete_delivery_data(&self, id: &str) -> Result<()> {
+    async fn delete_delivery_data(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

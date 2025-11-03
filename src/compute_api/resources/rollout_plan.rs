@@ -21,7 +21,7 @@ impl<'a> Rollout_plan<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, location_scope: Option<String>, id: Option<String>, self_link_with_id: Option<String>, name: Option<String>, waves: Option<Vec<String>>, description: Option<String>, self_link: Option<String>, creation_timestamp: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, waves: Option<Vec<String>>, kind: Option<String>, description: Option<String>, name: Option<String>, self_link: Option<String>, self_link_with_id: Option<String>, creation_timestamp: Option<String>, id: Option<String>, location_scope: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Spec<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, revision_create_time: Option<String>, revision_update_time: Option<String>, mime_type: Option<String>, filename: Option<String>, contents: Option<String>, annotations: Option<HashMap<String, String>>, create_time: Option<String>, labels: Option<HashMap<String, String>>, revision_id: Option<String>, size_bytes: Option<i64>, source_uri: Option<String>, description: Option<String>, hash: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, filename: Option<String>, name: Option<String>, create_time: Option<String>, annotations: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, mime_type: Option<String>, revision_create_time: Option<String>, size_bytes: Option<i64>, source_uri: Option<String>, description: Option<String>, revision_id: Option<String>, contents: Option<String>, revision_update_time: Option<String>, hash: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Spec<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, revision_create_time: Option<String>, revision_update_time: Option<String>, mime_type: Option<String>, filename: Option<String>, contents: Option<String>, annotations: Option<HashMap<String, String>>, create_time: Option<String>, labels: Option<HashMap<String, String>>, revision_id: Option<String>, size_bytes: Option<i64>, source_uri: Option<String>, description: Option<String>, hash: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, filename: Option<String>, name: Option<String>, create_time: Option<String>, annotations: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, mime_type: Option<String>, revision_create_time: Option<String>, size_bytes: Option<i64>, source_uri: Option<String>, description: Option<String>, revision_id: Option<String>, contents: Option<String>, revision_update_time: Option<String>, hash: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -24,11 +24,16 @@ impl<'a> Mybusinessqanda_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "question" => self.plan_question(current_state, desired_input).await,
-            "answer" => self.plan_answer(current_state, desired_input).await,
+            "answer" => {
+                self.plan_answer(current_state, desired_input).await
+            }
+            "question" => {
+                self.plan_question(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessqanda_api", resource_name
+                "mybusinessqanda_api",
+                resource_name
             ))),
         }
     }
@@ -40,23 +45,37 @@ impl<'a> Mybusinessqanda_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "question" => self.create_question(input).await,
-            "answer" => self.create_answer(input).await,
+            "answer" => {
+                self.create_answer(input).await
+            }
+            "question" => {
+                self.create_question(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessqanda_api", resource_name
+                "mybusinessqanda_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "question" => self.read_question(id).await,
-            "answer" => self.read_answer(id).await,
+            "answer" => {
+                self.read_answer(id).await
+            }
+            "question" => {
+                self.read_question(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessqanda_api", resource_name
+                "mybusinessqanda_api",
+                resource_name
             ))),
         }
     }
@@ -69,23 +88,37 @@ impl<'a> Mybusinessqanda_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "question" => self.update_question(id, input).await,
-            "answer" => self.update_answer(id, input).await,
+            "answer" => {
+                self.update_answer(id, input).await
+            }
+            "question" => {
+                self.update_question(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessqanda_api", resource_name
+                "mybusinessqanda_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "question" => self.delete_question(id).await,
-            "answer" => self.delete_answer(id).await,
+            "answer" => {
+                self.delete_answer(id).await
+            }
+            "question" => {
+                self.delete_question(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessqanda_api", resource_name
+                "mybusinessqanda_api",
+                resource_name
             ))),
         }
     }
@@ -94,49 +127,6 @@ impl<'a> Mybusinessqanda_apiService<'a> {
     // Resource-specific CRUD implementations
     // ========================================================================
 
-    // ------------------------------------------------------------------------
-    // Question resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a question resource
-    async fn plan_question(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new question resource
-    async fn create_question(&self, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
-    }
-
-    /// Read a question resource
-    async fn read_question(&self, id: &str) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Update a question resource
-    async fn update_question(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Delete a question resource
-    async fn delete_question(&self, id: &str) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
     // ------------------------------------------------------------------------
     // Answer resource operations
@@ -159,26 +149,105 @@ impl<'a> Mybusinessqanda_apiService<'a> {
     }
 
     /// Create a new answer resource
-    async fn create_answer(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_answer(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a answer resource
-    async fn read_answer(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_answer(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a answer resource
-    async fn update_answer(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_answer(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a answer resource
-    async fn delete_answer(&self, id: &str) -> Result<()> {
+    async fn delete_answer(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
+    // ------------------------------------------------------------------------
+    // Question resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a question resource
+    async fn plan_question(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new question resource
+    async fn create_question(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a question resource
+    async fn read_question(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a question resource
+    async fn update_question(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a question resource
+    async fn delete_question(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
 }

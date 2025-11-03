@@ -21,7 +21,7 @@ impl<'a> Job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, legacy_app_engine_cron: Option<bool>, schedule: Option<String>, schedule_time: Option<String>, last_attempt_time: Option<String>, description: Option<String>, retry_config: Option<String>, status: Option<String>, http_target: Option<String>, pubsub_target: Option<String>, name: Option<String>, state: Option<String>, app_engine_http_target: Option<String>, user_update_time: Option<String>, satisfies_pzs: Option<bool>, time_zone: Option<String>, attempt_deadline: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, status: Option<String>, last_attempt_time: Option<String>, name: Option<String>, legacy_app_engine_cron: Option<bool>, schedule: Option<String>, pubsub_target: Option<String>, time_zone: Option<String>, schedule_time: Option<String>, state: Option<String>, attempt_deadline: Option<String>, retry_config: Option<String>, user_update_time: Option<String>, description: Option<String>, satisfies_pzs: Option<bool>, app_engine_http_target: Option<String>, http_target: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Job<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, legacy_app_engine_cron: Option<bool>, schedule: Option<String>, schedule_time: Option<String>, last_attempt_time: Option<String>, description: Option<String>, retry_config: Option<String>, status: Option<String>, http_target: Option<String>, pubsub_target: Option<String>, name: Option<String>, state: Option<String>, app_engine_http_target: Option<String>, user_update_time: Option<String>, satisfies_pzs: Option<bool>, time_zone: Option<String>, attempt_deadline: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, status: Option<String>, last_attempt_time: Option<String>, name: Option<String>, legacy_app_engine_cron: Option<bool>, schedule: Option<String>, pubsub_target: Option<String>, time_zone: Option<String>, schedule_time: Option<String>, state: Option<String>, attempt_deadline: Option<String>, retry_config: Option<String>, user_update_time: Option<String>, description: Option<String>, satisfies_pzs: Option<bool>, app_engine_http_target: Option<String>, http_target: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -25,12 +25,12 @@ impl<'a> Licensing_apiService<'a> {
     ) -> Result<ResourcePlan> {
         match resource_name {
             "license_assignment" => {
-                self.plan_license_assignment(current_state, desired_input)
-                    .await
+                self.plan_license_assignment(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "licensing_api", resource_name
+                "licensing_api",
+                resource_name
             ))),
         }
     }
@@ -42,21 +42,31 @@ impl<'a> Licensing_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "license_assignment" => self.create_license_assignment(input).await,
+            "license_assignment" => {
+                self.create_license_assignment(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "licensing_api", resource_name
+                "licensing_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "license_assignment" => self.read_license_assignment(id).await,
+            "license_assignment" => {
+                self.read_license_assignment(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "licensing_api", resource_name
+                "licensing_api",
+                resource_name
             ))),
         }
     }
@@ -69,21 +79,31 @@ impl<'a> Licensing_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "license_assignment" => self.update_license_assignment(id, input).await,
+            "license_assignment" => {
+                self.update_license_assignment(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "licensing_api", resource_name
+                "licensing_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "license_assignment" => self.delete_license_assignment(id).await,
+            "license_assignment" => {
+                self.delete_license_assignment(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "licensing_api", resource_name
+                "licensing_api",
+                resource_name
             ))),
         }
     }
@@ -91,6 +111,7 @@ impl<'a> Licensing_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // License_assignment resource operations
@@ -113,15 +134,23 @@ impl<'a> Licensing_apiService<'a> {
     }
 
     /// Create a new license_assignment resource
-    async fn create_license_assignment(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_license_assignment(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a license_assignment resource
-    async fn read_license_assignment(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_license_assignment(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a license_assignment resource
@@ -131,12 +160,18 @@ impl<'a> Licensing_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a license_assignment resource
-    async fn delete_license_assignment(&self, id: &str) -> Result<()> {
+    async fn delete_license_assignment(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

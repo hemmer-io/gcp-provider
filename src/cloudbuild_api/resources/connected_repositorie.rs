@@ -1,6 +1,6 @@
 //! Connected_repositorie resource
 //!
-//! Batch connecting Bitbucket Server repositories to Cloud Build.
+//! Batch connecting GitLab repositories to Cloud Build. This API is experimental.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

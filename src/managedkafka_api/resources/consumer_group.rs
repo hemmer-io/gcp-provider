@@ -34,7 +34,7 @@ impl<'a> Consumer_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, topics: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, topics: Option<HashMap<String, String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

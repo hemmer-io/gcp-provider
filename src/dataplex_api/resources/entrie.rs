@@ -21,7 +21,7 @@ impl<'a> Entrie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, parent_entry: Option<String>, entry_source: Option<String>, fully_qualified_name: Option<String>, update_time: Option<String>, entry_type: Option<String>, create_time: Option<String>, aspects: Option<HashMap<String, String>>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, entry_source: Option<String>, create_time: Option<String>, name: Option<String>, parent_entry: Option<String>, entry_type: Option<String>, aspects: Option<HashMap<String, String>>, fully_qualified_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Entrie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, parent_entry: Option<String>, entry_source: Option<String>, fully_qualified_name: Option<String>, update_time: Option<String>, entry_type: Option<String>, create_time: Option<String>, aspects: Option<HashMap<String, String>>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, entry_source: Option<String>, create_time: Option<String>, name: Option<String>, parent_entry: Option<String>, entry_type: Option<String>, aspects: Option<HashMap<String, String>>, fully_qualified_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

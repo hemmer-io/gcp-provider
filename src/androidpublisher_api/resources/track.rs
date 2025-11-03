@@ -21,7 +21,7 @@ impl<'a> Track<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, track: Option<String>, type: Option<String>, form_factor: Option<String>, package_name: String, edit_id: String) -> Result<String> {
+    pub async fn create(&self, type: Option<String>, form_factor: Option<String>, track: Option<String>, edit_id: String, package_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Track<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, track: Option<String>, type: Option<String>, form_factor: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, type: Option<String>, form_factor: Option<String>, track: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

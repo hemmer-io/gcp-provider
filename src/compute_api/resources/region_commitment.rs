@@ -22,7 +22,7 @@ impl<'a> Region_commitment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, custom_end_timestamp: Option<String>, self_link: Option<String>, start_timestamp: Option<String>, category: Option<String>, merge_source_commitments: Option<Vec<String>>, reservations: Option<Vec<String>>, existing_reservations: Option<Vec<String>>, name: Option<String>, region: Option<String>, resource_status: Option<String>, status: Option<String>, status_message: Option<String>, kind: Option<String>, resources: Option<Vec<String>>, plan: Option<String>, license_resource: Option<String>, split_source_commitment: Option<String>, type: Option<String>, end_timestamp: Option<String>, creation_timestamp: Option<String>, id: Option<String>, auto_renew: Option<bool>, description: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, custom_end_timestamp: Option<String>, plan: Option<String>, category: Option<String>, id: Option<String>, creation_timestamp: Option<String>, license_resource: Option<String>, description: Option<String>, start_timestamp: Option<String>, type: Option<String>, kind: Option<String>, end_timestamp: Option<String>, merge_source_commitments: Option<Vec<String>>, name: Option<String>, reservations: Option<Vec<String>>, self_link: Option<String>, region: Option<String>, resources: Option<Vec<String>>, split_source_commitment: Option<String>, status: Option<String>, status_message: Option<String>, auto_renew: Option<bool>, resource_status: Option<String>, existing_reservations: Option<Vec<String>>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Region_commitment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, custom_end_timestamp: Option<String>, self_link: Option<String>, start_timestamp: Option<String>, category: Option<String>, merge_source_commitments: Option<Vec<String>>, reservations: Option<Vec<String>>, existing_reservations: Option<Vec<String>>, name: Option<String>, region: Option<String>, resource_status: Option<String>, status: Option<String>, status_message: Option<String>, kind: Option<String>, resources: Option<Vec<String>>, plan: Option<String>, license_resource: Option<String>, split_source_commitment: Option<String>, type: Option<String>, end_timestamp: Option<String>, creation_timestamp: Option<String>, id: Option<String>, auto_renew: Option<bool>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, custom_end_timestamp: Option<String>, plan: Option<String>, category: Option<String>, id: Option<String>, creation_timestamp: Option<String>, license_resource: Option<String>, description: Option<String>, start_timestamp: Option<String>, type: Option<String>, kind: Option<String>, end_timestamp: Option<String>, merge_source_commitments: Option<Vec<String>>, name: Option<String>, reservations: Option<Vec<String>>, self_link: Option<String>, region: Option<String>, resources: Option<Vec<String>>, split_source_commitment: Option<String>, status: Option<String>, status_message: Option<String>, auto_renew: Option<bool>, resource_status: Option<String>, existing_reservations: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Proposal resource
 //!
-//! Accepts the proposal at the given revision number. If the revision number in the request is behind the latest from the server, an error message will be returned. This call updates the Proposal.state from `BUYER_ACCEPTANCE_REQUESTED` to `FINALIZED`; it has no side effect if the Proposal.state is already `FINALIZED` and throws exception if the Proposal.state is not either `BUYER_ACCEPTANCE_REQUESTED` or `FINALIZED`. Accepting a proposal means the buyer understands and accepts the Proposal.terms_and_conditions proposed by the seller.
+//! Sends a request for proposal (RFP) to a publisher to initiate the negotiation regarding certain inventory. In the RFP, buyers can specify the deal type, deal terms, start and end dates, targeting, and a message to the publisher. Once the RFP is sent, a proposal in `SELLER_REVIEW_REQUESTED` state will be created and returned in the response. The publisher may review your request and respond with detailed deals in the proposal.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Proposal<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, proposal_revision: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, flight_start_time: Option<String>, flight_end_time: Option<String>, buyer_contacts: Option<Vec<String>>, display_name: Option<String>, preferred_deal_terms: Option<String>, publisher_profile: Option<String>, client: Option<String>, inventory_size_targeting: Option<String>, note: Option<String>, programmatic_guaranteed_terms: Option<String>, estimated_gross_spend: Option<String>, geo_targeting: Option<String>, buyer: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Proposal<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, proposal_revision: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, flight_start_time: Option<String>, flight_end_time: Option<String>, buyer_contacts: Option<Vec<String>>, display_name: Option<String>, preferred_deal_terms: Option<String>, publisher_profile: Option<String>, client: Option<String>, inventory_size_targeting: Option<String>, note: Option<String>, programmatic_guaranteed_terms: Option<String>, estimated_gross_spend: Option<String>, geo_targeting: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

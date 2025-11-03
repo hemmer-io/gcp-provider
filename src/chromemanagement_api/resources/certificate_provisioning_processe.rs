@@ -1,6 +1,6 @@
 //! Certificate_provisioning_processe resource
 //!
-//! Claims a certificate provisioning process. For each certificate provisioning process, this operation can succeed only for one `caller_instance_id`.
+//! Uploads a successfully issued certificate for a certificate provisioning process.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Certificate_provisioning_processe<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, caller_instance_id: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, certificate_pem: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

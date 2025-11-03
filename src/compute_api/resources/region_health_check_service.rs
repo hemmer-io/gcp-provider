@@ -22,7 +22,7 @@ impl<'a> Region_health_check_service<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, notification_endpoints: Option<Vec<String>>, health_status_aggregation_policy: Option<String>, health_checks: Option<Vec<String>>, kind: Option<String>, region: Option<String>, fingerprint: Option<String>, description: Option<String>, health_status_aggregation_strategy: Option<String>, creation_timestamp: Option<String>, id: Option<String>, name: Option<String>, network_endpoint_groups: Option<Vec<String>>, self_link: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, region: Option<String>, health_status_aggregation_strategy: Option<String>, creation_timestamp: Option<String>, description: Option<String>, health_status_aggregation_policy: Option<String>, id: Option<String>, name: Option<String>, fingerprint: Option<String>, health_checks: Option<Vec<String>>, kind: Option<String>, network_endpoint_groups: Option<Vec<String>>, notification_endpoints: Option<Vec<String>>, self_link: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Region_health_check_service<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, notification_endpoints: Option<Vec<String>>, health_status_aggregation_policy: Option<String>, health_checks: Option<Vec<String>>, kind: Option<String>, region: Option<String>, fingerprint: Option<String>, description: Option<String>, health_status_aggregation_strategy: Option<String>, creation_timestamp: Option<String>, id: Option<String>, name: Option<String>, network_endpoint_groups: Option<Vec<String>>, self_link: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, region: Option<String>, health_status_aggregation_strategy: Option<String>, creation_timestamp: Option<String>, description: Option<String>, health_status_aggregation_policy: Option<String>, id: Option<String>, name: Option<String>, fingerprint: Option<String>, health_checks: Option<Vec<String>>, kind: Option<String>, network_endpoint_groups: Option<Vec<String>>, notification_endpoints: Option<Vec<String>>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

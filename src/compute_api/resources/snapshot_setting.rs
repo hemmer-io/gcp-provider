@@ -34,7 +34,7 @@ impl<'a> Snapshot_setting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, access_location: Option<String>, storage_location: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, storage_location: Option<String>, access_location: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

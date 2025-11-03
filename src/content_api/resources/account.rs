@@ -21,7 +21,7 @@ impl<'a> Account<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, google_my_business_link: Option<String>, website_url: Option<String>, adult_content: Option<bool>, kind: Option<String>, name: Option<String>, reviews_url: Option<String>, users: Option<Vec<String>>, youtube_channel_links: Option<Vec<String>>, id: Option<String>, seller_id: Option<String>, business_information: Option<String>, adwords_links: Option<Vec<String>>, merchant_id: String) -> Result<String> {
+    pub async fn create(&self, reviews_url: Option<String>, id: Option<String>, google_my_business_link: Option<String>, kind: Option<String>, name: Option<String>, seller_id: Option<String>, business_information: Option<String>, users: Option<Vec<String>>, adult_content: Option<bool>, adwords_links: Option<Vec<String>>, website_url: Option<String>, youtube_channel_links: Option<Vec<String>>, merchant_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Account<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, google_my_business_link: Option<String>, website_url: Option<String>, adult_content: Option<bool>, kind: Option<String>, name: Option<String>, reviews_url: Option<String>, users: Option<Vec<String>>, youtube_channel_links: Option<Vec<String>>, id: Option<String>, seller_id: Option<String>, business_information: Option<String>, adwords_links: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, reviews_url: Option<String>, id: Option<String>, google_my_business_link: Option<String>, kind: Option<String>, name: Option<String>, seller_id: Option<String>, business_information: Option<String>, users: Option<Vec<String>>, adult_content: Option<bool>, adwords_links: Option<Vec<String>>, website_url: Option<String>, youtube_channel_links: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

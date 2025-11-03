@@ -21,7 +21,7 @@ impl<'a> Scan<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, local_scan_path: Option<String>, cli_version: Option<String>, cli_analysis: Option<String>, scm_metadata: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, cli_version: Option<String>, local_scan_path: Option<String>, cli_analysis: Option<String>, scm_metadata: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

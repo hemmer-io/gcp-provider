@@ -22,7 +22,7 @@ impl<'a> Network<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, gateway_i_pv4: Option<String>, self_link: Option<String>, network_firewall_policy_enforcement_order: Option<String>, peerings: Option<Vec<String>>, self_link_with_id: Option<String>, enable_ula_internal_ipv6: Option<bool>, id: Option<String>, mtu: Option<i64>, internal_ipv6_range: Option<String>, subnetworks: Option<Vec<String>>, description: Option<String>, auto_create_subnetworks: Option<bool>, params: Option<String>, i_pv4_range: Option<String>, routing_config: Option<String>, network_profile: Option<String>, name: Option<String>, creation_timestamp: Option<String>, kind: Option<String>, firewall_policy: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, creation_timestamp: Option<String>, internal_ipv6_range: Option<String>, network_firewall_policy_enforcement_order: Option<String>, firewall_policy: Option<String>, auto_create_subnetworks: Option<bool>, description: Option<String>, gateway_i_pv4: Option<String>, network_profile: Option<String>, self_link: Option<String>, kind: Option<String>, subnetworks: Option<Vec<String>>, id: Option<String>, params: Option<String>, peerings: Option<Vec<String>>, routing_config: Option<String>, self_link_with_id: Option<String>, mtu: Option<i64>, enable_ula_internal_ipv6: Option<bool>, name: Option<String>, i_pv4_range: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Network<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, gateway_i_pv4: Option<String>, self_link: Option<String>, network_firewall_policy_enforcement_order: Option<String>, peerings: Option<Vec<String>>, self_link_with_id: Option<String>, enable_ula_internal_ipv6: Option<bool>, id: Option<String>, mtu: Option<i64>, internal_ipv6_range: Option<String>, subnetworks: Option<Vec<String>>, description: Option<String>, auto_create_subnetworks: Option<bool>, params: Option<String>, i_pv4_range: Option<String>, routing_config: Option<String>, network_profile: Option<String>, name: Option<String>, creation_timestamp: Option<String>, kind: Option<String>, firewall_policy: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, creation_timestamp: Option<String>, internal_ipv6_range: Option<String>, network_firewall_policy_enforcement_order: Option<String>, firewall_policy: Option<String>, auto_create_subnetworks: Option<bool>, description: Option<String>, gateway_i_pv4: Option<String>, network_profile: Option<String>, self_link: Option<String>, kind: Option<String>, subnetworks: Option<Vec<String>>, id: Option<String>, params: Option<String>, peerings: Option<Vec<String>>, routing_config: Option<String>, self_link_with_id: Option<String>, mtu: Option<i64>, enable_ula_internal_ipv6: Option<bool>, name: Option<String>, i_pv4_range: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

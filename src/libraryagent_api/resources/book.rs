@@ -1,6 +1,6 @@
 //! Book resource
 //!
-//! Borrow a book from the library. Returns the book if it is borrowed successfully. Returns NOT_FOUND if the book does not exist in the library. Returns quota exceeded error if the amount of books borrowed exceeds allocation quota in any dimensions.
+//! Return a book to the library. Returns the book if it is returned to the library successfully. Returns error if the book does not belong to the library or the users didn't borrow before.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

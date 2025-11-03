@@ -1,6 +1,6 @@
 //! Election resource
 //!
-//! Looks up information relevant to a voter based on the voter's registered address.
+//! List of available elections to query.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -22,7 +22,7 @@ impl<'a> Service_binding<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, plan_id: Option<String>, bind_resource: Option<HashMap<String, String>>, create_time: Option<String>, service_id: Option<String>, parameters: Option<HashMap<String, String>>, binding_id: Option<String>, instance_id: String, parent: String, binding_id: String) -> Result<String> {
+    pub async fn create(&self, parameters: Option<HashMap<String, String>>, create_time: Option<String>, bind_resource: Option<HashMap<String, String>>, service_id: Option<String>, plan_id: Option<String>, binding_id: Option<String>, instance_id: String, binding_id: String, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Presentation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, notes_master: Option<String>, title: Option<String>, revision_id: Option<String>, slides: Option<Vec<String>>, page_size: Option<String>, masters: Option<Vec<String>>, presentation_id: Option<String>, layouts: Option<Vec<String>>, locale: Option<String>) -> Result<String> {
+    pub async fn create(&self, slides: Option<Vec<String>>, locale: Option<String>, title: Option<String>, layouts: Option<Vec<String>>, masters: Option<Vec<String>>, revision_id: Option<String>, presentation_id: Option<String>, page_size: Option<String>, notes_master: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

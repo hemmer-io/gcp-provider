@@ -21,7 +21,7 @@ impl<'a> Teamdrive<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, capabilities: Option<String>, created_time: Option<String>, id: Option<String>, restrictions: Option<String>, kind: Option<String>, org_unit_id: Option<String>, theme_id: Option<String>, color_rgb: Option<String>, background_image_file: Option<String>, background_image_link: Option<String>, name: Option<String>) -> Result<String> {
+    pub async fn create(&self, background_image_link: Option<String>, name: Option<String>, org_unit_id: Option<String>, created_time: Option<String>, theme_id: Option<String>, id: Option<String>, capabilities: Option<String>, restrictions: Option<String>, background_image_file: Option<String>, color_rgb: Option<String>, kind: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Teamdrive<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, capabilities: Option<String>, created_time: Option<String>, id: Option<String>, restrictions: Option<String>, kind: Option<String>, org_unit_id: Option<String>, theme_id: Option<String>, color_rgb: Option<String>, background_image_file: Option<String>, background_image_link: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, background_image_link: Option<String>, name: Option<String>, org_unit_id: Option<String>, created_time: Option<String>, theme_id: Option<String>, id: Option<String>, capabilities: Option<String>, restrictions: Option<String>, background_image_file: Option<String>, color_rgb: Option<String>, kind: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

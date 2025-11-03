@@ -21,7 +21,7 @@ impl<'a> Control<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, redirect_action: Option<String>, name: Option<String>, conditions: Option<Vec<String>>, associated_serving_config_ids: Option<Vec<String>>, promote_action: Option<String>, synonyms_action: Option<String>, filter_action: Option<String>, use_cases: Option<Vec<String>>, solution_type: Option<String>, boost_action: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, synonyms_action: Option<String>, conditions: Option<Vec<String>>, filter_action: Option<String>, display_name: Option<String>, name: Option<String>, use_cases: Option<Vec<String>>, promote_action: Option<String>, boost_action: Option<String>, associated_serving_config_ids: Option<Vec<String>>, redirect_action: Option<String>, solution_type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Control<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, redirect_action: Option<String>, name: Option<String>, conditions: Option<Vec<String>>, associated_serving_config_ids: Option<Vec<String>>, promote_action: Option<String>, synonyms_action: Option<String>, filter_action: Option<String>, use_cases: Option<Vec<String>>, solution_type: Option<String>, boost_action: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, synonyms_action: Option<String>, conditions: Option<Vec<String>>, filter_action: Option<String>, display_name: Option<String>, name: Option<String>, use_cases: Option<Vec<String>>, promote_action: Option<String>, boost_action: Option<String>, associated_serving_config_ids: Option<Vec<String>>, redirect_action: Option<String>, solution_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

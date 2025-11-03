@@ -21,7 +21,7 @@ impl<'a> Security_action<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, deny: Option<String>, condition_config: Option<String>, flag: Option<String>, name: Option<String>, state: Option<String>, description: Option<String>, expire_time: Option<String>, api_proxies: Option<Vec<String>>, ttl: Option<String>, update_time: Option<String>, allow: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, deny: Option<String>, expire_time: Option<String>, name: Option<String>, api_proxies: Option<Vec<String>>, description: Option<String>, ttl: Option<String>, condition_config: Option<String>, update_time: Option<String>, create_time: Option<String>, flag: Option<String>, state: Option<String>, allow: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Security_action<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, deny: Option<String>, condition_config: Option<String>, flag: Option<String>, name: Option<String>, state: Option<String>, description: Option<String>, expire_time: Option<String>, api_proxies: Option<Vec<String>>, ttl: Option<String>, update_time: Option<String>, allow: Option<String>, create_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, deny: Option<String>, expire_time: Option<String>, name: Option<String>, api_proxies: Option<Vec<String>>, description: Option<String>, ttl: Option<String>, condition_config: Option<String>, update_time: Option<String>, create_time: Option<String>, flag: Option<String>, state: Option<String>, allow: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

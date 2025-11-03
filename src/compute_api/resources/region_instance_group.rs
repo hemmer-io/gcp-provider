@@ -24,7 +24,7 @@ impl<'a> Region_instance_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, port_name: Option<String>, instance_state: Option<String>, project: String, region: String, instance_group: String) -> Result<String> {
+    pub async fn create(&self, port_name: Option<String>, instance_state: Option<String>, region: String, project: String, instance_group: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

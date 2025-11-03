@@ -21,7 +21,7 @@ impl<'a> Ssl_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, self_link: Option<String>, custom_features: Option<Vec<String>>, region: Option<String>, min_tls_version: Option<String>, profile: Option<String>, kind: Option<String>, fingerprint: Option<String>, description: Option<String>, enabled_features: Option<Vec<String>>, id: Option<String>, name: Option<String>, creation_timestamp: Option<String>, warnings: Option<Vec<String>>, project: String) -> Result<String> {
+    pub async fn create(&self, enabled_features: Option<Vec<String>>, name: Option<String>, custom_features: Option<Vec<String>>, kind: Option<String>, profile: Option<String>, min_tls_version: Option<String>, fingerprint: Option<String>, region: Option<String>, self_link: Option<String>, warnings: Option<Vec<String>>, creation_timestamp: Option<String>, id: Option<String>, description: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Ssl_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, self_link: Option<String>, custom_features: Option<Vec<String>>, region: Option<String>, min_tls_version: Option<String>, profile: Option<String>, kind: Option<String>, fingerprint: Option<String>, description: Option<String>, enabled_features: Option<Vec<String>>, id: Option<String>, name: Option<String>, creation_timestamp: Option<String>, warnings: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, enabled_features: Option<Vec<String>>, name: Option<String>, custom_features: Option<Vec<String>>, kind: Option<String>, profile: Option<String>, min_tls_version: Option<String>, fingerprint: Option<String>, region: Option<String>, self_link: Option<String>, warnings: Option<Vec<String>>, creation_timestamp: Option<String>, id: Option<String>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

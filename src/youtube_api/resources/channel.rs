@@ -34,7 +34,7 @@ impl<'a> Channel<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, branding_settings: Option<String>, content_details: Option<String>, etag: Option<String>, kind: Option<String>, conversion_pings: Option<String>, snippet: Option<String>, content_owner_details: Option<String>, statistics: Option<String>, id: Option<String>, audit_details: Option<String>, topic_details: Option<String>, localizations: Option<HashMap<String, String>>, status: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, snippet: Option<String>, conversion_pings: Option<String>, statistics: Option<String>, status: Option<String>, topic_details: Option<String>, audit_details: Option<String>, content_details: Option<String>, content_owner_details: Option<String>, etag: Option<String>, id: Option<String>, branding_settings: Option<String>, kind: Option<String>, localizations: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

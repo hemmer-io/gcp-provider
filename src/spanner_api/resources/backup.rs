@@ -21,7 +21,7 @@ impl<'a> Backup<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, backup_schedules: Option<Vec<String>>, freeable_size_bytes: Option<String>, expire_time: Option<String>, referencing_backups: Option<Vec<String>>, exclusive_size_bytes: Option<String>, incremental_backup_chain_id: Option<String>, max_expire_time: Option<String>, referencing_databases: Option<Vec<String>>, state: Option<String>, database_dialect: Option<String>, size_bytes: Option<String>, encryption_information: Option<Vec<String>>, encryption_info: Option<String>, oldest_version_time: Option<String>, name: Option<String>, create_time: Option<String>, instance_partitions: Option<Vec<String>>, version_time: Option<String>, database: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, expire_time: Option<String>, size_bytes: Option<String>, backup_schedules: Option<Vec<String>>, state: Option<String>, instance_partitions: Option<Vec<String>>, database: Option<String>, referencing_backups: Option<Vec<String>>, encryption_information: Option<Vec<String>>, oldest_version_time: Option<String>, database_dialect: Option<String>, freeable_size_bytes: Option<String>, exclusive_size_bytes: Option<String>, referencing_databases: Option<Vec<String>>, version_time: Option<String>, max_expire_time: Option<String>, create_time: Option<String>, incremental_backup_chain_id: Option<String>, encryption_info: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, backup_schedules: Option<Vec<String>>, freeable_size_bytes: Option<String>, expire_time: Option<String>, referencing_backups: Option<Vec<String>>, exclusive_size_bytes: Option<String>, incremental_backup_chain_id: Option<String>, max_expire_time: Option<String>, referencing_databases: Option<Vec<String>>, state: Option<String>, database_dialect: Option<String>, size_bytes: Option<String>, encryption_information: Option<Vec<String>>, encryption_info: Option<String>, oldest_version_time: Option<String>, name: Option<String>, create_time: Option<String>, instance_partitions: Option<Vec<String>>, version_time: Option<String>, database: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, expire_time: Option<String>, size_bytes: Option<String>, backup_schedules: Option<Vec<String>>, state: Option<String>, instance_partitions: Option<Vec<String>>, database: Option<String>, referencing_backups: Option<Vec<String>>, encryption_information: Option<Vec<String>>, oldest_version_time: Option<String>, database_dialect: Option<String>, freeable_size_bytes: Option<String>, exclusive_size_bytes: Option<String>, referencing_databases: Option<Vec<String>>, version_time: Option<String>, max_expire_time: Option<String>, create_time: Option<String>, incremental_backup_chain_id: Option<String>, encryption_info: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

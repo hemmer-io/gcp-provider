@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, check_machine_availability: Option<bool>, check_user_quota: Option<bool>, gcs_uri: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, check_user_quota: Option<bool>, gcs_uri: Option<String>, check_machine_availability: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, check_machine_availability: Option<bool>, check_user_quota: Option<bool>, gcs_uri: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, check_user_quota: Option<bool>, gcs_uri: Option<String>, check_machine_availability: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

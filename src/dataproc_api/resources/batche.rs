@@ -21,7 +21,7 @@ impl<'a> Batche<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state_time: Option<String>, spark_r_batch: Option<String>, environment_config: Option<String>, name: Option<String>, runtime_info: Option<String>, state_history: Option<Vec<String>>, create_time: Option<String>, operation: Option<String>, creator: Option<String>, spark_batch: Option<String>, spark_sql_batch: Option<String>, state: Option<String>, pyspark_batch: Option<String>, runtime_config: Option<String>, uuid: Option<String>, state_message: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, operation: Option<String>, spark_sql_batch: Option<String>, spark_r_batch: Option<String>, state: Option<String>, uuid: Option<String>, create_time: Option<String>, environment_config: Option<String>, pyspark_batch: Option<String>, runtime_config: Option<String>, state_time: Option<String>, name: Option<String>, state_message: Option<String>, spark_batch: Option<String>, creator: Option<String>, state_history: Option<Vec<String>>, labels: Option<HashMap<String, String>>, runtime_info: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

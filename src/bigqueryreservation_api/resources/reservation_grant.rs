@@ -21,7 +21,7 @@ impl<'a> Reservation_grant<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, grantee: Option<String>, reservation: Option<String>, name: Option<String>, job_type: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, reservation: Option<String>, state: Option<String>, name: Option<String>, grantee: Option<String>, job_type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

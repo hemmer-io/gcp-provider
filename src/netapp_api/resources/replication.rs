@@ -21,7 +21,7 @@ impl<'a> Replication<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, source_volume: Option<String>, state_details: Option<String>, replication_schedule: Option<String>, destination_volume_parameters: Option<String>, hybrid_replication_user_commands: Option<String>, destination_volume: Option<String>, hybrid_replication_type: Option<String>, create_time: Option<String>, transfer_stats: Option<String>, state: Option<String>, name: Option<String>, healthy: Option<bool>, mirror_state: Option<String>, role: Option<String>, cluster_location: Option<String>, hybrid_peering_details: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, description: Option<String>, create_time: Option<String>, source_volume: Option<String>, state_details: Option<String>, transfer_stats: Option<String>, healthy: Option<bool>, hybrid_replication_type: Option<String>, destination_volume: Option<String>, hybrid_peering_details: Option<String>, replication_schedule: Option<String>, cluster_location: Option<String>, hybrid_replication_user_commands: Option<String>, destination_volume_parameters: Option<String>, mirror_state: Option<String>, role: Option<String>, name: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Replication<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, source_volume: Option<String>, state_details: Option<String>, replication_schedule: Option<String>, destination_volume_parameters: Option<String>, hybrid_replication_user_commands: Option<String>, destination_volume: Option<String>, hybrid_replication_type: Option<String>, create_time: Option<String>, transfer_stats: Option<String>, state: Option<String>, name: Option<String>, healthy: Option<bool>, mirror_state: Option<String>, role: Option<String>, cluster_location: Option<String>, hybrid_peering_details: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, description: Option<String>, create_time: Option<String>, source_volume: Option<String>, state_details: Option<String>, transfer_stats: Option<String>, healthy: Option<bool>, hybrid_replication_type: Option<String>, destination_volume: Option<String>, hybrid_peering_details: Option<String>, replication_schedule: Option<String>, cluster_location: Option<String>, hybrid_replication_user_commands: Option<String>, destination_volume_parameters: Option<String>, mirror_state: Option<String>, role: Option<String>, name: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

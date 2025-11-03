@@ -21,7 +21,7 @@ impl<'a> Replications_internal<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, payload: Option<HashMap<String, String>>, annotations: Option<HashMap<String, String>>, target_locations: Option<Vec<String>>, etag: Option<String>, uid: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, stats: Option<HashMap<String, String>>, max_retry_count: Option<i64>, create_time: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, etag: Option<String>, target_locations: Option<Vec<String>>, create_time: Option<String>, stats: Option<HashMap<String, String>>, uid: Option<String>, payload: Option<HashMap<String, String>>, state: Option<String>, max_retry_count: Option<i64>, update_time: Option<String>, labels: Option<HashMap<String, String>>, annotations: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Replications_internal<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, payload: Option<HashMap<String, String>>, annotations: Option<HashMap<String, String>>, target_locations: Option<Vec<String>>, etag: Option<String>, uid: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, stats: Option<HashMap<String, String>>, max_retry_count: Option<i64>, create_time: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, etag: Option<String>, target_locations: Option<Vec<String>>, create_time: Option<String>, stats: Option<HashMap<String, String>>, uid: Option<String>, payload: Option<HashMap<String, String>>, state: Option<String>, max_retry_count: Option<i64>, update_time: Option<String>, labels: Option<HashMap<String, String>>, annotations: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

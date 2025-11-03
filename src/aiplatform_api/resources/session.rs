@@ -21,7 +21,7 @@ impl<'a> Session<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, ttl: Option<String>, create_time: Option<String>, user_id: Option<String>, name: Option<String>, display_name: Option<String>, expire_time: Option<String>, session_state: Option<HashMap<String, String>>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, ttl: Option<String>, expire_time: Option<String>, user_id: Option<String>, session_state: Option<HashMap<String, String>>, display_name: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Session<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, ttl: Option<String>, create_time: Option<String>, user_id: Option<String>, name: Option<String>, display_name: Option<String>, expire_time: Option<String>, session_state: Option<HashMap<String, String>>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, ttl: Option<String>, expire_time: Option<String>, user_id: Option<String>, session_state: Option<HashMap<String, String>>, display_name: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

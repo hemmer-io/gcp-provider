@@ -21,7 +21,7 @@ impl<'a> Cloud_exadata_infrastructure<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, gcp_oracle_zone: Option<String>, properties: Option<String>, entitlement_id: Option<String>, name: Option<String>, create_time: Option<String>, display_name: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, display_name: Option<String>, entitlement_id: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, gcp_oracle_zone: Option<String>, properties: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

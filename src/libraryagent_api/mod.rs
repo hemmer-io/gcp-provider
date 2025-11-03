@@ -24,11 +24,16 @@ impl<'a> Libraryagent_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "shelve" => self.plan_shelve(current_state, desired_input).await,
-            "book" => self.plan_book(current_state, desired_input).await,
+            "shelve" => {
+                self.plan_shelve(current_state, desired_input).await
+            }
+            "book" => {
+                self.plan_book(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "libraryagent_api", resource_name
+                "libraryagent_api",
+                resource_name
             ))),
         }
     }
@@ -40,23 +45,37 @@ impl<'a> Libraryagent_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "shelve" => self.create_shelve(input).await,
-            "book" => self.create_book(input).await,
+            "shelve" => {
+                self.create_shelve(input).await
+            }
+            "book" => {
+                self.create_book(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "libraryagent_api", resource_name
+                "libraryagent_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "shelve" => self.read_shelve(id).await,
-            "book" => self.read_book(id).await,
+            "shelve" => {
+                self.read_shelve(id).await
+            }
+            "book" => {
+                self.read_book(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "libraryagent_api", resource_name
+                "libraryagent_api",
+                resource_name
             ))),
         }
     }
@@ -69,23 +88,37 @@ impl<'a> Libraryagent_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "shelve" => self.update_shelve(id, input).await,
-            "book" => self.update_book(id, input).await,
+            "shelve" => {
+                self.update_shelve(id, input).await
+            }
+            "book" => {
+                self.update_book(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "libraryagent_api", resource_name
+                "libraryagent_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "shelve" => self.delete_shelve(id).await,
-            "book" => self.delete_book(id).await,
+            "shelve" => {
+                self.delete_shelve(id).await
+            }
+            "book" => {
+                self.delete_book(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "libraryagent_api", resource_name
+                "libraryagent_api",
+                resource_name
             ))),
         }
     }
@@ -93,6 +126,7 @@ impl<'a> Libraryagent_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Shelve resource operations
@@ -115,28 +149,45 @@ impl<'a> Libraryagent_apiService<'a> {
     }
 
     /// Create a new shelve resource
-    async fn create_shelve(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_shelve(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a shelve resource
-    async fn read_shelve(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_shelve(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a shelve resource
-    async fn update_shelve(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_shelve(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a shelve resource
-    async fn delete_shelve(&self, id: &str) -> Result<()> {
+    async fn delete_shelve(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Book resource operations
@@ -159,26 +210,44 @@ impl<'a> Libraryagent_apiService<'a> {
     }
 
     /// Create a new book resource
-    async fn create_book(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_book(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a book resource
-    async fn read_book(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_book(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a book resource
-    async fn update_book(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_book(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a book resource
-    async fn delete_book(&self, id: &str) -> Result<()> {
+    async fn delete_book(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

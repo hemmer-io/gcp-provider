@@ -21,7 +21,7 @@ impl<'a> Service<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, producer_project_id: Option<String>, service_name: Option<String>) -> Result<String> {
+    pub async fn create(&self, service_name: Option<String>, producer_project_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

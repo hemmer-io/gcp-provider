@@ -1,6 +1,6 @@
 //! Payment resource
 //!
-//! List the payments for this AdSense account.
+//! List the payments for the specified AdSense account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

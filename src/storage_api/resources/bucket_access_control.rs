@@ -21,7 +21,7 @@ impl<'a> Bucket_access_control<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, domain: Option<String>, email: Option<String>, id: Option<String>, bucket: Option<String>, role: Option<String>, entity_id: Option<String>, kind: Option<String>, self_link: Option<String>, entity: Option<String>, bucket: String) -> Result<String> {
+    pub async fn create(&self, role: Option<String>, entity_id: Option<String>, domain: Option<String>, email: Option<String>, id: Option<String>, entity: Option<String>, kind: Option<String>, bucket: Option<String>, self_link: Option<String>, bucket: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Bucket_access_control<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, domain: Option<String>, email: Option<String>, id: Option<String>, bucket: Option<String>, role: Option<String>, entity_id: Option<String>, kind: Option<String>, self_link: Option<String>, entity: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, role: Option<String>, entity_id: Option<String>, domain: Option<String>, email: Option<String>, id: Option<String>, entity: Option<String>, kind: Option<String>, bucket: Option<String>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

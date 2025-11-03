@@ -24,10 +24,13 @@ impl<'a> MediauploadService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "caption" => self.plan_caption(current_state, desired_input).await,
+            "caption" => {
+                self.plan_caption(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mediaupload", resource_name
+                "mediaupload",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> MediauploadService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "caption" => self.create_caption(input).await,
+            "caption" => {
+                self.create_caption(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mediaupload", resource_name
+                "mediaupload",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "caption" => self.read_caption(id).await,
+            "caption" => {
+                self.read_caption(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mediaupload", resource_name
+                "mediaupload",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> MediauploadService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "caption" => self.update_caption(id, input).await,
+            "caption" => {
+                self.update_caption(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mediaupload", resource_name
+                "mediaupload",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "caption" => self.delete_caption(id).await,
+            "caption" => {
+                self.delete_caption(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mediaupload", resource_name
+                "mediaupload",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> MediauploadService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Caption resource operations
@@ -110,26 +134,44 @@ impl<'a> MediauploadService<'a> {
     }
 
     /// Create a new caption resource
-    async fn create_caption(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_caption(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a caption resource
-    async fn read_caption(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_caption(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a caption resource
-    async fn update_caption(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_caption(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a caption resource
-    async fn delete_caption(&self, id: &str) -> Result<()> {
+    async fn delete_caption(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

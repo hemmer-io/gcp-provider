@@ -21,7 +21,7 @@ impl<'a> Service<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, scheduled_backup: Option<String>, name: Option<String>, encryption_config: Option<String>, endpoints: Option<Vec<String>>, uid: Option<String>, create_time: Option<String>, state: Option<String>, state_message: Option<String>, metadata_integration: Option<String>, scaling_config: Option<String>, hive_metastore_config: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, warehouse_gcs_uri: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, state_message: Option<String>, hive_metastore_config: Option<String>, uid: Option<String>, update_time: Option<String>, endpoints: Option<Vec<String>>, scaling_config: Option<String>, warehouse_gcs_uri: Option<String>, labels: Option<HashMap<String, String>>, metadata_integration: Option<String>, name: Option<String>, state: Option<String>, encryption_config: Option<String>, scheduled_backup: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Service<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, scheduled_backup: Option<String>, name: Option<String>, encryption_config: Option<String>, endpoints: Option<Vec<String>>, uid: Option<String>, create_time: Option<String>, state: Option<String>, state_message: Option<String>, metadata_integration: Option<String>, scaling_config: Option<String>, hive_metastore_config: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, warehouse_gcs_uri: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, state_message: Option<String>, hive_metastore_config: Option<String>, uid: Option<String>, update_time: Option<String>, endpoints: Option<Vec<String>>, scaling_config: Option<String>, warehouse_gcs_uri: Option<String>, labels: Option<HashMap<String, String>>, metadata_integration: Option<String>, name: Option<String>, state: Option<String>, encryption_config: Option<String>, scheduled_backup: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

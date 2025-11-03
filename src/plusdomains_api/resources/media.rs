@@ -21,7 +21,7 @@ impl<'a> Media<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, height: Option<i64>, updated: Option<String>, exif: Option<String>, video_status: Option<String>, published: Option<String>, author: Option<String>, kind: Option<String>, url: Option<String>, etag: Option<String>, display_name: Option<String>, id: Option<String>, video_duration: Option<String>, width: Option<i64>, media_url: Option<String>, media_created_time: Option<String>, size_bytes: Option<String>, streams: Option<Vec<String>>, summary: Option<String>, collection: String, user_id: String) -> Result<String> {
+    pub async fn create(&self, summary: Option<String>, id: Option<String>, url: Option<String>, etag: Option<String>, video_duration: Option<String>, size_bytes: Option<String>, author: Option<String>, updated: Option<String>, exif: Option<String>, published: Option<String>, kind: Option<String>, height: Option<i64>, media_url: Option<String>, width: Option<i64>, display_name: Option<String>, video_status: Option<String>, streams: Option<Vec<String>>, media_created_time: Option<String>, collection: String, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

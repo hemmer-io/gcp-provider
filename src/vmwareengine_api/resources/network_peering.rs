@@ -21,7 +21,7 @@ impl<'a> Network_peering<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, peer_network_type: Option<String>, export_custom_routes: Option<bool>, peer_mtu: Option<i64>, state_details: Option<String>, state: Option<String>, name: Option<String>, import_custom_routes_with_public_ip: Option<bool>, exchange_subnet_routes: Option<bool>, peer_network: Option<String>, uid: Option<String>, update_time: Option<String>, description: Option<String>, create_time: Option<String>, vmware_engine_network: Option<String>, export_custom_routes_with_public_ip: Option<bool>, import_custom_routes: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, import_custom_routes: Option<bool>, uid: Option<String>, export_custom_routes: Option<bool>, name: Option<String>, state: Option<String>, peer_mtu: Option<i64>, import_custom_routes_with_public_ip: Option<bool>, vmware_engine_network: Option<String>, peer_network_type: Option<String>, create_time: Option<String>, peer_network: Option<String>, export_custom_routes_with_public_ip: Option<bool>, state_details: Option<String>, exchange_subnet_routes: Option<bool>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Network_peering<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, peer_network_type: Option<String>, export_custom_routes: Option<bool>, peer_mtu: Option<i64>, state_details: Option<String>, state: Option<String>, name: Option<String>, import_custom_routes_with_public_ip: Option<bool>, exchange_subnet_routes: Option<bool>, peer_network: Option<String>, uid: Option<String>, update_time: Option<String>, description: Option<String>, create_time: Option<String>, vmware_engine_network: Option<String>, export_custom_routes_with_public_ip: Option<bool>, import_custom_routes: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, import_custom_routes: Option<bool>, uid: Option<String>, export_custom_routes: Option<bool>, name: Option<String>, state: Option<String>, peer_mtu: Option<i64>, import_custom_routes_with_public_ip: Option<bool>, vmware_engine_network: Option<String>, peer_network_type: Option<String>, create_time: Option<String>, peer_network: Option<String>, export_custom_routes_with_public_ip: Option<bool>, state_details: Option<String>, exchange_subnet_routes: Option<bool>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

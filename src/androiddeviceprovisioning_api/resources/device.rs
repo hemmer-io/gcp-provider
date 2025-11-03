@@ -1,6 +1,6 @@
 //! Device resource
 //!
-//! Updates reseller metadata associated with the device. Android devices only.
+//! Claims a batch of devices for a customer asynchronously. Adds the devices to zero-touch enrollment. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations).
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Device<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, device_metadata: Option<String>, device_id: String, metadata_owner_id: String) -> Result<String> {
+    pub async fn create(&self, claims: Option<Vec<String>>, partner_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

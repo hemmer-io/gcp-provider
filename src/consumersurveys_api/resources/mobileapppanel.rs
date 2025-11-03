@@ -34,7 +34,7 @@ impl<'a> Mobileapppanel<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, language: Option<String>, owners: Option<Vec<String>>, is_public_panel: Option<bool>, name: Option<String>, mobile_app_panel_id: Option<String>, country: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, is_public_panel: Option<bool>, country: Option<String>, owners: Option<Vec<String>>, name: Option<String>, mobile_app_panel_id: Option<String>, language: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

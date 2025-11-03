@@ -1,6 +1,6 @@
 //! User_event resource
 //!
-//! Writes a single user event.
+//! Deletes permanently all user events specified by the filter provided. Depending on the number of events specified by the filter, this operation could take hours or days to complete. To test a filter, use the list command first.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> User_event<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, media_info: Option<String>, transaction_info: Option<String>, session_id: Option<String>, filter: Option<String>, panel: Option<String>, promotion_ids: Option<Vec<String>>, user_info: Option<String>, event_type: Option<String>, user_pseudo_id: Option<String>, attributes: Option<HashMap<String, String>>, engine: Option<String>, direct_user_request: Option<bool>, data_store: Option<String>, tag_ids: Option<Vec<String>>, page_info: Option<String>, documents: Option<Vec<String>>, conversion_type: Option<String>, event_time: Option<String>, attribution_token: Option<String>, search_info: Option<String>, completion_info: Option<String>, panels: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, filter: Option<String>, force: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

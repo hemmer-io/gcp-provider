@@ -21,7 +21,7 @@ impl<'a> Dataset_version<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, model_reference: Option<String>, metadata: Option<String>, name: Option<String>, etag: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, update_time: Option<String>, display_name: Option<String>, create_time: Option<String>, big_query_dataset_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, create_time: Option<String>, big_query_dataset_name: Option<String>, metadata: Option<String>, name: Option<String>, etag: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, update_time: Option<String>, model_reference: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Dataset_version<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, model_reference: Option<String>, metadata: Option<String>, name: Option<String>, etag: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, update_time: Option<String>, display_name: Option<String>, create_time: Option<String>, big_query_dataset_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, create_time: Option<String>, big_query_dataset_name: Option<String>, metadata: Option<String>, name: Option<String>, etag: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, update_time: Option<String>, model_reference: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

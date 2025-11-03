@@ -21,7 +21,7 @@ impl<'a> Invitation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, client_account_id: Option<String>, email: Option<String>, invitation_id: Option<String>, account_id: String, client_account_id: String) -> Result<String> {
+    pub async fn create(&self, email: Option<String>, client_account_id: Option<String>, invitation_id: Option<String>, client_account_id: String, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

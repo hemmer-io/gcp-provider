@@ -21,7 +21,7 @@ impl<'a> Queue<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, stats: Option<String>, type: Option<String>, purge_time: Option<String>, task_ttl: Option<String>, http_target: Option<String>, retry_config: Option<String>, name: Option<String>, app_engine_http_queue: Option<String>, rate_limits: Option<String>, stackdriver_logging_config: Option<String>, state: Option<String>, tombstone_ttl: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, app_engine_http_queue: Option<String>, rate_limits: Option<String>, state: Option<String>, task_ttl: Option<String>, tombstone_ttl: Option<String>, name: Option<String>, retry_config: Option<String>, purge_time: Option<String>, stackdriver_logging_config: Option<String>, http_target: Option<String>, stats: Option<String>, type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Queue<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, stats: Option<String>, type: Option<String>, purge_time: Option<String>, task_ttl: Option<String>, http_target: Option<String>, retry_config: Option<String>, name: Option<String>, app_engine_http_queue: Option<String>, rate_limits: Option<String>, stackdriver_logging_config: Option<String>, state: Option<String>, tombstone_ttl: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, app_engine_http_queue: Option<String>, rate_limits: Option<String>, state: Option<String>, task_ttl: Option<String>, tombstone_ttl: Option<String>, name: Option<String>, retry_config: Option<String>, purge_time: Option<String>, stackdriver_logging_config: Option<String>, http_target: Option<String>, stats: Option<String>, type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

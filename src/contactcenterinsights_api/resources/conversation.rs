@@ -21,7 +21,7 @@ impl<'a> Conversation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, agent_id: Option<String>, duration: Option<String>, medium: Option<String>, start_time: Option<String>, call_metadata: Option<String>, update_time: Option<String>, metadata_json: Option<String>, ttl: Option<String>, language_code: Option<String>, labels: Option<HashMap<String, String>>, dialogflow_intents: Option<HashMap<String, String>>, runtime_annotations: Option<Vec<String>>, latest_analysis: Option<String>, data_source: Option<String>, latest_summary: Option<String>, obfuscated_user_id: Option<String>, quality_metadata: Option<String>, transcript: Option<String>, expire_time: Option<String>, turn_count: Option<i64>, name: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, obfuscated_user_id: Option<String>, transcript: Option<String>, update_time: Option<String>, name: Option<String>, metadata_json: Option<String>, expire_time: Option<String>, latest_analysis: Option<String>, labels: Option<HashMap<String, String>>, language_code: Option<String>, duration: Option<String>, agent_id: Option<String>, data_source: Option<String>, quality_metadata: Option<String>, medium: Option<String>, runtime_annotations: Option<Vec<String>>, turn_count: Option<i64>, ttl: Option<String>, start_time: Option<String>, dialogflow_intents: Option<HashMap<String, String>>, latest_summary: Option<String>, call_metadata: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Conversation<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, agent_id: Option<String>, duration: Option<String>, medium: Option<String>, start_time: Option<String>, call_metadata: Option<String>, update_time: Option<String>, metadata_json: Option<String>, ttl: Option<String>, language_code: Option<String>, labels: Option<HashMap<String, String>>, dialogflow_intents: Option<HashMap<String, String>>, runtime_annotations: Option<Vec<String>>, latest_analysis: Option<String>, data_source: Option<String>, latest_summary: Option<String>, obfuscated_user_id: Option<String>, quality_metadata: Option<String>, transcript: Option<String>, expire_time: Option<String>, turn_count: Option<i64>, name: Option<String>, create_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, obfuscated_user_id: Option<String>, transcript: Option<String>, update_time: Option<String>, name: Option<String>, metadata_json: Option<String>, expire_time: Option<String>, latest_analysis: Option<String>, labels: Option<HashMap<String, String>>, language_code: Option<String>, duration: Option<String>, agent_id: Option<String>, data_source: Option<String>, quality_metadata: Option<String>, medium: Option<String>, runtime_annotations: Option<Vec<String>>, turn_count: Option<i64>, ttl: Option<String>, start_time: Option<String>, dialogflow_intents: Option<HashMap<String, String>>, latest_summary: Option<String>, call_metadata: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

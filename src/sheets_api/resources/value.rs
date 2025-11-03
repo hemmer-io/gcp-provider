@@ -21,7 +21,7 @@ impl<'a> Value<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, data: Option<Vec<String>>, include_values_in_response: Option<bool>, response_date_time_render_option: Option<String>, response_value_render_option: Option<String>, value_input_option: Option<String>, spreadsheet_id: String) -> Result<String> {
+    pub async fn create(&self, response_value_render_option: Option<String>, data: Option<Vec<String>>, response_date_time_render_option: Option<String>, value_input_option: Option<String>, include_values_in_response: Option<bool>, spreadsheet_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Value<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, data: Option<Vec<String>>, include_values_in_response: Option<bool>, response_date_time_render_option: Option<String>, response_value_render_option: Option<String>, value_input_option: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, response_value_render_option: Option<String>, data: Option<Vec<String>>, response_date_time_render_option: Option<String>, value_input_option: Option<String>, include_values_in_response: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

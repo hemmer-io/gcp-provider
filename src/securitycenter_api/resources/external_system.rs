@@ -24,7 +24,7 @@ impl<'a> External_system<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, case_uri: Option<String>, case_create_time: Option<String>, case_priority: Option<String>, external_system_update_time: Option<String>, case_close_time: Option<String>, external_uid: Option<String>, name: Option<String>, case_sla: Option<String>, status: Option<String>, ticket_info: Option<String>, assignees: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, case_sla: Option<String>, case_create_time: Option<String>, case_close_time: Option<String>, case_priority: Option<String>, case_uri: Option<String>, external_uid: Option<String>, name: Option<String>, ticket_info: Option<String>, assignees: Option<Vec<String>>, external_system_update_time: Option<String>, status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

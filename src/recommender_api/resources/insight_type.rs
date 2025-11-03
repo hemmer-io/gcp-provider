@@ -1,6 +1,6 @@
 //! Insight_type resource
 //!
-//! Lists available InsightTypes. No IAM permissions are required.
+//! Gets the requested InsightTypeConfig. There is only one instance of the config for each InsightType.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -34,7 +34,7 @@ impl<'a> Insight_type<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, update_time: Option<String>, display_name: Option<String>, etag: Option<String>, insight_type_generation_config: Option<String>, revision_id: Option<String>, annotations: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, revision_id: Option<String>, update_time: Option<String>, name: Option<String>, annotations: Option<HashMap<String, String>>, display_name: Option<String>, etag: Option<String>, insight_type_generation_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

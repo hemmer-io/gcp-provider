@@ -21,7 +21,7 @@ impl<'a> Directory_site<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, settings: Option<String>, inpage_tag_formats: Option<Vec<String>>, url: Option<String>, active: Option<bool>, id_dimension_value: Option<String>, id: Option<String>, kind: Option<String>, name: Option<String>, interstitial_tag_formats: Option<Vec<String>>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, settings: Option<String>, active: Option<bool>, id_dimension_value: Option<String>, interstitial_tag_formats: Option<Vec<String>>, url: Option<String>, kind: Option<String>, name: Option<String>, id: Option<String>, inpage_tag_formats: Option<Vec<String>>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Cluster<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, capacity_config: Option<String>, rebalance_config: Option<String>, name: Option<String>, gcp_config: Option<String>, state: Option<String>, update_options: Option<String>, tls_config: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, gcp_config: Option<String>, capacity_config: Option<String>, name: Option<String>, update_time: Option<String>, update_options: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, rebalance_config: Option<String>, satisfies_pzi: Option<bool>, state: Option<String>, tls_config: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Cluster<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, capacity_config: Option<String>, rebalance_config: Option<String>, name: Option<String>, gcp_config: Option<String>, state: Option<String>, update_options: Option<String>, tls_config: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, gcp_config: Option<String>, capacity_config: Option<String>, name: Option<String>, update_time: Option<String>, update_options: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, rebalance_config: Option<String>, satisfies_pzi: Option<bool>, state: Option<String>, tls_config: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

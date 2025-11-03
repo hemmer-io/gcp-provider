@@ -21,7 +21,7 @@ impl<'a> Step<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<Vec<String>>, dimension_value: Option<Vec<String>>, tool_execution_step: Option<String>, run_duration: Option<String>, description: Option<String>, has_images: Option<bool>, state: Option<String>, step_id: Option<String>, test_execution_step: Option<String>, outcome: Option<String>, creation_time: Option<String>, completion_time: Option<String>, multi_step: Option<String>, device_usage_duration: Option<String>, name: Option<String>, project_id: String, execution_id: String, history_id: String) -> Result<String> {
+    pub async fn create(&self, device_usage_duration: Option<String>, labels: Option<Vec<String>>, run_duration: Option<String>, name: Option<String>, outcome: Option<String>, dimension_value: Option<Vec<String>>, creation_time: Option<String>, tool_execution_step: Option<String>, description: Option<String>, completion_time: Option<String>, test_execution_step: Option<String>, has_images: Option<bool>, state: Option<String>, step_id: Option<String>, multi_step: Option<String>, execution_id: String, project_id: String, history_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Step<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, labels: Option<Vec<String>>, dimension_value: Option<Vec<String>>, tool_execution_step: Option<String>, run_duration: Option<String>, description: Option<String>, has_images: Option<bool>, state: Option<String>, step_id: Option<String>, test_execution_step: Option<String>, outcome: Option<String>, creation_time: Option<String>, completion_time: Option<String>, multi_step: Option<String>, device_usage_duration: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, device_usage_duration: Option<String>, labels: Option<Vec<String>>, run_duration: Option<String>, name: Option<String>, outcome: Option<String>, dimension_value: Option<Vec<String>>, creation_time: Option<String>, tool_execution_step: Option<String>, description: Option<String>, completion_time: Option<String>, test_execution_step: Option<String>, has_images: Option<bool>, state: Option<String>, step_id: Option<String>, multi_step: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

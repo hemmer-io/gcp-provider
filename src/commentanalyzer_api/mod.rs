@@ -24,10 +24,13 @@ impl<'a> Commentanalyzer_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "comment" => self.plan_comment(current_state, desired_input).await,
+            "comment" => {
+                self.plan_comment(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "commentanalyzer_api", resource_name
+                "commentanalyzer_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Commentanalyzer_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "comment" => self.create_comment(input).await,
+            "comment" => {
+                self.create_comment(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "commentanalyzer_api", resource_name
+                "commentanalyzer_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "comment" => self.read_comment(id).await,
+            "comment" => {
+                self.read_comment(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "commentanalyzer_api", resource_name
+                "commentanalyzer_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Commentanalyzer_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "comment" => self.update_comment(id, input).await,
+            "comment" => {
+                self.update_comment(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "commentanalyzer_api", resource_name
+                "commentanalyzer_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "comment" => self.delete_comment(id).await,
+            "comment" => {
+                self.delete_comment(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "commentanalyzer_api", resource_name
+                "commentanalyzer_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Commentanalyzer_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Comment resource operations
@@ -110,26 +134,44 @@ impl<'a> Commentanalyzer_apiService<'a> {
     }
 
     /// Create a new comment resource
-    async fn create_comment(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_comment(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a comment resource
-    async fn read_comment(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_comment(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a comment resource
-    async fn update_comment(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_comment(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a comment resource
-    async fn delete_comment(&self, id: &str) -> Result<()> {
+    async fn delete_comment(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

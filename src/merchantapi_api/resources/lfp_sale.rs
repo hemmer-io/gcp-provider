@@ -21,7 +21,7 @@ impl<'a> Lfp_sale<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, sale_time: Option<String>, target_account: Option<String>, uid: Option<String>, price: Option<String>, feed_label: Option<String>, region_code: Option<String>, content_language: Option<String>, quantity: Option<String>, gtin: Option<String>, offer_id: Option<String>, store_code: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, store_code: Option<String>, feed_label: Option<String>, price: Option<String>, region_code: Option<String>, sale_time: Option<String>, offer_id: Option<String>, target_account: Option<String>, name: Option<String>, content_language: Option<String>, quantity: Option<String>, gtin: Option<String>, uid: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

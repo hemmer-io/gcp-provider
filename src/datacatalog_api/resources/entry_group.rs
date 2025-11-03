@@ -21,7 +21,7 @@ impl<'a> Entry_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, display_name: Option<String>, name: Option<String>, data_catalog_timestamps: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, description: Option<String>, data_catalog_timestamps: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Entry_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, display_name: Option<String>, name: Option<String>, data_catalog_timestamps: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, description: Option<String>, data_catalog_timestamps: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

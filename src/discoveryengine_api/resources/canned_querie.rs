@@ -21,7 +21,7 @@ impl<'a> Canned_querie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, localized_texts: Option<HashMap<String, String>>, name: Option<String>, enabled: Option<bool>, google_defined: Option<bool>, required_capabilities: Option<Vec<String>>, default_texts: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, default_texts: Option<String>, required_capabilities: Option<Vec<String>>, display_name: Option<String>, google_defined: Option<bool>, name: Option<String>, localized_texts: Option<HashMap<String, String>>, enabled: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Canned_querie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, localized_texts: Option<HashMap<String, String>>, name: Option<String>, enabled: Option<bool>, google_defined: Option<bool>, required_capabilities: Option<Vec<String>>, default_texts: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, default_texts: Option<String>, required_capabilities: Option<Vec<String>>, display_name: Option<String>, google_defined: Option<bool>, name: Option<String>, localized_texts: Option<HashMap<String, String>>, enabled: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

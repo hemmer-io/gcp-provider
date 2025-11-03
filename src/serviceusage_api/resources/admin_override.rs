@@ -21,7 +21,7 @@ impl<'a> Admin_override<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, unit: Option<String>, dimensions: Option<HashMap<String, String>>, metric: Option<String>, name: Option<String>, admin_override_ancestor: Option<String>, override_value: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, unit: Option<String>, override_value: Option<String>, admin_override_ancestor: Option<String>, metric: Option<String>, name: Option<String>, dimensions: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Admin_override<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, unit: Option<String>, dimensions: Option<HashMap<String, String>>, metric: Option<String>, name: Option<String>, admin_override_ancestor: Option<String>, override_value: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, unit: Option<String>, override_value: Option<String>, admin_override_ancestor: Option<String>, metric: Option<String>, name: Option<String>, dimensions: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

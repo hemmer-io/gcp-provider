@@ -21,7 +21,7 @@ impl<'a> Page<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, published: Option<String>, self_link: Option<String>, status: Option<String>, content: Option<String>, title: Option<String>, updated: Option<String>, author: Option<String>, url: Option<String>, blog: Option<String>, id: Option<String>, blog_id: String) -> Result<String> {
+    pub async fn create(&self, url: Option<String>, status: Option<String>, blog: Option<String>, author: Option<String>, id: Option<String>, published: Option<String>, self_link: Option<String>, content: Option<String>, kind: Option<String>, updated: Option<String>, title: Option<String>, blog_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Page<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, kind: Option<String>, published: Option<String>, self_link: Option<String>, status: Option<String>, content: Option<String>, title: Option<String>, updated: Option<String>, author: Option<String>, url: Option<String>, blog: Option<String>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, url: Option<String>, status: Option<String>, blog: Option<String>, author: Option<String>, id: Option<String>, published: Option<String>, self_link: Option<String>, content: Option<String>, kind: Option<String>, updated: Option<String>, title: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

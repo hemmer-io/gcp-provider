@@ -25,16 +25,15 @@ impl<'a> Mybusinessplaceactions_apiService<'a> {
     ) -> Result<ResourcePlan> {
         match resource_name {
             "place_action_link" => {
-                self.plan_place_action_link(current_state, desired_input)
-                    .await
+                self.plan_place_action_link(current_state, desired_input).await
             }
             "place_action_type_metadata" => {
-                self.plan_place_action_type_metadata(current_state, desired_input)
-                    .await
+                self.plan_place_action_type_metadata(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessplaceactions_api", resource_name
+                "mybusinessplaceactions_api",
+                resource_name
             ))),
         }
     }
@@ -46,23 +45,37 @@ impl<'a> Mybusinessplaceactions_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "place_action_link" => self.create_place_action_link(input).await,
-            "place_action_type_metadata" => self.create_place_action_type_metadata(input).await,
+            "place_action_link" => {
+                self.create_place_action_link(input).await
+            }
+            "place_action_type_metadata" => {
+                self.create_place_action_type_metadata(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessplaceactions_api", resource_name
+                "mybusinessplaceactions_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "place_action_link" => self.read_place_action_link(id).await,
-            "place_action_type_metadata" => self.read_place_action_type_metadata(id).await,
+            "place_action_link" => {
+                self.read_place_action_link(id).await
+            }
+            "place_action_type_metadata" => {
+                self.read_place_action_type_metadata(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessplaceactions_api", resource_name
+                "mybusinessplaceactions_api",
+                resource_name
             ))),
         }
     }
@@ -75,23 +88,37 @@ impl<'a> Mybusinessplaceactions_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "place_action_link" => self.update_place_action_link(id, input).await,
-            "place_action_type_metadata" => self.update_place_action_type_metadata(id, input).await,
+            "place_action_link" => {
+                self.update_place_action_link(id, input).await
+            }
+            "place_action_type_metadata" => {
+                self.update_place_action_type_metadata(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessplaceactions_api", resource_name
+                "mybusinessplaceactions_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "place_action_link" => self.delete_place_action_link(id).await,
-            "place_action_type_metadata" => self.delete_place_action_type_metadata(id).await,
+            "place_action_link" => {
+                self.delete_place_action_link(id).await
+            }
+            "place_action_type_metadata" => {
+                self.delete_place_action_type_metadata(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinessplaceactions_api", resource_name
+                "mybusinessplaceactions_api",
+                resource_name
             ))),
         }
     }
@@ -99,6 +126,7 @@ impl<'a> Mybusinessplaceactions_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Place_action_link resource operations
@@ -121,15 +149,23 @@ impl<'a> Mybusinessplaceactions_apiService<'a> {
     }
 
     /// Create a new place_action_link resource
-    async fn create_place_action_link(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_place_action_link(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a place_action_link resource
-    async fn read_place_action_link(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_place_action_link(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a place_action_link resource
@@ -139,14 +175,19 @@ impl<'a> Mybusinessplaceactions_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a place_action_link resource
-    async fn delete_place_action_link(&self, id: &str) -> Result<()> {
+    async fn delete_place_action_link(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Place_action_type_metadata resource operations
@@ -174,13 +215,18 @@ impl<'a> Mybusinessplaceactions_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a place_action_type_metadata resource
-    async fn read_place_action_type_metadata(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_place_action_type_metadata(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a place_action_type_metadata resource
@@ -190,12 +236,18 @@ impl<'a> Mybusinessplaceactions_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a place_action_type_metadata resource
-    async fn delete_place_action_type_metadata(&self, id: &str) -> Result<()> {
+    async fn delete_place_action_type_metadata(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

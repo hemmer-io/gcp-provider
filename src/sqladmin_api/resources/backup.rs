@@ -21,7 +21,7 @@ impl<'a> Backup<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, max_chargeable_bytes: Option<String>, name: Option<String>, satisfies_pzi: Option<bool>, error: Option<String>, expiry_time: Option<String>, instance_settings: Option<String>, description: Option<String>, instance: Option<String>, backup_interval: Option<String>, kms_key_version: Option<String>, backup_kind: Option<String>, time_zone: Option<String>, instance_deletion_time: Option<String>, database_version: Option<String>, satisfies_pzs: Option<bool>, kms_key: Option<String>, kind: Option<String>, self_link: Option<String>, backup_run: Option<String>, type: Option<String>, ttl_days: Option<String>, location: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, instance: Option<String>, backup_run: Option<String>, time_zone: Option<String>, state: Option<String>, expiry_time: Option<String>, kind: Option<String>, backup_kind: Option<String>, max_chargeable_bytes: Option<String>, satisfies_pzi: Option<bool>, error: Option<String>, name: Option<String>, backup_interval: Option<String>, instance_settings: Option<String>, location: Option<String>, instance_deletion_time: Option<String>, kms_key: Option<String>, satisfies_pzs: Option<bool>, kms_key_version: Option<String>, self_link: Option<String>, description: Option<String>, ttl_days: Option<String>, type: Option<String>, database_version: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, max_chargeable_bytes: Option<String>, name: Option<String>, satisfies_pzi: Option<bool>, error: Option<String>, expiry_time: Option<String>, instance_settings: Option<String>, description: Option<String>, instance: Option<String>, backup_interval: Option<String>, kms_key_version: Option<String>, backup_kind: Option<String>, time_zone: Option<String>, instance_deletion_time: Option<String>, database_version: Option<String>, satisfies_pzs: Option<bool>, kms_key: Option<String>, kind: Option<String>, self_link: Option<String>, backup_run: Option<String>, type: Option<String>, ttl_days: Option<String>, location: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, instance: Option<String>, backup_run: Option<String>, time_zone: Option<String>, state: Option<String>, expiry_time: Option<String>, kind: Option<String>, backup_kind: Option<String>, max_chargeable_bytes: Option<String>, satisfies_pzi: Option<bool>, error: Option<String>, name: Option<String>, backup_interval: Option<String>, instance_settings: Option<String>, location: Option<String>, instance_deletion_time: Option<String>, kms_key: Option<String>, satisfies_pzs: Option<bool>, kms_key_version: Option<String>, self_link: Option<String>, description: Option<String>, ttl_days: Option<String>, type: Option<String>, database_version: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

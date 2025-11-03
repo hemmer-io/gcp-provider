@@ -1,6 +1,6 @@
 //! Completion_config resource
 //!
-//! Removes the search history suggestion in an engine for a user. This will remove the suggestion from being returned in the AdvancedCompleteQueryResponse.recent_search_suggestions for this user. If the user searches the same suggestion again, the new history will override and suggest this suggestion again.
+//! Completes the user input with advanced keyword suggestions.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Completion_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, user_info: Option<String>, search_history_suggestion: Option<String>, user_pseudo_id: Option<String>, remove_all_search_history_suggestions: Option<bool>, remove_time: Option<String>, completion_config: String) -> Result<String> {
+    pub async fn create(&self, query_model: Option<String>, suggestion_types: Option<Vec<String>>, experiment_ids: Option<Vec<String>>, user_info: Option<String>, query: Option<String>, include_tail_suggestions: Option<bool>, user_pseudo_id: Option<String>, suggestion_type_specs: Option<Vec<String>>, boost_spec: Option<String>, completion_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

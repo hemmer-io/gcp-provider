@@ -21,7 +21,7 @@ impl<'a> Saved_querie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, logging_query: Option<String>, visibility: Option<String>, display_name: Option<String>, name: Option<String>, update_time: Option<String>, ops_analytics_query: Option<String>, create_time: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, visibility: Option<String>, logging_query: Option<String>, ops_analytics_query: Option<String>, create_time: Option<String>, description: Option<String>, update_time: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Saved_querie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, logging_query: Option<String>, visibility: Option<String>, display_name: Option<String>, name: Option<String>, update_time: Option<String>, ops_analytics_query: Option<String>, create_time: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, visibility: Option<String>, logging_query: Option<String>, ops_analytics_query: Option<String>, create_time: Option<String>, description: Option<String>, update_time: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

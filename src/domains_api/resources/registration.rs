@@ -1,6 +1,6 @@
 //! Registration resource
 //!
-//! Registers a new domain name and creates a corresponding `Registration` resource. Call `RetrieveRegisterParameters` first to check availability of the domain name and determine parameters like price that are needed to build a call to this method. A successful call creates a `Registration` resource in state `REGISTRATION_PENDING`, which resolves to `ACTIVE` within 1-2 minutes, indicating that the domain was successfully registered. If the resource ends up in state `REGISTRATION_FAILED`, it indicates that the domain was not registered successfully, and you can safely delete the resource and retry registration.
+//! Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Registration<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, validate_only: Option<bool>, registration: Option<String>, contact_notices: Option<Vec<String>>, domain_notices: Option<Vec<String>>, yearly_price: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_mask: Option<String>, policy: Option<String>, resource: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Registration<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, validate_only: Option<bool>, registration: Option<String>, contact_notices: Option<Vec<String>>, domain_notices: Option<Vec<String>>, yearly_price: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_mask: Option<String>, policy: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Rag_corpora<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, vertex_ai_search_config: Option<String>, corpus_status: Option<String>, name: Option<String>, display_name: Option<String>, rag_files_count: Option<i64>, rag_embedding_model_config: Option<String>, rag_vector_db_config: Option<String>, vector_db_config: Option<String>, encryption_spec: Option<String>, create_time: Option<String>, corpus_type_config: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, corpus_type_config: Option<String>, vector_db_config: Option<String>, update_time: Option<String>, corpus_status: Option<String>, description: Option<String>, rag_files_count: Option<i64>, create_time: Option<String>, encryption_spec: Option<String>, name: Option<String>, rag_embedding_model_config: Option<String>, display_name: Option<String>, rag_vector_db_config: Option<String>, vertex_ai_search_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Rag_corpora<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, vertex_ai_search_config: Option<String>, corpus_status: Option<String>, name: Option<String>, display_name: Option<String>, rag_files_count: Option<i64>, rag_embedding_model_config: Option<String>, rag_vector_db_config: Option<String>, vector_db_config: Option<String>, encryption_spec: Option<String>, create_time: Option<String>, corpus_type_config: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, corpus_type_config: Option<String>, vector_db_config: Option<String>, update_time: Option<String>, corpus_status: Option<String>, description: Option<String>, rag_files_count: Option<i64>, create_time: Option<String>, encryption_spec: Option<String>, name: Option<String>, rag_embedding_model_config: Option<String>, display_name: Option<String>, rag_vector_db_config: Option<String>, vertex_ai_search_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

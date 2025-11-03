@@ -24,14 +24,16 @@ impl<'a> Marketingplatformadmin_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "organization" => self.plan_organization(current_state, desired_input).await,
+            "organization" => {
+                self.plan_organization(current_state, desired_input).await
+            }
             "analytics_account_link" => {
-                self.plan_analytics_account_link(current_state, desired_input)
-                    .await
+                self.plan_analytics_account_link(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "marketingplatformadmin_api", resource_name
+                "marketingplatformadmin_api",
+                resource_name
             ))),
         }
     }
@@ -43,23 +45,37 @@ impl<'a> Marketingplatformadmin_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "organization" => self.create_organization(input).await,
-            "analytics_account_link" => self.create_analytics_account_link(input).await,
+            "organization" => {
+                self.create_organization(input).await
+            }
+            "analytics_account_link" => {
+                self.create_analytics_account_link(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "marketingplatformadmin_api", resource_name
+                "marketingplatformadmin_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "organization" => self.read_organization(id).await,
-            "analytics_account_link" => self.read_analytics_account_link(id).await,
+            "organization" => {
+                self.read_organization(id).await
+            }
+            "analytics_account_link" => {
+                self.read_analytics_account_link(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "marketingplatformadmin_api", resource_name
+                "marketingplatformadmin_api",
+                resource_name
             ))),
         }
     }
@@ -72,23 +88,37 @@ impl<'a> Marketingplatformadmin_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "organization" => self.update_organization(id, input).await,
-            "analytics_account_link" => self.update_analytics_account_link(id, input).await,
+            "organization" => {
+                self.update_organization(id, input).await
+            }
+            "analytics_account_link" => {
+                self.update_analytics_account_link(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "marketingplatformadmin_api", resource_name
+                "marketingplatformadmin_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "organization" => self.delete_organization(id).await,
-            "analytics_account_link" => self.delete_analytics_account_link(id).await,
+            "organization" => {
+                self.delete_organization(id).await
+            }
+            "analytics_account_link" => {
+                self.delete_analytics_account_link(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "marketingplatformadmin_api", resource_name
+                "marketingplatformadmin_api",
+                resource_name
             ))),
         }
     }
@@ -96,6 +126,7 @@ impl<'a> Marketingplatformadmin_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Organization resource operations
@@ -118,28 +149,45 @@ impl<'a> Marketingplatformadmin_apiService<'a> {
     }
 
     /// Create a new organization resource
-    async fn create_organization(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_organization(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a organization resource
-    async fn read_organization(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_organization(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a organization resource
-    async fn update_organization(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_organization(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a organization resource
-    async fn delete_organization(&self, id: &str) -> Result<()> {
+    async fn delete_organization(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Analytics_account_link resource operations
@@ -162,15 +210,23 @@ impl<'a> Marketingplatformadmin_apiService<'a> {
     }
 
     /// Create a new analytics_account_link resource
-    async fn create_analytics_account_link(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_analytics_account_link(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a analytics_account_link resource
-    async fn read_analytics_account_link(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_analytics_account_link(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a analytics_account_link resource
@@ -180,12 +236,18 @@ impl<'a> Marketingplatformadmin_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a analytics_account_link resource
-    async fn delete_analytics_account_link(&self, id: &str) -> Result<()> {
+    async fn delete_analytics_account_link(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

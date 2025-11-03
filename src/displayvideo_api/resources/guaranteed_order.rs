@@ -21,7 +21,7 @@ impl<'a> Guaranteed_order<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, read_advertiser_ids: Option<Vec<String>>, read_write_partner_id: Option<String>, guaranteed_order_id: Option<String>, name: Option<String>, read_access_inherited: Option<bool>, read_write_advertiser_id: Option<String>, default_campaign_id: Option<String>, display_name: Option<String>, publisher_name: Option<String>, status: Option<String>, update_time: Option<String>, default_advertiser_id: Option<String>, exchange: Option<String>, legacy_guaranteed_order_id: Option<String>) -> Result<String> {
+    pub async fn create(&self, read_write_advertiser_id: Option<String>, display_name: Option<String>, status: Option<String>, read_access_inherited: Option<bool>, legacy_guaranteed_order_id: Option<String>, update_time: Option<String>, guaranteed_order_id: Option<String>, name: Option<String>, exchange: Option<String>, read_write_partner_id: Option<String>, read_advertiser_ids: Option<Vec<String>>, publisher_name: Option<String>, default_advertiser_id: Option<String>, default_campaign_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Guaranteed_order<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, read_advertiser_ids: Option<Vec<String>>, read_write_partner_id: Option<String>, guaranteed_order_id: Option<String>, name: Option<String>, read_access_inherited: Option<bool>, read_write_advertiser_id: Option<String>, default_campaign_id: Option<String>, display_name: Option<String>, publisher_name: Option<String>, status: Option<String>, update_time: Option<String>, default_advertiser_id: Option<String>, exchange: Option<String>, legacy_guaranteed_order_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, read_write_advertiser_id: Option<String>, display_name: Option<String>, status: Option<String>, read_access_inherited: Option<bool>, legacy_guaranteed_order_id: Option<String>, update_time: Option<String>, guaranteed_order_id: Option<String>, name: Option<String>, exchange: Option<String>, read_write_partner_id: Option<String>, read_advertiser_ids: Option<Vec<String>>, publisher_name: Option<String>, default_advertiser_id: Option<String>, default_campaign_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

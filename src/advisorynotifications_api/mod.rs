@@ -24,11 +24,16 @@ impl<'a> Advisorynotifications_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "location" => self.plan_location(current_state, desired_input).await,
-            "notification" => self.plan_notification(current_state, desired_input).await,
+            "location" => {
+                self.plan_location(current_state, desired_input).await
+            }
+            "notification" => {
+                self.plan_notification(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "advisorynotifications_api", resource_name
+                "advisorynotifications_api",
+                resource_name
             ))),
         }
     }
@@ -40,23 +45,37 @@ impl<'a> Advisorynotifications_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "location" => self.create_location(input).await,
-            "notification" => self.create_notification(input).await,
+            "location" => {
+                self.create_location(input).await
+            }
+            "notification" => {
+                self.create_notification(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "advisorynotifications_api", resource_name
+                "advisorynotifications_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "location" => self.read_location(id).await,
-            "notification" => self.read_notification(id).await,
+            "location" => {
+                self.read_location(id).await
+            }
+            "notification" => {
+                self.read_notification(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "advisorynotifications_api", resource_name
+                "advisorynotifications_api",
+                resource_name
             ))),
         }
     }
@@ -69,23 +88,37 @@ impl<'a> Advisorynotifications_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "location" => self.update_location(id, input).await,
-            "notification" => self.update_notification(id, input).await,
+            "location" => {
+                self.update_location(id, input).await
+            }
+            "notification" => {
+                self.update_notification(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "advisorynotifications_api", resource_name
+                "advisorynotifications_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "location" => self.delete_location(id).await,
-            "notification" => self.delete_notification(id).await,
+            "location" => {
+                self.delete_location(id).await
+            }
+            "notification" => {
+                self.delete_notification(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "advisorynotifications_api", resource_name
+                "advisorynotifications_api",
+                resource_name
             ))),
         }
     }
@@ -93,6 +126,7 @@ impl<'a> Advisorynotifications_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Location resource operations
@@ -115,28 +149,45 @@ impl<'a> Advisorynotifications_apiService<'a> {
     }
 
     /// Create a new location resource
-    async fn create_location(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a location resource
-    async fn read_location(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a location resource
-    async fn update_location(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a location resource
-    async fn delete_location(&self, id: &str) -> Result<()> {
+    async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Notification resource operations
@@ -159,26 +210,44 @@ impl<'a> Advisorynotifications_apiService<'a> {
     }
 
     /// Create a new notification resource
-    async fn create_notification(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_notification(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a notification resource
-    async fn read_notification(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_notification(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a notification resource
-    async fn update_notification(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_notification(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a notification resource
-    async fn delete_notification(&self, id: &str) -> Result<()> {
+    async fn delete_notification(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

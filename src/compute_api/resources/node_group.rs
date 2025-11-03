@@ -22,7 +22,7 @@ impl<'a> Node_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, self_link: Option<String>, kind: Option<String>, maintenance_interval: Option<String>, node_template: Option<String>, maintenance_policy: Option<String>, zone: Option<String>, share_settings: Option<String>, size: Option<i64>, status: Option<String>, location_hint: Option<String>, creation_timestamp: Option<String>, maintenance_window: Option<String>, autoscaling_policy: Option<String>, fingerprint: Option<String>, description: Option<String>, id: Option<String>, project: String, zone: String) -> Result<String> {
+    pub async fn create(&self, maintenance_interval: Option<String>, node_template: Option<String>, creation_timestamp: Option<String>, zone: Option<String>, name: Option<String>, autoscaling_policy: Option<String>, maintenance_window: Option<String>, fingerprint: Option<String>, kind: Option<String>, share_settings: Option<String>, description: Option<String>, id: Option<String>, size: Option<i64>, location_hint: Option<String>, self_link: Option<String>, maintenance_policy: Option<String>, status: Option<String>, project: String, zone: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Node_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, self_link: Option<String>, kind: Option<String>, maintenance_interval: Option<String>, node_template: Option<String>, maintenance_policy: Option<String>, zone: Option<String>, share_settings: Option<String>, size: Option<i64>, status: Option<String>, location_hint: Option<String>, creation_timestamp: Option<String>, maintenance_window: Option<String>, autoscaling_policy: Option<String>, fingerprint: Option<String>, description: Option<String>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, maintenance_interval: Option<String>, node_template: Option<String>, creation_timestamp: Option<String>, zone: Option<String>, name: Option<String>, autoscaling_policy: Option<String>, maintenance_window: Option<String>, fingerprint: Option<String>, kind: Option<String>, share_settings: Option<String>, description: Option<String>, id: Option<String>, size: Option<i64>, location_hint: Option<String>, self_link: Option<String>, maintenance_policy: Option<String>, status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -24,11 +24,16 @@ impl<'a> Vectortile_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "terraintile" => self.plan_terraintile(current_state, desired_input).await,
-            "featuretile" => self.plan_featuretile(current_state, desired_input).await,
+            "terraintile" => {
+                self.plan_terraintile(current_state, desired_input).await
+            }
+            "featuretile" => {
+                self.plan_featuretile(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "vectortile_api", resource_name
+                "vectortile_api",
+                resource_name
             ))),
         }
     }
@@ -40,23 +45,37 @@ impl<'a> Vectortile_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "terraintile" => self.create_terraintile(input).await,
-            "featuretile" => self.create_featuretile(input).await,
+            "terraintile" => {
+                self.create_terraintile(input).await
+            }
+            "featuretile" => {
+                self.create_featuretile(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "vectortile_api", resource_name
+                "vectortile_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "terraintile" => self.read_terraintile(id).await,
-            "featuretile" => self.read_featuretile(id).await,
+            "terraintile" => {
+                self.read_terraintile(id).await
+            }
+            "featuretile" => {
+                self.read_featuretile(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "vectortile_api", resource_name
+                "vectortile_api",
+                resource_name
             ))),
         }
     }
@@ -69,23 +88,37 @@ impl<'a> Vectortile_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "terraintile" => self.update_terraintile(id, input).await,
-            "featuretile" => self.update_featuretile(id, input).await,
+            "terraintile" => {
+                self.update_terraintile(id, input).await
+            }
+            "featuretile" => {
+                self.update_featuretile(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "vectortile_api", resource_name
+                "vectortile_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "terraintile" => self.delete_terraintile(id).await,
-            "featuretile" => self.delete_featuretile(id).await,
+            "terraintile" => {
+                self.delete_terraintile(id).await
+            }
+            "featuretile" => {
+                self.delete_featuretile(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "vectortile_api", resource_name
+                "vectortile_api",
+                resource_name
             ))),
         }
     }
@@ -93,6 +126,7 @@ impl<'a> Vectortile_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Terraintile resource operations
@@ -115,28 +149,45 @@ impl<'a> Vectortile_apiService<'a> {
     }
 
     /// Create a new terraintile resource
-    async fn create_terraintile(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_terraintile(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a terraintile resource
-    async fn read_terraintile(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_terraintile(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a terraintile resource
-    async fn update_terraintile(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_terraintile(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a terraintile resource
-    async fn delete_terraintile(&self, id: &str) -> Result<()> {
+    async fn delete_terraintile(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Featuretile resource operations
@@ -159,26 +210,44 @@ impl<'a> Vectortile_apiService<'a> {
     }
 
     /// Create a new featuretile resource
-    async fn create_featuretile(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_featuretile(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a featuretile resource
-    async fn read_featuretile(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_featuretile(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a featuretile resource
-    async fn update_featuretile(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_featuretile(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a featuretile resource
-    async fn delete_featuretile(&self, id: &str) -> Result<()> {
+    async fn delete_featuretile(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

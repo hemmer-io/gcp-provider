@@ -24,12 +24,19 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "structure" => self.plan_structure(current_state, desired_input).await,
-            "room" => self.plan_room(current_state, desired_input).await,
-            "device" => self.plan_device(current_state, desired_input).await,
+            "device" => {
+                self.plan_device(current_state, desired_input).await
+            }
+            "room" => {
+                self.plan_room(current_state, desired_input).await
+            }
+            "structure" => {
+                self.plan_structure(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "smartdevicemanagement_api", resource_name
+                "smartdevicemanagement_api",
+                resource_name
             ))),
         }
     }
@@ -41,25 +48,43 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "structure" => self.create_structure(input).await,
-            "room" => self.create_room(input).await,
-            "device" => self.create_device(input).await,
+            "device" => {
+                self.create_device(input).await
+            }
+            "room" => {
+                self.create_room(input).await
+            }
+            "structure" => {
+                self.create_structure(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "smartdevicemanagement_api", resource_name
+                "smartdevicemanagement_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "structure" => self.read_structure(id).await,
-            "room" => self.read_room(id).await,
-            "device" => self.read_device(id).await,
+            "device" => {
+                self.read_device(id).await
+            }
+            "room" => {
+                self.read_room(id).await
+            }
+            "structure" => {
+                self.read_structure(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "smartdevicemanagement_api", resource_name
+                "smartdevicemanagement_api",
+                resource_name
             ))),
         }
     }
@@ -72,25 +97,43 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "structure" => self.update_structure(id, input).await,
-            "room" => self.update_room(id, input).await,
-            "device" => self.update_device(id, input).await,
+            "device" => {
+                self.update_device(id, input).await
+            }
+            "room" => {
+                self.update_room(id, input).await
+            }
+            "structure" => {
+                self.update_structure(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "smartdevicemanagement_api", resource_name
+                "smartdevicemanagement_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "structure" => self.delete_structure(id).await,
-            "room" => self.delete_room(id).await,
-            "device" => self.delete_device(id).await,
+            "device" => {
+                self.delete_device(id).await
+            }
+            "room" => {
+                self.delete_room(id).await
+            }
+            "structure" => {
+                self.delete_structure(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "smartdevicemanagement_api", resource_name
+                "smartdevicemanagement_api",
+                resource_name
             ))),
         }
     }
@@ -99,93 +142,6 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
     // Resource-specific CRUD implementations
     // ========================================================================
 
-    // ------------------------------------------------------------------------
-    // Structure resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a structure resource
-    async fn plan_structure(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new structure resource
-    async fn create_structure(&self, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
-    }
-
-    /// Read a structure resource
-    async fn read_structure(&self, id: &str) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Update a structure resource
-    async fn update_structure(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Delete a structure resource
-    async fn delete_structure(&self, id: &str) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-    // ------------------------------------------------------------------------
-    // Room resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a room resource
-    async fn plan_room(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new room resource
-    async fn create_room(&self, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
-    }
-
-    /// Read a room resource
-    async fn read_room(&self, id: &str) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Update a room resource
-    async fn update_room(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Delete a room resource
-    async fn delete_room(&self, id: &str) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
     // ------------------------------------------------------------------------
     // Device resource operations
@@ -208,26 +164,166 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
     }
 
     /// Create a new device resource
-    async fn create_device(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_device(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a device resource
-    async fn read_device(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_device(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a device resource
-    async fn update_device(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_device(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a device resource
-    async fn delete_device(&self, id: &str) -> Result<()> {
+    async fn delete_device(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
+    // ------------------------------------------------------------------------
+    // Room resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a room resource
+    async fn plan_room(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new room resource
+    async fn create_room(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a room resource
+    async fn read_room(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a room resource
+    async fn update_room(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a room resource
+    async fn delete_room(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Structure resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a structure resource
+    async fn plan_structure(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new structure resource
+    async fn create_structure(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a structure resource
+    async fn read_structure(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a structure resource
+    async fn update_structure(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a structure resource
+    async fn delete_structure(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
 }

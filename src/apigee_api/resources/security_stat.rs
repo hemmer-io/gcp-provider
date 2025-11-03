@@ -1,6 +1,6 @@
 //! Security_stat resource
 //!
-//! Retrieve security statistics as tabular rows.
+//! Retrieve security statistics as a collection of time series.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Security_stat<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, metrics: Option<Vec<String>>, dimensions: Option<Vec<String>>, time_range: Option<String>, page_token: Option<String>, filter: Option<String>, page_size: Option<i64>, orgenv: String) -> Result<String> {
+    pub async fn create(&self, metrics: Option<Vec<String>>, dimensions: Option<Vec<String>>, filter: Option<String>, timestamp_order: Option<String>, page_size: Option<i64>, page_token: Option<String>, time_range: Option<String>, window_size: Option<String>, orgenv: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

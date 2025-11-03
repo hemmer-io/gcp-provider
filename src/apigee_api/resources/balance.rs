@@ -21,7 +21,7 @@ impl<'a> Balance<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, transaction_id: Option<String>, transaction_amount: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, transaction_amount: Option<String>, transaction_id: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

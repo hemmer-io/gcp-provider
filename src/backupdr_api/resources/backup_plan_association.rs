@@ -21,7 +21,7 @@ impl<'a> Backup_plan_association<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, backup_plan_revision_id: Option<String>, create_time: Option<String>, resource: Option<String>, data_source: Option<String>, backup_plan: Option<String>, resource_type: Option<String>, cloud_sql_instance_backup_plan_association_properties: Option<String>, rules_config_info: Option<Vec<String>>, backup_plan_revision_name: Option<String>, name: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, resource_type: Option<String>, update_time: Option<String>, resource: Option<String>, data_source: Option<String>, backup_plan_revision_id: Option<String>, backup_plan_revision_name: Option<String>, cloud_sql_instance_backup_plan_association_properties: Option<String>, rules_config_info: Option<Vec<String>>, state: Option<String>, backup_plan: Option<String>, name: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup_plan_association<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, backup_plan_revision_id: Option<String>, create_time: Option<String>, resource: Option<String>, data_source: Option<String>, backup_plan: Option<String>, resource_type: Option<String>, cloud_sql_instance_backup_plan_association_properties: Option<String>, rules_config_info: Option<Vec<String>>, backup_plan_revision_name: Option<String>, name: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, resource_type: Option<String>, update_time: Option<String>, resource: Option<String>, data_source: Option<String>, backup_plan_revision_id: Option<String>, backup_plan_revision_name: Option<String>, cloud_sql_instance_backup_plan_association_properties: Option<String>, rules_config_info: Option<Vec<String>>, state: Option<String>, backup_plan: Option<String>, name: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

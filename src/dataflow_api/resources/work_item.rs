@@ -1,6 +1,6 @@
 //! Work_item resource
 //!
-//! Reports the status of dataflow WorkItems leased by a worker.
+//! Leases a dataflow WorkItem to run.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Work_item<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, unified_worker_request: Option<HashMap<String, String>>, worker_id: Option<String>, location: Option<String>, work_item_statuses: Option<Vec<String>>, current_worker_time: Option<String>, project_number: Option<String>, project_id: String, job_id: String) -> Result<String> {
+    pub async fn create(&self, requested_lease_duration: Option<String>, location: Option<String>, work_item_types: Option<Vec<String>>, unified_worker_request: Option<HashMap<String, String>>, current_worker_time: Option<String>, worker_id: Option<String>, worker_capabilities: Option<Vec<String>>, project_number: Option<String>, job_id: String, project_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

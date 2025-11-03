@@ -21,7 +21,7 @@ impl<'a> Job_trigger<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, trigger_id: Option<String>, job_trigger: Option<String>, location_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, location_id: Option<String>, trigger_id: Option<String>, job_trigger: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Job_trigger<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, trigger_id: Option<String>, job_trigger: Option<String>, location_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, location_id: Option<String>, trigger_id: Option<String>, job_trigger: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

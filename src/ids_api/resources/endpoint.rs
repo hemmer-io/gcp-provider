@@ -21,7 +21,7 @@ impl<'a> Endpoint<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, threat_exceptions: Option<Vec<String>>, traffic_logs: Option<bool>, endpoint_ip: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, endpoint_forwarding_rule: Option<String>, description: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, severity: Option<String>, network: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, endpoint_forwarding_rule: Option<String>, description: Option<String>, severity: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, satisfies_pzi: Option<bool>, create_time: Option<String>, threat_exceptions: Option<Vec<String>>, satisfies_pzs: Option<bool>, endpoint_ip: Option<String>, traffic_logs: Option<bool>, update_time: Option<String>, state: Option<String>, network: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Endpoint<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, threat_exceptions: Option<Vec<String>>, traffic_logs: Option<bool>, endpoint_ip: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, endpoint_forwarding_rule: Option<String>, description: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, severity: Option<String>, network: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, endpoint_forwarding_rule: Option<String>, description: Option<String>, severity: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, satisfies_pzi: Option<bool>, create_time: Option<String>, threat_exceptions: Option<Vec<String>>, satisfies_pzs: Option<bool>, endpoint_ip: Option<String>, traffic_logs: Option<bool>, update_time: Option<String>, state: Option<String>, network: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Zone<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, asset_status: Option<String>, type: Option<String>, resource_spec: Option<String>, discovery_spec: Option<String>, name: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, update_time: Option<String>, description: Option<String>, state: Option<String>, uid: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, update_time: Option<String>, asset_status: Option<String>, name: Option<String>, uid: Option<String>, discovery_spec: Option<String>, labels: Option<HashMap<String, String>>, resource_spec: Option<String>, description: Option<String>, state: Option<String>, create_time: Option<String>, type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Zone<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, asset_status: Option<String>, type: Option<String>, resource_spec: Option<String>, discovery_spec: Option<String>, name: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, update_time: Option<String>, description: Option<String>, state: Option<String>, uid: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, update_time: Option<String>, asset_status: Option<String>, name: Option<String>, uid: Option<String>, discovery_spec: Option<String>, labels: Option<HashMap<String, String>>, resource_spec: Option<String>, description: Option<String>, state: Option<String>, create_time: Option<String>, type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

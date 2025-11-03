@@ -1,6 +1,6 @@
 //! Service_account resource
 //!
-//! Signs a JWT using a service account's system-managed private key.
+//! Generates an OpenID Connect ID token for a service account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Service_account<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, delegates: Option<Vec<String>>, payload: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, organization_number_included: Option<bool>, delegates: Option<Vec<String>>, include_email: Option<bool>, audience: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

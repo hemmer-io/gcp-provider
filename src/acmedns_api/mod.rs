@@ -25,12 +25,12 @@ impl<'a> Acmedns_apiService<'a> {
     ) -> Result<ResourcePlan> {
         match resource_name {
             "acme_challenge_set" => {
-                self.plan_acme_challenge_set(current_state, desired_input)
-                    .await
+                self.plan_acme_challenge_set(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acmedns_api", resource_name
+                "acmedns_api",
+                resource_name
             ))),
         }
     }
@@ -42,21 +42,31 @@ impl<'a> Acmedns_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "acme_challenge_set" => self.create_acme_challenge_set(input).await,
+            "acme_challenge_set" => {
+                self.create_acme_challenge_set(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acmedns_api", resource_name
+                "acmedns_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "acme_challenge_set" => self.read_acme_challenge_set(id).await,
+            "acme_challenge_set" => {
+                self.read_acme_challenge_set(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acmedns_api", resource_name
+                "acmedns_api",
+                resource_name
             ))),
         }
     }
@@ -69,21 +79,31 @@ impl<'a> Acmedns_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "acme_challenge_set" => self.update_acme_challenge_set(id, input).await,
+            "acme_challenge_set" => {
+                self.update_acme_challenge_set(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acmedns_api", resource_name
+                "acmedns_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "acme_challenge_set" => self.delete_acme_challenge_set(id).await,
+            "acme_challenge_set" => {
+                self.delete_acme_challenge_set(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "acmedns_api", resource_name
+                "acmedns_api",
+                resource_name
             ))),
         }
     }
@@ -91,6 +111,7 @@ impl<'a> Acmedns_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Acme_challenge_set resource operations
@@ -113,15 +134,23 @@ impl<'a> Acmedns_apiService<'a> {
     }
 
     /// Create a new acme_challenge_set resource
-    async fn create_acme_challenge_set(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_acme_challenge_set(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a acme_challenge_set resource
-    async fn read_acme_challenge_set(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_acme_challenge_set(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a acme_challenge_set resource
@@ -131,12 +160,18 @@ impl<'a> Acmedns_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a acme_challenge_set resource
-    async fn delete_acme_challenge_set(&self, id: &str) -> Result<()> {
+    async fn delete_acme_challenge_set(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

@@ -21,7 +21,7 @@ impl<'a> Attribute<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, display_name: Option<String>, etag: Option<String>, name: Option<String>, uid: Option<String>, parent_id: Option<String>, resource_access_spec: Option<String>, data_access_spec: Option<String>, attribute_count: Option<i64>, parent: String) -> Result<String> {
+    pub async fn create(&self, resource_access_spec: Option<String>, create_time: Option<String>, description: Option<String>, name: Option<String>, display_name: Option<String>, attribute_count: Option<i64>, data_access_spec: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, uid: Option<String>, etag: Option<String>, parent_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Attribute<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, display_name: Option<String>, etag: Option<String>, name: Option<String>, uid: Option<String>, parent_id: Option<String>, resource_access_spec: Option<String>, data_access_spec: Option<String>, attribute_count: Option<i64>) -> Result<()> {
+    pub async fn update(&self, id: &str, resource_access_spec: Option<String>, create_time: Option<String>, description: Option<String>, name: Option<String>, display_name: Option<String>, attribute_count: Option<i64>, data_access_spec: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, uid: Option<String>, etag: Option<String>, parent_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -34,7 +34,7 @@ impl<'a> Project<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, billing_account_name: Option<String>, name: Option<String>, billing_enabled: Option<bool>, project_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, billing_enabled: Option<bool>, project_id: Option<String>, billing_account_name: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -34,7 +34,7 @@ impl<'a> Space_notification_setting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, notification_setting: Option<String>, mute_setting: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, mute_setting: Option<String>, notification_setting: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

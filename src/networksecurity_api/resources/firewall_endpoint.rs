@@ -21,7 +21,7 @@ impl<'a> Firewall_endpoint<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, billing_project_id: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, description: Option<String>, reconciling: Option<bool>, satisfies_pzi: Option<bool>, endpoint_settings: Option<String>, satisfies_pzs: Option<bool>, state: Option<String>, update_time: Option<String>, associated_networks: Option<Vec<String>>, name: Option<String>, associations: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, state: Option<String>, name: Option<String>, associated_networks: Option<Vec<String>>, reconciling: Option<bool>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, update_time: Option<String>, billing_project_id: Option<String>, create_time: Option<String>, associations: Option<Vec<String>>, endpoint_settings: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Firewall_endpoint<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, billing_project_id: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, description: Option<String>, reconciling: Option<bool>, satisfies_pzi: Option<bool>, endpoint_settings: Option<String>, satisfies_pzs: Option<bool>, state: Option<String>, update_time: Option<String>, associated_networks: Option<Vec<String>>, name: Option<String>, associations: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, state: Option<String>, name: Option<String>, associated_networks: Option<Vec<String>>, reconciling: Option<bool>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, update_time: Option<String>, billing_project_id: Option<String>, create_time: Option<String>, associations: Option<Vec<String>>, endpoint_settings: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

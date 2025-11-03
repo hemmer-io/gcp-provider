@@ -21,7 +21,7 @@ impl<'a> Survey<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, owners: Option<Vec<String>>, wanted_response_count: Option<i64>, description: Option<String>, questions: Option<Vec<String>>, survey_url_id: Option<String>, cost: Option<String>, customer_data: Option<String>, rejection_reason: Option<String>, audience: Option<String>, state: Option<String>, title: Option<String>) -> Result<String> {
+    pub async fn create(&self, title: Option<String>, state: Option<String>, audience: Option<String>, cost: Option<String>, owners: Option<Vec<String>>, customer_data: Option<String>, questions: Option<Vec<String>>, survey_url_id: Option<String>, wanted_response_count: Option<i64>, rejection_reason: Option<String>, description: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Survey<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, owners: Option<Vec<String>>, wanted_response_count: Option<i64>, description: Option<String>, questions: Option<Vec<String>>, survey_url_id: Option<String>, cost: Option<String>, customer_data: Option<String>, rejection_reason: Option<String>, audience: Option<String>, state: Option<String>, title: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, title: Option<String>, state: Option<String>, audience: Option<String>, cost: Option<String>, owners: Option<Vec<String>>, customer_data: Option<String>, questions: Option<Vec<String>>, survey_url_id: Option<String>, wanted_response_count: Option<i64>, rejection_reason: Option<String>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

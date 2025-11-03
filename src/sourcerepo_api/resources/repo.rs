@@ -21,7 +21,7 @@ impl<'a> Repo<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, pubsub_configs: Option<HashMap<String, String>>, mirror_config: Option<String>, size: Option<String>, url: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, url: Option<String>, size: Option<String>, name: Option<String>, mirror_config: Option<String>, pubsub_configs: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Repo<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, pubsub_configs: Option<HashMap<String, String>>, mirror_config: Option<String>, size: Option<String>, url: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, url: Option<String>, size: Option<String>, name: Option<String>, mirror_config: Option<String>, pubsub_configs: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

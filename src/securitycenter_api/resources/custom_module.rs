@@ -1,6 +1,6 @@
 //! Custom_module resource
 //!
-//! Creates a resident Event Threat Detection custom module at the scope of the given Resource Manager parent, and also creates inherited custom modules for all descendants of the given parent. These modules are enabled by default.
+//! Creates a resident SecurityHealthAnalyticsCustomModule at the scope of the given CRM parent, and also creates inherited SecurityHealthAnalyticsCustomModules for all CRM descendants of the given parent. These modules are enabled by default.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Custom_module<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, type: Option<String>, last_editor: Option<String>, enablement_state: Option<String>, name: Option<String>, update_time: Option<String>, ancestor_module: Option<String>, display_name: Option<String>, description: Option<String>, config: Option<HashMap<String, String>>, cloud_provider: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, display_name: Option<String>, custom_config: Option<String>, cloud_provider: Option<String>, update_time: Option<String>, enablement_state: Option<String>, ancestor_module: Option<String>, last_editor: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Custom_module<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, type: Option<String>, last_editor: Option<String>, enablement_state: Option<String>, name: Option<String>, update_time: Option<String>, ancestor_module: Option<String>, display_name: Option<String>, description: Option<String>, config: Option<HashMap<String, String>>, cloud_provider: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, display_name: Option<String>, custom_config: Option<String>, cloud_provider: Option<String>, update_time: Option<String>, enablement_state: Option<String>, ancestor_module: Option<String>, last_editor: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

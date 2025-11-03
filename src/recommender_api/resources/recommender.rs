@@ -34,7 +34,7 @@ impl<'a> Recommender<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, annotations: Option<HashMap<String, String>>, etag: Option<String>, name: Option<String>, recommender_generation_config: Option<String>, update_time: Option<String>, revision_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, display_name: Option<String>, name: Option<String>, revision_id: Option<String>, annotations: Option<HashMap<String, String>>, recommender_generation_config: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

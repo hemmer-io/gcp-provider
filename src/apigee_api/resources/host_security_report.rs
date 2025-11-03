@@ -21,7 +21,7 @@ impl<'a> Host_security_report<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, limit: Option<i64>, metrics: Option<Vec<String>>, display_name: Option<String>, filter: Option<String>, envgroup_hostname: Option<String>, report_definition_id: Option<String>, mime_type: Option<String>, dimensions: Option<Vec<String>>, group_by_time_unit: Option<String>, time_range: Option<String>, csv_delimiter: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, report_definition_id: Option<String>, csv_delimiter: Option<String>, dimensions: Option<Vec<String>>, envgroup_hostname: Option<String>, filter: Option<String>, time_range: Option<String>, limit: Option<i64>, metrics: Option<Vec<String>>, mime_type: Option<String>, group_by_time_unit: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

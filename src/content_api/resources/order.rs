@@ -1,6 +1,6 @@
 //! Order resource
 //!
-//! Marks line item(s) as shipped.
+//! Updates a shipment's status, carrier, and/or tracking ID.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Order<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, shipment_id: Option<String>, operation_id: Option<String>, shipment_infos: Option<Vec<String>>, line_items: Option<Vec<String>>, shipment_group_id: Option<String>, carrier: Option<String>, tracking_id: Option<String>, order_id: String, merchant_id: String) -> Result<String> {
+    pub async fn create(&self, shipment_id: Option<String>, carrier: Option<String>, status: Option<String>, delivery_date: Option<String>, tracking_id: Option<String>, operation_id: Option<String>, merchant_id: String, order_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

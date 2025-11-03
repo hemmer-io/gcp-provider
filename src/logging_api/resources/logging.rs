@@ -34,7 +34,7 @@ impl<'a> Logging<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, disable_default_sink: Option<bool>, logging_service_account_id: Option<String>, storage_location: Option<String>, name: Option<String>, kms_service_account_id: Option<String>, kms_key_name: Option<String>, default_sink_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kms_service_account_id: Option<String>, disable_default_sink: Option<bool>, logging_service_account_id: Option<String>, default_sink_config: Option<String>, storage_location: Option<String>, kms_key_name: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

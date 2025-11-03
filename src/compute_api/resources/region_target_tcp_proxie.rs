@@ -22,7 +22,7 @@ impl<'a> Region_target_tcp_proxie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<String>, proxy_bind: Option<bool>, proxy_header: Option<String>, kind: Option<String>, region: Option<String>, service: Option<String>, creation_timestamp: Option<String>, description: Option<String>, name: Option<String>, self_link: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, creation_timestamp: Option<String>, id: Option<String>, self_link: Option<String>, region: Option<String>, description: Option<String>, kind: Option<String>, proxy_header: Option<String>, proxy_bind: Option<bool>, service: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

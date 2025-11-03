@@ -21,7 +21,7 @@ impl<'a> Report<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, filter: Option<String>, language_code: Option<String>, date_range: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, language_code: Option<String>, date_range: Option<String>, filter: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

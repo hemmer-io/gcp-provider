@@ -21,7 +21,7 @@ impl<'a> Analyticsdata<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, entity: Option<String>, requests: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, requests: Option<Vec<String>>, entity: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

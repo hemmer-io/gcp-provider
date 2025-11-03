@@ -21,7 +21,7 @@ impl<'a> Apidoc<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, category_ids: Option<Vec<String>>, require_callback_url: Option<bool>, graphql_schema_display_name: Option<String>, spec_id: Option<String>, visibility: Option<bool>, graphql_schema: Option<String>, id: Option<String>, image_url: Option<String>, site_id: Option<String>, graphql_endpoint_url: Option<String>, api_product_name: Option<String>, edge_api_product_name: Option<String>, anon_allowed: Option<bool>, modified: Option<String>, published: Option<bool>, title: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, site_id: Option<String>, description: Option<String>, anon_allowed: Option<bool>, category_ids: Option<Vec<String>>, api_product_name: Option<String>, image_url: Option<String>, graphql_schema_display_name: Option<String>, spec_id: Option<String>, modified: Option<String>, published: Option<bool>, edge_api_product_name: Option<String>, title: Option<String>, visibility: Option<bool>, graphql_schema: Option<String>, require_callback_url: Option<bool>, graphql_endpoint_url: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Apidoc<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, category_ids: Option<Vec<String>>, require_callback_url: Option<bool>, graphql_schema_display_name: Option<String>, spec_id: Option<String>, visibility: Option<bool>, graphql_schema: Option<String>, id: Option<String>, image_url: Option<String>, site_id: Option<String>, graphql_endpoint_url: Option<String>, api_product_name: Option<String>, edge_api_product_name: Option<String>, anon_allowed: Option<bool>, modified: Option<String>, published: Option<bool>, title: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, site_id: Option<String>, description: Option<String>, anon_allowed: Option<bool>, category_ids: Option<Vec<String>>, api_product_name: Option<String>, image_url: Option<String>, graphql_schema_display_name: Option<String>, spec_id: Option<String>, modified: Option<String>, published: Option<bool>, edge_api_product_name: Option<String>, title: Option<String>, visibility: Option<bool>, graphql_schema: Option<String>, require_callback_url: Option<bool>, graphql_endpoint_url: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Live_chat_message<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, snippet: Option<String>, kind: Option<String>, id: Option<String>, author_details: Option<String>, etag: Option<String>) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, author_details: Option<String>, id: Option<String>, snippet: Option<String>, etag: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

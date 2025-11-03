@@ -21,7 +21,7 @@ impl<'a> Gtag_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, account_id: Option<String>, parameter: Option<Vec<String>>, type: Option<String>, fingerprint: Option<String>, gtag_config_id: Option<String>, tag_manager_url: Option<String>, workspace_id: Option<String>, path: Option<String>, container_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, fingerprint: Option<String>, gtag_config_id: Option<String>, path: Option<String>, account_id: Option<String>, type: Option<String>, parameter: Option<Vec<String>>, workspace_id: Option<String>, container_id: Option<String>, tag_manager_url: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Gtag_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, account_id: Option<String>, parameter: Option<Vec<String>>, type: Option<String>, fingerprint: Option<String>, gtag_config_id: Option<String>, tag_manager_url: Option<String>, workspace_id: Option<String>, path: Option<String>, container_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, fingerprint: Option<String>, gtag_config_id: Option<String>, path: Option<String>, account_id: Option<String>, type: Option<String>, parameter: Option<Vec<String>>, workspace_id: Option<String>, container_id: Option<String>, tag_manager_url: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Service_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cloud_sql_instance_initialization_config: Option<String>, request_id: Option<String>, resource_type: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, request_id: Option<String>, resource_type: Option<String>, cloud_sql_instance_initialization_config: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

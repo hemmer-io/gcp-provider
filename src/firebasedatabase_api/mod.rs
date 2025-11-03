@@ -24,10 +24,13 @@ impl<'a> Firebasedatabase_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "instance" => self.plan_instance(current_state, desired_input).await,
+            "instance" => {
+                self.plan_instance(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebasedatabase_api", resource_name
+                "firebasedatabase_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Firebasedatabase_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "instance" => self.create_instance(input).await,
+            "instance" => {
+                self.create_instance(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebasedatabase_api", resource_name
+                "firebasedatabase_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "instance" => self.read_instance(id).await,
+            "instance" => {
+                self.read_instance(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebasedatabase_api", resource_name
+                "firebasedatabase_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Firebasedatabase_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "instance" => self.update_instance(id, input).await,
+            "instance" => {
+                self.update_instance(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebasedatabase_api", resource_name
+                "firebasedatabase_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "instance" => self.delete_instance(id).await,
+            "instance" => {
+                self.delete_instance(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "firebasedatabase_api", resource_name
+                "firebasedatabase_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Firebasedatabase_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Instance resource operations
@@ -110,26 +134,44 @@ impl<'a> Firebasedatabase_apiService<'a> {
     }
 
     /// Create a new instance resource
-    async fn create_instance(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_instance(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a instance resource
-    async fn read_instance(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_instance(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a instance resource
-    async fn update_instance(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_instance(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a instance resource
-    async fn delete_instance(&self, id: &str) -> Result<()> {
+    async fn delete_instance(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

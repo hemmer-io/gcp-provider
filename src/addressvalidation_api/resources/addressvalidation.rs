@@ -1,6 +1,6 @@
 //! Addressvalidation resource
 //!
-//! Feedback about the outcome of the sequence of validation attempts. This should be the last call made after a sequence of validation calls for the same address, and should be called once the transaction is concluded. This should only be sent once for the sequence of `ValidateAddress` requests needed to validate an address fully.
+//! Validates an address.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Addressvalidation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, response_id: Option<String>, conclusion: Option<String>) -> Result<String> {
+    pub async fn create(&self, session_token: Option<String>, address: Option<String>, enable_usps_cass: Option<bool>, language_options: Option<String>, previous_response_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

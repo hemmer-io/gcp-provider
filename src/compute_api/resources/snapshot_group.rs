@@ -22,7 +22,7 @@ impl<'a> Snapshot_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, self_link: Option<String>, source_instant_snapshot_group: Option<String>, creation_timestamp: Option<String>, status: Option<String>, source_info: Option<String>, kind: Option<String>, name: Option<String>, id: Option<String>, source_instant_snapshot_group_info: Option<String>, description: Option<String>, self_link_with_id: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, source_instant_snapshot_group_info: Option<String>, status: Option<String>, name: Option<String>, self_link_with_id: Option<String>, creation_timestamp: Option<String>, description: Option<String>, source_info: Option<String>, self_link: Option<String>, id: Option<String>, kind: Option<String>, source_instant_snapshot_group: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

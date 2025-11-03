@@ -21,7 +21,7 @@ impl<'a> Service_classe<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_mask: Option<String>, policy: Option<String>, resource: String) -> Result<String> {
+    pub async fn create(&self, policy: Option<String>, update_mask: Option<String>, resource: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Service_classe<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_mask: Option<String>, policy: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, policy: Option<String>, update_mask: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

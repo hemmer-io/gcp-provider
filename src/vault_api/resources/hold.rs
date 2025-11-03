@@ -21,7 +21,7 @@ impl<'a> Hold<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, org_unit: Option<String>, query: Option<String>, corpus: Option<String>, update_time: Option<String>, accounts: Option<Vec<String>>, name: Option<String>, hold_id: Option<String>, matter_id: String) -> Result<String> {
+    pub async fn create(&self, hold_id: Option<String>, name: Option<String>, org_unit: Option<String>, query: Option<String>, update_time: Option<String>, corpus: Option<String>, accounts: Option<Vec<String>>, matter_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Hold<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, org_unit: Option<String>, query: Option<String>, corpus: Option<String>, update_time: Option<String>, accounts: Option<Vec<String>>, name: Option<String>, hold_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, hold_id: Option<String>, name: Option<String>, org_unit: Option<String>, query: Option<String>, update_time: Option<String>, corpus: Option<String>, accounts: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

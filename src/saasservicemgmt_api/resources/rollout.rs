@@ -21,7 +21,7 @@ impl<'a> Rollout<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, release: Option<String>, state: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, state_transition_time: Option<String>, rollout_kind: Option<String>, control: Option<String>, rollout_orchestration_strategy: Option<String>, update_time: Option<String>, root_rollout: Option<String>, etag: Option<String>, annotations: Option<HashMap<String, String>>, start_time: Option<String>, stats: Option<String>, end_time: Option<String>, parent_rollout: Option<String>, name: Option<String>, state_message: Option<String>, unit_filter: Option<String>, uid: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, state_message: Option<String>, unit_filter: Option<String>, uid: Option<String>, create_time: Option<String>, end_time: Option<String>, root_rollout: Option<String>, rollout_kind: Option<String>, state_transition_time: Option<String>, control: Option<String>, rollout_orchestration_strategy: Option<String>, update_time: Option<String>, annotations: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, parent_rollout: Option<String>, release: Option<String>, etag: Option<String>, name: Option<String>, stats: Option<String>, state: Option<String>, start_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Rollout<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, release: Option<String>, state: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, state_transition_time: Option<String>, rollout_kind: Option<String>, control: Option<String>, rollout_orchestration_strategy: Option<String>, update_time: Option<String>, root_rollout: Option<String>, etag: Option<String>, annotations: Option<HashMap<String, String>>, start_time: Option<String>, stats: Option<String>, end_time: Option<String>, parent_rollout: Option<String>, name: Option<String>, state_message: Option<String>, unit_filter: Option<String>, uid: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, state_message: Option<String>, unit_filter: Option<String>, uid: Option<String>, create_time: Option<String>, end_time: Option<String>, root_rollout: Option<String>, rollout_kind: Option<String>, state_transition_time: Option<String>, control: Option<String>, rollout_orchestration_strategy: Option<String>, update_time: Option<String>, annotations: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, parent_rollout: Option<String>, release: Option<String>, etag: Option<String>, name: Option<String>, stats: Option<String>, state: Option<String>, start_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

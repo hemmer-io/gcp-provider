@@ -22,7 +22,7 @@ impl<'a> Target_grpc_proxie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<String>, name: Option<String>, url_map: Option<String>, self_link: Option<String>, kind: Option<String>, fingerprint: Option<String>, description: Option<String>, validate_for_proxyless: Option<bool>, creation_timestamp: Option<String>, self_link_with_id: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, fingerprint: Option<String>, validate_for_proxyless: Option<bool>, kind: Option<String>, name: Option<String>, description: Option<String>, self_link_with_id: Option<String>, id: Option<String>, url_map: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Target_grpc_proxie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, id: Option<String>, name: Option<String>, url_map: Option<String>, self_link: Option<String>, kind: Option<String>, fingerprint: Option<String>, description: Option<String>, validate_for_proxyless: Option<bool>, creation_timestamp: Option<String>, self_link_with_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, fingerprint: Option<String>, validate_for_proxyless: Option<bool>, kind: Option<String>, name: Option<String>, description: Option<String>, self_link_with_id: Option<String>, id: Option<String>, url_map: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

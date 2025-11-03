@@ -21,7 +21,7 @@ impl<'a> Internal_range<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, immutable: Option<bool>, migration: Option<String>, users: Option<Vec<String>>, exclude_cidr_ranges: Option<Vec<String>>, ip_cidr_range: Option<String>, prefix_length: Option<i64>, update_time: Option<String>, overlaps: Option<Vec<String>>, allocation_options: Option<String>, network: Option<String>, target_cidr_range: Option<Vec<String>>, usage: Option<String>, description: Option<String>, create_time: Option<String>, peering: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, network: Option<String>, ip_cidr_range: Option<String>, update_time: Option<String>, name: Option<String>, immutable: Option<bool>, overlaps: Option<Vec<String>>, labels: Option<HashMap<String, String>>, migration: Option<String>, create_time: Option<String>, exclude_cidr_ranges: Option<Vec<String>>, usage: Option<String>, allocation_options: Option<String>, target_cidr_range: Option<Vec<String>>, peering: Option<String>, users: Option<Vec<String>>, prefix_length: Option<i64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Internal_range<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, immutable: Option<bool>, migration: Option<String>, users: Option<Vec<String>>, exclude_cidr_ranges: Option<Vec<String>>, ip_cidr_range: Option<String>, prefix_length: Option<i64>, update_time: Option<String>, overlaps: Option<Vec<String>>, allocation_options: Option<String>, network: Option<String>, target_cidr_range: Option<Vec<String>>, usage: Option<String>, description: Option<String>, create_time: Option<String>, peering: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, network: Option<String>, ip_cidr_range: Option<String>, update_time: Option<String>, name: Option<String>, immutable: Option<bool>, overlaps: Option<Vec<String>>, labels: Option<HashMap<String, String>>, migration: Option<String>, create_time: Option<String>, exclude_cidr_ranges: Option<Vec<String>>, usage: Option<String>, allocation_options: Option<String>, target_cidr_range: Option<Vec<String>>, peering: Option<String>, users: Option<Vec<String>>, prefix_length: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

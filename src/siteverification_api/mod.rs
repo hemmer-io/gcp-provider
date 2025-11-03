@@ -24,10 +24,13 @@ impl<'a> Siteverification_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "web_resource" => self.plan_web_resource(current_state, desired_input).await,
+            "web_resource" => {
+                self.plan_web_resource(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "siteverification_api", resource_name
+                "siteverification_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Siteverification_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "web_resource" => self.create_web_resource(input).await,
+            "web_resource" => {
+                self.create_web_resource(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "siteverification_api", resource_name
+                "siteverification_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "web_resource" => self.read_web_resource(id).await,
+            "web_resource" => {
+                self.read_web_resource(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "siteverification_api", resource_name
+                "siteverification_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Siteverification_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "web_resource" => self.update_web_resource(id, input).await,
+            "web_resource" => {
+                self.update_web_resource(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "siteverification_api", resource_name
+                "siteverification_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "web_resource" => self.delete_web_resource(id).await,
+            "web_resource" => {
+                self.delete_web_resource(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "siteverification_api", resource_name
+                "siteverification_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Siteverification_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Web_resource resource operations
@@ -110,26 +134,44 @@ impl<'a> Siteverification_apiService<'a> {
     }
 
     /// Create a new web_resource resource
-    async fn create_web_resource(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_web_resource(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a web_resource resource
-    async fn read_web_resource(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_web_resource(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a web_resource resource
-    async fn update_web_resource(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_web_resource(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a web_resource resource
-    async fn delete_web_resource(&self, id: &str) -> Result<()> {
+    async fn delete_web_resource(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

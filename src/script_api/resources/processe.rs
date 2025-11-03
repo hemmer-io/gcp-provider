@@ -1,6 +1,6 @@
 //! Processe resource
 //!
-//! List information about processes made by or on behalf of a user, such as process type and current status.
+//! List information about a script's executed processes, such as process type and current status.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

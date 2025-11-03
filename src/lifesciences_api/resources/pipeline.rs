@@ -21,7 +21,7 @@ impl<'a> Pipeline<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, pub_sub_topic: Option<String>, labels: Option<HashMap<String, String>>, pipeline: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, pipeline: Option<String>, pub_sub_topic: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

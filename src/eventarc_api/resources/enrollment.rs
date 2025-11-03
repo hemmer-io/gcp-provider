@@ -21,7 +21,7 @@ impl<'a> Enrollment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, destination: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, cel_match: Option<String>, create_time: Option<String>, message_bus: Option<String>, annotations: Option<HashMap<String, String>>, etag: Option<String>, name: Option<String>, update_time: Option<String>, uid: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, etag: Option<String>, message_bus: Option<String>, cel_match: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, update_time: Option<String>, uid: Option<String>, create_time: Option<String>, destination: Option<String>, annotations: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Enrollment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, destination: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, cel_match: Option<String>, create_time: Option<String>, message_bus: Option<String>, annotations: Option<HashMap<String, String>>, etag: Option<String>, name: Option<String>, update_time: Option<String>, uid: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, etag: Option<String>, message_bus: Option<String>, cel_match: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, update_time: Option<String>, uid: Option<String>, create_time: Option<String>, destination: Option<String>, annotations: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

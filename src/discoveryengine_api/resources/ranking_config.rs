@@ -21,7 +21,7 @@ impl<'a> Ranking_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, records: Option<Vec<String>>, ignore_record_details_in_response: Option<bool>, model: Option<String>, query: Option<String>, top_n: Option<i64>, user_labels: Option<HashMap<String, String>>, ranking_config: String) -> Result<String> {
+    pub async fn create(&self, ignore_record_details_in_response: Option<bool>, top_n: Option<i64>, query: Option<String>, model: Option<String>, records: Option<Vec<String>>, user_labels: Option<HashMap<String, String>>, ranking_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

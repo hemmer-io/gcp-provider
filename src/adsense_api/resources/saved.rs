@@ -1,6 +1,6 @@
 //! Saved resource
 //!
-//! List all saved reports in this AdSense account.
+//! Generate an AdSense report based on the saved report ID sent in the query parameters.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

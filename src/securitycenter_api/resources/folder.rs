@@ -1,6 +1,6 @@
 //! Folder resource
 //!
-//! Get the RapidVulnerabilityDetectionSettings resource. In the returned settings response, a missing field only indicates that it was not explicitly set, so no assumption should be made about these fields. In other words, GetRapidVulnerabilityDetectionSettings does not calculate the effective service settings for the resource, which accounts for inherited settings and defaults. Instead, use CalculateRapidVulnerabilityDetectionSettings for this purpose.
+//! Get the EventThreatDetectionSettings resource. In the returned settings response, a missing field only indicates that it was not explicitly set, so no assumption should be made about these fields. In other words, GetEventThreatDetectionSettings does not calculate the effective service settings for the resource, which accounts for inherited settings and defaults. Instead, use CalculateEventThreatDetectionSettings for this purpose.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -34,7 +34,7 @@ impl<'a> Folder<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, service_enablement_state: Option<String>, service_account: Option<String>, name: Option<String>, modules: Option<HashMap<String, String>>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, service_account: Option<String>, name: Option<String>, modules: Option<HashMap<String, String>>, service_enablement_state: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

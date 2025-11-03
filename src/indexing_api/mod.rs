@@ -25,12 +25,12 @@ impl<'a> Indexing_apiService<'a> {
     ) -> Result<ResourcePlan> {
         match resource_name {
             "url_notification" => {
-                self.plan_url_notification(current_state, desired_input)
-                    .await
+                self.plan_url_notification(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "indexing_api", resource_name
+                "indexing_api",
+                resource_name
             ))),
         }
     }
@@ -42,21 +42,31 @@ impl<'a> Indexing_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "url_notification" => self.create_url_notification(input).await,
+            "url_notification" => {
+                self.create_url_notification(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "indexing_api", resource_name
+                "indexing_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "url_notification" => self.read_url_notification(id).await,
+            "url_notification" => {
+                self.read_url_notification(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "indexing_api", resource_name
+                "indexing_api",
+                resource_name
             ))),
         }
     }
@@ -69,21 +79,31 @@ impl<'a> Indexing_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "url_notification" => self.update_url_notification(id, input).await,
+            "url_notification" => {
+                self.update_url_notification(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "indexing_api", resource_name
+                "indexing_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "url_notification" => self.delete_url_notification(id).await,
+            "url_notification" => {
+                self.delete_url_notification(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "indexing_api", resource_name
+                "indexing_api",
+                resource_name
             ))),
         }
     }
@@ -91,6 +111,7 @@ impl<'a> Indexing_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Url_notification resource operations
@@ -113,15 +134,23 @@ impl<'a> Indexing_apiService<'a> {
     }
 
     /// Create a new url_notification resource
-    async fn create_url_notification(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_url_notification(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a url_notification resource
-    async fn read_url_notification(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_url_notification(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a url_notification resource
@@ -131,12 +160,18 @@ impl<'a> Indexing_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a url_notification resource
-    async fn delete_url_notification(&self, id: &str) -> Result<()> {
+    async fn delete_url_notification(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

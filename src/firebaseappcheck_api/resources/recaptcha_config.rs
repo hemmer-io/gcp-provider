@@ -34,7 +34,7 @@ impl<'a> Recaptcha_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, token_ttl: Option<String>, site_secret: Option<String>, site_secret_set: Option<bool>, min_valid_score: Option<f64>) -> Result<()> {
+    pub async fn update(&self, id: &str, site_secret: Option<String>, token_ttl: Option<String>, name: Option<String>, site_secret_set: Option<bool>, min_valid_score: Option<f64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

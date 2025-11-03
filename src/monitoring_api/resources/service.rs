@@ -21,7 +21,7 @@ impl<'a> Service<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cloud_endpoints: Option<String>, gke_service: Option<String>, cluster_istio: Option<String>, app_engine: Option<String>, gke_workload: Option<String>, custom: Option<String>, cloud_run: Option<String>, gke_namespace: Option<String>, telemetry: Option<String>, display_name: Option<String>, istio_canonical_service: Option<String>, mesh_istio: Option<String>, basic_service: Option<String>, user_labels: Option<HashMap<String, String>>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, user_labels: Option<HashMap<String, String>>, gke_namespace: Option<String>, telemetry: Option<String>, display_name: Option<String>, custom: Option<String>, gke_service: Option<String>, cloud_run: Option<String>, istio_canonical_service: Option<String>, gke_workload: Option<String>, cloud_endpoints: Option<String>, name: Option<String>, basic_service: Option<String>, app_engine: Option<String>, cluster_istio: Option<String>, mesh_istio: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Service<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, cloud_endpoints: Option<String>, gke_service: Option<String>, cluster_istio: Option<String>, app_engine: Option<String>, gke_workload: Option<String>, custom: Option<String>, cloud_run: Option<String>, gke_namespace: Option<String>, telemetry: Option<String>, display_name: Option<String>, istio_canonical_service: Option<String>, mesh_istio: Option<String>, basic_service: Option<String>, user_labels: Option<HashMap<String, String>>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, user_labels: Option<HashMap<String, String>>, gke_namespace: Option<String>, telemetry: Option<String>, display_name: Option<String>, custom: Option<String>, gke_service: Option<String>, cloud_run: Option<String>, istio_canonical_service: Option<String>, gke_workload: Option<String>, cloud_endpoints: Option<String>, name: Option<String>, basic_service: Option<String>, app_engine: Option<String>, cluster_istio: Option<String>, mesh_istio: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

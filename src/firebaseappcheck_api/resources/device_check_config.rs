@@ -34,7 +34,7 @@ impl<'a> Device_check_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, token_ttl: Option<String>, key_id: Option<String>, private_key: Option<String>, private_key_set: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, token_ttl: Option<String>, private_key_set: Option<bool>, name: Option<String>, key_id: Option<String>, private_key: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

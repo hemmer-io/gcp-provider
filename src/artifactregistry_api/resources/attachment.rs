@@ -21,7 +21,7 @@ impl<'a> Attachment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, attachment_namespace: Option<String>, oci_version_name: Option<String>, type: Option<String>, update_time: Option<String>, create_time: Option<String>, target: Option<String>, annotations: Option<HashMap<String, String>>, name: Option<String>, files: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, files: Option<Vec<String>>, create_time: Option<String>, type: Option<String>, target: Option<String>, attachment_namespace: Option<String>, oci_version_name: Option<String>, annotations: Option<HashMap<String, String>>, name: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Ruleset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, metadata: Option<String>, attachment_point: Option<String>, name: Option<String>, source: Option<String>, create_time: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, metadata: Option<String>, name: Option<String>, source: Option<String>, attachment_point: Option<String>, create_time: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

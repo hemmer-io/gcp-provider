@@ -21,7 +21,7 @@ impl<'a> Backup_schedule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, encryption_config: Option<String>, full_backup_spec: Option<String>, name: Option<String>, spec: Option<String>, update_time: Option<String>, retention_duration: Option<String>, incremental_backup_spec: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, retention_duration: Option<String>, update_time: Option<String>, encryption_config: Option<String>, full_backup_spec: Option<String>, name: Option<String>, incremental_backup_spec: Option<String>, spec: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup_schedule<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, encryption_config: Option<String>, full_backup_spec: Option<String>, name: Option<String>, spec: Option<String>, update_time: Option<String>, retention_duration: Option<String>, incremental_backup_spec: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, retention_duration: Option<String>, update_time: Option<String>, encryption_config: Option<String>, full_backup_spec: Option<String>, name: Option<String>, incremental_backup_spec: Option<String>, spec: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

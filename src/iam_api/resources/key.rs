@@ -1,6 +1,6 @@
 //! Key resource
 //!
-//! Creates a ServiceAccountKey.
+//! Creates a new WorkforcePoolProviderKey in a WorkforcePoolProvider.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Key<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, private_key_type: Option<String>, key_algorithm: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, state: Option<String>, use: Option<String>, expire_time: Option<String>, key_data: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

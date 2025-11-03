@@ -22,7 +22,7 @@ impl<'a> Region_health_source<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, creation_timestamp: Option<String>, region: Option<String>, self_link_with_id: Option<String>, description: Option<String>, kind: Option<String>, sources: Option<Vec<String>>, fingerprint: Option<String>, self_link: Option<String>, source_type: Option<String>, health_aggregation_policy: Option<String>, id: Option<String>, name: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, source_type: Option<String>, health_aggregation_policy: Option<String>, id: Option<String>, fingerprint: Option<String>, creation_timestamp: Option<String>, region: Option<String>, kind: Option<String>, name: Option<String>, description: Option<String>, self_link: Option<String>, self_link_with_id: Option<String>, sources: Option<Vec<String>>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Region_health_source<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, creation_timestamp: Option<String>, region: Option<String>, self_link_with_id: Option<String>, description: Option<String>, kind: Option<String>, sources: Option<Vec<String>>, fingerprint: Option<String>, self_link: Option<String>, source_type: Option<String>, health_aggregation_policy: Option<String>, id: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, source_type: Option<String>, health_aggregation_policy: Option<String>, id: Option<String>, fingerprint: Option<String>, creation_timestamp: Option<String>, region: Option<String>, kind: Option<String>, name: Option<String>, description: Option<String>, self_link: Option<String>, self_link_with_id: Option<String>, sources: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

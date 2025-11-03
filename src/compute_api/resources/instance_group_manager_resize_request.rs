@@ -22,7 +22,7 @@ impl<'a> Instance_group_manager_resize_request<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, instances: Option<Vec<String>>, self_link: Option<String>, name: Option<String>, state: Option<String>, creation_timestamp: Option<String>, region: Option<String>, description: Option<String>, status: Option<String>, kind: Option<String>, count: Option<i64>, resize_by: Option<i64>, requested_run_duration: Option<String>, zone: Option<String>, self_link_with_id: Option<String>, id: Option<String>, project: String, instance_group_manager: String, zone: String) -> Result<String> {
+    pub async fn create(&self, resize_by: Option<i64>, status: Option<String>, self_link: Option<String>, requested_run_duration: Option<String>, count: Option<i64>, self_link_with_id: Option<String>, instances: Option<Vec<String>>, kind: Option<String>, zone: Option<String>, id: Option<String>, name: Option<String>, region: Option<String>, creation_timestamp: Option<String>, state: Option<String>, description: Option<String>, zone: String, project: String, instance_group_manager: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

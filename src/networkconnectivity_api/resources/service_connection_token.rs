@@ -21,7 +21,7 @@ impl<'a> Service_connection_token<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, token: Option<String>, update_time: Option<String>, etag: Option<String>, create_time: Option<String>, name: Option<String>, network: Option<String>, description: Option<String>, expire_time: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, description: Option<String>, etag: Option<String>, create_time: Option<String>, token: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, expire_time: Option<String>, network: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

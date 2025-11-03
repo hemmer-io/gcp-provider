@@ -21,7 +21,7 @@ impl<'a> Authz_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, name: Option<String>, http_rules: Option<Vec<String>>, custom_provider: Option<String>, create_time: Option<String>, action: Option<String>, update_time: Option<String>, target: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, custom_provider: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, target: Option<String>, action: Option<String>, http_rules: Option<Vec<String>>, create_time: Option<String>, update_time: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Authz_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, name: Option<String>, http_rules: Option<Vec<String>>, custom_provider: Option<String>, create_time: Option<String>, action: Option<String>, update_time: Option<String>, target: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, custom_provider: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, target: Option<String>, action: Option<String>, http_rules: Option<Vec<String>>, create_time: Option<String>, update_time: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

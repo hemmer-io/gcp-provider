@@ -21,7 +21,7 @@ impl<'a> Autonomous_database<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, properties: Option<String>, labels: Option<HashMap<String, String>>, admin_password: Option<String>, network: Option<String>, source_config: Option<String>, odb_network: Option<String>, odb_subnet: Option<String>, disaster_recovery_supported_locations: Option<Vec<String>>, name: Option<String>, peer_autonomous_databases: Option<Vec<String>>, create_time: Option<String>, cidr: Option<String>, display_name: Option<String>, database: Option<String>, entitlement_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, odb_network: Option<String>, source_config: Option<String>, database: Option<String>, display_name: Option<String>, name: Option<String>, entitlement_id: Option<String>, admin_password: Option<String>, network: Option<String>, disaster_recovery_supported_locations: Option<Vec<String>>, odb_subnet: Option<String>, peer_autonomous_databases: Option<Vec<String>>, labels: Option<HashMap<String, String>>, properties: Option<String>, cidr: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Autonomous_database<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, properties: Option<String>, labels: Option<HashMap<String, String>>, admin_password: Option<String>, network: Option<String>, source_config: Option<String>, odb_network: Option<String>, odb_subnet: Option<String>, disaster_recovery_supported_locations: Option<Vec<String>>, name: Option<String>, peer_autonomous_databases: Option<Vec<String>>, create_time: Option<String>, cidr: Option<String>, display_name: Option<String>, database: Option<String>, entitlement_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, odb_network: Option<String>, source_config: Option<String>, database: Option<String>, display_name: Option<String>, name: Option<String>, entitlement_id: Option<String>, admin_password: Option<String>, network: Option<String>, disaster_recovery_supported_locations: Option<Vec<String>>, odb_subnet: Option<String>, peer_autonomous_databases: Option<Vec<String>>, labels: Option<HashMap<String, String>>, properties: Option<String>, cidr: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 
