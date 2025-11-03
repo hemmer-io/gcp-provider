@@ -24,17 +24,17 @@ impl<'a> AnyService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "indexe" => {
+                self.plan_indexe(current_state, desired_input).await
+            }
+            "log_service" => {
+                self.plan_log_service(current_state, desired_input).await
+            }
             "log" => {
                 self.plan_log(current_state, desired_input).await
             }
             "entrie" => {
                 self.plan_entrie(current_state, desired_input).await
-            }
-            "log_service" => {
-                self.plan_log_service(current_state, desired_input).await
-            }
-            "indexe" => {
-                self.plan_indexe(current_state, desired_input).await
             }
             "sink" => {
                 self.plan_sink(current_state, desired_input).await
@@ -54,17 +54,17 @@ impl<'a> AnyService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "indexe" => {
+                self.create_indexe(input).await
+            }
+            "log_service" => {
+                self.create_log_service(input).await
+            }
             "log" => {
                 self.create_log(input).await
             }
             "entrie" => {
                 self.create_entrie(input).await
-            }
-            "log_service" => {
-                self.create_log_service(input).await
-            }
-            "indexe" => {
-                self.create_indexe(input).await
             }
             "sink" => {
                 self.create_sink(input).await
@@ -84,17 +84,17 @@ impl<'a> AnyService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "indexe" => {
+                self.read_indexe(id).await
+            }
+            "log_service" => {
+                self.read_log_service(id).await
+            }
             "log" => {
                 self.read_log(id).await
             }
             "entrie" => {
                 self.read_entrie(id).await
-            }
-            "log_service" => {
-                self.read_log_service(id).await
-            }
-            "indexe" => {
-                self.read_indexe(id).await
             }
             "sink" => {
                 self.read_sink(id).await
@@ -115,17 +115,17 @@ impl<'a> AnyService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "indexe" => {
+                self.update_indexe(id, input).await
+            }
+            "log_service" => {
+                self.update_log_service(id, input).await
+            }
             "log" => {
                 self.update_log(id, input).await
             }
             "entrie" => {
                 self.update_entrie(id, input).await
-            }
-            "log_service" => {
-                self.update_log_service(id, input).await
-            }
-            "indexe" => {
-                self.update_indexe(id, input).await
             }
             "sink" => {
                 self.update_sink(id, input).await
@@ -145,17 +145,17 @@ impl<'a> AnyService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "indexe" => {
+                self.delete_indexe(id).await
+            }
+            "log_service" => {
+                self.delete_log_service(id).await
+            }
             "log" => {
                 self.delete_log(id).await
             }
             "entrie" => {
                 self.delete_entrie(id).await
-            }
-            "log_service" => {
-                self.delete_log_service(id).await
-            }
-            "indexe" => {
-                self.delete_indexe(id).await
             }
             "sink" => {
                 self.delete_sink(id).await
@@ -171,6 +171,128 @@ impl<'a> AnyService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Indexe resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a indexe resource
+    async fn plan_indexe(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new indexe resource
+    async fn create_indexe(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a indexe resource
+    async fn read_indexe(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a indexe resource
+    async fn update_indexe(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a indexe resource
+    async fn delete_indexe(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Log_service resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a log_service resource
+    async fn plan_log_service(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new log_service resource
+    async fn create_log_service(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a log_service resource
+    async fn read_log_service(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a log_service resource
+    async fn update_log_service(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a log_service resource
+    async fn delete_log_service(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -287,128 +409,6 @@ impl<'a> AnyService<'a> {
 
     /// Delete a entrie resource
     async fn delete_entrie(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Log_service resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a log_service resource
-    async fn plan_log_service(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new log_service resource
-    async fn create_log_service(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a log_service resource
-    async fn read_log_service(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a log_service resource
-    async fn update_log_service(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a log_service resource
-    async fn delete_log_service(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Indexe resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a indexe resource
-    async fn plan_indexe(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new indexe resource
-    async fn create_indexe(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a indexe resource
-    async fn read_indexe(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a indexe resource
-    async fn update_indexe(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a indexe resource
-    async fn delete_indexe(
         &self,
         id: &str,
     ) -> Result<()> {

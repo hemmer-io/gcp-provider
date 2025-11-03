@@ -21,7 +21,7 @@ impl<'a> Change<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, token: Option<String>, params: Option<HashMap<String, String>>, id: Option<String>, payload: Option<bool>, address: Option<String>, resource_uri: Option<String>, type: Option<String>, expiration: Option<String>, kind: Option<String>, resource_id: Option<String>) -> Result<String> {
+    pub async fn create(&self, type: Option<String>, resource_id: Option<String>, id: Option<String>, params: Option<HashMap<String, String>>, token: Option<String>, kind: Option<String>, resource_uri: Option<String>, address: Option<String>, expiration: Option<String>, payload: Option<bool>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

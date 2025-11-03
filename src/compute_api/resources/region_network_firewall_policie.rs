@@ -21,7 +21,7 @@ impl<'a> Region_network_firewall_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, short_name: Option<String>, packet_mirroring_rules: Option<Vec<String>>, fingerprint: Option<String>, policy_type: Option<String>, name: Option<String>, rule_tuple_count: Option<i64>, id: Option<String>, region: Option<String>, associations: Option<Vec<String>>, rules: Option<Vec<String>>, creation_timestamp: Option<String>, self_link_with_id: Option<String>, parent: Option<String>, display_name: Option<String>, self_link: Option<String>, kind: Option<String>, description: Option<String>, policy_source: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, policy_source: Option<String>, region: Option<String>, rules: Option<Vec<String>>, description: Option<String>, parent: Option<String>, rule_tuple_count: Option<i64>, display_name: Option<String>, id: Option<String>, associations: Option<Vec<String>>, fingerprint: Option<String>, creation_timestamp: Option<String>, name: Option<String>, packet_mirroring_rules: Option<Vec<String>>, self_link: Option<String>, self_link_with_id: Option<String>, short_name: Option<String>, policy_type: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Region_network_firewall_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, short_name: Option<String>, packet_mirroring_rules: Option<Vec<String>>, fingerprint: Option<String>, policy_type: Option<String>, name: Option<String>, rule_tuple_count: Option<i64>, id: Option<String>, region: Option<String>, associations: Option<Vec<String>>, rules: Option<Vec<String>>, creation_timestamp: Option<String>, self_link_with_id: Option<String>, parent: Option<String>, display_name: Option<String>, self_link: Option<String>, kind: Option<String>, description: Option<String>, policy_source: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kind: Option<String>, policy_source: Option<String>, region: Option<String>, rules: Option<Vec<String>>, description: Option<String>, parent: Option<String>, rule_tuple_count: Option<i64>, display_name: Option<String>, id: Option<String>, associations: Option<Vec<String>>, fingerprint: Option<String>, creation_timestamp: Option<String>, name: Option<String>, packet_mirroring_rules: Option<Vec<String>>, self_link: Option<String>, self_link_with_id: Option<String>, short_name: Option<String>, policy_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

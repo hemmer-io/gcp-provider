@@ -22,7 +22,7 @@ impl<'a> Vpn_gateway<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, label_fingerprint: Option<String>, labels: Option<HashMap<String, String>>, creation_timestamp: Option<String>, id: Option<String>, kind: Option<String>, name: Option<String>, network: Option<String>, self_link: Option<String>, region: Option<String>, stack_type: Option<String>, gateway_ip_version: Option<String>, description: Option<String>, vpn_interfaces: Option<Vec<String>>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, name: Option<String>, self_link: Option<String>, vpn_interfaces: Option<Vec<String>>, label_fingerprint: Option<String>, region: Option<String>, gateway_ip_version: Option<String>, creation_timestamp: Option<String>, network: Option<String>, kind: Option<String>, stack_type: Option<String>, description: Option<String>, id: Option<String>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

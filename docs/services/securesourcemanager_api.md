@@ -10,97 +10,25 @@
 
 The securesourcemanager_api service provides access to 10 resource types:
 
-- [Instance](#instance) [CRD]
-- [Issue](#issue) [CRUD]
-- [Issue_comment](#issue_comment) [CRUD]
-- [Operation](#operation) [CRD]
-- [Pull_request](#pull_request) [CRU]
-- [Location](#location) [R]
 - [Pull_request_comment](#pull_request_comment) [CRUD]
 - [Branch_rule](#branch_rule) [CRUD]
+- [Issue_comment](#issue_comment) [CRUD]
 - [Repositorie](#repositorie) [CRUD]
+- [Instance](#instance) [CRD]
 - [Hook](#hook) [CRUD]
+- [Location](#location) [R]
+- [Issue](#issue) [CRUD]
+- [Operation](#operation) [CRD]
+- [Pull_request](#pull_request) [CRU]
 
 ---
 
 ## Resources
 
 
-### Instance
+### Pull_request_comment
 
-Creates a new instance in a given project and location.
-
-**Operations**: ✅ Create ✅ Read ✅ Delete
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `name` | String |  | Optional. A unique identifier for an instance. The name should be of the format: `projects/{project_number}/locations/{location_id}/instances/{instance_id}` `project_number`: Maps to a unique int64 id assigned to each project. `location_id`: Refers to the region where the instance will be deployed. Since Secure Source Manager is a regional service, it must be one of the valid GCP regions. `instance_id`: User provided name for the instance, must be unique for a project_number and location_id combination. |
-| `create_time` | String |  | Output only. Create timestamp. |
-| `kms_key` | String |  | Optional. Immutable. Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*. |
-| `labels` | HashMap<String, String> |  | Optional. Labels as key value pairs. |
-| `state_note` | String |  | Output only. An optional field providing information about the current instance state. |
-| `state` | String |  | Output only. Current state of the instance. |
-| `workforce_identity_federation_config` | String |  | Optional. Configuration for Workforce Identity Federation to support third party identity provider. If unset, defaults to the Google OIDC IdP. |
-| `host_config` | String |  | Output only. A list of hostnames for this instance. |
-| `update_time` | String |  | Output only. Update timestamp. |
-| `private_config` | String |  | Optional. Private settings for private instance. |
-| `parent` | String | ✅ | Required. Value for parent. |
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `name` | String | Optional. A unique identifier for an instance. The name should be of the format: `projects/{project_number}/locations/{location_id}/instances/{instance_id}` `project_number`: Maps to a unique int64 id assigned to each project. `location_id`: Refers to the region where the instance will be deployed. Since Secure Source Manager is a regional service, it must be one of the valid GCP regions. `instance_id`: User provided name for the instance, must be unique for a project_number and location_id combination. |
-| `create_time` | String | Output only. Create timestamp. |
-| `kms_key` | String | Optional. Immutable. Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*. |
-| `labels` | HashMap<String, String> | Optional. Labels as key value pairs. |
-| `state_note` | String | Output only. An optional field providing information about the current instance state. |
-| `state` | String | Output only. Current state of the instance. |
-| `workforce_identity_federation_config` | String | Optional. Configuration for Workforce Identity Federation to support third party identity provider. If unset, defaults to the Google OIDC IdP. |
-| `host_config` | String | Output only. A list of hostnames for this instance. |
-| `update_time` | String | Output only. Update timestamp. |
-| `private_config` | String | Optional. Private settings for private instance. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create instance
-instance = provider.securesourcemanager_api.Instance {
-    parent = "value"  # Required. Value for parent.
-}
-
-# Access instance outputs
-instance_id = instance.id
-instance_name = instance.name
-instance_create_time = instance.create_time
-instance_kms_key = instance.kms_key
-instance_labels = instance.labels
-instance_state_note = instance.state_note
-instance_state = instance.state
-instance_workforce_identity_federation_config = instance.workforce_identity_federation_config
-instance_host_config = instance.host_config
-instance_update_time = instance.update_time
-instance_private_config = instance.private_config
-```
-
----
-
-
-### Issue
-
-Creates an issue.
+Creates a pull request comment.
 
 **Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
 
@@ -108,29 +36,25 @@ Creates an issue.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `update_time` | String |  | Output only. Last updated timestamp. |
-| `name` | String |  | Identifier. Unique identifier for an issue. The issue id is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}` |
+| `comment` | String |  | Optional. The general pull request comment. |
 | `create_time` | String |  | Output only. Creation timestamp. |
-| `body` | String |  | Optional. Issue body. Provides a detailed description of the issue. |
-| `close_time` | String |  | Output only. Close timestamp (if closed). Cleared when is re-opened. |
-| `etag` | String |  | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
-| `state` | String |  | Output only. State of the issue. |
-| `title` | String |  | Required. Issue title. |
-| `parent` | String | ✅ | Required. The repository in which to create the issue. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}` |
+| `name` | String |  | Identifier. Unique identifier for the pull request comment. The comment id is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request}/pullRequestComments/{comment_id}` |
+| `code` | String |  | Optional. The comment on a code line. |
+| `review` | String |  | Optional. The review summary comment. |
+| `update_time` | String |  | Output only. Last updated timestamp. |
+| `parent` | String | ✅ | Required. The pull request in which to create the pull request comment. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}` |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `update_time` | String | Output only. Last updated timestamp. |
-| `name` | String | Identifier. Unique identifier for an issue. The issue id is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}` |
+| `comment` | String | Optional. The general pull request comment. |
 | `create_time` | String | Output only. Creation timestamp. |
-| `body` | String | Optional. Issue body. Provides a detailed description of the issue. |
-| `close_time` | String | Output only. Close timestamp (if closed). Cleared when is re-opened. |
-| `etag` | String | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
-| `state` | String | Output only. State of the issue. |
-| `title` | String | Required. Issue title. |
+| `name` | String | Identifier. Unique identifier for the pull request comment. The comment id is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request}/pullRequestComments/{comment_id}` |
+| `code` | String | Optional. The comment on a code line. |
+| `review` | String | Optional. The review summary comment. |
+| `update_time` | String | Output only. Last updated timestamp. |
 
 
 #### Usage Example
@@ -144,21 +68,106 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create issue
-issue = provider.securesourcemanager_api.Issue {
-    parent = "value"  # Required. The repository in which to create the issue. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+# Create pull_request_comment
+pull_request_comment = provider.securesourcemanager_api.Pull_request_comment {
+    parent = "value"  # Required. The pull request in which to create the pull request comment. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
 }
 
-# Access issue outputs
-issue_id = issue.id
-issue_update_time = issue.update_time
-issue_name = issue.name
-issue_create_time = issue.create_time
-issue_body = issue.body
-issue_close_time = issue.close_time
-issue_etag = issue.etag
-issue_state = issue.state
-issue_title = issue.title
+# Access pull_request_comment outputs
+pull_request_comment_id = pull_request_comment.id
+pull_request_comment_comment = pull_request_comment.comment
+pull_request_comment_create_time = pull_request_comment.create_time
+pull_request_comment_name = pull_request_comment.name
+pull_request_comment_code = pull_request_comment.code
+pull_request_comment_review = pull_request_comment.review
+pull_request_comment_update_time = pull_request_comment.update_time
+```
+
+---
+
+
+### Branch_rule
+
+CreateBranchRule creates a branch rule in a given repository.
+
+**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `minimum_approvals_count` | i64 |  | Optional. The minimum number of approvals required for the branch rule to be matched. |
+| `minimum_reviews_count` | i64 |  | Optional. The minimum number of reviews required for the branch rule to be matched. |
+| `uid` | String |  | Output only. Unique identifier of the repository. |
+| `require_linear_history` | bool |  | Optional. Determines if require linear history before merging to the branch. |
+| `create_time` | String |  | Output only. Create timestamp. |
+| `name` | String |  | Optional. A unique identifier for a BranchRule. The name should be of the format: `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}` |
+| `required_status_checks` | Vec<String> |  | Optional. List of required status checks before merging to the branch. |
+| `annotations` | HashMap<String, String> |  | Optional. User annotations. These attributes can only be set and used by the user. See https://google.aip.dev/128#annotations for more details such as format and size limitations. |
+| `allow_stale_reviews` | bool |  | Optional. Determines if allow stale reviews or approvals before merging to the branch. |
+| `require_pull_request` | bool |  | Optional. Determines if the branch rule requires a pull request or not. |
+| `include_pattern` | String |  | Optional. The pattern of the branch that can match to this BranchRule. Specified as regex. .* for all branches. Examples: main, (main|release.*). Current MVP phase only support `.*` for wildcard. |
+| `update_time` | String |  | Output only. Update timestamp. |
+| `disabled` | bool |  | Optional. Determines if the branch rule is disabled or not. |
+| `require_comments_resolved` | bool |  | Optional. Determines if require comments resolved before merging to the branch. |
+| `etag` | String |  | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
+| `parent` | String | ✅ |  |
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `minimum_approvals_count` | i64 | Optional. The minimum number of approvals required for the branch rule to be matched. |
+| `minimum_reviews_count` | i64 | Optional. The minimum number of reviews required for the branch rule to be matched. |
+| `uid` | String | Output only. Unique identifier of the repository. |
+| `require_linear_history` | bool | Optional. Determines if require linear history before merging to the branch. |
+| `create_time` | String | Output only. Create timestamp. |
+| `name` | String | Optional. A unique identifier for a BranchRule. The name should be of the format: `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}` |
+| `required_status_checks` | Vec<String> | Optional. List of required status checks before merging to the branch. |
+| `annotations` | HashMap<String, String> | Optional. User annotations. These attributes can only be set and used by the user. See https://google.aip.dev/128#annotations for more details such as format and size limitations. |
+| `allow_stale_reviews` | bool | Optional. Determines if allow stale reviews or approvals before merging to the branch. |
+| `require_pull_request` | bool | Optional. Determines if the branch rule requires a pull request or not. |
+| `include_pattern` | String | Optional. The pattern of the branch that can match to this BranchRule. Specified as regex. .* for all branches. Examples: main, (main|release.*). Current MVP phase only support `.*` for wildcard. |
+| `update_time` | String | Output only. Update timestamp. |
+| `disabled` | bool | Optional. Determines if the branch rule is disabled or not. |
+| `require_comments_resolved` | bool | Optional. Determines if require comments resolved before merging to the branch. |
+| `etag` | String | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create branch_rule
+branch_rule = provider.securesourcemanager_api.Branch_rule {
+    parent = "value"  # Required field
+}
+
+# Access branch_rule outputs
+branch_rule_id = branch_rule.id
+branch_rule_minimum_approvals_count = branch_rule.minimum_approvals_count
+branch_rule_minimum_reviews_count = branch_rule.minimum_reviews_count
+branch_rule_uid = branch_rule.uid
+branch_rule_require_linear_history = branch_rule.require_linear_history
+branch_rule_create_time = branch_rule.create_time
+branch_rule_name = branch_rule.name
+branch_rule_required_status_checks = branch_rule.required_status_checks
+branch_rule_annotations = branch_rule.annotations
+branch_rule_allow_stale_reviews = branch_rule.allow_stale_reviews
+branch_rule_require_pull_request = branch_rule.require_pull_request
+branch_rule_include_pattern = branch_rule.include_pattern
+branch_rule_update_time = branch_rule.update_time
+branch_rule_disabled = branch_rule.disabled
+branch_rule_require_comments_resolved = branch_rule.require_comments_resolved
+branch_rule_etag = branch_rule.etag
 ```
 
 ---
@@ -218,9 +227,78 @@ issue_comment_create_time = issue_comment.create_time
 ---
 
 
-### Operation
+### Repositorie
 
-Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.
+Creates a new repository in a given project and location. The Repository.Instance field is required in the request body for requests using the securesourcemanager.googleapis.com endpoint.
+
+**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `create_time` | String |  | Output only. Create timestamp. |
+| `initial_config` | String |  | Input only. Initial configurations for the repository. |
+| `etag` | String |  | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
+| `description` | String |  | Optional. Description of the repository, which cannot exceed 500 characters. |
+| `uris` | String |  | Output only. URIs for the repository. |
+| `update_time` | String |  | Output only. Update timestamp. |
+| `name` | String |  | Optional. A unique identifier for a repository. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}` |
+| `instance` | String |  | Optional. The name of the instance in which the repository is hosted, formatted as `projects/{project_number}/locations/{location_id}/instances/{instance_id}` When creating repository via securesourcemanager.googleapis.com, this field is used as input. When creating repository via *.sourcemanager.dev, this field is output only. |
+| `uid` | String |  | Output only. Unique identifier of the repository. |
+| `parent` | String | ✅ | Required. The project in which to create the repository. Values are of the form `projects/{project_number}/locations/{location_id}` |
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `create_time` | String | Output only. Create timestamp. |
+| `initial_config` | String | Input only. Initial configurations for the repository. |
+| `etag` | String | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
+| `description` | String | Optional. Description of the repository, which cannot exceed 500 characters. |
+| `uris` | String | Output only. URIs for the repository. |
+| `update_time` | String | Output only. Update timestamp. |
+| `name` | String | Optional. A unique identifier for a repository. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}` |
+| `instance` | String | Optional. The name of the instance in which the repository is hosted, formatted as `projects/{project_number}/locations/{location_id}/instances/{instance_id}` When creating repository via securesourcemanager.googleapis.com, this field is used as input. When creating repository via *.sourcemanager.dev, this field is output only. |
+| `uid` | String | Output only. Unique identifier of the repository. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create repositorie
+repositorie = provider.securesourcemanager_api.Repositorie {
+    parent = "value"  # Required. The project in which to create the repository. Values are of the form `projects/{project_number}/locations/{location_id}`
+}
+
+# Access repositorie outputs
+repositorie_id = repositorie.id
+repositorie_create_time = repositorie.create_time
+repositorie_initial_config = repositorie.initial_config
+repositorie_etag = repositorie.etag
+repositorie_description = repositorie.description
+repositorie_uris = repositorie.uris
+repositorie_update_time = repositorie.update_time
+repositorie_name = repositorie.name
+repositorie_instance = repositorie.instance
+repositorie_uid = repositorie.uid
+```
+
+---
+
+
+### Instance
+
+Creates a new instance in a given project and location.
 
 **Operations**: ✅ Create ✅ Read ✅ Delete
 
@@ -228,18 +306,33 @@ Starts asynchronous cancellation on a long-running operation. The server makes a
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `name` | String | ✅ | The name of the operation resource to be cancelled. |
+| `labels` | HashMap<String, String> |  | Optional. Labels as key value pairs. |
+| `state_note` | String |  | Output only. An optional field providing information about the current instance state. |
+| `workforce_identity_federation_config` | String |  | Optional. Configuration for Workforce Identity Federation to support third party identity provider. If unset, defaults to the Google OIDC IdP. |
+| `kms_key` | String |  | Optional. Immutable. Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*. |
+| `update_time` | String |  | Output only. Update timestamp. |
+| `host_config` | String |  | Output only. A list of hostnames for this instance. |
+| `private_config` | String |  | Optional. Private settings for private instance. |
+| `state` | String |  | Output only. Current state of the instance. |
+| `create_time` | String |  | Output only. Create timestamp. |
+| `name` | String |  | Optional. A unique identifier for an instance. The name should be of the format: `projects/{project_number}/locations/{location_id}/instances/{instance_id}` `project_number`: Maps to a unique int64 id assigned to each project. `location_id`: Refers to the region where the instance will be deployed. Since Secure Source Manager is a regional service, it must be one of the valid GCP regions. `instance_id`: User provided name for the instance, must be unique for a project_number and location_id combination. |
+| `parent` | String | ✅ | Required. Value for parent. |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
-| `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
-| `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
-| `error` | String | The error result of the operation in case of failure or cancellation. |
-| `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
+| `labels` | HashMap<String, String> | Optional. Labels as key value pairs. |
+| `state_note` | String | Output only. An optional field providing information about the current instance state. |
+| `workforce_identity_federation_config` | String | Optional. Configuration for Workforce Identity Federation to support third party identity provider. If unset, defaults to the Google OIDC IdP. |
+| `kms_key` | String | Optional. Immutable. Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*. |
+| `update_time` | String | Output only. Update timestamp. |
+| `host_config` | String | Output only. A list of hostnames for this instance. |
+| `private_config` | String | Optional. Private settings for private instance. |
+| `state` | String | Output only. Current state of the instance. |
+| `create_time` | String | Output only. Create timestamp. |
+| `name` | String | Optional. A unique identifier for an instance. The name should be of the format: `projects/{project_number}/locations/{location_id}/instances/{instance_id}` `project_number`: Maps to a unique int64 id assigned to each project. `location_id`: Refers to the region where the instance will be deployed. Since Secure Source Manager is a regional service, it must be one of the valid GCP regions. `instance_id`: User provided name for the instance, must be unique for a project_number and location_id combination. |
 
 
 #### Usage Example
@@ -253,58 +346,63 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create operation
-operation = provider.securesourcemanager_api.Operation {
-    name = "value"  # The name of the operation resource to be cancelled.
+# Create instance
+instance = provider.securesourcemanager_api.Instance {
+    parent = "value"  # Required. Value for parent.
 }
 
-# Access operation outputs
-operation_id = operation.id
-operation_name = operation.name
-operation_response = operation.response
-operation_done = operation.done
-operation_error = operation.error
-operation_metadata = operation.metadata
+# Access instance outputs
+instance_id = instance.id
+instance_labels = instance.labels
+instance_state_note = instance.state_note
+instance_workforce_identity_federation_config = instance.workforce_identity_federation_config
+instance_kms_key = instance.kms_key
+instance_update_time = instance.update_time
+instance_host_config = instance.host_config
+instance_private_config = instance.private_config
+instance_state = instance.state
+instance_create_time = instance.create_time
+instance_name = instance.name
 ```
 
 ---
 
 
-### Pull_request
+### Hook
 
-Creates a pull request.
+Creates a new hook in a given repository.
 
-**Operations**: ✅ Create ✅ Read ✅ Update
+**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
 
 #### Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `base` | String |  | Required. The branch to merge changes in. |
-| `head` | String |  | Immutable. The branch containing the changes to be merged. |
-| `title` | String |  | Required. The pull request title. |
-| `state` | String |  | Output only. State of the pull request (open, closed or merged). |
-| `name` | String |  | Output only. A unique identifier for a PullRequest. The number appended at the end is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request_id}` |
-| `create_time` | String |  | Output only. Creation timestamp. |
-| `close_time` | String |  | Output only. Close timestamp (if closed or merged). Cleared when pull request is re-opened. |
-| `body` | String |  | Optional. The pull request body. Provides a detailed description of the changes. |
-| `update_time` | String |  | Output only. Last updated timestamp. |
-| `parent` | String | ✅ | Required. The repository that the pull request is created from. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}` |
+| `push_option` | String |  | Optional. The trigger option for push events. |
+| `target_uri` | String |  | Required. The target URI to which the payloads will be delivered. |
+| `name` | String |  | Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}` |
+| `disabled` | bool |  | Optional. Determines if the hook disabled or not. Set to true to stop sending traffic. |
+| `events` | Vec<String> |  | Optional. The events that trigger hook on. |
+| `uid` | String |  | Output only. Unique identifier of the hook. |
+| `create_time` | String |  | Output only. Create timestamp. |
+| `sensitive_query_string` | String |  | Optional. The sensitive query string to be appended to the target URI. |
+| `update_time` | String |  | Output only. Update timestamp. |
+| `parent` | String | ✅ | Required. The repository in which to create the hook. Values are of the form `projects/{project_number}/locations/{location_id}/repositories/{repository_id}` |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `base` | String | Required. The branch to merge changes in. |
-| `head` | String | Immutable. The branch containing the changes to be merged. |
-| `title` | String | Required. The pull request title. |
-| `state` | String | Output only. State of the pull request (open, closed or merged). |
-| `name` | String | Output only. A unique identifier for a PullRequest. The number appended at the end is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request_id}` |
-| `create_time` | String | Output only. Creation timestamp. |
-| `close_time` | String | Output only. Close timestamp (if closed or merged). Cleared when pull request is re-opened. |
-| `body` | String | Optional. The pull request body. Provides a detailed description of the changes. |
-| `update_time` | String | Output only. Last updated timestamp. |
+| `push_option` | String | Optional. The trigger option for push events. |
+| `target_uri` | String | Required. The target URI to which the payloads will be delivered. |
+| `name` | String | Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}` |
+| `disabled` | bool | Optional. Determines if the hook disabled or not. Set to true to stop sending traffic. |
+| `events` | Vec<String> | Optional. The events that trigger hook on. |
+| `uid` | String | Output only. Unique identifier of the hook. |
+| `create_time` | String | Output only. Create timestamp. |
+| `sensitive_query_string` | String | Optional. The sensitive query string to be appended to the target URI. |
+| `update_time` | String | Output only. Update timestamp. |
 
 
 #### Usage Example
@@ -318,22 +416,22 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create pull_request
-pull_request = provider.securesourcemanager_api.Pull_request {
-    parent = "value"  # Required. The repository that the pull request is created from. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+# Create hook
+hook = provider.securesourcemanager_api.Hook {
+    parent = "value"  # Required. The repository in which to create the hook. Values are of the form `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
 }
 
-# Access pull_request outputs
-pull_request_id = pull_request.id
-pull_request_base = pull_request.base
-pull_request_head = pull_request.head
-pull_request_title = pull_request.title
-pull_request_state = pull_request.state
-pull_request_name = pull_request.name
-pull_request_create_time = pull_request.create_time
-pull_request_close_time = pull_request.close_time
-pull_request_body = pull_request.body
-pull_request_update_time = pull_request.update_time
+# Access hook outputs
+hook_id = hook.id
+hook_push_option = hook.push_option
+hook_target_uri = hook.target_uri
+hook_name = hook.name
+hook_disabled = hook.disabled
+hook_events = hook.events
+hook_uid = hook.uid
+hook_create_time = hook.create_time
+hook_sensitive_query_string = hook.sensitive_query_string
+hook_update_time = hook.update_time
 ```
 
 ---
@@ -355,11 +453,11 @@ Gets information about a location.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `display_name` | String | The friendly name for this location, typically a nearby city name. For example, "Tokyo". |
 | `labels` | HashMap<String, String> | Cross-service attributes for the location. For example {"cloud.googleapis.com/region": "us-east1"} |
-| `location_id` | String | The canonical id for this location. For example: `"us-east1"`. |
+| `display_name` | String | The friendly name for this location, typically a nearby city name. For example, "Tokyo". |
 | `metadata` | HashMap<String, String> | Service-specific metadata. For example the available capacity at the given location. |
 | `name` | String | Resource name for the location, which may vary between implementations. For example: `"projects/example-project/locations/us-east1"` |
+| `location_id` | String | The canonical id for this location. For example: `"us-east1"`. |
 
 
 #### Usage Example
@@ -375,19 +473,19 @@ provider = gcp.GcpProvider {
 
 # Access location outputs
 location_id = location.id
-location_display_name = location.display_name
 location_labels = location.labels
-location_location_id = location.location_id
+location_display_name = location.display_name
 location_metadata = location.metadata
 location_name = location.name
+location_location_id = location.location_id
 ```
 
 ---
 
 
-### Pull_request_comment
+### Issue
 
-Creates a pull request comment.
+Creates an issue.
 
 **Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
 
@@ -395,103 +493,29 @@ Creates a pull request comment.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `review` | String |  | Optional. The review summary comment. |
-| `comment` | String |  | Optional. The general pull request comment. |
-| `name` | String |  | Identifier. Unique identifier for the pull request comment. The comment id is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request}/pullRequestComments/{comment_id}` |
-| `update_time` | String |  | Output only. Last updated timestamp. |
-| `code` | String |  | Optional. The comment on a code line. |
+| `state` | String |  | Output only. State of the issue. |
+| `title` | String |  | Required. Issue title. |
 | `create_time` | String |  | Output only. Creation timestamp. |
-| `parent` | String | ✅ | Required. The pull request in which to create the pull request comment. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}` |
+| `close_time` | String |  | Output only. Close timestamp (if closed). Cleared when is re-opened. |
+| `update_time` | String |  | Output only. Last updated timestamp. |
+| `etag` | String |  | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
+| `name` | String |  | Identifier. Unique identifier for an issue. The issue id is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}` |
+| `body` | String |  | Optional. Issue body. Provides a detailed description of the issue. |
+| `parent` | String | ✅ | Required. The repository in which to create the issue. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}` |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `review` | String | Optional. The review summary comment. |
-| `comment` | String | Optional. The general pull request comment. |
-| `name` | String | Identifier. Unique identifier for the pull request comment. The comment id is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request}/pullRequestComments/{comment_id}` |
-| `update_time` | String | Output only. Last updated timestamp. |
-| `code` | String | Optional. The comment on a code line. |
+| `state` | String | Output only. State of the issue. |
+| `title` | String | Required. Issue title. |
 | `create_time` | String | Output only. Creation timestamp. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create pull_request_comment
-pull_request_comment = provider.securesourcemanager_api.Pull_request_comment {
-    parent = "value"  # Required. The pull request in which to create the pull request comment. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}/pullRequests/{pull_request_id}`
-}
-
-# Access pull_request_comment outputs
-pull_request_comment_id = pull_request_comment.id
-pull_request_comment_review = pull_request_comment.review
-pull_request_comment_comment = pull_request_comment.comment
-pull_request_comment_name = pull_request_comment.name
-pull_request_comment_update_time = pull_request_comment.update_time
-pull_request_comment_code = pull_request_comment.code
-pull_request_comment_create_time = pull_request_comment.create_time
-```
-
----
-
-
-### Branch_rule
-
-CreateBranchRule creates a branch rule in a given repository.
-
-**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `etag` | String |  | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
-| `disabled` | bool |  | Optional. Determines if the branch rule is disabled or not. |
-| `name` | String |  | Optional. A unique identifier for a BranchRule. The name should be of the format: `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}` |
-| `require_linear_history` | bool |  | Optional. Determines if require linear history before merging to the branch. |
-| `annotations` | HashMap<String, String> |  | Optional. User annotations. These attributes can only be set and used by the user. See https://google.aip.dev/128#annotations for more details such as format and size limitations. |
-| `require_comments_resolved` | bool |  | Optional. Determines if require comments resolved before merging to the branch. |
-| `minimum_approvals_count` | i64 |  | Optional. The minimum number of approvals required for the branch rule to be matched. |
-| `required_status_checks` | Vec<String> |  | Optional. List of required status checks before merging to the branch. |
-| `create_time` | String |  | Output only. Create timestamp. |
-| `include_pattern` | String |  | Optional. The pattern of the branch that can match to this BranchRule. Specified as regex. .* for all branches. Examples: main, (main|release.*). Current MVP phase only support `.*` for wildcard. |
-| `minimum_reviews_count` | i64 |  | Optional. The minimum number of reviews required for the branch rule to be matched. |
-| `allow_stale_reviews` | bool |  | Optional. Determines if allow stale reviews or approvals before merging to the branch. |
-| `require_pull_request` | bool |  | Optional. Determines if the branch rule requires a pull request or not. |
-| `update_time` | String |  | Output only. Update timestamp. |
-| `uid` | String |  | Output only. Unique identifier of the repository. |
-| `parent` | String | ✅ |  |
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
+| `close_time` | String | Output only. Close timestamp (if closed). Cleared when is re-opened. |
+| `update_time` | String | Output only. Last updated timestamp. |
 | `etag` | String | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
-| `disabled` | bool | Optional. Determines if the branch rule is disabled or not. |
-| `name` | String | Optional. A unique identifier for a BranchRule. The name should be of the format: `projects/{project}/locations/{location}/repositories/{repository}/branchRules/{branch_rule}` |
-| `require_linear_history` | bool | Optional. Determines if require linear history before merging to the branch. |
-| `annotations` | HashMap<String, String> | Optional. User annotations. These attributes can only be set and used by the user. See https://google.aip.dev/128#annotations for more details such as format and size limitations. |
-| `require_comments_resolved` | bool | Optional. Determines if require comments resolved before merging to the branch. |
-| `minimum_approvals_count` | i64 | Optional. The minimum number of approvals required for the branch rule to be matched. |
-| `required_status_checks` | Vec<String> | Optional. List of required status checks before merging to the branch. |
-| `create_time` | String | Output only. Create timestamp. |
-| `include_pattern` | String | Optional. The pattern of the branch that can match to this BranchRule. Specified as regex. .* for all branches. Examples: main, (main|release.*). Current MVP phase only support `.*` for wildcard. |
-| `minimum_reviews_count` | i64 | Optional. The minimum number of reviews required for the branch rule to be matched. |
-| `allow_stale_reviews` | bool | Optional. Determines if allow stale reviews or approvals before merging to the branch. |
-| `require_pull_request` | bool | Optional. Determines if the branch rule requires a pull request or not. |
-| `update_time` | String | Output only. Update timestamp. |
-| `uid` | String | Output only. Unique identifier of the repository. |
+| `name` | String | Identifier. Unique identifier for an issue. The issue id is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/issues/{issue_id}` |
+| `body` | String | Optional. Issue body. Provides a detailed description of the issue. |
 
 
 #### Usage Example
@@ -505,68 +529,48 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create branch_rule
-branch_rule = provider.securesourcemanager_api.Branch_rule {
-    parent = "value"  # Required field
+# Create issue
+issue = provider.securesourcemanager_api.Issue {
+    parent = "value"  # Required. The repository in which to create the issue. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
 }
 
-# Access branch_rule outputs
-branch_rule_id = branch_rule.id
-branch_rule_etag = branch_rule.etag
-branch_rule_disabled = branch_rule.disabled
-branch_rule_name = branch_rule.name
-branch_rule_require_linear_history = branch_rule.require_linear_history
-branch_rule_annotations = branch_rule.annotations
-branch_rule_require_comments_resolved = branch_rule.require_comments_resolved
-branch_rule_minimum_approvals_count = branch_rule.minimum_approvals_count
-branch_rule_required_status_checks = branch_rule.required_status_checks
-branch_rule_create_time = branch_rule.create_time
-branch_rule_include_pattern = branch_rule.include_pattern
-branch_rule_minimum_reviews_count = branch_rule.minimum_reviews_count
-branch_rule_allow_stale_reviews = branch_rule.allow_stale_reviews
-branch_rule_require_pull_request = branch_rule.require_pull_request
-branch_rule_update_time = branch_rule.update_time
-branch_rule_uid = branch_rule.uid
+# Access issue outputs
+issue_id = issue.id
+issue_state = issue.state
+issue_title = issue.title
+issue_create_time = issue.create_time
+issue_close_time = issue.close_time
+issue_update_time = issue.update_time
+issue_etag = issue.etag
+issue_name = issue.name
+issue_body = issue.body
 ```
 
 ---
 
 
-### Repositorie
+### Operation
 
-Creates a new repository in a given project and location. The Repository.Instance field is required in the request body for requests using the securesourcemanager.googleapis.com endpoint.
+Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.
 
-**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
+**Operations**: ✅ Create ✅ Read ✅ Delete
 
 #### Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `name` | String |  | Optional. A unique identifier for a repository. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}` |
-| `description` | String |  | Optional. Description of the repository, which cannot exceed 500 characters. |
-| `create_time` | String |  | Output only. Create timestamp. |
-| `instance` | String |  | Optional. The name of the instance in which the repository is hosted, formatted as `projects/{project_number}/locations/{location_id}/instances/{instance_id}` When creating repository via securesourcemanager.googleapis.com, this field is used as input. When creating repository via *.sourcemanager.dev, this field is output only. |
-| `uris` | String |  | Output only. URIs for the repository. |
-| `initial_config` | String |  | Input only. Initial configurations for the repository. |
-| `uid` | String |  | Output only. Unique identifier of the repository. |
-| `etag` | String |  | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
-| `update_time` | String |  | Output only. Update timestamp. |
-| `parent` | String | ✅ | Required. The project in which to create the repository. Values are of the form `projects/{project_number}/locations/{location_id}` |
+| `name` | String | ✅ | The name of the operation resource to be cancelled. |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `name` | String | Optional. A unique identifier for a repository. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}` |
-| `description` | String | Optional. Description of the repository, which cannot exceed 500 characters. |
-| `create_time` | String | Output only. Create timestamp. |
-| `instance` | String | Optional. The name of the instance in which the repository is hosted, formatted as `projects/{project_number}/locations/{location_id}/instances/{instance_id}` When creating repository via securesourcemanager.googleapis.com, this field is used as input. When creating repository via *.sourcemanager.dev, this field is output only. |
-| `uris` | String | Output only. URIs for the repository. |
-| `initial_config` | String | Input only. Initial configurations for the repository. |
-| `uid` | String | Output only. Unique identifier of the repository. |
-| `etag` | String | Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. |
-| `update_time` | String | Output only. Update timestamp. |
+| `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
+| `error` | String | The error result of the operation in case of failure or cancellation. |
+| `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
+| `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
+| `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
 
 
 #### Usage Example
@@ -580,62 +584,58 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create repositorie
-repositorie = provider.securesourcemanager_api.Repositorie {
-    parent = "value"  # Required. The project in which to create the repository. Values are of the form `projects/{project_number}/locations/{location_id}`
+# Create operation
+operation = provider.securesourcemanager_api.Operation {
+    name = "value"  # The name of the operation resource to be cancelled.
 }
 
-# Access repositorie outputs
-repositorie_id = repositorie.id
-repositorie_name = repositorie.name
-repositorie_description = repositorie.description
-repositorie_create_time = repositorie.create_time
-repositorie_instance = repositorie.instance
-repositorie_uris = repositorie.uris
-repositorie_initial_config = repositorie.initial_config
-repositorie_uid = repositorie.uid
-repositorie_etag = repositorie.etag
-repositorie_update_time = repositorie.update_time
+# Access operation outputs
+operation_id = operation.id
+operation_metadata = operation.metadata
+operation_error = operation.error
+operation_name = operation.name
+operation_done = operation.done
+operation_response = operation.response
 ```
 
 ---
 
 
-### Hook
+### Pull_request
 
-Creates a new hook in a given repository.
+Creates a pull request.
 
-**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
+**Operations**: ✅ Create ✅ Read ✅ Update
 
 #### Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `name` | String |  | Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}` |
-| `create_time` | String |  | Output only. Create timestamp. |
-| `events` | Vec<String> |  | Optional. The events that trigger hook on. |
-| `update_time` | String |  | Output only. Update timestamp. |
-| `disabled` | bool |  | Optional. Determines if the hook disabled or not. Set to true to stop sending traffic. |
-| `sensitive_query_string` | String |  | Optional. The sensitive query string to be appended to the target URI. |
-| `push_option` | String |  | Optional. The trigger option for push events. |
-| `target_uri` | String |  | Required. The target URI to which the payloads will be delivered. |
-| `uid` | String |  | Output only. Unique identifier of the hook. |
-| `parent` | String | ✅ | Required. The repository in which to create the hook. Values are of the form `projects/{project_number}/locations/{location_id}/repositories/{repository_id}` |
+| `close_time` | String |  | Output only. Close timestamp (if closed or merged). Cleared when pull request is re-opened. |
+| `title` | String |  | Required. The pull request title. |
+| `base` | String |  | Required. The branch to merge changes in. |
+| `name` | String |  | Output only. A unique identifier for a PullRequest. The number appended at the end is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request_id}` |
+| `create_time` | String |  | Output only. Creation timestamp. |
+| `update_time` | String |  | Output only. Last updated timestamp. |
+| `head` | String |  | Immutable. The branch containing the changes to be merged. |
+| `state` | String |  | Output only. State of the pull request (open, closed or merged). |
+| `body` | String |  | Optional. The pull request body. Provides a detailed description of the changes. |
+| `parent` | String | ✅ | Required. The repository that the pull request is created from. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}` |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `name` | String | Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}` |
-| `create_time` | String | Output only. Create timestamp. |
-| `events` | Vec<String> | Optional. The events that trigger hook on. |
-| `update_time` | String | Output only. Update timestamp. |
-| `disabled` | bool | Optional. Determines if the hook disabled or not. Set to true to stop sending traffic. |
-| `sensitive_query_string` | String | Optional. The sensitive query string to be appended to the target URI. |
-| `push_option` | String | Optional. The trigger option for push events. |
-| `target_uri` | String | Required. The target URI to which the payloads will be delivered. |
-| `uid` | String | Output only. Unique identifier of the hook. |
+| `close_time` | String | Output only. Close timestamp (if closed or merged). Cleared when pull request is re-opened. |
+| `title` | String | Required. The pull request title. |
+| `base` | String | Required. The branch to merge changes in. |
+| `name` | String | Output only. A unique identifier for a PullRequest. The number appended at the end is generated by the server. Format: `projects/{project}/locations/{location}/repositories/{repository}/pullRequests/{pull_request_id}` |
+| `create_time` | String | Output only. Creation timestamp. |
+| `update_time` | String | Output only. Last updated timestamp. |
+| `head` | String | Immutable. The branch containing the changes to be merged. |
+| `state` | String | Output only. State of the pull request (open, closed or merged). |
+| `body` | String | Optional. The pull request body. Provides a detailed description of the changes. |
 
 
 #### Usage Example
@@ -649,22 +649,22 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create hook
-hook = provider.securesourcemanager_api.Hook {
-    parent = "value"  # Required. The repository in which to create the hook. Values are of the form `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
+# Create pull_request
+pull_request = provider.securesourcemanager_api.Pull_request {
+    parent = "value"  # Required. The repository that the pull request is created from. Format: `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`
 }
 
-# Access hook outputs
-hook_id = hook.id
-hook_name = hook.name
-hook_create_time = hook.create_time
-hook_events = hook.events
-hook_update_time = hook.update_time
-hook_disabled = hook.disabled
-hook_sensitive_query_string = hook.sensitive_query_string
-hook_push_option = hook.push_option
-hook_target_uri = hook.target_uri
-hook_uid = hook.uid
+# Access pull_request outputs
+pull_request_id = pull_request.id
+pull_request_close_time = pull_request.close_time
+pull_request_title = pull_request.title
+pull_request_base = pull_request.base
+pull_request_name = pull_request.name
+pull_request_create_time = pull_request.create_time
+pull_request_update_time = pull_request.update_time
+pull_request_head = pull_request.head
+pull_request_state = pull_request.state
+pull_request_body = pull_request.body
 ```
 
 ---
@@ -682,14 +682,14 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple instance resources
-instance_0 = provider.securesourcemanager_api.Instance {
+# Create multiple pull_request_comment resources
+pull_request_comment_0 = provider.securesourcemanager_api.Pull_request_comment {
     parent = "value-0"
 }
-instance_1 = provider.securesourcemanager_api.Instance {
+pull_request_comment_1 = provider.securesourcemanager_api.Pull_request_comment {
     parent = "value-1"
 }
-instance_2 = provider.securesourcemanager_api.Instance {
+pull_request_comment_2 = provider.securesourcemanager_api.Pull_request_comment {
     parent = "value-2"
 }
 ```
@@ -699,7 +699,7 @@ instance_2 = provider.securesourcemanager_api.Instance {
 ```kcl
 # Only create in production
 if environment == "production":
-    instance = provider.securesourcemanager_api.Instance {
+    pull_request_comment = provider.securesourcemanager_api.Pull_request_comment {
         parent = "production-value"
     }
 ```

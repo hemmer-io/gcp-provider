@@ -21,7 +21,7 @@ impl<'a> St<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, audience: Option<String>, grant_type: Option<String>, requested_token_type: Option<String>, scope: Option<String>, subject_token_type: Option<String>, options: Option<String>, subject_token: Option<String>) -> Result<String> {
+    pub async fn create(&self, options: Option<String>, scope: Option<String>, requested_token_type: Option<String>, grant_type: Option<String>, subject_token_type: Option<String>, subject_token: Option<String>, audience: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

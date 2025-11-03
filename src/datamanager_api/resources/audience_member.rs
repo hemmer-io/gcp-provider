@@ -1,6 +1,6 @@
 //! Audience_member resource
 //!
-//! Uploads a list of AudienceMember resources to the provided Destination.
+//! Removes a list of AudienceMember resources from the provided Destination.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Audience_member<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, terms_of_service: Option<String>, audience_members: Option<Vec<String>>, destinations: Option<Vec<String>>, validate_only: Option<bool>, consent: Option<String>, encoding: Option<String>, encryption_info: Option<String>) -> Result<String> {
+    pub async fn create(&self, validate_only: Option<bool>, destinations: Option<Vec<String>>, encoding: Option<String>, audience_members: Option<Vec<String>>, encryption_info: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -24,23 +24,23 @@ impl<'a> Apim_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "api_observation" => {
+                self.plan_api_observation(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
             "observation_source" => {
                 self.plan_observation_source(current_state, desired_input).await
             }
             "observation_job" => {
                 self.plan_observation_job(current_state, desired_input).await
             }
-            "api_observation" => {
-                self.plan_api_observation(current_state, desired_input).await
-            }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
-            }
             "api_operation" => {
                 self.plan_api_operation(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
+            "location" => {
+                self.plan_location(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,23 +57,23 @@ impl<'a> Apim_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "api_observation" => {
+                self.create_api_observation(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
+            }
             "observation_source" => {
                 self.create_observation_source(input).await
             }
             "observation_job" => {
                 self.create_observation_job(input).await
             }
-            "api_observation" => {
-                self.create_api_observation(input).await
-            }
-            "location" => {
-                self.create_location(input).await
-            }
             "api_operation" => {
                 self.create_api_operation(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
+            "location" => {
+                self.create_location(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -90,23 +90,23 @@ impl<'a> Apim_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "api_observation" => {
+                self.read_api_observation(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
+            }
             "observation_source" => {
                 self.read_observation_source(id).await
             }
             "observation_job" => {
                 self.read_observation_job(id).await
             }
-            "api_observation" => {
-                self.read_api_observation(id).await
-            }
-            "location" => {
-                self.read_location(id).await
-            }
             "api_operation" => {
                 self.read_api_operation(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
+            "location" => {
+                self.read_location(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,23 +124,23 @@ impl<'a> Apim_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "api_observation" => {
+                self.update_api_observation(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
+            }
             "observation_source" => {
                 self.update_observation_source(id, input).await
             }
             "observation_job" => {
                 self.update_observation_job(id, input).await
             }
-            "api_observation" => {
-                self.update_api_observation(id, input).await
-            }
-            "location" => {
-                self.update_location(id, input).await
-            }
             "api_operation" => {
                 self.update_api_operation(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
+            "location" => {
+                self.update_location(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -157,23 +157,23 @@ impl<'a> Apim_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "api_observation" => {
+                self.delete_api_observation(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
+            }
             "observation_source" => {
                 self.delete_observation_source(id).await
             }
             "observation_job" => {
                 self.delete_observation_job(id).await
             }
-            "api_observation" => {
-                self.delete_api_observation(id).await
-            }
-            "location" => {
-                self.delete_location(id).await
-            }
             "api_operation" => {
                 self.delete_api_operation(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
+            "location" => {
+                self.delete_location(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -186,6 +186,128 @@ impl<'a> Apim_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Api_observation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a api_observation resource
+    async fn plan_api_observation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new api_observation resource
+    async fn create_api_observation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a api_observation resource
+    async fn read_api_observation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a api_observation resource
+    async fn update_api_observation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a api_observation resource
+    async fn delete_api_observation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -311,128 +433,6 @@ impl<'a> Apim_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Api_observation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a api_observation resource
-    async fn plan_api_observation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new api_observation resource
-    async fn create_api_observation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a api_observation resource
-    async fn read_api_observation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a api_observation resource
-    async fn update_api_observation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a api_observation resource
-    async fn delete_api_observation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Location resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a location resource
-    async fn plan_location(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new location resource
-    async fn create_location(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a location resource
-    async fn read_location(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a location resource
-    async fn update_location(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a location resource
-    async fn delete_location(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Api_operation resource operations
     // ------------------------------------------------------------------------
 
@@ -494,11 +494,11 @@ impl<'a> Apim_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
+    // Location resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a operation resource
-    async fn plan_operation(
+    /// Plan changes to a location resource
+    async fn plan_location(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -513,8 +513,8 @@ impl<'a> Apim_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new operation resource
-    async fn create_operation(
+    /// Create a new location resource
+    async fn create_location(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -523,8 +523,8 @@ impl<'a> Apim_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a operation resource
-    async fn read_operation(
+    /// Read a location resource
+    async fn read_location(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -533,8 +533,8 @@ impl<'a> Apim_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a operation resource
-    async fn update_operation(
+    /// Update a location resource
+    async fn update_location(
         &self,
         id: &str,
         input: ResourceInput,
@@ -544,8 +544,8 @@ impl<'a> Apim_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a operation resource
-    async fn delete_operation(
+    /// Delete a location resource
+    async fn delete_location(
         &self,
         id: &str,
     ) -> Result<()> {

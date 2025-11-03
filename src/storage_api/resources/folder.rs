@@ -21,7 +21,7 @@ impl<'a> Folder<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, metageneration: Option<String>, pending_rename_info: Option<String>, kind: Option<String>, name: Option<String>, bucket: Option<String>, update_time: Option<String>, id: Option<String>, create_time: Option<String>, self_link: Option<String>, bucket: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, create_time: Option<String>, self_link: Option<String>, id: Option<String>, bucket: Option<String>, kind: Option<String>, pending_rename_info: Option<String>, metageneration: Option<String>, update_time: Option<String>, bucket: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

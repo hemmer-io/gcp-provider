@@ -27,8 +27,14 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "site" => {
                 self.plan_site(current_state, desired_input).await
             }
+            "account" => {
+                self.plan_account(current_state, desired_input).await
+            }
             "event" => {
                 self.plan_event(current_state, desired_input).await
+            }
+            "group" => {
+                self.plan_group(current_state, desired_input).await
             }
             "account" => {
                 self.plan_account(current_state, desired_input).await
@@ -39,14 +45,8 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "platform" => {
                 self.plan_platform(current_state, desired_input).await
             }
-            "group" => {
-                self.plan_group(current_state, desired_input).await
-            }
             "event" => {
                 self.plan_event(current_state, desired_input).await
-            }
-            "account" => {
-                self.plan_account(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,8 +66,14 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "site" => {
                 self.create_site(input).await
             }
+            "account" => {
+                self.create_account(input).await
+            }
             "event" => {
                 self.create_event(input).await
+            }
+            "group" => {
+                self.create_group(input).await
             }
             "account" => {
                 self.create_account(input).await
@@ -78,14 +84,8 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "platform" => {
                 self.create_platform(input).await
             }
-            "group" => {
-                self.create_group(input).await
-            }
             "event" => {
                 self.create_event(input).await
-            }
-            "account" => {
-                self.create_account(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -105,8 +105,14 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "site" => {
                 self.read_site(id).await
             }
+            "account" => {
+                self.read_account(id).await
+            }
             "event" => {
                 self.read_event(id).await
+            }
+            "group" => {
+                self.read_group(id).await
             }
             "account" => {
                 self.read_account(id).await
@@ -117,14 +123,8 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "platform" => {
                 self.read_platform(id).await
             }
-            "group" => {
-                self.read_group(id).await
-            }
             "event" => {
                 self.read_event(id).await
-            }
-            "account" => {
-                self.read_account(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -145,8 +145,14 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "site" => {
                 self.update_site(id, input).await
             }
+            "account" => {
+                self.update_account(id, input).await
+            }
             "event" => {
                 self.update_event(id, input).await
+            }
+            "group" => {
+                self.update_group(id, input).await
             }
             "account" => {
                 self.update_account(id, input).await
@@ -157,14 +163,8 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "platform" => {
                 self.update_platform(id, input).await
             }
-            "group" => {
-                self.update_group(id, input).await
-            }
             "event" => {
                 self.update_event(id, input).await
-            }
-            "account" => {
-                self.update_account(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -184,8 +184,14 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "site" => {
                 self.delete_site(id).await
             }
+            "account" => {
+                self.delete_account(id).await
+            }
             "event" => {
                 self.delete_event(id).await
+            }
+            "group" => {
+                self.delete_group(id).await
             }
             "account" => {
                 self.delete_account(id).await
@@ -196,14 +202,8 @@ impl<'a> Adsenseplatform_apiService<'a> {
             "platform" => {
                 self.delete_platform(id).await
             }
-            "group" => {
-                self.delete_group(id).await
-            }
             "event" => {
                 self.delete_event(id).await
-            }
-            "account" => {
-                self.delete_account(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -280,6 +280,67 @@ impl<'a> Adsenseplatform_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Account resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a account resource
+    async fn plan_account(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new account resource
+    async fn create_account(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a account resource
+    async fn read_account(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a account resource
+    async fn update_account(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a account resource
+    async fn delete_account(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Event resource operations
     // ------------------------------------------------------------------------
 
@@ -332,6 +393,67 @@ impl<'a> Adsenseplatform_apiService<'a> {
 
     /// Delete a event resource
     async fn delete_event(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Group resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a group resource
+    async fn plan_group(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new group resource
+    async fn create_group(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a group resource
+    async fn read_group(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a group resource
+    async fn update_group(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a group resource
+    async fn delete_group(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -524,67 +646,6 @@ impl<'a> Adsenseplatform_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Group resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a group resource
-    async fn plan_group(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new group resource
-    async fn create_group(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a group resource
-    async fn read_group(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a group resource
-    async fn update_group(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a group resource
-    async fn delete_group(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Event resource operations
     // ------------------------------------------------------------------------
 
@@ -637,67 +698,6 @@ impl<'a> Adsenseplatform_apiService<'a> {
 
     /// Delete a event resource
     async fn delete_event(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Account resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a account resource
-    async fn plan_account(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new account resource
-    async fn create_account(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a account resource
-    async fn read_account(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a account resource
-    async fn update_account(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a account resource
-    async fn delete_account(
         &self,
         id: &str,
     ) -> Result<()> {

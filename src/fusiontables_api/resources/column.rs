@@ -21,7 +21,7 @@ impl<'a> Column<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, column_id: Option<i64>, format_pattern: Option<String>, description: Option<String>, type: Option<String>, graph_predicate: Option<String>, base_column: Option<String>, column_json_schema: Option<String>, validate_data: Option<bool>, kind: Option<String>, column_properties_json: Option<String>, valid_values: Option<Vec<String>>, name: Option<String>, table_id: String) -> Result<String> {
+    pub async fn create(&self, validate_data: Option<bool>, graph_predicate: Option<String>, column_json_schema: Option<String>, column_properties_json: Option<String>, kind: Option<String>, valid_values: Option<Vec<String>>, name: Option<String>, base_column: Option<String>, type: Option<String>, column_id: Option<i64>, description: Option<String>, format_pattern: Option<String>, table_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Column<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, column_id: Option<i64>, format_pattern: Option<String>, description: Option<String>, type: Option<String>, graph_predicate: Option<String>, base_column: Option<String>, column_json_schema: Option<String>, validate_data: Option<bool>, kind: Option<String>, column_properties_json: Option<String>, valid_values: Option<Vec<String>>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, validate_data: Option<bool>, graph_predicate: Option<String>, column_json_schema: Option<String>, column_properties_json: Option<String>, kind: Option<String>, valid_values: Option<Vec<String>>, name: Option<String>, base_column: Option<String>, type: Option<String>, column_id: Option<i64>, description: Option<String>, format_pattern: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

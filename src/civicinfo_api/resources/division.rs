@@ -1,6 +1,6 @@
 //! Division resource
 //!
-//! Lookup OCDIDs and names for divisions related to an address.
+//! Searches for political divisions by their natural name or OCD ID.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

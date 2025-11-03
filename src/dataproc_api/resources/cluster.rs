@@ -21,7 +21,7 @@ impl<'a> Cluster<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, metrics: Option<String>, labels: Option<HashMap<String, String>>, project_id: Option<String>, cluster_uuid: Option<String>, config: Option<String>, status: Option<String>, cluster_name: Option<String>, status_history: Option<Vec<String>>, region: String, project_id: String) -> Result<String> {
+    pub async fn create(&self, config: Option<String>, status: Option<String>, status_history: Option<Vec<String>>, labels: Option<HashMap<String, String>>, cluster_name: Option<String>, cluster_uuid: Option<String>, metrics: Option<String>, project_id: Option<String>, project_id: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Cluster<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, metrics: Option<String>, labels: Option<HashMap<String, String>>, project_id: Option<String>, cluster_uuid: Option<String>, config: Option<String>, status: Option<String>, cluster_name: Option<String>, status_history: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, config: Option<String>, status: Option<String>, status_history: Option<Vec<String>>, labels: Option<HashMap<String, String>>, cluster_name: Option<String>, cluster_uuid: Option<String>, metrics: Option<String>, project_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

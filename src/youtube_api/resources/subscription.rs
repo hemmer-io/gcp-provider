@@ -21,7 +21,7 @@ impl<'a> Subscription<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, snippet: Option<String>, kind: Option<String>, etag: Option<String>, content_details: Option<String>, id: Option<String>, subscriber_snippet: Option<String>) -> Result<String> {
+    pub async fn create(&self, subscriber_snippet: Option<String>, id: Option<String>, content_details: Option<String>, snippet: Option<String>, etag: Option<String>, kind: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

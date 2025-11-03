@@ -21,7 +21,7 @@ impl<'a> Perf_metrics_summary<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, project_id: Option<String>, graphics_stats: Option<String>, execution_id: Option<String>, history_id: Option<String>, app_start_time: Option<String>, perf_environment: Option<String>, perf_metrics: Option<Vec<String>>, step_id: Option<String>, project_id: String, history_id: String, execution_id: String, step_id: String) -> Result<String> {
+    pub async fn create(&self, execution_id: Option<String>, perf_environment: Option<String>, graphics_stats: Option<String>, perf_metrics: Option<Vec<String>>, step_id: Option<String>, history_id: Option<String>, app_start_time: Option<String>, project_id: Option<String>, project_id: String, step_id: String, history_id: String, execution_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

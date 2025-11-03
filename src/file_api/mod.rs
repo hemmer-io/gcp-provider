@@ -24,38 +24,38 @@ impl<'a> File_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
+            "location" => {
+                self.plan_location(current_state, desired_input).await
+            }
+            "instance" => {
+                self.plan_instance(current_state, desired_input).await
+            }
             "backup" => {
                 self.plan_backup(current_state, desired_input).await
             }
             "snapshot" => {
                 self.plan_snapshot(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
-            "instance" => {
-                self.plan_instance(current_state, desired_input).await
+            "snapshot" => {
+                self.plan_snapshot(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "snapshot" => {
-                self.plan_snapshot(current_state, desired_input).await
+            "backup" => {
+                self.plan_backup(current_state, desired_input).await
             }
             "share" => {
                 self.plan_share(current_state, desired_input).await
             }
-            "backup" => {
-                self.plan_backup(current_state, desired_input).await
-            }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
+            "instance" => {
+                self.plan_instance(current_state, desired_input).await
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
-            }
-            "instance" => {
-                self.plan_instance(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -72,38 +72,38 @@ impl<'a> File_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "operation" => {
+                self.create_operation(input).await
+            }
+            "location" => {
+                self.create_location(input).await
+            }
+            "instance" => {
+                self.create_instance(input).await
+            }
             "backup" => {
                 self.create_backup(input).await
             }
             "snapshot" => {
                 self.create_snapshot(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
-            }
-            "instance" => {
-                self.create_instance(input).await
+            "snapshot" => {
+                self.create_snapshot(input).await
             }
             "location" => {
                 self.create_location(input).await
             }
-            "snapshot" => {
-                self.create_snapshot(input).await
+            "backup" => {
+                self.create_backup(input).await
             }
             "share" => {
                 self.create_share(input).await
             }
-            "backup" => {
-                self.create_backup(input).await
-            }
-            "location" => {
-                self.create_location(input).await
+            "instance" => {
+                self.create_instance(input).await
             }
             "operation" => {
                 self.create_operation(input).await
-            }
-            "instance" => {
-                self.create_instance(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -120,38 +120,38 @@ impl<'a> File_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "operation" => {
+                self.read_operation(id).await
+            }
+            "location" => {
+                self.read_location(id).await
+            }
+            "instance" => {
+                self.read_instance(id).await
+            }
             "backup" => {
                 self.read_backup(id).await
             }
             "snapshot" => {
                 self.read_snapshot(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
-            }
-            "instance" => {
-                self.read_instance(id).await
+            "snapshot" => {
+                self.read_snapshot(id).await
             }
             "location" => {
                 self.read_location(id).await
             }
-            "snapshot" => {
-                self.read_snapshot(id).await
+            "backup" => {
+                self.read_backup(id).await
             }
             "share" => {
                 self.read_share(id).await
             }
-            "backup" => {
-                self.read_backup(id).await
-            }
-            "location" => {
-                self.read_location(id).await
+            "instance" => {
+                self.read_instance(id).await
             }
             "operation" => {
                 self.read_operation(id).await
-            }
-            "instance" => {
-                self.read_instance(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -169,38 +169,38 @@ impl<'a> File_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "operation" => {
+                self.update_operation(id, input).await
+            }
+            "location" => {
+                self.update_location(id, input).await
+            }
+            "instance" => {
+                self.update_instance(id, input).await
+            }
             "backup" => {
                 self.update_backup(id, input).await
             }
             "snapshot" => {
                 self.update_snapshot(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
-            "instance" => {
-                self.update_instance(id, input).await
+            "snapshot" => {
+                self.update_snapshot(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
             }
-            "snapshot" => {
-                self.update_snapshot(id, input).await
+            "backup" => {
+                self.update_backup(id, input).await
             }
             "share" => {
                 self.update_share(id, input).await
             }
-            "backup" => {
-                self.update_backup(id, input).await
-            }
-            "location" => {
-                self.update_location(id, input).await
+            "instance" => {
+                self.update_instance(id, input).await
             }
             "operation" => {
                 self.update_operation(id, input).await
-            }
-            "instance" => {
-                self.update_instance(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -217,38 +217,38 @@ impl<'a> File_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "operation" => {
+                self.delete_operation(id).await
+            }
+            "location" => {
+                self.delete_location(id).await
+            }
+            "instance" => {
+                self.delete_instance(id).await
+            }
             "backup" => {
                 self.delete_backup(id).await
             }
             "snapshot" => {
                 self.delete_snapshot(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
-            }
-            "instance" => {
-                self.delete_instance(id).await
+            "snapshot" => {
+                self.delete_snapshot(id).await
             }
             "location" => {
                 self.delete_location(id).await
             }
-            "snapshot" => {
-                self.delete_snapshot(id).await
+            "backup" => {
+                self.delete_backup(id).await
             }
             "share" => {
                 self.delete_share(id).await
             }
-            "backup" => {
-                self.delete_backup(id).await
-            }
-            "location" => {
-                self.delete_location(id).await
+            "instance" => {
+                self.delete_instance(id).await
             }
             "operation" => {
                 self.delete_operation(id).await
-            }
-            "instance" => {
-                self.delete_instance(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -261,6 +261,189 @@ impl<'a> File_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Instance resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a instance resource
+    async fn plan_instance(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new instance resource
+    async fn create_instance(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a instance resource
+    async fn read_instance(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a instance resource
+    async fn update_instance(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a instance resource
+    async fn delete_instance(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -386,11 +569,11 @@ impl<'a> File_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
+    // Snapshot resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a operation resource
-    async fn plan_operation(
+    /// Plan changes to a snapshot resource
+    async fn plan_snapshot(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -405,8 +588,8 @@ impl<'a> File_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new operation resource
-    async fn create_operation(
+    /// Create a new snapshot resource
+    async fn create_snapshot(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -415,8 +598,8 @@ impl<'a> File_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a operation resource
-    async fn read_operation(
+    /// Read a snapshot resource
+    async fn read_snapshot(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -425,8 +608,8 @@ impl<'a> File_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a operation resource
-    async fn update_operation(
+    /// Update a snapshot resource
+    async fn update_snapshot(
         &self,
         id: &str,
         input: ResourceInput,
@@ -436,69 +619,8 @@ impl<'a> File_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Instance resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a instance resource
-    async fn plan_instance(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new instance resource
-    async fn create_instance(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a instance resource
-    async fn read_instance(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a instance resource
-    async fn update_instance(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a instance resource
-    async fn delete_instance(
+    /// Delete a snapshot resource
+    async fn delete_snapshot(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -569,11 +691,11 @@ impl<'a> File_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Snapshot resource operations
+    // Backup resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a snapshot resource
-    async fn plan_snapshot(
+    /// Plan changes to a backup resource
+    async fn plan_backup(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -588,8 +710,8 @@ impl<'a> File_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new snapshot resource
-    async fn create_snapshot(
+    /// Create a new backup resource
+    async fn create_backup(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -598,8 +720,8 @@ impl<'a> File_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a snapshot resource
-    async fn read_snapshot(
+    /// Read a backup resource
+    async fn read_backup(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -608,8 +730,8 @@ impl<'a> File_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a snapshot resource
-    async fn update_snapshot(
+    /// Update a backup resource
+    async fn update_backup(
         &self,
         id: &str,
         input: ResourceInput,
@@ -619,8 +741,8 @@ impl<'a> File_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a snapshot resource
-    async fn delete_snapshot(
+    /// Delete a backup resource
+    async fn delete_backup(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -691,11 +813,11 @@ impl<'a> File_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Backup resource operations
+    // Instance resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a backup resource
-    async fn plan_backup(
+    /// Plan changes to a instance resource
+    async fn plan_instance(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -710,8 +832,8 @@ impl<'a> File_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new backup resource
-    async fn create_backup(
+    /// Create a new instance resource
+    async fn create_instance(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -720,8 +842,8 @@ impl<'a> File_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a backup resource
-    async fn read_backup(
+    /// Read a instance resource
+    async fn read_instance(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -730,8 +852,8 @@ impl<'a> File_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a backup resource
-    async fn update_backup(
+    /// Update a instance resource
+    async fn update_instance(
         &self,
         id: &str,
         input: ResourceInput,
@@ -741,69 +863,8 @@ impl<'a> File_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a backup resource
-    async fn delete_backup(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Location resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a location resource
-    async fn plan_location(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new location resource
-    async fn create_location(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a location resource
-    async fn read_location(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a location resource
-    async fn update_location(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a location resource
-    async fn delete_location(
+    /// Delete a instance resource
+    async fn delete_instance(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -865,67 +926,6 @@ impl<'a> File_apiService<'a> {
 
     /// Delete a operation resource
     async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Instance resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a instance resource
-    async fn plan_instance(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new instance resource
-    async fn create_instance(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a instance resource
-    async fn read_instance(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a instance resource
-    async fn update_instance(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a instance resource
-    async fn delete_instance(
         &self,
         id: &str,
     ) -> Result<()> {

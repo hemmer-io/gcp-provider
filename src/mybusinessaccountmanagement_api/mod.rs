@@ -24,8 +24,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "admin" => {
-                self.plan_admin(current_state, desired_input).await
+            "location" => {
+                self.plan_location(current_state, desired_input).await
             }
             "account" => {
                 self.plan_account(current_state, desired_input).await
@@ -33,8 +33,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             "invitation" => {
                 self.plan_invitation(current_state, desired_input).await
             }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
+            "admin" => {
+                self.plan_admin(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -51,8 +51,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "admin" => {
-                self.create_admin(input).await
+            "location" => {
+                self.create_location(input).await
             }
             "account" => {
                 self.create_account(input).await
@@ -60,8 +60,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             "invitation" => {
                 self.create_invitation(input).await
             }
-            "location" => {
-                self.create_location(input).await
+            "admin" => {
+                self.create_admin(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -78,8 +78,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "admin" => {
-                self.read_admin(id).await
+            "location" => {
+                self.read_location(id).await
             }
             "account" => {
                 self.read_account(id).await
@@ -87,8 +87,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             "invitation" => {
                 self.read_invitation(id).await
             }
-            "location" => {
-                self.read_location(id).await
+            "admin" => {
+                self.read_admin(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -106,8 +106,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "admin" => {
-                self.update_admin(id, input).await
+            "location" => {
+                self.update_location(id, input).await
             }
             "account" => {
                 self.update_account(id, input).await
@@ -115,8 +115,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             "invitation" => {
                 self.update_invitation(id, input).await
             }
-            "location" => {
-                self.update_location(id, input).await
+            "admin" => {
+                self.update_admin(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -133,8 +133,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "admin" => {
-                self.delete_admin(id).await
+            "location" => {
+                self.delete_location(id).await
             }
             "account" => {
                 self.delete_account(id).await
@@ -142,8 +142,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             "invitation" => {
                 self.delete_invitation(id).await
             }
-            "location" => {
-                self.delete_location(id).await
+            "admin" => {
+                self.delete_admin(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -159,11 +159,11 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Admin resource operations
+    // Location resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a admin resource
-    async fn plan_admin(
+    /// Plan changes to a location resource
+    async fn plan_location(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -178,8 +178,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new admin resource
-    async fn create_admin(
+    /// Create a new location resource
+    async fn create_location(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -188,8 +188,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a admin resource
-    async fn read_admin(
+    /// Read a location resource
+    async fn read_location(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -198,8 +198,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a admin resource
-    async fn update_admin(
+    /// Update a location resource
+    async fn update_location(
         &self,
         id: &str,
         input: ResourceInput,
@@ -209,8 +209,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a admin resource
-    async fn delete_admin(
+    /// Delete a location resource
+    async fn delete_location(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -342,11 +342,11 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Location resource operations
+    // Admin resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a location resource
-    async fn plan_location(
+    /// Plan changes to a admin resource
+    async fn plan_admin(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -361,8 +361,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new location resource
-    async fn create_location(
+    /// Create a new admin resource
+    async fn create_admin(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -371,8 +371,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a location resource
-    async fn read_location(
+    /// Read a admin resource
+    async fn read_admin(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -381,8 +381,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a location resource
-    async fn update_location(
+    /// Update a admin resource
+    async fn update_admin(
         &self,
         id: &str,
         input: ResourceInput,
@@ -392,8 +392,8 @@ impl<'a> Mybusinessaccountmanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a location resource
-    async fn delete_location(
+    /// Delete a admin resource
+    async fn delete_admin(
         &self,
         id: &str,
     ) -> Result<()> {

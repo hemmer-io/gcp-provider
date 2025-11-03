@@ -1,6 +1,6 @@
 //! Myconfig resource
 //!
-//! Request downloaded content access for specified volumes on the My eBooks shelf.
+//! Sets the settings for the user. If a sub-object is specified, it will overwrite the existing sub-object stored in the server. Unspecified sub-objects will retain the existing value.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Myconfig<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self) -> Result<String> {
+    pub async fn create(&self, notification: Option<String>, kind: Option<String>, notes_export: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

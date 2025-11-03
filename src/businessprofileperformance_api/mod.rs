@@ -24,11 +24,11 @@ impl<'a> Businessprofileperformance_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "monthly" => {
-                self.plan_monthly(current_state, desired_input).await
-            }
             "location" => {
                 self.plan_location(current_state, desired_input).await
+            }
+            "monthly" => {
+                self.plan_monthly(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -45,11 +45,11 @@ impl<'a> Businessprofileperformance_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "monthly" => {
-                self.create_monthly(input).await
-            }
             "location" => {
                 self.create_location(input).await
+            }
+            "monthly" => {
+                self.create_monthly(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,11 +66,11 @@ impl<'a> Businessprofileperformance_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "monthly" => {
-                self.read_monthly(id).await
-            }
             "location" => {
                 self.read_location(id).await
+            }
+            "monthly" => {
+                self.read_monthly(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -88,11 +88,11 @@ impl<'a> Businessprofileperformance_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "monthly" => {
-                self.update_monthly(id, input).await
-            }
             "location" => {
                 self.update_location(id, input).await
+            }
+            "monthly" => {
+                self.update_monthly(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -109,11 +109,11 @@ impl<'a> Businessprofileperformance_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "monthly" => {
-                self.delete_monthly(id).await
-            }
             "location" => {
                 self.delete_location(id).await
+            }
+            "monthly" => {
+                self.delete_monthly(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -126,67 +126,6 @@ impl<'a> Businessprofileperformance_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Monthly resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a monthly resource
-    async fn plan_monthly(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new monthly resource
-    async fn create_monthly(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a monthly resource
-    async fn read_monthly(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a monthly resource
-    async fn update_monthly(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a monthly resource
-    async fn delete_monthly(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -242,6 +181,67 @@ impl<'a> Businessprofileperformance_apiService<'a> {
 
     /// Delete a location resource
     async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Monthly resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a monthly resource
+    async fn plan_monthly(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new monthly resource
+    async fn create_monthly(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a monthly resource
+    async fn read_monthly(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a monthly resource
+    async fn update_monthly(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a monthly resource
+    async fn delete_monthly(
         &self,
         id: &str,
     ) -> Result<()> {

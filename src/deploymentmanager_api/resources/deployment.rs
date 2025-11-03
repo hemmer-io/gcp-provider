@@ -21,7 +21,7 @@ impl<'a> Deployment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<String>, target: Option<String>, insert_time: Option<String>, self_link: Option<String>, labels: Option<Vec<String>>, fingerprint: Option<String>, manifest: Option<String>, update: Option<String>, name: Option<String>, description: Option<String>, operation: Option<String>, update_time: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, target: Option<String>, description: Option<String>, labels: Option<Vec<String>>, id: Option<String>, update: Option<String>, operation: Option<String>, insert_time: Option<String>, update_time: Option<String>, manifest: Option<String>, name: Option<String>, fingerprint: Option<String>, self_link: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Deployment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, id: Option<String>, target: Option<String>, insert_time: Option<String>, self_link: Option<String>, labels: Option<Vec<String>>, fingerprint: Option<String>, manifest: Option<String>, update: Option<String>, name: Option<String>, description: Option<String>, operation: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, target: Option<String>, description: Option<String>, labels: Option<Vec<String>>, id: Option<String>, update: Option<String>, operation: Option<String>, insert_time: Option<String>, update_time: Option<String>, manifest: Option<String>, name: Option<String>, fingerprint: Option<String>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

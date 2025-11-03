@@ -1,6 +1,6 @@
 //! Suggestion_deny_list_entrie resource
 //!
-//! Permanently deletes all SuggestionDenyListEntry for a DataStore.
+//! Imports all SuggestionDenyListEntry for a DataStore.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Suggestion_deny_list_entrie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, parent: String) -> Result<String> {
+    pub async fn create(&self, inline_source: Option<String>, gcs_source: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

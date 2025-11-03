@@ -34,7 +34,7 @@ impl<'a> Billing_profile<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, secondary_payments_customer_id: Option<String>, id: Option<String>, kind: Option<String>, invoice_level: Option<String>, country_code: Option<String>, currency_code: Option<String>, name: Option<String>, status: Option<String>, is_default: Option<bool>, consolidated_invoice: Option<bool>, purchase_order: Option<String>, payments_account_id: Option<String>, payments_customer_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kind: Option<String>, consolidated_invoice: Option<bool>, id: Option<String>, is_default: Option<bool>, name: Option<String>, payments_customer_id: Option<String>, secondary_payments_customer_id: Option<String>, purchase_order: Option<String>, invoice_level: Option<String>, country_code: Option<String>, payments_account_id: Option<String>, status: Option<String>, currency_code: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Deployment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, name: Option<String>, revision_update_time: Option<String>, revision_create_time: Option<String>, api_spec_revision: Option<String>, annotations: Option<HashMap<String, String>>, external_channel_uri: Option<String>, revision_id: Option<String>, description: Option<String>, access_guidance: Option<String>, display_name: Option<String>, intended_audience: Option<String>, create_time: Option<String>, endpoint_uri: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, intended_audience: Option<String>, revision_create_time: Option<String>, annotations: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, endpoint_uri: Option<String>, external_channel_uri: Option<String>, description: Option<String>, revision_id: Option<String>, revision_update_time: Option<String>, create_time: Option<String>, api_spec_revision: Option<String>, name: Option<String>, display_name: Option<String>, access_guidance: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Deployment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, name: Option<String>, revision_update_time: Option<String>, revision_create_time: Option<String>, api_spec_revision: Option<String>, annotations: Option<HashMap<String, String>>, external_channel_uri: Option<String>, revision_id: Option<String>, description: Option<String>, access_guidance: Option<String>, display_name: Option<String>, intended_audience: Option<String>, create_time: Option<String>, endpoint_uri: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, intended_audience: Option<String>, revision_create_time: Option<String>, annotations: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, endpoint_uri: Option<String>, external_channel_uri: Option<String>, description: Option<String>, revision_id: Option<String>, revision_update_time: Option<String>, create_time: Option<String>, api_spec_revision: Option<String>, name: Option<String>, display_name: Option<String>, access_guidance: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

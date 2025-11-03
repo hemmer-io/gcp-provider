@@ -21,7 +21,7 @@ impl<'a> Private_connection<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, vpc_peering_config: Option<String>, create_time: Option<String>, update_time: Option<String>, satisfies_pzs: Option<bool>, state: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, satisfies_pzi: Option<bool>, error: Option<String>, psc_interface_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, state: Option<String>, error: Option<String>, psc_interface_config: Option<String>, update_time: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, vpc_peering_config: Option<String>, satisfies_pzi: Option<bool>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Forecast<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, uaqi_color_palette: Option<String>, location: Option<String>, custom_local_aqis: Option<Vec<String>>, extra_computations: Option<Vec<String>>, date_time: Option<String>, language_code: Option<String>, page_size: Option<i64>, universal_aqi: Option<bool>, period: Option<String>, page_token: Option<String>) -> Result<String> {
+    pub async fn create(&self, page_size: Option<i64>, universal_aqi: Option<bool>, uaqi_color_palette: Option<String>, page_token: Option<String>, language_code: Option<String>, date_time: Option<String>, extra_computations: Option<Vec<String>>, location: Option<String>, period: Option<String>, custom_local_aqis: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

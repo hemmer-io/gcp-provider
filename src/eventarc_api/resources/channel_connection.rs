@@ -21,7 +21,7 @@ impl<'a> Channel_connection<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, name: Option<String>, uid: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, activation_token: Option<String>, channel: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, uid: Option<String>, update_time: Option<String>, create_time: Option<String>, channel: Option<String>, name: Option<String>, activation_token: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

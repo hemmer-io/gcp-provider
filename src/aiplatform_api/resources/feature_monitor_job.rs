@@ -21,7 +21,7 @@ impl<'a> Feature_monitor_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, drift_base_snapshot_time: Option<String>, feature_selection_config: Option<String>, labels: Option<HashMap<String, String>>, job_summary: Option<String>, trigger_type: Option<String>, create_time: Option<String>, final_status: Option<String>, name: Option<String>, drift_base_feature_monitor_job_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, final_status: Option<String>, name: Option<String>, description: Option<String>, drift_base_snapshot_time: Option<String>, labels: Option<HashMap<String, String>>, trigger_type: Option<String>, create_time: Option<String>, job_summary: Option<String>, drift_base_feature_monitor_job_id: Option<String>, feature_selection_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -24,41 +24,41 @@ impl<'a> Datamigration_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "conversion_workspace" => {
+                self.plan_conversion_workspace(current_state, desired_input).await
+            }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
             "connection_profile" => {
                 self.plan_connection_profile(current_state, desired_input).await
             }
-            "object" => {
-                self.plan_object(current_state, desired_input).await
-            }
-            "migration_job" => {
-                self.plan_migration_job(current_state, desired_input).await
-            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
-            "private_connection" => {
-                self.plan_private_connection(current_state, desired_input).await
-            }
-            "conversion_workspace" => {
-                self.plan_conversion_workspace(current_state, desired_input).await
+            "migration_job" => {
+                self.plan_migration_job(current_state, desired_input).await
             }
             "mapping_rule" => {
                 self.plan_mapping_rule(current_state, desired_input).await
             }
+            "object" => {
+                self.plan_object(current_state, desired_input).await
+            }
+            "private_connection" => {
+                self.plan_private_connection(current_state, desired_input).await
+            }
             "connection_profile" => {
                 self.plan_connection_profile(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
+            "migration_job" => {
+                self.plan_migration_job(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "migration_job" => {
-                self.plan_migration_job(current_state, desired_input).await
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -75,41 +75,41 @@ impl<'a> Datamigration_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "conversion_workspace" => {
+                self.create_conversion_workspace(input).await
+            }
             "location" => {
                 self.create_location(input).await
             }
             "connection_profile" => {
                 self.create_connection_profile(input).await
             }
-            "object" => {
-                self.create_object(input).await
-            }
-            "migration_job" => {
-                self.create_migration_job(input).await
-            }
             "operation" => {
                 self.create_operation(input).await
             }
-            "private_connection" => {
-                self.create_private_connection(input).await
-            }
-            "conversion_workspace" => {
-                self.create_conversion_workspace(input).await
+            "migration_job" => {
+                self.create_migration_job(input).await
             }
             "mapping_rule" => {
                 self.create_mapping_rule(input).await
             }
+            "object" => {
+                self.create_object(input).await
+            }
+            "private_connection" => {
+                self.create_private_connection(input).await
+            }
             "connection_profile" => {
                 self.create_connection_profile(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
+            "migration_job" => {
+                self.create_migration_job(input).await
             }
             "location" => {
                 self.create_location(input).await
             }
-            "migration_job" => {
-                self.create_migration_job(input).await
+            "operation" => {
+                self.create_operation(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -126,41 +126,41 @@ impl<'a> Datamigration_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "conversion_workspace" => {
+                self.read_conversion_workspace(id).await
+            }
             "location" => {
                 self.read_location(id).await
             }
             "connection_profile" => {
                 self.read_connection_profile(id).await
             }
-            "object" => {
-                self.read_object(id).await
-            }
-            "migration_job" => {
-                self.read_migration_job(id).await
-            }
             "operation" => {
                 self.read_operation(id).await
             }
-            "private_connection" => {
-                self.read_private_connection(id).await
-            }
-            "conversion_workspace" => {
-                self.read_conversion_workspace(id).await
+            "migration_job" => {
+                self.read_migration_job(id).await
             }
             "mapping_rule" => {
                 self.read_mapping_rule(id).await
             }
+            "object" => {
+                self.read_object(id).await
+            }
+            "private_connection" => {
+                self.read_private_connection(id).await
+            }
             "connection_profile" => {
                 self.read_connection_profile(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
+            "migration_job" => {
+                self.read_migration_job(id).await
             }
             "location" => {
                 self.read_location(id).await
             }
-            "migration_job" => {
-                self.read_migration_job(id).await
+            "operation" => {
+                self.read_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -178,41 +178,41 @@ impl<'a> Datamigration_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "conversion_workspace" => {
+                self.update_conversion_workspace(id, input).await
+            }
             "location" => {
                 self.update_location(id, input).await
             }
             "connection_profile" => {
                 self.update_connection_profile(id, input).await
             }
-            "object" => {
-                self.update_object(id, input).await
-            }
-            "migration_job" => {
-                self.update_migration_job(id, input).await
-            }
             "operation" => {
                 self.update_operation(id, input).await
             }
-            "private_connection" => {
-                self.update_private_connection(id, input).await
-            }
-            "conversion_workspace" => {
-                self.update_conversion_workspace(id, input).await
+            "migration_job" => {
+                self.update_migration_job(id, input).await
             }
             "mapping_rule" => {
                 self.update_mapping_rule(id, input).await
             }
+            "object" => {
+                self.update_object(id, input).await
+            }
+            "private_connection" => {
+                self.update_private_connection(id, input).await
+            }
             "connection_profile" => {
                 self.update_connection_profile(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
+            "migration_job" => {
+                self.update_migration_job(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
             }
-            "migration_job" => {
-                self.update_migration_job(id, input).await
+            "operation" => {
+                self.update_operation(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -229,41 +229,41 @@ impl<'a> Datamigration_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "conversion_workspace" => {
+                self.delete_conversion_workspace(id).await
+            }
             "location" => {
                 self.delete_location(id).await
             }
             "connection_profile" => {
                 self.delete_connection_profile(id).await
             }
-            "object" => {
-                self.delete_object(id).await
-            }
-            "migration_job" => {
-                self.delete_migration_job(id).await
-            }
             "operation" => {
                 self.delete_operation(id).await
             }
-            "private_connection" => {
-                self.delete_private_connection(id).await
-            }
-            "conversion_workspace" => {
-                self.delete_conversion_workspace(id).await
+            "migration_job" => {
+                self.delete_migration_job(id).await
             }
             "mapping_rule" => {
                 self.delete_mapping_rule(id).await
             }
+            "object" => {
+                self.delete_object(id).await
+            }
+            "private_connection" => {
+                self.delete_private_connection(id).await
+            }
             "connection_profile" => {
                 self.delete_connection_profile(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
+            "migration_job" => {
+                self.delete_migration_job(id).await
             }
             "location" => {
                 self.delete_location(id).await
             }
-            "migration_job" => {
-                self.delete_migration_job(id).await
+            "operation" => {
+                self.delete_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -276,6 +276,67 @@ impl<'a> Datamigration_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Conversion_workspace resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a conversion_workspace resource
+    async fn plan_conversion_workspace(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new conversion_workspace resource
+    async fn create_conversion_workspace(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a conversion_workspace resource
+    async fn read_conversion_workspace(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a conversion_workspace resource
+    async fn update_conversion_workspace(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a conversion_workspace resource
+    async fn delete_conversion_workspace(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -401,128 +462,6 @@ impl<'a> Datamigration_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Object resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a object resource
-    async fn plan_object(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new object resource
-    async fn create_object(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a object resource
-    async fn read_object(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a object resource
-    async fn update_object(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a object resource
-    async fn delete_object(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Migration_job resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a migration_job resource
-    async fn plan_migration_job(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new migration_job resource
-    async fn create_migration_job(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a migration_job resource
-    async fn read_migration_job(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a migration_job resource
-    async fn update_migration_job(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a migration_job resource
-    async fn delete_migration_job(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Operation resource operations
     // ------------------------------------------------------------------------
 
@@ -584,11 +523,11 @@ impl<'a> Datamigration_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Private_connection resource operations
+    // Migration_job resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a private_connection resource
-    async fn plan_private_connection(
+    /// Plan changes to a migration_job resource
+    async fn plan_migration_job(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -603,8 +542,8 @@ impl<'a> Datamigration_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new private_connection resource
-    async fn create_private_connection(
+    /// Create a new migration_job resource
+    async fn create_migration_job(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -613,8 +552,8 @@ impl<'a> Datamigration_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a private_connection resource
-    async fn read_private_connection(
+    /// Read a migration_job resource
+    async fn read_migration_job(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -623,8 +562,8 @@ impl<'a> Datamigration_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a private_connection resource
-    async fn update_private_connection(
+    /// Update a migration_job resource
+    async fn update_migration_job(
         &self,
         id: &str,
         input: ResourceInput,
@@ -634,69 +573,8 @@ impl<'a> Datamigration_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a private_connection resource
-    async fn delete_private_connection(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Conversion_workspace resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a conversion_workspace resource
-    async fn plan_conversion_workspace(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new conversion_workspace resource
-    async fn create_conversion_workspace(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a conversion_workspace resource
-    async fn read_conversion_workspace(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a conversion_workspace resource
-    async fn update_conversion_workspace(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a conversion_workspace resource
-    async fn delete_conversion_workspace(
+    /// Delete a migration_job resource
+    async fn delete_migration_job(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -767,6 +645,128 @@ impl<'a> Datamigration_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Object resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a object resource
+    async fn plan_object(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new object resource
+    async fn create_object(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a object resource
+    async fn read_object(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a object resource
+    async fn update_object(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a object resource
+    async fn delete_object(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Private_connection resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a private_connection resource
+    async fn plan_private_connection(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new private_connection resource
+    async fn create_private_connection(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a private_connection resource
+    async fn read_private_connection(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a private_connection resource
+    async fn update_private_connection(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a private_connection resource
+    async fn delete_private_connection(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Connection_profile resource operations
     // ------------------------------------------------------------------------
 
@@ -828,11 +828,11 @@ impl<'a> Datamigration_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
+    // Migration_job resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a operation resource
-    async fn plan_operation(
+    /// Plan changes to a migration_job resource
+    async fn plan_migration_job(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -847,8 +847,8 @@ impl<'a> Datamigration_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new operation resource
-    async fn create_operation(
+    /// Create a new migration_job resource
+    async fn create_migration_job(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -857,8 +857,8 @@ impl<'a> Datamigration_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a operation resource
-    async fn read_operation(
+    /// Read a migration_job resource
+    async fn read_migration_job(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -867,8 +867,8 @@ impl<'a> Datamigration_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a operation resource
-    async fn update_operation(
+    /// Update a migration_job resource
+    async fn update_migration_job(
         &self,
         id: &str,
         input: ResourceInput,
@@ -878,8 +878,8 @@ impl<'a> Datamigration_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a operation resource
-    async fn delete_operation(
+    /// Delete a migration_job resource
+    async fn delete_migration_job(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -950,11 +950,11 @@ impl<'a> Datamigration_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Migration_job resource operations
+    // Operation resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a migration_job resource
-    async fn plan_migration_job(
+    /// Plan changes to a operation resource
+    async fn plan_operation(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -969,8 +969,8 @@ impl<'a> Datamigration_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new migration_job resource
-    async fn create_migration_job(
+    /// Create a new operation resource
+    async fn create_operation(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -979,8 +979,8 @@ impl<'a> Datamigration_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a migration_job resource
-    async fn read_migration_job(
+    /// Read a operation resource
+    async fn read_operation(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -989,8 +989,8 @@ impl<'a> Datamigration_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a migration_job resource
-    async fn update_migration_job(
+    /// Update a operation resource
+    async fn update_operation(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1000,8 +1000,8 @@ impl<'a> Datamigration_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a migration_job resource
-    async fn delete_migration_job(
+    /// Delete a operation resource
+    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {

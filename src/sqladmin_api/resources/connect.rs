@@ -21,7 +21,7 @@ impl<'a> Connect<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, read_time: Option<String>, valid_duration: Option<String>, public_key: Option<String>, access_token: Option<String>, instance: String, project: String) -> Result<String> {
+    pub async fn create(&self, public_key: Option<String>, access_token: Option<String>, valid_duration: Option<String>, read_time: Option<String>, instance: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

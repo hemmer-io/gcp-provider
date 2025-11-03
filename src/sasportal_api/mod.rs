@@ -24,14 +24,11 @@ impl<'a> Sasportal_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "deployment" => {
-                self.plan_deployment(current_state, desired_input).await
+            "customer" => {
+                self.plan_customer(current_state, desired_input).await
             }
             "device" => {
                 self.plan_device(current_state, desired_input).await
-            }
-            "customer" => {
-                self.plan_customer(current_state, desired_input).await
             }
             "installer" => {
                 self.plan_installer(current_state, desired_input).await
@@ -41,6 +38,9 @@ impl<'a> Sasportal_apiService<'a> {
             }
             "node" => {
                 self.plan_node(current_state, desired_input).await
+            }
+            "deployment" => {
+                self.plan_deployment(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,14 +57,11 @@ impl<'a> Sasportal_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "deployment" => {
-                self.create_deployment(input).await
+            "customer" => {
+                self.create_customer(input).await
             }
             "device" => {
                 self.create_device(input).await
-            }
-            "customer" => {
-                self.create_customer(input).await
             }
             "installer" => {
                 self.create_installer(input).await
@@ -74,6 +71,9 @@ impl<'a> Sasportal_apiService<'a> {
             }
             "node" => {
                 self.create_node(input).await
+            }
+            "deployment" => {
+                self.create_deployment(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -90,14 +90,11 @@ impl<'a> Sasportal_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "deployment" => {
-                self.read_deployment(id).await
+            "customer" => {
+                self.read_customer(id).await
             }
             "device" => {
                 self.read_device(id).await
-            }
-            "customer" => {
-                self.read_customer(id).await
             }
             "installer" => {
                 self.read_installer(id).await
@@ -107,6 +104,9 @@ impl<'a> Sasportal_apiService<'a> {
             }
             "node" => {
                 self.read_node(id).await
+            }
+            "deployment" => {
+                self.read_deployment(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,14 +124,11 @@ impl<'a> Sasportal_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "deployment" => {
-                self.update_deployment(id, input).await
+            "customer" => {
+                self.update_customer(id, input).await
             }
             "device" => {
                 self.update_device(id, input).await
-            }
-            "customer" => {
-                self.update_customer(id, input).await
             }
             "installer" => {
                 self.update_installer(id, input).await
@@ -141,6 +138,9 @@ impl<'a> Sasportal_apiService<'a> {
             }
             "node" => {
                 self.update_node(id, input).await
+            }
+            "deployment" => {
+                self.update_deployment(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -157,14 +157,11 @@ impl<'a> Sasportal_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "deployment" => {
-                self.delete_deployment(id).await
+            "customer" => {
+                self.delete_customer(id).await
             }
             "device" => {
                 self.delete_device(id).await
-            }
-            "customer" => {
-                self.delete_customer(id).await
             }
             "installer" => {
                 self.delete_installer(id).await
@@ -174,6 +171,9 @@ impl<'a> Sasportal_apiService<'a> {
             }
             "node" => {
                 self.delete_node(id).await
+            }
+            "deployment" => {
+                self.delete_deployment(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -189,11 +189,11 @@ impl<'a> Sasportal_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Deployment resource operations
+    // Customer resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a deployment resource
-    async fn plan_deployment(
+    /// Plan changes to a customer resource
+    async fn plan_customer(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -208,8 +208,8 @@ impl<'a> Sasportal_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new deployment resource
-    async fn create_deployment(
+    /// Create a new customer resource
+    async fn create_customer(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -218,8 +218,8 @@ impl<'a> Sasportal_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a deployment resource
-    async fn read_deployment(
+    /// Read a customer resource
+    async fn read_customer(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -228,8 +228,8 @@ impl<'a> Sasportal_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a deployment resource
-    async fn update_deployment(
+    /// Update a customer resource
+    async fn update_customer(
         &self,
         id: &str,
         input: ResourceInput,
@@ -239,8 +239,8 @@ impl<'a> Sasportal_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a deployment resource
-    async fn delete_deployment(
+    /// Delete a customer resource
+    async fn delete_customer(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -302,67 +302,6 @@ impl<'a> Sasportal_apiService<'a> {
 
     /// Delete a device resource
     async fn delete_device(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Customer resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a customer resource
-    async fn plan_customer(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new customer resource
-    async fn create_customer(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a customer resource
-    async fn read_customer(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a customer resource
-    async fn update_customer(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a customer resource
-    async fn delete_customer(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -546,6 +485,67 @@ impl<'a> Sasportal_apiService<'a> {
 
     /// Delete a node resource
     async fn delete_node(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Deployment resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a deployment resource
+    async fn plan_deployment(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new deployment resource
+    async fn create_deployment(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a deployment resource
+    async fn read_deployment(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a deployment resource
+    async fn update_deployment(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a deployment resource
+    async fn delete_deployment(
         &self,
         id: &str,
     ) -> Result<()> {

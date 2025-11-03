@@ -21,7 +21,7 @@ impl<'a> Campaign<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, campaign_id: Option<String>, frequency_cap: Option<String>, campaign_flight: Option<String>, campaign_budgets: Option<Vec<String>>, campaign_goal: Option<String>, advertiser_id: Option<String>, name: Option<String>, display_name: Option<String>, entity_status: Option<String>, advertiser_id: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, display_name: Option<String>, campaign_flight: Option<String>, advertiser_id: Option<String>, campaign_goal: Option<String>, campaign_id: Option<String>, entity_status: Option<String>, update_time: Option<String>, campaign_budgets: Option<Vec<String>>, frequency_cap: Option<String>, advertiser_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Campaign<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, campaign_id: Option<String>, frequency_cap: Option<String>, campaign_flight: Option<String>, campaign_budgets: Option<Vec<String>>, campaign_goal: Option<String>, advertiser_id: Option<String>, name: Option<String>, display_name: Option<String>, entity_status: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, display_name: Option<String>, campaign_flight: Option<String>, advertiser_id: Option<String>, campaign_goal: Option<String>, campaign_id: Option<String>, entity_status: Option<String>, update_time: Option<String>, campaign_budgets: Option<Vec<String>>, frequency_cap: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

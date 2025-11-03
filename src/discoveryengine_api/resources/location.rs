@@ -1,6 +1,6 @@
 //! Location resource
 //!
-//! Removes the dedicated crawl rate for a craw_rate_scope. If the dedicated crawl rate was set, this will disable vertex AI's crawl bot from using the dedicated crawl rate for crawling. If the dedicated crawl rate was not set, this is a no-op.
+//! Sets the dedicated crawl rate for a crawl_rate_scope. If the dedicated crawl rate was not set, this will enable vertex AI's crawl bot to use the new dedicated crawl rate for crawling. If the dedicated crawl rate was set, vertex AI's crawl bot will try to update the rate to the new value. If the new value is too high, the crawl bot may crawl at a lower rate to avoid overloading the user's website.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, crawl_rate_scope: Option<String>, location: String) -> Result<String> {
+    pub async fn create(&self, crawl_type: Option<String>, mode: Option<String>, crawl_rate_scope: Option<String>, crawl_rate: Option<i64>, location: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, crawl_rate_scope: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, crawl_type: Option<String>, mode: Option<String>, crawl_rate_scope: Option<String>, crawl_rate: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

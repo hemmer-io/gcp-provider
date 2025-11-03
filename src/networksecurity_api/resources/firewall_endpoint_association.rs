@@ -21,7 +21,7 @@ impl<'a> Firewall_endpoint_association<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, update_time: Option<String>, tls_inspection_policy: Option<String>, network: Option<String>, firewall_endpoint: Option<String>, name: Option<String>, disabled: Option<bool>, labels: Option<HashMap<String, String>>, create_time: Option<String>, reconciling: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, network: Option<String>, reconciling: Option<bool>, labels: Option<HashMap<String, String>>, firewall_endpoint: Option<String>, name: Option<String>, disabled: Option<bool>, update_time: Option<String>, tls_inspection_policy: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Firewall_endpoint_association<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, update_time: Option<String>, tls_inspection_policy: Option<String>, network: Option<String>, firewall_endpoint: Option<String>, name: Option<String>, disabled: Option<bool>, labels: Option<HashMap<String, String>>, create_time: Option<String>, reconciling: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, network: Option<String>, reconciling: Option<bool>, labels: Option<HashMap<String, String>>, firewall_endpoint: Option<String>, name: Option<String>, disabled: Option<bool>, update_time: Option<String>, tls_inspection_policy: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Timeline<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, is_bundle_cover: Option<bool>, text: Option<String>, canonical_url: Option<String>, display_time: Option<String>, pin_score: Option<i64>, title: Option<String>, updated: Option<String>, location: Option<String>, in_reply_to: Option<String>, kind: Option<String>, menu_items: Option<Vec<String>>, recipients: Option<Vec<String>>, html: Option<String>, self_link: Option<String>, speakable_type: Option<String>, source_item_id: Option<String>, attachments: Option<Vec<String>>, notification: Option<String>, speakable_text: Option<String>, bundle_id: Option<String>, creator: Option<String>, created: Option<String>, etag: Option<String>, is_pinned: Option<bool>, id: Option<String>, is_deleted: Option<bool>) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, creator: Option<String>, attachments: Option<Vec<String>>, title: Option<String>, speakable_text: Option<String>, is_pinned: Option<bool>, updated: Option<String>, display_time: Option<String>, source_item_id: Option<String>, menu_items: Option<Vec<String>>, text: Option<String>, canonical_url: Option<String>, is_bundle_cover: Option<bool>, pin_score: Option<i64>, recipients: Option<Vec<String>>, kind: Option<String>, speakable_type: Option<String>, bundle_id: Option<String>, id: Option<String>, location: Option<String>, notification: Option<String>, self_link: Option<String>, created: Option<String>, is_deleted: Option<bool>, in_reply_to: Option<String>, html: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Timeline<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, is_bundle_cover: Option<bool>, text: Option<String>, canonical_url: Option<String>, display_time: Option<String>, pin_score: Option<i64>, title: Option<String>, updated: Option<String>, location: Option<String>, in_reply_to: Option<String>, kind: Option<String>, menu_items: Option<Vec<String>>, recipients: Option<Vec<String>>, html: Option<String>, self_link: Option<String>, speakable_type: Option<String>, source_item_id: Option<String>, attachments: Option<Vec<String>>, notification: Option<String>, speakable_text: Option<String>, bundle_id: Option<String>, creator: Option<String>, created: Option<String>, etag: Option<String>, is_pinned: Option<bool>, id: Option<String>, is_deleted: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, creator: Option<String>, attachments: Option<Vec<String>>, title: Option<String>, speakable_text: Option<String>, is_pinned: Option<bool>, updated: Option<String>, display_time: Option<String>, source_item_id: Option<String>, menu_items: Option<Vec<String>>, text: Option<String>, canonical_url: Option<String>, is_bundle_cover: Option<bool>, pin_score: Option<i64>, recipients: Option<Vec<String>>, kind: Option<String>, speakable_type: Option<String>, bundle_id: Option<String>, id: Option<String>, location: Option<String>, notification: Option<String>, self_link: Option<String>, created: Option<String>, is_deleted: Option<bool>, in_reply_to: Option<String>, html: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

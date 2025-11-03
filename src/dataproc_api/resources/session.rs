@@ -21,7 +21,7 @@ impl<'a> Session<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state_time: Option<String>, runtime_config: Option<String>, name: Option<String>, uuid: Option<String>, runtime_info: Option<String>, create_time: Option<String>, session_template: Option<String>, state: Option<String>, state_message: Option<String>, spark_connect_session: Option<String>, jupyter_session: Option<String>, user: Option<String>, creator: Option<String>, state_history: Option<Vec<String>>, labels: Option<HashMap<String, String>>, environment_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, state_time: Option<String>, uuid: Option<String>, state_history: Option<Vec<String>>, jupyter_session: Option<String>, state_message: Option<String>, user: Option<String>, create_time: Option<String>, spark_connect_session: Option<String>, runtime_config: Option<String>, session_template: Option<String>, creator: Option<String>, name: Option<String>, environment_config: Option<String>, labels: Option<HashMap<String, String>>, runtime_info: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

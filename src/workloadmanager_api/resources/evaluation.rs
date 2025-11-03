@@ -21,7 +21,7 @@ impl<'a> Evaluation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, custom_rules_bucket: Option<String>, description: Option<String>, kms_key: Option<String>, name: Option<String>, resource_status: Option<String>, evaluation_type: Option<String>, rule_names: Option<Vec<String>>, rule_versions: Option<Vec<String>>, big_query_destination: Option<String>, schedule: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, resource_filter: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, labels: Option<HashMap<String, String>>, resource_filter: Option<String>, rule_versions: Option<Vec<String>>, evaluation_type: Option<String>, description: Option<String>, custom_rules_bucket: Option<String>, schedule: Option<String>, big_query_destination: Option<String>, create_time: Option<String>, resource_status: Option<String>, update_time: Option<String>, rule_names: Option<Vec<String>>, kms_key: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Evaluation<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, custom_rules_bucket: Option<String>, description: Option<String>, kms_key: Option<String>, name: Option<String>, resource_status: Option<String>, evaluation_type: Option<String>, rule_names: Option<Vec<String>>, rule_versions: Option<Vec<String>>, big_query_destination: Option<String>, schedule: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, resource_filter: Option<String>, create_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, labels: Option<HashMap<String, String>>, resource_filter: Option<String>, rule_versions: Option<Vec<String>>, evaluation_type: Option<String>, description: Option<String>, custom_rules_bucket: Option<String>, schedule: Option<String>, big_query_destination: Option<String>, create_time: Option<String>, resource_status: Option<String>, update_time: Option<String>, rule_names: Option<Vec<String>>, kms_key: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

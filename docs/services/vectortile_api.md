@@ -79,11 +79,11 @@ Gets a feature tile by its tile resource name.
 | Output | Type | Description |
 |--------|------|-------------|
 | `coordinates` | String | The global tile coordinates that uniquely identify this tile. |
-| `features` | Vec<String> | Features present on this map tile. |
-| `version_id` | String | An opaque value, usually less than 30 characters, that contains version info about this tile and the data that was used to generate it. The client should store this value in its tile cache and pass it back to the API in the client_tile_version_id field of subsequent tile requests in order to enable the API to detect when the new tile would be the same as the one the client already has in its cache. Also see STATUS_OK_DATA_UNCHANGED. |
-| `providers` | Vec<String> | Data providers for the data contained in this tile. |
-| `status` | String | Tile response status code to support tile caching. |
 | `name` | String | Resource name of the tile. The tile resource name is prefixed by its collection ID `tiles/` followed by the resource ID, which encodes the tile's global x and y coordinates and zoom level as `@,,z`. For example, `tiles/@1,2,3z`. |
+| `features` | Vec<String> | Features present on this map tile. |
+| `providers` | Vec<String> | Data providers for the data contained in this tile. |
+| `version_id` | String | An opaque value, usually less than 30 characters, that contains version info about this tile and the data that was used to generate it. The client should store this value in its tile cache and pass it back to the API in the client_tile_version_id field of subsequent tile requests in order to enable the API to detect when the new tile would be the same as the one the client already has in its cache. Also see STATUS_OK_DATA_UNCHANGED. |
+| `status` | String | Tile response status code to support tile caching. |
 
 
 #### Usage Example
@@ -100,11 +100,11 @@ provider = gcp.GcpProvider {
 # Access featuretile outputs
 featuretile_id = featuretile.id
 featuretile_coordinates = featuretile.coordinates
-featuretile_features = featuretile.features
-featuretile_version_id = featuretile.version_id
-featuretile_providers = featuretile.providers
-featuretile_status = featuretile.status
 featuretile_name = featuretile.name
+featuretile_features = featuretile.features
+featuretile_providers = featuretile.providers
+featuretile_version_id = featuretile.version_id
+featuretile_status = featuretile.status
 ```
 
 ---

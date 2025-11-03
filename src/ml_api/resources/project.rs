@@ -1,6 +1,6 @@
 //! Project resource
 //!
-//! Performs explanation on the data in the request. {% dynamic include "/ai-platform/includes/___explain-request" %} 
+//! Performs online prediction on the data in the request. {% dynamic include "/ai-platform/includes/___predict-request" %} 
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

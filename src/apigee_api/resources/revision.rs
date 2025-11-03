@@ -1,6 +1,6 @@
 //! Revision resource
 //!
-//! Deploys a revision of a shared flow. If another revision of the same shared flow is currently deployed, set the `override` parameter to `true` to have this revision replace the currently deployed revision. You cannot use a shared flow until it has been deployed to an environment. For a request path `organizations/{org}/environments/{env}/sharedflows/{sf}/revisions/{rev}/deployments`, two permissions are required: * `apigee.deployments.create` on the resource `organizations/{org}/environments/{env}` * `apigee.sharedflowrevisions.deploy` on the resource `organizations/{org}/sharedflows/{sf}/revisions/{rev}`
+//! Updates an existing API proxy revision by uploading the API proxy configuration bundle as a zip file from your local machine. You can update only API proxy revisions that have never been deployed. After deployment, an API proxy revision becomes immutable, even if it is undeployed. Set the `Content-Type` header to either `multipart/form-data` or `application/octet-stream`.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Revision<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: String) -> Result<String> {
+    pub async fn create(&self, extensions: Option<Vec<HashMap<String, String>>>, data: Option<String>, content_type: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

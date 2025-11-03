@@ -36,8 +36,8 @@ Creates an answer or updates the existing answer written by the user for the spe
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `total_size` | i64 | The total number of answers posted for this question across all pages. |
 | `next_page_token` | String | If the number of answers exceeds the requested max page size, this field is populated with a token to fetch the next page of answers on a subsequent call. If there are no more answers, this field is not present in the response. |
+| `total_size` | i64 | The total number of answers posted for this question across all pages. |
 | `answers` | Vec<String> | The requested answers. |
 
 
@@ -59,8 +59,8 @@ answer = provider.mybusinessqanda_api.Answer {
 
 # Access answer outputs
 answer_id = answer.id
-answer_total_size = answer.total_size
 answer_next_page_token = answer.next_page_token
+answer_total_size = answer.total_size
 answer_answers = answer.answers
 ```
 
@@ -77,14 +77,14 @@ Adds a question for the specified location.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `author` | String |  | Output only. The author of the question. |
-| `total_answer_count` | i64 |  | Output only. The total number of answers posted for this question. |
-| `top_answers` | Vec<String> |  | Output only. A list of answers to the question, sorted by upvotes. This may not be a complete list of answers depending on the request parameters (answers_per_question) |
-| `name` | String |  | Immutable. The unique name for the question. locations/*/questions/* This field will be ignored if set during question creation. |
 | `create_time` | String |  | Output only. The timestamp for when the question was written. |
-| `update_time` | String |  | Output only. The timestamp for when the question was last modified. |
+| `name` | String |  | Immutable. The unique name for the question. locations/*/questions/* This field will be ignored if set during question creation. |
 | `upvote_count` | i64 |  | Output only. The number of upvotes for the question. |
+| `author` | String |  | Output only. The author of the question. |
 | `text` | String |  | Required. The text of the question. It should contain at least three words and the total length should be greater than or equal to 10 characters. The maximum length is 4096 characters. |
+| `top_answers` | Vec<String> |  | Output only. A list of answers to the question, sorted by upvotes. This may not be a complete list of answers depending on the request parameters (answers_per_question) |
+| `update_time` | String |  | Output only. The timestamp for when the question was last modified. |
+| `total_answer_count` | i64 |  | Output only. The total number of answers posted for this question. |
 | `parent` | String | ✅ | Required. The name of the location to write a question for. |
 
 
@@ -92,9 +92,9 @@ Adds a question for the specified location.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `total_size` | i64 | The total number of questions posted for this location across all pages. |
 | `next_page_token` | String | If the number of questions exceeds the requested max page size, this field is populated with a token to fetch the next page of questions on a subsequent call. If there are no more questions, this field is not present in the response. |
 | `questions` | Vec<String> | The requested questions, |
+| `total_size` | i64 | The total number of questions posted for this location across all pages. |
 
 
 #### Usage Example
@@ -115,9 +115,9 @@ question = provider.mybusinessqanda_api.Question {
 
 # Access question outputs
 question_id = question.id
-question_total_size = question.total_size
 question_next_page_token = question.next_page_token
 question_questions = question.questions
+question_total_size = question.total_size
 ```
 
 ---

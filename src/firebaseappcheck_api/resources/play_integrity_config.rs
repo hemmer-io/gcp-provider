@@ -34,7 +34,7 @@ impl<'a> Play_integrity_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, app_integrity: Option<String>, account_details: Option<String>, device_integrity: Option<String>, name: Option<String>, token_ttl: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, account_details: Option<String>, device_integrity: Option<String>, name: Option<String>, token_ttl: Option<String>, app_integrity: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

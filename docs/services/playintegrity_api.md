@@ -28,8 +28,8 @@ Writes recall bits for the device where Play Integrity API token is obtained. Th
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `new_values` | String |  | Required. The new values for the device recall bits to be written. |
 | `integrity_token` | String |  | Required. Integrity token obtained from calling Play Integrity API. |
+| `new_values` | String |  | Required. The new values for the device recall bits to be written. |
 | `package_name` | String | ✅ | Required. Package name of the app the attached integrity token belongs to. |
 
 
@@ -57,7 +57,7 @@ device_recall = provider.playintegrity_api.Device_recall {
 
 ### Playintegrity
 
-Decodes the PC integrity token and returns the PC token payload.
+Decodes the integrity token and returns the token payload.
 
 **Operations**: ✅ Create
 
@@ -66,7 +66,7 @@ Decodes the PC integrity token and returns the PC token payload.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `integrity_token` | String |  | Encoded integrity token. |
-| `package_name` | String | ✅ | Package name of the app the attached integrity token belongs to. |
+| `package_name` | String | ✅ |  Package name of the app the attached integrity token belongs to. |
 
 
 
@@ -83,7 +83,7 @@ provider = gcp.GcpProvider {
 
 # Create playintegrity
 playintegrity = provider.playintegrity_api.Playintegrity {
-    package_name = "value"  # Package name of the app the attached integrity token belongs to.
+    package_name = "value"  #  Package name of the app the attached integrity token belongs to.
 }
 
 ```

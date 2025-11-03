@@ -24,23 +24,14 @@ impl<'a> Gmail_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "draft" => {
-                self.plan_draft(current_state, desired_input).await
+            "smime_info" => {
+                self.plan_smime_info(current_state, desired_input).await
             }
-            "setting" => {
-                self.plan_setting(current_state, desired_input).await
-            }
-            "identitie" => {
-                self.plan_identitie(current_state, desired_input).await
-            }
-            "user" => {
-                self.plan_user(current_state, desired_input).await
+            "filter" => {
+                self.plan_filter(current_state, desired_input).await
             }
             "delegate" => {
                 self.plan_delegate(current_state, desired_input).await
-            }
-            "history" => {
-                self.plan_history(current_state, desired_input).await
             }
             "send_a" => {
                 self.plan_send_a(current_state, desired_input).await
@@ -48,26 +39,35 @@ impl<'a> Gmail_apiService<'a> {
             "label" => {
                 self.plan_label(current_state, desired_input).await
             }
-            "thread" => {
-                self.plan_thread(current_state, desired_input).await
+            "history" => {
+                self.plan_history(current_state, desired_input).await
             }
-            "message" => {
-                self.plan_message(current_state, desired_input).await
+            "keypair" => {
+                self.plan_keypair(current_state, desired_input).await
             }
-            "smime_info" => {
-                self.plan_smime_info(current_state, desired_input).await
+            "identitie" => {
+                self.plan_identitie(current_state, desired_input).await
+            }
+            "draft" => {
+                self.plan_draft(current_state, desired_input).await
             }
             "attachment" => {
                 self.plan_attachment(current_state, desired_input).await
             }
+            "message" => {
+                self.plan_message(current_state, desired_input).await
+            }
             "forwarding_addresse" => {
                 self.plan_forwarding_addresse(current_state, desired_input).await
             }
-            "filter" => {
-                self.plan_filter(current_state, desired_input).await
+            "setting" => {
+                self.plan_setting(current_state, desired_input).await
             }
-            "keypair" => {
-                self.plan_keypair(current_state, desired_input).await
+            "thread" => {
+                self.plan_thread(current_state, desired_input).await
+            }
+            "user" => {
+                self.plan_user(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -84,23 +84,14 @@ impl<'a> Gmail_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "draft" => {
-                self.create_draft(input).await
+            "smime_info" => {
+                self.create_smime_info(input).await
             }
-            "setting" => {
-                self.create_setting(input).await
-            }
-            "identitie" => {
-                self.create_identitie(input).await
-            }
-            "user" => {
-                self.create_user(input).await
+            "filter" => {
+                self.create_filter(input).await
             }
             "delegate" => {
                 self.create_delegate(input).await
-            }
-            "history" => {
-                self.create_history(input).await
             }
             "send_a" => {
                 self.create_send_a(input).await
@@ -108,26 +99,35 @@ impl<'a> Gmail_apiService<'a> {
             "label" => {
                 self.create_label(input).await
             }
-            "thread" => {
-                self.create_thread(input).await
+            "history" => {
+                self.create_history(input).await
             }
-            "message" => {
-                self.create_message(input).await
+            "keypair" => {
+                self.create_keypair(input).await
             }
-            "smime_info" => {
-                self.create_smime_info(input).await
+            "identitie" => {
+                self.create_identitie(input).await
+            }
+            "draft" => {
+                self.create_draft(input).await
             }
             "attachment" => {
                 self.create_attachment(input).await
             }
+            "message" => {
+                self.create_message(input).await
+            }
             "forwarding_addresse" => {
                 self.create_forwarding_addresse(input).await
             }
-            "filter" => {
-                self.create_filter(input).await
+            "setting" => {
+                self.create_setting(input).await
             }
-            "keypair" => {
-                self.create_keypair(input).await
+            "thread" => {
+                self.create_thread(input).await
+            }
+            "user" => {
+                self.create_user(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -144,23 +144,14 @@ impl<'a> Gmail_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "draft" => {
-                self.read_draft(id).await
+            "smime_info" => {
+                self.read_smime_info(id).await
             }
-            "setting" => {
-                self.read_setting(id).await
-            }
-            "identitie" => {
-                self.read_identitie(id).await
-            }
-            "user" => {
-                self.read_user(id).await
+            "filter" => {
+                self.read_filter(id).await
             }
             "delegate" => {
                 self.read_delegate(id).await
-            }
-            "history" => {
-                self.read_history(id).await
             }
             "send_a" => {
                 self.read_send_a(id).await
@@ -168,26 +159,35 @@ impl<'a> Gmail_apiService<'a> {
             "label" => {
                 self.read_label(id).await
             }
-            "thread" => {
-                self.read_thread(id).await
+            "history" => {
+                self.read_history(id).await
             }
-            "message" => {
-                self.read_message(id).await
+            "keypair" => {
+                self.read_keypair(id).await
             }
-            "smime_info" => {
-                self.read_smime_info(id).await
+            "identitie" => {
+                self.read_identitie(id).await
+            }
+            "draft" => {
+                self.read_draft(id).await
             }
             "attachment" => {
                 self.read_attachment(id).await
             }
+            "message" => {
+                self.read_message(id).await
+            }
             "forwarding_addresse" => {
                 self.read_forwarding_addresse(id).await
             }
-            "filter" => {
-                self.read_filter(id).await
+            "setting" => {
+                self.read_setting(id).await
             }
-            "keypair" => {
-                self.read_keypair(id).await
+            "thread" => {
+                self.read_thread(id).await
+            }
+            "user" => {
+                self.read_user(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -205,23 +205,14 @@ impl<'a> Gmail_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "draft" => {
-                self.update_draft(id, input).await
+            "smime_info" => {
+                self.update_smime_info(id, input).await
             }
-            "setting" => {
-                self.update_setting(id, input).await
-            }
-            "identitie" => {
-                self.update_identitie(id, input).await
-            }
-            "user" => {
-                self.update_user(id, input).await
+            "filter" => {
+                self.update_filter(id, input).await
             }
             "delegate" => {
                 self.update_delegate(id, input).await
-            }
-            "history" => {
-                self.update_history(id, input).await
             }
             "send_a" => {
                 self.update_send_a(id, input).await
@@ -229,26 +220,35 @@ impl<'a> Gmail_apiService<'a> {
             "label" => {
                 self.update_label(id, input).await
             }
-            "thread" => {
-                self.update_thread(id, input).await
+            "history" => {
+                self.update_history(id, input).await
             }
-            "message" => {
-                self.update_message(id, input).await
+            "keypair" => {
+                self.update_keypair(id, input).await
             }
-            "smime_info" => {
-                self.update_smime_info(id, input).await
+            "identitie" => {
+                self.update_identitie(id, input).await
+            }
+            "draft" => {
+                self.update_draft(id, input).await
             }
             "attachment" => {
                 self.update_attachment(id, input).await
             }
+            "message" => {
+                self.update_message(id, input).await
+            }
             "forwarding_addresse" => {
                 self.update_forwarding_addresse(id, input).await
             }
-            "filter" => {
-                self.update_filter(id, input).await
+            "setting" => {
+                self.update_setting(id, input).await
             }
-            "keypair" => {
-                self.update_keypair(id, input).await
+            "thread" => {
+                self.update_thread(id, input).await
+            }
+            "user" => {
+                self.update_user(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -265,23 +265,14 @@ impl<'a> Gmail_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "draft" => {
-                self.delete_draft(id).await
+            "smime_info" => {
+                self.delete_smime_info(id).await
             }
-            "setting" => {
-                self.delete_setting(id).await
-            }
-            "identitie" => {
-                self.delete_identitie(id).await
-            }
-            "user" => {
-                self.delete_user(id).await
+            "filter" => {
+                self.delete_filter(id).await
             }
             "delegate" => {
                 self.delete_delegate(id).await
-            }
-            "history" => {
-                self.delete_history(id).await
             }
             "send_a" => {
                 self.delete_send_a(id).await
@@ -289,26 +280,35 @@ impl<'a> Gmail_apiService<'a> {
             "label" => {
                 self.delete_label(id).await
             }
-            "thread" => {
-                self.delete_thread(id).await
+            "history" => {
+                self.delete_history(id).await
             }
-            "message" => {
-                self.delete_message(id).await
+            "keypair" => {
+                self.delete_keypair(id).await
             }
-            "smime_info" => {
-                self.delete_smime_info(id).await
+            "identitie" => {
+                self.delete_identitie(id).await
+            }
+            "draft" => {
+                self.delete_draft(id).await
             }
             "attachment" => {
                 self.delete_attachment(id).await
             }
+            "message" => {
+                self.delete_message(id).await
+            }
             "forwarding_addresse" => {
                 self.delete_forwarding_addresse(id).await
             }
-            "filter" => {
-                self.delete_filter(id).await
+            "setting" => {
+                self.delete_setting(id).await
             }
-            "keypair" => {
-                self.delete_keypair(id).await
+            "thread" => {
+                self.delete_thread(id).await
+            }
+            "user" => {
+                self.delete_user(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -324,11 +324,11 @@ impl<'a> Gmail_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Draft resource operations
+    // Smime_info resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a draft resource
-    async fn plan_draft(
+    /// Plan changes to a smime_info resource
+    async fn plan_smime_info(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -343,8 +343,8 @@ impl<'a> Gmail_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new draft resource
-    async fn create_draft(
+    /// Create a new smime_info resource
+    async fn create_smime_info(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -353,8 +353,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a draft resource
-    async fn read_draft(
+    /// Read a smime_info resource
+    async fn read_smime_info(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -363,8 +363,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a draft resource
-    async fn update_draft(
+    /// Update a smime_info resource
+    async fn update_smime_info(
         &self,
         id: &str,
         input: ResourceInput,
@@ -374,8 +374,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a draft resource
-    async fn delete_draft(
+    /// Delete a smime_info resource
+    async fn delete_smime_info(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -385,11 +385,11 @@ impl<'a> Gmail_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Setting resource operations
+    // Filter resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a setting resource
-    async fn plan_setting(
+    /// Plan changes to a filter resource
+    async fn plan_filter(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -404,8 +404,8 @@ impl<'a> Gmail_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new setting resource
-    async fn create_setting(
+    /// Create a new filter resource
+    async fn create_filter(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -414,8 +414,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a setting resource
-    async fn read_setting(
+    /// Read a filter resource
+    async fn read_filter(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -424,8 +424,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a setting resource
-    async fn update_setting(
+    /// Update a filter resource
+    async fn update_filter(
         &self,
         id: &str,
         input: ResourceInput,
@@ -435,130 +435,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a setting resource
-    async fn delete_setting(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Identitie resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a identitie resource
-    async fn plan_identitie(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new identitie resource
-    async fn create_identitie(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a identitie resource
-    async fn read_identitie(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a identitie resource
-    async fn update_identitie(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a identitie resource
-    async fn delete_identitie(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // User resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a user resource
-    async fn plan_user(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new user resource
-    async fn create_user(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a user resource
-    async fn read_user(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a user resource
-    async fn update_user(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a user resource
-    async fn delete_user(
+    /// Delete a filter resource
+    async fn delete_filter(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -620,67 +498,6 @@ impl<'a> Gmail_apiService<'a> {
 
     /// Delete a delegate resource
     async fn delete_delegate(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // History resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a history resource
-    async fn plan_history(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new history resource
-    async fn create_history(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a history resource
-    async fn read_history(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a history resource
-    async fn update_history(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a history resource
-    async fn delete_history(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -812,11 +629,11 @@ impl<'a> Gmail_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Thread resource operations
+    // History resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a thread resource
-    async fn plan_thread(
+    /// Plan changes to a history resource
+    async fn plan_history(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -831,8 +648,8 @@ impl<'a> Gmail_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new thread resource
-    async fn create_thread(
+    /// Create a new history resource
+    async fn create_history(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -841,8 +658,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a thread resource
-    async fn read_thread(
+    /// Read a history resource
+    async fn read_history(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -851,8 +668,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a thread resource
-    async fn update_thread(
+    /// Update a history resource
+    async fn update_history(
         &self,
         id: &str,
         input: ResourceInput,
@@ -862,8 +679,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a thread resource
-    async fn delete_thread(
+    /// Delete a history resource
+    async fn delete_history(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -873,11 +690,11 @@ impl<'a> Gmail_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Message resource operations
+    // Keypair resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a message resource
-    async fn plan_message(
+    /// Plan changes to a keypair resource
+    async fn plan_keypair(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -892,8 +709,8 @@ impl<'a> Gmail_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new message resource
-    async fn create_message(
+    /// Create a new keypair resource
+    async fn create_keypair(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -902,8 +719,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a message resource
-    async fn read_message(
+    /// Read a keypair resource
+    async fn read_keypair(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -912,8 +729,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a message resource
-    async fn update_message(
+    /// Update a keypair resource
+    async fn update_keypair(
         &self,
         id: &str,
         input: ResourceInput,
@@ -923,8 +740,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a message resource
-    async fn delete_message(
+    /// Delete a keypair resource
+    async fn delete_keypair(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -934,11 +751,11 @@ impl<'a> Gmail_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Smime_info resource operations
+    // Identitie resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a smime_info resource
-    async fn plan_smime_info(
+    /// Plan changes to a identitie resource
+    async fn plan_identitie(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -953,8 +770,8 @@ impl<'a> Gmail_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new smime_info resource
-    async fn create_smime_info(
+    /// Create a new identitie resource
+    async fn create_identitie(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -963,8 +780,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a smime_info resource
-    async fn read_smime_info(
+    /// Read a identitie resource
+    async fn read_identitie(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -973,8 +790,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a smime_info resource
-    async fn update_smime_info(
+    /// Update a identitie resource
+    async fn update_identitie(
         &self,
         id: &str,
         input: ResourceInput,
@@ -984,8 +801,69 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a smime_info resource
-    async fn delete_smime_info(
+    /// Delete a identitie resource
+    async fn delete_identitie(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Draft resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a draft resource
+    async fn plan_draft(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new draft resource
+    async fn create_draft(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a draft resource
+    async fn read_draft(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a draft resource
+    async fn update_draft(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a draft resource
+    async fn delete_draft(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1056,6 +934,67 @@ impl<'a> Gmail_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Message resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a message resource
+    async fn plan_message(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new message resource
+    async fn create_message(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a message resource
+    async fn read_message(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a message resource
+    async fn update_message(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a message resource
+    async fn delete_message(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Forwarding_addresse resource operations
     // ------------------------------------------------------------------------
 
@@ -1117,11 +1056,11 @@ impl<'a> Gmail_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Filter resource operations
+    // Setting resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a filter resource
-    async fn plan_filter(
+    /// Plan changes to a setting resource
+    async fn plan_setting(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1136,8 +1075,8 @@ impl<'a> Gmail_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new filter resource
-    async fn create_filter(
+    /// Create a new setting resource
+    async fn create_setting(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1146,8 +1085,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a filter resource
-    async fn read_filter(
+    /// Read a setting resource
+    async fn read_setting(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1156,8 +1095,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a filter resource
-    async fn update_filter(
+    /// Update a setting resource
+    async fn update_setting(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1167,8 +1106,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a filter resource
-    async fn delete_filter(
+    /// Delete a setting resource
+    async fn delete_setting(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1178,11 +1117,11 @@ impl<'a> Gmail_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Keypair resource operations
+    // Thread resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a keypair resource
-    async fn plan_keypair(
+    /// Plan changes to a thread resource
+    async fn plan_thread(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1197,8 +1136,8 @@ impl<'a> Gmail_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new keypair resource
-    async fn create_keypair(
+    /// Create a new thread resource
+    async fn create_thread(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1207,8 +1146,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a keypair resource
-    async fn read_keypair(
+    /// Read a thread resource
+    async fn read_thread(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1217,8 +1156,8 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a keypair resource
-    async fn update_keypair(
+    /// Update a thread resource
+    async fn update_thread(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1228,8 +1167,69 @@ impl<'a> Gmail_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a keypair resource
-    async fn delete_keypair(
+    /// Delete a thread resource
+    async fn delete_thread(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // User resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a user resource
+    async fn plan_user(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new user resource
+    async fn create_user(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a user resource
+    async fn read_user(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a user resource
+    async fn update_user(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a user resource
+    async fn delete_user(
         &self,
         id: &str,
     ) -> Result<()> {

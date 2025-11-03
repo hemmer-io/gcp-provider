@@ -21,7 +21,7 @@ impl<'a> Audience_export<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, error_message: Option<String>, audience_display_name: Option<String>, creation_quota_tokens_charged: Option<i64>, dimensions: Option<Vec<String>>, audience: Option<String>, row_count: Option<i64>, begin_creating_time: Option<String>, percentage_completed: Option<f64>, name: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, audience_display_name: Option<String>, dimensions: Option<Vec<String>>, begin_creating_time: Option<String>, creation_quota_tokens_charged: Option<i64>, name: Option<String>, row_count: Option<i64>, state: Option<String>, error_message: Option<String>, audience: Option<String>, percentage_completed: Option<f64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

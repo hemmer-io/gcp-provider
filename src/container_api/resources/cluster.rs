@@ -21,7 +21,7 @@ impl<'a> Cluster<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, project_id: Option<String>, cluster: Option<String>, parent: Option<String>, zone: Option<String>, project_id: String, zone: String) -> Result<String> {
+    pub async fn create(&self, cluster: Option<String>, project_id: Option<String>, parent: Option<String>, zone: Option<String>, project_id: String, zone: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Cluster<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, project_id: Option<String>, cluster: Option<String>, parent: Option<String>, zone: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, cluster: Option<String>, project_id: Option<String>, parent: Option<String>, zone: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

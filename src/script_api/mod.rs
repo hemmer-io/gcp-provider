@@ -24,8 +24,8 @@ impl<'a> Script_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "version" => {
-                self.plan_version(current_state, desired_input).await
+            "deployment" => {
+                self.plan_deployment(current_state, desired_input).await
             }
             "project" => {
                 self.plan_project(current_state, desired_input).await
@@ -33,11 +33,11 @@ impl<'a> Script_apiService<'a> {
             "script" => {
                 self.plan_script(current_state, desired_input).await
             }
-            "deployment" => {
-                self.plan_deployment(current_state, desired_input).await
-            }
             "processe" => {
                 self.plan_processe(current_state, desired_input).await
+            }
+            "version" => {
+                self.plan_version(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -54,8 +54,8 @@ impl<'a> Script_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "version" => {
-                self.create_version(input).await
+            "deployment" => {
+                self.create_deployment(input).await
             }
             "project" => {
                 self.create_project(input).await
@@ -63,11 +63,11 @@ impl<'a> Script_apiService<'a> {
             "script" => {
                 self.create_script(input).await
             }
-            "deployment" => {
-                self.create_deployment(input).await
-            }
             "processe" => {
                 self.create_processe(input).await
+            }
+            "version" => {
+                self.create_version(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -84,8 +84,8 @@ impl<'a> Script_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "version" => {
-                self.read_version(id).await
+            "deployment" => {
+                self.read_deployment(id).await
             }
             "project" => {
                 self.read_project(id).await
@@ -93,11 +93,11 @@ impl<'a> Script_apiService<'a> {
             "script" => {
                 self.read_script(id).await
             }
-            "deployment" => {
-                self.read_deployment(id).await
-            }
             "processe" => {
                 self.read_processe(id).await
+            }
+            "version" => {
+                self.read_version(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -115,8 +115,8 @@ impl<'a> Script_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "version" => {
-                self.update_version(id, input).await
+            "deployment" => {
+                self.update_deployment(id, input).await
             }
             "project" => {
                 self.update_project(id, input).await
@@ -124,11 +124,11 @@ impl<'a> Script_apiService<'a> {
             "script" => {
                 self.update_script(id, input).await
             }
-            "deployment" => {
-                self.update_deployment(id, input).await
-            }
             "processe" => {
                 self.update_processe(id, input).await
+            }
+            "version" => {
+                self.update_version(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -145,8 +145,8 @@ impl<'a> Script_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "version" => {
-                self.delete_version(id).await
+            "deployment" => {
+                self.delete_deployment(id).await
             }
             "project" => {
                 self.delete_project(id).await
@@ -154,11 +154,11 @@ impl<'a> Script_apiService<'a> {
             "script" => {
                 self.delete_script(id).await
             }
-            "deployment" => {
-                self.delete_deployment(id).await
-            }
             "processe" => {
                 self.delete_processe(id).await
+            }
+            "version" => {
+                self.delete_version(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -174,11 +174,11 @@ impl<'a> Script_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Version resource operations
+    // Deployment resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a version resource
-    async fn plan_version(
+    /// Plan changes to a deployment resource
+    async fn plan_deployment(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -193,8 +193,8 @@ impl<'a> Script_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new version resource
-    async fn create_version(
+    /// Create a new deployment resource
+    async fn create_deployment(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -203,8 +203,8 @@ impl<'a> Script_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a version resource
-    async fn read_version(
+    /// Read a deployment resource
+    async fn read_deployment(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -213,8 +213,8 @@ impl<'a> Script_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a version resource
-    async fn update_version(
+    /// Update a deployment resource
+    async fn update_deployment(
         &self,
         id: &str,
         input: ResourceInput,
@@ -224,8 +224,8 @@ impl<'a> Script_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a version resource
-    async fn delete_version(
+    /// Delete a deployment resource
+    async fn delete_deployment(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -357,67 +357,6 @@ impl<'a> Script_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Deployment resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a deployment resource
-    async fn plan_deployment(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new deployment resource
-    async fn create_deployment(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a deployment resource
-    async fn read_deployment(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a deployment resource
-    async fn update_deployment(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a deployment resource
-    async fn delete_deployment(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Processe resource operations
     // ------------------------------------------------------------------------
 
@@ -470,6 +409,67 @@ impl<'a> Script_apiService<'a> {
 
     /// Delete a processe resource
     async fn delete_processe(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Version resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a version resource
+    async fn plan_version(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new version resource
+    async fn create_version(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a version resource
+    async fn read_version(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a version resource
+    async fn update_version(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a version resource
+    async fn delete_version(
         &self,
         id: &str,
     ) -> Result<()> {

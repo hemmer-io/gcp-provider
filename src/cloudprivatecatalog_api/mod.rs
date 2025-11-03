@@ -24,11 +24,11 @@ impl<'a> Cloudprivatecatalog_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "catalog" => {
-                self.plan_catalog(current_state, desired_input).await
-            }
             "version" => {
                 self.plan_version(current_state, desired_input).await
+            }
+            "catalog" => {
+                self.plan_catalog(current_state, desired_input).await
             }
             "product" => {
                 self.plan_product(current_state, desired_input).await
@@ -48,11 +48,11 @@ impl<'a> Cloudprivatecatalog_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "catalog" => {
-                self.create_catalog(input).await
-            }
             "version" => {
                 self.create_version(input).await
+            }
+            "catalog" => {
+                self.create_catalog(input).await
             }
             "product" => {
                 self.create_product(input).await
@@ -72,11 +72,11 @@ impl<'a> Cloudprivatecatalog_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "catalog" => {
-                self.read_catalog(id).await
-            }
             "version" => {
                 self.read_version(id).await
+            }
+            "catalog" => {
+                self.read_catalog(id).await
             }
             "product" => {
                 self.read_product(id).await
@@ -97,11 +97,11 @@ impl<'a> Cloudprivatecatalog_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "catalog" => {
-                self.update_catalog(id, input).await
-            }
             "version" => {
                 self.update_version(id, input).await
+            }
+            "catalog" => {
+                self.update_catalog(id, input).await
             }
             "product" => {
                 self.update_product(id, input).await
@@ -121,11 +121,11 @@ impl<'a> Cloudprivatecatalog_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "catalog" => {
-                self.delete_catalog(id).await
-            }
             "version" => {
                 self.delete_version(id).await
+            }
+            "catalog" => {
+                self.delete_catalog(id).await
             }
             "product" => {
                 self.delete_product(id).await
@@ -141,67 +141,6 @@ impl<'a> Cloudprivatecatalog_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Catalog resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a catalog resource
-    async fn plan_catalog(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new catalog resource
-    async fn create_catalog(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a catalog resource
-    async fn read_catalog(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a catalog resource
-    async fn update_catalog(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a catalog resource
-    async fn delete_catalog(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -257,6 +196,67 @@ impl<'a> Cloudprivatecatalog_apiService<'a> {
 
     /// Delete a version resource
     async fn delete_version(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Catalog resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a catalog resource
+    async fn plan_catalog(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new catalog resource
+    async fn create_catalog(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a catalog resource
+    async fn read_catalog(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a catalog resource
+    async fn update_catalog(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a catalog resource
+    async fn delete_catalog(
         &self,
         id: &str,
     ) -> Result<()> {

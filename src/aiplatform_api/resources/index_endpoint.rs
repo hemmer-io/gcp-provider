@@ -21,7 +21,7 @@ impl<'a> Index_endpoint<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, deployed_indexes: Option<Vec<String>>, private_service_connect_config: Option<String>, encryption_spec: Option<String>, etag: Option<String>, public_endpoint_domain_name: Option<String>, enable_private_service_connect: Option<bool>, public_endpoint_enabled: Option<bool>, labels: Option<HashMap<String, String>>, display_name: Option<String>, update_time: Option<String>, network: Option<String>, create_time: Option<String>, name: Option<String>, satisfies_pzs: Option<bool>, description: Option<String>, satisfies_pzi: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, private_service_connect_config: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, display_name: Option<String>, etag: Option<String>, enable_private_service_connect: Option<bool>, labels: Option<HashMap<String, String>>, public_endpoint_enabled: Option<bool>, encryption_spec: Option<String>, public_endpoint_domain_name: Option<String>, network: Option<String>, update_time: Option<String>, deployed_indexes: Option<Vec<String>>, name: Option<String>, create_time: Option<String>, description: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Index_endpoint<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, deployed_indexes: Option<Vec<String>>, private_service_connect_config: Option<String>, encryption_spec: Option<String>, etag: Option<String>, public_endpoint_domain_name: Option<String>, enable_private_service_connect: Option<bool>, public_endpoint_enabled: Option<bool>, labels: Option<HashMap<String, String>>, display_name: Option<String>, update_time: Option<String>, network: Option<String>, create_time: Option<String>, name: Option<String>, satisfies_pzs: Option<bool>, description: Option<String>, satisfies_pzi: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, private_service_connect_config: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, display_name: Option<String>, etag: Option<String>, enable_private_service_connect: Option<bool>, labels: Option<HashMap<String, String>>, public_endpoint_enabled: Option<bool>, encryption_spec: Option<String>, public_endpoint_domain_name: Option<String>, network: Option<String>, update_time: Option<String>, deployed_indexes: Option<Vec<String>>, name: Option<String>, create_time: Option<String>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

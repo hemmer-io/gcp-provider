@@ -21,7 +21,7 @@ impl<'a> Permission<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, person: Option<String>, role: Option<String>, email: Option<String>, name: Option<String>, group: Option<String>, audience: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, group: Option<String>, person: Option<String>, email: Option<String>, audience: Option<String>, name: Option<String>, role: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

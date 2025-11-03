@@ -1,6 +1,6 @@
 //! Customer resource
 //!
-//! Creates a new SAS deployment through the GCP workflow. Creates a SAS organization if an organization match is not found.
+//! Setups the a GCP Project to receive SAS Analytics messages via GCP Pub/Sub with a subscription to BigQuery. All the Pub/Sub topics and BigQuery tables are created automatically as part of this service.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Customer<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, organization_id: Option<String>, new_deployment_display_name: Option<String>, new_organization_display_name: Option<String>) -> Result<String> {
+    pub async fn create(&self, user_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Customer<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, organization_id: Option<String>, new_deployment_display_name: Option<String>, new_organization_display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, user_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

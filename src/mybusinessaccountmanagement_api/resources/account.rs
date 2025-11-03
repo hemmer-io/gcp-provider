@@ -21,7 +21,7 @@ impl<'a> Account<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, account_name: Option<String>, organization_info: Option<String>, primary_owner: Option<String>, account_number: Option<String>, role: Option<String>, verification_state: Option<String>, name: Option<String>, type: Option<String>, vetted_state: Option<String>, permission_level: Option<String>) -> Result<String> {
+    pub async fn create(&self, role: Option<String>, account_number: Option<String>, permission_level: Option<String>, vetted_state: Option<String>, name: Option<String>, primary_owner: Option<String>, organization_info: Option<String>, type: Option<String>, verification_state: Option<String>, account_name: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Account<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, account_name: Option<String>, organization_info: Option<String>, primary_owner: Option<String>, account_number: Option<String>, role: Option<String>, verification_state: Option<String>, name: Option<String>, type: Option<String>, vetted_state: Option<String>, permission_level: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, role: Option<String>, account_number: Option<String>, permission_level: Option<String>, vetted_state: Option<String>, name: Option<String>, primary_owner: Option<String>, organization_info: Option<String>, type: Option<String>, verification_state: Option<String>, account_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

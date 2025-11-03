@@ -34,7 +34,7 @@ impl<'a> Insight_type<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, revision_id: Option<String>, update_time: Option<String>, name: Option<String>, annotations: Option<HashMap<String, String>>, display_name: Option<String>, etag: Option<String>, insight_type_generation_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, annotations: Option<HashMap<String, String>>, revision_id: Option<String>, update_time: Option<String>, etag: Option<String>, name: Option<String>, insight_type_generation_config: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

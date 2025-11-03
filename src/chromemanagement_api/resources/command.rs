@@ -21,7 +21,7 @@ impl<'a> Command<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, payload: Option<HashMap<String, String>>, valid_duration: Option<String>, command_type: Option<String>, issue_time: Option<String>, command_state: Option<String>, name: Option<String>, command_result: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, issue_time: Option<String>, command_result: Option<String>, valid_duration: Option<String>, command_state: Option<String>, name: Option<String>, command_type: Option<String>, payload: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

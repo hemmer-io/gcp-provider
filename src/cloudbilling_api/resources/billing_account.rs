@@ -21,7 +21,7 @@ impl<'a> Billing_account<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, currency_code: Option<String>, display_name: Option<String>, name: Option<String>, open: Option<bool>, master_billing_account: Option<String>, parent: Option<String>) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, parent: Option<String>, open: Option<bool>, display_name: Option<String>, currency_code: Option<String>, master_billing_account: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Billing_account<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, currency_code: Option<String>, display_name: Option<String>, name: Option<String>, open: Option<bool>, master_billing_account: Option<String>, parent: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, parent: Option<String>, open: Option<bool>, display_name: Option<String>, currency_code: Option<String>, master_billing_account: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

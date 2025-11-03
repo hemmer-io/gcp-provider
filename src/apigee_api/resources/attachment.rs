@@ -1,6 +1,6 @@
 //! Attachment resource
 //!
-//! Creates a new attachment of an environment to an environment group.
+//! Creates a new attachment of an environment to an instance. **Note:** Not supported for Apigee hybrid.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Attachment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, created_at: Option<String>, environment_group_id: Option<String>, name: Option<String>, environment: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, created_at: Option<String>, environment: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

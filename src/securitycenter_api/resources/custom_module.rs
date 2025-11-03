@@ -21,7 +21,7 @@ impl<'a> Custom_module<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, display_name: Option<String>, custom_config: Option<String>, cloud_provider: Option<String>, update_time: Option<String>, enablement_state: Option<String>, ancestor_module: Option<String>, last_editor: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, ancestor_module: Option<String>, name: Option<String>, cloud_provider: Option<String>, enablement_state: Option<String>, last_editor: Option<String>, display_name: Option<String>, custom_config: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Custom_module<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, display_name: Option<String>, custom_config: Option<String>, cloud_provider: Option<String>, update_time: Option<String>, enablement_state: Option<String>, ancestor_module: Option<String>, last_editor: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, ancestor_module: Option<String>, name: Option<String>, cloud_provider: Option<String>, enablement_state: Option<String>, last_editor: Option<String>, display_name: Option<String>, custom_config: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! User resource
 //!
-//! Set up or update a push notification watch on the given user mailbox.
+//! Stop receiving push notifications for the given user mailbox.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> User<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, label_ids: Option<Vec<String>>, topic_name: Option<String>, label_filter_behavior: Option<String>, label_filter_action: Option<String>, user_id: String) -> Result<String> {
+    pub async fn create(&self, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

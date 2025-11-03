@@ -21,7 +21,7 @@ impl<'a> Git_lab_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, secrets: Option<String>, username: Option<String>, webhook_key: Option<String>, create_time: Option<String>, connected_repositories: Option<Vec<String>>, enterprise_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, username: Option<String>, enterprise_config: Option<String>, name: Option<String>, secrets: Option<String>, webhook_key: Option<String>, connected_repositories: Option<Vec<String>>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Git_lab_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, secrets: Option<String>, username: Option<String>, webhook_key: Option<String>, create_time: Option<String>, connected_repositories: Option<Vec<String>>, enterprise_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, username: Option<String>, enterprise_config: Option<String>, name: Option<String>, secrets: Option<String>, webhook_key: Option<String>, connected_repositories: Option<Vec<String>>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

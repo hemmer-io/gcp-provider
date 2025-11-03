@@ -24,7 +24,7 @@ impl<'a> Move_folder<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, fingerprint: Option<String>, name: Option<String>, account_id: Option<String>, folder_id: Option<String>, container_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, account_id: Option<String>, folder_id: Option<String>, container_id: Option<String>, fingerprint: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -30,21 +30,21 @@ Create a Collector to manage the on-prem appliance which collects information ab
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `service_account` | String |  | Service Account email used to ingest data to this Collector. |
 | `expected_asset_count` | String |  | User specified expected asset count. |
-| `eula_uri` | String |  | Uri for EULA (End User License Agreement) from customer. |
-| `vsphere_scan` | String |  | Output only. Reference to MC Source vsphere_scan. |
 | `display_name` | String |  | User specified name of the Collector. |
-| `guest_os_scan` | String |  | Output only. Reference to MC Source Guest Os Scan. |
-| `state` | String |  | Output only. State of the Collector. |
-| `create_time` | String |  | Output only. Create time stamp. |
-| `client_version` | String |  | Output only. Client version. |
-| `description` | String |  | User specified description of the Collector. |
 | `name` | String |  | name of resource. |
-| `update_time` | String |  | Output only. Update time stamp. |
-| `bucket` | String |  | Output only. Store cloud storage bucket name (which is a guid) created with this Collector. |
-| `collection_days` | i64 |  | How many days to collect data. |
+| `guest_os_scan` | String |  | Output only. Reference to MC Source Guest Os Scan. |
+| `service_account` | String |  | Service Account email used to ingest data to this Collector. |
+| `description` | String |  | User specified description of the Collector. |
+| `vsphere_scan` | String |  | Output only. Reference to MC Source vsphere_scan. |
 | `labels` | HashMap<String, String> |  | Labels as key value pairs. |
+| `client_version` | String |  | Output only. Client version. |
+| `collection_days` | i64 |  | How many days to collect data. |
+| `create_time` | String |  | Output only. Create time stamp. |
+| `bucket` | String |  | Output only. Store cloud storage bucket name (which is a guid) created with this Collector. |
+| `state` | String |  | Output only. State of the Collector. |
+| `update_time` | String |  | Output only. Update time stamp. |
+| `eula_uri` | String |  | Uri for EULA (End User License Agreement) from customer. |
 | `parent` | String | ✅ | Required. Name of the parent (project+location). |
 
 
@@ -52,21 +52,21 @@ Create a Collector to manage the on-prem appliance which collects information ab
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `service_account` | String | Service Account email used to ingest data to this Collector. |
 | `expected_asset_count` | String | User specified expected asset count. |
-| `eula_uri` | String | Uri for EULA (End User License Agreement) from customer. |
-| `vsphere_scan` | String | Output only. Reference to MC Source vsphere_scan. |
 | `display_name` | String | User specified name of the Collector. |
-| `guest_os_scan` | String | Output only. Reference to MC Source Guest Os Scan. |
-| `state` | String | Output only. State of the Collector. |
-| `create_time` | String | Output only. Create time stamp. |
-| `client_version` | String | Output only. Client version. |
-| `description` | String | User specified description of the Collector. |
 | `name` | String | name of resource. |
-| `update_time` | String | Output only. Update time stamp. |
-| `bucket` | String | Output only. Store cloud storage bucket name (which is a guid) created with this Collector. |
-| `collection_days` | i64 | How many days to collect data. |
+| `guest_os_scan` | String | Output only. Reference to MC Source Guest Os Scan. |
+| `service_account` | String | Service Account email used to ingest data to this Collector. |
+| `description` | String | User specified description of the Collector. |
+| `vsphere_scan` | String | Output only. Reference to MC Source vsphere_scan. |
 | `labels` | HashMap<String, String> | Labels as key value pairs. |
+| `client_version` | String | Output only. Client version. |
+| `collection_days` | i64 | How many days to collect data. |
+| `create_time` | String | Output only. Create time stamp. |
+| `bucket` | String | Output only. Store cloud storage bucket name (which is a guid) created with this Collector. |
+| `state` | String | Output only. State of the Collector. |
+| `update_time` | String | Output only. Update time stamp. |
+| `eula_uri` | String | Uri for EULA (End User License Agreement) from customer. |
 
 
 #### Usage Example
@@ -87,21 +87,21 @@ collector = provider.rapidmigrationassessment_api.Collector {
 
 # Access collector outputs
 collector_id = collector.id
-collector_service_account = collector.service_account
 collector_expected_asset_count = collector.expected_asset_count
-collector_eula_uri = collector.eula_uri
-collector_vsphere_scan = collector.vsphere_scan
 collector_display_name = collector.display_name
-collector_guest_os_scan = collector.guest_os_scan
-collector_state = collector.state
-collector_create_time = collector.create_time
-collector_client_version = collector.client_version
-collector_description = collector.description
 collector_name = collector.name
-collector_update_time = collector.update_time
-collector_bucket = collector.bucket
-collector_collection_days = collector.collection_days
+collector_guest_os_scan = collector.guest_os_scan
+collector_service_account = collector.service_account
+collector_description = collector.description
+collector_vsphere_scan = collector.vsphere_scan
 collector_labels = collector.labels
+collector_client_version = collector.client_version
+collector_collection_days = collector.collection_days
+collector_create_time = collector.create_time
+collector_bucket = collector.bucket
+collector_state = collector.state
+collector_update_time = collector.update_time
+collector_eula_uri = collector.eula_uri
 ```
 
 ---
@@ -123,11 +123,11 @@ Gets information about a location.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `location_id` | String | The canonical id for this location. For example: `"us-east1"`. |
+| `metadata` | HashMap<String, String> | Service-specific metadata. For example the available capacity at the given location. |
 | `display_name` | String | The friendly name for this location, typically a nearby city name. For example, "Tokyo". |
 | `name` | String | Resource name for the location, which may vary between implementations. For example: `"projects/example-project/locations/us-east1"` |
 | `labels` | HashMap<String, String> | Cross-service attributes for the location. For example {"cloud.googleapis.com/region": "us-east1"} |
-| `metadata` | HashMap<String, String> | Service-specific metadata. For example the available capacity at the given location. |
+| `location_id` | String | The canonical id for this location. For example: `"us-east1"`. |
 
 
 #### Usage Example
@@ -143,11 +143,11 @@ provider = gcp.GcpProvider {
 
 # Access location outputs
 location_id = location.id
-location_location_id = location.location_id
+location_metadata = location.metadata
 location_display_name = location.display_name
 location_name = location.name
 location_labels = location.labels
-location_metadata = location.metadata
+location_location_id = location.location_id
 ```
 
 ---
@@ -170,11 +170,11 @@ Starts asynchronous cancellation on a long-running operation. The server makes a
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
 | `error` | String | The error result of the operation in case of failure or cancellation. |
 | `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
-| `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
 | `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
+| `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
+| `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
 
 
 #### Usage Example
@@ -195,11 +195,11 @@ operation = provider.rapidmigrationassessment_api.Operation {
 
 # Access operation outputs
 operation_id = operation.id
-operation_done = operation.done
 operation_error = operation.error
 operation_name = operation.name
-operation_response = operation.response
 operation_metadata = operation.metadata
+operation_done = operation.done
+operation_response = operation.response
 ```
 
 ---
@@ -217,9 +217,9 @@ Creates an Annotation
 |-------|------|----------|-------------|
 | `labels` | HashMap<String, String> |  | Labels as key value pairs. |
 | `name` | String |  | name of resource. |
+| `update_time` | String |  | Output only. Update time stamp. |
 | `create_time` | String |  | Output only. Create time stamp. |
 | `type` | String |  | Type of an annotation. |
-| `update_time` | String |  | Output only. Update time stamp. |
 | `parent` | String | ✅ | Required. Name of the parent (project+location). |
 
 
@@ -229,9 +229,9 @@ Creates an Annotation
 |--------|------|-------------|
 | `labels` | HashMap<String, String> | Labels as key value pairs. |
 | `name` | String | name of resource. |
+| `update_time` | String | Output only. Update time stamp. |
 | `create_time` | String | Output only. Create time stamp. |
 | `type` | String | Type of an annotation. |
-| `update_time` | String | Output only. Update time stamp. |
 
 
 #### Usage Example
@@ -254,9 +254,9 @@ annotation = provider.rapidmigrationassessment_api.Annotation {
 annotation_id = annotation.id
 annotation_labels = annotation.labels
 annotation_name = annotation.name
+annotation_update_time = annotation.update_time
 annotation_create_time = annotation.create_time
 annotation_type = annotation.type
-annotation_update_time = annotation.update_time
 ```
 
 ---

@@ -21,7 +21,7 @@ impl<'a> Spreadsheet<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, spreadsheet_url: Option<String>, sheets: Option<Vec<String>>, named_ranges: Option<Vec<String>>, spreadsheet_id: Option<String>, properties: Option<String>, data_source_schedules: Option<Vec<String>>, developer_metadata: Option<Vec<String>>, data_sources: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, spreadsheet_url: Option<String>, sheets: Option<Vec<String>>, developer_metadata: Option<Vec<String>>, spreadsheet_id: Option<String>, data_sources: Option<Vec<String>>, properties: Option<String>, named_ranges: Option<Vec<String>>, data_source_schedules: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

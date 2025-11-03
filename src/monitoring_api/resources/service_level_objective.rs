@@ -21,7 +21,7 @@ impl<'a> Service_level_objective<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, goal: Option<f64>, rolling_period: Option<String>, user_labels: Option<HashMap<String, String>>, service_level_indicator: Option<String>, calendar_period: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, name: Option<String>, rolling_period: Option<String>, service_level_indicator: Option<String>, user_labels: Option<HashMap<String, String>>, calendar_period: Option<String>, goal: Option<f64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Service_level_objective<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, goal: Option<f64>, rolling_period: Option<String>, user_labels: Option<HashMap<String, String>>, service_level_indicator: Option<String>, calendar_period: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, name: Option<String>, rolling_period: Option<String>, service_level_indicator: Option<String>, user_labels: Option<HashMap<String, String>>, calendar_period: Option<String>, goal: Option<f64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

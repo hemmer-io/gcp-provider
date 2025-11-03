@@ -24,11 +24,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "attribute" => {
-                self.plan_attribute(current_state, desired_input).await
-            }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
+            "google_location" => {
+                self.plan_google_location(current_state, desired_input).await
             }
             "categorie" => {
                 self.plan_categorie(current_state, desired_input).await
@@ -36,8 +33,11 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             "chain" => {
                 self.plan_chain(current_state, desired_input).await
             }
-            "google_location" => {
-                self.plan_google_location(current_state, desired_input).await
+            "attribute" => {
+                self.plan_attribute(current_state, desired_input).await
+            }
+            "location" => {
+                self.plan_location(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -54,11 +54,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "attribute" => {
-                self.create_attribute(input).await
-            }
-            "location" => {
-                self.create_location(input).await
+            "google_location" => {
+                self.create_google_location(input).await
             }
             "categorie" => {
                 self.create_categorie(input).await
@@ -66,8 +63,11 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             "chain" => {
                 self.create_chain(input).await
             }
-            "google_location" => {
-                self.create_google_location(input).await
+            "attribute" => {
+                self.create_attribute(input).await
+            }
+            "location" => {
+                self.create_location(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -84,11 +84,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "attribute" => {
-                self.read_attribute(id).await
-            }
-            "location" => {
-                self.read_location(id).await
+            "google_location" => {
+                self.read_google_location(id).await
             }
             "categorie" => {
                 self.read_categorie(id).await
@@ -96,8 +93,11 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             "chain" => {
                 self.read_chain(id).await
             }
-            "google_location" => {
-                self.read_google_location(id).await
+            "attribute" => {
+                self.read_attribute(id).await
+            }
+            "location" => {
+                self.read_location(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -115,11 +115,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "attribute" => {
-                self.update_attribute(id, input).await
-            }
-            "location" => {
-                self.update_location(id, input).await
+            "google_location" => {
+                self.update_google_location(id, input).await
             }
             "categorie" => {
                 self.update_categorie(id, input).await
@@ -127,8 +124,11 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             "chain" => {
                 self.update_chain(id, input).await
             }
-            "google_location" => {
-                self.update_google_location(id, input).await
+            "attribute" => {
+                self.update_attribute(id, input).await
+            }
+            "location" => {
+                self.update_location(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -145,11 +145,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "attribute" => {
-                self.delete_attribute(id).await
-            }
-            "location" => {
-                self.delete_location(id).await
+            "google_location" => {
+                self.delete_google_location(id).await
             }
             "categorie" => {
                 self.delete_categorie(id).await
@@ -157,8 +154,11 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             "chain" => {
                 self.delete_chain(id).await
             }
-            "google_location" => {
-                self.delete_google_location(id).await
+            "attribute" => {
+                self.delete_attribute(id).await
+            }
+            "location" => {
+                self.delete_location(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -174,11 +174,11 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Attribute resource operations
+    // Google_location resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a attribute resource
-    async fn plan_attribute(
+    /// Plan changes to a google_location resource
+    async fn plan_google_location(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -193,8 +193,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new attribute resource
-    async fn create_attribute(
+    /// Create a new google_location resource
+    async fn create_google_location(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -203,8 +203,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a attribute resource
-    async fn read_attribute(
+    /// Read a google_location resource
+    async fn read_google_location(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -213,8 +213,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a attribute resource
-    async fn update_attribute(
+    /// Update a google_location resource
+    async fn update_google_location(
         &self,
         id: &str,
         input: ResourceInput,
@@ -224,69 +224,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a attribute resource
-    async fn delete_attribute(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Location resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a location resource
-    async fn plan_location(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new location resource
-    async fn create_location(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a location resource
-    async fn read_location(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a location resource
-    async fn update_location(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a location resource
-    async fn delete_location(
+    /// Delete a google_location resource
+    async fn delete_google_location(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -418,11 +357,11 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Google_location resource operations
+    // Attribute resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a google_location resource
-    async fn plan_google_location(
+    /// Plan changes to a attribute resource
+    async fn plan_attribute(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -437,8 +376,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new google_location resource
-    async fn create_google_location(
+    /// Create a new attribute resource
+    async fn create_attribute(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -447,8 +386,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a google_location resource
-    async fn read_google_location(
+    /// Read a attribute resource
+    async fn read_attribute(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -457,8 +396,8 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a google_location resource
-    async fn update_google_location(
+    /// Update a attribute resource
+    async fn update_attribute(
         &self,
         id: &str,
         input: ResourceInput,
@@ -468,8 +407,69 @@ impl<'a> Mybusinessbusinessinformation_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a google_location resource
-    async fn delete_google_location(
+    /// Delete a attribute resource
+    async fn delete_attribute(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(
         &self,
         id: &str,
     ) -> Result<()> {

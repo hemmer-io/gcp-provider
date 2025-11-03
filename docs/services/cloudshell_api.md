@@ -22,7 +22,7 @@ The cloudshell_api service provides access to 4 resource types:
 
 ### Environment
 
-Sends OAuth credentials to a running environment on behalf of a user. When this completes, the environment will be authorized to run various Google Cloud command line tools without requiring the user to manually authenticate.
+Adds a public SSH key to an environment, allowing clients with the corresponding private key to connect to that environment via SSH. If a key with the same content already exists, this will error with ALREADY_EXISTS.
 
 **Operations**: ✅ Create ✅ Read
 
@@ -30,25 +30,23 @@ Sends OAuth credentials to a running environment on behalf of a user. When this 
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `expire_time` | String |  | The time when the credentials expire. If not set, defaults to one hour from when the server received the request. |
-| `id_token` | String |  | The OAuth ID token that should be sent to the environment. |
-| `access_token` | String |  | The OAuth access token that should be sent to the environment. |
-| `name` | String | ✅ | Name of the resource that should receive the credentials, for example `users/me/environments/default` or `users/someone@example.com/environments/default`. |
+| `key` | String |  | Key that should be added to the environment. Supported formats are `ssh-dss` (see RFC4253), `ssh-rsa` (see RFC4253), `ecdsa-sha2-nistp256` (see RFC5656), `ecdsa-sha2-nistp384` (see RFC5656) and `ecdsa-sha2-nistp521` (see RFC5656). It should be structured as <format> <content>, where <content> part is encoded with Base64. |
+| `environment` | String | ✅ | Environment this key should be added to, e.g. `users/me/environments/default`. |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `state` | String | Output only. Current execution state of this environment. |
-| `ssh_username` | String | Output only. Username that clients should use when initiating SSH sessions with the environment. |
 | `docker_image` | String | Required. Immutable. Full path to the Docker image used to run this environment, e.g. "gcr.io/dev-con/cloud-devshell:latest". |
 | `web_host` | String | Output only. Host to which clients can connect to initiate HTTPS or WSS connections with the environment. |
+| `ssh_port` | i64 | Output only. Port to which clients can connect to initiate SSH sessions with the environment. |
 | `ssh_host` | String | Output only. Host to which clients can connect to initiate SSH sessions with the environment. |
 | `id` | String | Output only. The environment's identifier, unique among the user's environments. |
-| `public_keys` | Vec<String> | Output only. Public keys associated with the environment. Clients can connect to this environment via SSH only if they possess a private key corresponding to at least one of these public keys. Keys can be added to or removed from the environment using the AddPublicKey and RemovePublicKey methods. |
 | `name` | String | Immutable. Full name of this resource, in the format `users/{owner_email}/environments/{environment_id}`. `{owner_email}` is the email address of the user to whom this environment belongs, and `{environment_id}` is the identifier of this environment. For example, `users/someone@example.com/environments/default`. |
-| `ssh_port` | i64 | Output only. Port to which clients can connect to initiate SSH sessions with the environment. |
+| `ssh_username` | String | Output only. Username that clients should use when initiating SSH sessions with the environment. |
+| `public_keys` | Vec<String> | Output only. Public keys associated with the environment. Clients can connect to this environment via SSH only if they possess a private key corresponding to at least one of these public keys. Keys can be added to or removed from the environment using the AddPublicKey and RemovePublicKey methods. |
+| `state` | String | Output only. Current execution state of this environment. |
 
 
 #### Usage Example
@@ -64,20 +62,20 @@ provider = gcp.GcpProvider {
 
 # Create environment
 environment = provider.cloudshell_api.Environment {
-    name = "value"  # Name of the resource that should receive the credentials, for example `users/me/environments/default` or `users/someone@example.com/environments/default`.
+    environment = "value"  # Environment this key should be added to, e.g. `users/me/environments/default`.
 }
 
 # Access environment outputs
 environment_id = environment.id
-environment_state = environment.state
-environment_ssh_username = environment.ssh_username
 environment_docker_image = environment.docker_image
 environment_web_host = environment.web_host
+environment_ssh_port = environment.ssh_port
 environment_ssh_host = environment.ssh_host
 environment_id = environment.id
-environment_public_keys = environment.public_keys
 environment_name = environment.name
-environment_ssh_port = environment.ssh_port
+environment_ssh_username = environment.ssh_username
+environment_public_keys = environment.public_keys
+environment_state = environment.state
 ```
 
 ---
@@ -100,10 +98,10 @@ Starts asynchronous cancellation on a long-running operation. The server makes a
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
 | `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
 | `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
 | `error` | String | The error result of the operation in case of failure or cancellation. |
+| `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
 | `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
 
 
@@ -125,10 +123,10 @@ operation = provider.cloudshell_api.Operation {
 
 # Access operation outputs
 operation_id = operation.id
-operation_response = operation.response
 operation_name = operation.name
 operation_done = operation.done
 operation_error = operation.error
+operation_response = operation.response
 operation_metadata = operation.metadata
 ```
 
@@ -145,9 +143,9 @@ Sends OAuth credentials to a running environment on behalf of a user. When this 
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `expire_time` | String |  | The time when the credentials expire. If not set, defaults to one hour from when the server received the request. |
 | `id_token` | String |  | The OAuth ID token that should be sent to the environment. |
 | `access_token` | String |  | The OAuth access token that should be sent to the environment. |
-| `expire_time` | String |  | The time when the credentials expire. If not set, defaults to one hour from when the server received the request. |
 | `name` | String | ✅ | Name of the resource that should receive the credentials, for example `users/me/environments/default` or `users/someone@example.com/environments/default`. |
 
 
@@ -155,18 +153,18 @@ Sends OAuth credentials to a running environment on behalf of a user. When this 
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `public_keys` | Vec<String> | Output only. Public keys associated with the environment. Clients can connect to this environment via SSH only if they possess a private key corresponding to at least one of these public keys. Keys can be added to or removed from the environment using the CreatePublicKey and DeletePublicKey methods. |
-| `docker_image` | String | Required. Full path to the Docker image used to run this environment, e.g. "gcr.io/dev-con/cloud-devshell:latest". |
-| `name` | String | Output only. Full name of this resource, in the format `users/{owner_email}/environments/{environment_id}`. `{owner_email}` is the email address of the user to whom this environment belongs, and `{environment_id}` is the identifier of this environment. For example, `users/someone@example.com/environments/default`. |
+| `ssh_host` | String | Output only. Host to which clients can connect to initiate SSH sessions with the environment. |
 | `ssh_port` | i64 | Output only. Port to which clients can connect to initiate SSH sessions with the environment. |
+| `state` | String | Output only. Current execution state of this environment. |
+| `name` | String | Output only. Full name of this resource, in the format `users/{owner_email}/environments/{environment_id}`. `{owner_email}` is the email address of the user to whom this environment belongs, and `{environment_id}` is the identifier of this environment. For example, `users/someone@example.com/environments/default`. |
+| `docker_image` | String | Required. Full path to the Docker image used to run this environment, e.g. "gcr.io/dev-con/cloud-devshell:latest". |
+| `web_host` | String | Output only. Host to which clients can connect to initiate HTTPS or WSS connections with the environment. |
+| `public_keys` | Vec<String> | Output only. Public keys associated with the environment. Clients can connect to this environment via SSH only if they possess a private key corresponding to at least one of these public keys. Keys can be added to or removed from the environment using the CreatePublicKey and DeletePublicKey methods. |
+| `web_ports` | Vec<i64> | Output only. Ports to which clients can connect to initiate HTTPS or WSS connections with the environment. |
+| `vm_size_expire_time` | String | Output only. The time when the Environment will expire back to the default VM size. |
 | `id` | String | Output only. The environment's identifier, unique among the user's environments. |
 | `ssh_username` | String | Output only. Username that clients should use when initiating SSH sessions with the environment. |
-| `web_host` | String | Output only. Host to which clients can connect to initiate HTTPS or WSS connections with the environment. |
-| `web_ports` | Vec<i64> | Output only. Ports to which clients can connect to initiate HTTPS or WSS connections with the environment. |
-| `ssh_host` | String | Output only. Host to which clients can connect to initiate SSH sessions with the environment. |
-| `state` | String | Output only. Current execution state of this environment. |
 | `size` | String | Indicates the size of the backing VM running the environment. If set to something other than DEFAULT, it will be reverted to the default VM size after vm_size_expire_time. |
-| `vm_size_expire_time` | String | Output only. The time when the Environment will expire back to the default VM size. |
 
 
 #### Usage Example
@@ -187,18 +185,18 @@ environment = provider.cloudshell_api.Environment {
 
 # Access environment outputs
 environment_id = environment.id
-environment_public_keys = environment.public_keys
-environment_docker_image = environment.docker_image
-environment_name = environment.name
+environment_ssh_host = environment.ssh_host
 environment_ssh_port = environment.ssh_port
+environment_state = environment.state
+environment_name = environment.name
+environment_docker_image = environment.docker_image
+environment_web_host = environment.web_host
+environment_public_keys = environment.public_keys
+environment_web_ports = environment.web_ports
+environment_vm_size_expire_time = environment.vm_size_expire_time
 environment_id = environment.id
 environment_ssh_username = environment.ssh_username
-environment_web_host = environment.web_host
-environment_web_ports = environment.web_ports
-environment_ssh_host = environment.ssh_host
-environment_state = environment.state
 environment_size = environment.size
-environment_vm_size_expire_time = environment.vm_size_expire_time
 ```
 
 ---
@@ -254,13 +252,13 @@ provider = gcp.GcpProvider {
 
 # Create multiple environment resources
 environment_0 = provider.cloudshell_api.Environment {
-    name = "value-0"
+    environment = "value-0"
 }
 environment_1 = provider.cloudshell_api.Environment {
-    name = "value-1"
+    environment = "value-1"
 }
 environment_2 = provider.cloudshell_api.Environment {
-    name = "value-2"
+    environment = "value-2"
 }
 ```
 
@@ -270,7 +268,7 @@ environment_2 = provider.cloudshell_api.Environment {
 # Only create in production
 if environment == "production":
     environment = provider.cloudshell_api.Environment {
-        name = "production-value"
+        environment = "production-value"
     }
 ```
 

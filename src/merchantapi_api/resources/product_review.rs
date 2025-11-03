@@ -21,7 +21,7 @@ impl<'a> Product_review<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, product_review_attributes: Option<String>, name: Option<String>, product_review_status: Option<String>, custom_attributes: Option<Vec<String>>, product_review_id: Option<String>, data_source: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, product_review_attributes: Option<String>, product_review_status: Option<String>, custom_attributes: Option<Vec<String>>, data_source: Option<String>, product_review_id: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

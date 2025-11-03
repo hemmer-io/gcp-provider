@@ -29,8 +29,8 @@ Create or update tags for the user and app that are represented by the given tok
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `tags` | Vec<String> |  | Tags to be inserted or updated. |
-| `app_package` | String | ✅ | Required. App whose tags are being manipulated. Format: apps/{package_name} |
 | `token` | String | ✅ | Required. Token for which the tags are being inserted or updated. Format: tokens/{token} |
+| `app_package` | String | ✅ | Required. App whose tags are being manipulated. Format: apps/{package_name} |
 
 
 
@@ -47,8 +47,8 @@ provider = gcp.GcpProvider {
 
 # Create tag
 tag = provider.playgrouping_api.Tag {
-    app_package = "value"  # Required. App whose tags are being manipulated. Format: apps/{package_name}
     token = "value"  # Required. Token for which the tags are being inserted or updated. Format: tokens/{token}
+    app_package = "value"  # Required. App whose tags are being manipulated. Format: apps/{package_name}
 }
 
 ```
@@ -108,16 +108,16 @@ provider = gcp.GcpProvider {
 
 # Create multiple tag resources
 tag_0 = provider.playgrouping_api.Tag {
-    app_package = "value-0"
     token = "value-0"
+    app_package = "value-0"
 }
 tag_1 = provider.playgrouping_api.Tag {
-    app_package = "value-1"
     token = "value-1"
+    app_package = "value-1"
 }
 tag_2 = provider.playgrouping_api.Tag {
-    app_package = "value-2"
     token = "value-2"
+    app_package = "value-2"
 }
 ```
 
@@ -127,8 +127,8 @@ tag_2 = provider.playgrouping_api.Tag {
 # Only create in production
 if environment == "production":
     tag = provider.playgrouping_api.Tag {
-        app_package = "production-value"
         token = "production-value"
+        app_package = "production-value"
     }
 ```
 

@@ -27,17 +27,17 @@ impl<'a> Gamesmanagement_apiService<'a> {
             "application" => {
                 self.plan_application(current_state, desired_input).await
             }
-            "achievement" => {
-                self.plan_achievement(current_state, desired_input).await
-            }
             "player" => {
                 self.plan_player(current_state, desired_input).await
+            }
+            "score" => {
+                self.plan_score(current_state, desired_input).await
             }
             "event" => {
                 self.plan_event(current_state, desired_input).await
             }
-            "score" => {
-                self.plan_score(current_state, desired_input).await
+            "achievement" => {
+                self.plan_achievement(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,17 +57,17 @@ impl<'a> Gamesmanagement_apiService<'a> {
             "application" => {
                 self.create_application(input).await
             }
-            "achievement" => {
-                self.create_achievement(input).await
-            }
             "player" => {
                 self.create_player(input).await
+            }
+            "score" => {
+                self.create_score(input).await
             }
             "event" => {
                 self.create_event(input).await
             }
-            "score" => {
-                self.create_score(input).await
+            "achievement" => {
+                self.create_achievement(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -87,17 +87,17 @@ impl<'a> Gamesmanagement_apiService<'a> {
             "application" => {
                 self.read_application(id).await
             }
-            "achievement" => {
-                self.read_achievement(id).await
-            }
             "player" => {
                 self.read_player(id).await
+            }
+            "score" => {
+                self.read_score(id).await
             }
             "event" => {
                 self.read_event(id).await
             }
-            "score" => {
-                self.read_score(id).await
+            "achievement" => {
+                self.read_achievement(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -118,17 +118,17 @@ impl<'a> Gamesmanagement_apiService<'a> {
             "application" => {
                 self.update_application(id, input).await
             }
-            "achievement" => {
-                self.update_achievement(id, input).await
-            }
             "player" => {
                 self.update_player(id, input).await
+            }
+            "score" => {
+                self.update_score(id, input).await
             }
             "event" => {
                 self.update_event(id, input).await
             }
-            "score" => {
-                self.update_score(id, input).await
+            "achievement" => {
+                self.update_achievement(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -148,17 +148,17 @@ impl<'a> Gamesmanagement_apiService<'a> {
             "application" => {
                 self.delete_application(id).await
             }
-            "achievement" => {
-                self.delete_achievement(id).await
-            }
             "player" => {
                 self.delete_player(id).await
+            }
+            "score" => {
+                self.delete_score(id).await
             }
             "event" => {
                 self.delete_event(id).await
             }
-            "score" => {
-                self.delete_score(id).await
+            "achievement" => {
+                self.delete_achievement(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -235,67 +235,6 @@ impl<'a> Gamesmanagement_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Achievement resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a achievement resource
-    async fn plan_achievement(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new achievement resource
-    async fn create_achievement(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a achievement resource
-    async fn read_achievement(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a achievement resource
-    async fn update_achievement(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a achievement resource
-    async fn delete_achievement(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Player resource operations
     // ------------------------------------------------------------------------
 
@@ -348,6 +287,67 @@ impl<'a> Gamesmanagement_apiService<'a> {
 
     /// Delete a player resource
     async fn delete_player(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Score resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a score resource
+    async fn plan_score(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new score resource
+    async fn create_score(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a score resource
+    async fn read_score(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a score resource
+    async fn update_score(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a score resource
+    async fn delete_score(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -418,11 +418,11 @@ impl<'a> Gamesmanagement_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Score resource operations
+    // Achievement resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a score resource
-    async fn plan_score(
+    /// Plan changes to a achievement resource
+    async fn plan_achievement(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -437,8 +437,8 @@ impl<'a> Gamesmanagement_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new score resource
-    async fn create_score(
+    /// Create a new achievement resource
+    async fn create_achievement(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -447,8 +447,8 @@ impl<'a> Gamesmanagement_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a score resource
-    async fn read_score(
+    /// Read a achievement resource
+    async fn read_achievement(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -457,8 +457,8 @@ impl<'a> Gamesmanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a score resource
-    async fn update_score(
+    /// Update a achievement resource
+    async fn update_achievement(
         &self,
         id: &str,
         input: ResourceInput,
@@ -468,8 +468,8 @@ impl<'a> Gamesmanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a score resource
-    async fn delete_score(
+    /// Delete a achievement resource
+    async fn delete_achievement(
         &self,
         id: &str,
     ) -> Result<()> {

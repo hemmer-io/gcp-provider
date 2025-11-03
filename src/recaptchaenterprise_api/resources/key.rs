@@ -21,7 +21,7 @@ impl<'a> Key<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, web_settings: Option<String>, android_settings: Option<String>, express_settings: Option<String>, waf_settings: Option<String>, create_time: Option<String>, ios_settings: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, name: Option<String>, testing_options: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, android_settings: Option<String>, testing_options: Option<String>, display_name: Option<String>, express_settings: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, waf_settings: Option<String>, web_settings: Option<String>, ios_settings: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Key<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, web_settings: Option<String>, android_settings: Option<String>, express_settings: Option<String>, waf_settings: Option<String>, create_time: Option<String>, ios_settings: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, name: Option<String>, testing_options: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, android_settings: Option<String>, testing_options: Option<String>, display_name: Option<String>, express_settings: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, waf_settings: Option<String>, web_settings: Option<String>, ios_settings: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

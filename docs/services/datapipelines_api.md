@@ -28,17 +28,17 @@ Creates a pipeline. For a batch pipeline, you can pass scheduler information. Da
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `state` | String |  | Required. The state of the pipeline. When the pipeline is created, the state is set to 'PIPELINE_STATE_ACTIVE' by default. State changes can be requested by setting the state to stopping, paused, or resuming. State cannot be changed through UpdatePipeline requests. |
-| `workload` | String |  | Workload information for creating new jobs. |
-| `create_time` | String |  | Output only. Immutable. The timestamp when the pipeline was initially created. Set by the Data Pipelines service. |
-| `name` | String |  | The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), and periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects). * `LOCATION_ID` is the canonical ID for the pipeline's location. The list of available locations can be obtained by calling `google.cloud.location.Locations.ListLocations`. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it's only available in [App Engine regions](https://cloud.google.com/about/locations#region). * `PIPELINE_ID` is the ID of the pipeline. Must be unique for the selected project and location. |
 | `schedule_info` | String |  | Internal scheduling information for a pipeline. If this information is provided, periodic jobs will be created per the schedule. If not, users are responsible for creating jobs externally. |
-| `pipeline_sources` | HashMap<String, String> |  | Immutable. The sources of the pipeline (for example, Dataplex). The keys and values are set by the corresponding sources during pipeline creation. |
-| `display_name` | String |  | Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_). |
-| `type` | String |  | Required. The type of the pipeline. This field affects the scheduling of the pipeline and the type of metrics to show for the pipeline. |
-| `job_count` | i64 |  | Output only. Number of jobs. |
-| `last_update_time` | String |  | Output only. Immutable. The timestamp when the pipeline was last modified. Set by the Data Pipelines service. |
 | `scheduler_service_account_email` | String |  | Optional. A service account email to be used with the Cloud Scheduler job. If not specified, the default compute engine service account will be used. |
+| `display_name` | String |  | Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_). |
+| `name` | String |  | The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), and periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects). * `LOCATION_ID` is the canonical ID for the pipeline's location. The list of available locations can be obtained by calling `google.cloud.location.Locations.ListLocations`. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it's only available in [App Engine regions](https://cloud.google.com/about/locations#region). * `PIPELINE_ID` is the ID of the pipeline. Must be unique for the selected project and location. |
+| `state` | String |  | Required. The state of the pipeline. When the pipeline is created, the state is set to 'PIPELINE_STATE_ACTIVE' by default. State changes can be requested by setting the state to stopping, paused, or resuming. State cannot be changed through UpdatePipeline requests. |
+| `create_time` | String |  | Output only. Immutable. The timestamp when the pipeline was initially created. Set by the Data Pipelines service. |
+| `job_count` | i64 |  | Output only. Number of jobs. |
+| `type` | String |  | Required. The type of the pipeline. This field affects the scheduling of the pipeline and the type of metrics to show for the pipeline. |
+| `last_update_time` | String |  | Output only. Immutable. The timestamp when the pipeline was last modified. Set by the Data Pipelines service. |
+| `workload` | String |  | Workload information for creating new jobs. |
+| `pipeline_sources` | HashMap<String, String> |  | Immutable. The sources of the pipeline (for example, Dataplex). The keys and values are set by the corresponding sources during pipeline creation. |
 | `parent` | String | ✅ | Required. The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`. |
 
 
@@ -46,17 +46,17 @@ Creates a pipeline. For a batch pipeline, you can pass scheduler information. Da
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `state` | String | Required. The state of the pipeline. When the pipeline is created, the state is set to 'PIPELINE_STATE_ACTIVE' by default. State changes can be requested by setting the state to stopping, paused, or resuming. State cannot be changed through UpdatePipeline requests. |
-| `workload` | String | Workload information for creating new jobs. |
-| `create_time` | String | Output only. Immutable. The timestamp when the pipeline was initially created. Set by the Data Pipelines service. |
-| `name` | String | The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), and periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects). * `LOCATION_ID` is the canonical ID for the pipeline's location. The list of available locations can be obtained by calling `google.cloud.location.Locations.ListLocations`. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it's only available in [App Engine regions](https://cloud.google.com/about/locations#region). * `PIPELINE_ID` is the ID of the pipeline. Must be unique for the selected project and location. |
 | `schedule_info` | String | Internal scheduling information for a pipeline. If this information is provided, periodic jobs will be created per the schedule. If not, users are responsible for creating jobs externally. |
-| `pipeline_sources` | HashMap<String, String> | Immutable. The sources of the pipeline (for example, Dataplex). The keys and values are set by the corresponding sources during pipeline creation. |
-| `display_name` | String | Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_). |
-| `type` | String | Required. The type of the pipeline. This field affects the scheduling of the pipeline and the type of metrics to show for the pipeline. |
-| `job_count` | i64 | Output only. Number of jobs. |
-| `last_update_time` | String | Output only. Immutable. The timestamp when the pipeline was last modified. Set by the Data Pipelines service. |
 | `scheduler_service_account_email` | String | Optional. A service account email to be used with the Cloud Scheduler job. If not specified, the default compute engine service account will be used. |
+| `display_name` | String | Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_). |
+| `name` | String | The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), and periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects). * `LOCATION_ID` is the canonical ID for the pipeline's location. The list of available locations can be obtained by calling `google.cloud.location.Locations.ListLocations`. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it's only available in [App Engine regions](https://cloud.google.com/about/locations#region). * `PIPELINE_ID` is the ID of the pipeline. Must be unique for the selected project and location. |
+| `state` | String | Required. The state of the pipeline. When the pipeline is created, the state is set to 'PIPELINE_STATE_ACTIVE' by default. State changes can be requested by setting the state to stopping, paused, or resuming. State cannot be changed through UpdatePipeline requests. |
+| `create_time` | String | Output only. Immutable. The timestamp when the pipeline was initially created. Set by the Data Pipelines service. |
+| `job_count` | i64 | Output only. Number of jobs. |
+| `type` | String | Required. The type of the pipeline. This field affects the scheduling of the pipeline and the type of metrics to show for the pipeline. |
+| `last_update_time` | String | Output only. Immutable. The timestamp when the pipeline was last modified. Set by the Data Pipelines service. |
+| `workload` | String | Workload information for creating new jobs. |
+| `pipeline_sources` | HashMap<String, String> | Immutable. The sources of the pipeline (for example, Dataplex). The keys and values are set by the corresponding sources during pipeline creation. |
 
 
 #### Usage Example
@@ -77,17 +77,17 @@ pipeline = provider.datapipelines_api.Pipeline {
 
 # Access pipeline outputs
 pipeline_id = pipeline.id
-pipeline_state = pipeline.state
-pipeline_workload = pipeline.workload
-pipeline_create_time = pipeline.create_time
-pipeline_name = pipeline.name
 pipeline_schedule_info = pipeline.schedule_info
-pipeline_pipeline_sources = pipeline.pipeline_sources
-pipeline_display_name = pipeline.display_name
-pipeline_type = pipeline.type
-pipeline_job_count = pipeline.job_count
-pipeline_last_update_time = pipeline.last_update_time
 pipeline_scheduler_service_account_email = pipeline.scheduler_service_account_email
+pipeline_display_name = pipeline.display_name
+pipeline_name = pipeline.name
+pipeline_state = pipeline.state
+pipeline_create_time = pipeline.create_time
+pipeline_job_count = pipeline.job_count
+pipeline_type = pipeline.type
+pipeline_last_update_time = pipeline.last_update_time
+pipeline_workload = pipeline.workload
+pipeline_pipeline_sources = pipeline.pipeline_sources
 ```
 
 ---

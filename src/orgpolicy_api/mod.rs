@@ -24,14 +24,14 @@ impl<'a> Orgpolicy_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "custom_constraint" => {
-                self.plan_custom_constraint(current_state, desired_input).await
-            }
             "constraint" => {
                 self.plan_constraint(current_state, desired_input).await
             }
             "policie" => {
                 self.plan_policie(current_state, desired_input).await
+            }
+            "custom_constraint" => {
+                self.plan_custom_constraint(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -48,14 +48,14 @@ impl<'a> Orgpolicy_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "custom_constraint" => {
-                self.create_custom_constraint(input).await
-            }
             "constraint" => {
                 self.create_constraint(input).await
             }
             "policie" => {
                 self.create_policie(input).await
+            }
+            "custom_constraint" => {
+                self.create_custom_constraint(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -72,14 +72,14 @@ impl<'a> Orgpolicy_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "custom_constraint" => {
-                self.read_custom_constraint(id).await
-            }
             "constraint" => {
                 self.read_constraint(id).await
             }
             "policie" => {
                 self.read_policie(id).await
+            }
+            "custom_constraint" => {
+                self.read_custom_constraint(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -97,14 +97,14 @@ impl<'a> Orgpolicy_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "custom_constraint" => {
-                self.update_custom_constraint(id, input).await
-            }
             "constraint" => {
                 self.update_constraint(id, input).await
             }
             "policie" => {
                 self.update_policie(id, input).await
+            }
+            "custom_constraint" => {
+                self.update_custom_constraint(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -121,14 +121,14 @@ impl<'a> Orgpolicy_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "custom_constraint" => {
-                self.delete_custom_constraint(id).await
-            }
             "constraint" => {
                 self.delete_constraint(id).await
             }
             "policie" => {
                 self.delete_policie(id).await
+            }
+            "custom_constraint" => {
+                self.delete_custom_constraint(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -141,67 +141,6 @@ impl<'a> Orgpolicy_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Custom_constraint resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a custom_constraint resource
-    async fn plan_custom_constraint(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new custom_constraint resource
-    async fn create_custom_constraint(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a custom_constraint resource
-    async fn read_custom_constraint(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a custom_constraint resource
-    async fn update_custom_constraint(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a custom_constraint resource
-    async fn delete_custom_constraint(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -318,6 +257,67 @@ impl<'a> Orgpolicy_apiService<'a> {
 
     /// Delete a policie resource
     async fn delete_policie(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Custom_constraint resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a custom_constraint resource
+    async fn plan_custom_constraint(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new custom_constraint resource
+    async fn create_custom_constraint(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a custom_constraint resource
+    async fn read_custom_constraint(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a custom_constraint resource
+    async fn update_custom_constraint(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a custom_constraint resource
+    async fn delete_custom_constraint(
         &self,
         id: &str,
     ) -> Result<()> {

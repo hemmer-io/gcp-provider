@@ -21,7 +21,7 @@ impl<'a> Notificationsubscription<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, all_managed_accounts: Option<bool>, name: Option<String>, registered_event: Option<String>, call_back_uri: Option<String>, target_account: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, all_managed_accounts: Option<bool>, name: Option<String>, call_back_uri: Option<String>, registered_event: Option<String>, target_account: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Notificationsubscription<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, all_managed_accounts: Option<bool>, name: Option<String>, registered_event: Option<String>, call_back_uri: Option<String>, target_account: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, all_managed_accounts: Option<bool>, name: Option<String>, call_back_uri: Option<String>, registered_event: Option<String>, target_account: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

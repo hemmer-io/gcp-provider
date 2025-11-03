@@ -21,7 +21,7 @@ impl<'a> Type_provider<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, descriptor_url: Option<String>, collection_overrides: Option<Vec<String>>, insert_time: Option<String>, custom_certificate_authority_roots: Option<Vec<String>>, credential: Option<String>, description: Option<String>, labels: Option<Vec<String>>, id: Option<String>, name: Option<String>, options: Option<String>, operation: Option<String>, self_link: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, custom_certificate_authority_roots: Option<Vec<String>>, collection_overrides: Option<Vec<String>>, credential: Option<String>, descriptor_url: Option<String>, name: Option<String>, insert_time: Option<String>, operation: Option<String>, labels: Option<Vec<String>>, description: Option<String>, self_link: Option<String>, id: Option<String>, options: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Type_provider<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, descriptor_url: Option<String>, collection_overrides: Option<Vec<String>>, insert_time: Option<String>, custom_certificate_authority_roots: Option<Vec<String>>, credential: Option<String>, description: Option<String>, labels: Option<Vec<String>>, id: Option<String>, name: Option<String>, options: Option<String>, operation: Option<String>, self_link: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, custom_certificate_authority_roots: Option<Vec<String>>, collection_overrides: Option<Vec<String>>, credential: Option<String>, descriptor_url: Option<String>, name: Option<String>, insert_time: Option<String>, operation: Option<String>, labels: Option<Vec<String>>, description: Option<String>, self_link: Option<String>, id: Option<String>, options: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

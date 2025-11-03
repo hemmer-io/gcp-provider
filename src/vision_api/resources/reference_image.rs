@@ -21,7 +21,7 @@ impl<'a> Reference_image<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, bounding_polys: Option<Vec<String>>, uri: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, uri: Option<String>, bounding_polys: Option<Vec<String>>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

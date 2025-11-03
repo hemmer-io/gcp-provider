@@ -21,7 +21,7 @@ impl<'a> Region_instant_snapshot<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, label_fingerprint: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, labels: Option<HashMap<String, String>>, zone: Option<String>, id: Option<String>, status: Option<String>, disk_size_gb: Option<String>, satisfies_pzs: Option<bool>, description: Option<String>, source_disk: Option<String>, architecture: Option<String>, region: Option<String>, self_link: Option<String>, name: Option<String>, self_link_with_id: Option<String>, source_disk_id: Option<String>, satisfies_pzi: Option<bool>, resource_status: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, zone: Option<String>, label_fingerprint: Option<String>, description: Option<String>, satisfies_pzi: Option<bool>, self_link: Option<String>, id: Option<String>, source_disk_id: Option<String>, region: Option<String>, creation_timestamp: Option<String>, self_link_with_id: Option<String>, source_disk: Option<String>, satisfies_pzs: Option<bool>, architecture: Option<String>, kind: Option<String>, resource_status: Option<String>, disk_size_gb: Option<String>, labels: Option<HashMap<String, String>>, status: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Parent<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, self_link: Option<String>, id: Option<String>, parent_link: Option<String>, is_root: Option<bool>, kind: Option<String>, file_id: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, is_root: Option<bool>, kind: Option<String>, parent_link: Option<String>, self_link: Option<String>, file_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

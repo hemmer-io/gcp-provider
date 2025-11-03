@@ -21,7 +21,7 @@ impl<'a> Featurestore<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, update_time: Option<String>, name: Option<String>, online_serving_config: Option<String>, create_time: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, online_storage_ttl_days: Option<i64>, encryption_spec: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, encryption_spec: Option<String>, online_serving_config: Option<String>, name: Option<String>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, online_storage_ttl_days: Option<i64>, etag: Option<String>, satisfies_pzi: Option<bool>, create_time: Option<String>, state: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Featurestore<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, update_time: Option<String>, name: Option<String>, online_serving_config: Option<String>, create_time: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, online_storage_ttl_days: Option<i64>, encryption_spec: Option<String>, satisfies_pzi: Option<bool>, satisfies_pzs: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, encryption_spec: Option<String>, online_serving_config: Option<String>, name: Option<String>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, online_storage_ttl_days: Option<i64>, etag: Option<String>, satisfies_pzi: Option<bool>, create_time: Option<String>, state: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

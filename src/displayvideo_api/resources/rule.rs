@@ -21,7 +21,7 @@ impl<'a> Rule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, custom_bidding_algorithm_id: Option<String>, rules: Option<String>, create_time: Option<String>, custom_bidding_algorithm_rules_id: Option<String>, name: Option<String>, state: Option<String>, active: Option<bool>, error: Option<String>, custom_bidding_algorithm_id: String) -> Result<String> {
+    pub async fn create(&self, active: Option<bool>, custom_bidding_algorithm_id: Option<String>, error: Option<String>, name: Option<String>, create_time: Option<String>, rules: Option<String>, state: Option<String>, custom_bidding_algorithm_rules_id: Option<String>, custom_bidding_algorithm_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

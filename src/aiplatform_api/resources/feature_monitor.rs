@@ -21,7 +21,7 @@ impl<'a> Feature_monitor<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, schedule_config: Option<String>, feature_selection_config: Option<String>, update_time: Option<String>, description: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, schedule_config: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, etag: Option<String>, feature_selection_config: Option<String>, name: Option<String>, update_time: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Feature_monitor<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_time: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, schedule_config: Option<String>, feature_selection_config: Option<String>, update_time: Option<String>, description: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, schedule_config: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, etag: Option<String>, feature_selection_config: Option<String>, name: Option<String>, update_time: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Returnpolicyonline<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, countries: Option<Vec<String>>, item_conditions: Option<Vec<String>>, return_reason_category_info: Option<Vec<String>>, label: Option<String>, restocking_fee: Option<String>, return_policy_id: Option<String>, return_methods: Option<Vec<String>>, policy: Option<String>, return_policy_uri: Option<String>, merchant_id: String) -> Result<String> {
+    pub async fn create(&self, countries: Option<Vec<String>>, return_reason_category_info: Option<Vec<String>>, name: Option<String>, return_policy_uri: Option<String>, restocking_fee: Option<String>, label: Option<String>, item_conditions: Option<Vec<String>>, policy: Option<String>, return_policy_id: Option<String>, return_methods: Option<Vec<String>>, merchant_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Returnpolicyonline<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, countries: Option<Vec<String>>, item_conditions: Option<Vec<String>>, return_reason_category_info: Option<Vec<String>>, label: Option<String>, restocking_fee: Option<String>, return_policy_id: Option<String>, return_methods: Option<Vec<String>>, policy: Option<String>, return_policy_uri: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, countries: Option<Vec<String>>, return_reason_category_info: Option<Vec<String>>, name: Option<String>, return_policy_uri: Option<String>, restocking_fee: Option<String>, label: Option<String>, item_conditions: Option<Vec<String>>, policy: Option<String>, return_policy_id: Option<String>, return_methods: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

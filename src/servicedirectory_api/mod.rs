@@ -24,9 +24,6 @@ impl<'a> Servicedirectory_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "endpoint" => {
-                self.plan_endpoint(current_state, desired_input).await
-            }
             "namespace" => {
                 self.plan_namespace(current_state, desired_input).await
             }
@@ -35,21 +32,24 @@ impl<'a> Servicedirectory_apiService<'a> {
             }
             "service" => {
                 self.plan_service(current_state, desired_input).await
+            }
+            "endpoint" => {
+                self.plan_endpoint(current_state, desired_input).await
+            }
+            "endpoint" => {
+                self.plan_endpoint(current_state, desired_input).await
+            }
+            "namespace" => {
+                self.plan_namespace(current_state, desired_input).await
             }
             "workload" => {
                 self.plan_workload(current_state, desired_input).await
             }
-            "endpoint" => {
-                self.plan_endpoint(current_state, desired_input).await
-            }
             "service" => {
                 self.plan_service(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
-            }
-            "namespace" => {
-                self.plan_namespace(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,9 +66,6 @@ impl<'a> Servicedirectory_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "endpoint" => {
-                self.create_endpoint(input).await
-            }
             "namespace" => {
                 self.create_namespace(input).await
             }
@@ -77,21 +74,24 @@ impl<'a> Servicedirectory_apiService<'a> {
             }
             "service" => {
                 self.create_service(input).await
+            }
+            "endpoint" => {
+                self.create_endpoint(input).await
+            }
+            "endpoint" => {
+                self.create_endpoint(input).await
+            }
+            "namespace" => {
+                self.create_namespace(input).await
             }
             "workload" => {
                 self.create_workload(input).await
             }
-            "endpoint" => {
-                self.create_endpoint(input).await
-            }
             "service" => {
                 self.create_service(input).await
             }
             "location" => {
                 self.create_location(input).await
-            }
-            "namespace" => {
-                self.create_namespace(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -108,9 +108,6 @@ impl<'a> Servicedirectory_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "endpoint" => {
-                self.read_endpoint(id).await
-            }
             "namespace" => {
                 self.read_namespace(id).await
             }
@@ -119,21 +116,24 @@ impl<'a> Servicedirectory_apiService<'a> {
             }
             "service" => {
                 self.read_service(id).await
+            }
+            "endpoint" => {
+                self.read_endpoint(id).await
+            }
+            "endpoint" => {
+                self.read_endpoint(id).await
+            }
+            "namespace" => {
+                self.read_namespace(id).await
             }
             "workload" => {
                 self.read_workload(id).await
             }
-            "endpoint" => {
-                self.read_endpoint(id).await
-            }
             "service" => {
                 self.read_service(id).await
             }
             "location" => {
                 self.read_location(id).await
-            }
-            "namespace" => {
-                self.read_namespace(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -151,9 +151,6 @@ impl<'a> Servicedirectory_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "endpoint" => {
-                self.update_endpoint(id, input).await
-            }
             "namespace" => {
                 self.update_namespace(id, input).await
             }
@@ -162,21 +159,24 @@ impl<'a> Servicedirectory_apiService<'a> {
             }
             "service" => {
                 self.update_service(id, input).await
+            }
+            "endpoint" => {
+                self.update_endpoint(id, input).await
+            }
+            "endpoint" => {
+                self.update_endpoint(id, input).await
+            }
+            "namespace" => {
+                self.update_namespace(id, input).await
             }
             "workload" => {
                 self.update_workload(id, input).await
             }
-            "endpoint" => {
-                self.update_endpoint(id, input).await
-            }
             "service" => {
                 self.update_service(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
-            }
-            "namespace" => {
-                self.update_namespace(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -193,9 +193,6 @@ impl<'a> Servicedirectory_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "endpoint" => {
-                self.delete_endpoint(id).await
-            }
             "namespace" => {
                 self.delete_namespace(id).await
             }
@@ -204,21 +201,24 @@ impl<'a> Servicedirectory_apiService<'a> {
             }
             "service" => {
                 self.delete_service(id).await
+            }
+            "endpoint" => {
+                self.delete_endpoint(id).await
+            }
+            "endpoint" => {
+                self.delete_endpoint(id).await
+            }
+            "namespace" => {
+                self.delete_namespace(id).await
             }
             "workload" => {
                 self.delete_workload(id).await
             }
-            "endpoint" => {
-                self.delete_endpoint(id).await
-            }
             "service" => {
                 self.delete_service(id).await
             }
             "location" => {
                 self.delete_location(id).await
-            }
-            "namespace" => {
-                self.delete_namespace(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -231,67 +231,6 @@ impl<'a> Servicedirectory_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Endpoint resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a endpoint resource
-    async fn plan_endpoint(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new endpoint resource
-    async fn create_endpoint(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a endpoint resource
-    async fn read_endpoint(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a endpoint resource
-    async fn update_endpoint(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a endpoint resource
-    async fn delete_endpoint(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -469,6 +408,189 @@ impl<'a> Servicedirectory_apiService<'a> {
 
     /// Delete a service resource
     async fn delete_service(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Endpoint resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a endpoint resource
+    async fn plan_endpoint(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new endpoint resource
+    async fn create_endpoint(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a endpoint resource
+    async fn read_endpoint(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a endpoint resource
+    async fn update_endpoint(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a endpoint resource
+    async fn delete_endpoint(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Endpoint resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a endpoint resource
+    async fn plan_endpoint(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new endpoint resource
+    async fn create_endpoint(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a endpoint resource
+    async fn read_endpoint(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a endpoint resource
+    async fn update_endpoint(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a endpoint resource
+    async fn delete_endpoint(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Namespace resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a namespace resource
+    async fn plan_namespace(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new namespace resource
+    async fn create_namespace(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a namespace resource
+    async fn read_namespace(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a namespace resource
+    async fn update_namespace(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a namespace resource
+    async fn delete_namespace(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -539,67 +661,6 @@ impl<'a> Servicedirectory_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Endpoint resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a endpoint resource
-    async fn plan_endpoint(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new endpoint resource
-    async fn create_endpoint(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a endpoint resource
-    async fn read_endpoint(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a endpoint resource
-    async fn update_endpoint(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a endpoint resource
-    async fn delete_endpoint(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Service resource operations
     // ------------------------------------------------------------------------
 
@@ -713,67 +774,6 @@ impl<'a> Servicedirectory_apiService<'a> {
 
     /// Delete a location resource
     async fn delete_location(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Namespace resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a namespace resource
-    async fn plan_namespace(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new namespace resource
-    async fn create_namespace(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a namespace resource
-    async fn read_namespace(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a namespace resource
-    async fn update_namespace(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a namespace resource
-    async fn delete_namespace(
         &self,
         id: &str,
     ) -> Result<()> {

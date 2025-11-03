@@ -22,7 +22,7 @@ impl<'a> Fhir<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, content_type: Option<String>, data: Option<String>, extensions: Option<Vec<HashMap<String, String>>>, parent: String, type: String) -> Result<String> {
+    pub async fn create(&self, extensions: Option<Vec<HashMap<String, String>>>, content_type: Option<String>, data: Option<String>, parent: String, type: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

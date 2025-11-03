@@ -21,7 +21,7 @@ impl<'a> Advertiser<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, prisma_enabled: Option<bool>, update_time: Option<String>, general_config: Option<String>, integration_details: Option<String>, ad_server_config: Option<String>, entity_status: Option<String>, name: Option<String>, data_access_config: Option<String>, contains_eu_political_ads: Option<String>, display_name: Option<String>, advertiser_id: Option<String>, partner_id: Option<String>, serving_config: Option<String>, billing_config: Option<String>, creative_config: Option<String>) -> Result<String> {
+    pub async fn create(&self, data_access_config: Option<String>, prisma_enabled: Option<bool>, general_config: Option<String>, display_name: Option<String>, serving_config: Option<String>, billing_config: Option<String>, partner_id: Option<String>, integration_details: Option<String>, entity_status: Option<String>, creative_config: Option<String>, advertiser_id: Option<String>, contains_eu_political_ads: Option<String>, name: Option<String>, update_time: Option<String>, ad_server_config: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Advertiser<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, prisma_enabled: Option<bool>, update_time: Option<String>, general_config: Option<String>, integration_details: Option<String>, ad_server_config: Option<String>, entity_status: Option<String>, name: Option<String>, data_access_config: Option<String>, contains_eu_political_ads: Option<String>, display_name: Option<String>, advertiser_id: Option<String>, partner_id: Option<String>, serving_config: Option<String>, billing_config: Option<String>, creative_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, data_access_config: Option<String>, prisma_enabled: Option<bool>, general_config: Option<String>, display_name: Option<String>, serving_config: Option<String>, billing_config: Option<String>, partner_id: Option<String>, integration_details: Option<String>, entity_status: Option<String>, creative_config: Option<String>, advertiser_id: Option<String>, contains_eu_political_ads: Option<String>, name: Option<String>, update_time: Option<String>, ad_server_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

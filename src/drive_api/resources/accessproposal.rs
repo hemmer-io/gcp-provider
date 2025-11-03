@@ -21,7 +21,7 @@ impl<'a> Accessproposal<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, role: Option<Vec<String>>, send_notification: Option<bool>, action: Option<String>, view: Option<String>, proposal_id: String, file_id: String) -> Result<String> {
+    pub async fn create(&self, view: Option<String>, send_notification: Option<bool>, action: Option<String>, role: Option<Vec<String>>, file_id: String, proposal_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Inappproduct<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, purchase_type: Option<String>, default_language: Option<String>, package_name: Option<String>, prices: Option<HashMap<String, String>>, grace_period: Option<String>, subscription_taxes_and_compliance_settings: Option<String>, default_price: Option<String>, managed_product_taxes_and_compliance_settings: Option<String>, sku: Option<String>, subscription_period: Option<String>, status: Option<String>, listings: Option<HashMap<String, String>>, trial_period: Option<String>, package_name: String) -> Result<String> {
+    pub async fn create(&self, prices: Option<HashMap<String, String>>, subscription_taxes_and_compliance_settings: Option<String>, purchase_type: Option<String>, subscription_period: Option<String>, sku: Option<String>, package_name: Option<String>, listings: Option<HashMap<String, String>>, default_language: Option<String>, trial_period: Option<String>, status: Option<String>, managed_product_taxes_and_compliance_settings: Option<String>, default_price: Option<String>, grace_period: Option<String>, package_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Inappproduct<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, purchase_type: Option<String>, default_language: Option<String>, package_name: Option<String>, prices: Option<HashMap<String, String>>, grace_period: Option<String>, subscription_taxes_and_compliance_settings: Option<String>, default_price: Option<String>, managed_product_taxes_and_compliance_settings: Option<String>, sku: Option<String>, subscription_period: Option<String>, status: Option<String>, listings: Option<HashMap<String, String>>, trial_period: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, prices: Option<HashMap<String, String>>, subscription_taxes_and_compliance_settings: Option<String>, purchase_type: Option<String>, subscription_period: Option<String>, sku: Option<String>, package_name: Option<String>, listings: Option<HashMap<String, String>>, default_language: Option<String>, trial_period: Option<String>, status: Option<String>, managed_product_taxes_and_compliance_settings: Option<String>, default_price: Option<String>, grace_period: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

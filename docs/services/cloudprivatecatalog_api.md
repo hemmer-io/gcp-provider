@@ -10,13 +10,56 @@
 
 The cloudprivatecatalog_api service provides access to 3 resource types:
 
-- [Catalog](#catalog) [R]
 - [Version](#version) [R]
+- [Catalog](#catalog) [R]
 - [Product](#product) [R]
 
 ---
 
 ## Resources
+
+
+### Version
+
+Search Version resources that consumers have access to, within the
+scope of the consumer cloud resource hierarchy context.
+
+**Operations**: ✅ Read
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `next_page_token` | String | A pagination token returned from a previous call to SearchVersions that
+indicates from where the listing should continue.
+This field is optional. |
+| `versions` | Vec<String> | The `Version` resources computed from the resource context. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Access version outputs
+version_id = version.id
+version_next_page_token = version.next_page_token
+version_versions = version.versions
+```
+
+---
 
 
 ### Catalog
@@ -62,49 +105,6 @@ catalog_catalogs = catalog.catalogs
 ---
 
 
-### Version
-
-Search Version resources that consumers have access to, within the
-scope of the consumer cloud resource hierarchy context.
-
-**Operations**: ✅ Read
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `versions` | Vec<String> | The `Version` resources computed from the resource context. |
-| `next_page_token` | String | A pagination token returned from a previous call to SearchVersions that
-indicates from where the listing should continue.
-This field is optional. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Access version outputs
-version_id = version.id
-version_versions = version.versions
-version_next_page_token = version.next_page_token
-```
-
----
-
-
 ### Product
 
 Search Product resources that consumers have access to, within the
@@ -122,10 +122,10 @@ scope of the consumer cloud resource hierarchy context.
 
 | Output | Type | Description |
 |--------|------|-------------|
+| `products` | Vec<String> | The `Product` resources computed from the resource context. |
 | `next_page_token` | String | A pagination token returned from a previous call to SearchProducts that
 indicates from where listing should continue.
 This field is optional. |
-| `products` | Vec<String> | The `Product` resources computed from the resource context. |
 
 
 #### Usage Example
@@ -141,8 +141,8 @@ provider = gcp.GcpProvider {
 
 # Access product outputs
 product_id = product.id
-product_next_page_token = product.next_page_token
 product_products = product.products
+product_next_page_token = product.next_page_token
 ```
 
 ---
@@ -160,12 +160,12 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple catalog resources
-catalog_0 = provider.cloudprivatecatalog_api.Catalog {
+# Create multiple version resources
+version_0 = provider.cloudprivatecatalog_api.Version {
 }
-catalog_1 = provider.cloudprivatecatalog_api.Catalog {
+version_1 = provider.cloudprivatecatalog_api.Version {
 }
-catalog_2 = provider.cloudprivatecatalog_api.Catalog {
+version_2 = provider.cloudprivatecatalog_api.Version {
 }
 ```
 
@@ -174,7 +174,7 @@ catalog_2 = provider.cloudprivatecatalog_api.Catalog {
 ```kcl
 # Only create in production
 if environment == "production":
-    catalog = provider.cloudprivatecatalog_api.Catalog {
+    version = provider.cloudprivatecatalog_api.Version {
     }
 ```
 

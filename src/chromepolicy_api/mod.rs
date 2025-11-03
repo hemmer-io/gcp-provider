@@ -27,20 +27,20 @@ impl<'a> Chromepolicy_apiService<'a> {
             "network" => {
                 self.plan_network(current_state, desired_input).await
             }
+            "policie" => {
+                self.plan_policie(current_state, desired_input).await
+            }
+            "media" => {
+                self.plan_media(current_state, desired_input).await
+            }
+            "policy_schema" => {
+                self.plan_policy_schema(current_state, desired_input).await
+            }
             "group" => {
                 self.plan_group(current_state, desired_input).await
             }
             "orgunit" => {
                 self.plan_orgunit(current_state, desired_input).await
-            }
-            "policie" => {
-                self.plan_policie(current_state, desired_input).await
-            }
-            "policy_schema" => {
-                self.plan_policy_schema(current_state, desired_input).await
-            }
-            "media" => {
-                self.plan_media(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -60,20 +60,20 @@ impl<'a> Chromepolicy_apiService<'a> {
             "network" => {
                 self.create_network(input).await
             }
+            "policie" => {
+                self.create_policie(input).await
+            }
+            "media" => {
+                self.create_media(input).await
+            }
+            "policy_schema" => {
+                self.create_policy_schema(input).await
+            }
             "group" => {
                 self.create_group(input).await
             }
             "orgunit" => {
                 self.create_orgunit(input).await
-            }
-            "policie" => {
-                self.create_policie(input).await
-            }
-            "policy_schema" => {
-                self.create_policy_schema(input).await
-            }
-            "media" => {
-                self.create_media(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -93,20 +93,20 @@ impl<'a> Chromepolicy_apiService<'a> {
             "network" => {
                 self.read_network(id).await
             }
+            "policie" => {
+                self.read_policie(id).await
+            }
+            "media" => {
+                self.read_media(id).await
+            }
+            "policy_schema" => {
+                self.read_policy_schema(id).await
+            }
             "group" => {
                 self.read_group(id).await
             }
             "orgunit" => {
                 self.read_orgunit(id).await
-            }
-            "policie" => {
-                self.read_policie(id).await
-            }
-            "policy_schema" => {
-                self.read_policy_schema(id).await
-            }
-            "media" => {
-                self.read_media(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -127,20 +127,20 @@ impl<'a> Chromepolicy_apiService<'a> {
             "network" => {
                 self.update_network(id, input).await
             }
+            "policie" => {
+                self.update_policie(id, input).await
+            }
+            "media" => {
+                self.update_media(id, input).await
+            }
+            "policy_schema" => {
+                self.update_policy_schema(id, input).await
+            }
             "group" => {
                 self.update_group(id, input).await
             }
             "orgunit" => {
                 self.update_orgunit(id, input).await
-            }
-            "policie" => {
-                self.update_policie(id, input).await
-            }
-            "policy_schema" => {
-                self.update_policy_schema(id, input).await
-            }
-            "media" => {
-                self.update_media(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -160,20 +160,20 @@ impl<'a> Chromepolicy_apiService<'a> {
             "network" => {
                 self.delete_network(id).await
             }
+            "policie" => {
+                self.delete_policie(id).await
+            }
+            "media" => {
+                self.delete_media(id).await
+            }
+            "policy_schema" => {
+                self.delete_policy_schema(id).await
+            }
             "group" => {
                 self.delete_group(id).await
             }
             "orgunit" => {
                 self.delete_orgunit(id).await
-            }
-            "policie" => {
-                self.delete_policie(id).await
-            }
-            "policy_schema" => {
-                self.delete_policy_schema(id).await
-            }
-            "media" => {
-                self.delete_media(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -241,6 +241,189 @@ impl<'a> Chromepolicy_apiService<'a> {
 
     /// Delete a network resource
     async fn delete_network(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Policie resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a policie resource
+    async fn plan_policie(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new policie resource
+    async fn create_policie(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a policie resource
+    async fn read_policie(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a policie resource
+    async fn update_policie(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a policie resource
+    async fn delete_policie(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Media resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a media resource
+    async fn plan_media(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new media resource
+    async fn create_media(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a media resource
+    async fn read_media(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a media resource
+    async fn update_media(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a media resource
+    async fn delete_media(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Policy_schema resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a policy_schema resource
+    async fn plan_policy_schema(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new policy_schema resource
+    async fn create_policy_schema(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a policy_schema resource
+    async fn read_policy_schema(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a policy_schema resource
+    async fn update_policy_schema(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a policy_schema resource
+    async fn delete_policy_schema(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -363,189 +546,6 @@ impl<'a> Chromepolicy_apiService<'a> {
 
     /// Delete a orgunit resource
     async fn delete_orgunit(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Policie resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a policie resource
-    async fn plan_policie(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new policie resource
-    async fn create_policie(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a policie resource
-    async fn read_policie(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a policie resource
-    async fn update_policie(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a policie resource
-    async fn delete_policie(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Policy_schema resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a policy_schema resource
-    async fn plan_policy_schema(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new policy_schema resource
-    async fn create_policy_schema(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a policy_schema resource
-    async fn read_policy_schema(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a policy_schema resource
-    async fn update_policy_schema(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a policy_schema resource
-    async fn delete_policy_schema(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Media resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a media resource
-    async fn plan_media(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new media resource
-    async fn create_media(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a media resource
-    async fn read_media(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a media resource
-    async fn update_media(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a media resource
-    async fn delete_media(
         &self,
         id: &str,
     ) -> Result<()> {

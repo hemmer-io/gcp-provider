@@ -21,7 +21,7 @@ impl<'a> Acl<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, pattern_type: Option<String>, resource_name: Option<String>, resource_type: Option<String>, acl_entries: Option<Vec<String>>, etag: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, resource_name: Option<String>, name: Option<String>, resource_type: Option<String>, pattern_type: Option<String>, acl_entries: Option<Vec<String>>, etag: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Acl<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, pattern_type: Option<String>, resource_name: Option<String>, resource_type: Option<String>, acl_entries: Option<Vec<String>>, etag: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, resource_name: Option<String>, name: Option<String>, resource_type: Option<String>, pattern_type: Option<String>, acl_entries: Option<Vec<String>>, etag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Dns_zone<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, domain: Option<String>, state: Option<String>, create_time: Option<String>, name: Option<String>, update_time: Option<String>, description: Option<String>, peering_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, state: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, description: Option<String>, domain: Option<String>, peering_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

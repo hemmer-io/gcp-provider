@@ -21,7 +21,7 @@ impl<'a> Subscription<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, restricted_payment_countries: Option<String>, archived: Option<bool>, package_name: Option<String>, tax_and_compliance_settings: Option<String>, product_id: Option<String>, listings: Option<Vec<String>>, base_plans: Option<Vec<String>>, package_name: String) -> Result<String> {
+    pub async fn create(&self, listings: Option<Vec<String>>, archived: Option<bool>, package_name: Option<String>, restricted_payment_countries: Option<String>, product_id: Option<String>, tax_and_compliance_settings: Option<String>, base_plans: Option<Vec<String>>, package_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Subscription<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, restricted_payment_countries: Option<String>, archived: Option<bool>, package_name: Option<String>, tax_and_compliance_settings: Option<String>, product_id: Option<String>, listings: Option<Vec<String>>, base_plans: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, listings: Option<Vec<String>>, archived: Option<bool>, package_name: Option<String>, restricted_payment_countries: Option<String>, product_id: Option<String>, tax_and_compliance_settings: Option<String>, base_plans: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

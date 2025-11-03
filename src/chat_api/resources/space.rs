@@ -21,7 +21,7 @@ impl<'a> Space<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, customer: Option<String>, predefined_permission_settings: Option<String>, import_mode: Option<bool>, create_time: Option<String>, access_settings: Option<String>, import_mode_expire_time: Option<String>, space_history_state: Option<String>, space_threading_state: Option<String>, name: Option<String>, permission_settings: Option<String>, display_name: Option<String>, last_active_time: Option<String>, space_uri: Option<String>, threaded: Option<bool>, type: Option<String>, space_type: Option<String>, single_user_bot_dm: Option<bool>, admin_installed: Option<bool>, membership_count: Option<String>, space_details: Option<String>, external_user_allowed: Option<bool>) -> Result<String> {
+    pub async fn create(&self, space_history_state: Option<String>, type: Option<String>, import_mode_expire_time: Option<String>, admin_installed: Option<bool>, last_active_time: Option<String>, membership_count: Option<String>, permission_settings: Option<String>, space_details: Option<String>, space_type: Option<String>, predefined_permission_settings: Option<String>, threaded: Option<bool>, create_time: Option<String>, single_user_bot_dm: Option<bool>, display_name: Option<String>, space_threading_state: Option<String>, access_settings: Option<String>, space_uri: Option<String>, import_mode: Option<bool>, name: Option<String>, customer: Option<String>, external_user_allowed: Option<bool>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Space<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, customer: Option<String>, predefined_permission_settings: Option<String>, import_mode: Option<bool>, create_time: Option<String>, access_settings: Option<String>, import_mode_expire_time: Option<String>, space_history_state: Option<String>, space_threading_state: Option<String>, name: Option<String>, permission_settings: Option<String>, display_name: Option<String>, last_active_time: Option<String>, space_uri: Option<String>, threaded: Option<bool>, type: Option<String>, space_type: Option<String>, single_user_bot_dm: Option<bool>, admin_installed: Option<bool>, membership_count: Option<String>, space_details: Option<String>, external_user_allowed: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, space_history_state: Option<String>, type: Option<String>, import_mode_expire_time: Option<String>, admin_installed: Option<bool>, last_active_time: Option<String>, membership_count: Option<String>, permission_settings: Option<String>, space_details: Option<String>, space_type: Option<String>, predefined_permission_settings: Option<String>, threaded: Option<bool>, create_time: Option<String>, single_user_bot_dm: Option<bool>, display_name: Option<String>, space_threading_state: Option<String>, access_settings: Option<String>, space_uri: Option<String>, import_mode: Option<bool>, name: Option<String>, customer: Option<String>, external_user_allowed: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -11,8 +11,8 @@
 The lifesciences_api service provides access to 3 resource types:
 
 - [Pipeline](#pipeline) [C]
-- [Operation](#operation) [CR]
 - [Location](#location) [R]
+- [Operation](#operation) [CR]
 
 ---
 
@@ -57,6 +57,52 @@ pipeline = provider.lifesciences_api.Pipeline {
 ---
 
 
+### Location
+
+Gets information about a location.
+
+**Operations**: ✅ Read
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `display_name` | String | The friendly name for this location, typically a nearby city name. For example, "Tokyo". |
+| `labels` | HashMap<String, String> | Cross-service attributes for the location. For example {"cloud.googleapis.com/region": "us-east1"} |
+| `location_id` | String | The canonical id for this location. For example: `"us-east1"`. |
+| `metadata` | HashMap<String, String> | Service-specific metadata. For example the available capacity at the given location. |
+| `name` | String | Resource name for the location, which may vary between implementations. For example: `"projects/example-project/locations/us-east1"` |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Access location outputs
+location_id = location.id
+location_display_name = location.display_name
+location_labels = location.labels
+location_location_id = location.location_id
+location_metadata = location.metadata
+location_name = location.name
+```
+
+---
+
+
 ### Operation
 
 Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. Clients may use Operations.GetOperation or Operations.ListOperations to check whether the cancellation succeeded or the operation completed despite cancellation. Authorization requires the following [Google IAM](https://cloud.google.com/iam) permission: * `lifesciences.operations.cancel`
@@ -74,10 +120,10 @@ Starts asynchronous cancellation on a long-running operation. The server makes a
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `error` | String | The error result of the operation in case of failure or cancellation. |
-| `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
-| `name` | String | The server-assigned name for the operation. This may be passed to the other operation methods to retrieve information about the operation's status. |
 | `metadata` | HashMap<String, String> | An Metadata object. This will always be returned with the Operation. |
+| `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
+| `error` | String | The error result of the operation in case of failure or cancellation. |
+| `name` | String | The server-assigned name for the operation. This may be passed to the other operation methods to retrieve information about the operation's status. |
 | `response` | HashMap<String, String> | An Empty object. |
 
 
@@ -99,57 +145,11 @@ operation = provider.lifesciences_api.Operation {
 
 # Access operation outputs
 operation_id = operation.id
-operation_error = operation.error
-operation_done = operation.done
-operation_name = operation.name
 operation_metadata = operation.metadata
+operation_done = operation.done
+operation_error = operation.error
+operation_name = operation.name
 operation_response = operation.response
-```
-
----
-
-
-### Location
-
-Gets information about a location.
-
-**Operations**: ✅ Read
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `metadata` | HashMap<String, String> | Service-specific metadata. For example the available capacity at the given location. |
-| `name` | String | Resource name for the location, which may vary between implementations. For example: `"projects/example-project/locations/us-east1"` |
-| `labels` | HashMap<String, String> | Cross-service attributes for the location. For example {"cloud.googleapis.com/region": "us-east1"} |
-| `display_name` | String | The friendly name for this location, typically a nearby city name. For example, "Tokyo". |
-| `location_id` | String | The canonical id for this location. For example: `"us-east1"`. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Access location outputs
-location_id = location.id
-location_metadata = location.metadata
-location_name = location.name
-location_labels = location.labels
-location_display_name = location.display_name
-location_location_id = location.location_id
 ```
 
 ---

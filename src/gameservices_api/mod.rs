@@ -24,9 +24,6 @@ impl<'a> Gameservices_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "location" => {
-                self.plan_location(current_state, desired_input).await
-            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
@@ -36,11 +33,14 @@ impl<'a> Gameservices_apiService<'a> {
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
             "game_server_deployment" => {
                 self.plan_game_server_deployment(current_state, desired_input).await
+            }
+            "location" => {
+                self.plan_location(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,9 +57,6 @@ impl<'a> Gameservices_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "location" => {
-                self.create_location(input).await
-            }
             "operation" => {
                 self.create_operation(input).await
             }
@@ -69,11 +66,14 @@ impl<'a> Gameservices_apiService<'a> {
             "location" => {
                 self.create_location(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
-            }
             "game_server_deployment" => {
                 self.create_game_server_deployment(input).await
+            }
+            "location" => {
+                self.create_location(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -90,9 +90,6 @@ impl<'a> Gameservices_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "location" => {
-                self.read_location(id).await
-            }
             "operation" => {
                 self.read_operation(id).await
             }
@@ -102,11 +99,14 @@ impl<'a> Gameservices_apiService<'a> {
             "location" => {
                 self.read_location(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
-            }
             "game_server_deployment" => {
                 self.read_game_server_deployment(id).await
+            }
+            "location" => {
+                self.read_location(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,9 +124,6 @@ impl<'a> Gameservices_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "location" => {
-                self.update_location(id, input).await
-            }
             "operation" => {
                 self.update_operation(id, input).await
             }
@@ -136,11 +133,14 @@ impl<'a> Gameservices_apiService<'a> {
             "location" => {
                 self.update_location(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
             "game_server_deployment" => {
                 self.update_game_server_deployment(id, input).await
+            }
+            "location" => {
+                self.update_location(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -157,9 +157,6 @@ impl<'a> Gameservices_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "location" => {
-                self.delete_location(id).await
-            }
             "operation" => {
                 self.delete_operation(id).await
             }
@@ -169,11 +166,14 @@ impl<'a> Gameservices_apiService<'a> {
             "location" => {
                 self.delete_location(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
-            }
             "game_server_deployment" => {
                 self.delete_game_server_deployment(id).await
+            }
+            "location" => {
+                self.delete_location(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -189,67 +189,6 @@ impl<'a> Gameservices_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Location resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a location resource
-    async fn plan_location(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new location resource
-    async fn create_location(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a location resource
-    async fn read_location(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a location resource
-    async fn update_location(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a location resource
-    async fn delete_location(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Operation resource operations
     // ------------------------------------------------------------------------
 
@@ -433,67 +372,6 @@ impl<'a> Gameservices_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Game_server_deployment resource operations
     // ------------------------------------------------------------------------
 
@@ -546,6 +424,128 @@ impl<'a> Gameservices_apiService<'a> {
 
     /// Delete a game_server_deployment resource
     async fn delete_game_server_deployment(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {

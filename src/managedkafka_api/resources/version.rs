@@ -21,7 +21,7 @@ impl<'a> Version<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<i64>, schema_type: Option<String>, normalize: Option<bool>, references: Option<Vec<String>>, version: Option<i64>, schema: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, schema_type: Option<String>, id: Option<i64>, normalize: Option<bool>, version: Option<i64>, references: Option<Vec<String>>, schema: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

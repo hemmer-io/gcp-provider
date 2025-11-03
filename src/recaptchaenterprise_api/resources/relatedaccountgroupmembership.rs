@@ -21,7 +21,7 @@ impl<'a> Relatedaccountgroupmembership<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, page_size: Option<i64>, account_id: Option<String>, page_token: Option<String>, hashed_account_id: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, account_id: Option<String>, page_token: Option<String>, hashed_account_id: Option<String>, page_size: Option<i64>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

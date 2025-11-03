@@ -30,21 +30,24 @@ impl<'a> Servicebroker_apiService<'a> {
             "instance" => {
                 self.plan_instance(current_state, desired_input).await
             }
-            "binding" => {
-                self.plan_binding(current_state, desired_input).await
+            "catalog" => {
+                self.plan_catalog(current_state, desired_input).await
             }
             "service_binding" => {
                 self.plan_service_binding(current_state, desired_input).await
             }
             "service_instance" => {
                 self.plan_service_instance(current_state, desired_input).await
-            }
-            "catalog" => {
-                self.plan_catalog(current_state, desired_input).await
             }
             "broker" => {
                 self.plan_broker(current_state, desired_input).await
             }
+            "binding" => {
+                self.plan_binding(current_state, desired_input).await
+            }
+            "servicebroker" => {
+                self.plan_servicebroker(current_state, desired_input).await
+            }
             "servicebroker" => {
                 self.plan_servicebroker(current_state, desired_input).await
             }
@@ -53,9 +56,6 @@ impl<'a> Servicebroker_apiService<'a> {
             }
             "service_instance" => {
                 self.plan_service_instance(current_state, desired_input).await
-            }
-            "servicebroker" => {
-                self.plan_servicebroker(current_state, desired_input).await
             }
             "catalog" => {
                 self.plan_catalog(current_state, desired_input).await
@@ -84,21 +84,24 @@ impl<'a> Servicebroker_apiService<'a> {
             "instance" => {
                 self.create_instance(input).await
             }
-            "binding" => {
-                self.create_binding(input).await
+            "catalog" => {
+                self.create_catalog(input).await
             }
             "service_binding" => {
                 self.create_service_binding(input).await
             }
             "service_instance" => {
                 self.create_service_instance(input).await
-            }
-            "catalog" => {
-                self.create_catalog(input).await
             }
             "broker" => {
                 self.create_broker(input).await
             }
+            "binding" => {
+                self.create_binding(input).await
+            }
+            "servicebroker" => {
+                self.create_servicebroker(input).await
+            }
             "servicebroker" => {
                 self.create_servicebroker(input).await
             }
@@ -107,9 +110,6 @@ impl<'a> Servicebroker_apiService<'a> {
             }
             "service_instance" => {
                 self.create_service_instance(input).await
-            }
-            "servicebroker" => {
-                self.create_servicebroker(input).await
             }
             "catalog" => {
                 self.create_catalog(input).await
@@ -138,21 +138,24 @@ impl<'a> Servicebroker_apiService<'a> {
             "instance" => {
                 self.read_instance(id).await
             }
-            "binding" => {
-                self.read_binding(id).await
+            "catalog" => {
+                self.read_catalog(id).await
             }
             "service_binding" => {
                 self.read_service_binding(id).await
             }
             "service_instance" => {
                 self.read_service_instance(id).await
-            }
-            "catalog" => {
-                self.read_catalog(id).await
             }
             "broker" => {
                 self.read_broker(id).await
             }
+            "binding" => {
+                self.read_binding(id).await
+            }
+            "servicebroker" => {
+                self.read_servicebroker(id).await
+            }
             "servicebroker" => {
                 self.read_servicebroker(id).await
             }
@@ -161,9 +164,6 @@ impl<'a> Servicebroker_apiService<'a> {
             }
             "service_instance" => {
                 self.read_service_instance(id).await
-            }
-            "servicebroker" => {
-                self.read_servicebroker(id).await
             }
             "catalog" => {
                 self.read_catalog(id).await
@@ -193,21 +193,24 @@ impl<'a> Servicebroker_apiService<'a> {
             "instance" => {
                 self.update_instance(id, input).await
             }
-            "binding" => {
-                self.update_binding(id, input).await
+            "catalog" => {
+                self.update_catalog(id, input).await
             }
             "service_binding" => {
                 self.update_service_binding(id, input).await
             }
             "service_instance" => {
                 self.update_service_instance(id, input).await
-            }
-            "catalog" => {
-                self.update_catalog(id, input).await
             }
             "broker" => {
                 self.update_broker(id, input).await
             }
+            "binding" => {
+                self.update_binding(id, input).await
+            }
+            "servicebroker" => {
+                self.update_servicebroker(id, input).await
+            }
             "servicebroker" => {
                 self.update_servicebroker(id, input).await
             }
@@ -216,9 +219,6 @@ impl<'a> Servicebroker_apiService<'a> {
             }
             "service_instance" => {
                 self.update_service_instance(id, input).await
-            }
-            "servicebroker" => {
-                self.update_servicebroker(id, input).await
             }
             "catalog" => {
                 self.update_catalog(id, input).await
@@ -247,21 +247,24 @@ impl<'a> Servicebroker_apiService<'a> {
             "instance" => {
                 self.delete_instance(id).await
             }
-            "binding" => {
-                self.delete_binding(id).await
+            "catalog" => {
+                self.delete_catalog(id).await
             }
             "service_binding" => {
                 self.delete_service_binding(id).await
             }
             "service_instance" => {
                 self.delete_service_instance(id).await
-            }
-            "catalog" => {
-                self.delete_catalog(id).await
             }
             "broker" => {
                 self.delete_broker(id).await
             }
+            "binding" => {
+                self.delete_binding(id).await
+            }
+            "servicebroker" => {
+                self.delete_servicebroker(id).await
+            }
             "servicebroker" => {
                 self.delete_servicebroker(id).await
             }
@@ -270,9 +273,6 @@ impl<'a> Servicebroker_apiService<'a> {
             }
             "service_instance" => {
                 self.delete_service_instance(id).await
-            }
-            "servicebroker" => {
-                self.delete_servicebroker(id).await
             }
             "catalog" => {
                 self.delete_catalog(id).await
@@ -416,11 +416,11 @@ impl<'a> Servicebroker_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Binding resource operations
+    // Catalog resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a binding resource
-    async fn plan_binding(
+    /// Plan changes to a catalog resource
+    async fn plan_catalog(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -435,8 +435,8 @@ impl<'a> Servicebroker_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new binding resource
-    async fn create_binding(
+    /// Create a new catalog resource
+    async fn create_catalog(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -445,8 +445,8 @@ impl<'a> Servicebroker_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a binding resource
-    async fn read_binding(
+    /// Read a catalog resource
+    async fn read_catalog(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -455,8 +455,8 @@ impl<'a> Servicebroker_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a binding resource
-    async fn update_binding(
+    /// Update a catalog resource
+    async fn update_catalog(
         &self,
         id: &str,
         input: ResourceInput,
@@ -466,8 +466,8 @@ impl<'a> Servicebroker_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a binding resource
-    async fn delete_binding(
+    /// Delete a catalog resource
+    async fn delete_catalog(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -590,67 +590,6 @@ impl<'a> Servicebroker_apiService<'a> {
 
     /// Delete a service_instance resource
     async fn delete_service_instance(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Catalog resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a catalog resource
-    async fn plan_catalog(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new catalog resource
-    async fn create_catalog(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a catalog resource
-    async fn read_catalog(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a catalog resource
-    async fn update_catalog(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a catalog resource
-    async fn delete_catalog(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -721,6 +660,128 @@ impl<'a> Servicebroker_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Binding resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a binding resource
+    async fn plan_binding(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new binding resource
+    async fn create_binding(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a binding resource
+    async fn read_binding(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a binding resource
+    async fn update_binding(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a binding resource
+    async fn delete_binding(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Servicebroker resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a servicebroker resource
+    async fn plan_servicebroker(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new servicebroker resource
+    async fn create_servicebroker(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a servicebroker resource
+    async fn read_servicebroker(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a servicebroker resource
+    async fn update_servicebroker(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a servicebroker resource
+    async fn delete_servicebroker(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Servicebroker resource operations
     // ------------------------------------------------------------------------
 
@@ -895,67 +956,6 @@ impl<'a> Servicebroker_apiService<'a> {
 
     /// Delete a service_instance resource
     async fn delete_service_instance(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Servicebroker resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a servicebroker resource
-    async fn plan_servicebroker(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new servicebroker resource
-    async fn create_servicebroker(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a servicebroker resource
-    async fn read_servicebroker(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a servicebroker resource
-    async fn update_servicebroker(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a servicebroker resource
-    async fn delete_servicebroker(
         &self,
         id: &str,
     ) -> Result<()> {

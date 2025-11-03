@@ -74,8 +74,8 @@ Queries policy activities on GCP resources.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `activities` | Vec<String> | The set of activities that match the filter included in the request. |
 | `next_page_token` | String | If there might be more results than those appearing in this response, then `nextPageToken` is included. To get the next set of results, call this method again using the value of `nextPageToken` as `pageToken`. |
+| `activities` | Vec<String> | The set of activities that match the filter included in the request. |
 
 
 #### Usage Example
@@ -91,8 +91,8 @@ provider = gcp.GcpProvider {
 
 # Access activitie outputs
 activitie_id = activitie.id
-activitie_activities = activitie.activities
 activitie_next_page_token = activitie.next_page_token
+activitie_activities = activitie.activities
 ```
 
 ---

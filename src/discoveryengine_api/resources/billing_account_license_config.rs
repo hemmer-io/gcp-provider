@@ -1,6 +1,6 @@
 //! Billing_account_license_config resource
 //!
-//! Distributes a LicenseConfig from billing account level to project level.
+//! This method is called from the billing account side to retract the LicenseConfig from the given project back to the billing account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Billing_account_license_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, location: Option<String>, license_config_id: Option<String>, project_number: Option<String>, license_count: Option<String>, billing_account_license_config: String) -> Result<String> {
+    pub async fn create(&self, license_count: Option<String>, license_config: Option<String>, full_retract: Option<bool>, billing_account_license_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Workspace<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, fingerprint: Option<String>, account_id: Option<String>, container_id: Option<String>, description: Option<String>, path: Option<String>, tag_manager_url: Option<String>, name: Option<String>, workspace_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, path: Option<String>, account_id: Option<String>, description: Option<String>, container_id: Option<String>, workspace_id: Option<String>, fingerprint: Option<String>, tag_manager_url: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Workspace<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, fingerprint: Option<String>, account_id: Option<String>, container_id: Option<String>, description: Option<String>, path: Option<String>, tag_manager_url: Option<String>, name: Option<String>, workspace_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, path: Option<String>, account_id: Option<String>, description: Option<String>, container_id: Option<String>, workspace_id: Option<String>, fingerprint: Option<String>, tag_manager_url: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

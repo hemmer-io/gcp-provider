@@ -24,14 +24,14 @@ impl<'a> Firebasestorage_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "default_bucket" => {
+                self.plan_default_bucket(current_state, desired_input).await
+            }
             "project" => {
                 self.plan_project(current_state, desired_input).await
             }
             "bucket" => {
                 self.plan_bucket(current_state, desired_input).await
-            }
-            "default_bucket" => {
-                self.plan_default_bucket(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -48,14 +48,14 @@ impl<'a> Firebasestorage_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "default_bucket" => {
+                self.create_default_bucket(input).await
+            }
             "project" => {
                 self.create_project(input).await
             }
             "bucket" => {
                 self.create_bucket(input).await
-            }
-            "default_bucket" => {
-                self.create_default_bucket(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -72,14 +72,14 @@ impl<'a> Firebasestorage_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "default_bucket" => {
+                self.read_default_bucket(id).await
+            }
             "project" => {
                 self.read_project(id).await
             }
             "bucket" => {
                 self.read_bucket(id).await
-            }
-            "default_bucket" => {
-                self.read_default_bucket(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -97,14 +97,14 @@ impl<'a> Firebasestorage_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "default_bucket" => {
+                self.update_default_bucket(id, input).await
+            }
             "project" => {
                 self.update_project(id, input).await
             }
             "bucket" => {
                 self.update_bucket(id, input).await
-            }
-            "default_bucket" => {
-                self.update_default_bucket(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -121,14 +121,14 @@ impl<'a> Firebasestorage_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "default_bucket" => {
+                self.delete_default_bucket(id).await
+            }
             "project" => {
                 self.delete_project(id).await
             }
             "bucket" => {
                 self.delete_bucket(id).await
-            }
-            "default_bucket" => {
-                self.delete_default_bucket(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -141,6 +141,67 @@ impl<'a> Firebasestorage_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Default_bucket resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a default_bucket resource
+    async fn plan_default_bucket(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new default_bucket resource
+    async fn create_default_bucket(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a default_bucket resource
+    async fn read_default_bucket(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a default_bucket resource
+    async fn update_default_bucket(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a default_bucket resource
+    async fn delete_default_bucket(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -257,67 +318,6 @@ impl<'a> Firebasestorage_apiService<'a> {
 
     /// Delete a bucket resource
     async fn delete_bucket(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Default_bucket resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a default_bucket resource
-    async fn plan_default_bucket(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new default_bucket resource
-    async fn create_default_bucket(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a default_bucket resource
-    async fn read_default_bucket(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a default_bucket resource
-    async fn update_default_bucket(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a default_bucket resource
-    async fn delete_default_bucket(
         &self,
         id: &str,
     ) -> Result<()> {

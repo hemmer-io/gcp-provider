@@ -21,7 +21,7 @@ impl<'a> Online_return_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, accept_defective_only: Option<bool>, policy: Option<String>, return_policy_uri: Option<String>, return_label_source: Option<String>, process_refund_days: Option<i64>, seasonal_overrides: Option<Vec<String>>, item_conditions: Option<Vec<String>>, accept_exchange: Option<bool>, label: Option<String>, restocking_fee: Option<String>, name: Option<String>, return_methods: Option<Vec<String>>, countries: Option<Vec<String>>, return_shipping_fee: Option<String>, return_policy_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, process_refund_days: Option<i64>, return_policy_id: Option<String>, return_methods: Option<Vec<String>>, accept_defective_only: Option<bool>, countries: Option<Vec<String>>, label: Option<String>, return_policy_uri: Option<String>, item_conditions: Option<Vec<String>>, accept_exchange: Option<bool>, return_label_source: Option<String>, seasonal_overrides: Option<Vec<String>>, policy: Option<String>, return_shipping_fee: Option<String>, name: Option<String>, restocking_fee: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Online_return_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, accept_defective_only: Option<bool>, policy: Option<String>, return_policy_uri: Option<String>, return_label_source: Option<String>, process_refund_days: Option<i64>, seasonal_overrides: Option<Vec<String>>, item_conditions: Option<Vec<String>>, accept_exchange: Option<bool>, label: Option<String>, restocking_fee: Option<String>, name: Option<String>, return_methods: Option<Vec<String>>, countries: Option<Vec<String>>, return_shipping_fee: Option<String>, return_policy_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, process_refund_days: Option<i64>, return_policy_id: Option<String>, return_methods: Option<Vec<String>>, accept_defective_only: Option<bool>, countries: Option<Vec<String>>, label: Option<String>, return_policy_uri: Option<String>, item_conditions: Option<Vec<String>>, accept_exchange: Option<bool>, return_label_source: Option<String>, seasonal_overrides: Option<Vec<String>>, policy: Option<String>, return_shipping_fee: Option<String>, name: Option<String>, restocking_fee: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

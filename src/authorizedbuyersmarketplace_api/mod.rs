@@ -27,47 +27,47 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             "deal" => {
                 self.plan_deal(current_state, desired_input).await
             }
+            "auction_package" => {
+                self.plan_auction_package(current_state, desired_input).await
+            }
+            "publisher_profile" => {
+                self.plan_publisher_profile(current_state, desired_input).await
+            }
+            "client" => {
+                self.plan_client(current_state, desired_input).await
+            }
+            "proposal" => {
+                self.plan_proposal(current_state, desired_input).await
+            }
             "user" => {
                 self.plan_user(current_state, desired_input).await
             }
-            "client" => {
-                self.plan_client(current_state, desired_input).await
+            "finalized_deal" => {
+                self.plan_finalized_deal(current_state, desired_input).await
+            }
+            "user" => {
+                self.plan_user(current_state, desired_input).await
             }
             "proposal" => {
                 self.plan_proposal(current_state, desired_input).await
             }
-            "publisher_profile" => {
-                self.plan_publisher_profile(current_state, desired_input).await
-            }
             "finalized_deal" => {
                 self.plan_finalized_deal(current_state, desired_input).await
             }
-            "auction_package" => {
-                self.plan_auction_package(current_state, desired_input).await
-            }
-            "auction_package" => {
-                self.plan_auction_package(current_state, desired_input).await
+            "data_segment" => {
+                self.plan_data_segment(current_state, desired_input).await
             }
             "client" => {
                 self.plan_client(current_state, desired_input).await
-            }
-            "publisher_profile" => {
-                self.plan_publisher_profile(current_state, desired_input).await
-            }
-            "finalized_deal" => {
-                self.plan_finalized_deal(current_state, desired_input).await
-            }
-            "proposal" => {
-                self.plan_proposal(current_state, desired_input).await
             }
             "deal" => {
                 self.plan_deal(current_state, desired_input).await
             }
-            "user" => {
-                self.plan_user(current_state, desired_input).await
+            "auction_package" => {
+                self.plan_auction_package(current_state, desired_input).await
             }
-            "data_segment" => {
-                self.plan_data_segment(current_state, desired_input).await
+            "publisher_profile" => {
+                self.plan_publisher_profile(current_state, desired_input).await
             }
             "data_segment" => {
                 self.plan_data_segment(current_state, desired_input).await
@@ -90,47 +90,47 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             "deal" => {
                 self.create_deal(input).await
             }
+            "auction_package" => {
+                self.create_auction_package(input).await
+            }
+            "publisher_profile" => {
+                self.create_publisher_profile(input).await
+            }
+            "client" => {
+                self.create_client(input).await
+            }
+            "proposal" => {
+                self.create_proposal(input).await
+            }
             "user" => {
                 self.create_user(input).await
             }
-            "client" => {
-                self.create_client(input).await
+            "finalized_deal" => {
+                self.create_finalized_deal(input).await
+            }
+            "user" => {
+                self.create_user(input).await
             }
             "proposal" => {
                 self.create_proposal(input).await
             }
-            "publisher_profile" => {
-                self.create_publisher_profile(input).await
-            }
             "finalized_deal" => {
                 self.create_finalized_deal(input).await
             }
-            "auction_package" => {
-                self.create_auction_package(input).await
-            }
-            "auction_package" => {
-                self.create_auction_package(input).await
+            "data_segment" => {
+                self.create_data_segment(input).await
             }
             "client" => {
                 self.create_client(input).await
-            }
-            "publisher_profile" => {
-                self.create_publisher_profile(input).await
-            }
-            "finalized_deal" => {
-                self.create_finalized_deal(input).await
-            }
-            "proposal" => {
-                self.create_proposal(input).await
             }
             "deal" => {
                 self.create_deal(input).await
             }
-            "user" => {
-                self.create_user(input).await
+            "auction_package" => {
+                self.create_auction_package(input).await
             }
-            "data_segment" => {
-                self.create_data_segment(input).await
+            "publisher_profile" => {
+                self.create_publisher_profile(input).await
             }
             "data_segment" => {
                 self.create_data_segment(input).await
@@ -153,47 +153,47 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             "deal" => {
                 self.read_deal(id).await
             }
+            "auction_package" => {
+                self.read_auction_package(id).await
+            }
+            "publisher_profile" => {
+                self.read_publisher_profile(id).await
+            }
+            "client" => {
+                self.read_client(id).await
+            }
+            "proposal" => {
+                self.read_proposal(id).await
+            }
             "user" => {
                 self.read_user(id).await
             }
-            "client" => {
-                self.read_client(id).await
+            "finalized_deal" => {
+                self.read_finalized_deal(id).await
+            }
+            "user" => {
+                self.read_user(id).await
             }
             "proposal" => {
                 self.read_proposal(id).await
             }
-            "publisher_profile" => {
-                self.read_publisher_profile(id).await
-            }
             "finalized_deal" => {
                 self.read_finalized_deal(id).await
             }
-            "auction_package" => {
-                self.read_auction_package(id).await
-            }
-            "auction_package" => {
-                self.read_auction_package(id).await
+            "data_segment" => {
+                self.read_data_segment(id).await
             }
             "client" => {
                 self.read_client(id).await
-            }
-            "publisher_profile" => {
-                self.read_publisher_profile(id).await
-            }
-            "finalized_deal" => {
-                self.read_finalized_deal(id).await
-            }
-            "proposal" => {
-                self.read_proposal(id).await
             }
             "deal" => {
                 self.read_deal(id).await
             }
-            "user" => {
-                self.read_user(id).await
+            "auction_package" => {
+                self.read_auction_package(id).await
             }
-            "data_segment" => {
-                self.read_data_segment(id).await
+            "publisher_profile" => {
+                self.read_publisher_profile(id).await
             }
             "data_segment" => {
                 self.read_data_segment(id).await
@@ -217,47 +217,47 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             "deal" => {
                 self.update_deal(id, input).await
             }
+            "auction_package" => {
+                self.update_auction_package(id, input).await
+            }
+            "publisher_profile" => {
+                self.update_publisher_profile(id, input).await
+            }
+            "client" => {
+                self.update_client(id, input).await
+            }
+            "proposal" => {
+                self.update_proposal(id, input).await
+            }
             "user" => {
                 self.update_user(id, input).await
             }
-            "client" => {
-                self.update_client(id, input).await
+            "finalized_deal" => {
+                self.update_finalized_deal(id, input).await
+            }
+            "user" => {
+                self.update_user(id, input).await
             }
             "proposal" => {
                 self.update_proposal(id, input).await
             }
-            "publisher_profile" => {
-                self.update_publisher_profile(id, input).await
-            }
             "finalized_deal" => {
                 self.update_finalized_deal(id, input).await
             }
-            "auction_package" => {
-                self.update_auction_package(id, input).await
-            }
-            "auction_package" => {
-                self.update_auction_package(id, input).await
+            "data_segment" => {
+                self.update_data_segment(id, input).await
             }
             "client" => {
                 self.update_client(id, input).await
-            }
-            "publisher_profile" => {
-                self.update_publisher_profile(id, input).await
-            }
-            "finalized_deal" => {
-                self.update_finalized_deal(id, input).await
-            }
-            "proposal" => {
-                self.update_proposal(id, input).await
             }
             "deal" => {
                 self.update_deal(id, input).await
             }
-            "user" => {
-                self.update_user(id, input).await
+            "auction_package" => {
+                self.update_auction_package(id, input).await
             }
-            "data_segment" => {
-                self.update_data_segment(id, input).await
+            "publisher_profile" => {
+                self.update_publisher_profile(id, input).await
             }
             "data_segment" => {
                 self.update_data_segment(id, input).await
@@ -280,47 +280,47 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             "deal" => {
                 self.delete_deal(id).await
             }
+            "auction_package" => {
+                self.delete_auction_package(id).await
+            }
+            "publisher_profile" => {
+                self.delete_publisher_profile(id).await
+            }
+            "client" => {
+                self.delete_client(id).await
+            }
+            "proposal" => {
+                self.delete_proposal(id).await
+            }
             "user" => {
                 self.delete_user(id).await
             }
-            "client" => {
-                self.delete_client(id).await
+            "finalized_deal" => {
+                self.delete_finalized_deal(id).await
+            }
+            "user" => {
+                self.delete_user(id).await
             }
             "proposal" => {
                 self.delete_proposal(id).await
             }
-            "publisher_profile" => {
-                self.delete_publisher_profile(id).await
-            }
             "finalized_deal" => {
                 self.delete_finalized_deal(id).await
             }
-            "auction_package" => {
-                self.delete_auction_package(id).await
-            }
-            "auction_package" => {
-                self.delete_auction_package(id).await
+            "data_segment" => {
+                self.delete_data_segment(id).await
             }
             "client" => {
                 self.delete_client(id).await
-            }
-            "publisher_profile" => {
-                self.delete_publisher_profile(id).await
-            }
-            "finalized_deal" => {
-                self.delete_finalized_deal(id).await
-            }
-            "proposal" => {
-                self.delete_proposal(id).await
             }
             "deal" => {
                 self.delete_deal(id).await
             }
-            "user" => {
-                self.delete_user(id).await
+            "auction_package" => {
+                self.delete_auction_package(id).await
             }
-            "data_segment" => {
-                self.delete_data_segment(id).await
+            "publisher_profile" => {
+                self.delete_publisher_profile(id).await
             }
             "data_segment" => {
                 self.delete_data_segment(id).await
@@ -400,6 +400,250 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Auction_package resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a auction_package resource
+    async fn plan_auction_package(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new auction_package resource
+    async fn create_auction_package(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a auction_package resource
+    async fn read_auction_package(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a auction_package resource
+    async fn update_auction_package(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a auction_package resource
+    async fn delete_auction_package(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Publisher_profile resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a publisher_profile resource
+    async fn plan_publisher_profile(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new publisher_profile resource
+    async fn create_publisher_profile(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a publisher_profile resource
+    async fn read_publisher_profile(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a publisher_profile resource
+    async fn update_publisher_profile(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a publisher_profile resource
+    async fn delete_publisher_profile(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Client resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a client resource
+    async fn plan_client(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new client resource
+    async fn create_client(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a client resource
+    async fn read_client(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a client resource
+    async fn update_client(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a client resource
+    async fn delete_client(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Proposal resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a proposal resource
+    async fn plan_proposal(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new proposal resource
+    async fn create_proposal(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a proposal resource
+    async fn read_proposal(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a proposal resource
+    async fn update_proposal(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a proposal resource
+    async fn delete_proposal(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // User resource operations
     // ------------------------------------------------------------------------
 
@@ -461,11 +705,11 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Client resource operations
+    // Finalized_deal resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a client resource
-    async fn plan_client(
+    /// Plan changes to a finalized_deal resource
+    async fn plan_finalized_deal(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -480,8 +724,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new client resource
-    async fn create_client(
+    /// Create a new finalized_deal resource
+    async fn create_finalized_deal(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -490,8 +734,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a client resource
-    async fn read_client(
+    /// Read a finalized_deal resource
+    async fn read_finalized_deal(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -500,8 +744,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a client resource
-    async fn update_client(
+    /// Update a finalized_deal resource
+    async fn update_finalized_deal(
         &self,
         id: &str,
         input: ResourceInput,
@@ -511,8 +755,69 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a client resource
-    async fn delete_client(
+    /// Delete a finalized_deal resource
+    async fn delete_finalized_deal(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // User resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a user resource
+    async fn plan_user(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new user resource
+    async fn create_user(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a user resource
+    async fn read_user(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a user resource
+    async fn update_user(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a user resource
+    async fn delete_user(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -583,67 +888,6 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Publisher_profile resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a publisher_profile resource
-    async fn plan_publisher_profile(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new publisher_profile resource
-    async fn create_publisher_profile(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a publisher_profile resource
-    async fn read_publisher_profile(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a publisher_profile resource
-    async fn update_publisher_profile(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a publisher_profile resource
-    async fn delete_publisher_profile(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Finalized_deal resource operations
     // ------------------------------------------------------------------------
 
@@ -705,11 +949,11 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Auction_package resource operations
+    // Data_segment resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a auction_package resource
-    async fn plan_auction_package(
+    /// Plan changes to a data_segment resource
+    async fn plan_data_segment(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -724,8 +968,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new auction_package resource
-    async fn create_auction_package(
+    /// Create a new data_segment resource
+    async fn create_data_segment(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -734,8 +978,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a auction_package resource
-    async fn read_auction_package(
+    /// Read a data_segment resource
+    async fn read_data_segment(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -744,8 +988,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a auction_package resource
-    async fn update_auction_package(
+    /// Update a data_segment resource
+    async fn update_data_segment(
         &self,
         id: &str,
         input: ResourceInput,
@@ -755,69 +999,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a auction_package resource
-    async fn delete_auction_package(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Auction_package resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a auction_package resource
-    async fn plan_auction_package(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new auction_package resource
-    async fn create_auction_package(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a auction_package resource
-    async fn read_auction_package(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a auction_package resource
-    async fn update_auction_package(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a auction_package resource
-    async fn delete_auction_package(
+    /// Delete a data_segment resource
+    async fn delete_data_segment(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -879,189 +1062,6 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
 
     /// Delete a client resource
     async fn delete_client(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Publisher_profile resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a publisher_profile resource
-    async fn plan_publisher_profile(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new publisher_profile resource
-    async fn create_publisher_profile(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a publisher_profile resource
-    async fn read_publisher_profile(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a publisher_profile resource
-    async fn update_publisher_profile(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a publisher_profile resource
-    async fn delete_publisher_profile(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Finalized_deal resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a finalized_deal resource
-    async fn plan_finalized_deal(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new finalized_deal resource
-    async fn create_finalized_deal(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a finalized_deal resource
-    async fn read_finalized_deal(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a finalized_deal resource
-    async fn update_finalized_deal(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a finalized_deal resource
-    async fn delete_finalized_deal(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Proposal resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a proposal resource
-    async fn plan_proposal(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new proposal resource
-    async fn create_proposal(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a proposal resource
-    async fn read_proposal(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a proposal resource
-    async fn update_proposal(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a proposal resource
-    async fn delete_proposal(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1132,11 +1132,11 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // User resource operations
+    // Auction_package resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a user resource
-    async fn plan_user(
+    /// Plan changes to a auction_package resource
+    async fn plan_auction_package(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1151,8 +1151,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new user resource
-    async fn create_user(
+    /// Create a new auction_package resource
+    async fn create_auction_package(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1161,8 +1161,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a user resource
-    async fn read_user(
+    /// Read a auction_package resource
+    async fn read_auction_package(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1171,8 +1171,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a user resource
-    async fn update_user(
+    /// Update a auction_package resource
+    async fn update_auction_package(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1182,8 +1182,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a user resource
-    async fn delete_user(
+    /// Delete a auction_package resource
+    async fn delete_auction_package(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1193,11 +1193,11 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Data_segment resource operations
+    // Publisher_profile resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a data_segment resource
-    async fn plan_data_segment(
+    /// Plan changes to a publisher_profile resource
+    async fn plan_publisher_profile(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1212,8 +1212,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new data_segment resource
-    async fn create_data_segment(
+    /// Create a new publisher_profile resource
+    async fn create_publisher_profile(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1222,8 +1222,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a data_segment resource
-    async fn read_data_segment(
+    /// Read a publisher_profile resource
+    async fn read_publisher_profile(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1232,8 +1232,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a data_segment resource
-    async fn update_data_segment(
+    /// Update a publisher_profile resource
+    async fn update_publisher_profile(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1243,8 +1243,8 @@ impl<'a> Authorizedbuyersmarketplace_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a data_segment resource
-    async fn delete_data_segment(
+    /// Delete a publisher_profile resource
+    async fn delete_publisher_profile(
         &self,
         id: &str,
     ) -> Result<()> {

@@ -21,7 +21,7 @@ impl<'a> Record<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, url: Option<String>, origin: Option<String>, metrics: Option<Vec<String>>, collection_period_count: Option<i64>, form_factor: Option<String>) -> Result<String> {
+    pub async fn create(&self, url: Option<String>, metrics: Option<Vec<String>>, collection_period_count: Option<i64>, form_factor: Option<String>, origin: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

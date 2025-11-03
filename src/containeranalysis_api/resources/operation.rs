@@ -21,7 +21,7 @@ impl<'a> Operation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, operation_id: Option<String>, operation: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, operation: Option<String>, operation_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -35,7 +35,7 @@ impl<'a> Operation<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, operation_id: Option<String>, operation: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, operation: Option<String>, operation_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

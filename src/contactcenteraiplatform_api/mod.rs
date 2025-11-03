@@ -24,14 +24,14 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
+            "contact_center" => {
+                self.plan_contact_center(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "contact_center" => {
-                self.plan_contact_center(current_state, desired_input).await
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -48,14 +48,14 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "operation" => {
-                self.create_operation(input).await
+            "contact_center" => {
+                self.create_contact_center(input).await
             }
             "location" => {
                 self.create_location(input).await
             }
-            "contact_center" => {
-                self.create_contact_center(input).await
+            "operation" => {
+                self.create_operation(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -72,14 +72,14 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "operation" => {
-                self.read_operation(id).await
+            "contact_center" => {
+                self.read_contact_center(id).await
             }
             "location" => {
                 self.read_location(id).await
             }
-            "contact_center" => {
-                self.read_contact_center(id).await
+            "operation" => {
+                self.read_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -97,14 +97,14 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "operation" => {
-                self.update_operation(id, input).await
+            "contact_center" => {
+                self.update_contact_center(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
             }
-            "contact_center" => {
-                self.update_contact_center(id, input).await
+            "operation" => {
+                self.update_operation(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -121,14 +121,14 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "operation" => {
-                self.delete_operation(id).await
+            "contact_center" => {
+                self.delete_contact_center(id).await
             }
             "location" => {
                 self.delete_location(id).await
             }
-            "contact_center" => {
-                self.delete_contact_center(id).await
+            "operation" => {
+                self.delete_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -144,11 +144,11 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
+    // Contact_center resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a operation resource
-    async fn plan_operation(
+    /// Plan changes to a contact_center resource
+    async fn plan_contact_center(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -163,8 +163,8 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new operation resource
-    async fn create_operation(
+    /// Create a new contact_center resource
+    async fn create_contact_center(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -173,8 +173,8 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a operation resource
-    async fn read_operation(
+    /// Read a contact_center resource
+    async fn read_contact_center(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -183,8 +183,8 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a operation resource
-    async fn update_operation(
+    /// Update a contact_center resource
+    async fn update_contact_center(
         &self,
         id: &str,
         input: ResourceInput,
@@ -194,8 +194,8 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a operation resource
-    async fn delete_operation(
+    /// Delete a contact_center resource
+    async fn delete_contact_center(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -266,11 +266,11 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Contact_center resource operations
+    // Operation resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a contact_center resource
-    async fn plan_contact_center(
+    /// Plan changes to a operation resource
+    async fn plan_operation(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -285,8 +285,8 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new contact_center resource
-    async fn create_contact_center(
+    /// Create a new operation resource
+    async fn create_operation(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -295,8 +295,8 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a contact_center resource
-    async fn read_contact_center(
+    /// Read a operation resource
+    async fn read_operation(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -305,8 +305,8 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a contact_center resource
-    async fn update_contact_center(
+    /// Update a operation resource
+    async fn update_operation(
         &self,
         id: &str,
         input: ResourceInput,
@@ -316,8 +316,8 @@ impl<'a> Contactcenteraiplatform_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a contact_center resource
-    async fn delete_contact_center(
+    /// Delete a operation resource
+    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {

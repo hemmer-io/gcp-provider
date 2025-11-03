@@ -1,6 +1,6 @@
 //! Playintegrity resource
 //!
-//! Decodes the PC integrity token and returns the PC token payload.
+//! Decodes the integrity token and returns the token payload.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

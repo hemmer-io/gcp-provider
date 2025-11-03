@@ -10,58 +10,12 @@
 
 The mybusinessbusinesscalls_api service provides access to 2 resource types:
 
-- [Location](#location) [RU]
 - [Businesscallsinsight](#businesscallsinsight) [R]
+- [Location](#location) [RU]
 
 ---
 
 ## Resources
-
-
-### Location
-
-Returns the Business calls settings resource for the given location.
-
-**Operations**: ✅ Read ✅ Update
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `calls_state` | String |  | Required. The state of this location's enrollment in Business calls. |
-| `consent_time` | String |  | Input only. Time when the end user provided consent to the API user to enable business calls. |
-| `name` | String |  | Required. The resource name of the calls settings. Format: locations/{location}/businesscallssettings |
-| `name` | String | ✅ | Required. The resource name of the calls settings. Format: locations/{location}/businesscallssettings |
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `calls_state` | String | Required. The state of this location's enrollment in Business calls. |
-| `consent_time` | String | Input only. Time when the end user provided consent to the API user to enable business calls. |
-| `name` | String | Required. The resource name of the calls settings. Format: locations/{location}/businesscallssettings |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Access location outputs
-location_id = location.id
-location_calls_state = location.calls_state
-location_consent_time = location.consent_time
-location_name = location.name
-```
-
----
 
 
 ### Businesscallsinsight
@@ -104,6 +58,52 @@ businesscallsinsight_next_page_token = businesscallsinsight.next_page_token
 ---
 
 
+### Location
+
+Returns the Business calls settings resource for the given location.
+
+**Operations**: ✅ Read ✅ Update
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `consent_time` | String |  | Input only. Time when the end user provided consent to the API user to enable business calls. |
+| `calls_state` | String |  | Required. The state of this location's enrollment in Business calls. |
+| `name` | String |  | Required. The resource name of the calls settings. Format: locations/{location}/businesscallssettings |
+| `name` | String | ✅ | Required. The resource name of the calls settings. Format: locations/{location}/businesscallssettings |
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `consent_time` | String | Input only. Time when the end user provided consent to the API user to enable business calls. |
+| `calls_state` | String | Required. The state of this location's enrollment in Business calls. |
+| `name` | String | Required. The resource name of the calls settings. Format: locations/{location}/businesscallssettings |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Access location outputs
+location_id = location.id
+location_consent_time = location.consent_time
+location_calls_state = location.calls_state
+location_name = location.name
+```
+
+---
+
+
 
 ## Common Operations
 
@@ -116,15 +116,12 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple location resources
-location_0 = provider.mybusinessbusinesscalls_api.Location {
-    name = "value-0"
+# Create multiple businesscallsinsight resources
+businesscallsinsight_0 = provider.mybusinessbusinesscalls_api.Businesscallsinsight {
 }
-location_1 = provider.mybusinessbusinesscalls_api.Location {
-    name = "value-1"
+businesscallsinsight_1 = provider.mybusinessbusinesscalls_api.Businesscallsinsight {
 }
-location_2 = provider.mybusinessbusinesscalls_api.Location {
-    name = "value-2"
+businesscallsinsight_2 = provider.mybusinessbusinesscalls_api.Businesscallsinsight {
 }
 ```
 
@@ -133,8 +130,7 @@ location_2 = provider.mybusinessbusinesscalls_api.Location {
 ```kcl
 # Only create in production
 if environment == "production":
-    location = provider.mybusinessbusinesscalls_api.Location {
-        name = "production-value"
+    businesscallsinsight = provider.mybusinessbusinesscalls_api.Businesscallsinsight {
     }
 ```
 

@@ -27,11 +27,11 @@ impl<'a> Storagebatchoperations_apiService<'a> {
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
-            "job" => {
-                self.plan_job(current_state, desired_input).await
-            }
             "location" => {
                 self.plan_location(current_state, desired_input).await
+            }
+            "job" => {
+                self.plan_job(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -51,11 +51,11 @@ impl<'a> Storagebatchoperations_apiService<'a> {
             "operation" => {
                 self.create_operation(input).await
             }
-            "job" => {
-                self.create_job(input).await
-            }
             "location" => {
                 self.create_location(input).await
+            }
+            "job" => {
+                self.create_job(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -75,11 +75,11 @@ impl<'a> Storagebatchoperations_apiService<'a> {
             "operation" => {
                 self.read_operation(id).await
             }
-            "job" => {
-                self.read_job(id).await
-            }
             "location" => {
                 self.read_location(id).await
+            }
+            "job" => {
+                self.read_job(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -100,11 +100,11 @@ impl<'a> Storagebatchoperations_apiService<'a> {
             "operation" => {
                 self.update_operation(id, input).await
             }
-            "job" => {
-                self.update_job(id, input).await
-            }
             "location" => {
                 self.update_location(id, input).await
+            }
+            "job" => {
+                self.update_job(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,11 +124,11 @@ impl<'a> Storagebatchoperations_apiService<'a> {
             "operation" => {
                 self.delete_operation(id).await
             }
-            "job" => {
-                self.delete_job(id).await
-            }
             "location" => {
                 self.delete_location(id).await
+            }
+            "job" => {
+                self.delete_job(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -205,67 +205,6 @@ impl<'a> Storagebatchoperations_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Job resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a job resource
-    async fn plan_job(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new job resource
-    async fn create_job(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a job resource
-    async fn read_job(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a job resource
-    async fn update_job(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a job resource
-    async fn delete_job(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Location resource operations
     // ------------------------------------------------------------------------
 
@@ -318,6 +257,67 @@ impl<'a> Storagebatchoperations_apiService<'a> {
 
     /// Delete a location resource
     async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Job resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a job resource
+    async fn plan_job(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new job resource
+    async fn create_job(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a job resource
+    async fn read_job(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a job resource
+    async fn update_job(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a job resource
+    async fn delete_job(
         &self,
         id: &str,
     ) -> Result<()> {

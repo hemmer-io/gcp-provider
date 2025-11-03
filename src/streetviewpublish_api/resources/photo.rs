@@ -21,7 +21,7 @@ impl<'a> Photo<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, upload_time: Option<String>, capture_time: Option<String>, photo_id: Option<String>, share_link: Option<String>, maps_publish_status: Option<String>, download_url: Option<String>, upload_reference: Option<String>, connections: Option<Vec<String>>, thumbnail_url: Option<String>, pose: Option<String>, transfer_status: Option<String>, places: Option<Vec<String>>, view_count: Option<String>) -> Result<String> {
+    pub async fn create(&self, connections: Option<Vec<String>>, upload_time: Option<String>, view_count: Option<String>, maps_publish_status: Option<String>, capture_time: Option<String>, download_url: Option<String>, photo_id: Option<String>, share_link: Option<String>, places: Option<Vec<String>>, thumbnail_url: Option<String>, transfer_status: Option<String>, upload_reference: Option<String>, pose: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Photo<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, upload_time: Option<String>, capture_time: Option<String>, photo_id: Option<String>, share_link: Option<String>, maps_publish_status: Option<String>, download_url: Option<String>, upload_reference: Option<String>, connections: Option<Vec<String>>, thumbnail_url: Option<String>, pose: Option<String>, transfer_status: Option<String>, places: Option<Vec<String>>, view_count: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, connections: Option<Vec<String>>, upload_time: Option<String>, view_count: Option<String>, maps_publish_status: Option<String>, capture_time: Option<String>, download_url: Option<String>, photo_id: Option<String>, share_link: Option<String>, places: Option<Vec<String>>, thumbnail_url: Option<String>, transfer_status: Option<String>, upload_reference: Option<String>, pose: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

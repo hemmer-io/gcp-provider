@@ -24,20 +24,20 @@ impl<'a> Searchconsole_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "mobile_friendly_test" => {
-                self.plan_mobile_friendly_test(current_state, desired_input).await
-            }
             "sitemap" => {
                 self.plan_sitemap(current_state, desired_input).await
-            }
-            "index" => {
-                self.plan_index(current_state, desired_input).await
             }
             "searchanalytic" => {
                 self.plan_searchanalytic(current_state, desired_input).await
             }
+            "index" => {
+                self.plan_index(current_state, desired_input).await
+            }
             "site" => {
                 self.plan_site(current_state, desired_input).await
+            }
+            "mobile_friendly_test" => {
+                self.plan_mobile_friendly_test(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -54,20 +54,20 @@ impl<'a> Searchconsole_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "mobile_friendly_test" => {
-                self.create_mobile_friendly_test(input).await
-            }
             "sitemap" => {
                 self.create_sitemap(input).await
-            }
-            "index" => {
-                self.create_index(input).await
             }
             "searchanalytic" => {
                 self.create_searchanalytic(input).await
             }
+            "index" => {
+                self.create_index(input).await
+            }
             "site" => {
                 self.create_site(input).await
+            }
+            "mobile_friendly_test" => {
+                self.create_mobile_friendly_test(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -84,20 +84,20 @@ impl<'a> Searchconsole_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "mobile_friendly_test" => {
-                self.read_mobile_friendly_test(id).await
-            }
             "sitemap" => {
                 self.read_sitemap(id).await
-            }
-            "index" => {
-                self.read_index(id).await
             }
             "searchanalytic" => {
                 self.read_searchanalytic(id).await
             }
+            "index" => {
+                self.read_index(id).await
+            }
             "site" => {
                 self.read_site(id).await
+            }
+            "mobile_friendly_test" => {
+                self.read_mobile_friendly_test(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -115,20 +115,20 @@ impl<'a> Searchconsole_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "mobile_friendly_test" => {
-                self.update_mobile_friendly_test(id, input).await
-            }
             "sitemap" => {
                 self.update_sitemap(id, input).await
-            }
-            "index" => {
-                self.update_index(id, input).await
             }
             "searchanalytic" => {
                 self.update_searchanalytic(id, input).await
             }
+            "index" => {
+                self.update_index(id, input).await
+            }
             "site" => {
                 self.update_site(id, input).await
+            }
+            "mobile_friendly_test" => {
+                self.update_mobile_friendly_test(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -145,20 +145,20 @@ impl<'a> Searchconsole_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "mobile_friendly_test" => {
-                self.delete_mobile_friendly_test(id).await
-            }
             "sitemap" => {
                 self.delete_sitemap(id).await
-            }
-            "index" => {
-                self.delete_index(id).await
             }
             "searchanalytic" => {
                 self.delete_searchanalytic(id).await
             }
+            "index" => {
+                self.delete_index(id).await
+            }
             "site" => {
                 self.delete_site(id).await
+            }
+            "mobile_friendly_test" => {
+                self.delete_mobile_friendly_test(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -171,67 +171,6 @@ impl<'a> Searchconsole_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Mobile_friendly_test resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a mobile_friendly_test resource
-    async fn plan_mobile_friendly_test(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new mobile_friendly_test resource
-    async fn create_mobile_friendly_test(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a mobile_friendly_test resource
-    async fn read_mobile_friendly_test(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a mobile_friendly_test resource
-    async fn update_mobile_friendly_test(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a mobile_friendly_test resource
-    async fn delete_mobile_friendly_test(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -287,67 +226,6 @@ impl<'a> Searchconsole_apiService<'a> {
 
     /// Delete a sitemap resource
     async fn delete_sitemap(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Index resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a index resource
-    async fn plan_index(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new index resource
-    async fn create_index(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a index resource
-    async fn read_index(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a index resource
-    async fn update_index(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a index resource
-    async fn delete_index(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -418,6 +296,67 @@ impl<'a> Searchconsole_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Index resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a index resource
+    async fn plan_index(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new index resource
+    async fn create_index(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a index resource
+    async fn read_index(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a index resource
+    async fn update_index(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a index resource
+    async fn delete_index(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Site resource operations
     // ------------------------------------------------------------------------
 
@@ -470,6 +409,67 @@ impl<'a> Searchconsole_apiService<'a> {
 
     /// Delete a site resource
     async fn delete_site(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Mobile_friendly_test resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a mobile_friendly_test resource
+    async fn plan_mobile_friendly_test(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new mobile_friendly_test resource
+    async fn create_mobile_friendly_test(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a mobile_friendly_test resource
+    async fn read_mobile_friendly_test(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a mobile_friendly_test resource
+    async fn update_mobile_friendly_test(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a mobile_friendly_test resource
+    async fn delete_mobile_friendly_test(
         &self,
         id: &str,
     ) -> Result<()> {

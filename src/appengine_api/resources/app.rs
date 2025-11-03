@@ -21,7 +21,7 @@ impl<'a> App<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, default_bucket: Option<String>, default_hostname: Option<String>, auth_domain: Option<String>, gcr_domain: Option<String>, generated_customer_metadata: Option<HashMap<String, String>>, iap: Option<String>, dispatch_rules: Option<Vec<String>>, name: Option<String>, default_cookie_expiration: Option<String>, id: Option<String>, service_account: Option<String>, feature_settings: Option<String>, serving_status: Option<String>, code_bucket: Option<String>, ssl_policy: Option<String>, location_id: Option<String>, database_type: Option<String>) -> Result<String> {
+    pub async fn create(&self, location_id: Option<String>, ssl_policy: Option<String>, default_cookie_expiration: Option<String>, default_bucket: Option<String>, id: Option<String>, code_bucket: Option<String>, auth_domain: Option<String>, default_hostname: Option<String>, service_account: Option<String>, iap: Option<String>, feature_settings: Option<String>, name: Option<String>, gcr_domain: Option<String>, serving_status: Option<String>, generated_customer_metadata: Option<HashMap<String, String>>, database_type: Option<String>, dispatch_rules: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> App<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, default_bucket: Option<String>, default_hostname: Option<String>, auth_domain: Option<String>, gcr_domain: Option<String>, generated_customer_metadata: Option<HashMap<String, String>>, iap: Option<String>, dispatch_rules: Option<Vec<String>>, name: Option<String>, default_cookie_expiration: Option<String>, id: Option<String>, service_account: Option<String>, feature_settings: Option<String>, serving_status: Option<String>, code_bucket: Option<String>, ssl_policy: Option<String>, location_id: Option<String>, database_type: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, location_id: Option<String>, ssl_policy: Option<String>, default_cookie_expiration: Option<String>, default_bucket: Option<String>, id: Option<String>, code_bucket: Option<String>, auth_domain: Option<String>, default_hostname: Option<String>, service_account: Option<String>, iap: Option<String>, feature_settings: Option<String>, name: Option<String>, gcr_domain: Option<String>, serving_status: Option<String>, generated_customer_metadata: Option<HashMap<String, String>>, database_type: Option<String>, dispatch_rules: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

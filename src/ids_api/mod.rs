@@ -24,14 +24,14 @@ impl<'a> Ids_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "endpoint" => {
-                self.plan_endpoint(current_state, desired_input).await
+            "location" => {
+                self.plan_location(current_state, desired_input).await
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
+            "endpoint" => {
+                self.plan_endpoint(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -48,14 +48,14 @@ impl<'a> Ids_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "endpoint" => {
-                self.create_endpoint(input).await
+            "location" => {
+                self.create_location(input).await
             }
             "operation" => {
                 self.create_operation(input).await
             }
-            "location" => {
-                self.create_location(input).await
+            "endpoint" => {
+                self.create_endpoint(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -72,14 +72,14 @@ impl<'a> Ids_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "endpoint" => {
-                self.read_endpoint(id).await
+            "location" => {
+                self.read_location(id).await
             }
             "operation" => {
                 self.read_operation(id).await
             }
-            "location" => {
-                self.read_location(id).await
+            "endpoint" => {
+                self.read_endpoint(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -97,14 +97,14 @@ impl<'a> Ids_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "endpoint" => {
-                self.update_endpoint(id, input).await
+            "location" => {
+                self.update_location(id, input).await
             }
             "operation" => {
                 self.update_operation(id, input).await
             }
-            "location" => {
-                self.update_location(id, input).await
+            "endpoint" => {
+                self.update_endpoint(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -121,14 +121,14 @@ impl<'a> Ids_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "endpoint" => {
-                self.delete_endpoint(id).await
+            "location" => {
+                self.delete_location(id).await
             }
             "operation" => {
                 self.delete_operation(id).await
             }
-            "location" => {
-                self.delete_location(id).await
+            "endpoint" => {
+                self.delete_endpoint(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -144,11 +144,11 @@ impl<'a> Ids_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Endpoint resource operations
+    // Location resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a endpoint resource
-    async fn plan_endpoint(
+    /// Plan changes to a location resource
+    async fn plan_location(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -163,8 +163,8 @@ impl<'a> Ids_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new endpoint resource
-    async fn create_endpoint(
+    /// Create a new location resource
+    async fn create_location(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -173,8 +173,8 @@ impl<'a> Ids_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a endpoint resource
-    async fn read_endpoint(
+    /// Read a location resource
+    async fn read_location(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -183,8 +183,8 @@ impl<'a> Ids_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a endpoint resource
-    async fn update_endpoint(
+    /// Update a location resource
+    async fn update_location(
         &self,
         id: &str,
         input: ResourceInput,
@@ -194,8 +194,8 @@ impl<'a> Ids_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a endpoint resource
-    async fn delete_endpoint(
+    /// Delete a location resource
+    async fn delete_location(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -266,11 +266,11 @@ impl<'a> Ids_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Location resource operations
+    // Endpoint resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a location resource
-    async fn plan_location(
+    /// Plan changes to a endpoint resource
+    async fn plan_endpoint(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -285,8 +285,8 @@ impl<'a> Ids_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new location resource
-    async fn create_location(
+    /// Create a new endpoint resource
+    async fn create_endpoint(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -295,8 +295,8 @@ impl<'a> Ids_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a location resource
-    async fn read_location(
+    /// Read a endpoint resource
+    async fn read_endpoint(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -305,8 +305,8 @@ impl<'a> Ids_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a location resource
-    async fn update_location(
+    /// Update a endpoint resource
+    async fn update_endpoint(
         &self,
         id: &str,
         input: ResourceInput,
@@ -316,8 +316,8 @@ impl<'a> Ids_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a location resource
-    async fn delete_location(
+    /// Delete a endpoint resource
+    async fn delete_endpoint(
         &self,
         id: &str,
     ) -> Result<()> {

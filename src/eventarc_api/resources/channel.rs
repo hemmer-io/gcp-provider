@@ -21,7 +21,7 @@ impl<'a> Channel<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, provider: Option<String>, labels: Option<HashMap<String, String>>, activation_token: Option<String>, crypto_key_name: Option<String>, name: Option<String>, uid: Option<String>, pubsub_topic: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, update_time: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, activation_token: Option<String>, provider: Option<String>, satisfies_pzs: Option<bool>, state: Option<String>, uid: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, create_time: Option<String>, crypto_key_name: Option<String>, name: Option<String>, pubsub_topic: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Channel<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, provider: Option<String>, labels: Option<HashMap<String, String>>, activation_token: Option<String>, crypto_key_name: Option<String>, name: Option<String>, uid: Option<String>, pubsub_topic: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, update_time: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, activation_token: Option<String>, provider: Option<String>, satisfies_pzs: Option<bool>, state: Option<String>, uid: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, create_time: Option<String>, crypto_key_name: Option<String>, name: Option<String>, pubsub_topic: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

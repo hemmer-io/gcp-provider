@@ -19,7 +19,7 @@ The spectrum_api service provides access to 1 resource type:
 
 ### Paw
 
-The Google Spectrum Database does not support batch requests, so this method always yields an UNIMPLEMENTED error.
+Requests information about the available spectrum for a device at a location. Requests from a fixed-mode device must include owner information so the device can be registered with the database.
 
 **Operations**: ✅ Create
 
@@ -27,19 +27,17 @@ The Google Spectrum Database does not support batch requests, so this method alw
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `request_type` | String |  | The request type parameter is an optional parameter that can be used to modify an available spectrum batch request, but its use depends on applicable regulatory rules. For example, It may be used to request generic slave device parameters without having to specify the device descriptor for a specific device. When the requestType parameter is missing, the request is for a specific device (master or slave), and the device descriptor parameter for the device on whose behalf the batch request is made is required. |
-| `type` | String |  | The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).
+| `version` | String |  | The PAWS version. Must be exactly 1.0.
 
 Required field. |
-| `capabilities` | String |  | The master device may include its device capabilities to limit the available-spectrum batch response to the spectrum that is compatible with its capabilities. The database should not return spectrum that is incompatible with the specified capabilities. |
-| `master_device_desc` | String |  | When an available spectrum batch request is made by the master device (a device with geolocation capability) on behalf of a slave device (a device without geolocation capability), the rules of the applicable regulatory domain may require the master device to provide its own device descriptor information (in addition to device descriptor information for the slave device in a separate parameter). |
-| `locations` | Vec<String> |  | A geolocation list is required. This allows a device to specify its current location plus additional anticipated locations when allowed by the regulatory domain. At least one location must be included. Geolocation must be given as the location of the radiation center of the device's antenna. If a location specifies a region, rather than a point, the database may return an UNIMPLEMENTED error if it does not support query by region.
-
-There is no upper limit on the number of locations included in a available spectrum batch request, but the database may restrict the number of locations it supports by returning a response with fewer locations than specified in the batch request. Note that geolocations must be those of the master device (a device with geolocation capability that makes an available spectrum batch request), whether the master device is making the request on its own behalf or on behalf of a slave device (one without geolocation capability). |
-| `antenna` | String |  | Depending on device type and regulatory domain, antenna characteristics may be required. |
-| `device_desc` | String |  | When the available spectrum request is made on behalf of a specific device (a master or slave device), device descriptor information for the device on whose behalf the request is made is required (in such cases, the requestType parameter must be empty). When a requestType value is specified, device descriptor information may be optional or required according to the rules of the applicable regulatory domain. |
-| `owner` | String |  | Depending on device type and regulatory domain, device owner information may be included in an available spectrum batch request. This allows the device to register and get spectrum-availability information in a single request. |
-| `version` | String |  | The PAWS version. Must be exactly 1.0.
+| `request_type` | String |  | The request type parameter is an optional parameter that can be used to modify an available spectrum request, but its use depends on applicable regulatory rules. It may be used, for example, to request generic slave device parameters without having to specify the device descriptor for a specific device. When the requestType parameter is missing, the request is for a specific device (master or slave), and the deviceDesc parameter for the device on whose behalf the request is made is required. |
+| `antenna` | String |  | Depending on device type and regulatory domain, the characteristics of the antenna may be required. |
+| `capabilities` | String |  | The master device may include its device capabilities to limit the available-spectrum response to the spectrum that is compatible with its capabilities. The database should not return spectrum that is incompatible with the specified capabilities. |
+| `location` | String |  | The geolocation of the master device (a device with geolocation capability that makes an available spectrum request) is required whether the master device is making the request on its own behalf or on behalf of a slave device (one without geolocation capability). The location must be the location of the radiation center of the master device's antenna. To support mobile devices, a regulatory domain may allow the anticipated position of the master device to be given instead. If the location specifies a region, rather than a point, the database may return an UNIMPLEMENTED error code if it does not support query by region. |
+| `master_device_desc` | String |  | When an available spectrum request is made by the master device (a device with geolocation capability) on behalf of a slave device (a device without geolocation capability), the rules of the applicable regulatory domain may require the master device to provide its own device descriptor information (in addition to device descriptor information for the slave device, which is provided in a separate parameter). |
+| `owner` | String |  | Depending on device type and regulatory domain, device owner information may be included in an available spectrum request. This allows the device to register and get spectrum-availability information in a single request. |
+| `device_desc` | String |  | When the available spectrum request is made on behalf of a specific device (a master or slave device), device descriptor information for that device is required (in such cases, the requestType parameter must be empty). When a requestType value is specified, device descriptor information may be optional or required according to the rules of the applicable regulatory domain. |
+| `type` | String |  | The message type (e.g., INIT_REQ, AVAIL_SPECTRUM_REQ, ...).
 
 Required field. |
 

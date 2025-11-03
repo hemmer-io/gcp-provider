@@ -21,7 +21,7 @@ impl<'a> Os_policy_assignment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, baseline: Option<bool>, instance_filter: Option<String>, deleted: Option<bool>, description: Option<String>, revision_id: Option<String>, etag: Option<String>, os_policies: Option<Vec<String>>, rollout: Option<String>, uid: Option<String>, name: Option<String>, revision_create_time: Option<String>, reconciling: Option<bool>, rollout_state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, uid: Option<String>, rollout_state: Option<String>, instance_filter: Option<String>, description: Option<String>, name: Option<String>, baseline: Option<bool>, revision_create_time: Option<String>, etag: Option<String>, deleted: Option<bool>, os_policies: Option<Vec<String>>, reconciling: Option<bool>, revision_id: Option<String>, rollout: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Os_policy_assignment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, baseline: Option<bool>, instance_filter: Option<String>, deleted: Option<bool>, description: Option<String>, revision_id: Option<String>, etag: Option<String>, os_policies: Option<Vec<String>>, rollout: Option<String>, uid: Option<String>, name: Option<String>, revision_create_time: Option<String>, reconciling: Option<bool>, rollout_state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, uid: Option<String>, rollout_state: Option<String>, instance_filter: Option<String>, description: Option<String>, name: Option<String>, baseline: Option<bool>, revision_create_time: Option<String>, etag: Option<String>, deleted: Option<bool>, os_policies: Option<Vec<String>>, reconciling: Option<bool>, revision_id: Option<String>, rollout: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

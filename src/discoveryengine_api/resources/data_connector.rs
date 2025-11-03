@@ -1,6 +1,6 @@
 //! Data_connector resource
 //!
-//! Starts an immediate synchronization process for a DataConnector. Third Party Connector Users must specify which entities should be synced. FHIR Connectors must provide a timestamp to indicate the point in time from which data should be synced.
+//! Uses the per-user refresh token minted with AcquireAndStoreRefreshToken to generate and return a new access token and its details. Takes the access token from cache if available. Rotates the stored refresh token if needed. Uses the end user identity to return the user specific access token. Does *not* return the credentials configured by the administrator. Used by action execution and UI.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Data_connector<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, force_refresh_content: Option<bool>, entities: Option<Vec<String>>, healthcare_fhir_resource_types: Option<Vec<String>>, sync_identity: Option<bool>, sync_since_timestamp: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Channel_banner<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, etag: Option<String>, url: Option<String>) -> Result<String> {
+    pub async fn create(&self, url: Option<String>, etag: Option<String>, kind: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

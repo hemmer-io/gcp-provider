@@ -1,6 +1,6 @@
 //! Item resource
 //!
-//! Set a higher target deploy percentage for the item's published revision. This will be updated without the item being submitted for review. This is only available to items with over 10,000 seven-day active users.
+//! Submit the item to be published in the store. The item will be submitted for review unless `skip_review` is set to true, or the item is staged from a previous submission with `publish_type` set to `STAGED_PUBLISH`.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Item<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, deploy_percentage: Option<i64>, name: String) -> Result<String> {
+    pub async fn create(&self, publish_type: Option<String>, skip_review: Option<bool>, deploy_infos: Option<Vec<String>>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

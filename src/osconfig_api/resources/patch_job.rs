@@ -1,6 +1,6 @@
 //! Patch_job resource
 //!
-//! Patch VM instances by creating and running a patch job.
+//! Cancel a patch job. The patch job must be active. Canceled patch jobs cannot be restarted.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Patch_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, patch_config: Option<String>, rollout: Option<String>, dry_run: Option<bool>, description: Option<String>, display_name: Option<String>, duration: Option<String>, instance_filter: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

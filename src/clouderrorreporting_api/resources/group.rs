@@ -34,7 +34,7 @@ impl<'a> Group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, tracking_issues: Option<Vec<String>>, group_id: Option<String>, resolution_status: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, group_id: Option<String>, resolution_status: Option<String>, tracking_issues: Option<Vec<String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

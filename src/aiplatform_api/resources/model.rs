@@ -1,6 +1,6 @@
 //! Model resource
 //!
-//! Generate content with multimodal inputs with streaming support.
+//! Fetch an asynchronous online prediction operation.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Model<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cached_content: Option<String>, generation_config: Option<String>, labels: Option<HashMap<String, String>>, tool_config: Option<String>, tools: Option<Vec<String>>, safety_settings: Option<Vec<String>>, system_instruction: Option<String>, contents: Option<Vec<String>>, model_armor_config: Option<String>, model: String) -> Result<String> {
+    pub async fn create(&self, operation_name: Option<String>, endpoint: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Model<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, cached_content: Option<String>, generation_config: Option<String>, labels: Option<HashMap<String, String>>, tool_config: Option<String>, tools: Option<Vec<String>>, safety_settings: Option<Vec<String>>, system_instruction: Option<String>, contents: Option<Vec<String>>, model_armor_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, operation_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

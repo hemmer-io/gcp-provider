@@ -21,7 +21,7 @@ impl<'a> Workstation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, annotations: Option<HashMap<String, String>>, start_time: Option<String>, update_time: Option<String>, display_name: Option<String>, name: Option<String>, state: Option<String>, etag: Option<String>, runtime_host: Option<String>, labels: Option<HashMap<String, String>>, satisfies_pzi: Option<bool>, kms_key: Option<String>, uid: Option<String>, degraded: Option<bool>, satisfies_pzs: Option<bool>, boost_configs: Option<Vec<String>>, delete_time: Option<String>, reconciling: Option<bool>, create_time: Option<String>, env: Option<HashMap<String, String>>, conditions: Option<Vec<String>>, host: Option<String>, source_workstation: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, runtime_host: Option<String>, update_time: Option<String>, conditions: Option<Vec<String>>, degraded: Option<bool>, create_time: Option<String>, kms_key: Option<String>, display_name: Option<String>, host: Option<String>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, uid: Option<String>, annotations: Option<HashMap<String, String>>, boost_configs: Option<Vec<String>>, delete_time: Option<String>, name: Option<String>, reconciling: Option<bool>, satisfies_pzi: Option<bool>, source_workstation: Option<String>, start_time: Option<String>, state: Option<String>, env: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Workstation<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, annotations: Option<HashMap<String, String>>, start_time: Option<String>, update_time: Option<String>, display_name: Option<String>, name: Option<String>, state: Option<String>, etag: Option<String>, runtime_host: Option<String>, labels: Option<HashMap<String, String>>, satisfies_pzi: Option<bool>, kms_key: Option<String>, uid: Option<String>, degraded: Option<bool>, satisfies_pzs: Option<bool>, boost_configs: Option<Vec<String>>, delete_time: Option<String>, reconciling: Option<bool>, create_time: Option<String>, env: Option<HashMap<String, String>>, conditions: Option<Vec<String>>, host: Option<String>, source_workstation: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, runtime_host: Option<String>, update_time: Option<String>, conditions: Option<Vec<String>>, degraded: Option<bool>, create_time: Option<String>, kms_key: Option<String>, display_name: Option<String>, host: Option<String>, satisfies_pzs: Option<bool>, labels: Option<HashMap<String, String>>, uid: Option<String>, annotations: Option<HashMap<String, String>>, boost_configs: Option<Vec<String>>, delete_time: Option<String>, name: Option<String>, reconciling: Option<bool>, satisfies_pzi: Option<bool>, source_workstation: Option<String>, start_time: Option<String>, state: Option<String>, env: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

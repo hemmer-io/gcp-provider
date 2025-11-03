@@ -34,10 +34,10 @@ Clears (sets to empty) the data for the passed key if and only if the passed ver
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `kind` | String | Uniquely identifies the type of this resource. Value is always the fixed string appstate#getResponse. |
 | `data` | String | The requested data. |
-| `current_state_version` | String | The current app state version. |
+| `kind` | String | Uniquely identifies the type of this resource. Value is always the fixed string appstate#getResponse. |
 | `state_key` | i64 | The key for the data. |
+| `current_state_version` | String | The current app state version. |
 
 
 #### Usage Example
@@ -58,10 +58,10 @@ state = provider.appstate_api.State {
 
 # Access state outputs
 state_id = state.id
-state_kind = state.kind
 state_data = state.data
-state_current_state_version = state.current_state_version
+state_kind = state.kind
 state_state_key = state.state_key
+state_current_state_version = state.current_state_version
 ```
 
 ---

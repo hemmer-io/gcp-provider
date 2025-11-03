@@ -21,7 +21,7 @@ impl<'a> Backend_authentication_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, trust_config: Option<String>, description: Option<String>, etag: Option<String>, update_time: Option<String>, client_certificate: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, well_known_roots: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, description: Option<String>, create_time: Option<String>, client_certificate: Option<String>, name: Option<String>, trust_config: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, well_known_roots: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backend_authentication_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, trust_config: Option<String>, description: Option<String>, etag: Option<String>, update_time: Option<String>, client_certificate: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, well_known_roots: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, description: Option<String>, create_time: Option<String>, client_certificate: Option<String>, name: Option<String>, trust_config: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, well_known_roots: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

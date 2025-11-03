@@ -21,7 +21,7 @@ impl<'a> Lb_tcp_extension<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, load_balancing_scheme: Option<String>, update_time: Option<String>, extension_chains: Option<Vec<String>>, labels: Option<HashMap<String, String>>, create_time: Option<String>, networks: Option<Vec<String>>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, load_balancing_scheme: Option<String>, networks: Option<Vec<String>>, name: Option<String>, update_time: Option<String>, extension_chains: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Lb_tcp_extension<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, load_balancing_scheme: Option<String>, update_time: Option<String>, extension_chains: Option<Vec<String>>, labels: Option<HashMap<String, String>>, create_time: Option<String>, networks: Option<Vec<String>>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, load_balancing_scheme: Option<String>, networks: Option<Vec<String>>, name: Option<String>, update_time: Option<String>, extension_chains: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

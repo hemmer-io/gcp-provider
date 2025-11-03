@@ -34,7 +34,7 @@ impl<'a> Remarketing_list_share<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, kind: Option<String>, shared_account_ids: Option<Vec<String>>, remarketing_list_id: Option<String>, shared_advertiser_ids: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, remarketing_list_id: Option<String>, kind: Option<String>, shared_account_ids: Option<Vec<String>>, shared_advertiser_ids: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

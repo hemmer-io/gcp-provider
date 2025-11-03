@@ -21,7 +21,7 @@ impl<'a> Active_directorie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kdc_ip: Option<String>, backup_operators: Option<Vec<String>>, net_bios_prefix: Option<String>, security_operators: Option<Vec<String>>, kdc_hostname: Option<String>, organizational_unit: Option<String>, administrators: Option<Vec<String>>, description: Option<String>, password: Option<String>, aes_encryption: Option<bool>, encrypt_dc_connections: Option<bool>, state_details: Option<String>, username: Option<String>, domain: Option<String>, labels: Option<HashMap<String, String>>, site: Option<String>, nfs_users_with_ldap: Option<bool>, name: Option<String>, ldap_signing: Option<bool>, create_time: Option<String>, dns: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, kdc_hostname: Option<String>, password: Option<String>, labels: Option<HashMap<String, String>>, organizational_unit: Option<String>, ldap_signing: Option<bool>, description: Option<String>, net_bios_prefix: Option<String>, domain: Option<String>, create_time: Option<String>, administrators: Option<Vec<String>>, kdc_ip: Option<String>, nfs_users_with_ldap: Option<bool>, name: Option<String>, security_operators: Option<Vec<String>>, backup_operators: Option<Vec<String>>, state: Option<String>, username: Option<String>, encrypt_dc_connections: Option<bool>, dns: Option<String>, state_details: Option<String>, site: Option<String>, aes_encryption: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Active_directorie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, kdc_ip: Option<String>, backup_operators: Option<Vec<String>>, net_bios_prefix: Option<String>, security_operators: Option<Vec<String>>, kdc_hostname: Option<String>, organizational_unit: Option<String>, administrators: Option<Vec<String>>, description: Option<String>, password: Option<String>, aes_encryption: Option<bool>, encrypt_dc_connections: Option<bool>, state_details: Option<String>, username: Option<String>, domain: Option<String>, labels: Option<HashMap<String, String>>, site: Option<String>, nfs_users_with_ldap: Option<bool>, name: Option<String>, ldap_signing: Option<bool>, create_time: Option<String>, dns: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kdc_hostname: Option<String>, password: Option<String>, labels: Option<HashMap<String, String>>, organizational_unit: Option<String>, ldap_signing: Option<bool>, description: Option<String>, net_bios_prefix: Option<String>, domain: Option<String>, create_time: Option<String>, administrators: Option<Vec<String>>, kdc_ip: Option<String>, nfs_users_with_ldap: Option<bool>, name: Option<String>, security_operators: Option<Vec<String>>, backup_operators: Option<Vec<String>>, state: Option<String>, username: Option<String>, encrypt_dc_connections: Option<bool>, dns: Option<String>, state_details: Option<String>, site: Option<String>, aes_encryption: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

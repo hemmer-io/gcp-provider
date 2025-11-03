@@ -1,6 +1,6 @@
 //! Sink resource
 //!
-//! Creates the specified log service sink resource.
+//! Creates the specified log sink resource.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Sink<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, errors: Option<Vec<String>>, destination: Option<String>, name: Option<String>, log_services_id: String, projects_id: String) -> Result<String> {
+    pub async fn create(&self, errors: Option<Vec<String>>, name: Option<String>, destination: Option<String>, projects_id: String, logs_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Sink<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, errors: Option<Vec<String>>, destination: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, errors: Option<Vec<String>>, name: Option<String>, destination: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Search_ads360<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, page_token: Option<String>, page_size: Option<i64>, return_total_results_count: Option<bool>, query: Option<String>, summary_row_setting: Option<String>, validate_only: Option<bool>, customer_id: String) -> Result<String> {
+    pub async fn create(&self, validate_only: Option<bool>, query: Option<String>, page_size: Option<i64>, page_token: Option<String>, return_total_results_count: Option<bool>, summary_row_setting: Option<String>, customer_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

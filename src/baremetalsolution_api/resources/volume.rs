@@ -1,6 +1,6 @@
 //! Volume resource
 //!
-//! Emergency Volume resize.
+//! Skips volume's cooloff and deletes it now. Volume must be in cooloff state.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Volume<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, size_gib: Option<String>, volume: String) -> Result<String> {
+    pub async fn create(&self, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Volume<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, size_gib: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

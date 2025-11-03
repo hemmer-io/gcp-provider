@@ -21,7 +21,7 @@ impl<'a> Model_monitor<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, notification_spec: Option<String>, model_monitoring_schema: Option<String>, model_monitoring_target: Option<String>, create_time: Option<String>, name: Option<String>, satisfies_pzi: Option<bool>, display_name: Option<String>, satisfies_pzs: Option<bool>, encryption_spec: Option<String>, explanation_spec: Option<String>, tabular_objective: Option<String>, output_spec: Option<String>, training_dataset: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, output_spec: Option<String>, display_name: Option<String>, tabular_objective: Option<String>, encryption_spec: Option<String>, model_monitoring_target: Option<String>, training_dataset: Option<String>, update_time: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, model_monitoring_schema: Option<String>, name: Option<String>, satisfies_pzi: Option<bool>, explanation_spec: Option<String>, notification_spec: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Model_monitor<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, notification_spec: Option<String>, model_monitoring_schema: Option<String>, model_monitoring_target: Option<String>, create_time: Option<String>, name: Option<String>, satisfies_pzi: Option<bool>, display_name: Option<String>, satisfies_pzs: Option<bool>, encryption_spec: Option<String>, explanation_spec: Option<String>, tabular_objective: Option<String>, output_spec: Option<String>, training_dataset: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, output_spec: Option<String>, display_name: Option<String>, tabular_objective: Option<String>, encryption_spec: Option<String>, model_monitoring_target: Option<String>, training_dataset: Option<String>, update_time: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, model_monitoring_schema: Option<String>, name: Option<String>, satisfies_pzi: Option<bool>, explanation_spec: Option<String>, notification_spec: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

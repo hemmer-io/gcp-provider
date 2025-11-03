@@ -21,7 +21,7 @@ impl<'a> Question<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, author: Option<String>, total_answer_count: Option<i64>, top_answers: Option<Vec<String>>, name: Option<String>, create_time: Option<String>, update_time: Option<String>, upvote_count: Option<i64>, text: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, name: Option<String>, upvote_count: Option<i64>, author: Option<String>, text: Option<String>, top_answers: Option<Vec<String>>, update_time: Option<String>, total_answer_count: Option<i64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Question<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, author: Option<String>, total_answer_count: Option<i64>, top_answers: Option<Vec<String>>, name: Option<String>, create_time: Option<String>, update_time: Option<String>, upvote_count: Option<i64>, text: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, name: Option<String>, upvote_count: Option<i64>, author: Option<String>, text: Option<String>, top_answers: Option<Vec<String>>, update_time: Option<String>, total_answer_count: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Logging_server<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, source_type: Option<String>, hostname: Option<String>, create_time: Option<String>, update_time: Option<String>, uid: Option<String>, name: Option<String>, port: Option<i64>, protocol: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, port: Option<i64>, create_time: Option<String>, source_type: Option<String>, hostname: Option<String>, update_time: Option<String>, name: Option<String>, protocol: Option<String>, uid: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Logging_server<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, source_type: Option<String>, hostname: Option<String>, create_time: Option<String>, update_time: Option<String>, uid: Option<String>, name: Option<String>, port: Option<i64>, protocol: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, port: Option<i64>, create_time: Option<String>, source_type: Option<String>, hostname: Option<String>, update_time: Option<String>, name: Option<String>, protocol: Option<String>, uid: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

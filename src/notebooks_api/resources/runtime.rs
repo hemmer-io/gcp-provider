@@ -21,7 +21,7 @@ impl<'a> Runtime<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, virtual_machine: Option<String>, access_config: Option<String>, metrics: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, software_config: Option<String>, update_time: Option<String>, migrated: Option<bool>, health_state: Option<String>, runtime_migration_eligibility: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, access_config: Option<String>, health_state: Option<String>, virtual_machine: Option<String>, migrated: Option<bool>, metrics: Option<String>, name: Option<String>, runtime_migration_eligibility: Option<String>, software_config: Option<String>, state: Option<String>, create_time: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Runtime<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_time: Option<String>, virtual_machine: Option<String>, access_config: Option<String>, metrics: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, software_config: Option<String>, update_time: Option<String>, migrated: Option<bool>, health_state: Option<String>, runtime_migration_eligibility: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, access_config: Option<String>, health_state: Option<String>, virtual_machine: Option<String>, migrated: Option<bool>, metrics: Option<String>, name: Option<String>, runtime_migration_eligibility: Option<String>, software_config: Option<String>, state: Option<String>, create_time: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

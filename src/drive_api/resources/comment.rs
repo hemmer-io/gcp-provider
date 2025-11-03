@@ -21,7 +21,7 @@ impl<'a> Comment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, modified_time: Option<String>, anchor: Option<String>, author: Option<String>, deleted: Option<bool>, mentioned_email_addresses: Option<Vec<String>>, assignee_email_address: Option<String>, id: Option<String>, quoted_file_content: Option<String>, created_time: Option<String>, replies: Option<Vec<String>>, resolved: Option<bool>, content: Option<String>, kind: Option<String>, html_content: Option<String>, file_id: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, kind: Option<String>, html_content: Option<String>, assignee_email_address: Option<String>, anchor: Option<String>, mentioned_email_addresses: Option<Vec<String>>, modified_time: Option<String>, quoted_file_content: Option<String>, created_time: Option<String>, replies: Option<Vec<String>>, resolved: Option<bool>, author: Option<String>, content: Option<String>, deleted: Option<bool>, file_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Comment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, modified_time: Option<String>, anchor: Option<String>, author: Option<String>, deleted: Option<bool>, mentioned_email_addresses: Option<Vec<String>>, assignee_email_address: Option<String>, id: Option<String>, quoted_file_content: Option<String>, created_time: Option<String>, replies: Option<Vec<String>>, resolved: Option<bool>, content: Option<String>, kind: Option<String>, html_content: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, kind: Option<String>, html_content: Option<String>, assignee_email_address: Option<String>, anchor: Option<String>, mentioned_email_addresses: Option<Vec<String>>, modified_time: Option<String>, quoted_file_content: Option<String>, created_time: Option<String>, replies: Option<Vec<String>>, resolved: Option<bool>, author: Option<String>, content: Option<String>, deleted: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

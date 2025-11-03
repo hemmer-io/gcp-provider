@@ -21,7 +21,7 @@ impl<'a> Provider<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, detailed_audit_logging: Option<bool>, display_name: Option<String>, saml: Option<String>, state: Option<String>, oidc: Option<String>, attribute_mapping: Option<HashMap<String, String>>, extended_attributes_oauth2_client: Option<String>, attribute_condition: Option<String>, name: Option<String>, extra_attributes_oauth2_client: Option<String>, expire_time: Option<String>, scim_usage: Option<String>, disabled: Option<bool>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, attribute_mapping: Option<HashMap<String, String>>, attribute_condition: Option<String>, extra_attributes_oauth2_client: Option<String>, name: Option<String>, scim_usage: Option<String>, description: Option<String>, oidc: Option<String>, extended_attributes_oauth2_client: Option<String>, saml: Option<String>, state: Option<String>, disabled: Option<bool>, expire_time: Option<String>, detailed_audit_logging: Option<bool>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Provider<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, detailed_audit_logging: Option<bool>, display_name: Option<String>, saml: Option<String>, state: Option<String>, oidc: Option<String>, attribute_mapping: Option<HashMap<String, String>>, extended_attributes_oauth2_client: Option<String>, attribute_condition: Option<String>, name: Option<String>, extra_attributes_oauth2_client: Option<String>, expire_time: Option<String>, scim_usage: Option<String>, disabled: Option<bool>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, attribute_mapping: Option<HashMap<String, String>>, attribute_condition: Option<String>, extra_attributes_oauth2_client: Option<String>, name: Option<String>, scim_usage: Option<String>, description: Option<String>, oidc: Option<String>, extended_attributes_oauth2_client: Option<String>, saml: Option<String>, state: Option<String>, disabled: Option<bool>, expire_time: Option<String>, detailed_audit_logging: Option<bool>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

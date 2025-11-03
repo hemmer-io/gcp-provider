@@ -20,7 +20,7 @@ The marketingplatformadmin_api service provides access to 2 resource types:
 
 ### Organization
 
-Get the usage and billing data for properties within the organization for the specified month. Per direct client org, user needs to be OrgAdmin/BillingAdmin on the organization in order to view the billing and usage data. Per sales partner client org, user needs to be OrgAdmin/BillingAdmin on the sales partner org in order to view the billing and usage data, or OrgAdmin/BillingAdmin on the sales partner client org in order to view the usage data only.
+Returns a list of clients managed by the sales partner organization. User needs to be an OrgAdmin/BillingAdmin on the sales partner organization in order to view the end clients.
 
 **Operations**: ✅ Create ✅ Read
 
@@ -28,16 +28,16 @@ Get the usage and billing data for properties within the organization for the sp
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `month` | String |  | Required. The target month to list property usages. Format: YYYY-MM. For example, "2025-05" |
-| `organization` | String | ✅ | Required. Specifies the organization whose property usage will be listed. Format: organizations/{org_id} |
+| `is_active` | bool |  | Optional. If set, only active and just ended clients will be returned. |
+| `organization` | String | ✅ | Required. The name of the sales partner organization. Format: organizations/{org_id} |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `display_name` | String | The human-readable name for the organization. |
 | `name` | String | Identifier. The resource name of the GMP organization. Format: organizations/{org_id} |
+| `display_name` | String | The human-readable name for the organization. |
 
 
 #### Usage Example
@@ -53,13 +53,13 @@ provider = gcp.GcpProvider {
 
 # Create organization
 organization = provider.marketingplatformadmin_api.Organization {
-    organization = "value"  # Required. Specifies the organization whose property usage will be listed. Format: organizations/{org_id}
+    organization = "value"  # Required. The name of the sales partner organization. Format: organizations/{org_id}
 }
 
 # Access organization outputs
 organization_id = organization.id
-organization_display_name = organization.display_name
 organization_name = organization.name
+organization_display_name = organization.display_name
 ```
 
 ---
@@ -75,10 +75,10 @@ Creates the link between the Analytics account and the Google Marketing Platform
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `analytics_account` | String |  | Required. Immutable. The resource name of the AnalyticsAdmin API account. The account ID will be used as the ID of this AnalyticsAccountLink resource, which will become the final component of the resource name. Format: analyticsadmin.googleapis.com/accounts/{account_id} |
 | `link_verification_state` | String |  | Output only. The verification state of the link between the Analytics account and the parent organization. |
 | `name` | String |  | Identifier. Resource name of this AnalyticsAccountLink. Note the resource ID is the same as the ID of the Analtyics account. Format: organizations/{org_id}/analyticsAccountLinks/{analytics_account_link_id} Example: "organizations/xyz/analyticsAccountLinks/1234" |
 | `display_name` | String |  | Output only. The human-readable name for the Analytics account. |
+| `analytics_account` | String |  | Required. Immutable. The resource name of the AnalyticsAdmin API account. The account ID will be used as the ID of this AnalyticsAccountLink resource, which will become the final component of the resource name. Format: analyticsadmin.googleapis.com/accounts/{account_id} |
 | `parent` | String | ✅ | Required. The parent resource where this Analytics account link will be created. Format: organizations/{org_id} |
 
 

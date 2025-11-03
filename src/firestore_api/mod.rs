@@ -24,14 +24,14 @@ impl<'a> Firestore_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "indexe" => {
-                self.plan_indexe(current_state, desired_input).await
-            }
             "user_cred" => {
                 self.plan_user_cred(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
+            "database" => {
+                self.plan_database(current_state, desired_input).await
+            }
+            "backup_schedule" => {
+                self.plan_backup_schedule(current_state, desired_input).await
             }
             "field" => {
                 self.plan_field(current_state, desired_input).await
@@ -39,20 +39,23 @@ impl<'a> Firestore_apiService<'a> {
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "database" => {
-                self.plan_database(current_state, desired_input).await
+            "backup" => {
+                self.plan_backup(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
             "document" => {
                 self.plan_document(current_state, desired_input).await
             }
-            "backup" => {
-                self.plan_backup(current_state, desired_input).await
-            }
-            "backup_schedule" => {
-                self.plan_backup_schedule(current_state, desired_input).await
+            "indexe" => {
+                self.plan_indexe(current_state, desired_input).await
             }
             "database" => {
                 self.plan_database(current_state, desired_input).await
+            }
+            "indexe" => {
+                self.plan_indexe(current_state, desired_input).await
             }
             "field" => {
                 self.plan_field(current_state, desired_input).await
@@ -60,14 +63,11 @@ impl<'a> Firestore_apiService<'a> {
             "indexe" => {
                 self.plan_indexe(current_state, desired_input).await
             }
-            "indexe" => {
-                self.plan_indexe(current_state, desired_input).await
+            "database" => {
+                self.plan_database(current_state, desired_input).await
             }
             "document" => {
                 self.plan_document(current_state, desired_input).await
-            }
-            "database" => {
-                self.plan_database(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -84,14 +84,14 @@ impl<'a> Firestore_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "indexe" => {
-                self.create_indexe(input).await
-            }
             "user_cred" => {
                 self.create_user_cred(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
+            "database" => {
+                self.create_database(input).await
+            }
+            "backup_schedule" => {
+                self.create_backup_schedule(input).await
             }
             "field" => {
                 self.create_field(input).await
@@ -99,20 +99,23 @@ impl<'a> Firestore_apiService<'a> {
             "location" => {
                 self.create_location(input).await
             }
-            "database" => {
-                self.create_database(input).await
+            "backup" => {
+                self.create_backup(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
             }
             "document" => {
                 self.create_document(input).await
             }
-            "backup" => {
-                self.create_backup(input).await
-            }
-            "backup_schedule" => {
-                self.create_backup_schedule(input).await
+            "indexe" => {
+                self.create_indexe(input).await
             }
             "database" => {
                 self.create_database(input).await
+            }
+            "indexe" => {
+                self.create_indexe(input).await
             }
             "field" => {
                 self.create_field(input).await
@@ -120,14 +123,11 @@ impl<'a> Firestore_apiService<'a> {
             "indexe" => {
                 self.create_indexe(input).await
             }
-            "indexe" => {
-                self.create_indexe(input).await
+            "database" => {
+                self.create_database(input).await
             }
             "document" => {
                 self.create_document(input).await
-            }
-            "database" => {
-                self.create_database(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -144,14 +144,14 @@ impl<'a> Firestore_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "indexe" => {
-                self.read_indexe(id).await
-            }
             "user_cred" => {
                 self.read_user_cred(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
+            "database" => {
+                self.read_database(id).await
+            }
+            "backup_schedule" => {
+                self.read_backup_schedule(id).await
             }
             "field" => {
                 self.read_field(id).await
@@ -159,20 +159,23 @@ impl<'a> Firestore_apiService<'a> {
             "location" => {
                 self.read_location(id).await
             }
-            "database" => {
-                self.read_database(id).await
+            "backup" => {
+                self.read_backup(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
             }
             "document" => {
                 self.read_document(id).await
             }
-            "backup" => {
-                self.read_backup(id).await
-            }
-            "backup_schedule" => {
-                self.read_backup_schedule(id).await
+            "indexe" => {
+                self.read_indexe(id).await
             }
             "database" => {
                 self.read_database(id).await
+            }
+            "indexe" => {
+                self.read_indexe(id).await
             }
             "field" => {
                 self.read_field(id).await
@@ -180,14 +183,11 @@ impl<'a> Firestore_apiService<'a> {
             "indexe" => {
                 self.read_indexe(id).await
             }
-            "indexe" => {
-                self.read_indexe(id).await
+            "database" => {
+                self.read_database(id).await
             }
             "document" => {
                 self.read_document(id).await
-            }
-            "database" => {
-                self.read_database(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -205,14 +205,14 @@ impl<'a> Firestore_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "indexe" => {
-                self.update_indexe(id, input).await
-            }
             "user_cred" => {
                 self.update_user_cred(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
+            "database" => {
+                self.update_database(id, input).await
+            }
+            "backup_schedule" => {
+                self.update_backup_schedule(id, input).await
             }
             "field" => {
                 self.update_field(id, input).await
@@ -220,20 +220,23 @@ impl<'a> Firestore_apiService<'a> {
             "location" => {
                 self.update_location(id, input).await
             }
-            "database" => {
-                self.update_database(id, input).await
+            "backup" => {
+                self.update_backup(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
             }
             "document" => {
                 self.update_document(id, input).await
             }
-            "backup" => {
-                self.update_backup(id, input).await
-            }
-            "backup_schedule" => {
-                self.update_backup_schedule(id, input).await
+            "indexe" => {
+                self.update_indexe(id, input).await
             }
             "database" => {
                 self.update_database(id, input).await
+            }
+            "indexe" => {
+                self.update_indexe(id, input).await
             }
             "field" => {
                 self.update_field(id, input).await
@@ -241,14 +244,11 @@ impl<'a> Firestore_apiService<'a> {
             "indexe" => {
                 self.update_indexe(id, input).await
             }
-            "indexe" => {
-                self.update_indexe(id, input).await
+            "database" => {
+                self.update_database(id, input).await
             }
             "document" => {
                 self.update_document(id, input).await
-            }
-            "database" => {
-                self.update_database(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -265,14 +265,14 @@ impl<'a> Firestore_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "indexe" => {
-                self.delete_indexe(id).await
-            }
             "user_cred" => {
                 self.delete_user_cred(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
+            "database" => {
+                self.delete_database(id).await
+            }
+            "backup_schedule" => {
+                self.delete_backup_schedule(id).await
             }
             "field" => {
                 self.delete_field(id).await
@@ -280,20 +280,23 @@ impl<'a> Firestore_apiService<'a> {
             "location" => {
                 self.delete_location(id).await
             }
-            "database" => {
-                self.delete_database(id).await
+            "backup" => {
+                self.delete_backup(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
             }
             "document" => {
                 self.delete_document(id).await
             }
-            "backup" => {
-                self.delete_backup(id).await
-            }
-            "backup_schedule" => {
-                self.delete_backup_schedule(id).await
+            "indexe" => {
+                self.delete_indexe(id).await
             }
             "database" => {
                 self.delete_database(id).await
+            }
+            "indexe" => {
+                self.delete_indexe(id).await
             }
             "field" => {
                 self.delete_field(id).await
@@ -301,14 +304,11 @@ impl<'a> Firestore_apiService<'a> {
             "indexe" => {
                 self.delete_indexe(id).await
             }
-            "indexe" => {
-                self.delete_indexe(id).await
+            "database" => {
+                self.delete_database(id).await
             }
             "document" => {
                 self.delete_document(id).await
-            }
-            "database" => {
-                self.delete_database(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -321,67 +321,6 @@ impl<'a> Firestore_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Indexe resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a indexe resource
-    async fn plan_indexe(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new indexe resource
-    async fn create_indexe(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a indexe resource
-    async fn read_indexe(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a indexe resource
-    async fn update_indexe(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a indexe resource
-    async fn delete_indexe(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -446,11 +385,11 @@ impl<'a> Firestore_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
+    // Database resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a operation resource
-    async fn plan_operation(
+    /// Plan changes to a database resource
+    async fn plan_database(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -465,8 +404,8 @@ impl<'a> Firestore_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new operation resource
-    async fn create_operation(
+    /// Create a new database resource
+    async fn create_database(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -475,8 +414,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a operation resource
-    async fn read_operation(
+    /// Read a database resource
+    async fn read_database(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -485,8 +424,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a operation resource
-    async fn update_operation(
+    /// Update a database resource
+    async fn update_database(
         &self,
         id: &str,
         input: ResourceInput,
@@ -496,8 +435,69 @@ impl<'a> Firestore_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a operation resource
-    async fn delete_operation(
+    /// Delete a database resource
+    async fn delete_database(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Backup_schedule resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a backup_schedule resource
+    async fn plan_backup_schedule(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new backup_schedule resource
+    async fn create_backup_schedule(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a backup_schedule resource
+    async fn read_backup_schedule(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a backup_schedule resource
+    async fn update_backup_schedule(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a backup_schedule resource
+    async fn delete_backup_schedule(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -629,11 +629,11 @@ impl<'a> Firestore_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Database resource operations
+    // Backup resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a database resource
-    async fn plan_database(
+    /// Plan changes to a backup resource
+    async fn plan_backup(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -648,8 +648,8 @@ impl<'a> Firestore_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new database resource
-    async fn create_database(
+    /// Create a new backup resource
+    async fn create_backup(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -658,8 +658,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a database resource
-    async fn read_database(
+    /// Read a backup resource
+    async fn read_backup(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -668,8 +668,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a database resource
-    async fn update_database(
+    /// Update a backup resource
+    async fn update_backup(
         &self,
         id: &str,
         input: ResourceInput,
@@ -679,8 +679,69 @@ impl<'a> Firestore_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a database resource
-    async fn delete_database(
+    /// Delete a backup resource
+    async fn delete_backup(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -751,11 +812,11 @@ impl<'a> Firestore_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Backup resource operations
+    // Indexe resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a backup resource
-    async fn plan_backup(
+    /// Plan changes to a indexe resource
+    async fn plan_indexe(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -770,8 +831,8 @@ impl<'a> Firestore_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new backup resource
-    async fn create_backup(
+    /// Create a new indexe resource
+    async fn create_indexe(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -780,8 +841,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a backup resource
-    async fn read_backup(
+    /// Read a indexe resource
+    async fn read_indexe(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -790,8 +851,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a backup resource
-    async fn update_backup(
+    /// Update a indexe resource
+    async fn update_indexe(
         &self,
         id: &str,
         input: ResourceInput,
@@ -801,69 +862,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a backup resource
-    async fn delete_backup(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Backup_schedule resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a backup_schedule resource
-    async fn plan_backup_schedule(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new backup_schedule resource
-    async fn create_backup_schedule(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a backup_schedule resource
-    async fn read_backup_schedule(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a backup_schedule resource
-    async fn update_backup_schedule(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a backup_schedule resource
-    async fn delete_backup_schedule(
+    /// Delete a indexe resource
+    async fn delete_indexe(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -925,6 +925,67 @@ impl<'a> Firestore_apiService<'a> {
 
     /// Delete a database resource
     async fn delete_database(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Indexe resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a indexe resource
+    async fn plan_indexe(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new indexe resource
+    async fn create_indexe(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a indexe resource
+    async fn read_indexe(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a indexe resource
+    async fn update_indexe(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a indexe resource
+    async fn delete_indexe(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1056,11 +1117,11 @@ impl<'a> Firestore_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Indexe resource operations
+    // Database resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a indexe resource
-    async fn plan_indexe(
+    /// Plan changes to a database resource
+    async fn plan_database(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1075,8 +1136,8 @@ impl<'a> Firestore_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new indexe resource
-    async fn create_indexe(
+    /// Create a new database resource
+    async fn create_database(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1085,8 +1146,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a indexe resource
-    async fn read_indexe(
+    /// Read a database resource
+    async fn read_database(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1095,8 +1156,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a indexe resource
-    async fn update_indexe(
+    /// Update a database resource
+    async fn update_database(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1106,8 +1167,8 @@ impl<'a> Firestore_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a indexe resource
-    async fn delete_indexe(
+    /// Delete a database resource
+    async fn delete_database(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1169,67 +1230,6 @@ impl<'a> Firestore_apiService<'a> {
 
     /// Delete a document resource
     async fn delete_document(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Database resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a database resource
-    async fn plan_database(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new database resource
-    async fn create_database(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a database resource
-    async fn read_database(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a database resource
-    async fn update_database(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a database resource
-    async fn delete_database(
         &self,
         id: &str,
     ) -> Result<()> {

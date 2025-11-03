@@ -21,7 +21,7 @@ impl<'a> Identity_mapping_store<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cmek_config: Option<String>, kms_key_name: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, cmek_config: Option<String>, kms_key_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

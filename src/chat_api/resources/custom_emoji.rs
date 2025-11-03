@@ -21,7 +21,7 @@ impl<'a> Custom_emoji<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, temporary_image_uri: Option<String>, name: Option<String>, payload: Option<String>, emoji_name: Option<String>, uid: Option<String>) -> Result<String> {
+    pub async fn create(&self, uid: Option<String>, emoji_name: Option<String>, payload: Option<String>, name: Option<String>, temporary_image_uri: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

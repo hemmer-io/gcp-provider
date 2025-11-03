@@ -21,7 +21,7 @@ impl<'a> Entry_type<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, required_aspects: Option<Vec<String>>, description: Option<String>, type_aliases: Option<Vec<String>>, etag: Option<String>, system: Option<String>, authorization: Option<String>, name: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, platform: Option<String>, uid: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, update_time: Option<String>, platform: Option<String>, system: Option<String>, uid: Option<String>, required_aspects: Option<Vec<String>>, labels: Option<HashMap<String, String>>, type_aliases: Option<Vec<String>>, name: Option<String>, description: Option<String>, authorization: Option<String>, create_time: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Entry_type<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, required_aspects: Option<Vec<String>>, description: Option<String>, type_aliases: Option<Vec<String>>, etag: Option<String>, system: Option<String>, authorization: Option<String>, name: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, platform: Option<String>, uid: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, update_time: Option<String>, platform: Option<String>, system: Option<String>, uid: Option<String>, required_aspects: Option<Vec<String>>, labels: Option<HashMap<String, String>>, type_aliases: Option<Vec<String>>, name: Option<String>, description: Option<String>, authorization: Option<String>, create_time: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

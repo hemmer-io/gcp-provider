@@ -21,7 +21,7 @@ impl<'a> Connection<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, reserved_peering_ranges: Option<Vec<String>>, peering: Option<String>, network: Option<String>, service: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, peering: Option<String>, service: Option<String>, network: Option<String>, reserved_peering_ranges: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

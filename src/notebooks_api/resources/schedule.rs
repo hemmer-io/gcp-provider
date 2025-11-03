@@ -21,7 +21,7 @@ impl<'a> Schedule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, update_time: Option<String>, description: Option<String>, display_name: Option<String>, name: Option<String>, time_zone: Option<String>, execution_template: Option<String>, recent_executions: Option<Vec<String>>, cron_schedule: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, execution_template: Option<String>, create_time: Option<String>, cron_schedule: Option<String>, display_name: Option<String>, recent_executions: Option<Vec<String>>, description: Option<String>, state: Option<String>, name: Option<String>, time_zone: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

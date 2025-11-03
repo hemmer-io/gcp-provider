@@ -24,17 +24,23 @@ impl<'a> Workloadmanager_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "execution" => {
+                self.plan_execution(current_state, desired_input).await
+            }
             "discoveredprofile" => {
                 self.plan_discoveredprofile(current_state, desired_input).await
             }
             "scanned_resource" => {
                 self.plan_scanned_resource(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
             "evaluation" => {
                 self.plan_evaluation(current_state, desired_input).await
+            }
+            "rule" => {
+                self.plan_rule(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
             "insight" => {
                 self.plan_insight(current_state, desired_input).await
@@ -44,12 +50,6 @@ impl<'a> Workloadmanager_apiService<'a> {
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
-            }
-            "execution" => {
-                self.plan_execution(current_state, desired_input).await
-            }
-            "rule" => {
-                self.plan_rule(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,17 +66,23 @@ impl<'a> Workloadmanager_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "execution" => {
+                self.create_execution(input).await
+            }
             "discoveredprofile" => {
                 self.create_discoveredprofile(input).await
             }
             "scanned_resource" => {
                 self.create_scanned_resource(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
-            }
             "evaluation" => {
                 self.create_evaluation(input).await
+            }
+            "rule" => {
+                self.create_rule(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
             }
             "insight" => {
                 self.create_insight(input).await
@@ -86,12 +92,6 @@ impl<'a> Workloadmanager_apiService<'a> {
             }
             "location" => {
                 self.create_location(input).await
-            }
-            "execution" => {
-                self.create_execution(input).await
-            }
-            "rule" => {
-                self.create_rule(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -108,17 +108,23 @@ impl<'a> Workloadmanager_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "execution" => {
+                self.read_execution(id).await
+            }
             "discoveredprofile" => {
                 self.read_discoveredprofile(id).await
             }
             "scanned_resource" => {
                 self.read_scanned_resource(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
-            }
             "evaluation" => {
                 self.read_evaluation(id).await
+            }
+            "rule" => {
+                self.read_rule(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
             }
             "insight" => {
                 self.read_insight(id).await
@@ -128,12 +134,6 @@ impl<'a> Workloadmanager_apiService<'a> {
             }
             "location" => {
                 self.read_location(id).await
-            }
-            "execution" => {
-                self.read_execution(id).await
-            }
-            "rule" => {
-                self.read_rule(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -151,17 +151,23 @@ impl<'a> Workloadmanager_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "execution" => {
+                self.update_execution(id, input).await
+            }
             "discoveredprofile" => {
                 self.update_discoveredprofile(id, input).await
             }
             "scanned_resource" => {
                 self.update_scanned_resource(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
             "evaluation" => {
                 self.update_evaluation(id, input).await
+            }
+            "rule" => {
+                self.update_rule(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
             }
             "insight" => {
                 self.update_insight(id, input).await
@@ -171,12 +177,6 @@ impl<'a> Workloadmanager_apiService<'a> {
             }
             "location" => {
                 self.update_location(id, input).await
-            }
-            "execution" => {
-                self.update_execution(id, input).await
-            }
-            "rule" => {
-                self.update_rule(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -193,17 +193,23 @@ impl<'a> Workloadmanager_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "execution" => {
+                self.delete_execution(id).await
+            }
             "discoveredprofile" => {
                 self.delete_discoveredprofile(id).await
             }
             "scanned_resource" => {
                 self.delete_scanned_resource(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
-            }
             "evaluation" => {
                 self.delete_evaluation(id).await
+            }
+            "rule" => {
+                self.delete_rule(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
             }
             "insight" => {
                 self.delete_insight(id).await
@@ -213,12 +219,6 @@ impl<'a> Workloadmanager_apiService<'a> {
             }
             "location" => {
                 self.delete_location(id).await
-            }
-            "execution" => {
-                self.delete_execution(id).await
-            }
-            "rule" => {
-                self.delete_rule(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -231,6 +231,67 @@ impl<'a> Workloadmanager_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Execution resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a execution resource
+    async fn plan_execution(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new execution resource
+    async fn create_execution(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a execution resource
+    async fn read_execution(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a execution resource
+    async fn update_execution(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a execution resource
+    async fn delete_execution(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -356,67 +417,6 @@ impl<'a> Workloadmanager_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Evaluation resource operations
     // ------------------------------------------------------------------------
 
@@ -469,6 +469,128 @@ impl<'a> Workloadmanager_apiService<'a> {
 
     /// Delete a evaluation resource
     async fn delete_evaluation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Rule resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a rule resource
+    async fn plan_rule(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new rule resource
+    async fn create_rule(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a rule resource
+    async fn read_rule(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a rule resource
+    async fn update_rule(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a rule resource
+    async fn delete_rule(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -652,128 +774,6 @@ impl<'a> Workloadmanager_apiService<'a> {
 
     /// Delete a location resource
     async fn delete_location(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Execution resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a execution resource
-    async fn plan_execution(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new execution resource
-    async fn create_execution(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a execution resource
-    async fn read_execution(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a execution resource
-    async fn update_execution(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a execution resource
-    async fn delete_execution(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Rule resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a rule resource
-    async fn plan_rule(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new rule resource
-    async fn create_rule(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a rule resource
-    async fn read_rule(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a rule resource
-    async fn update_rule(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a rule resource
-    async fn delete_rule(
         &self,
         id: &str,
     ) -> Result<()> {

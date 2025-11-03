@@ -24,14 +24,14 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "device" => {
-                self.plan_device(current_state, desired_input).await
+            "structure" => {
+                self.plan_structure(current_state, desired_input).await
             }
             "room" => {
                 self.plan_room(current_state, desired_input).await
             }
-            "structure" => {
-                self.plan_structure(current_state, desired_input).await
+            "device" => {
+                self.plan_device(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -48,14 +48,14 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "device" => {
-                self.create_device(input).await
+            "structure" => {
+                self.create_structure(input).await
             }
             "room" => {
                 self.create_room(input).await
             }
-            "structure" => {
-                self.create_structure(input).await
+            "device" => {
+                self.create_device(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -72,14 +72,14 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "device" => {
-                self.read_device(id).await
+            "structure" => {
+                self.read_structure(id).await
             }
             "room" => {
                 self.read_room(id).await
             }
-            "structure" => {
-                self.read_structure(id).await
+            "device" => {
+                self.read_device(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -97,14 +97,14 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "device" => {
-                self.update_device(id, input).await
+            "structure" => {
+                self.update_structure(id, input).await
             }
             "room" => {
                 self.update_room(id, input).await
             }
-            "structure" => {
-                self.update_structure(id, input).await
+            "device" => {
+                self.update_device(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -121,14 +121,14 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "device" => {
-                self.delete_device(id).await
+            "structure" => {
+                self.delete_structure(id).await
             }
             "room" => {
                 self.delete_room(id).await
             }
-            "structure" => {
-                self.delete_structure(id).await
+            "device" => {
+                self.delete_device(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -144,11 +144,11 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Device resource operations
+    // Structure resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a device resource
-    async fn plan_device(
+    /// Plan changes to a structure resource
+    async fn plan_structure(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -163,8 +163,8 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new device resource
-    async fn create_device(
+    /// Create a new structure resource
+    async fn create_structure(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -173,8 +173,8 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a device resource
-    async fn read_device(
+    /// Read a structure resource
+    async fn read_structure(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -183,8 +183,8 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a device resource
-    async fn update_device(
+    /// Update a structure resource
+    async fn update_structure(
         &self,
         id: &str,
         input: ResourceInput,
@@ -194,8 +194,8 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a device resource
-    async fn delete_device(
+    /// Delete a structure resource
+    async fn delete_structure(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -266,11 +266,11 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Structure resource operations
+    // Device resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a structure resource
-    async fn plan_structure(
+    /// Plan changes to a device resource
+    async fn plan_device(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -285,8 +285,8 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new structure resource
-    async fn create_structure(
+    /// Create a new device resource
+    async fn create_device(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -295,8 +295,8 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a structure resource
-    async fn read_structure(
+    /// Read a device resource
+    async fn read_device(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -305,8 +305,8 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a structure resource
-    async fn update_structure(
+    /// Update a device resource
+    async fn update_device(
         &self,
         id: &str,
         input: ResourceInput,
@@ -316,8 +316,8 @@ impl<'a> Smartdevicemanagement_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a structure resource
-    async fn delete_structure(
+    /// Delete a device resource
+    async fn delete_device(
         &self,
         id: &str,
     ) -> Result<()> {

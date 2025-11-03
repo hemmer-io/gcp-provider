@@ -1,6 +1,6 @@
 //! Policy_orchestrator resource
 //!
-//! Creates a new policy orchestrator under the given project resource. `name` field of the given orchestrator are ignored and instead replaced by a product of `parent` and `policy_orchestrator_id`. Orchestrator state field might be only set to `ACTIVE`, `STOPPED` or omitted (in which case, the created resource will be in `ACTIVE` state anyway).
+//! Creates a new policy orchestrator under the given folder resource. `name` field of the given orchestrator are ignored and instead replaced by a product of `parent` and `policy_orchestrator_id`. Orchestrator state field might be only set to `ACTIVE`, `STOPPED` or omitted (in which case, the created resource will be in `ACTIVE` state anyway).
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Policy_orchestrator<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, description: Option<String>, action: Option<String>, labels: Option<HashMap<String, String>>, orchestrated_resource: Option<String>, update_time: Option<String>, etag: Option<String>, name: Option<String>, orchestration_scope: Option<String>, create_time: Option<String>, orchestration_state: Option<String>, reconciling: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, state: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, orchestrated_resource: Option<String>, orchestration_state: Option<String>, reconciling: Option<bool>, update_time: Option<String>, etag: Option<String>, action: Option<String>, description: Option<String>, orchestration_scope: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Policy_orchestrator<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, description: Option<String>, action: Option<String>, labels: Option<HashMap<String, String>>, orchestrated_resource: Option<String>, update_time: Option<String>, etag: Option<String>, name: Option<String>, orchestration_scope: Option<String>, create_time: Option<String>, orchestration_state: Option<String>, reconciling: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, state: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, orchestrated_resource: Option<String>, orchestration_state: Option<String>, reconciling: Option<bool>, update_time: Option<String>, etag: Option<String>, action: Option<String>, description: Option<String>, orchestration_scope: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

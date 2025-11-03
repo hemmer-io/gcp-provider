@@ -21,7 +21,7 @@ impl<'a> Tls_inspection_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, min_tls_version: Option<String>, exclude_public_ca_set: Option<bool>, name: Option<String>, update_time: Option<String>, description: Option<String>, custom_tls_features: Option<Vec<String>>, ca_pool: Option<String>, create_time: Option<String>, trust_config: Option<String>, tls_feature_profile: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, trust_config: Option<String>, create_time: Option<String>, tls_feature_profile: Option<String>, update_time: Option<String>, min_tls_version: Option<String>, description: Option<String>, name: Option<String>, ca_pool: Option<String>, exclude_public_ca_set: Option<bool>, custom_tls_features: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Tls_inspection_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, min_tls_version: Option<String>, exclude_public_ca_set: Option<bool>, name: Option<String>, update_time: Option<String>, description: Option<String>, custom_tls_features: Option<Vec<String>>, ca_pool: Option<String>, create_time: Option<String>, trust_config: Option<String>, tls_feature_profile: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, trust_config: Option<String>, create_time: Option<String>, tls_feature_profile: Option<String>, update_time: Option<String>, min_tls_version: Option<String>, description: Option<String>, name: Option<String>, ca_pool: Option<String>, exclude_public_ca_set: Option<bool>, custom_tls_features: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Channel_section<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, targeting: Option<String>, snippet: Option<String>, content_details: Option<String>, id: Option<String>, localizations: Option<HashMap<String, String>>, etag: Option<String>, kind: Option<String>) -> Result<String> {
+    pub async fn create(&self, localizations: Option<HashMap<String, String>>, id: Option<String>, targeting: Option<String>, etag: Option<String>, content_details: Option<String>, snippet: Option<String>, kind: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Channel_section<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, targeting: Option<String>, snippet: Option<String>, content_details: Option<String>, id: Option<String>, localizations: Option<HashMap<String, String>>, etag: Option<String>, kind: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, localizations: Option<HashMap<String, String>>, id: Option<String>, targeting: Option<String>, etag: Option<String>, content_details: Option<String>, snippet: Option<String>, kind: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Filter_set<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, creative_id: Option<String>, environment: Option<String>, deal_id: Option<String>, breakdown_dimensions: Option<Vec<String>>, format: Option<String>, formats: Option<Vec<String>>, absolute_date_range: Option<String>, name: Option<String>, publisher_identifiers: Option<Vec<String>>, realtime_time_range: Option<String>, relative_date_range: Option<String>, time_series_granularity: Option<String>, seller_network_ids: Option<Vec<i64>>, platforms: Option<Vec<String>>, owner_name: String) -> Result<String> {
+    pub async fn create(&self, environment: Option<String>, breakdown_dimensions: Option<Vec<String>>, formats: Option<Vec<String>>, name: Option<String>, deal_id: Option<String>, creative_id: Option<String>, platforms: Option<Vec<String>>, publisher_identifiers: Option<Vec<String>>, seller_network_ids: Option<Vec<i64>>, time_series_granularity: Option<String>, realtime_time_range: Option<String>, format: Option<String>, relative_date_range: Option<String>, absolute_date_range: Option<String>, owner_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -1,6 +1,6 @@
 //! Migratable_resource resource
 //!
-//! Batch migrates resources from ml.googleapis.com, automl.googleapis.com, and datalabeling.googleapis.com to Vertex AI.
+//! Searches all of the resources in automl.googleapis.com, datalabeling.googleapis.com and ml.googleapis.com that can be migrated to Vertex AI's given location.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Migratable_resource<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, migrate_resource_requests: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, page_token: Option<String>, filter: Option<String>, page_size: Option<i64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

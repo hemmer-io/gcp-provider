@@ -21,7 +21,7 @@ impl<'a> Lake<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, service_account: Option<String>, uid: Option<String>, metastore_status: Option<String>, create_time: Option<String>, name: Option<String>, display_name: Option<String>, description: Option<String>, state: Option<String>, update_time: Option<String>, metastore: Option<String>, asset_status: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, uid: Option<String>, display_name: Option<String>, state: Option<String>, update_time: Option<String>, asset_status: Option<String>, metastore: Option<String>, metastore_status: Option<String>, description: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, service_account: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Lake<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, service_account: Option<String>, uid: Option<String>, metastore_status: Option<String>, create_time: Option<String>, name: Option<String>, display_name: Option<String>, description: Option<String>, state: Option<String>, update_time: Option<String>, metastore: Option<String>, asset_status: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, uid: Option<String>, display_name: Option<String>, state: Option<String>, update_time: Option<String>, asset_status: Option<String>, metastore: Option<String>, metastore_status: Option<String>, description: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, service_account: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

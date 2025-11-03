@@ -1,6 +1,6 @@
 //! Adunit resource
 //!
-//! Gets the specified ad unit in the specified ad client.
+//! Gets the specified ad unit in the specified ad client for the specified account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -21,7 +21,7 @@ impl<'a> Db_system<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, gcp_oracle_zone: Option<String>, entitlement_id: Option<String>, odb_network: Option<String>, odb_subnet: Option<String>, properties: Option<String>, labels: Option<HashMap<String, String>>, oci_url: Option<String>, display_name: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, properties: Option<String>, oci_url: Option<String>, create_time: Option<String>, gcp_oracle_zone: Option<String>, odb_network: Option<String>, labels: Option<HashMap<String, String>>, entitlement_id: Option<String>, display_name: Option<String>, name: Option<String>, odb_subnet: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

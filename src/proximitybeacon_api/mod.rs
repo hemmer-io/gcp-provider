@@ -24,23 +24,23 @@ impl<'a> Proximitybeacon_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "proximitybeacon" => {
-                self.plan_proximitybeacon(current_state, desired_input).await
-            }
             "beaconinfo" => {
                 self.plan_beaconinfo(current_state, desired_input).await
-            }
-            "attachment" => {
-                self.plan_attachment(current_state, desired_input).await
-            }
-            "namespace" => {
-                self.plan_namespace(current_state, desired_input).await
             }
             "beacon" => {
                 self.plan_beacon(current_state, desired_input).await
             }
             "diagnostic" => {
                 self.plan_diagnostic(current_state, desired_input).await
+            }
+            "attachment" => {
+                self.plan_attachment(current_state, desired_input).await
+            }
+            "proximitybeacon" => {
+                self.plan_proximitybeacon(current_state, desired_input).await
+            }
+            "namespace" => {
+                self.plan_namespace(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,23 +57,23 @@ impl<'a> Proximitybeacon_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "proximitybeacon" => {
-                self.create_proximitybeacon(input).await
-            }
             "beaconinfo" => {
                 self.create_beaconinfo(input).await
-            }
-            "attachment" => {
-                self.create_attachment(input).await
-            }
-            "namespace" => {
-                self.create_namespace(input).await
             }
             "beacon" => {
                 self.create_beacon(input).await
             }
             "diagnostic" => {
                 self.create_diagnostic(input).await
+            }
+            "attachment" => {
+                self.create_attachment(input).await
+            }
+            "proximitybeacon" => {
+                self.create_proximitybeacon(input).await
+            }
+            "namespace" => {
+                self.create_namespace(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -90,23 +90,23 @@ impl<'a> Proximitybeacon_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "proximitybeacon" => {
-                self.read_proximitybeacon(id).await
-            }
             "beaconinfo" => {
                 self.read_beaconinfo(id).await
-            }
-            "attachment" => {
-                self.read_attachment(id).await
-            }
-            "namespace" => {
-                self.read_namespace(id).await
             }
             "beacon" => {
                 self.read_beacon(id).await
             }
             "diagnostic" => {
                 self.read_diagnostic(id).await
+            }
+            "attachment" => {
+                self.read_attachment(id).await
+            }
+            "proximitybeacon" => {
+                self.read_proximitybeacon(id).await
+            }
+            "namespace" => {
+                self.read_namespace(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,23 +124,23 @@ impl<'a> Proximitybeacon_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "proximitybeacon" => {
-                self.update_proximitybeacon(id, input).await
-            }
             "beaconinfo" => {
                 self.update_beaconinfo(id, input).await
-            }
-            "attachment" => {
-                self.update_attachment(id, input).await
-            }
-            "namespace" => {
-                self.update_namespace(id, input).await
             }
             "beacon" => {
                 self.update_beacon(id, input).await
             }
             "diagnostic" => {
                 self.update_diagnostic(id, input).await
+            }
+            "attachment" => {
+                self.update_attachment(id, input).await
+            }
+            "proximitybeacon" => {
+                self.update_proximitybeacon(id, input).await
+            }
+            "namespace" => {
+                self.update_namespace(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -157,23 +157,23 @@ impl<'a> Proximitybeacon_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "proximitybeacon" => {
-                self.delete_proximitybeacon(id).await
-            }
             "beaconinfo" => {
                 self.delete_beaconinfo(id).await
-            }
-            "attachment" => {
-                self.delete_attachment(id).await
-            }
-            "namespace" => {
-                self.delete_namespace(id).await
             }
             "beacon" => {
                 self.delete_beacon(id).await
             }
             "diagnostic" => {
                 self.delete_diagnostic(id).await
+            }
+            "attachment" => {
+                self.delete_attachment(id).await
+            }
+            "proximitybeacon" => {
+                self.delete_proximitybeacon(id).await
+            }
+            "namespace" => {
+                self.delete_namespace(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -186,67 +186,6 @@ impl<'a> Proximitybeacon_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Proximitybeacon resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a proximitybeacon resource
-    async fn plan_proximitybeacon(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new proximitybeacon resource
-    async fn create_proximitybeacon(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a proximitybeacon resource
-    async fn read_proximitybeacon(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a proximitybeacon resource
-    async fn update_proximitybeacon(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a proximitybeacon resource
-    async fn delete_proximitybeacon(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -302,128 +241,6 @@ impl<'a> Proximitybeacon_apiService<'a> {
 
     /// Delete a beaconinfo resource
     async fn delete_beaconinfo(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Attachment resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a attachment resource
-    async fn plan_attachment(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new attachment resource
-    async fn create_attachment(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a attachment resource
-    async fn read_attachment(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a attachment resource
-    async fn update_attachment(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a attachment resource
-    async fn delete_attachment(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Namespace resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a namespace resource
-    async fn plan_namespace(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new namespace resource
-    async fn create_namespace(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a namespace resource
-    async fn read_namespace(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a namespace resource
-    async fn update_namespace(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a namespace resource
-    async fn delete_namespace(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -546,6 +363,189 @@ impl<'a> Proximitybeacon_apiService<'a> {
 
     /// Delete a diagnostic resource
     async fn delete_diagnostic(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Attachment resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a attachment resource
+    async fn plan_attachment(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new attachment resource
+    async fn create_attachment(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a attachment resource
+    async fn read_attachment(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a attachment resource
+    async fn update_attachment(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a attachment resource
+    async fn delete_attachment(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Proximitybeacon resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a proximitybeacon resource
+    async fn plan_proximitybeacon(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new proximitybeacon resource
+    async fn create_proximitybeacon(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a proximitybeacon resource
+    async fn read_proximitybeacon(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a proximitybeacon resource
+    async fn update_proximitybeacon(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a proximitybeacon resource
+    async fn delete_proximitybeacon(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Namespace resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a namespace resource
+    async fn plan_namespace(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new namespace resource
+    async fn create_namespace(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a namespace resource
+    async fn read_namespace(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a namespace resource
+    async fn update_namespace(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a namespace resource
+    async fn delete_namespace(
         &self,
         id: &str,
     ) -> Result<()> {

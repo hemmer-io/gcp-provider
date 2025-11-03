@@ -21,7 +21,7 @@ impl<'a> Keypair<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, subject_email_addresses: Option<Vec<String>>, disable_time: Option<String>, pem: Option<String>, key_pair_id: Option<String>, enablement_state: Option<String>, pkcs7: Option<String>, private_key_metadata: Option<Vec<String>>, user_id: String) -> Result<String> {
+    pub async fn create(&self, disable_time: Option<String>, enablement_state: Option<String>, key_pair_id: Option<String>, pem: Option<String>, pkcs7: Option<String>, private_key_metadata: Option<Vec<String>>, subject_email_addresses: Option<Vec<String>>, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

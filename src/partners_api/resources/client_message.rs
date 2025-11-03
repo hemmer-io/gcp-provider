@@ -23,7 +23,7 @@ impl<'a> Client_message<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, request_metadata: Option<String>, details: Option<String>, client_info: Option<HashMap<String, String>>, level: Option<String>) -> Result<String> {
+    pub async fn create(&self, details: Option<String>, request_metadata: Option<String>, client_info: Option<HashMap<String, String>>, level: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

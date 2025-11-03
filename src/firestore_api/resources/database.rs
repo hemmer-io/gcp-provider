@@ -21,7 +21,7 @@ impl<'a> Database<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, collection_ids: Option<Vec<String>>, input_uri_prefix: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, input_uri_prefix: Option<String>, collection_ids: Option<Vec<String>>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

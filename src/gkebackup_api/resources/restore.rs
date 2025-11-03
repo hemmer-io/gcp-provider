@@ -21,7 +21,7 @@ impl<'a> Restore<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, filter: Option<String>, create_time: Option<String>, resources_excluded_count: Option<i64>, cluster: Option<String>, update_time: Option<String>, description: Option<String>, state: Option<String>, backup: Option<String>, volumes_restored_count: Option<i64>, uid: Option<String>, state_reason: Option<String>, resources_failed_count: Option<i64>, restore_config: Option<String>, labels: Option<HashMap<String, String>>, resources_restored_count: Option<i64>, troubleshooting_info: Option<String>, etag: Option<String>, name: Option<String>, volume_data_restore_policy_overrides: Option<Vec<String>>, complete_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, troubleshooting_info: Option<String>, volumes_restored_count: Option<i64>, resources_restored_count: Option<i64>, create_time: Option<String>, labels: Option<HashMap<String, String>>, restore_config: Option<String>, cluster: Option<String>, resources_failed_count: Option<i64>, volume_data_restore_policy_overrides: Option<Vec<String>>, state_reason: Option<String>, complete_time: Option<String>, resources_excluded_count: Option<i64>, description: Option<String>, state: Option<String>, update_time: Option<String>, filter: Option<String>, backup: Option<String>, uid: Option<String>, etag: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Restore<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, filter: Option<String>, create_time: Option<String>, resources_excluded_count: Option<i64>, cluster: Option<String>, update_time: Option<String>, description: Option<String>, state: Option<String>, backup: Option<String>, volumes_restored_count: Option<i64>, uid: Option<String>, state_reason: Option<String>, resources_failed_count: Option<i64>, restore_config: Option<String>, labels: Option<HashMap<String, String>>, resources_restored_count: Option<i64>, troubleshooting_info: Option<String>, etag: Option<String>, name: Option<String>, volume_data_restore_policy_overrides: Option<Vec<String>>, complete_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, troubleshooting_info: Option<String>, volumes_restored_count: Option<i64>, resources_restored_count: Option<i64>, create_time: Option<String>, labels: Option<HashMap<String, String>>, restore_config: Option<String>, cluster: Option<String>, resources_failed_count: Option<i64>, volume_data_restore_policy_overrides: Option<Vec<String>>, state_reason: Option<String>, complete_time: Option<String>, resources_excluded_count: Option<i64>, description: Option<String>, state: Option<String>, update_time: Option<String>, filter: Option<String>, backup: Option<String>, uid: Option<String>, etag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

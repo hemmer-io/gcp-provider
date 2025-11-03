@@ -21,7 +21,7 @@ impl<'a> Notebook_runtime_template<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, data_persistent_disk_spec: Option<String>, description: Option<String>, encryption_spec: Option<String>, reservation_affinity: Option<String>, software_config: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, service_account: Option<String>, shielded_vm_config: Option<String>, network_tags: Option<Vec<String>>, notebook_runtime_type: Option<String>, create_time: Option<String>, etag: Option<String>, euc_config: Option<String>, network_spec: Option<String>, idle_shutdown_config: Option<String>, display_name: Option<String>, is_default: Option<bool>, name: Option<String>, machine_spec: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, shielded_vm_config: Option<String>, etag: Option<String>, machine_spec: Option<String>, reservation_affinity: Option<String>, service_account: Option<String>, create_time: Option<String>, display_name: Option<String>, idle_shutdown_config: Option<String>, encryption_spec: Option<String>, software_config: Option<String>, network_tags: Option<Vec<String>>, data_persistent_disk_spec: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, notebook_runtime_type: Option<String>, network_spec: Option<String>, update_time: Option<String>, is_default: Option<bool>, description: Option<String>, euc_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Notebook_runtime_template<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, data_persistent_disk_spec: Option<String>, description: Option<String>, encryption_spec: Option<String>, reservation_affinity: Option<String>, software_config: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, service_account: Option<String>, shielded_vm_config: Option<String>, network_tags: Option<Vec<String>>, notebook_runtime_type: Option<String>, create_time: Option<String>, etag: Option<String>, euc_config: Option<String>, network_spec: Option<String>, idle_shutdown_config: Option<String>, display_name: Option<String>, is_default: Option<bool>, name: Option<String>, machine_spec: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, shielded_vm_config: Option<String>, etag: Option<String>, machine_spec: Option<String>, reservation_affinity: Option<String>, service_account: Option<String>, create_time: Option<String>, display_name: Option<String>, idle_shutdown_config: Option<String>, encryption_spec: Option<String>, software_config: Option<String>, network_tags: Option<Vec<String>>, data_persistent_disk_spec: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, notebook_runtime_type: Option<String>, network_spec: Option<String>, update_time: Option<String>, is_default: Option<bool>, description: Option<String>, euc_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

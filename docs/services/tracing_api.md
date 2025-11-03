@@ -28,14 +28,20 @@ Creates a new Span.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `links` | String |  | A maximum of 128 links are allowed per Span. |
+| `span_id` | String |  | Unique identifier for a span within a trace. It is a base 16-encoded,
+case-insensitive string of a 8-bytes array and is required. |
+| `time_events` | String |  | A maximum of 32 annotations and 128 network events are allowed per Span. |
+| `parent_span_id` | String |  | ID of parent span which is a base 16-encoded, case-insensitive string of
+a 8-bytes array and is required to be 16 char long. If this is a root span,
+the value must be empty. |
 | `start_time` | String |  | Start time of the span.
 On the client side, this is the local machine clock time at which the span
 execution was started; on the server
 side, this is the time at which the server application handler started
 running. |
-| `span_id` | String |  | Unique identifier for a span within a trace. It is a base 16-encoded,
-case-insensitive string of a 8-bytes array and is required. |
+| `stack_trace` | String |  | Stack trace captured at the start of the span. |
+| `links` | String |  | A maximum of 128 links are allowed per Span. |
+| `status` | String |  | An optional final status for this span. |
 | `name` | String |  | The resource name of Span in the format
 `projects/PROJECT_ID/traces/TRACE_ID/spans/SPAN_ID`.
 `TRACE_ID` is a unique identifier for a trace within a project and is a
@@ -43,19 +49,8 @@ base16-encoded, case-insensitive string and is required to be 32 char long.
 `SPAN_ID` is a unique identifier for a span within a trace. It is a
 base 16-encoded, case-insensitive string of a 8-bytes array and is required
 to be 16 char long. |
-| `parent_span_id` | String |  | ID of parent span which is a base 16-encoded, case-insensitive string of
-a 8-bytes array and is required to be 16 char long. If this is a root span,
-the value must be empty. |
-| `time_events` | String |  | A maximum of 32 annotations and 128 network events are allowed per Span. |
-| `status` | String |  | An optional final status for this span. |
-| `stack_trace` | String |  | Stack trace captured at the start of the span. |
 | `attributes` | String |  | A set of attributes on the span. A maximum of 32 attributes are allowed per
 Span. |
-| `end_time` | String |  | End time of the span.
-On the client side, this is the local machine clock time at which the span
-execution was ended; on the server
-side, this is the time at which the server application handler stopped
-running. |
 | `display_name` | String |  | Description of the operation in the span. It is sanitized and displayed in
 the Stackdriver Trace tool in the
 {% dynamic print site_values.console_name %}.
@@ -64,6 +59,11 @@ name. For the same executable and the same call point, a best practice is
 to use a consistent operation name, which makes it easier to correlate
 cross-trace spans.
 The maximum length for the display_name is 128 bytes. |
+| `end_time` | String |  | End time of the span.
+On the client side, this is the local machine clock time at which the span
+execution was ended; on the server
+side, this is the time at which the server application handler stopped
+running. |
 | `name` | String | ✅ | The resource name of Span in the format
 `projects/PROJECT_ID/traces/TRACE_ID/spans/SPAN_ID`.
 `TRACE_ID` is a unique identifier for a trace within a project and is a

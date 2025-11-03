@@ -1,6 +1,6 @@
 //! Apk resource
 //!
-//! Uploads an APK and adds to the current edit.
+//! Creates a new APK without uploading the APK itself to Google Play, instead hosting the APK at a specified URL. This function is only available to organizations using Managed Play whose application is configured to restrict distribution to the organizations.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Apk<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, package_name: String, edit_id: String) -> Result<String> {
+    pub async fn create(&self, externally_hosted_apk: Option<String>, package_name: String, edit_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

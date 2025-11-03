@@ -1,6 +1,6 @@
 //! Source resource
 //!
-//! Uploads a file for Notebook LM to use. Creates a Source.
+//! Deletes multiple sources
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Source<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, blob: Option<String>, media_request_info: Option<String>, source_id: Option<String>, source_id: String, parent: String) -> Result<String> {
+    pub async fn create(&self, names: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

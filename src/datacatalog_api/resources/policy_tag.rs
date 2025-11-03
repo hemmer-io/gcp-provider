@@ -21,7 +21,7 @@ impl<'a> Policy_tag<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, parent_policy_tag: Option<String>, description: Option<String>, child_policy_tags: Option<Vec<String>>, display_name: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, child_policy_tags: Option<Vec<String>>, display_name: Option<String>, name: Option<String>, description: Option<String>, parent_policy_tag: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Policy_tag<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, parent_policy_tag: Option<String>, description: Option<String>, child_policy_tags: Option<Vec<String>>, display_name: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, child_policy_tags: Option<Vec<String>>, display_name: Option<String>, name: Option<String>, description: Option<String>, parent_policy_tag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

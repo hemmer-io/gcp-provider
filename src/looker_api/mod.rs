@@ -24,17 +24,17 @@ impl<'a> Looker_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "backup" => {
+                self.plan_backup(current_state, desired_input).await
+            }
             "instance" => {
                 self.plan_instance(current_state, desired_input).await
-            }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "backup" => {
-                self.plan_backup(current_state, desired_input).await
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -51,17 +51,17 @@ impl<'a> Looker_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "backup" => {
+                self.create_backup(input).await
+            }
             "instance" => {
                 self.create_instance(input).await
-            }
-            "operation" => {
-                self.create_operation(input).await
             }
             "location" => {
                 self.create_location(input).await
             }
-            "backup" => {
-                self.create_backup(input).await
+            "operation" => {
+                self.create_operation(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -78,17 +78,17 @@ impl<'a> Looker_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "backup" => {
+                self.read_backup(id).await
+            }
             "instance" => {
                 self.read_instance(id).await
-            }
-            "operation" => {
-                self.read_operation(id).await
             }
             "location" => {
                 self.read_location(id).await
             }
-            "backup" => {
-                self.read_backup(id).await
+            "operation" => {
+                self.read_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -106,17 +106,17 @@ impl<'a> Looker_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "backup" => {
+                self.update_backup(id, input).await
+            }
             "instance" => {
                 self.update_instance(id, input).await
-            }
-            "operation" => {
-                self.update_operation(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
             }
-            "backup" => {
-                self.update_backup(id, input).await
+            "operation" => {
+                self.update_operation(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -133,17 +133,17 @@ impl<'a> Looker_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "backup" => {
+                self.delete_backup(id).await
+            }
             "instance" => {
                 self.delete_instance(id).await
-            }
-            "operation" => {
-                self.delete_operation(id).await
             }
             "location" => {
                 self.delete_location(id).await
             }
-            "backup" => {
-                self.delete_backup(id).await
+            "operation" => {
+                self.delete_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -156,6 +156,67 @@ impl<'a> Looker_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Backup resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a backup resource
+    async fn plan_backup(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new backup resource
+    async fn create_backup(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a backup resource
+    async fn read_backup(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a backup resource
+    async fn update_backup(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a backup resource
+    async fn delete_backup(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -211,67 +272,6 @@ impl<'a> Looker_apiService<'a> {
 
     /// Delete a instance resource
     async fn delete_instance(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -342,11 +342,11 @@ impl<'a> Looker_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Backup resource operations
+    // Operation resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a backup resource
-    async fn plan_backup(
+    /// Plan changes to a operation resource
+    async fn plan_operation(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -361,8 +361,8 @@ impl<'a> Looker_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new backup resource
-    async fn create_backup(
+    /// Create a new operation resource
+    async fn create_operation(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -371,8 +371,8 @@ impl<'a> Looker_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a backup resource
-    async fn read_backup(
+    /// Read a operation resource
+    async fn read_operation(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -381,8 +381,8 @@ impl<'a> Looker_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a backup resource
-    async fn update_backup(
+    /// Update a operation resource
+    async fn update_operation(
         &self,
         id: &str,
         input: ResourceInput,
@@ -392,8 +392,8 @@ impl<'a> Looker_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a backup resource
-    async fn delete_backup(
+    /// Delete a operation resource
+    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {

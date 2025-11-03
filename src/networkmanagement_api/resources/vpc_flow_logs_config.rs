@@ -21,7 +21,7 @@ impl<'a> Vpc_flow_logs_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, vpn_tunnel: Option<String>, metadata_fields: Option<Vec<String>>, create_time: Option<String>, description: Option<String>, network: Option<String>, subnet: Option<String>, target_resource_state: Option<String>, aggregation_interval: Option<String>, state: Option<String>, flow_sampling: Option<f64>, cross_project_metadata: Option<String>, interconnect_attachment: Option<String>, metadata: Option<String>, labels: Option<HashMap<String, String>>, filter_expr: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, cross_project_metadata: Option<String>, interconnect_attachment: Option<String>, target_resource_state: Option<String>, flow_sampling: Option<f64>, name: Option<String>, state: Option<String>, update_time: Option<String>, subnet: Option<String>, vpn_tunnel: Option<String>, description: Option<String>, metadata_fields: Option<Vec<String>>, metadata: Option<String>, network: Option<String>, aggregation_interval: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, filter_expr: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Vpc_flow_logs_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, vpn_tunnel: Option<String>, metadata_fields: Option<Vec<String>>, create_time: Option<String>, description: Option<String>, network: Option<String>, subnet: Option<String>, target_resource_state: Option<String>, aggregation_interval: Option<String>, state: Option<String>, flow_sampling: Option<f64>, cross_project_metadata: Option<String>, interconnect_attachment: Option<String>, metadata: Option<String>, labels: Option<HashMap<String, String>>, filter_expr: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, cross_project_metadata: Option<String>, interconnect_attachment: Option<String>, target_resource_state: Option<String>, flow_sampling: Option<f64>, name: Option<String>, state: Option<String>, update_time: Option<String>, subnet: Option<String>, vpn_tunnel: Option<String>, description: Option<String>, metadata_fields: Option<Vec<String>>, metadata: Option<String>, network: Option<String>, aggregation_interval: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, filter_expr: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Playlist<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, player: Option<String>, status: Option<String>, content_details: Option<String>, kind: Option<String>, etag: Option<String>, snippet: Option<String>, localizations: Option<HashMap<String, String>>, id: Option<String>) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, localizations: Option<HashMap<String, String>>, player: Option<String>, snippet: Option<String>, content_details: Option<String>, id: Option<String>, kind: Option<String>, status: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Playlist<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, player: Option<String>, status: Option<String>, content_details: Option<String>, kind: Option<String>, etag: Option<String>, snippet: Option<String>, localizations: Option<HashMap<String, String>>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, localizations: Option<HashMap<String, String>>, player: Option<String>, snippet: Option<String>, content_details: Option<String>, id: Option<String>, kind: Option<String>, status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

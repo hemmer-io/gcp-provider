@@ -21,7 +21,7 @@ impl<'a> Studio_creative_asset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, studio_advertiser_id: Option<String>, studio_creative_id: Option<String>, studio_account_id: Option<String>) -> Result<String> {
+    pub async fn create(&self, studio_account_id: Option<String>, studio_creative_id: Option<String>, studio_advertiser_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

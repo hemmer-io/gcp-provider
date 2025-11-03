@@ -21,7 +21,7 @@ impl<'a> Completion_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, query_model: Option<String>, suggestion_types: Option<Vec<String>>, experiment_ids: Option<Vec<String>>, user_info: Option<String>, query: Option<String>, include_tail_suggestions: Option<bool>, user_pseudo_id: Option<String>, suggestion_type_specs: Option<Vec<String>>, boost_spec: Option<String>, completion_config: String) -> Result<String> {
+    pub async fn create(&self, user_pseudo_id: Option<String>, query: Option<String>, suggestion_types: Option<Vec<String>>, user_info: Option<String>, query_model: Option<String>, include_tail_suggestions: Option<bool>, suggestion_type_specs: Option<Vec<String>>, boost_spec: Option<String>, experiment_ids: Option<Vec<String>>, completion_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

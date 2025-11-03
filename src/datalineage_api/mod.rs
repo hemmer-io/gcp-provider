@@ -24,20 +24,20 @@ impl<'a> Datalineage_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "run" => {
-                self.plan_run(current_state, desired_input).await
-            }
             "lineage_event" => {
                 self.plan_lineage_event(current_state, desired_input).await
+            }
+            "run" => {
+                self.plan_run(current_state, desired_input).await
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
-            "processe" => {
-                self.plan_processe(current_state, desired_input).await
-            }
             "location" => {
                 self.plan_location(current_state, desired_input).await
+            }
+            "processe" => {
+                self.plan_processe(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -54,20 +54,20 @@ impl<'a> Datalineage_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "run" => {
-                self.create_run(input).await
-            }
             "lineage_event" => {
                 self.create_lineage_event(input).await
+            }
+            "run" => {
+                self.create_run(input).await
             }
             "operation" => {
                 self.create_operation(input).await
             }
-            "processe" => {
-                self.create_processe(input).await
-            }
             "location" => {
                 self.create_location(input).await
+            }
+            "processe" => {
+                self.create_processe(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -84,20 +84,20 @@ impl<'a> Datalineage_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "run" => {
-                self.read_run(id).await
-            }
             "lineage_event" => {
                 self.read_lineage_event(id).await
+            }
+            "run" => {
+                self.read_run(id).await
             }
             "operation" => {
                 self.read_operation(id).await
             }
-            "processe" => {
-                self.read_processe(id).await
-            }
             "location" => {
                 self.read_location(id).await
+            }
+            "processe" => {
+                self.read_processe(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -115,20 +115,20 @@ impl<'a> Datalineage_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "run" => {
-                self.update_run(id, input).await
-            }
             "lineage_event" => {
                 self.update_lineage_event(id, input).await
+            }
+            "run" => {
+                self.update_run(id, input).await
             }
             "operation" => {
                 self.update_operation(id, input).await
             }
-            "processe" => {
-                self.update_processe(id, input).await
-            }
             "location" => {
                 self.update_location(id, input).await
+            }
+            "processe" => {
+                self.update_processe(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -145,20 +145,20 @@ impl<'a> Datalineage_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "run" => {
-                self.delete_run(id).await
-            }
             "lineage_event" => {
                 self.delete_lineage_event(id).await
+            }
+            "run" => {
+                self.delete_run(id).await
             }
             "operation" => {
                 self.delete_operation(id).await
             }
-            "processe" => {
-                self.delete_processe(id).await
-            }
             "location" => {
                 self.delete_location(id).await
+            }
+            "processe" => {
+                self.delete_processe(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -171,67 +171,6 @@ impl<'a> Datalineage_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Run resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a run resource
-    async fn plan_run(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new run resource
-    async fn create_run(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a run resource
-    async fn read_run(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a run resource
-    async fn update_run(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a run resource
-    async fn delete_run(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -287,6 +226,67 @@ impl<'a> Datalineage_apiService<'a> {
 
     /// Delete a lineage_event resource
     async fn delete_lineage_event(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Run resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a run resource
+    async fn plan_run(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new run resource
+    async fn create_run(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a run resource
+    async fn read_run(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a run resource
+    async fn update_run(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a run resource
+    async fn delete_run(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -357,67 +357,6 @@ impl<'a> Datalineage_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Processe resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a processe resource
-    async fn plan_processe(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new processe resource
-    async fn create_processe(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a processe resource
-    async fn read_processe(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a processe resource
-    async fn update_processe(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a processe resource
-    async fn delete_processe(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Location resource operations
     // ------------------------------------------------------------------------
 
@@ -470,6 +409,67 @@ impl<'a> Datalineage_apiService<'a> {
 
     /// Delete a location resource
     async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Processe resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a processe resource
+    async fn plan_processe(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new processe resource
+    async fn create_processe(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a processe resource
+    async fn read_processe(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a processe resource
+    async fn update_processe(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a processe resource
+    async fn delete_processe(
         &self,
         id: &str,
     ) -> Result<()> {

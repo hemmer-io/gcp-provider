@@ -33,8 +33,8 @@ Retrieves the list of fonts currently served by the Google Fonts Developer API.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `kind` | String | This kind represents a list of webfont objects in the webfonts service. |
 | `items` | Vec<String> | The list of fonts currently served by the Google Fonts API. |
+| `kind` | String | This kind represents a list of webfont objects in the webfonts service. |
 
 
 #### Usage Example
@@ -50,8 +50,8 @@ provider = gcp.GcpProvider {
 
 # Access webfont outputs
 webfont_id = webfont.id
-webfont_kind = webfont.kind
 webfont_items = webfont.items
+webfont_kind = webfont.kind
 ```
 
 ---

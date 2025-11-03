@@ -74,8 +74,8 @@ Get detailed lead reports containing leads that have been received by all linked
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `detailed_lead_reports` | Vec<String> | List of detailed lead reports uniquely identified by external lead id. |
 | `next_page_token` | String | Pagination token to retrieve the next page of results. When `next_page_token` is not filled in, there is no next page and the list returned is the last page in the result set. |
+| `detailed_lead_reports` | Vec<String> | List of detailed lead reports uniquely identified by external lead id. |
 
 
 #### Usage Example
@@ -91,8 +91,8 @@ provider = gcp.GcpProvider {
 
 # Access detailed_lead_report outputs
 detailed_lead_report_id = detailed_lead_report.id
-detailed_lead_report_detailed_lead_reports = detailed_lead_report.detailed_lead_reports
 detailed_lead_report_next_page_token = detailed_lead_report.next_page_token
+detailed_lead_report_detailed_lead_reports = detailed_lead_report.detailed_lead_reports
 ```
 
 ---

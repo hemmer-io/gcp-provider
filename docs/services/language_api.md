@@ -22,7 +22,7 @@ The language_api service provides access to 4 resource types:
 
 ### Document
 
-A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and analyzeSyntax provide in one call.
+Analyzes the sentiment of the provided text.
 
 **Operations**: ✅ Create
 
@@ -30,9 +30,8 @@ A convenience method that provides all the features that analyzeSentiment, analy
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `encoding_type` | String |  | The encoding type used by the API to calculate sentence offsets. |
 | `document` | String |  | Required. Input document. |
-| `encoding_type` | String |  | The encoding type used by the API to calculate offsets. |
-| `features` | String |  | Required. The enabled features. |
 
 
 
@@ -58,7 +57,7 @@ document = provider.language_api.Document {
 
 ### Document
 
-Finds named entities (currently proper names and common nouns) in the text along with entity types, salience, mentions for each entity, and other properties.
+A convenience method that provides all syntax, sentiment, entity, and classification features in one call.
 
 **Operations**: ✅ Create
 
@@ -66,8 +65,9 @@ Finds named entities (currently proper names and common nouns) in the text along
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `encoding_type` | String |  | The encoding type used by the API to calculate offsets. |
+| `features` | String |  | Required. The enabled features. |
 | `document` | String |  | Required. Input document. |
+| `encoding_type` | String |  | The encoding type used by the API to calculate offsets. |
 
 
 
@@ -128,7 +128,7 @@ document = provider.language_api.Document {
 
 ### Document
 
-Analyzes the sentiment of the provided text.
+A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and analyzeSyntax provide in one call.
 
 **Operations**: ✅ Create
 
@@ -137,7 +137,8 @@ Analyzes the sentiment of the provided text.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `document` | String |  | Input document. |
-| `encoding_type` | String |  | The encoding type used by the API to calculate sentence offsets for the sentence sentiment. |
+| `encoding_type` | String |  | The encoding type used by the API to calculate offsets. |
+| `features` | String |  | The enabled features. |
 
 
 

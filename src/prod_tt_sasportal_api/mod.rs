@@ -24,14 +24,14 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "device" => {
-                self.plan_device(current_state, desired_input).await
+            "deployment" => {
+                self.plan_deployment(current_state, desired_input).await
             }
             "policie" => {
                 self.plan_policie(current_state, desired_input).await
             }
-            "deployment" => {
-                self.plan_deployment(current_state, desired_input).await
+            "installer" => {
+                self.plan_installer(current_state, desired_input).await
             }
             "customer" => {
                 self.plan_customer(current_state, desired_input).await
@@ -39,8 +39,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             "node" => {
                 self.plan_node(current_state, desired_input).await
             }
-            "installer" => {
-                self.plan_installer(current_state, desired_input).await
+            "device" => {
+                self.plan_device(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,14 +57,14 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "device" => {
-                self.create_device(input).await
+            "deployment" => {
+                self.create_deployment(input).await
             }
             "policie" => {
                 self.create_policie(input).await
             }
-            "deployment" => {
-                self.create_deployment(input).await
+            "installer" => {
+                self.create_installer(input).await
             }
             "customer" => {
                 self.create_customer(input).await
@@ -72,8 +72,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             "node" => {
                 self.create_node(input).await
             }
-            "installer" => {
-                self.create_installer(input).await
+            "device" => {
+                self.create_device(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -90,14 +90,14 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "device" => {
-                self.read_device(id).await
+            "deployment" => {
+                self.read_deployment(id).await
             }
             "policie" => {
                 self.read_policie(id).await
             }
-            "deployment" => {
-                self.read_deployment(id).await
+            "installer" => {
+                self.read_installer(id).await
             }
             "customer" => {
                 self.read_customer(id).await
@@ -105,8 +105,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             "node" => {
                 self.read_node(id).await
             }
-            "installer" => {
-                self.read_installer(id).await
+            "device" => {
+                self.read_device(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,14 +124,14 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "device" => {
-                self.update_device(id, input).await
+            "deployment" => {
+                self.update_deployment(id, input).await
             }
             "policie" => {
                 self.update_policie(id, input).await
             }
-            "deployment" => {
-                self.update_deployment(id, input).await
+            "installer" => {
+                self.update_installer(id, input).await
             }
             "customer" => {
                 self.update_customer(id, input).await
@@ -139,8 +139,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             "node" => {
                 self.update_node(id, input).await
             }
-            "installer" => {
-                self.update_installer(id, input).await
+            "device" => {
+                self.update_device(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -157,14 +157,14 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "device" => {
-                self.delete_device(id).await
+            "deployment" => {
+                self.delete_deployment(id).await
             }
             "policie" => {
                 self.delete_policie(id).await
             }
-            "deployment" => {
-                self.delete_deployment(id).await
+            "installer" => {
+                self.delete_installer(id).await
             }
             "customer" => {
                 self.delete_customer(id).await
@@ -172,8 +172,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             "node" => {
                 self.delete_node(id).await
             }
-            "installer" => {
-                self.delete_installer(id).await
+            "device" => {
+                self.delete_device(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -189,11 +189,11 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Device resource operations
+    // Deployment resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a device resource
-    async fn plan_device(
+    /// Plan changes to a deployment resource
+    async fn plan_deployment(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -208,8 +208,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new device resource
-    async fn create_device(
+    /// Create a new deployment resource
+    async fn create_deployment(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -218,8 +218,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a device resource
-    async fn read_device(
+    /// Read a deployment resource
+    async fn read_deployment(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -228,8 +228,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a device resource
-    async fn update_device(
+    /// Update a deployment resource
+    async fn update_deployment(
         &self,
         id: &str,
         input: ResourceInput,
@@ -239,8 +239,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a device resource
-    async fn delete_device(
+    /// Delete a deployment resource
+    async fn delete_deployment(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -311,11 +311,11 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Deployment resource operations
+    // Installer resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a deployment resource
-    async fn plan_deployment(
+    /// Plan changes to a installer resource
+    async fn plan_installer(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -330,8 +330,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new deployment resource
-    async fn create_deployment(
+    /// Create a new installer resource
+    async fn create_installer(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -340,8 +340,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a deployment resource
-    async fn read_deployment(
+    /// Read a installer resource
+    async fn read_installer(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -350,8 +350,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a deployment resource
-    async fn update_deployment(
+    /// Update a installer resource
+    async fn update_installer(
         &self,
         id: &str,
         input: ResourceInput,
@@ -361,8 +361,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a deployment resource
-    async fn delete_deployment(
+    /// Delete a installer resource
+    async fn delete_installer(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -494,11 +494,11 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Installer resource operations
+    // Device resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a installer resource
-    async fn plan_installer(
+    /// Plan changes to a device resource
+    async fn plan_device(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -513,8 +513,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new installer resource
-    async fn create_installer(
+    /// Create a new device resource
+    async fn create_device(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -523,8 +523,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a installer resource
-    async fn read_installer(
+    /// Read a device resource
+    async fn read_device(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -533,8 +533,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a installer resource
-    async fn update_installer(
+    /// Update a device resource
+    async fn update_device(
         &self,
         id: &str,
         input: ResourceInput,
@@ -544,8 +544,8 @@ impl<'a> Prod_tt_sasportal_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a installer resource
-    async fn delete_installer(
+    /// Delete a device resource
+    async fn delete_device(
         &self,
         id: &str,
     ) -> Result<()> {

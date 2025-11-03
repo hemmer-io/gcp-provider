@@ -24,26 +24,11 @@ impl<'a> Run_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "execution" => {
-                self.plan_execution(current_state, desired_input).await
-            }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
-            }
-            "job" => {
-                self.plan_job(current_state, desired_input).await
-            }
-            "workerpool" => {
-                self.plan_workerpool(current_state, desired_input).await
-            }
-            "service" => {
-                self.plan_service(current_state, desired_input).await
-            }
-            "revision" => {
-                self.plan_revision(current_state, desired_input).await
-            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
+            }
+            "domainmapping" => {
+                self.plan_domainmapping(current_state, desired_input).await
             }
             "authorizeddomain" => {
                 self.plan_authorizeddomain(current_state, desired_input).await
@@ -51,14 +36,35 @@ impl<'a> Run_apiService<'a> {
             "route" => {
                 self.plan_route(current_state, desired_input).await
             }
-            "task" => {
-                self.plan_task(current_state, desired_input).await
+            "execution" => {
+                self.plan_execution(current_state, desired_input).await
             }
-            "domainmapping" => {
-                self.plan_domainmapping(current_state, desired_input).await
+            "job" => {
+                self.plan_job(current_state, desired_input).await
+            }
+            "service" => {
+                self.plan_service(current_state, desired_input).await
             }
             "configuration" => {
                 self.plan_configuration(current_state, desired_input).await
+            }
+            "workerpool" => {
+                self.plan_workerpool(current_state, desired_input).await
+            }
+            "task" => {
+                self.plan_task(current_state, desired_input).await
+            }
+            "revision" => {
+                self.plan_revision(current_state, desired_input).await
+            }
+            "location" => {
+                self.plan_location(current_state, desired_input).await
+            }
+            "worker_pool" => {
+                self.plan_worker_pool(current_state, desired_input).await
+            }
+            "revision" => {
+                self.plan_revision(current_state, desired_input).await
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
@@ -66,26 +72,20 @@ impl<'a> Run_apiService<'a> {
             "task" => {
                 self.plan_task(current_state, desired_input).await
             }
-            "job" => {
-                self.plan_job(current_state, desired_input).await
-            }
-            "worker_pool" => {
-                self.plan_worker_pool(current_state, desired_input).await
-            }
-            "service" => {
-                self.plan_service(current_state, desired_input).await
-            }
-            "execution" => {
-                self.plan_execution(current_state, desired_input).await
+            "build" => {
+                self.plan_build(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "build" => {
-                self.plan_build(current_state, desired_input).await
+            "job" => {
+                self.plan_job(current_state, desired_input).await
             }
-            "revision" => {
-                self.plan_revision(current_state, desired_input).await
+            "execution" => {
+                self.plan_execution(current_state, desired_input).await
+            }
+            "service" => {
+                self.plan_service(current_state, desired_input).await
             }
             "customresourcedefinition" => {
                 self.plan_customresourcedefinition(current_state, desired_input).await
@@ -108,26 +108,11 @@ impl<'a> Run_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "execution" => {
-                self.create_execution(input).await
-            }
-            "location" => {
-                self.create_location(input).await
-            }
-            "job" => {
-                self.create_job(input).await
-            }
-            "workerpool" => {
-                self.create_workerpool(input).await
-            }
-            "service" => {
-                self.create_service(input).await
-            }
-            "revision" => {
-                self.create_revision(input).await
-            }
             "operation" => {
                 self.create_operation(input).await
+            }
+            "domainmapping" => {
+                self.create_domainmapping(input).await
             }
             "authorizeddomain" => {
                 self.create_authorizeddomain(input).await
@@ -135,14 +120,35 @@ impl<'a> Run_apiService<'a> {
             "route" => {
                 self.create_route(input).await
             }
-            "task" => {
-                self.create_task(input).await
+            "execution" => {
+                self.create_execution(input).await
             }
-            "domainmapping" => {
-                self.create_domainmapping(input).await
+            "job" => {
+                self.create_job(input).await
+            }
+            "service" => {
+                self.create_service(input).await
             }
             "configuration" => {
                 self.create_configuration(input).await
+            }
+            "workerpool" => {
+                self.create_workerpool(input).await
+            }
+            "task" => {
+                self.create_task(input).await
+            }
+            "revision" => {
+                self.create_revision(input).await
+            }
+            "location" => {
+                self.create_location(input).await
+            }
+            "worker_pool" => {
+                self.create_worker_pool(input).await
+            }
+            "revision" => {
+                self.create_revision(input).await
             }
             "operation" => {
                 self.create_operation(input).await
@@ -150,26 +156,20 @@ impl<'a> Run_apiService<'a> {
             "task" => {
                 self.create_task(input).await
             }
-            "job" => {
-                self.create_job(input).await
-            }
-            "worker_pool" => {
-                self.create_worker_pool(input).await
-            }
-            "service" => {
-                self.create_service(input).await
-            }
-            "execution" => {
-                self.create_execution(input).await
+            "build" => {
+                self.create_build(input).await
             }
             "location" => {
                 self.create_location(input).await
             }
-            "build" => {
-                self.create_build(input).await
+            "job" => {
+                self.create_job(input).await
             }
-            "revision" => {
-                self.create_revision(input).await
+            "execution" => {
+                self.create_execution(input).await
+            }
+            "service" => {
+                self.create_service(input).await
             }
             "customresourcedefinition" => {
                 self.create_customresourcedefinition(input).await
@@ -192,26 +192,11 @@ impl<'a> Run_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "execution" => {
-                self.read_execution(id).await
-            }
-            "location" => {
-                self.read_location(id).await
-            }
-            "job" => {
-                self.read_job(id).await
-            }
-            "workerpool" => {
-                self.read_workerpool(id).await
-            }
-            "service" => {
-                self.read_service(id).await
-            }
-            "revision" => {
-                self.read_revision(id).await
-            }
             "operation" => {
                 self.read_operation(id).await
+            }
+            "domainmapping" => {
+                self.read_domainmapping(id).await
             }
             "authorizeddomain" => {
                 self.read_authorizeddomain(id).await
@@ -219,14 +204,35 @@ impl<'a> Run_apiService<'a> {
             "route" => {
                 self.read_route(id).await
             }
-            "task" => {
-                self.read_task(id).await
+            "execution" => {
+                self.read_execution(id).await
             }
-            "domainmapping" => {
-                self.read_domainmapping(id).await
+            "job" => {
+                self.read_job(id).await
+            }
+            "service" => {
+                self.read_service(id).await
             }
             "configuration" => {
                 self.read_configuration(id).await
+            }
+            "workerpool" => {
+                self.read_workerpool(id).await
+            }
+            "task" => {
+                self.read_task(id).await
+            }
+            "revision" => {
+                self.read_revision(id).await
+            }
+            "location" => {
+                self.read_location(id).await
+            }
+            "worker_pool" => {
+                self.read_worker_pool(id).await
+            }
+            "revision" => {
+                self.read_revision(id).await
             }
             "operation" => {
                 self.read_operation(id).await
@@ -234,26 +240,20 @@ impl<'a> Run_apiService<'a> {
             "task" => {
                 self.read_task(id).await
             }
-            "job" => {
-                self.read_job(id).await
-            }
-            "worker_pool" => {
-                self.read_worker_pool(id).await
-            }
-            "service" => {
-                self.read_service(id).await
-            }
-            "execution" => {
-                self.read_execution(id).await
+            "build" => {
+                self.read_build(id).await
             }
             "location" => {
                 self.read_location(id).await
             }
-            "build" => {
-                self.read_build(id).await
+            "job" => {
+                self.read_job(id).await
             }
-            "revision" => {
-                self.read_revision(id).await
+            "execution" => {
+                self.read_execution(id).await
+            }
+            "service" => {
+                self.read_service(id).await
             }
             "customresourcedefinition" => {
                 self.read_customresourcedefinition(id).await
@@ -277,26 +277,11 @@ impl<'a> Run_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "execution" => {
-                self.update_execution(id, input).await
-            }
-            "location" => {
-                self.update_location(id, input).await
-            }
-            "job" => {
-                self.update_job(id, input).await
-            }
-            "workerpool" => {
-                self.update_workerpool(id, input).await
-            }
-            "service" => {
-                self.update_service(id, input).await
-            }
-            "revision" => {
-                self.update_revision(id, input).await
-            }
             "operation" => {
                 self.update_operation(id, input).await
+            }
+            "domainmapping" => {
+                self.update_domainmapping(id, input).await
             }
             "authorizeddomain" => {
                 self.update_authorizeddomain(id, input).await
@@ -304,14 +289,35 @@ impl<'a> Run_apiService<'a> {
             "route" => {
                 self.update_route(id, input).await
             }
-            "task" => {
-                self.update_task(id, input).await
+            "execution" => {
+                self.update_execution(id, input).await
             }
-            "domainmapping" => {
-                self.update_domainmapping(id, input).await
+            "job" => {
+                self.update_job(id, input).await
+            }
+            "service" => {
+                self.update_service(id, input).await
             }
             "configuration" => {
                 self.update_configuration(id, input).await
+            }
+            "workerpool" => {
+                self.update_workerpool(id, input).await
+            }
+            "task" => {
+                self.update_task(id, input).await
+            }
+            "revision" => {
+                self.update_revision(id, input).await
+            }
+            "location" => {
+                self.update_location(id, input).await
+            }
+            "worker_pool" => {
+                self.update_worker_pool(id, input).await
+            }
+            "revision" => {
+                self.update_revision(id, input).await
             }
             "operation" => {
                 self.update_operation(id, input).await
@@ -319,26 +325,20 @@ impl<'a> Run_apiService<'a> {
             "task" => {
                 self.update_task(id, input).await
             }
-            "job" => {
-                self.update_job(id, input).await
-            }
-            "worker_pool" => {
-                self.update_worker_pool(id, input).await
-            }
-            "service" => {
-                self.update_service(id, input).await
-            }
-            "execution" => {
-                self.update_execution(id, input).await
+            "build" => {
+                self.update_build(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
             }
-            "build" => {
-                self.update_build(id, input).await
+            "job" => {
+                self.update_job(id, input).await
             }
-            "revision" => {
-                self.update_revision(id, input).await
+            "execution" => {
+                self.update_execution(id, input).await
+            }
+            "service" => {
+                self.update_service(id, input).await
             }
             "customresourcedefinition" => {
                 self.update_customresourcedefinition(id, input).await
@@ -361,26 +361,11 @@ impl<'a> Run_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "execution" => {
-                self.delete_execution(id).await
-            }
-            "location" => {
-                self.delete_location(id).await
-            }
-            "job" => {
-                self.delete_job(id).await
-            }
-            "workerpool" => {
-                self.delete_workerpool(id).await
-            }
-            "service" => {
-                self.delete_service(id).await
-            }
-            "revision" => {
-                self.delete_revision(id).await
-            }
             "operation" => {
                 self.delete_operation(id).await
+            }
+            "domainmapping" => {
+                self.delete_domainmapping(id).await
             }
             "authorizeddomain" => {
                 self.delete_authorizeddomain(id).await
@@ -388,14 +373,35 @@ impl<'a> Run_apiService<'a> {
             "route" => {
                 self.delete_route(id).await
             }
-            "task" => {
-                self.delete_task(id).await
+            "execution" => {
+                self.delete_execution(id).await
             }
-            "domainmapping" => {
-                self.delete_domainmapping(id).await
+            "job" => {
+                self.delete_job(id).await
+            }
+            "service" => {
+                self.delete_service(id).await
             }
             "configuration" => {
                 self.delete_configuration(id).await
+            }
+            "workerpool" => {
+                self.delete_workerpool(id).await
+            }
+            "task" => {
+                self.delete_task(id).await
+            }
+            "revision" => {
+                self.delete_revision(id).await
+            }
+            "location" => {
+                self.delete_location(id).await
+            }
+            "worker_pool" => {
+                self.delete_worker_pool(id).await
+            }
+            "revision" => {
+                self.delete_revision(id).await
             }
             "operation" => {
                 self.delete_operation(id).await
@@ -403,26 +409,20 @@ impl<'a> Run_apiService<'a> {
             "task" => {
                 self.delete_task(id).await
             }
-            "job" => {
-                self.delete_job(id).await
-            }
-            "worker_pool" => {
-                self.delete_worker_pool(id).await
-            }
-            "service" => {
-                self.delete_service(id).await
-            }
-            "execution" => {
-                self.delete_execution(id).await
+            "build" => {
+                self.delete_build(id).await
             }
             "location" => {
                 self.delete_location(id).await
             }
-            "build" => {
-                self.delete_build(id).await
+            "job" => {
+                self.delete_job(id).await
             }
-            "revision" => {
-                self.delete_revision(id).await
+            "execution" => {
+                self.delete_execution(id).await
+            }
+            "service" => {
+                self.delete_service(id).await
             }
             "customresourcedefinition" => {
                 self.delete_customresourcedefinition(id).await
@@ -441,372 +441,6 @@ impl<'a> Run_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Execution resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a execution resource
-    async fn plan_execution(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new execution resource
-    async fn create_execution(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a execution resource
-    async fn read_execution(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a execution resource
-    async fn update_execution(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a execution resource
-    async fn delete_execution(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Location resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a location resource
-    async fn plan_location(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new location resource
-    async fn create_location(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a location resource
-    async fn read_location(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a location resource
-    async fn update_location(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a location resource
-    async fn delete_location(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Job resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a job resource
-    async fn plan_job(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new job resource
-    async fn create_job(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a job resource
-    async fn read_job(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a job resource
-    async fn update_job(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a job resource
-    async fn delete_job(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Workerpool resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a workerpool resource
-    async fn plan_workerpool(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new workerpool resource
-    async fn create_workerpool(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a workerpool resource
-    async fn read_workerpool(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a workerpool resource
-    async fn update_workerpool(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a workerpool resource
-    async fn delete_workerpool(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Service resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a service resource
-    async fn plan_service(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new service resource
-    async fn create_service(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a service resource
-    async fn read_service(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a service resource
-    async fn update_service(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a service resource
-    async fn delete_service(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Revision resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a revision resource
-    async fn plan_revision(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new revision resource
-    async fn create_revision(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a revision resource
-    async fn read_revision(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a revision resource
-    async fn update_revision(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a revision resource
-    async fn delete_revision(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -862,6 +496,67 @@ impl<'a> Run_apiService<'a> {
 
     /// Delete a operation resource
     async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Domainmapping resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a domainmapping resource
+    async fn plan_domainmapping(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new domainmapping resource
+    async fn create_domainmapping(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a domainmapping resource
+    async fn read_domainmapping(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a domainmapping resource
+    async fn update_domainmapping(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a domainmapping resource
+    async fn delete_domainmapping(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -993,11 +688,11 @@ impl<'a> Run_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Task resource operations
+    // Execution resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a task resource
-    async fn plan_task(
+    /// Plan changes to a execution resource
+    async fn plan_execution(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1012,8 +707,8 @@ impl<'a> Run_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new task resource
-    async fn create_task(
+    /// Create a new execution resource
+    async fn create_execution(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1022,8 +717,8 @@ impl<'a> Run_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a task resource
-    async fn read_task(
+    /// Read a execution resource
+    async fn read_execution(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1032,8 +727,8 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a task resource
-    async fn update_task(
+    /// Update a execution resource
+    async fn update_execution(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1043,8 +738,8 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a task resource
-    async fn delete_task(
+    /// Delete a execution resource
+    async fn delete_execution(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1054,11 +749,11 @@ impl<'a> Run_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Domainmapping resource operations
+    // Job resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a domainmapping resource
-    async fn plan_domainmapping(
+    /// Plan changes to a job resource
+    async fn plan_job(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1073,8 +768,8 @@ impl<'a> Run_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new domainmapping resource
-    async fn create_domainmapping(
+    /// Create a new job resource
+    async fn create_job(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1083,8 +778,8 @@ impl<'a> Run_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a domainmapping resource
-    async fn read_domainmapping(
+    /// Read a job resource
+    async fn read_job(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1093,8 +788,8 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a domainmapping resource
-    async fn update_domainmapping(
+    /// Update a job resource
+    async fn update_job(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1104,8 +799,69 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a domainmapping resource
-    async fn delete_domainmapping(
+    /// Delete a job resource
+    async fn delete_job(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Service resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a service resource
+    async fn plan_service(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new service resource
+    async fn create_service(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a service resource
+    async fn read_service(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a service resource
+    async fn update_service(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a service resource
+    async fn delete_service(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1167,6 +923,372 @@ impl<'a> Run_apiService<'a> {
 
     /// Delete a configuration resource
     async fn delete_configuration(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Workerpool resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a workerpool resource
+    async fn plan_workerpool(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new workerpool resource
+    async fn create_workerpool(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a workerpool resource
+    async fn read_workerpool(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a workerpool resource
+    async fn update_workerpool(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a workerpool resource
+    async fn delete_workerpool(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Task resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a task resource
+    async fn plan_task(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new task resource
+    async fn create_task(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a task resource
+    async fn read_task(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a task resource
+    async fn update_task(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a task resource
+    async fn delete_task(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Revision resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a revision resource
+    async fn plan_revision(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new revision resource
+    async fn create_revision(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a revision resource
+    async fn read_revision(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a revision resource
+    async fn update_revision(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a revision resource
+    async fn delete_revision(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Worker_pool resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a worker_pool resource
+    async fn plan_worker_pool(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new worker_pool resource
+    async fn create_worker_pool(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a worker_pool resource
+    async fn read_worker_pool(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a worker_pool resource
+    async fn update_worker_pool(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a worker_pool resource
+    async fn delete_worker_pool(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Revision resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a revision resource
+    async fn plan_revision(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new revision resource
+    async fn create_revision(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a revision resource
+    async fn read_revision(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a revision resource
+    async fn update_revision(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a revision resource
+    async fn delete_revision(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1298,11 +1420,11 @@ impl<'a> Run_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Job resource operations
+    // Build resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a job resource
-    async fn plan_job(
+    /// Plan changes to a build resource
+    async fn plan_build(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1317,8 +1439,8 @@ impl<'a> Run_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new job resource
-    async fn create_job(
+    /// Create a new build resource
+    async fn create_build(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1327,8 +1449,8 @@ impl<'a> Run_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a job resource
-    async fn read_job(
+    /// Read a build resource
+    async fn read_build(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1337,8 +1459,8 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a job resource
-    async fn update_job(
+    /// Update a build resource
+    async fn update_build(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1348,191 +1470,8 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a job resource
-    async fn delete_job(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Worker_pool resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a worker_pool resource
-    async fn plan_worker_pool(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new worker_pool resource
-    async fn create_worker_pool(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a worker_pool resource
-    async fn read_worker_pool(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a worker_pool resource
-    async fn update_worker_pool(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a worker_pool resource
-    async fn delete_worker_pool(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Service resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a service resource
-    async fn plan_service(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new service resource
-    async fn create_service(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a service resource
-    async fn read_service(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a service resource
-    async fn update_service(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a service resource
-    async fn delete_service(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Execution resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a execution resource
-    async fn plan_execution(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new execution resource
-    async fn create_execution(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a execution resource
-    async fn read_execution(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a execution resource
-    async fn update_execution(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a execution resource
-    async fn delete_execution(
+    /// Delete a build resource
+    async fn delete_build(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1603,11 +1542,11 @@ impl<'a> Run_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Build resource operations
+    // Job resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a build resource
-    async fn plan_build(
+    /// Plan changes to a job resource
+    async fn plan_job(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1622,8 +1561,8 @@ impl<'a> Run_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new build resource
-    async fn create_build(
+    /// Create a new job resource
+    async fn create_job(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1632,8 +1571,8 @@ impl<'a> Run_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a build resource
-    async fn read_build(
+    /// Read a job resource
+    async fn read_job(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1642,8 +1581,8 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a build resource
-    async fn update_build(
+    /// Update a job resource
+    async fn update_job(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1653,8 +1592,8 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a build resource
-    async fn delete_build(
+    /// Delete a job resource
+    async fn delete_job(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1664,11 +1603,11 @@ impl<'a> Run_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Revision resource operations
+    // Execution resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a revision resource
-    async fn plan_revision(
+    /// Plan changes to a execution resource
+    async fn plan_execution(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1683,8 +1622,8 @@ impl<'a> Run_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new revision resource
-    async fn create_revision(
+    /// Create a new execution resource
+    async fn create_execution(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1693,8 +1632,8 @@ impl<'a> Run_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a revision resource
-    async fn read_revision(
+    /// Read a execution resource
+    async fn read_execution(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1703,8 +1642,8 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a revision resource
-    async fn update_revision(
+    /// Update a execution resource
+    async fn update_execution(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1714,8 +1653,69 @@ impl<'a> Run_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a revision resource
-    async fn delete_revision(
+    /// Delete a execution resource
+    async fn delete_execution(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Service resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a service resource
+    async fn plan_service(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new service resource
+    async fn create_service(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a service resource
+    async fn read_service(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a service resource
+    async fn update_service(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a service resource
+    async fn delete_service(
         &self,
         id: &str,
     ) -> Result<()> {

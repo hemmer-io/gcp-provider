@@ -10,38 +10,33 @@
 
 The smartdevicemanagement_api service provides access to 3 resource types:
 
-- [Device](#device) [CR]
-- [Room](#room) [R]
 - [Structure](#structure) [R]
+- [Room](#room) [R]
+- [Device](#device) [CR]
 
 ---
 
 ## Resources
 
 
-### Device
+### Structure
 
-Executes a command to device managed by the enterprise.
+Gets a structure managed by the enterprise.
 
-**Operations**: ✅ Create ✅ Read
+**Operations**: ✅ Read
 
 #### Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `params` | HashMap<String, String> |  | The command message to execute, represented as a Struct. |
-| `command` | String |  | The command name to execute, represented by the fully qualified protobuf message name. |
-| `name` | String | ✅ | The name of the device requested. For example: "enterprises/XYZ/devices/123" |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `name` | String | Required. The resource name of the device. For example: "enterprises/XYZ/devices/123". |
-| `traits` | HashMap<String, String> | Output only. Device traits. |
-| `type` | String | Output only. Type of the device for general display purposes. For example: "THERMOSTAT". The device type should not be used to deduce or infer functionality of the actual device it is assigned to. Instead, use the returned traits for the device. |
-| `parent_relations` | Vec<String> | Assignee details of the device. |
+| `name` | String | Output only. The resource name of the structure. For example: "enterprises/XYZ/structures/ABC". |
+| `traits` | HashMap<String, String> | Structure traits. |
 
 
 #### Usage Example
@@ -55,17 +50,10 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create device
-device = provider.smartdevicemanagement_api.Device {
-    name = "value"  # The name of the device requested. For example: "enterprises/XYZ/devices/123"
-}
-
-# Access device outputs
-device_id = device.id
-device_name = device.name
-device_traits = device.traits
-device_type = device.type
-device_parent_relations = device.parent_relations
+# Access structure outputs
+structure_id = structure.id
+structure_name = structure.name
+structure_traits = structure.traits
 ```
 
 ---
@@ -111,24 +99,29 @@ room_traits = room.traits
 ---
 
 
-### Structure
+### Device
 
-Gets a structure managed by the enterprise.
+Executes a command to device managed by the enterprise.
 
-**Operations**: ✅ Read
+**Operations**: ✅ Create ✅ Read
 
 #### Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `command` | String |  | The command name to execute, represented by the fully qualified protobuf message name. |
+| `params` | HashMap<String, String> |  | The command message to execute, represented as a Struct. |
+| `name` | String | ✅ | The name of the device requested. For example: "enterprises/XYZ/devices/123" |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `traits` | HashMap<String, String> | Structure traits. |
-| `name` | String | Output only. The resource name of the structure. For example: "enterprises/XYZ/structures/ABC". |
+| `name` | String | Required. The resource name of the device. For example: "enterprises/XYZ/devices/123". |
+| `traits` | HashMap<String, String> | Output only. Device traits. |
+| `type` | String | Output only. Type of the device for general display purposes. For example: "THERMOSTAT". The device type should not be used to deduce or infer functionality of the actual device it is assigned to. Instead, use the returned traits for the device. |
+| `parent_relations` | Vec<String> | Assignee details of the device. |
 
 
 #### Usage Example
@@ -142,10 +135,17 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Access structure outputs
-structure_id = structure.id
-structure_traits = structure.traits
-structure_name = structure.name
+# Create device
+device = provider.smartdevicemanagement_api.Device {
+    name = "value"  # The name of the device requested. For example: "enterprises/XYZ/devices/123"
+}
+
+# Access device outputs
+device_id = device.id
+device_name = device.name
+device_traits = device.traits
+device_type = device.type
+device_parent_relations = device.parent_relations
 ```
 
 ---
@@ -163,15 +163,12 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple device resources
-device_0 = provider.smartdevicemanagement_api.Device {
-    name = "value-0"
+# Create multiple structure resources
+structure_0 = provider.smartdevicemanagement_api.Structure {
 }
-device_1 = provider.smartdevicemanagement_api.Device {
-    name = "value-1"
+structure_1 = provider.smartdevicemanagement_api.Structure {
 }
-device_2 = provider.smartdevicemanagement_api.Device {
-    name = "value-2"
+structure_2 = provider.smartdevicemanagement_api.Structure {
 }
 ```
 
@@ -180,8 +177,7 @@ device_2 = provider.smartdevicemanagement_api.Device {
 ```kcl
 # Only create in production
 if environment == "production":
-    device = provider.smartdevicemanagement_api.Device {
-        name = "production-value"
+    structure = provider.smartdevicemanagement_api.Structure {
     }
 ```
 

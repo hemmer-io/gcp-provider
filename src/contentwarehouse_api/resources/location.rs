@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, process_with_doc_ai_pipeline: Option<String>, request_metadata: Option<String>, export_cdw_pipeline: Option<String>, gcs_ingest_with_doc_ai_processors_pipeline: Option<String>, gcs_ingest_pipeline: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, gcs_ingest_pipeline: Option<String>, export_cdw_pipeline: Option<String>, gcs_ingest_with_doc_ai_processors_pipeline: Option<String>, process_with_doc_ai_pipeline: Option<String>, request_metadata: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

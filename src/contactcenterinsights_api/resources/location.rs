@@ -1,6 +1,6 @@
 //! Location resource
 //!
-//! Delete feedback labels in bulk using a filter.
+//! Upload feedback labels from an external source in bulk. Currently supports labeling Quality AI example conversations.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, parent: Option<String>, filter: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, validate_only: Option<bool>, gcs_source: Option<String>, sheets_source: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, parent: Option<String>, filter: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, validate_only: Option<bool>, gcs_source: Option<String>, sheets_source: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Tasklist<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, id: Option<String>, etag: Option<String>, updated: Option<String>, self_link: Option<String>, title: Option<String>) -> Result<String> {
+    pub async fn create(&self, updated: Option<String>, id: Option<String>, kind: Option<String>, etag: Option<String>, self_link: Option<String>, title: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Tasklist<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, kind: Option<String>, id: Option<String>, etag: Option<String>, updated: Option<String>, self_link: Option<String>, title: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, updated: Option<String>, id: Option<String>, kind: Option<String>, etag: Option<String>, self_link: Option<String>, title: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

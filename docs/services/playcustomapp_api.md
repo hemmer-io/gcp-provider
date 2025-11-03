@@ -27,10 +27,10 @@ Creates a new custom app.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `organizations` | Vec<String> |  | Organizations to which the custom app should be made available. If the request contains any organizations, then the app will be restricted to only these organizations. To support the organization linked to the developer account, the organization ID should be provided explicitly together with other organizations. If no organizations are provided, then the app is only available to the organization linked to the developer account. |
-| `package_name` | String |  | Output only. Package name of the created Android app. Only present in the API response. |
 | `title` | String |  | Title for the Android app. |
 | `language_code` | String |  | Default listing language in BCP 47 format. |
+| `organizations` | Vec<String> |  | Organizations to which the custom app should be made available. If the request contains any organizations, then the app will be restricted to only these organizations. To support the organization linked to the developer account, the organization ID should be provided explicitly together with other organizations. If no organizations are provided, then the app is only available to the organization linked to the developer account. |
+| `package_name` | String |  | Output only. Package name of the created Android app. Only present in the API response. |
 | `account` | String | ✅ | Developer account ID. |
 
 

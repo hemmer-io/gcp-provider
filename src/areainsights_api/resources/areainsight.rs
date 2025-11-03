@@ -21,7 +21,7 @@ impl<'a> Areainsight<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, insights: Option<Vec<String>>, filter: Option<String>) -> Result<String> {
+    pub async fn create(&self, filter: Option<String>, insights: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

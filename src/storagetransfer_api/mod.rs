@@ -30,11 +30,11 @@ impl<'a> Storagetransfer_apiService<'a> {
             "google_service_account" => {
                 self.plan_google_service_account(current_state, desired_input).await
             }
-            "transfer_operation" => {
-                self.plan_transfer_operation(current_state, desired_input).await
-            }
             "transfer_job" => {
                 self.plan_transfer_job(current_state, desired_input).await
+            }
+            "transfer_operation" => {
+                self.plan_transfer_operation(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,11 +57,11 @@ impl<'a> Storagetransfer_apiService<'a> {
             "google_service_account" => {
                 self.create_google_service_account(input).await
             }
-            "transfer_operation" => {
-                self.create_transfer_operation(input).await
-            }
             "transfer_job" => {
                 self.create_transfer_job(input).await
+            }
+            "transfer_operation" => {
+                self.create_transfer_operation(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -84,11 +84,11 @@ impl<'a> Storagetransfer_apiService<'a> {
             "google_service_account" => {
                 self.read_google_service_account(id).await
             }
-            "transfer_operation" => {
-                self.read_transfer_operation(id).await
-            }
             "transfer_job" => {
                 self.read_transfer_job(id).await
+            }
+            "transfer_operation" => {
+                self.read_transfer_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -112,11 +112,11 @@ impl<'a> Storagetransfer_apiService<'a> {
             "google_service_account" => {
                 self.update_google_service_account(id, input).await
             }
-            "transfer_operation" => {
-                self.update_transfer_operation(id, input).await
-            }
             "transfer_job" => {
                 self.update_transfer_job(id, input).await
+            }
+            "transfer_operation" => {
+                self.update_transfer_operation(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -139,11 +139,11 @@ impl<'a> Storagetransfer_apiService<'a> {
             "google_service_account" => {
                 self.delete_google_service_account(id).await
             }
-            "transfer_operation" => {
-                self.delete_transfer_operation(id).await
-            }
             "transfer_job" => {
                 self.delete_transfer_job(id).await
+            }
+            "transfer_operation" => {
+                self.delete_transfer_operation(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -281,67 +281,6 @@ impl<'a> Storagetransfer_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Transfer_operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a transfer_operation resource
-    async fn plan_transfer_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new transfer_operation resource
-    async fn create_transfer_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a transfer_operation resource
-    async fn read_transfer_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a transfer_operation resource
-    async fn update_transfer_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a transfer_operation resource
-    async fn delete_transfer_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Transfer_job resource operations
     // ------------------------------------------------------------------------
 
@@ -394,6 +333,67 @@ impl<'a> Storagetransfer_apiService<'a> {
 
     /// Delete a transfer_job resource
     async fn delete_transfer_job(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Transfer_operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a transfer_operation resource
+    async fn plan_transfer_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new transfer_operation resource
+    async fn create_transfer_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a transfer_operation resource
+    async fn read_transfer_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a transfer_operation resource
+    async fn update_transfer_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a transfer_operation resource
+    async fn delete_transfer_operation(
         &self,
         id: &str,
     ) -> Result<()> {

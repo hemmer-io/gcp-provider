@@ -41,7 +41,7 @@ impl<'a> Namespace<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, namespace_name: Option<String>, serving_visibility: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, serving_visibility: Option<String>, namespace_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

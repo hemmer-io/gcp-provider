@@ -21,7 +21,7 @@ impl<'a> Event_tag<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, url: Option<String>, enabled_by_default: Option<bool>, kind: Option<String>, url_escape_levels: Option<i64>, campaign_id: Option<String>, id: Option<String>, advertiser_id: Option<String>, subaccount_id: Option<String>, exclude_from_adx_requests: Option<bool>, campaign_id_dimension_value: Option<String>, account_id: Option<String>, status: Option<String>, ssl_compliant: Option<bool>, advertiser_id_dimension_value: Option<String>, name: Option<String>, site_ids: Option<Vec<String>>, site_filter_type: Option<String>, type: Option<String>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, kind: Option<String>, advertiser_id: Option<String>, type: Option<String>, campaign_id_dimension_value: Option<String>, site_ids: Option<Vec<String>>, ssl_compliant: Option<bool>, exclude_from_adx_requests: Option<bool>, account_id: Option<String>, enabled_by_default: Option<bool>, status: Option<String>, url: Option<String>, campaign_id: Option<String>, site_filter_type: Option<String>, advertiser_id_dimension_value: Option<String>, subaccount_id: Option<String>, url_escape_levels: Option<i64>, name: Option<String>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Event_tag<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, url: Option<String>, enabled_by_default: Option<bool>, kind: Option<String>, url_escape_levels: Option<i64>, campaign_id: Option<String>, id: Option<String>, advertiser_id: Option<String>, subaccount_id: Option<String>, exclude_from_adx_requests: Option<bool>, campaign_id_dimension_value: Option<String>, account_id: Option<String>, status: Option<String>, ssl_compliant: Option<bool>, advertiser_id_dimension_value: Option<String>, name: Option<String>, site_ids: Option<Vec<String>>, site_filter_type: Option<String>, type: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, kind: Option<String>, advertiser_id: Option<String>, type: Option<String>, campaign_id_dimension_value: Option<String>, site_ids: Option<Vec<String>>, ssl_compliant: Option<bool>, exclude_from_adx_requests: Option<bool>, account_id: Option<String>, enabled_by_default: Option<bool>, status: Option<String>, url: Option<String>, campaign_id: Option<String>, site_filter_type: Option<String>, advertiser_id_dimension_value: Option<String>, subaccount_id: Option<String>, url_escape_levels: Option<i64>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

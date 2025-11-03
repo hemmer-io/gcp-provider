@@ -27,10 +27,10 @@ Rotate the ACME challenges for a given domain name. By default, removes any chal
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `keep_expired_records` | bool |  | Keep records older than 30 days that were used for previous requests. |
 | `records_to_remove` | Vec<String> |  | ACME TXT record challenges to remove. |
-| `records_to_add` | Vec<String> |  | ACME TXT record challenges to add. Supports multiple challenges on the same FQDN. |
 | `access_token` | String |  | Required. ACME DNS access token. This is a base64 token secret that is procured from the Google Domains website. It authorizes ACME TXT record updates for a domain. |
+| `keep_expired_records` | bool |  | Keep records older than 30 days that were used for previous requests. |
+| `records_to_add` | Vec<String> |  | ACME TXT record challenges to add. Supports multiple challenges on the same FQDN. |
 | `root_domain` | String | ✅ | Required. SLD + TLD domain name to update records for. For example, this would be "google.com" for any FQDN under "google.com". That includes challenges for "subdomain.google.com". This MAY be Unicode or Punycode. |
 
 

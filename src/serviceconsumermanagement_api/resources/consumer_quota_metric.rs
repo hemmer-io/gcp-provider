@@ -1,6 +1,6 @@
 //! Consumer_quota_metric resource
 //!
-//! Create or update multiple producer overrides atomically, all on the same consumer, but on many different metrics or limits. The name field in the quota override message should not be set.
+//! Create or update multiple producer quota policies atomically, all on the same ancestor, but on many different metrics or limits. The name field in the quota policy message should not be set.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Consumer_quota_metric<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, force_only: Option<Vec<String>>, force: Option<bool>, force_justification: Option<String>, inline_source: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, force_skip_quota_usage_check: Option<bool>, inline_source: Option<String>, validate_only: Option<bool>, force: Option<bool>, force_justification: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

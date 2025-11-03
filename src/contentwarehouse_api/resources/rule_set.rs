@@ -21,7 +21,7 @@ impl<'a> Rule_set<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, rules: Option<Vec<String>>, source: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, source: Option<String>, description: Option<String>, rules: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Rule_set<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, rules: Option<Vec<String>>, source: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, source: Option<String>, description: Option<String>, rules: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

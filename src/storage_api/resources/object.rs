@@ -21,7 +21,7 @@ impl<'a> Object<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, acl: Option<Vec<String>>, content_disposition: Option<String>, bucket: Option<String>, content_encoding: Option<String>, id: Option<String>, cache_control: Option<String>, kind: Option<String>, name: Option<String>, media: Option<String>, content_language: Option<String>, metadata: Option<HashMap<String, String>>, owner: Option<String>, self_link: Option<String>, bucket: String) -> Result<String> {
+    pub async fn create(&self, bucket: Option<String>, kind: Option<String>, metadata: Option<HashMap<String, String>>, name: Option<String>, content_language: Option<String>, cache_control: Option<String>, content_disposition: Option<String>, self_link: Option<String>, media: Option<String>, acl: Option<Vec<String>>, owner: Option<String>, id: Option<String>, content_encoding: Option<String>, bucket: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Object<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, acl: Option<Vec<String>>, content_disposition: Option<String>, bucket: Option<String>, content_encoding: Option<String>, id: Option<String>, cache_control: Option<String>, kind: Option<String>, name: Option<String>, media: Option<String>, content_language: Option<String>, metadata: Option<HashMap<String, String>>, owner: Option<String>, self_link: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, bucket: Option<String>, kind: Option<String>, metadata: Option<HashMap<String, String>>, name: Option<String>, content_language: Option<String>, cache_control: Option<String>, content_disposition: Option<String>, self_link: Option<String>, media: Option<String>, acl: Option<Vec<String>>, owner: Option<String>, id: Option<String>, content_encoding: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

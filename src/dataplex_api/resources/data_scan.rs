@@ -21,7 +21,7 @@ impl<'a> Data_scan<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, data_profile_result: Option<String>, state: Option<String>, data_quality_result: Option<String>, name: Option<String>, data_documentation_result: Option<String>, execution_spec: Option<String>, data_discovery_spec: Option<String>, data_profile_spec: Option<String>, description: Option<String>, data: Option<String>, data_discovery_result: Option<String>, uid: Option<String>, type: Option<String>, create_time: Option<String>, update_time: Option<String>, data_quality_spec: Option<String>, data_documentation_spec: Option<String>, labels: Option<HashMap<String, String>>, execution_status: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, data_documentation_result: Option<String>, execution_spec: Option<String>, data_profile_spec: Option<String>, data: Option<String>, state: Option<String>, data_profile_result: Option<String>, uid: Option<String>, display_name: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, data_discovery_result: Option<String>, create_time: Option<String>, data_documentation_spec: Option<String>, name: Option<String>, data_quality_result: Option<String>, data_discovery_spec: Option<String>, execution_status: Option<String>, type: Option<String>, update_time: Option<String>, data_quality_spec: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Data_scan<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, data_profile_result: Option<String>, state: Option<String>, data_quality_result: Option<String>, name: Option<String>, data_documentation_result: Option<String>, execution_spec: Option<String>, data_discovery_spec: Option<String>, data_profile_spec: Option<String>, description: Option<String>, data: Option<String>, data_discovery_result: Option<String>, uid: Option<String>, type: Option<String>, create_time: Option<String>, update_time: Option<String>, data_quality_spec: Option<String>, data_documentation_spec: Option<String>, labels: Option<HashMap<String, String>>, execution_status: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, data_documentation_result: Option<String>, execution_spec: Option<String>, data_profile_spec: Option<String>, data: Option<String>, state: Option<String>, data_profile_result: Option<String>, uid: Option<String>, display_name: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, data_discovery_result: Option<String>, create_time: Option<String>, data_documentation_spec: Option<String>, name: Option<String>, data_quality_result: Option<String>, data_discovery_spec: Option<String>, execution_status: Option<String>, type: Option<String>, update_time: Option<String>, data_quality_spec: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

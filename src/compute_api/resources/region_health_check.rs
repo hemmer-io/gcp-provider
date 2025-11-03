@@ -22,7 +22,7 @@ impl<'a> Region_health_check<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, log_config: Option<String>, ssl_health_check: Option<String>, check_interval_sec: Option<i64>, type: Option<String>, description: Option<String>, healthy_threshold: Option<i64>, region: Option<String>, http_health_check: Option<String>, id: Option<String>, self_link: Option<String>, grpc_tls_health_check: Option<String>, kind: Option<String>, timeout_sec: Option<i64>, unhealthy_threshold: Option<i64>, grpc_health_check: Option<String>, creation_timestamp: Option<String>, https_health_check: Option<String>, name: Option<String>, source_regions: Option<Vec<String>>, tcp_health_check: Option<String>, http2_health_check: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, http_health_check: Option<String>, healthy_threshold: Option<i64>, creation_timestamp: Option<String>, id: Option<String>, name: Option<String>, source_regions: Option<Vec<String>>, http2_health_check: Option<String>, kind: Option<String>, grpc_tls_health_check: Option<String>, description: Option<String>, check_interval_sec: Option<i64>, grpc_health_check: Option<String>, tcp_health_check: Option<String>, timeout_sec: Option<i64>, region: Option<String>, https_health_check: Option<String>, self_link: Option<String>, type: Option<String>, ssl_health_check: Option<String>, unhealthy_threshold: Option<i64>, log_config: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Region_health_check<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, log_config: Option<String>, ssl_health_check: Option<String>, check_interval_sec: Option<i64>, type: Option<String>, description: Option<String>, healthy_threshold: Option<i64>, region: Option<String>, http_health_check: Option<String>, id: Option<String>, self_link: Option<String>, grpc_tls_health_check: Option<String>, kind: Option<String>, timeout_sec: Option<i64>, unhealthy_threshold: Option<i64>, grpc_health_check: Option<String>, creation_timestamp: Option<String>, https_health_check: Option<String>, name: Option<String>, source_regions: Option<Vec<String>>, tcp_health_check: Option<String>, http2_health_check: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, http_health_check: Option<String>, healthy_threshold: Option<i64>, creation_timestamp: Option<String>, id: Option<String>, name: Option<String>, source_regions: Option<Vec<String>>, http2_health_check: Option<String>, kind: Option<String>, grpc_tls_health_check: Option<String>, description: Option<String>, check_interval_sec: Option<i64>, grpc_health_check: Option<String>, tcp_health_check: Option<String>, timeout_sec: Option<i64>, region: Option<String>, https_health_check: Option<String>, self_link: Option<String>, type: Option<String>, ssl_health_check: Option<String>, unhealthy_threshold: Option<i64>, log_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Folder resource
 //!
-//! Returns the AutokeyConfig for a folder.
+//! Gets the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -34,7 +34,7 @@ impl<'a> Folder<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, name: Option<String>, state: Option<String>, key_project: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, state: Option<String>, etag: Option<String>, name: Option<String>, key_project: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

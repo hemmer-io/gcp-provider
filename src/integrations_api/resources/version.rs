@@ -1,6 +1,6 @@
 //! Version resource
 //!
-//! Creates an IntegrationTemplateVersion.
+//! Create a integration with a draft version in the specified project.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Version<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, task_configs: Option<Vec<String>>, template_parameters: Option<String>, description: Option<String>, error_catcher_configs: Option<Vec<String>>, user_label: Option<String>, update_time: Option<String>, status: Option<String>, snapshot_number: Option<String>, database_persistence_policy: Option<String>, create_time: Option<String>, last_modifier_email: Option<String>, teardown: Option<String>, trigger_configs: Option<Vec<String>>, parent_integration_version_id: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, error_catcher_configs: Option<Vec<String>>, update_time: Option<String>, run_as_service_account: Option<String>, integration_parameters: Option<Vec<String>>, state: Option<String>, snapshot_number: Option<String>, name: Option<String>, parent_template_id: Option<String>, create_time: Option<String>, description: Option<String>, integration_parameters_internal: Option<String>, last_modifier_email: Option<String>, lock_holder: Option<String>, status: Option<String>, user_label: Option<String>, database_persistence_policy: Option<String>, origin: Option<String>, trigger_configs_internal: Option<Vec<String>>, trigger_configs: Option<Vec<String>>, task_configs: Option<Vec<String>>, teardown: Option<String>, task_configs_internal: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Version<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, task_configs: Option<Vec<String>>, template_parameters: Option<String>, description: Option<String>, error_catcher_configs: Option<Vec<String>>, user_label: Option<String>, update_time: Option<String>, status: Option<String>, snapshot_number: Option<String>, database_persistence_policy: Option<String>, create_time: Option<String>, last_modifier_email: Option<String>, teardown: Option<String>, trigger_configs: Option<Vec<String>>, parent_integration_version_id: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, error_catcher_configs: Option<Vec<String>>, update_time: Option<String>, run_as_service_account: Option<String>, integration_parameters: Option<Vec<String>>, state: Option<String>, snapshot_number: Option<String>, name: Option<String>, parent_template_id: Option<String>, create_time: Option<String>, description: Option<String>, integration_parameters_internal: Option<String>, last_modifier_email: Option<String>, lock_holder: Option<String>, status: Option<String>, user_label: Option<String>, database_persistence_policy: Option<String>, origin: Option<String>, trigger_configs_internal: Option<Vec<String>>, trigger_configs: Option<Vec<String>>, task_configs: Option<Vec<String>>, teardown: Option<String>, task_configs_internal: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

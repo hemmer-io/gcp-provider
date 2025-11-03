@@ -1,6 +1,6 @@
 //! Value resource
 //!
-//! Sets values in one or more ranges of a spreadsheet. The caller must specify the spreadsheet ID, a valueInputOption, and one or more DataFilterValueRanges.
+//! Clears one or more ranges of values from a spreadsheet. The caller must specify the spreadsheet ID and one or more DataFilters. Ranges matching any of the specified data filters will be cleared. Only values are cleared -- all other properties of the cell (such as formatting, data validation, etc..) are kept.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Value<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, response_value_render_option: Option<String>, data: Option<Vec<String>>, response_date_time_render_option: Option<String>, value_input_option: Option<String>, include_values_in_response: Option<bool>, spreadsheet_id: String) -> Result<String> {
+    pub async fn create(&self, data_filters: Option<Vec<String>>, spreadsheet_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Value<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, response_value_render_option: Option<String>, data: Option<Vec<String>>, response_date_time_render_option: Option<String>, value_input_option: Option<String>, include_values_in_response: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, data_filters: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

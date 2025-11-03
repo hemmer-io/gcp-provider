@@ -1,6 +1,6 @@
 //! Version resource
 //!
-//! Disables a SecretVersion. Sets the state of the SecretVersion to DISABLED.
+//! Enables a SecretVersion. Sets the state of the SecretVersion to ENABLED.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

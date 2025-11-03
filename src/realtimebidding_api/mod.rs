@@ -27,20 +27,20 @@ impl<'a> Realtimebidding_apiService<'a> {
             "pretargeting_config" => {
                 self.plan_pretargeting_config(current_state, desired_input).await
             }
+            "user_list" => {
+                self.plan_user_list(current_state, desired_input).await
+            }
+            "publisher_connection" => {
+                self.plan_publisher_connection(current_state, desired_input).await
+            }
             "creative" => {
                 self.plan_creative(current_state, desired_input).await
             }
             "bidder" => {
                 self.plan_bidder(current_state, desired_input).await
             }
-            "publisher_connection" => {
-                self.plan_publisher_connection(current_state, desired_input).await
-            }
             "buyer" => {
                 self.plan_buyer(current_state, desired_input).await
-            }
-            "user_list" => {
-                self.plan_user_list(current_state, desired_input).await
             }
             "endpoint" => {
                 self.plan_endpoint(current_state, desired_input).await
@@ -66,20 +66,20 @@ impl<'a> Realtimebidding_apiService<'a> {
             "pretargeting_config" => {
                 self.create_pretargeting_config(input).await
             }
+            "user_list" => {
+                self.create_user_list(input).await
+            }
+            "publisher_connection" => {
+                self.create_publisher_connection(input).await
+            }
             "creative" => {
                 self.create_creative(input).await
             }
             "bidder" => {
                 self.create_bidder(input).await
             }
-            "publisher_connection" => {
-                self.create_publisher_connection(input).await
-            }
             "buyer" => {
                 self.create_buyer(input).await
-            }
-            "user_list" => {
-                self.create_user_list(input).await
             }
             "endpoint" => {
                 self.create_endpoint(input).await
@@ -105,20 +105,20 @@ impl<'a> Realtimebidding_apiService<'a> {
             "pretargeting_config" => {
                 self.read_pretargeting_config(id).await
             }
+            "user_list" => {
+                self.read_user_list(id).await
+            }
+            "publisher_connection" => {
+                self.read_publisher_connection(id).await
+            }
             "creative" => {
                 self.read_creative(id).await
             }
             "bidder" => {
                 self.read_bidder(id).await
             }
-            "publisher_connection" => {
-                self.read_publisher_connection(id).await
-            }
             "buyer" => {
                 self.read_buyer(id).await
-            }
-            "user_list" => {
-                self.read_user_list(id).await
             }
             "endpoint" => {
                 self.read_endpoint(id).await
@@ -145,20 +145,20 @@ impl<'a> Realtimebidding_apiService<'a> {
             "pretargeting_config" => {
                 self.update_pretargeting_config(id, input).await
             }
+            "user_list" => {
+                self.update_user_list(id, input).await
+            }
+            "publisher_connection" => {
+                self.update_publisher_connection(id, input).await
+            }
             "creative" => {
                 self.update_creative(id, input).await
             }
             "bidder" => {
                 self.update_bidder(id, input).await
             }
-            "publisher_connection" => {
-                self.update_publisher_connection(id, input).await
-            }
             "buyer" => {
                 self.update_buyer(id, input).await
-            }
-            "user_list" => {
-                self.update_user_list(id, input).await
             }
             "endpoint" => {
                 self.update_endpoint(id, input).await
@@ -184,20 +184,20 @@ impl<'a> Realtimebidding_apiService<'a> {
             "pretargeting_config" => {
                 self.delete_pretargeting_config(id).await
             }
+            "user_list" => {
+                self.delete_user_list(id).await
+            }
+            "publisher_connection" => {
+                self.delete_publisher_connection(id).await
+            }
             "creative" => {
                 self.delete_creative(id).await
             }
             "bidder" => {
                 self.delete_bidder(id).await
             }
-            "publisher_connection" => {
-                self.delete_publisher_connection(id).await
-            }
             "buyer" => {
                 self.delete_buyer(id).await
-            }
-            "user_list" => {
-                self.delete_user_list(id).await
             }
             "endpoint" => {
                 self.delete_endpoint(id).await
@@ -271,6 +271,128 @@ impl<'a> Realtimebidding_apiService<'a> {
 
     /// Delete a pretargeting_config resource
     async fn delete_pretargeting_config(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // User_list resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a user_list resource
+    async fn plan_user_list(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new user_list resource
+    async fn create_user_list(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a user_list resource
+    async fn read_user_list(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a user_list resource
+    async fn update_user_list(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a user_list resource
+    async fn delete_user_list(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Publisher_connection resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a publisher_connection resource
+    async fn plan_publisher_connection(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new publisher_connection resource
+    async fn create_publisher_connection(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a publisher_connection resource
+    async fn read_publisher_connection(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a publisher_connection resource
+    async fn update_publisher_connection(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a publisher_connection resource
+    async fn delete_publisher_connection(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -402,67 +524,6 @@ impl<'a> Realtimebidding_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Publisher_connection resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a publisher_connection resource
-    async fn plan_publisher_connection(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new publisher_connection resource
-    async fn create_publisher_connection(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a publisher_connection resource
-    async fn read_publisher_connection(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a publisher_connection resource
-    async fn update_publisher_connection(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a publisher_connection resource
-    async fn delete_publisher_connection(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Buyer resource operations
     // ------------------------------------------------------------------------
 
@@ -515,67 +576,6 @@ impl<'a> Realtimebidding_apiService<'a> {
 
     /// Delete a buyer resource
     async fn delete_buyer(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // User_list resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a user_list resource
-    async fn plan_user_list(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new user_list resource
-    async fn create_user_list(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a user_list resource
-    async fn read_user_list(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a user_list resource
-    async fn update_user_list(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a user_list resource
-    async fn delete_user_list(
         &self,
         id: &str,
     ) -> Result<()> {

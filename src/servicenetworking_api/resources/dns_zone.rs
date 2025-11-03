@@ -1,6 +1,6 @@
 //! Dns_zone resource
 //!
-//! Service producers can use this method to remove private DNS zones in the shared producer host project and matching peering zones in the consumer project.
+//! Service producers can use this method to add private DNS zones in the shared producer host project and matching peering zones in the consumer project.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Dns_zone<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, consumer_network: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, consumer_network: Option<String>, dns_suffix: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

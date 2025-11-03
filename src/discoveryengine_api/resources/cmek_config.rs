@@ -34,7 +34,7 @@ impl<'a> Cmek_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, single_region_keys: Option<Vec<String>>, state: Option<String>, name: Option<String>, last_rotation_timestamp_micros: Option<String>, kms_key_version: Option<String>, notebooklm_state: Option<String>, kms_key: Option<String>, is_default: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, kms_key_version: Option<String>, notebooklm_state: Option<String>, single_region_keys: Option<Vec<String>>, state: Option<String>, is_default: Option<bool>, kms_key: Option<String>, name: Option<String>, last_rotation_timestamp_micros: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

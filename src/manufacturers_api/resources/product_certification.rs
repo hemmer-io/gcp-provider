@@ -34,7 +34,7 @@ impl<'a> Product_certification<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, country_code: Option<Vec<String>>, product_code: Option<Vec<String>>, certification: Option<Vec<String>>, product_type: Option<Vec<String>>, destination_statuses: Option<Vec<String>>, issues: Option<Vec<String>>, mpn: Option<Vec<String>>, name: Option<String>, title: Option<String>, brand: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, certification: Option<Vec<String>>, product_type: Option<Vec<String>>, mpn: Option<Vec<String>>, destination_statuses: Option<Vec<String>>, country_code: Option<Vec<String>>, brand: Option<String>, issues: Option<Vec<String>>, name: Option<String>, product_code: Option<Vec<String>>, title: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

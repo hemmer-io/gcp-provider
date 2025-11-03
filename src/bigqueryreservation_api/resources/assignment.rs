@@ -21,7 +21,7 @@ impl<'a> Assignment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, job_type: Option<String>, assignee: Option<String>, name: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, assignee: Option<String>, state: Option<String>, job_type: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Assignment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, job_type: Option<String>, assignee: Option<String>, name: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, assignee: Option<String>, state: Option<String>, job_type: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

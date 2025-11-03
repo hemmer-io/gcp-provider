@@ -21,7 +21,7 @@ impl<'a> Instance<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, node_config: Option<String>, create_time: Option<String>, name: Option<String>, maintenance_policy: Option<String>, node_count: Option<i64>, update_available: Option<bool>, zones: Option<Vec<String>>, discovery_endpoint: Option<String>, display_name: Option<String>, instance_messages: Option<Vec<String>>, maintenance_schedule: Option<String>, parameters: Option<String>, authorized_network: Option<String>, state: Option<String>, memcache_nodes: Option<Vec<String>>, reserved_ip_range_id: Option<Vec<String>>, satisfies_pzs: Option<bool>, update_time: Option<String>, memcache_full_version: Option<String>, memcache_version: Option<String>, satisfies_pzi: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, instance_messages: Option<Vec<String>>, satisfies_pzs: Option<bool>, memcache_version: Option<String>, parameters: Option<String>, node_config: Option<String>, display_name: Option<String>, discovery_endpoint: Option<String>, maintenance_policy: Option<String>, satisfies_pzi: Option<bool>, state: Option<String>, zones: Option<Vec<String>>, authorized_network: Option<String>, memcache_full_version: Option<String>, update_available: Option<bool>, create_time: Option<String>, maintenance_schedule: Option<String>, node_count: Option<i64>, memcache_nodes: Option<Vec<String>>, name: Option<String>, reserved_ip_range_id: Option<Vec<String>>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Instance<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, node_config: Option<String>, create_time: Option<String>, name: Option<String>, maintenance_policy: Option<String>, node_count: Option<i64>, update_available: Option<bool>, zones: Option<Vec<String>>, discovery_endpoint: Option<String>, display_name: Option<String>, instance_messages: Option<Vec<String>>, maintenance_schedule: Option<String>, parameters: Option<String>, authorized_network: Option<String>, state: Option<String>, memcache_nodes: Option<Vec<String>>, reserved_ip_range_id: Option<Vec<String>>, satisfies_pzs: Option<bool>, update_time: Option<String>, memcache_full_version: Option<String>, memcache_version: Option<String>, satisfies_pzi: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, instance_messages: Option<Vec<String>>, satisfies_pzs: Option<bool>, memcache_version: Option<String>, parameters: Option<String>, node_config: Option<String>, display_name: Option<String>, discovery_endpoint: Option<String>, maintenance_policy: Option<String>, satisfies_pzi: Option<bool>, state: Option<String>, zones: Option<Vec<String>>, authorized_network: Option<String>, memcache_full_version: Option<String>, update_available: Option<bool>, create_time: Option<String>, maintenance_schedule: Option<String>, node_count: Option<i64>, memcache_nodes: Option<Vec<String>>, name: Option<String>, reserved_ip_range_id: Option<Vec<String>>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

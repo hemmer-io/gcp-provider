@@ -21,7 +21,7 @@ impl<'a> Developer<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, access_type: Option<String>, apps: Option<Vec<String>>, first_name: Option<String>, attributes: Option<Vec<String>>, companies: Option<Vec<String>>, email: Option<String>, user_name: Option<String>, last_modified_at: Option<String>, last_name: Option<String>, created_at: Option<String>, status: Option<String>, organization_name: Option<String>, app_family: Option<String>, developer_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, first_name: Option<String>, status: Option<String>, user_name: Option<String>, companies: Option<Vec<String>>, last_name: Option<String>, app_family: Option<String>, developer_id: Option<String>, organization_name: Option<String>, email: Option<String>, apps: Option<Vec<String>>, created_at: Option<String>, attributes: Option<Vec<String>>, access_type: Option<String>, last_modified_at: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Developer<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, access_type: Option<String>, apps: Option<Vec<String>>, first_name: Option<String>, attributes: Option<Vec<String>>, companies: Option<Vec<String>>, email: Option<String>, user_name: Option<String>, last_modified_at: Option<String>, last_name: Option<String>, created_at: Option<String>, status: Option<String>, organization_name: Option<String>, app_family: Option<String>, developer_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, first_name: Option<String>, status: Option<String>, user_name: Option<String>, companies: Option<Vec<String>>, last_name: Option<String>, app_family: Option<String>, developer_id: Option<String>, organization_name: Option<String>, email: Option<String>, apps: Option<Vec<String>>, created_at: Option<String>, attributes: Option<Vec<String>>, access_type: Option<String>, last_modified_at: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

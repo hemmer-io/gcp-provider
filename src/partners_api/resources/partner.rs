@@ -35,7 +35,7 @@ impl<'a> Partner<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, phone_number: Option<String>, min_monthly_budget: Option<String>, comments: Option<String>, type: Option<String>, family_name: Option<String>, state: Option<String>, id: Option<String>, email: Option<String>, website_url: Option<String>, adwords_customer_id: Option<String>, marketing_opt_in: Option<bool>, create_time: Option<String>, gps_motivations: Option<Vec<String>>, given_name: Option<String>, language_code: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, profile_status: Option<String>, specialization_status: Option<Vec<String>>, website_url: Option<String>, original_min_monthly_budget: Option<String>, certification_statuses: Option<Vec<String>>, ranks: Option<Vec<String>>, primary_adwords_manager_account_id: Option<String>, converted_min_monthly_budget: Option<String>, badge_tier: Option<String>, industries: Option<Vec<String>>, company_types: Option<Vec<String>>, additional_websites: Option<Vec<String>>, primary_location: Option<String>, primary_language_code: Option<String>, badge_authority_in_awn: Option<bool>, localized_infos: Option<Vec<String>>, auto_approval_email_domains: Option<Vec<String>>, services: Option<Vec<String>>, public_profile: Option<String>, locations: Option<Vec<String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

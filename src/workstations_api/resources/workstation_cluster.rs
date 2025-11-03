@@ -21,7 +21,7 @@ impl<'a> Workstation_cluster<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, control_plane_ip: Option<String>, satisfies_pzi: Option<bool>, reconciling: Option<bool>, satisfies_pzs: Option<bool>, annotations: Option<HashMap<String, String>>, subnetwork: Option<String>, tags: Option<HashMap<String, String>>, update_time: Option<String>, labels: Option<HashMap<String, String>>, uid: Option<String>, degraded: Option<bool>, domain_config: Option<String>, gateway_config: Option<String>, delete_time: Option<String>, display_name: Option<String>, create_time: Option<String>, conditions: Option<Vec<String>>, name: Option<String>, private_cluster_config: Option<String>, etag: Option<String>, network: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, domain_config: Option<String>, annotations: Option<HashMap<String, String>>, delete_time: Option<String>, labels: Option<HashMap<String, String>>, private_cluster_config: Option<String>, tags: Option<HashMap<String, String>>, update_time: Option<String>, control_plane_ip: Option<String>, subnetwork: Option<String>, network: Option<String>, conditions: Option<Vec<String>>, degraded: Option<bool>, etag: Option<String>, reconciling: Option<bool>, satisfies_pzi: Option<bool>, gateway_config: Option<String>, uid: Option<String>, create_time: Option<String>, name: Option<String>, display_name: Option<String>, satisfies_pzs: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Workstation_cluster<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, control_plane_ip: Option<String>, satisfies_pzi: Option<bool>, reconciling: Option<bool>, satisfies_pzs: Option<bool>, annotations: Option<HashMap<String, String>>, subnetwork: Option<String>, tags: Option<HashMap<String, String>>, update_time: Option<String>, labels: Option<HashMap<String, String>>, uid: Option<String>, degraded: Option<bool>, domain_config: Option<String>, gateway_config: Option<String>, delete_time: Option<String>, display_name: Option<String>, create_time: Option<String>, conditions: Option<Vec<String>>, name: Option<String>, private_cluster_config: Option<String>, etag: Option<String>, network: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, domain_config: Option<String>, annotations: Option<HashMap<String, String>>, delete_time: Option<String>, labels: Option<HashMap<String, String>>, private_cluster_config: Option<String>, tags: Option<HashMap<String, String>>, update_time: Option<String>, control_plane_ip: Option<String>, subnetwork: Option<String>, network: Option<String>, conditions: Option<Vec<String>>, degraded: Option<bool>, etag: Option<String>, reconciling: Option<bool>, satisfies_pzi: Option<bool>, gateway_config: Option<String>, uid: Option<String>, create_time: Option<String>, name: Option<String>, display_name: Option<String>, satisfies_pzs: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

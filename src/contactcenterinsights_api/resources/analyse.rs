@@ -21,7 +21,7 @@ impl<'a> Analyse<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, analysis_result: Option<String>, annotator_selector: Option<String>, name: Option<String>, request_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, request_time: Option<String>, analysis_result: Option<String>, name: Option<String>, annotator_selector: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

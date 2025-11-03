@@ -1,6 +1,6 @@
 //! Report resource
 //!
-//! Counts of devices with a specific hardware specification from the requested hardware type (for example model name, processor type). Further information can be found here https://support.google.com/chrome/a/answer/10564947
+//! Counts of ChromeOS devices that have not synced policies or have lacked user activity in the past 28 days, are out of date, or are not complaint. Further information can be found here https://support.google.com/chrome/a/answer/10564947
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

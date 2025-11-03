@@ -21,7 +21,7 @@ impl<'a> Connection_profile<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, error: Option<String>, update_time: Option<String>, provider: Option<String>, create_time: Option<String>, mysql: Option<String>, display_name: Option<String>, state: Option<String>, cloudsql: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, error: Option<String>, name: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, mysql: Option<String>, state: Option<String>, cloudsql: Option<String>, provider: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Connection_profile<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, error: Option<String>, update_time: Option<String>, provider: Option<String>, create_time: Option<String>, mysql: Option<String>, display_name: Option<String>, state: Option<String>, cloudsql: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, error: Option<String>, name: Option<String>, update_time: Option<String>, labels: Option<HashMap<String, String>>, display_name: Option<String>, mysql: Option<String>, state: Option<String>, cloudsql: Option<String>, provider: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

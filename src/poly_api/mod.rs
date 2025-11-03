@@ -24,11 +24,11 @@ impl<'a> Poly_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "likedasset" => {
-                self.plan_likedasset(current_state, desired_input).await
-            }
             "asset" => {
                 self.plan_asset(current_state, desired_input).await
+            }
+            "likedasset" => {
+                self.plan_likedasset(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -45,11 +45,11 @@ impl<'a> Poly_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "likedasset" => {
-                self.create_likedasset(input).await
-            }
             "asset" => {
                 self.create_asset(input).await
+            }
+            "likedasset" => {
+                self.create_likedasset(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,11 +66,11 @@ impl<'a> Poly_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "likedasset" => {
-                self.read_likedasset(id).await
-            }
             "asset" => {
                 self.read_asset(id).await
+            }
+            "likedasset" => {
+                self.read_likedasset(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -88,11 +88,11 @@ impl<'a> Poly_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "likedasset" => {
-                self.update_likedasset(id, input).await
-            }
             "asset" => {
                 self.update_asset(id, input).await
+            }
+            "likedasset" => {
+                self.update_likedasset(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -109,11 +109,11 @@ impl<'a> Poly_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "likedasset" => {
-                self.delete_likedasset(id).await
-            }
             "asset" => {
                 self.delete_asset(id).await
+            }
+            "likedasset" => {
+                self.delete_likedasset(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -126,67 +126,6 @@ impl<'a> Poly_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Likedasset resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a likedasset resource
-    async fn plan_likedasset(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new likedasset resource
-    async fn create_likedasset(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a likedasset resource
-    async fn read_likedasset(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a likedasset resource
-    async fn update_likedasset(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a likedasset resource
-    async fn delete_likedasset(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -242,6 +181,67 @@ impl<'a> Poly_apiService<'a> {
 
     /// Delete a asset resource
     async fn delete_asset(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Likedasset resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a likedasset resource
+    async fn plan_likedasset(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new likedasset resource
+    async fn create_likedasset(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a likedasset resource
+    async fn read_likedasset(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a likedasset resource
+    async fn update_likedasset(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a likedasset resource
+    async fn delete_likedasset(
         &self,
         id: &str,
     ) -> Result<()> {

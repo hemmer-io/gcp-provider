@@ -21,7 +21,7 @@ impl<'a> Template<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, job_name: Option<String>, location: Option<String>, gcs_path: Option<String>, environment: Option<String>, parameters: Option<HashMap<String, String>>, project_id: String) -> Result<String> {
+    pub async fn create(&self, gcs_path: Option<String>, parameters: Option<HashMap<String, String>>, location: Option<String>, environment: Option<String>, job_name: Option<String>, project_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

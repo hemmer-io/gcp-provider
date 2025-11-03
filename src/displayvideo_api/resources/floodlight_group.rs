@@ -34,7 +34,7 @@ impl<'a> Floodlight_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, floodlight_group_id: Option<String>, lookback_window: Option<String>, web_tag_type: Option<String>, active_view_config: Option<String>, name: Option<String>, custom_variables: Option<HashMap<String, String>>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, active_view_config: Option<String>, custom_variables: Option<HashMap<String, String>>, web_tag_type: Option<String>, name: Option<String>, display_name: Option<String>, lookback_window: Option<String>, floodlight_group_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Bucket<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, cmek_settings: Option<String>, index_configs: Option<Vec<String>>, retention_days: Option<i64>, locked: Option<bool>, create_time: Option<String>, description: Option<String>, restricted_fields: Option<Vec<String>>, update_time: Option<String>, analytics_enabled: Option<bool>, lifecycle_state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, cmek_settings: Option<String>, index_configs: Option<Vec<String>>, name: Option<String>, restricted_fields: Option<Vec<String>>, lifecycle_state: Option<String>, retention_days: Option<i64>, update_time: Option<String>, analytics_enabled: Option<bool>, description: Option<String>, locked: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Bucket<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, cmek_settings: Option<String>, index_configs: Option<Vec<String>>, retention_days: Option<i64>, locked: Option<bool>, create_time: Option<String>, description: Option<String>, restricted_fields: Option<Vec<String>>, update_time: Option<String>, analytics_enabled: Option<bool>, lifecycle_state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, cmek_settings: Option<String>, index_configs: Option<Vec<String>>, name: Option<String>, restricted_fields: Option<Vec<String>>, lifecycle_state: Option<String>, retention_days: Option<i64>, update_time: Option<String>, analytics_enabled: Option<bool>, description: Option<String>, locked: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 
