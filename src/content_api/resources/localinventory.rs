@@ -21,7 +21,7 @@ impl<'a> Localinventory<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, price: Option<String>, quantity: Option<i64>, pickup_sla: Option<String>, availability: Option<String>, custom_attributes: Option<Vec<String>>, sale_price_effective_date: Option<String>, store_code: Option<String>, instore_product_location: Option<String>, sale_price: Option<String>, kind: Option<String>, pickup_method: Option<String>, product_id: String, merchant_id: String) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, instore_product_location: Option<String>, availability: Option<String>, sale_price_effective_date: Option<String>, price: Option<String>, pickup_sla: Option<String>, store_code: Option<String>, custom_attributes: Option<Vec<String>>, quantity: Option<i64>, sale_price: Option<String>, pickup_method: Option<String>, product_id: String, merchant_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

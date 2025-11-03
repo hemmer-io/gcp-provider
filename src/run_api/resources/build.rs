@@ -21,7 +21,7 @@ impl<'a> Build<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, service_account: Option<String>, client: Option<String>, docker_build: Option<String>, release_track: Option<String>, storage_source: Option<String>, tags: Option<Vec<String>>, buildpack_build: Option<String>, image_uri: Option<String>, machine_type: Option<String>, worker_pool: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, client: Option<String>, image_uri: Option<String>, storage_source: Option<String>, docker_build: Option<String>, worker_pool: Option<String>, buildpack_build: Option<String>, tags: Option<Vec<String>>, release_track: Option<String>, machine_type: Option<String>, service_account: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

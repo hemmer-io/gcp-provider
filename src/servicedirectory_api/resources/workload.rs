@@ -1,6 +1,6 @@
 //! Workload resource
 //!
-//! Tests IAM permissions for a resource (namespace, service or service workload only).
+//! Gets the IAM Policy for a resource
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Workload<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, permissions: Option<Vec<String>>, resource: String) -> Result<String> {
+    pub async fn create(&self, options: Option<String>, resource: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

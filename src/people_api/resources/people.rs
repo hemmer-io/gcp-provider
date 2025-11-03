@@ -1,6 +1,6 @@
 //! People resource
 //!
-//! Delete a batch of contacts. Any non-contact data will not be deleted. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
+//! Update a batch of contacts and return a map of resource names to PersonResponses for the updated contacts. Mutate requests for the same user should be sent sequentially to avoid increased latency and failures.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> People<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, resource_names: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, read_mask: Option<String>, contacts: Option<HashMap<String, String>>, sources: Option<Vec<String>>, update_mask: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> People<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, resource_names: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, read_mask: Option<String>, contacts: Option<HashMap<String, String>>, sources: Option<Vec<String>>, update_mask: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

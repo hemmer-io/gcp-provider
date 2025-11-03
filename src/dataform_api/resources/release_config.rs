@@ -21,7 +21,7 @@ impl<'a> Release_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, disabled: Option<bool>, recent_scheduled_release_records: Option<Vec<String>>, internal_metadata: Option<String>, release_compilation_result: Option<String>, time_zone: Option<String>, code_compilation_config: Option<String>, git_commitish: Option<String>, cron_schedule: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, code_compilation_config: Option<String>, git_commitish: Option<String>, release_compilation_result: Option<String>, internal_metadata: Option<String>, cron_schedule: Option<String>, disabled: Option<bool>, name: Option<String>, recent_scheduled_release_records: Option<Vec<String>>, time_zone: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Release_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, disabled: Option<bool>, recent_scheduled_release_records: Option<Vec<String>>, internal_metadata: Option<String>, release_compilation_result: Option<String>, time_zone: Option<String>, code_compilation_config: Option<String>, git_commitish: Option<String>, cron_schedule: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, code_compilation_config: Option<String>, git_commitish: Option<String>, release_compilation_result: Option<String>, internal_metadata: Option<String>, cron_schedule: Option<String>, disabled: Option<bool>, name: Option<String>, recent_scheduled_release_records: Option<Vec<String>>, time_zone: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

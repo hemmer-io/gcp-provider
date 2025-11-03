@@ -21,7 +21,7 @@ impl<'a> Replie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, action: Option<String>, modified_time: Option<String>, assignee_email_address: Option<String>, created_time: Option<String>, mentioned_email_addresses: Option<Vec<String>>, author: Option<String>, id: Option<String>, kind: Option<String>, deleted: Option<bool>, html_content: Option<String>, content: Option<String>, comment_id: String, file_id: String) -> Result<String> {
+    pub async fn create(&self, created_time: Option<String>, assignee_email_address: Option<String>, deleted: Option<bool>, id: Option<String>, html_content: Option<String>, kind: Option<String>, modified_time: Option<String>, action: Option<String>, author: Option<String>, content: Option<String>, mentioned_email_addresses: Option<Vec<String>>, file_id: String, comment_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Replie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, action: Option<String>, modified_time: Option<String>, assignee_email_address: Option<String>, created_time: Option<String>, mentioned_email_addresses: Option<Vec<String>>, author: Option<String>, id: Option<String>, kind: Option<String>, deleted: Option<bool>, html_content: Option<String>, content: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, created_time: Option<String>, assignee_email_address: Option<String>, deleted: Option<bool>, id: Option<String>, html_content: Option<String>, kind: Option<String>, modified_time: Option<String>, action: Option<String>, author: Option<String>, content: Option<String>, mentioned_email_addresses: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

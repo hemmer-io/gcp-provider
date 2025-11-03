@@ -1,6 +1,6 @@
 //! Report resource
 //!
-//! Get a list of print jobs.
+//! Counts of devices with a specific hardware specification from the requested hardware type (for example model name, processor type). Further information can be found here https://support.google.com/chrome/a/answer/10564947
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

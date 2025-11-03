@@ -24,10 +24,13 @@ impl<'a> Urlshortener_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "url" => self.plan_url(current_state, desired_input).await,
+            "url" => {
+                self.plan_url(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "urlshortener_api", resource_name
+                "urlshortener_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Urlshortener_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "url" => self.create_url(input).await,
+            "url" => {
+                self.create_url(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "urlshortener_api", resource_name
+                "urlshortener_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "url" => self.read_url(id).await,
+            "url" => {
+                self.read_url(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "urlshortener_api", resource_name
+                "urlshortener_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Urlshortener_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "url" => self.update_url(id, input).await,
+            "url" => {
+                self.update_url(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "urlshortener_api", resource_name
+                "urlshortener_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "url" => self.delete_url(id).await,
+            "url" => {
+                self.delete_url(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "urlshortener_api", resource_name
+                "urlshortener_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Urlshortener_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Url resource operations
@@ -110,26 +134,44 @@ impl<'a> Urlshortener_apiService<'a> {
     }
 
     /// Create a new url resource
-    async fn create_url(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_url(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a url resource
-    async fn read_url(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_url(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a url resource
-    async fn update_url(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_url(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a url resource
-    async fn delete_url(&self, id: &str) -> Result<()> {
+    async fn delete_url(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

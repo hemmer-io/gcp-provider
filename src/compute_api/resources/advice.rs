@@ -24,7 +24,7 @@ impl<'a> Advice<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, future_resources_specs: Option<HashMap<String, String>>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, future_resources_specs: Option<HashMap<String, String>>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

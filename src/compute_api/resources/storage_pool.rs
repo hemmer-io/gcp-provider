@@ -22,7 +22,7 @@ impl<'a> Storage_pool<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, pool_provisioned_iops: Option<String>, capacity_provisioning_type: Option<String>, self_link: Option<String>, state: Option<String>, description: Option<String>, creation_timestamp: Option<String>, pool_provisioned_throughput: Option<String>, resource_status: Option<String>, pool_provisioned_capacity_gb: Option<String>, id: Option<String>, label_fingerprint: Option<String>, performance_provisioning_type: Option<String>, self_link_with_id: Option<String>, zone: Option<String>, status: Option<String>, storage_pool_type: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, project: String, zone: String) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, state: Option<String>, label_fingerprint: Option<String>, id: Option<String>, labels: Option<HashMap<String, String>>, pool_provisioned_iops: Option<String>, pool_provisioned_capacity_gb: Option<String>, resource_status: Option<String>, status: Option<String>, description: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>, capacity_provisioning_type: Option<String>, storage_pool_type: Option<String>, pool_provisioned_throughput: Option<String>, name: Option<String>, zone: Option<String>, self_link_with_id: Option<String>, performance_provisioning_type: Option<String>, project: String, zone: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Storage_pool<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, kind: Option<String>, pool_provisioned_iops: Option<String>, capacity_provisioning_type: Option<String>, self_link: Option<String>, state: Option<String>, description: Option<String>, creation_timestamp: Option<String>, pool_provisioned_throughput: Option<String>, resource_status: Option<String>, pool_provisioned_capacity_gb: Option<String>, id: Option<String>, label_fingerprint: Option<String>, performance_provisioning_type: Option<String>, self_link_with_id: Option<String>, zone: Option<String>, status: Option<String>, storage_pool_type: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, kind: Option<String>, state: Option<String>, label_fingerprint: Option<String>, id: Option<String>, labels: Option<HashMap<String, String>>, pool_provisioned_iops: Option<String>, pool_provisioned_capacity_gb: Option<String>, resource_status: Option<String>, status: Option<String>, description: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>, capacity_provisioning_type: Option<String>, storage_pool_type: Option<String>, pool_provisioned_throughput: Option<String>, name: Option<String>, zone: Option<String>, self_link_with_id: Option<String>, performance_provisioning_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

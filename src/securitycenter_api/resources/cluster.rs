@@ -34,7 +34,7 @@ impl<'a> Cluster<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, service_enablement_state: Option<String>, service_account: Option<String>, name: Option<String>, modules: Option<HashMap<String, String>>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, service_account: Option<String>, name: Option<String>, modules: Option<HashMap<String, String>>, service_enablement_state: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

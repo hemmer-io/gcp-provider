@@ -22,7 +22,7 @@ impl<'a> Region_autoscaler<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, autoscaling_policy: Option<String>, kind: Option<String>, status_details: Option<Vec<String>>, region: Option<String>, target: Option<String>, id: Option<String>, recommended_size: Option<i64>, scaling_schedule_status: Option<HashMap<String, String>>, self_link: Option<String>, name: Option<String>, status: Option<String>, zone: Option<String>, creation_timestamp: Option<String>, description: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, creation_timestamp: Option<String>, id: Option<String>, kind: Option<String>, description: Option<String>, autoscaling_policy: Option<String>, name: Option<String>, scaling_schedule_status: Option<HashMap<String, String>>, status: Option<String>, recommended_size: Option<i64>, status_details: Option<Vec<String>>, region: Option<String>, self_link: Option<String>, target: Option<String>, zone: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Region_autoscaler<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, autoscaling_policy: Option<String>, kind: Option<String>, status_details: Option<Vec<String>>, region: Option<String>, target: Option<String>, id: Option<String>, recommended_size: Option<i64>, scaling_schedule_status: Option<HashMap<String, String>>, self_link: Option<String>, name: Option<String>, status: Option<String>, zone: Option<String>, creation_timestamp: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, creation_timestamp: Option<String>, id: Option<String>, kind: Option<String>, description: Option<String>, autoscaling_policy: Option<String>, name: Option<String>, scaling_schedule_status: Option<HashMap<String, String>>, status: Option<String>, recommended_size: Option<i64>, status_details: Option<Vec<String>>, region: Option<String>, self_link: Option<String>, target: Option<String>, zone: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

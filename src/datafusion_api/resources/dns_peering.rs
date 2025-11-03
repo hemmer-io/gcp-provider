@@ -21,7 +21,7 @@ impl<'a> Dns_peering<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, domain: Option<String>, target_network: Option<String>, target_project: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, domain: Option<String>, description: Option<String>, target_network: Option<String>, target_project: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

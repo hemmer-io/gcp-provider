@@ -21,7 +21,7 @@ impl<'a> Agent<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, deployment_failure_reason: Option<String>, a2a_agent_definition: Option<String>, description: Option<String>, custom_placeholder_text: Option<String>, suspension_reason: Option<String>, starter_prompts: Option<Vec<String>>, display_name: Option<String>, authorization_config: Option<String>, icon: Option<String>, create_time: Option<String>, language_code: Option<String>, name: Option<String>, rejection_reason: Option<String>, update_time: Option<String>, adk_agent_definition: Option<String>, dialogflow_agent_definition: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, a2a_agent_definition: Option<String>, starter_prompts: Option<Vec<String>>, language_code: Option<String>, state: Option<String>, icon: Option<String>, suspension_reason: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, adk_agent_definition: Option<String>, authorization_config: Option<String>, deployment_failure_reason: Option<String>, rejection_reason: Option<String>, custom_placeholder_text: Option<String>, display_name: Option<String>, dialogflow_agent_definition: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Agent<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, deployment_failure_reason: Option<String>, a2a_agent_definition: Option<String>, description: Option<String>, custom_placeholder_text: Option<String>, suspension_reason: Option<String>, starter_prompts: Option<Vec<String>>, display_name: Option<String>, authorization_config: Option<String>, icon: Option<String>, create_time: Option<String>, language_code: Option<String>, name: Option<String>, rejection_reason: Option<String>, update_time: Option<String>, adk_agent_definition: Option<String>, dialogflow_agent_definition: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, a2a_agent_definition: Option<String>, starter_prompts: Option<Vec<String>>, language_code: Option<String>, state: Option<String>, icon: Option<String>, suspension_reason: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, adk_agent_definition: Option<String>, authorization_config: Option<String>, deployment_failure_reason: Option<String>, rejection_reason: Option<String>, custom_placeholder_text: Option<String>, display_name: Option<String>, dialogflow_agent_definition: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

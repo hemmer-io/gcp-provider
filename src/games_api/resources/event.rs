@@ -21,7 +21,7 @@ impl<'a> Event<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, request_id: Option<String>, kind: Option<String>, time_periods: Option<Vec<String>>, current_time_millis: Option<String>) -> Result<String> {
+    pub async fn create(&self, time_periods: Option<Vec<String>>, kind: Option<String>, current_time_millis: Option<String>, request_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

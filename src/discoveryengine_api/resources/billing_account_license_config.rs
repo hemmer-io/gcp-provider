@@ -21,7 +21,7 @@ impl<'a> Billing_account_license_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, project_number: Option<String>, license_count: Option<String>, license_config_id: Option<String>, location: Option<String>, billing_account_license_config: String) -> Result<String> {
+    pub async fn create(&self, location: Option<String>, license_config_id: Option<String>, project_number: Option<String>, license_count: Option<String>, billing_account_license_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

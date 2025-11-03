@@ -21,7 +21,7 @@ impl<'a> Account_user_profile<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, comments: Option<String>, user_access_type: Option<String>, user_role_filter: Option<String>, email: Option<String>, advertiser_filter: Option<String>, subaccount_id: Option<String>, trafficker_type: Option<String>, name: Option<String>, kind: Option<String>, locale: Option<String>, account_id: Option<String>, user_role_id: Option<String>, site_filter: Option<String>, active: Option<bool>, campaign_filter: Option<String>, id: Option<String>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, email: Option<String>, trafficker_type: Option<String>, site_filter: Option<String>, user_role_filter: Option<String>, comments: Option<String>, name: Option<String>, id: Option<String>, advertiser_filter: Option<String>, account_id: Option<String>, active: Option<bool>, kind: Option<String>, user_role_id: Option<String>, campaign_filter: Option<String>, locale: Option<String>, subaccount_id: Option<String>, user_access_type: Option<String>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Account_user_profile<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, comments: Option<String>, user_access_type: Option<String>, user_role_filter: Option<String>, email: Option<String>, advertiser_filter: Option<String>, subaccount_id: Option<String>, trafficker_type: Option<String>, name: Option<String>, kind: Option<String>, locale: Option<String>, account_id: Option<String>, user_role_id: Option<String>, site_filter: Option<String>, active: Option<bool>, campaign_filter: Option<String>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, email: Option<String>, trafficker_type: Option<String>, site_filter: Option<String>, user_role_filter: Option<String>, comments: Option<String>, name: Option<String>, id: Option<String>, advertiser_filter: Option<String>, account_id: Option<String>, active: Option<bool>, kind: Option<String>, user_role_id: Option<String>, campaign_filter: Option<String>, locale: Option<String>, subaccount_id: Option<String>, user_access_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

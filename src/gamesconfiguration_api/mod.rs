@@ -25,16 +25,15 @@ impl<'a> Gamesconfiguration_apiService<'a> {
     ) -> Result<ResourcePlan> {
         match resource_name {
             "achievement_configuration" => {
-                self.plan_achievement_configuration(current_state, desired_input)
-                    .await
+                self.plan_achievement_configuration(current_state, desired_input).await
             }
             "leaderboard_configuration" => {
-                self.plan_leaderboard_configuration(current_state, desired_input)
-                    .await
+                self.plan_leaderboard_configuration(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "gamesconfiguration_api", resource_name
+                "gamesconfiguration_api",
+                resource_name
             ))),
         }
     }
@@ -46,23 +45,37 @@ impl<'a> Gamesconfiguration_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "achievement_configuration" => self.create_achievement_configuration(input).await,
-            "leaderboard_configuration" => self.create_leaderboard_configuration(input).await,
+            "achievement_configuration" => {
+                self.create_achievement_configuration(input).await
+            }
+            "leaderboard_configuration" => {
+                self.create_leaderboard_configuration(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "gamesconfiguration_api", resource_name
+                "gamesconfiguration_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "achievement_configuration" => self.read_achievement_configuration(id).await,
-            "leaderboard_configuration" => self.read_leaderboard_configuration(id).await,
+            "achievement_configuration" => {
+                self.read_achievement_configuration(id).await
+            }
+            "leaderboard_configuration" => {
+                self.read_leaderboard_configuration(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "gamesconfiguration_api", resource_name
+                "gamesconfiguration_api",
+                resource_name
             ))),
         }
     }
@@ -75,23 +88,37 @@ impl<'a> Gamesconfiguration_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "achievement_configuration" => self.update_achievement_configuration(id, input).await,
-            "leaderboard_configuration" => self.update_leaderboard_configuration(id, input).await,
+            "achievement_configuration" => {
+                self.update_achievement_configuration(id, input).await
+            }
+            "leaderboard_configuration" => {
+                self.update_leaderboard_configuration(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "gamesconfiguration_api", resource_name
+                "gamesconfiguration_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "achievement_configuration" => self.delete_achievement_configuration(id).await,
-            "leaderboard_configuration" => self.delete_leaderboard_configuration(id).await,
+            "achievement_configuration" => {
+                self.delete_achievement_configuration(id).await
+            }
+            "leaderboard_configuration" => {
+                self.delete_leaderboard_configuration(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "gamesconfiguration_api", resource_name
+                "gamesconfiguration_api",
+                resource_name
             ))),
         }
     }
@@ -99,6 +126,7 @@ impl<'a> Gamesconfiguration_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Achievement_configuration resource operations
@@ -126,13 +154,18 @@ impl<'a> Gamesconfiguration_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a achievement_configuration resource
-    async fn read_achievement_configuration(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_achievement_configuration(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a achievement_configuration resource
@@ -142,14 +175,19 @@ impl<'a> Gamesconfiguration_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a achievement_configuration resource
-    async fn delete_achievement_configuration(&self, id: &str) -> Result<()> {
+    async fn delete_achievement_configuration(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Leaderboard_configuration resource operations
@@ -177,13 +215,18 @@ impl<'a> Gamesconfiguration_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a leaderboard_configuration resource
-    async fn read_leaderboard_configuration(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_leaderboard_configuration(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a leaderboard_configuration resource
@@ -193,12 +236,18 @@ impl<'a> Gamesconfiguration_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a leaderboard_configuration resource
-    async fn delete_leaderboard_configuration(&self, id: &str) -> Result<()> {
+    async fn delete_leaderboard_configuration(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

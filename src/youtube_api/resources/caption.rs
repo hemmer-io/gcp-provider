@@ -21,7 +21,7 @@ impl<'a> Caption<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<String>, etag: Option<String>, kind: Option<String>, snippet: Option<String>) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, snippet: Option<String>, etag: Option<String>, kind: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Caption<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, id: Option<String>, etag: Option<String>, kind: Option<String>, snippet: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, snippet: Option<String>, etag: Option<String>, kind: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

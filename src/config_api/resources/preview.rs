@@ -21,7 +21,7 @@ impl<'a> Preview<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, error_logs: Option<String>, tf_version_constraint: Option<String>, worker_pool: Option<String>, tf_version: Option<String>, logs: Option<String>, labels: Option<HashMap<String, String>>, deployment: Option<String>, state: Option<String>, error_status: Option<String>, error_code: Option<String>, name: Option<String>, preview_mode: Option<String>, provider_config: Option<String>, artifacts_gcs_bucket: Option<String>, build: Option<String>, terraform_blueprint: Option<String>, tf_errors: Option<Vec<String>>, service_account: Option<String>, annotations: Option<HashMap<String, String>>, preview_artifacts: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, terraform_blueprint: Option<String>, name: Option<String>, annotations: Option<HashMap<String, String>>, worker_pool: Option<String>, build: Option<String>, provider_config: Option<String>, labels: Option<HashMap<String, String>>, tf_version: Option<String>, logs: Option<String>, preview_mode: Option<String>, error_logs: Option<String>, preview_artifacts: Option<String>, deployment: Option<String>, error_code: Option<String>, service_account: Option<String>, tf_errors: Option<Vec<String>>, artifacts_gcs_bucket: Option<String>, state: Option<String>, create_time: Option<String>, tf_version_constraint: Option<String>, error_status: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

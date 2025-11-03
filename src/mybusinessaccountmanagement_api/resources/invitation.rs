@@ -1,6 +1,6 @@
 //! Invitation resource
 //!
-//! Declines the specified invitation.
+//! Accepts the specified invitation.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

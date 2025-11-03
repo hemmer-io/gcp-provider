@@ -24,10 +24,13 @@ impl<'a> Kgsearch_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "entitie" => self.plan_entitie(current_state, desired_input).await,
+            "entitie" => {
+                self.plan_entitie(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "kgsearch_api", resource_name
+                "kgsearch_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Kgsearch_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "entitie" => self.create_entitie(input).await,
+            "entitie" => {
+                self.create_entitie(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "kgsearch_api", resource_name
+                "kgsearch_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "entitie" => self.read_entitie(id).await,
+            "entitie" => {
+                self.read_entitie(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "kgsearch_api", resource_name
+                "kgsearch_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Kgsearch_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "entitie" => self.update_entitie(id, input).await,
+            "entitie" => {
+                self.update_entitie(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "kgsearch_api", resource_name
+                "kgsearch_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "entitie" => self.delete_entitie(id).await,
+            "entitie" => {
+                self.delete_entitie(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "kgsearch_api", resource_name
+                "kgsearch_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Kgsearch_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Entitie resource operations
@@ -110,26 +134,44 @@ impl<'a> Kgsearch_apiService<'a> {
     }
 
     /// Create a new entitie resource
-    async fn create_entitie(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_entitie(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a entitie resource
-    async fn read_entitie(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_entitie(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a entitie resource
-    async fn update_entitie(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_entitie(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a entitie resource
-    async fn delete_entitie(&self, id: &str) -> Result<()> {
+    async fn delete_entitie(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

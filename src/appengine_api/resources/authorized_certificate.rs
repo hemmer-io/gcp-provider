@@ -21,7 +21,7 @@ impl<'a> Authorized_certificate<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, managed_certificate: Option<String>, expire_time: Option<String>, visible_domain_mappings: Option<Vec<String>>, name: Option<String>, certificate_raw_data: Option<String>, domain_names: Option<Vec<String>>, domain_mappings_count: Option<i64>, display_name: Option<String>, id: Option<String>, apps_id: String) -> Result<String> {
+    pub async fn create(&self, domain_names: Option<Vec<String>>, certificate_raw_data: Option<String>, domain_mappings_count: Option<i64>, managed_certificate: Option<String>, visible_domain_mappings: Option<Vec<String>>, display_name: Option<String>, id: Option<String>, expire_time: Option<String>, name: Option<String>, applications_id: String, locations_id: String, projects_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Authorized_certificate<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, managed_certificate: Option<String>, expire_time: Option<String>, visible_domain_mappings: Option<Vec<String>>, name: Option<String>, certificate_raw_data: Option<String>, domain_names: Option<Vec<String>>, domain_mappings_count: Option<i64>, display_name: Option<String>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, domain_names: Option<Vec<String>>, certificate_raw_data: Option<String>, domain_mappings_count: Option<i64>, managed_certificate: Option<String>, visible_domain_mappings: Option<Vec<String>>, display_name: Option<String>, id: Option<String>, expire_time: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -24,11 +24,16 @@ impl<'a> Adexperiencereport_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "site" => self.plan_site(current_state, desired_input).await,
-            "violating_site" => self.plan_violating_site(current_state, desired_input).await,
+            "site" => {
+                self.plan_site(current_state, desired_input).await
+            }
+            "violating_site" => {
+                self.plan_violating_site(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "adexperiencereport_api", resource_name
+                "adexperiencereport_api",
+                resource_name
             ))),
         }
     }
@@ -40,23 +45,37 @@ impl<'a> Adexperiencereport_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "site" => self.create_site(input).await,
-            "violating_site" => self.create_violating_site(input).await,
+            "site" => {
+                self.create_site(input).await
+            }
+            "violating_site" => {
+                self.create_violating_site(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "adexperiencereport_api", resource_name
+                "adexperiencereport_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "site" => self.read_site(id).await,
-            "violating_site" => self.read_violating_site(id).await,
+            "site" => {
+                self.read_site(id).await
+            }
+            "violating_site" => {
+                self.read_violating_site(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "adexperiencereport_api", resource_name
+                "adexperiencereport_api",
+                resource_name
             ))),
         }
     }
@@ -69,23 +88,37 @@ impl<'a> Adexperiencereport_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "site" => self.update_site(id, input).await,
-            "violating_site" => self.update_violating_site(id, input).await,
+            "site" => {
+                self.update_site(id, input).await
+            }
+            "violating_site" => {
+                self.update_violating_site(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "adexperiencereport_api", resource_name
+                "adexperiencereport_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "site" => self.delete_site(id).await,
-            "violating_site" => self.delete_violating_site(id).await,
+            "site" => {
+                self.delete_site(id).await
+            }
+            "violating_site" => {
+                self.delete_violating_site(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "adexperiencereport_api", resource_name
+                "adexperiencereport_api",
+                resource_name
             ))),
         }
     }
@@ -93,6 +126,7 @@ impl<'a> Adexperiencereport_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Site resource operations
@@ -115,28 +149,45 @@ impl<'a> Adexperiencereport_apiService<'a> {
     }
 
     /// Create a new site resource
-    async fn create_site(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_site(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a site resource
-    async fn read_site(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_site(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a site resource
-    async fn update_site(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_site(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a site resource
-    async fn delete_site(&self, id: &str) -> Result<()> {
+    async fn delete_site(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Violating_site resource operations
@@ -159,15 +210,23 @@ impl<'a> Adexperiencereport_apiService<'a> {
     }
 
     /// Create a new violating_site resource
-    async fn create_violating_site(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_violating_site(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a violating_site resource
-    async fn read_violating_site(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_violating_site(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a violating_site resource
@@ -177,12 +236,18 @@ impl<'a> Adexperiencereport_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a violating_site resource
-    async fn delete_violating_site(&self, id: &str) -> Result<()> {
+    async fn delete_violating_site(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

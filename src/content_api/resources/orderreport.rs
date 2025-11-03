@@ -1,6 +1,6 @@
 //! Orderreport resource
 //!
-//! Retrieves a report for disbursements from your Merchant Center account.
+//! Retrieves a list of transactions for a disbursement from your Merchant Center account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

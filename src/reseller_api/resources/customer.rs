@@ -21,7 +21,7 @@ impl<'a> Customer<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, alternate_email: Option<String>, postal_address: Option<String>, customer_id: Option<String>, customer_domain_verified: Option<bool>, phone_number: Option<String>, kind: Option<String>, customer_type: Option<String>, customer_domain: Option<String>, resource_ui_url: Option<String>, primary_admin: Option<String>) -> Result<String> {
+    pub async fn create(&self, primary_admin: Option<String>, alternate_email: Option<String>, postal_address: Option<String>, customer_domain: Option<String>, phone_number: Option<String>, customer_type: Option<String>, customer_id: Option<String>, resource_ui_url: Option<String>, customer_domain_verified: Option<bool>, kind: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Customer<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, alternate_email: Option<String>, postal_address: Option<String>, customer_id: Option<String>, customer_domain_verified: Option<bool>, phone_number: Option<String>, kind: Option<String>, customer_type: Option<String>, customer_domain: Option<String>, resource_ui_url: Option<String>, primary_admin: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, primary_admin: Option<String>, alternate_email: Option<String>, postal_address: Option<String>, customer_domain: Option<String>, phone_number: Option<String>, customer_type: Option<String>, customer_id: Option<String>, resource_ui_url: Option<String>, customer_domain_verified: Option<bool>, kind: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

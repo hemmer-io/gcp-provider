@@ -21,7 +21,7 @@ impl<'a> Domain<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, managed_identities_admin_name: Option<String>, create_time: Option<String>, fqdn: Option<String>, labels: Option<HashMap<String, String>>, reserved_ip_range: Option<String>, name: Option<String>, trusts: Option<Vec<String>>, status_message: Option<String>, update_time: Option<String>, audit_logs_enabled: Option<bool>, locations: Option<Vec<String>>, authorized_networks: Option<Vec<String>>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, managed_identities_admin_name: Option<String>, name: Option<String>, trusts: Option<Vec<String>>, update_time: Option<String>, audit_logs_enabled: Option<bool>, authorized_networks: Option<Vec<String>>, create_time: Option<String>, locations: Option<Vec<String>>, reserved_ip_range: Option<String>, status_message: Option<String>, state: Option<String>, fqdn: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Domain<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, managed_identities_admin_name: Option<String>, create_time: Option<String>, fqdn: Option<String>, labels: Option<HashMap<String, String>>, reserved_ip_range: Option<String>, name: Option<String>, trusts: Option<Vec<String>>, status_message: Option<String>, update_time: Option<String>, audit_logs_enabled: Option<bool>, locations: Option<Vec<String>>, authorized_networks: Option<Vec<String>>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, managed_identities_admin_name: Option<String>, name: Option<String>, trusts: Option<Vec<String>>, update_time: Option<String>, audit_logs_enabled: Option<bool>, authorized_networks: Option<Vec<String>>, create_time: Option<String>, locations: Option<Vec<String>>, reserved_ip_range: Option<String>, status_message: Option<String>, state: Option<String>, fqdn: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

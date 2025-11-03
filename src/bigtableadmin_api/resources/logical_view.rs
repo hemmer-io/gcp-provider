@@ -21,7 +21,7 @@ impl<'a> Logical_view<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, etag: Option<String>, query: Option<String>, name: Option<String>, deletion_protection: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, name: Option<String>, deletion_protection: Option<bool>, query: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Logical_view<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, query: Option<String>, name: Option<String>, deletion_protection: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, name: Option<String>, deletion_protection: Option<bool>, query: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

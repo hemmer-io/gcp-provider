@@ -1,6 +1,6 @@
 //! Comment resource
 //!
-//! Marks a comment as not spam by blog id, post id and comment id.
+//! Marks a comment as spam by blog id, post id and comment id.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Comment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, blog_id: String, post_id: String, comment_id: String) -> Result<String> {
+    pub async fn create(&self, comment_id: String, post_id: String, blog_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

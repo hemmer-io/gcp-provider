@@ -21,7 +21,7 @@ impl<'a> Notification_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, service_account: Option<String>, pubsub_topic: Option<String>, streaming_config: Option<String>, name: Option<String>, event_type: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, pubsub_topic: Option<String>, service_account: Option<String>, event_type: Option<String>, name: Option<String>, streaming_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Notification_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, service_account: Option<String>, pubsub_topic: Option<String>, streaming_config: Option<String>, name: Option<String>, event_type: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, pubsub_topic: Option<String>, service_account: Option<String>, event_type: Option<String>, name: Option<String>, streaming_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

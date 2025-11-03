@@ -1,6 +1,6 @@
 //! Oauth_client resource
 //!
-//! Accepts an App Attest CBOR attestation and verifies it with Apple using your preconfigured team and bundle IDs. If valid, returns an attestation artifact that can later be exchanged for an AppCheckToken using ExchangeAppAttestAssertion. For convenience and performance, this method's response object will also contain an AppCheckToken (if the verification is successful).
+//! Validates a debug token secret that you have previously created using CreateDebugToken. If valid, returns an AppCheckToken. Note that a restrictive quota is enforced on this method to prevent accidental exposure of the app to abuse.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Oauth_client<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, attestation_statement: Option<String>, challenge: Option<String>, limited_use: Option<bool>, key_id: Option<String>, app: String) -> Result<String> {
+    pub async fn create(&self, limited_use: Option<bool>, debug_token: Option<String>, app: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

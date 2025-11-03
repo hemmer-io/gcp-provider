@@ -1,6 +1,6 @@
 //! Api resource
 //!
-//! Retrieve the description of a particular version of an api.
+//! Retrieve the list of APIs supported at this endpoint.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -1,6 +1,6 @@
 //! Myconfig resource
 //!
-//! Release downloaded content access restriction.
+//! Request downloaded content access for specified volumes on the My eBooks shelf.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

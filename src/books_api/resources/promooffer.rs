@@ -1,6 +1,6 @@
 //! Promooffer resource
 //!
-//! Marks the promo offer as dismissed.
+//! Accepts the promo offer.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

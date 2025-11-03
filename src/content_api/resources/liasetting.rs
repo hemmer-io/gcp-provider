@@ -1,6 +1,6 @@
 //! Liasetting resource
 //!
-//! Sets the POS data provider for the specified country.
+//! Sets the inventory verification contract for the specified country.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Liasetting<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, merchant_id: String, account_id: String) -> Result<String> {
+    pub async fn create(&self, account_id: String, merchant_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

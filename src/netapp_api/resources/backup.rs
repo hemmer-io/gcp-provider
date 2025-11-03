@@ -21,7 +21,7 @@ impl<'a> Backup<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, backup_region: Option<String>, state: Option<String>, source_snapshot: Option<String>, enforced_retention_end_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, volume_usage_bytes: Option<String>, chain_storage_bytes: Option<String>, satisfies_pzi: Option<bool>, backup_type: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, source_volume: Option<String>, volume_region: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, labels: Option<HashMap<String, String>>, enforced_retention_end_time: Option<String>, backup_type: Option<String>, name: Option<String>, backup_region: Option<String>, satisfies_pzi: Option<bool>, volume_usage_bytes: Option<String>, chain_storage_bytes: Option<String>, source_volume: Option<String>, state: Option<String>, volume_region: Option<String>, source_snapshot: Option<String>, satisfies_pzs: Option<bool>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, backup_region: Option<String>, state: Option<String>, source_snapshot: Option<String>, enforced_retention_end_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, volume_usage_bytes: Option<String>, chain_storage_bytes: Option<String>, satisfies_pzi: Option<bool>, backup_type: Option<String>, create_time: Option<String>, satisfies_pzs: Option<bool>, source_volume: Option<String>, volume_region: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, labels: Option<HashMap<String, String>>, enforced_retention_end_time: Option<String>, backup_type: Option<String>, name: Option<String>, backup_region: Option<String>, satisfies_pzi: Option<bool>, volume_usage_bytes: Option<String>, chain_storage_bytes: Option<String>, source_volume: Option<String>, state: Option<String>, volume_region: Option<String>, source_snapshot: Option<String>, satisfies_pzs: Option<bool>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

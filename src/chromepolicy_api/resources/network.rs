@@ -21,7 +21,7 @@ impl<'a> Network<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, ceritificate_name: Option<String>, target_resource: Option<String>, certificate: Option<String>, settings: Option<Vec<String>>, customer: String) -> Result<String> {
+    pub async fn create(&self, ceritificate_name: Option<String>, target_resource: Option<String>, settings: Option<Vec<String>>, certificate: Option<String>, customer: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

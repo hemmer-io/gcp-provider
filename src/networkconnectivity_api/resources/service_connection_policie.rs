@@ -21,7 +21,7 @@ impl<'a> Service_connection_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, infrastructure: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, auto_created_subnet_info: Option<String>, psc_connections: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, service_class: Option<String>, psc_config: Option<String>, etag: Option<String>, update_time: Option<String>, network: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, psc_connections: Option<Vec<String>>, auto_created_subnet_info: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, network: Option<String>, update_time: Option<String>, name: Option<String>, service_class: Option<String>, description: Option<String>, etag: Option<String>, infrastructure: Option<String>, psc_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Service_connection_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, infrastructure: Option<String>, labels: Option<HashMap<String, String>>, description: Option<String>, auto_created_subnet_info: Option<String>, psc_connections: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, service_class: Option<String>, psc_config: Option<String>, etag: Option<String>, update_time: Option<String>, network: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, psc_connections: Option<Vec<String>>, auto_created_subnet_info: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, network: Option<String>, update_time: Option<String>, name: Option<String>, service_class: Option<String>, description: Option<String>, etag: Option<String>, infrastructure: Option<String>, psc_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

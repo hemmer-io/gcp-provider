@@ -21,7 +21,7 @@ impl<'a> Subaccount<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, available_permission_ids: Option<Vec<String>>, id: Option<String>, account_id: Option<String>, name: Option<String>, kind: Option<String>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, account_id: Option<String>, name: Option<String>, available_permission_ids: Option<Vec<String>>, kind: Option<String>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Subaccount<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, available_permission_ids: Option<Vec<String>>, id: Option<String>, account_id: Option<String>, name: Option<String>, kind: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, id: Option<String>, account_id: Option<String>, name: Option<String>, available_permission_ids: Option<Vec<String>>, kind: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

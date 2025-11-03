@@ -21,7 +21,7 @@ impl<'a> Excessivewakeuprate<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, metrics: Option<Vec<String>>, filter: Option<String>, dimensions: Option<Vec<String>>, page_size: Option<i64>, page_token: Option<String>, timeline_spec: Option<String>, user_cohort: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, filter: Option<String>, page_size: Option<i64>, timeline_spec: Option<String>, page_token: Option<String>, user_cohort: Option<String>, metrics: Option<Vec<String>>, dimensions: Option<Vec<String>>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

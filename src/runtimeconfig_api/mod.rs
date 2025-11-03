@@ -24,14 +24,25 @@ impl<'a> Runtimeconfig_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "operation" => self.plan_operation(current_state, desired_input).await,
-            "variable" => self.plan_variable(current_state, desired_input).await,
-            "operation" => self.plan_operation(current_state, desired_input).await,
-            "waiter" => self.plan_waiter(current_state, desired_input).await,
-            "config" => self.plan_config(current_state, desired_input).await,
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
+            "config" => {
+                self.plan_config(current_state, desired_input).await
+            }
+            "variable" => {
+                self.plan_variable(current_state, desired_input).await
+            }
+            "waiter" => {
+                self.plan_waiter(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "runtimeconfig_api", resource_name
+                "runtimeconfig_api",
+                resource_name
             ))),
         }
     }
@@ -43,29 +54,55 @@ impl<'a> Runtimeconfig_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "operation" => self.create_operation(input).await,
-            "variable" => self.create_variable(input).await,
-            "operation" => self.create_operation(input).await,
-            "waiter" => self.create_waiter(input).await,
-            "config" => self.create_config(input).await,
+            "operation" => {
+                self.create_operation(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
+            }
+            "config" => {
+                self.create_config(input).await
+            }
+            "variable" => {
+                self.create_variable(input).await
+            }
+            "waiter" => {
+                self.create_waiter(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "runtimeconfig_api", resource_name
+                "runtimeconfig_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "operation" => self.read_operation(id).await,
-            "variable" => self.read_variable(id).await,
-            "operation" => self.read_operation(id).await,
-            "waiter" => self.read_waiter(id).await,
-            "config" => self.read_config(id).await,
+            "operation" => {
+                self.read_operation(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
+            }
+            "config" => {
+                self.read_config(id).await
+            }
+            "variable" => {
+                self.read_variable(id).await
+            }
+            "waiter" => {
+                self.read_waiter(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "runtimeconfig_api", resource_name
+                "runtimeconfig_api",
+                resource_name
             ))),
         }
     }
@@ -78,29 +115,55 @@ impl<'a> Runtimeconfig_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "operation" => self.update_operation(id, input).await,
-            "variable" => self.update_variable(id, input).await,
-            "operation" => self.update_operation(id, input).await,
-            "waiter" => self.update_waiter(id, input).await,
-            "config" => self.update_config(id, input).await,
+            "operation" => {
+                self.update_operation(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
+            }
+            "config" => {
+                self.update_config(id, input).await
+            }
+            "variable" => {
+                self.update_variable(id, input).await
+            }
+            "waiter" => {
+                self.update_waiter(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "runtimeconfig_api", resource_name
+                "runtimeconfig_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "operation" => self.delete_operation(id).await,
-            "variable" => self.delete_variable(id).await,
-            "operation" => self.delete_operation(id).await,
-            "waiter" => self.delete_waiter(id).await,
-            "config" => self.delete_config(id).await,
+            "operation" => {
+                self.delete_operation(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
+            }
+            "config" => {
+                self.delete_config(id).await
+            }
+            "variable" => {
+                self.delete_variable(id).await
+            }
+            "waiter" => {
+                self.delete_waiter(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "runtimeconfig_api", resource_name
+                "runtimeconfig_api",
+                resource_name
             ))),
         }
     }
@@ -109,93 +172,6 @@ impl<'a> Runtimeconfig_apiService<'a> {
     // Resource-specific CRUD implementations
     // ========================================================================
 
-    // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(&self, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(&self, id: &str) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(&self, id: &str) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-    // ------------------------------------------------------------------------
-    // Variable resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a variable resource
-    async fn plan_variable(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new variable resource
-    async fn create_variable(&self, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
-    }
-
-    /// Read a variable resource
-    async fn read_variable(&self, id: &str) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Update a variable resource
-    async fn update_variable(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Delete a variable resource
-    async fn delete_variable(&self, id: &str) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
     // ------------------------------------------------------------------------
     // Operation resource operations
@@ -218,35 +194,52 @@ impl<'a> Runtimeconfig_apiService<'a> {
     }
 
     /// Create a new operation resource
-    async fn create_operation(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a operation resource
-    async fn read_operation(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a operation resource
-    async fn update_operation(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a operation resource
-    async fn delete_operation(&self, id: &str) -> Result<()> {
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
 
+
     // ------------------------------------------------------------------------
-    // Waiter resource operations
+    // Operation resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a waiter resource
-    async fn plan_waiter(
+    /// Plan changes to a operation resource
+    async fn plan_operation(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -261,29 +254,46 @@ impl<'a> Runtimeconfig_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new waiter resource
-    async fn create_waiter(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
-    /// Read a waiter resource
-    async fn read_waiter(&self, id: &str) -> Result<ResourceOutput> {
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
-    /// Update a waiter resource
-    async fn update_waiter(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
-    /// Delete a waiter resource
-    async fn delete_waiter(&self, id: &str) -> Result<()> {
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Config resource operations
@@ -306,26 +316,166 @@ impl<'a> Runtimeconfig_apiService<'a> {
     }
 
     /// Create a new config resource
-    async fn create_config(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_config(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a config resource
-    async fn read_config(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_config(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a config resource
-    async fn update_config(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_config(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a config resource
-    async fn delete_config(&self, id: &str) -> Result<()> {
+    async fn delete_config(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
+    // ------------------------------------------------------------------------
+    // Variable resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a variable resource
+    async fn plan_variable(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new variable resource
+    async fn create_variable(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a variable resource
+    async fn read_variable(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a variable resource
+    async fn update_variable(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a variable resource
+    async fn delete_variable(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Waiter resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a waiter resource
+    async fn plan_waiter(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new waiter resource
+    async fn create_waiter(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a waiter resource
+    async fn read_waiter(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a waiter resource
+    async fn update_waiter(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a waiter resource
+    async fn delete_waiter(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
 }

@@ -21,7 +21,7 @@ impl<'a> Node_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, node_group_config: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, roles: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, roles: Option<Vec<String>>, node_group_config: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

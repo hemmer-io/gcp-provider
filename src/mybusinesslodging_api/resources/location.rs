@@ -34,7 +34,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, metadata: Option<String>, sustainability: Option<String>, accessibility: Option<String>, guest_units: Option<Vec<String>>, parking: Option<String>, name: Option<String>, common_living_area: Option<String>, activities: Option<String>, families: Option<String>, some_units: Option<String>, transportation: Option<String>, connectivity: Option<String>, services: Option<String>, wellness: Option<String>, business: Option<String>, housekeeping: Option<String>, food_and_drink: Option<String>, all_units: Option<String>, policies: Option<String>, health_and_safety: Option<String>, pools: Option<String>, pets: Option<String>, property: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, health_and_safety: Option<String>, pools: Option<String>, transportation: Option<String>, sustainability: Option<String>, common_living_area: Option<String>, business: Option<String>, all_units: Option<String>, accessibility: Option<String>, connectivity: Option<String>, services: Option<String>, some_units: Option<String>, name: Option<String>, activities: Option<String>, pets: Option<String>, wellness: Option<String>, parking: Option<String>, metadata: Option<String>, food_and_drink: Option<String>, housekeeping: Option<String>, guest_units: Option<Vec<String>>, property: Option<String>, policies: Option<String>, families: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

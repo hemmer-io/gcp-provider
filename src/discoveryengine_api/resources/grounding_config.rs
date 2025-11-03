@@ -21,7 +21,7 @@ impl<'a> Grounding_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, answer_candidate: Option<String>, user_labels: Option<HashMap<String, String>>, grounding_spec: Option<String>, facts: Option<Vec<String>>, grounding_config: String) -> Result<String> {
+    pub async fn create(&self, grounding_spec: Option<String>, facts: Option<Vec<String>>, answer_candidate: Option<String>, user_labels: Option<HashMap<String, String>>, grounding_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

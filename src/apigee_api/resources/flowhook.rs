@@ -34,7 +34,7 @@ impl<'a> Flowhook<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, flow_hook_point: Option<String>, continue_on_error: Option<bool>, shared_flow: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, continue_on_error: Option<bool>, shared_flow: Option<String>, flow_hook_point: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

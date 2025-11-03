@@ -21,7 +21,7 @@ impl<'a> Security_monitoring_condition<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, total_deployed_resources: Option<i64>, include_all_resources: Option<String>, scope: Option<String>, name: Option<String>, create_time: Option<String>, include: Option<String>, profile: Option<String>, total_monitored_resources: Option<i64>, parent: String) -> Result<String> {
+    pub async fn create(&self, include: Option<String>, include_all_resources: Option<String>, profile: Option<String>, update_time: Option<String>, name: Option<String>, total_deployed_resources: Option<i64>, total_monitored_resources: Option<i64>, scope: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Security_monitoring_condition<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, total_deployed_resources: Option<i64>, include_all_resources: Option<String>, scope: Option<String>, name: Option<String>, create_time: Option<String>, include: Option<String>, profile: Option<String>, total_monitored_resources: Option<i64>) -> Result<()> {
+    pub async fn update(&self, id: &str, include: Option<String>, include_all_resources: Option<String>, profile: Option<String>, update_time: Option<String>, name: Option<String>, total_deployed_resources: Option<i64>, total_monitored_resources: Option<i64>, scope: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

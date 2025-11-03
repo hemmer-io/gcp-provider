@@ -1,6 +1,6 @@
 //! Archive_job resource
 //!
-//! Cancels a Portability Archive job.
+//! Retries a failed Portability Archive job.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -21,7 +21,7 @@ impl<'a> Backup<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, hot_to_standard_time: Option<String>, start_time: Option<String>, source_table: Option<String>, end_time: Option<String>, size_bytes: Option<String>, expire_time: Option<String>, encryption_info: Option<String>, backup_type: Option<String>, name: Option<String>, source_backup: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, end_time: Option<String>, hot_to_standard_time: Option<String>, expire_time: Option<String>, name: Option<String>, encryption_info: Option<String>, backup_type: Option<String>, size_bytes: Option<String>, source_backup: Option<String>, source_table: Option<String>, start_time: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, hot_to_standard_time: Option<String>, start_time: Option<String>, source_table: Option<String>, end_time: Option<String>, size_bytes: Option<String>, expire_time: Option<String>, encryption_info: Option<String>, backup_type: Option<String>, name: Option<String>, source_backup: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, end_time: Option<String>, hot_to_standard_time: Option<String>, expire_time: Option<String>, name: Option<String>, encryption_info: Option<String>, backup_type: Option<String>, size_bytes: Option<String>, source_backup: Option<String>, source_table: Option<String>, start_time: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

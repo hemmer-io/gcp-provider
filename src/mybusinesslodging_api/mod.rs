@@ -24,11 +24,16 @@ impl<'a> Mybusinesslodging_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "location" => self.plan_location(current_state, desired_input).await,
-            "lodging" => self.plan_lodging(current_state, desired_input).await,
+            "location" => {
+                self.plan_location(current_state, desired_input).await
+            }
+            "lodging" => {
+                self.plan_lodging(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinesslodging_api", resource_name
+                "mybusinesslodging_api",
+                resource_name
             ))),
         }
     }
@@ -40,23 +45,37 @@ impl<'a> Mybusinesslodging_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "location" => self.create_location(input).await,
-            "lodging" => self.create_lodging(input).await,
+            "location" => {
+                self.create_location(input).await
+            }
+            "lodging" => {
+                self.create_lodging(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinesslodging_api", resource_name
+                "mybusinesslodging_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "location" => self.read_location(id).await,
-            "lodging" => self.read_lodging(id).await,
+            "location" => {
+                self.read_location(id).await
+            }
+            "lodging" => {
+                self.read_lodging(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinesslodging_api", resource_name
+                "mybusinesslodging_api",
+                resource_name
             ))),
         }
     }
@@ -69,23 +88,37 @@ impl<'a> Mybusinesslodging_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "location" => self.update_location(id, input).await,
-            "lodging" => self.update_lodging(id, input).await,
+            "location" => {
+                self.update_location(id, input).await
+            }
+            "lodging" => {
+                self.update_lodging(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinesslodging_api", resource_name
+                "mybusinesslodging_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "location" => self.delete_location(id).await,
-            "lodging" => self.delete_lodging(id).await,
+            "location" => {
+                self.delete_location(id).await
+            }
+            "lodging" => {
+                self.delete_lodging(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "mybusinesslodging_api", resource_name
+                "mybusinesslodging_api",
+                resource_name
             ))),
         }
     }
@@ -93,6 +126,7 @@ impl<'a> Mybusinesslodging_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Location resource operations
@@ -115,28 +149,45 @@ impl<'a> Mybusinesslodging_apiService<'a> {
     }
 
     /// Create a new location resource
-    async fn create_location(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a location resource
-    async fn read_location(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a location resource
-    async fn update_location(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a location resource
-    async fn delete_location(&self, id: &str) -> Result<()> {
+    async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Lodging resource operations
@@ -159,26 +210,44 @@ impl<'a> Mybusinesslodging_apiService<'a> {
     }
 
     /// Create a new lodging resource
-    async fn create_lodging(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_lodging(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a lodging resource
-    async fn read_lodging(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_lodging(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a lodging resource
-    async fn update_lodging(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_lodging(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a lodging resource
-    async fn delete_lodging(&self, id: &str) -> Result<()> {
+    async fn delete_lodging(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

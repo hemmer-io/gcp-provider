@@ -22,7 +22,7 @@ impl<'a> Addresse<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, network: Option<String>, network_tier: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, ip_collection: Option<String>, ip_version: Option<String>, self_link: Option<String>, prefix_length: Option<i64>, address_type: Option<String>, subnetwork: Option<String>, users: Option<Vec<String>>, region: Option<String>, id: Option<String>, label_fingerprint: Option<String>, ipv6_endpoint_type: Option<String>, purpose: Option<String>, status: Option<String>, address: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, address_type: Option<String>, prefix_length: Option<i64>, purpose: Option<String>, status: Option<String>, label_fingerprint: Option<String>, name: Option<String>, ip_version: Option<String>, self_link: Option<String>, description: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, users: Option<Vec<String>>, network: Option<String>, id: Option<String>, address: Option<String>, ip_collection: Option<String>, network_tier: Option<String>, region: Option<String>, subnetwork: Option<String>, labels: Option<HashMap<String, String>>, ipv6_endpoint_type: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

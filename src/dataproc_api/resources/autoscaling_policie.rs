@@ -21,7 +21,7 @@ impl<'a> Autoscaling_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, basic_algorithm: Option<String>, worker_config: Option<String>, id: Option<String>, name: Option<String>, secondary_worker_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, worker_config: Option<String>, name: Option<String>, secondary_worker_config: Option<String>, id: Option<String>, basic_algorithm: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Autoscaling_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, basic_algorithm: Option<String>, worker_config: Option<String>, id: Option<String>, name: Option<String>, secondary_worker_config: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, worker_config: Option<String>, name: Option<String>, secondary_worker_config: Option<String>, id: Option<String>, basic_algorithm: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

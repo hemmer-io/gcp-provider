@@ -24,10 +24,13 @@ impl<'a> Repeated_any_query_errorService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "entrie" => self.plan_entrie(current_state, desired_input).await,
+            "entrie" => {
+                self.plan_entrie(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "repeated_any_query_error", resource_name
+                "repeated_any_query_error",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Repeated_any_query_errorService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "entrie" => self.create_entrie(input).await,
+            "entrie" => {
+                self.create_entrie(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "repeated_any_query_error", resource_name
+                "repeated_any_query_error",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "entrie" => self.read_entrie(id).await,
+            "entrie" => {
+                self.read_entrie(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "repeated_any_query_error", resource_name
+                "repeated_any_query_error",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Repeated_any_query_errorService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "entrie" => self.update_entrie(id, input).await,
+            "entrie" => {
+                self.update_entrie(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "repeated_any_query_error", resource_name
+                "repeated_any_query_error",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "entrie" => self.delete_entrie(id).await,
+            "entrie" => {
+                self.delete_entrie(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "repeated_any_query_error", resource_name
+                "repeated_any_query_error",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Repeated_any_query_errorService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Entrie resource operations
@@ -110,26 +134,44 @@ impl<'a> Repeated_any_query_errorService<'a> {
     }
 
     /// Create a new entrie resource
-    async fn create_entrie(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_entrie(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a entrie resource
-    async fn read_entrie(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_entrie(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a entrie resource
-    async fn update_entrie(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_entrie(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a entrie resource
-    async fn delete_entrie(&self, id: &str) -> Result<()> {
+    async fn delete_entrie(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

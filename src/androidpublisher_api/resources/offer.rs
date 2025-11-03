@@ -21,7 +21,7 @@ impl<'a> Offer<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, base_plan_id: Option<String>, offer_tags: Option<Vec<String>>, phases: Option<Vec<String>>, state: Option<String>, offer_id: Option<String>, product_id: Option<String>, package_name: Option<String>, targeting: Option<String>, other_regions_config: Option<String>, regional_configs: Option<Vec<String>>, product_id: String, base_plan_id: String, package_name: String) -> Result<String> {
+    pub async fn create(&self, regional_configs: Option<Vec<String>>, state: Option<String>, package_name: Option<String>, other_regions_config: Option<String>, offer_tags: Option<Vec<String>>, offer_id: Option<String>, product_id: Option<String>, phases: Option<Vec<String>>, targeting: Option<String>, base_plan_id: Option<String>, base_plan_id: String, product_id: String, package_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Offer<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, base_plan_id: Option<String>, offer_tags: Option<Vec<String>>, phases: Option<Vec<String>>, state: Option<String>, offer_id: Option<String>, product_id: Option<String>, package_name: Option<String>, targeting: Option<String>, other_regions_config: Option<String>, regional_configs: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, regional_configs: Option<Vec<String>>, state: Option<String>, package_name: Option<String>, other_regions_config: Option<String>, offer_tags: Option<Vec<String>>, offer_id: Option<String>, product_id: Option<String>, phases: Option<Vec<String>>, targeting: Option<String>, base_plan_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

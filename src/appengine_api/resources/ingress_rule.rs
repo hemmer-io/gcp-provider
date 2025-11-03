@@ -21,7 +21,7 @@ impl<'a> Ingress_rule<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, source_range: Option<String>, action: Option<String>, description: Option<String>, priority: Option<i64>, apps_id: String) -> Result<String> {
+    pub async fn create(&self, source_range: Option<String>, description: Option<String>, action: Option<String>, priority: Option<i64>, apps_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Ingress_rule<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, source_range: Option<String>, action: Option<String>, description: Option<String>, priority: Option<i64>) -> Result<()> {
+    pub async fn update(&self, id: &str, source_range: Option<String>, description: Option<String>, action: Option<String>, priority: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

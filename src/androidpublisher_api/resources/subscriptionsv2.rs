@@ -1,6 +1,6 @@
 //! Subscriptionsv2 resource
 //!
-//! Revoke a subscription purchase for the user.
+//! Cancel a subscription purchase for the user.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Subscriptionsv2<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, revocation_context: Option<String>, token: String, package_name: String) -> Result<String> {
+    pub async fn create(&self, cancellation_context: Option<String>, package_name: String, token: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

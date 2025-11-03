@@ -21,7 +21,7 @@ impl<'a> Admin<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, admin: Option<String>, account: Option<String>, pending_invitation: Option<bool>, name: Option<String>, role: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, role: Option<String>, pending_invitation: Option<bool>, account: Option<String>, admin: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Admin<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, admin: Option<String>, account: Option<String>, pending_invitation: Option<bool>, name: Option<String>, role: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, role: Option<String>, pending_invitation: Option<bool>, account: Option<String>, admin: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

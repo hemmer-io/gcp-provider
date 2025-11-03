@@ -1,6 +1,6 @@
 //! Operation resource
 //!
-//! Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
+//! Gets the latest state of a long-running operation. Use this method to poll the operation result at intervals as recommended by the API service.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

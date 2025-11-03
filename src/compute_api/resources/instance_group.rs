@@ -22,7 +22,7 @@ impl<'a> Instance_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, subnetwork: Option<String>, description: Option<String>, zone: Option<String>, kind: Option<String>, id: Option<String>, name: Option<String>, named_ports: Option<Vec<String>>, fingerprint: Option<String>, creation_timestamp: Option<String>, network: Option<String>, region: Option<String>, size: Option<i64>, self_link: Option<String>, zone: String, project: String) -> Result<String> {
+    pub async fn create(&self, fingerprint: Option<String>, name: Option<String>, kind: Option<String>, subnetwork: Option<String>, self_link: Option<String>, zone: Option<String>, network: Option<String>, creation_timestamp: Option<String>, id: Option<String>, region: Option<String>, description: Option<String>, named_ports: Option<Vec<String>>, size: Option<i64>, zone: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

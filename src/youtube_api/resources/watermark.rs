@@ -1,6 +1,6 @@
 //! Watermark resource
 //!
-//! Allows removal of channel watermark.
+//! Allows upload of watermark image and setting it for a channel.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Watermark<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self) -> Result<String> {
+    pub async fn create(&self, image_bytes: Option<String>, target_channel_id: Option<String>, image_url: Option<String>, position: Option<String>, timing: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

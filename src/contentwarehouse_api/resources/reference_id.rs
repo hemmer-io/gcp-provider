@@ -34,7 +34,7 @@ impl<'a> Reference_id<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, request_metadata: Option<String>, update_options: Option<String>, document: Option<String>, cloud_ai_document_option: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, cloud_ai_document_option: Option<String>, update_options: Option<String>, document: Option<String>, request_metadata: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

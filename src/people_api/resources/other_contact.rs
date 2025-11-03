@@ -21,7 +21,7 @@ impl<'a> Other_contact<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, read_mask: Option<String>, sources: Option<Vec<String>>, copy_mask: Option<String>, resource_name: String) -> Result<String> {
+    pub async fn create(&self, sources: Option<Vec<String>>, copy_mask: Option<String>, read_mask: Option<String>, resource_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

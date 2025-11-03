@@ -1,6 +1,6 @@
 //! Location resource
 //!
-//! Provisions resources for given tenant project. Returns a long running operation.
+//! Run a predefined pipeline.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, access_control_mode: Option<String>, kms_key: Option<String>, document_creator_default_role: Option<String>, database_type: Option<String>, enable_cal_user_email_logging: Option<bool>, location: String) -> Result<String> {
+    pub async fn create(&self, process_with_doc_ai_pipeline: Option<String>, request_metadata: Option<String>, export_cdw_pipeline: Option<String>, gcs_ingest_with_doc_ai_processors_pipeline: Option<String>, gcs_ingest_pipeline: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

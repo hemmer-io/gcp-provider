@@ -21,7 +21,7 @@ impl<'a> Sink<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, output_version_format: Option<String>, disabled: Option<bool>, resource_name: Option<String>, description: Option<String>, filter: Option<String>, update_time: Option<String>, intercept_children: Option<bool>, bigquery_options: Option<String>, destination: Option<String>, exclusions: Option<Vec<String>>, name: Option<String>, writer_identity: Option<String>, create_time: Option<String>, include_children: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, filter: Option<String>, name: Option<String>, bigquery_options: Option<String>, intercept_children: Option<bool>, description: Option<String>, resource_name: Option<String>, output_version_format: Option<String>, update_time: Option<String>, include_children: Option<bool>, disabled: Option<bool>, exclusions: Option<Vec<String>>, writer_identity: Option<String>, destination: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Sink<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, output_version_format: Option<String>, disabled: Option<bool>, resource_name: Option<String>, description: Option<String>, filter: Option<String>, update_time: Option<String>, intercept_children: Option<bool>, bigquery_options: Option<String>, destination: Option<String>, exclusions: Option<Vec<String>>, name: Option<String>, writer_identity: Option<String>, create_time: Option<String>, include_children: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, filter: Option<String>, name: Option<String>, bigquery_options: Option<String>, intercept_children: Option<bool>, description: Option<String>, resource_name: Option<String>, output_version_format: Option<String>, update_time: Option<String>, include_children: Option<bool>, disabled: Option<bool>, exclusions: Option<Vec<String>>, writer_identity: Option<String>, destination: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

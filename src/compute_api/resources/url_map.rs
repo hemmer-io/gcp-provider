@@ -22,7 +22,7 @@ impl<'a> Url_map<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, default_custom_error_response_policy: Option<String>, default_url_redirect: Option<String>, kind: Option<String>, name: Option<String>, tests: Option<Vec<String>>, default_route_action: Option<String>, id: Option<String>, self_link: Option<String>, default_service: Option<String>, header_action: Option<String>, host_rules: Option<Vec<String>>, description: Option<String>, creation_timestamp: Option<String>, region: Option<String>, fingerprint: Option<String>, path_matchers: Option<Vec<String>>, project: String) -> Result<String> {
+    pub async fn create(&self, path_matchers: Option<Vec<String>>, region: Option<String>, tests: Option<Vec<String>>, default_service: Option<String>, id: Option<String>, name: Option<String>, self_link: Option<String>, default_custom_error_response_policy: Option<String>, header_action: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, fingerprint: Option<String>, host_rules: Option<Vec<String>>, default_url_redirect: Option<String>, description: Option<String>, default_route_action: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Url_map<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, default_custom_error_response_policy: Option<String>, default_url_redirect: Option<String>, kind: Option<String>, name: Option<String>, tests: Option<Vec<String>>, default_route_action: Option<String>, id: Option<String>, self_link: Option<String>, default_service: Option<String>, header_action: Option<String>, host_rules: Option<Vec<String>>, description: Option<String>, creation_timestamp: Option<String>, region: Option<String>, fingerprint: Option<String>, path_matchers: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, path_matchers: Option<Vec<String>>, region: Option<String>, tests: Option<Vec<String>>, default_service: Option<String>, id: Option<String>, name: Option<String>, self_link: Option<String>, default_custom_error_response_policy: Option<String>, header_action: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, fingerprint: Option<String>, host_rules: Option<Vec<String>>, default_url_redirect: Option<String>, description: Option<String>, default_route_action: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

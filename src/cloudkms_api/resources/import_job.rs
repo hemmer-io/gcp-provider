@@ -21,7 +21,7 @@ impl<'a> Import_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, protection_level: Option<String>, generate_time: Option<String>, public_key: Option<String>, state: Option<String>, expire_event_time: Option<String>, expire_time: Option<String>, create_time: Option<String>, import_method: Option<String>, name: Option<String>, attestation: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, generate_time: Option<String>, attestation: Option<String>, protection_level: Option<String>, name: Option<String>, public_key: Option<String>, expire_time: Option<String>, state: Option<String>, create_time: Option<String>, expire_event_time: Option<String>, import_method: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Device_tier_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, device_tier_config_id: Option<String>, user_country_sets: Option<Vec<String>>, device_groups: Option<Vec<String>>, device_tier_set: Option<String>, package_name: String) -> Result<String> {
+    pub async fn create(&self, device_groups: Option<Vec<String>>, user_country_sets: Option<Vec<String>>, device_tier_set: Option<String>, device_tier_config_id: Option<String>, package_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

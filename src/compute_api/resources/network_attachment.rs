@@ -22,7 +22,7 @@ impl<'a> Network_attachment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, fingerprint: Option<String>, kind: Option<String>, self_link: Option<String>, region: Option<String>, self_link_with_id: Option<String>, subnetworks: Option<Vec<String>>, producer_reject_lists: Option<Vec<String>>, producer_accept_lists: Option<Vec<String>>, connection_endpoints: Option<Vec<String>>, name: Option<String>, description: Option<String>, network: Option<String>, creation_timestamp: Option<String>, connection_preference: Option<String>, id: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, fingerprint: Option<String>, producer_reject_lists: Option<Vec<String>>, subnetworks: Option<Vec<String>>, self_link_with_id: Option<String>, region: Option<String>, kind: Option<String>, connection_endpoints: Option<Vec<String>>, creation_timestamp: Option<String>, description: Option<String>, id: Option<String>, name: Option<String>, network: Option<String>, connection_preference: Option<String>, producer_accept_lists: Option<Vec<String>>, self_link: Option<String>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Network_attachment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, fingerprint: Option<String>, kind: Option<String>, self_link: Option<String>, region: Option<String>, self_link_with_id: Option<String>, subnetworks: Option<Vec<String>>, producer_reject_lists: Option<Vec<String>>, producer_accept_lists: Option<Vec<String>>, connection_endpoints: Option<Vec<String>>, name: Option<String>, description: Option<String>, network: Option<String>, creation_timestamp: Option<String>, connection_preference: Option<String>, id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, fingerprint: Option<String>, producer_reject_lists: Option<Vec<String>>, subnetworks: Option<Vec<String>>, self_link_with_id: Option<String>, region: Option<String>, kind: Option<String>, connection_endpoints: Option<Vec<String>>, creation_timestamp: Option<String>, description: Option<String>, id: Option<String>, name: Option<String>, network: Option<String>, connection_preference: Option<String>, producer_accept_lists: Option<Vec<String>>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

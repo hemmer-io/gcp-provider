@@ -1,6 +1,6 @@
 //! Recall resource
 //!
-//! Delete all Recall tokens linking the given persona to any player (with or without a profile).
+//! Associate the PGS Player principal encoded in the provided recall session id with an in-game account
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Recall<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, persona: Option<String>) -> Result<String> {
+    pub async fn create(&self, session_id: Option<String>, persona: Option<String>, cardinality_constraint: Option<String>, token: Option<String>, conflicting_links_resolution_policy: Option<String>, ttl: Option<String>, expire_time: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

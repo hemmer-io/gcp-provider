@@ -21,7 +21,7 @@ impl<'a> Alert_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, enabled: Option<bool>, mutation_record: Option<String>, validity: Option<String>, creation_record: Option<String>, display_name: Option<String>, user_labels: Option<HashMap<String, String>>, name: Option<String>, alert_strategy: Option<String>, documentation: Option<String>, notification_channels: Option<Vec<String>>, severity: Option<String>, conditions: Option<Vec<String>>, combiner: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, creation_record: Option<String>, name: Option<String>, combiner: Option<String>, documentation: Option<String>, notification_channels: Option<Vec<String>>, validity: Option<String>, severity: Option<String>, conditions: Option<Vec<String>>, display_name: Option<String>, mutation_record: Option<String>, user_labels: Option<HashMap<String, String>>, alert_strategy: Option<String>, enabled: Option<bool>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Alert_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, enabled: Option<bool>, mutation_record: Option<String>, validity: Option<String>, creation_record: Option<String>, display_name: Option<String>, user_labels: Option<HashMap<String, String>>, name: Option<String>, alert_strategy: Option<String>, documentation: Option<String>, notification_channels: Option<Vec<String>>, severity: Option<String>, conditions: Option<Vec<String>>, combiner: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, creation_record: Option<String>, name: Option<String>, combiner: Option<String>, documentation: Option<String>, notification_channels: Option<Vec<String>>, validity: Option<String>, severity: Option<String>, conditions: Option<Vec<String>>, display_name: Option<String>, mutation_record: Option<String>, user_labels: Option<HashMap<String, String>>, alert_strategy: Option<String>, enabled: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

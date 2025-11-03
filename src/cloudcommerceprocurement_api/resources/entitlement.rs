@@ -1,6 +1,6 @@
 //! Entitlement resource
 //!
-//! Rejects an entitlement that is in the EntitlementState.ENTITLEMENT_ACTIVATION_REQUESTED state. This method is invoked by the provider to reject the creation of the entitlement resource.
+//! Requests suspension of an active Entitlement. This is not yet supported.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

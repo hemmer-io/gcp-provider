@@ -1,6 +1,6 @@
 //! App resource
 //!
-//! Creates an app and associates it with an AppGroup. This API associates the AppGroup app with the specified API product and auto-generates an API key for the app to use in calls to API proxies inside that API product. The `name` is the unique ID of the app that you can use in API calls.
+//! Creates an app associated with a developer. This API associates the developer app with the specified API product and auto-generates an API key for the app to use in calls to API proxies inside that API product. The `name` is the unique ID of the app that you can use in API calls. The `DisplayName` (set as an attribute) appears in the UI. If you don't set the `DisplayName` attribute, the `name` appears in the UI.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> App<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, callback_url: Option<String>, app_group: Option<String>, scopes: Option<Vec<String>>, created_at: Option<String>, api_products: Option<Vec<String>>, app_id: Option<String>, attributes: Option<Vec<String>>, last_modified_at: Option<String>, status: Option<String>, name: Option<String>, key_expires_in: Option<String>, credentials: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, api_products: Option<Vec<String>>, app_id: Option<String>, app_family: Option<String>, credentials: Option<Vec<String>>, name: Option<String>, attributes: Option<Vec<String>>, key_expires_in: Option<String>, last_modified_at: Option<String>, scopes: Option<Vec<String>>, callback_url: Option<String>, developer_id: Option<String>, created_at: Option<String>, status: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> App<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, callback_url: Option<String>, app_group: Option<String>, scopes: Option<Vec<String>>, created_at: Option<String>, api_products: Option<Vec<String>>, app_id: Option<String>, attributes: Option<Vec<String>>, last_modified_at: Option<String>, status: Option<String>, name: Option<String>, key_expires_in: Option<String>, credentials: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, api_products: Option<Vec<String>>, app_id: Option<String>, app_family: Option<String>, credentials: Option<Vec<String>>, name: Option<String>, attributes: Option<Vec<String>>, key_expires_in: Option<String>, last_modified_at: Option<String>, scopes: Option<Vec<String>>, callback_url: Option<String>, developer_id: Option<String>, created_at: Option<String>, status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

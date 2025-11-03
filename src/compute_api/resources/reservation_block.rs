@@ -1,7 +1,6 @@
 //! Reservation_block resource
 //!
-//! Sets the access control policy on the specified resource.
-Replaces any existing policy.
+//! Allows customers to perform maintenance on a reservation block
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -22,7 +21,7 @@ impl<'a> Reservation_block<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, bindings: Option<Vec<String>>, policy: Option<String>, etag: Option<String>, parent_resource: String, project: String, resource: String, zone: String) -> Result<String> {
+    pub async fn create(&self, maintenance_scope: Option<String>, zone: String, reservation: String, reservation_block: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

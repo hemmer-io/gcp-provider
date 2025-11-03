@@ -22,7 +22,7 @@ impl<'a> Https_health_check<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, creation_timestamp: Option<String>, id: Option<String>, host: Option<String>, healthy_threshold: Option<i64>, name: Option<String>, description: Option<String>, port: Option<i64>, self_link: Option<String>, request_path: Option<String>, unhealthy_threshold: Option<i64>, kind: Option<String>, timeout_sec: Option<i64>, check_interval_sec: Option<i64>, project: String) -> Result<String> {
+    pub async fn create(&self, self_link: Option<String>, name: Option<String>, timeout_sec: Option<i64>, check_interval_sec: Option<i64>, healthy_threshold: Option<i64>, host: Option<String>, id: Option<String>, request_path: Option<String>, description: Option<String>, creation_timestamp: Option<String>, port: Option<i64>, kind: Option<String>, unhealthy_threshold: Option<i64>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Https_health_check<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, creation_timestamp: Option<String>, id: Option<String>, host: Option<String>, healthy_threshold: Option<i64>, name: Option<String>, description: Option<String>, port: Option<i64>, self_link: Option<String>, request_path: Option<String>, unhealthy_threshold: Option<i64>, kind: Option<String>, timeout_sec: Option<i64>, check_interval_sec: Option<i64>) -> Result<()> {
+    pub async fn update(&self, id: &str, self_link: Option<String>, name: Option<String>, timeout_sec: Option<i64>, check_interval_sec: Option<i64>, healthy_threshold: Option<i64>, host: Option<String>, id: Option<String>, request_path: Option<String>, description: Option<String>, creation_timestamp: Option<String>, port: Option<i64>, kind: Option<String>, unhealthy_threshold: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Profile<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, profile_type: Option<Vec<String>>, deployment: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, deployment: Option<String>, profile_type: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Profile<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, profile_type: Option<Vec<String>>, deployment: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, deployment: Option<String>, profile_type: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

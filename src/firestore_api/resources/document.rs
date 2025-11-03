@@ -1,6 +1,6 @@
 //! Document resource
 //!
-//! Creates a new document.
+//! Streams batches of document updates and deletes, in order. This method is only available via gRPC or WebChannel (not REST).
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Document<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, fields: Option<HashMap<String, String>>, create_time: Option<String>, name: Option<String>, update_time: Option<String>, parent: String, collection_id: String) -> Result<String> {
+    pub async fn create(&self, writes: Option<Vec<String>>, stream_id: Option<String>, stream_token: Option<String>, labels: Option<HashMap<String, String>>, database: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Document<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, fields: Option<HashMap<String, String>>, create_time: Option<String>, name: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, writes: Option<Vec<String>>, stream_id: Option<String>, stream_token: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

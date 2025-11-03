@@ -24,14 +24,16 @@ impl<'a> Localservices_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "account_report" => self.plan_account_report(current_state, desired_input).await,
+            "account_report" => {
+                self.plan_account_report(current_state, desired_input).await
+            }
             "detailed_lead_report" => {
-                self.plan_detailed_lead_report(current_state, desired_input)
-                    .await
+                self.plan_detailed_lead_report(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "localservices_api", resource_name
+                "localservices_api",
+                resource_name
             ))),
         }
     }
@@ -43,23 +45,37 @@ impl<'a> Localservices_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "account_report" => self.create_account_report(input).await,
-            "detailed_lead_report" => self.create_detailed_lead_report(input).await,
+            "account_report" => {
+                self.create_account_report(input).await
+            }
+            "detailed_lead_report" => {
+                self.create_detailed_lead_report(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "localservices_api", resource_name
+                "localservices_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "account_report" => self.read_account_report(id).await,
-            "detailed_lead_report" => self.read_detailed_lead_report(id).await,
+            "account_report" => {
+                self.read_account_report(id).await
+            }
+            "detailed_lead_report" => {
+                self.read_detailed_lead_report(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "localservices_api", resource_name
+                "localservices_api",
+                resource_name
             ))),
         }
     }
@@ -72,23 +88,37 @@ impl<'a> Localservices_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "account_report" => self.update_account_report(id, input).await,
-            "detailed_lead_report" => self.update_detailed_lead_report(id, input).await,
+            "account_report" => {
+                self.update_account_report(id, input).await
+            }
+            "detailed_lead_report" => {
+                self.update_detailed_lead_report(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "localservices_api", resource_name
+                "localservices_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "account_report" => self.delete_account_report(id).await,
-            "detailed_lead_report" => self.delete_detailed_lead_report(id).await,
+            "account_report" => {
+                self.delete_account_report(id).await
+            }
+            "detailed_lead_report" => {
+                self.delete_detailed_lead_report(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "localservices_api", resource_name
+                "localservices_api",
+                resource_name
             ))),
         }
     }
@@ -96,6 +126,7 @@ impl<'a> Localservices_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Account_report resource operations
@@ -118,15 +149,23 @@ impl<'a> Localservices_apiService<'a> {
     }
 
     /// Create a new account_report resource
-    async fn create_account_report(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_account_report(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a account_report resource
-    async fn read_account_report(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_account_report(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a account_report resource
@@ -136,14 +175,19 @@ impl<'a> Localservices_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a account_report resource
-    async fn delete_account_report(&self, id: &str) -> Result<()> {
+    async fn delete_account_report(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Detailed_lead_report resource operations
@@ -166,15 +210,23 @@ impl<'a> Localservices_apiService<'a> {
     }
 
     /// Create a new detailed_lead_report resource
-    async fn create_detailed_lead_report(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_detailed_lead_report(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a detailed_lead_report resource
-    async fn read_detailed_lead_report(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_detailed_lead_report(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a detailed_lead_report resource
@@ -184,12 +236,18 @@ impl<'a> Localservices_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a detailed_lead_report resource
-    async fn delete_detailed_lead_report(&self, id: &str) -> Result<()> {
+    async fn delete_detailed_lead_report(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

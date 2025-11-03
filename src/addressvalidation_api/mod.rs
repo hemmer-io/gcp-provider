@@ -25,12 +25,12 @@ impl<'a> Addressvalidation_apiService<'a> {
     ) -> Result<ResourcePlan> {
         match resource_name {
             "addressvalidation" => {
-                self.plan_addressvalidation(current_state, desired_input)
-                    .await
+                self.plan_addressvalidation(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "addressvalidation_api", resource_name
+                "addressvalidation_api",
+                resource_name
             ))),
         }
     }
@@ -42,21 +42,31 @@ impl<'a> Addressvalidation_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "addressvalidation" => self.create_addressvalidation(input).await,
+            "addressvalidation" => {
+                self.create_addressvalidation(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "addressvalidation_api", resource_name
+                "addressvalidation_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "addressvalidation" => self.read_addressvalidation(id).await,
+            "addressvalidation" => {
+                self.read_addressvalidation(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "addressvalidation_api", resource_name
+                "addressvalidation_api",
+                resource_name
             ))),
         }
     }
@@ -69,21 +79,31 @@ impl<'a> Addressvalidation_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "addressvalidation" => self.update_addressvalidation(id, input).await,
+            "addressvalidation" => {
+                self.update_addressvalidation(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "addressvalidation_api", resource_name
+                "addressvalidation_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "addressvalidation" => self.delete_addressvalidation(id).await,
+            "addressvalidation" => {
+                self.delete_addressvalidation(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "addressvalidation_api", resource_name
+                "addressvalidation_api",
+                resource_name
             ))),
         }
     }
@@ -91,6 +111,7 @@ impl<'a> Addressvalidation_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Addressvalidation resource operations
@@ -113,15 +134,23 @@ impl<'a> Addressvalidation_apiService<'a> {
     }
 
     /// Create a new addressvalidation resource
-    async fn create_addressvalidation(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_addressvalidation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a addressvalidation resource
-    async fn read_addressvalidation(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_addressvalidation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a addressvalidation resource
@@ -131,12 +160,18 @@ impl<'a> Addressvalidation_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a addressvalidation resource
-    async fn delete_addressvalidation(&self, id: &str) -> Result<()> {
+    async fn delete_addressvalidation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

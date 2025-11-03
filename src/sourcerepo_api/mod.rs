@@ -24,11 +24,16 @@ impl<'a> Sourcerepo_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "repo" => self.plan_repo(current_state, desired_input).await,
-            "project" => self.plan_project(current_state, desired_input).await,
+            "repo" => {
+                self.plan_repo(current_state, desired_input).await
+            }
+            "project" => {
+                self.plan_project(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "sourcerepo_api", resource_name
+                "sourcerepo_api",
+                resource_name
             ))),
         }
     }
@@ -40,23 +45,37 @@ impl<'a> Sourcerepo_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "repo" => self.create_repo(input).await,
-            "project" => self.create_project(input).await,
+            "repo" => {
+                self.create_repo(input).await
+            }
+            "project" => {
+                self.create_project(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "sourcerepo_api", resource_name
+                "sourcerepo_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "repo" => self.read_repo(id).await,
-            "project" => self.read_project(id).await,
+            "repo" => {
+                self.read_repo(id).await
+            }
+            "project" => {
+                self.read_project(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "sourcerepo_api", resource_name
+                "sourcerepo_api",
+                resource_name
             ))),
         }
     }
@@ -69,23 +88,37 @@ impl<'a> Sourcerepo_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "repo" => self.update_repo(id, input).await,
-            "project" => self.update_project(id, input).await,
+            "repo" => {
+                self.update_repo(id, input).await
+            }
+            "project" => {
+                self.update_project(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "sourcerepo_api", resource_name
+                "sourcerepo_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "repo" => self.delete_repo(id).await,
-            "project" => self.delete_project(id).await,
+            "repo" => {
+                self.delete_repo(id).await
+            }
+            "project" => {
+                self.delete_project(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "sourcerepo_api", resource_name
+                "sourcerepo_api",
+                resource_name
             ))),
         }
     }
@@ -93,6 +126,7 @@ impl<'a> Sourcerepo_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Repo resource operations
@@ -115,28 +149,45 @@ impl<'a> Sourcerepo_apiService<'a> {
     }
 
     /// Create a new repo resource
-    async fn create_repo(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_repo(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a repo resource
-    async fn read_repo(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_repo(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a repo resource
-    async fn update_repo(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_repo(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a repo resource
-    async fn delete_repo(&self, id: &str) -> Result<()> {
+    async fn delete_repo(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Project resource operations
@@ -159,26 +210,44 @@ impl<'a> Sourcerepo_apiService<'a> {
     }
 
     /// Create a new project resource
-    async fn create_project(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_project(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a project resource
-    async fn read_project(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_project(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a project resource
-    async fn update_project(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_project(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a project resource
-    async fn delete_project(&self, id: &str) -> Result<()> {
+    async fn delete_project(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

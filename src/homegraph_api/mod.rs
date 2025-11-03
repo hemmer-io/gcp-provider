@@ -24,11 +24,16 @@ impl<'a> Homegraph_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "device" => self.plan_device(current_state, desired_input).await,
-            "agent_user" => self.plan_agent_user(current_state, desired_input).await,
+            "device" => {
+                self.plan_device(current_state, desired_input).await
+            }
+            "agent_user" => {
+                self.plan_agent_user(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "homegraph_api", resource_name
+                "homegraph_api",
+                resource_name
             ))),
         }
     }
@@ -40,23 +45,37 @@ impl<'a> Homegraph_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "device" => self.create_device(input).await,
-            "agent_user" => self.create_agent_user(input).await,
+            "device" => {
+                self.create_device(input).await
+            }
+            "agent_user" => {
+                self.create_agent_user(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "homegraph_api", resource_name
+                "homegraph_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "device" => self.read_device(id).await,
-            "agent_user" => self.read_agent_user(id).await,
+            "device" => {
+                self.read_device(id).await
+            }
+            "agent_user" => {
+                self.read_agent_user(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "homegraph_api", resource_name
+                "homegraph_api",
+                resource_name
             ))),
         }
     }
@@ -69,23 +88,37 @@ impl<'a> Homegraph_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "device" => self.update_device(id, input).await,
-            "agent_user" => self.update_agent_user(id, input).await,
+            "device" => {
+                self.update_device(id, input).await
+            }
+            "agent_user" => {
+                self.update_agent_user(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "homegraph_api", resource_name
+                "homegraph_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "device" => self.delete_device(id).await,
-            "agent_user" => self.delete_agent_user(id).await,
+            "device" => {
+                self.delete_device(id).await
+            }
+            "agent_user" => {
+                self.delete_agent_user(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "homegraph_api", resource_name
+                "homegraph_api",
+                resource_name
             ))),
         }
     }
@@ -93,6 +126,7 @@ impl<'a> Homegraph_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Device resource operations
@@ -115,28 +149,45 @@ impl<'a> Homegraph_apiService<'a> {
     }
 
     /// Create a new device resource
-    async fn create_device(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_device(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a device resource
-    async fn read_device(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_device(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a device resource
-    async fn update_device(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_device(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a device resource
-    async fn delete_device(&self, id: &str) -> Result<()> {
+    async fn delete_device(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Agent_user resource operations
@@ -159,26 +210,44 @@ impl<'a> Homegraph_apiService<'a> {
     }
 
     /// Create a new agent_user resource
-    async fn create_agent_user(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_agent_user(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a agent_user resource
-    async fn read_agent_user(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_agent_user(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a agent_user resource
-    async fn update_agent_user(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_agent_user(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a agent_user resource
-    async fn delete_agent_user(&self, id: &str) -> Result<()> {
+    async fn delete_agent_user(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

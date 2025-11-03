@@ -1,6 +1,7 @@
 //! Reservation_sub_block resource
 //!
-//! Returns permissions that a caller has on the specified resource.
+//! Sets the access control policy on the specified resource.
+Replaces any existing policy.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +22,7 @@ impl<'a> Reservation_sub_block<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, permissions: Option<Vec<String>>, project: String, parent_resource: String, resource: String, zone: String) -> Result<String> {
+    pub async fn create(&self, bindings: Option<Vec<String>>, policy: Option<String>, etag: Option<String>, project: String, resource: String, zone: String, parent_resource: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

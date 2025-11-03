@@ -21,7 +21,7 @@ impl<'a> Data_source<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, device: Option<String>, name: Option<String>, data_stream_id: Option<String>, type: Option<String>, data_type: Option<String>, data_quality_standard: Option<Vec<String>>, application: Option<String>, data_stream_name: Option<String>, user_id: String) -> Result<String> {
+    pub async fn create(&self, data_quality_standard: Option<Vec<String>>, data_type: Option<String>, type: Option<String>, name: Option<String>, data_stream_id: Option<String>, device: Option<String>, application: Option<String>, data_stream_name: Option<String>, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Data_source<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, device: Option<String>, name: Option<String>, data_stream_id: Option<String>, type: Option<String>, data_type: Option<String>, data_quality_standard: Option<Vec<String>>, application: Option<String>, data_stream_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, data_quality_standard: Option<Vec<String>>, data_type: Option<String>, type: Option<String>, name: Option<String>, data_stream_id: Option<String>, device: Option<String>, application: Option<String>, data_stream_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

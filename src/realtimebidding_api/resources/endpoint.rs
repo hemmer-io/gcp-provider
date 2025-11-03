@@ -34,7 +34,7 @@ impl<'a> Endpoint<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, url: Option<String>, maximum_qps: Option<String>, trading_location: Option<String>, bid_protocol: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, trading_location: Option<String>, bid_protocol: Option<String>, maximum_qps: Option<String>, name: Option<String>, url: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

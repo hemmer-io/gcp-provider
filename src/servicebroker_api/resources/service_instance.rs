@@ -32,7 +32,7 @@ impl<'a> Service_instance<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, instance_id: Option<String>, context: Option<HashMap<String, String>>, create_time: Option<String>, plan_id: Option<String>, deployment_name: Option<String>, previous_values: Option<HashMap<String, String>>, space_guid: Option<String>, organization_guid: Option<String>, service_id: Option<String>, parameters: Option<HashMap<String, String>>, resource_name: Option<String>, instance_id: String, parent: String) -> Result<String> {
+    pub async fn create(&self, space_guid: Option<String>, organization_guid: Option<String>, context: Option<HashMap<String, String>>, deployment_name: Option<String>, service_id: Option<String>, instance_id: Option<String>, resource_name: Option<String>, plan_id: Option<String>, parameters: Option<HashMap<String, String>>, create_time: Option<String>, previous_values: Option<HashMap<String, String>>, parent: String, instance_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -56,7 +56,7 @@ impl<'a> Service_instance<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, instance_id: Option<String>, context: Option<HashMap<String, String>>, create_time: Option<String>, plan_id: Option<String>, deployment_name: Option<String>, previous_values: Option<HashMap<String, String>>, space_guid: Option<String>, organization_guid: Option<String>, service_id: Option<String>, parameters: Option<HashMap<String, String>>, resource_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, space_guid: Option<String>, organization_guid: Option<String>, context: Option<HashMap<String, String>>, deployment_name: Option<String>, service_id: Option<String>, instance_id: Option<String>, resource_name: Option<String>, plan_id: Option<String>, parameters: Option<HashMap<String, String>>, create_time: Option<String>, previous_values: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

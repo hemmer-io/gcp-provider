@@ -1,6 +1,6 @@
 //! Integration resource
 //!
-//! Executes integrations synchronously by passing the trigger id in the request body. The request is not returned until the requested executions are either fulfilled or experienced an error. If the integration name is not specified (passing `-`), all of the associated integration under the given trigger_id will be executed. Otherwise only the specified integration for the given `trigger_id` is executed. This is helpful for execution the integration from UI.
+//! Executes an integration on receiving events from Integration Connector triggers, Eventarc or CPS Trigger. The details about integration are derived from CloudEvent request body.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Integration<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, request_id: Option<String>, trigger_id: Option<String>, execution_id: Option<String>, input_parameters: Option<HashMap<String, String>>, do_not_propagate_error: Option<bool>, parameters: Option<String>, parameter_entries: Option<Vec<String>>, name: String) -> Result<String> {
+    pub async fn create(&self, cloud_event: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

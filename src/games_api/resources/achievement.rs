@@ -1,6 +1,6 @@
 //! Achievement resource
 //!
-//! Increments the steps of the achievement with the given ID for the currently authenticated player.
+//! Unlocks this achievement for the currently authenticated player.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -21,7 +21,7 @@ impl<'a> Certificate<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, requestor_id: Option<String>, credential_id: Option<String>, raw_certificate: Option<String>, name: Option<String>, certificate_status: Option<String>, description: Option<String>, display_name: Option<String>, valid_end_time: Option<String>, valid_start_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, valid_end_time: Option<String>, valid_start_time: Option<String>, certificate_status: Option<String>, raw_certificate: Option<String>, display_name: Option<String>, credential_id: Option<String>, name: Option<String>, description: Option<String>, requestor_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Certificate<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, requestor_id: Option<String>, credential_id: Option<String>, raw_certificate: Option<String>, name: Option<String>, certificate_status: Option<String>, description: Option<String>, display_name: Option<String>, valid_end_time: Option<String>, valid_start_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, valid_end_time: Option<String>, valid_start_time: Option<String>, certificate_status: Option<String>, raw_certificate: Option<String>, display_name: Option<String>, credential_id: Option<String>, name: Option<String>, description: Option<String>, requestor_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

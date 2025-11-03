@@ -1,6 +1,6 @@
 //! Attribute resource
 //!
-//! Gets the Google-updated version of the specified location.
+//! Returns the list of attributes that would be available for a location with the given primary category and country.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

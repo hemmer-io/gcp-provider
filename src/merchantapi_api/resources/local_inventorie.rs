@@ -21,7 +21,7 @@ impl<'a> Local_inventorie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, local_inventory_attributes: Option<String>, name: Option<String>, store_code: Option<String>, account: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, account: Option<String>, store_code: Option<String>, local_inventory_attributes: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

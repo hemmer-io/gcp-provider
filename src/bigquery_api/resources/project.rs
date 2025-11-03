@@ -1,6 +1,6 @@
 //! Project resource
 //!
-//! RPC to get the service account for a project used for interactions with Google Cloud KMS
+//! RPC to list projects to which the user has been granted any project role. Users of this method are encouraged to consider the [Resource Manager](https://cloud.google.com/resource-manager/docs/) API, which provides the underlying data for this method and has more capabilities.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

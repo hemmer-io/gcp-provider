@@ -21,7 +21,7 @@ impl<'a> Uptime_check_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, disabled: Option<bool>, user_labels: Option<HashMap<String, String>>, http_check: Option<String>, timeout: Option<String>, display_name: Option<String>, resource_group: Option<String>, synthetic_monitor: Option<String>, tcp_check: Option<String>, checker_type: Option<String>, content_matchers: Option<Vec<String>>, log_check_failures: Option<bool>, name: Option<String>, selected_regions: Option<Vec<String>>, internal_checkers: Option<Vec<String>>, monitored_resource: Option<String>, is_internal: Option<bool>, period: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, http_check: Option<String>, is_internal: Option<bool>, tcp_check: Option<String>, timeout: Option<String>, synthetic_monitor: Option<String>, display_name: Option<String>, period: Option<String>, user_labels: Option<HashMap<String, String>>, log_check_failures: Option<bool>, internal_checkers: Option<Vec<String>>, monitored_resource: Option<String>, resource_group: Option<String>, content_matchers: Option<Vec<String>>, selected_regions: Option<Vec<String>>, disabled: Option<bool>, checker_type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Uptime_check_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, disabled: Option<bool>, user_labels: Option<HashMap<String, String>>, http_check: Option<String>, timeout: Option<String>, display_name: Option<String>, resource_group: Option<String>, synthetic_monitor: Option<String>, tcp_check: Option<String>, checker_type: Option<String>, content_matchers: Option<Vec<String>>, log_check_failures: Option<bool>, name: Option<String>, selected_regions: Option<Vec<String>>, internal_checkers: Option<Vec<String>>, monitored_resource: Option<String>, is_internal: Option<bool>, period: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, http_check: Option<String>, is_internal: Option<bool>, tcp_check: Option<String>, timeout: Option<String>, synthetic_monitor: Option<String>, display_name: Option<String>, period: Option<String>, user_labels: Option<HashMap<String, String>>, log_check_failures: Option<bool>, internal_checkers: Option<Vec<String>>, monitored_resource: Option<String>, resource_group: Option<String>, content_matchers: Option<Vec<String>>, selected_regions: Option<Vec<String>>, disabled: Option<bool>, checker_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

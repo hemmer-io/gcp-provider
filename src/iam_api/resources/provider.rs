@@ -1,6 +1,6 @@
 //! Provider resource
 //!
-//! Creates a new WorkloadIdentityPoolProvider in a WorkloadIdentityPool. You cannot reuse the name of a deleted provider until 30 days after deletion.
+//! Creates a new WorkforcePoolProvider in a WorkforcePool. You cannot reuse the name of a deleted provider until 30 days after deletion.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Provider<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, attribute_condition: Option<String>, name: Option<String>, oidc: Option<String>, description: Option<String>, saml: Option<String>, x509: Option<String>, aws: Option<String>, state: Option<String>, disabled: Option<bool>, display_name: Option<String>, attribute_mapping: Option<HashMap<String, String>>, expire_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, detailed_audit_logging: Option<bool>, display_name: Option<String>, saml: Option<String>, state: Option<String>, oidc: Option<String>, attribute_mapping: Option<HashMap<String, String>>, extended_attributes_oauth2_client: Option<String>, attribute_condition: Option<String>, name: Option<String>, extra_attributes_oauth2_client: Option<String>, expire_time: Option<String>, scim_usage: Option<String>, disabled: Option<bool>, description: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Provider<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, attribute_condition: Option<String>, name: Option<String>, oidc: Option<String>, description: Option<String>, saml: Option<String>, x509: Option<String>, aws: Option<String>, state: Option<String>, disabled: Option<bool>, display_name: Option<String>, attribute_mapping: Option<HashMap<String, String>>, expire_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, detailed_audit_logging: Option<bool>, display_name: Option<String>, saml: Option<String>, state: Option<String>, oidc: Option<String>, attribute_mapping: Option<HashMap<String, String>>, extended_attributes_oauth2_client: Option<String>, attribute_condition: Option<String>, name: Option<String>, extra_attributes_oauth2_client: Option<String>, expire_time: Option<String>, scim_usage: Option<String>, disabled: Option<bool>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

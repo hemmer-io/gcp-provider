@@ -1,6 +1,6 @@
 //! Setting resource
 //!
-//! Gets IMAP settings.
+//! Gets POP settings.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -34,7 +34,7 @@ impl<'a> Setting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, enabled: Option<bool>, disposition: Option<String>, email_address: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, access_window: Option<String>, disposition: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Document resource
 //!
-//! Finds named entities (currently proper names and common nouns) in the text along with entity types, salience, mentions for each entity, and other properties.
+//! Analyzes the sentiment of the provided text.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -21,7 +21,7 @@ impl<'a> Saved_querie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, content: Option<String>, last_update_time: Option<String>, labels: Option<HashMap<String, String>>, creator: Option<String>, create_time: Option<String>, last_updater: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, last_updater: Option<String>, last_update_time: Option<String>, create_time: Option<String>, content: Option<String>, creator: Option<String>, name: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Saved_querie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, content: Option<String>, last_update_time: Option<String>, labels: Option<HashMap<String, String>>, creator: Option<String>, create_time: Option<String>, last_updater: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, last_updater: Option<String>, last_update_time: Option<String>, create_time: Option<String>, content: Option<String>, creator: Option<String>, name: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

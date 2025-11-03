@@ -1,6 +1,6 @@
 //! Content resource
 //!
-//! Re-identifies content that has been de-identified. See https://cloud.google.com/sensitive-data-protection/docs/pseudonymization#re-identification_in_free_text_code_example to learn more.
+//! De-identifies potentially sensitive info from a ContentItem. This method has limits on input size and output size. See https://cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data to learn more. When no InfoTypes or CustomInfoTypes are specified in this request, the system will automatically choose what detectors to run. By default this may be all types, but may change over time as detectors are updated.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Content<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, inspect_template_name: Option<String>, reidentify_template_name: Option<String>, reidentify_config: Option<String>, inspect_config: Option<String>, location_id: Option<String>, item: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, deidentify_template_name: Option<String>, item: Option<String>, inspect_config: Option<String>, location_id: Option<String>, deidentify_config: Option<String>, inspect_template_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

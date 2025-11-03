@@ -21,7 +21,7 @@ impl<'a> Export<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, datastore_name: Option<String>, description: Option<String>, name: Option<String>, output_format: Option<String>, csv_delimiter: Option<String>, date_range: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, csv_delimiter: Option<String>, datastore_name: Option<String>, output_format: Option<String>, description: Option<String>, date_range: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -22,7 +22,7 @@ impl<'a> Region_ssl_certificate<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, expire_time: Option<String>, creation_timestamp: Option<String>, name: Option<String>, private_key: Option<String>, self_link: Option<String>, subject_alternative_names: Option<Vec<String>>, type: Option<String>, id: Option<String>, self_managed: Option<String>, region: Option<String>, managed: Option<String>, kind: Option<String>, description: Option<String>, certificate: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, creation_timestamp: Option<String>, expire_time: Option<String>, self_link: Option<String>, description: Option<String>, subject_alternative_names: Option<Vec<String>>, managed: Option<String>, self_managed: Option<String>, type: Option<String>, kind: Option<String>, name: Option<String>, certificate: Option<String>, private_key: Option<String>, id: Option<String>, region: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

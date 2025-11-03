@@ -1,6 +1,6 @@
 //! Claim resource
 //!
-//! Search through fact-checked claims using an image as the query.
+//! Search through fact-checked claims.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

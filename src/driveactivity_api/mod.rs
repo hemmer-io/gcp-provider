@@ -24,10 +24,13 @@ impl<'a> Driveactivity_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "activity" => self.plan_activity(current_state, desired_input).await,
+            "activity" => {
+                self.plan_activity(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "driveactivity_api", resource_name
+                "driveactivity_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Driveactivity_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "activity" => self.create_activity(input).await,
+            "activity" => {
+                self.create_activity(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "driveactivity_api", resource_name
+                "driveactivity_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "activity" => self.read_activity(id).await,
+            "activity" => {
+                self.read_activity(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "driveactivity_api", resource_name
+                "driveactivity_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Driveactivity_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "activity" => self.update_activity(id, input).await,
+            "activity" => {
+                self.update_activity(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "driveactivity_api", resource_name
+                "driveactivity_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "activity" => self.delete_activity(id).await,
+            "activity" => {
+                self.delete_activity(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "driveactivity_api", resource_name
+                "driveactivity_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Driveactivity_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Activity resource operations
@@ -110,26 +134,44 @@ impl<'a> Driveactivity_apiService<'a> {
     }
 
     /// Create a new activity resource
-    async fn create_activity(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_activity(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a activity resource
-    async fn read_activity(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_activity(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a activity resource
-    async fn update_activity(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_activity(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a activity resource
-    async fn delete_activity(&self, id: &str) -> Result<()> {
+    async fn delete_activity(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

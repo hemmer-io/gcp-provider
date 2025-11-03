@@ -21,7 +21,7 @@ impl<'a> Sub_account<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, currency_code: Option<String>, display_name: Option<String>, parent: Option<String>, name: Option<String>, master_billing_account: Option<String>, open: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, currency_code: Option<String>, display_name: Option<String>, name: Option<String>, open: Option<bool>, master_billing_account: Option<String>, parent: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

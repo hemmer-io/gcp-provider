@@ -25,12 +25,12 @@ impl<'a> Playablelocations_apiService<'a> {
     ) -> Result<ResourcePlan> {
         match resource_name {
             "playablelocation" => {
-                self.plan_playablelocation(current_state, desired_input)
-                    .await
+                self.plan_playablelocation(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "playablelocations_api", resource_name
+                "playablelocations_api",
+                resource_name
             ))),
         }
     }
@@ -42,21 +42,31 @@ impl<'a> Playablelocations_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "playablelocation" => self.create_playablelocation(input).await,
+            "playablelocation" => {
+                self.create_playablelocation(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "playablelocations_api", resource_name
+                "playablelocations_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "playablelocation" => self.read_playablelocation(id).await,
+            "playablelocation" => {
+                self.read_playablelocation(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "playablelocations_api", resource_name
+                "playablelocations_api",
+                resource_name
             ))),
         }
     }
@@ -69,21 +79,31 @@ impl<'a> Playablelocations_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "playablelocation" => self.update_playablelocation(id, input).await,
+            "playablelocation" => {
+                self.update_playablelocation(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "playablelocations_api", resource_name
+                "playablelocations_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "playablelocation" => self.delete_playablelocation(id).await,
+            "playablelocation" => {
+                self.delete_playablelocation(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "playablelocations_api", resource_name
+                "playablelocations_api",
+                resource_name
             ))),
         }
     }
@@ -91,6 +111,7 @@ impl<'a> Playablelocations_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Playablelocation resource operations
@@ -113,15 +134,23 @@ impl<'a> Playablelocations_apiService<'a> {
     }
 
     /// Create a new playablelocation resource
-    async fn create_playablelocation(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_playablelocation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a playablelocation resource
-    async fn read_playablelocation(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_playablelocation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a playablelocation resource
@@ -131,12 +160,18 @@ impl<'a> Playablelocations_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a playablelocation resource
-    async fn delete_playablelocation(&self, id: &str) -> Result<()> {
+    async fn delete_playablelocation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

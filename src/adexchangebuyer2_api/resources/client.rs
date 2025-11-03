@@ -21,7 +21,7 @@ impl<'a> Client<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, client_name: Option<String>, client_account_id: Option<String>, visible_to_seller: Option<bool>, role: Option<String>, entity_id: Option<String>, entity_type: Option<String>, entity_name: Option<String>, status: Option<String>, partner_client_id: Option<String>, account_id: String) -> Result<String> {
+    pub async fn create(&self, partner_client_id: Option<String>, client_account_id: Option<String>, entity_name: Option<String>, role: Option<String>, entity_type: Option<String>, client_name: Option<String>, entity_id: Option<String>, status: Option<String>, visible_to_seller: Option<bool>, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Client<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, client_name: Option<String>, client_account_id: Option<String>, visible_to_seller: Option<bool>, role: Option<String>, entity_id: Option<String>, entity_type: Option<String>, entity_name: Option<String>, status: Option<String>, partner_client_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, partner_client_id: Option<String>, client_account_id: Option<String>, entity_name: Option<String>, role: Option<String>, entity_type: Option<String>, client_name: Option<String>, entity_id: Option<String>, status: Option<String>, visible_to_seller: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

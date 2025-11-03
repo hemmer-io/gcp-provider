@@ -21,7 +21,7 @@ impl<'a> Recommendation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, interaction_type: Option<String>, response_token: Option<String>, subtype: Option<String>, type: Option<String>, merchant_id: String) -> Result<String> {
+    pub async fn create(&self, subtype: Option<String>, type: Option<String>, interaction_type: Option<String>, response_token: Option<String>, merchant_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

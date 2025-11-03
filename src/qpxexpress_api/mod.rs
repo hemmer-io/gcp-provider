@@ -24,10 +24,13 @@ impl<'a> Qpxexpress_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "trip" => self.plan_trip(current_state, desired_input).await,
+            "trip" => {
+                self.plan_trip(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "qpxexpress_api", resource_name
+                "qpxexpress_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Qpxexpress_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "trip" => self.create_trip(input).await,
+            "trip" => {
+                self.create_trip(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "qpxexpress_api", resource_name
+                "qpxexpress_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "trip" => self.read_trip(id).await,
+            "trip" => {
+                self.read_trip(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "qpxexpress_api", resource_name
+                "qpxexpress_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Qpxexpress_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "trip" => self.update_trip(id, input).await,
+            "trip" => {
+                self.update_trip(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "qpxexpress_api", resource_name
+                "qpxexpress_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "trip" => self.delete_trip(id).await,
+            "trip" => {
+                self.delete_trip(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "qpxexpress_api", resource_name
+                "qpxexpress_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Qpxexpress_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Trip resource operations
@@ -110,26 +134,44 @@ impl<'a> Qpxexpress_apiService<'a> {
     }
 
     /// Create a new trip resource
-    async fn create_trip(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_trip(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a trip resource
-    async fn read_trip(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_trip(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a trip resource
-    async fn update_trip(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_trip(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a trip resource
-    async fn delete_trip(&self, id: &str) -> Result<()> {
+    async fn delete_trip(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

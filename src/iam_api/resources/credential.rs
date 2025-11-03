@@ -21,7 +21,7 @@ impl<'a> Credential<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, disabled: Option<bool>, display_name: Option<String>, name: Option<String>, client_secret: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, name: Option<String>, client_secret: Option<String>, disabled: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Credential<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, disabled: Option<bool>, display_name: Option<String>, name: Option<String>, client_secret: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, name: Option<String>, client_secret: Option<String>, disabled: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -24,17 +24,34 @@ impl<'a> Pubsub_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "subscription" => self.plan_subscription(current_state, desired_input).await,
-            "topic" => self.plan_topic(current_state, desired_input).await,
-            "schema" => self.plan_schema(current_state, desired_input).await,
-            "snapshot" => self.plan_snapshot(current_state, desired_input).await,
-            "topic" => self.plan_topic(current_state, desired_input).await,
-            "subscription" => self.plan_subscription(current_state, desired_input).await,
-            "topic" => self.plan_topic(current_state, desired_input).await,
-            "subscription" => self.plan_subscription(current_state, desired_input).await,
+            "schema" => {
+                self.plan_schema(current_state, desired_input).await
+            }
+            "snapshot" => {
+                self.plan_snapshot(current_state, desired_input).await
+            }
+            "topic" => {
+                self.plan_topic(current_state, desired_input).await
+            }
+            "subscription" => {
+                self.plan_subscription(current_state, desired_input).await
+            }
+            "topic" => {
+                self.plan_topic(current_state, desired_input).await
+            }
+            "subscription" => {
+                self.plan_subscription(current_state, desired_input).await
+            }
+            "topic" => {
+                self.plan_topic(current_state, desired_input).await
+            }
+            "subscription" => {
+                self.plan_subscription(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "pubsub_api", resource_name
+                "pubsub_api",
+                resource_name
             ))),
         }
     }
@@ -46,35 +63,73 @@ impl<'a> Pubsub_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "subscription" => self.create_subscription(input).await,
-            "topic" => self.create_topic(input).await,
-            "schema" => self.create_schema(input).await,
-            "snapshot" => self.create_snapshot(input).await,
-            "topic" => self.create_topic(input).await,
-            "subscription" => self.create_subscription(input).await,
-            "topic" => self.create_topic(input).await,
-            "subscription" => self.create_subscription(input).await,
+            "schema" => {
+                self.create_schema(input).await
+            }
+            "snapshot" => {
+                self.create_snapshot(input).await
+            }
+            "topic" => {
+                self.create_topic(input).await
+            }
+            "subscription" => {
+                self.create_subscription(input).await
+            }
+            "topic" => {
+                self.create_topic(input).await
+            }
+            "subscription" => {
+                self.create_subscription(input).await
+            }
+            "topic" => {
+                self.create_topic(input).await
+            }
+            "subscription" => {
+                self.create_subscription(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "pubsub_api", resource_name
+                "pubsub_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "subscription" => self.read_subscription(id).await,
-            "topic" => self.read_topic(id).await,
-            "schema" => self.read_schema(id).await,
-            "snapshot" => self.read_snapshot(id).await,
-            "topic" => self.read_topic(id).await,
-            "subscription" => self.read_subscription(id).await,
-            "topic" => self.read_topic(id).await,
-            "subscription" => self.read_subscription(id).await,
+            "schema" => {
+                self.read_schema(id).await
+            }
+            "snapshot" => {
+                self.read_snapshot(id).await
+            }
+            "topic" => {
+                self.read_topic(id).await
+            }
+            "subscription" => {
+                self.read_subscription(id).await
+            }
+            "topic" => {
+                self.read_topic(id).await
+            }
+            "subscription" => {
+                self.read_subscription(id).await
+            }
+            "topic" => {
+                self.read_topic(id).await
+            }
+            "subscription" => {
+                self.read_subscription(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "pubsub_api", resource_name
+                "pubsub_api",
+                resource_name
             ))),
         }
     }
@@ -87,35 +142,73 @@ impl<'a> Pubsub_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "subscription" => self.update_subscription(id, input).await,
-            "topic" => self.update_topic(id, input).await,
-            "schema" => self.update_schema(id, input).await,
-            "snapshot" => self.update_snapshot(id, input).await,
-            "topic" => self.update_topic(id, input).await,
-            "subscription" => self.update_subscription(id, input).await,
-            "topic" => self.update_topic(id, input).await,
-            "subscription" => self.update_subscription(id, input).await,
+            "schema" => {
+                self.update_schema(id, input).await
+            }
+            "snapshot" => {
+                self.update_snapshot(id, input).await
+            }
+            "topic" => {
+                self.update_topic(id, input).await
+            }
+            "subscription" => {
+                self.update_subscription(id, input).await
+            }
+            "topic" => {
+                self.update_topic(id, input).await
+            }
+            "subscription" => {
+                self.update_subscription(id, input).await
+            }
+            "topic" => {
+                self.update_topic(id, input).await
+            }
+            "subscription" => {
+                self.update_subscription(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "pubsub_api", resource_name
+                "pubsub_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "subscription" => self.delete_subscription(id).await,
-            "topic" => self.delete_topic(id).await,
-            "schema" => self.delete_schema(id).await,
-            "snapshot" => self.delete_snapshot(id).await,
-            "topic" => self.delete_topic(id).await,
-            "subscription" => self.delete_subscription(id).await,
-            "topic" => self.delete_topic(id).await,
-            "subscription" => self.delete_subscription(id).await,
+            "schema" => {
+                self.delete_schema(id).await
+            }
+            "snapshot" => {
+                self.delete_snapshot(id).await
+            }
+            "topic" => {
+                self.delete_topic(id).await
+            }
+            "subscription" => {
+                self.delete_subscription(id).await
+            }
+            "topic" => {
+                self.delete_topic(id).await
+            }
+            "subscription" => {
+                self.delete_subscription(id).await
+            }
+            "topic" => {
+                self.delete_topic(id).await
+            }
+            "subscription" => {
+                self.delete_subscription(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "pubsub_api", resource_name
+                "pubsub_api",
+                resource_name
             ))),
         }
     }
@@ -124,93 +217,6 @@ impl<'a> Pubsub_apiService<'a> {
     // Resource-specific CRUD implementations
     // ========================================================================
 
-    // ------------------------------------------------------------------------
-    // Subscription resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a subscription resource
-    async fn plan_subscription(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new subscription resource
-    async fn create_subscription(&self, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
-    }
-
-    /// Read a subscription resource
-    async fn read_subscription(&self, id: &str) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Update a subscription resource
-    async fn update_subscription(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Delete a subscription resource
-    async fn delete_subscription(&self, id: &str) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-    // ------------------------------------------------------------------------
-    // Topic resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a topic resource
-    async fn plan_topic(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new topic resource
-    async fn create_topic(&self, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
-    }
-
-    /// Read a topic resource
-    async fn read_topic(&self, id: &str) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Update a topic resource
-    async fn update_topic(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
-    }
-
-    /// Delete a topic resource
-    async fn delete_topic(&self, id: &str) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
     // ------------------------------------------------------------------------
     // Schema resource operations
@@ -233,28 +239,45 @@ impl<'a> Pubsub_apiService<'a> {
     }
 
     /// Create a new schema resource
-    async fn create_schema(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_schema(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a schema resource
-    async fn read_schema(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_schema(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a schema resource
-    async fn update_schema(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_schema(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a schema resource
-    async fn delete_schema(&self, id: &str) -> Result<()> {
+    async fn delete_schema(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Snapshot resource operations
@@ -277,28 +300,45 @@ impl<'a> Pubsub_apiService<'a> {
     }
 
     /// Create a new snapshot resource
-    async fn create_snapshot(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_snapshot(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a snapshot resource
-    async fn read_snapshot(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_snapshot(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a snapshot resource
-    async fn update_snapshot(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_snapshot(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a snapshot resource
-    async fn delete_snapshot(&self, id: &str) -> Result<()> {
+    async fn delete_snapshot(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Topic resource operations
@@ -321,28 +361,45 @@ impl<'a> Pubsub_apiService<'a> {
     }
 
     /// Create a new topic resource
-    async fn create_topic(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_topic(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a topic resource
-    async fn read_topic(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_topic(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a topic resource
-    async fn update_topic(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_topic(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a topic resource
-    async fn delete_topic(&self, id: &str) -> Result<()> {
+    async fn delete_topic(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Subscription resource operations
@@ -365,28 +422,45 @@ impl<'a> Pubsub_apiService<'a> {
     }
 
     /// Create a new subscription resource
-    async fn create_subscription(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_subscription(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a subscription resource
-    async fn read_subscription(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_subscription(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a subscription resource
-    async fn update_subscription(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_subscription(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a subscription resource
-    async fn delete_subscription(&self, id: &str) -> Result<()> {
+    async fn delete_subscription(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Topic resource operations
@@ -409,28 +483,45 @@ impl<'a> Pubsub_apiService<'a> {
     }
 
     /// Create a new topic resource
-    async fn create_topic(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_topic(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a topic resource
-    async fn read_topic(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_topic(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a topic resource
-    async fn update_topic(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_topic(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a topic resource
-    async fn delete_topic(&self, id: &str) -> Result<()> {
+    async fn delete_topic(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
 
     // ------------------------------------------------------------------------
     // Subscription resource operations
@@ -453,26 +544,166 @@ impl<'a> Pubsub_apiService<'a> {
     }
 
     /// Create a new subscription resource
-    async fn create_subscription(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_subscription(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a subscription resource
-    async fn read_subscription(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_subscription(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a subscription resource
-    async fn update_subscription(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_subscription(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a subscription resource
-    async fn delete_subscription(&self, id: &str) -> Result<()> {
+    async fn delete_subscription(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
+    // ------------------------------------------------------------------------
+    // Topic resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a topic resource
+    async fn plan_topic(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new topic resource
+    async fn create_topic(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a topic resource
+    async fn read_topic(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a topic resource
+    async fn update_topic(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a topic resource
+    async fn delete_topic(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Subscription resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a subscription resource
+    async fn plan_subscription(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new subscription resource
+    async fn create_subscription(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a subscription resource
+    async fn read_subscription(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a subscription resource
+    async fn update_subscription(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a subscription resource
+    async fn delete_subscription(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
 }

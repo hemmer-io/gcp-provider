@@ -21,7 +21,7 @@ impl<'a> Entrie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, linked_resource: Option<String>, user_specified_system: Option<String>, bigquery_table_spec: Option<String>, name: Option<String>, usage_signal: Option<String>, user_specified_type: Option<String>, description: Option<String>, integrated_system: Option<String>, bigquery_date_sharded_spec: Option<String>, display_name: Option<String>, gcs_fileset_spec: Option<String>, schema: Option<String>, type: Option<String>, source_system_timestamps: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, bigquery_date_sharded_spec: Option<String>, linked_resource: Option<String>, type: Option<String>, user_specified_system: Option<String>, bigquery_table_spec: Option<String>, integrated_system: Option<String>, name: Option<String>, usage_signal: Option<String>, display_name: Option<String>, schema: Option<String>, source_system_timestamps: Option<String>, user_specified_type: Option<String>, gcs_fileset_spec: Option<String>, description: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Entrie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, linked_resource: Option<String>, user_specified_system: Option<String>, bigquery_table_spec: Option<String>, name: Option<String>, usage_signal: Option<String>, user_specified_type: Option<String>, description: Option<String>, integrated_system: Option<String>, bigquery_date_sharded_spec: Option<String>, display_name: Option<String>, gcs_fileset_spec: Option<String>, schema: Option<String>, type: Option<String>, source_system_timestamps: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, bigquery_date_sharded_spec: Option<String>, linked_resource: Option<String>, type: Option<String>, user_specified_system: Option<String>, bigquery_table_spec: Option<String>, integrated_system: Option<String>, name: Option<String>, usage_signal: Option<String>, display_name: Option<String>, schema: Option<String>, source_system_timestamps: Option<String>, user_specified_type: Option<String>, gcs_fileset_spec: Option<String>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

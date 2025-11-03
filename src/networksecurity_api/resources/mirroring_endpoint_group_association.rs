@@ -21,7 +21,7 @@ impl<'a> Mirroring_endpoint_group_association<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, locations_details: Option<Vec<String>>, locations: Option<Vec<String>>, labels: Option<HashMap<String, String>>, mirroring_endpoint_group: Option<String>, name: Option<String>, reconciling: Option<bool>, update_time: Option<String>, create_time: Option<String>, state: Option<String>, network: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, mirroring_endpoint_group: Option<String>, create_time: Option<String>, update_time: Option<String>, network: Option<String>, locations_details: Option<Vec<String>>, name: Option<String>, locations: Option<Vec<String>>, state: Option<String>, reconciling: Option<bool>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Mirroring_endpoint_group_association<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, locations_details: Option<Vec<String>>, locations: Option<Vec<String>>, labels: Option<HashMap<String, String>>, mirroring_endpoint_group: Option<String>, name: Option<String>, reconciling: Option<bool>, update_time: Option<String>, create_time: Option<String>, state: Option<String>, network: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, mirroring_endpoint_group: Option<String>, create_time: Option<String>, update_time: Option<String>, network: Option<String>, locations_details: Option<Vec<String>>, name: Option<String>, locations: Option<Vec<String>>, state: Option<String>, reconciling: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

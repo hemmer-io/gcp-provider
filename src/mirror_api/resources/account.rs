@@ -21,7 +21,7 @@ impl<'a> Account<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, auth_tokens: Option<Vec<String>>, features: Option<Vec<String>>, password: Option<String>, user_data: Option<Vec<String>>, account_name: String, account_type: String, user_token: String) -> Result<String> {
+    pub async fn create(&self, features: Option<Vec<String>>, user_data: Option<Vec<String>>, auth_tokens: Option<Vec<String>>, password: Option<String>, user_token: String, account_name: String, account_type: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

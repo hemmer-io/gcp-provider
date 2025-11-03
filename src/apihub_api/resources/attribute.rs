@@ -21,7 +21,7 @@ impl<'a> Attribute<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cardinality: Option<i64>, create_time: Option<String>, scope: Option<String>, display_name: Option<String>, allowed_values: Option<Vec<String>>, update_time: Option<String>, definition_type: Option<String>, mandatory: Option<bool>, name: Option<String>, data_type: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, mandatory: Option<bool>, display_name: Option<String>, create_time: Option<String>, definition_type: Option<String>, allowed_values: Option<Vec<String>>, cardinality: Option<i64>, name: Option<String>, description: Option<String>, update_time: Option<String>, data_type: Option<String>, scope: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Attribute<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, cardinality: Option<i64>, create_time: Option<String>, scope: Option<String>, display_name: Option<String>, allowed_values: Option<Vec<String>>, update_time: Option<String>, definition_type: Option<String>, mandatory: Option<bool>, name: Option<String>, data_type: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, mandatory: Option<bool>, display_name: Option<String>, create_time: Option<String>, definition_type: Option<String>, allowed_values: Option<Vec<String>>, cardinality: Option<i64>, name: Option<String>, description: Option<String>, update_time: Option<String>, data_type: Option<String>, scope: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -34,7 +34,7 @@ impl<'a> Floodlight_configuration<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, id_dimension_value: Option<String>, analytics_data_sharing_enabled: Option<bool>, subaccount_id: Option<String>, advertiser_id_dimension_value: Option<String>, natural_search_conversion_attribution_option: Option<String>, omniture_settings: Option<String>, id: Option<String>, third_party_authentication_tokens: Option<Vec<String>>, in_app_attribution_tracking_enabled: Option<bool>, tag_settings: Option<String>, first_day_of_week: Option<String>, account_id: Option<String>, kind: Option<String>, advertiser_id: Option<String>, user_defined_variable_configurations: Option<Vec<String>>, exposure_to_conversion_enabled: Option<bool>, lookback_configuration: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, subaccount_id: Option<String>, third_party_authentication_tokens: Option<Vec<String>>, kind: Option<String>, lookback_configuration: Option<String>, advertiser_id: Option<String>, first_day_of_week: Option<String>, id_dimension_value: Option<String>, user_defined_variable_configurations: Option<Vec<String>>, id: Option<String>, advertiser_id_dimension_value: Option<String>, account_id: Option<String>, analytics_data_sharing_enabled: Option<bool>, in_app_attribution_tracking_enabled: Option<bool>, exposure_to_conversion_enabled: Option<bool>, natural_search_conversion_attribution_option: Option<String>, omniture_settings: Option<String>, tag_settings: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

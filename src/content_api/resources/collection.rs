@@ -21,7 +21,7 @@ impl<'a> Collection<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, custom_label4: Option<String>, custom_label1: Option<String>, custom_label0: Option<String>, custom_label3: Option<String>, featured_product: Option<Vec<String>>, id: Option<String>, image_link: Option<Vec<String>>, headline: Option<Vec<String>>, custom_label2: Option<String>, language: Option<String>, link: Option<String>, mobile_link: Option<String>, product_country: Option<String>, merchant_id: String) -> Result<String> {
+    pub async fn create(&self, custom_label2: Option<String>, id: Option<String>, featured_product: Option<Vec<String>>, image_link: Option<Vec<String>>, custom_label3: Option<String>, link: Option<String>, language: Option<String>, product_country: Option<String>, custom_label1: Option<String>, custom_label0: Option<String>, custom_label4: Option<String>, mobile_link: Option<String>, headline: Option<Vec<String>>, merchant_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

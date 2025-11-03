@@ -21,7 +21,7 @@ impl<'a> Resource_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, etag: Option<String>, name: Option<String>, target_resource: Option<String>, update_time: Option<String>, enforcement_mode: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, enforcement_mode: Option<String>, etag: Option<String>, name: Option<String>, target_resource: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Resource_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, etag: Option<String>, name: Option<String>, target_resource: Option<String>, update_time: Option<String>, enforcement_mode: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, enforcement_mode: Option<String>, etag: Option<String>, name: Option<String>, target_resource: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

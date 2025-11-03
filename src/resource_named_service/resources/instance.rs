@@ -21,7 +21,7 @@ impl<'a> Instance<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, versions_id: String, instances_id: String, services_id: String, apps_id: String) -> Result<String> {
+    pub async fn create(&self, instances_id: String, services_id: String, versions_id: String, apps_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

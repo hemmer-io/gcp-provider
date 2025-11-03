@@ -24,10 +24,13 @@ impl<'a> Discovery_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "api" => self.plan_api(current_state, desired_input).await,
+            "api" => {
+                self.plan_api(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "discovery_api", resource_name
+                "discovery_api",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Discovery_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "api" => self.create_api(input).await,
+            "api" => {
+                self.create_api(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "discovery_api", resource_name
+                "discovery_api",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "api" => self.read_api(id).await,
+            "api" => {
+                self.read_api(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "discovery_api", resource_name
+                "discovery_api",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Discovery_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "api" => self.update_api(id, input).await,
+            "api" => {
+                self.update_api(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "discovery_api", resource_name
+                "discovery_api",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "api" => self.delete_api(id).await,
+            "api" => {
+                self.delete_api(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "discovery_api", resource_name
+                "discovery_api",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Discovery_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Api resource operations
@@ -110,26 +134,44 @@ impl<'a> Discovery_apiService<'a> {
     }
 
     /// Create a new api resource
-    async fn create_api(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_api(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a api resource
-    async fn read_api(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_api(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a api resource
-    async fn update_api(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_api(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a api resource
-    async fn delete_api(&self, id: &str) -> Result<()> {
+    async fn delete_api(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

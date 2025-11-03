@@ -21,7 +21,7 @@ impl<'a> Proposal<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, billed_buyer: Option<String>, originator_role: Option<String>, seller: Option<String>, proposal_revision: Option<String>, private_auction_id: Option<String>, buyer: Option<String>, terms_and_conditions: Option<String>, buyer_private_data: Option<String>, deals: Option<Vec<String>>, proposal_id: Option<String>, buyer_contacts: Option<Vec<String>>, is_renegotiating: Option<bool>, display_name: Option<String>, is_setup_complete: Option<bool>, proposal_state: Option<String>, seller_contacts: Option<Vec<String>>, update_time: Option<String>, notes: Option<Vec<String>>, last_updater_or_commentor_role: Option<String>, account_id: String) -> Result<String> {
+    pub async fn create(&self, is_setup_complete: Option<bool>, proposal_revision: Option<String>, private_auction_id: Option<String>, is_renegotiating: Option<bool>, notes: Option<Vec<String>>, terms_and_conditions: Option<String>, buyer: Option<String>, display_name: Option<String>, buyer_contacts: Option<Vec<String>>, update_time: Option<String>, deals: Option<Vec<String>>, proposal_state: Option<String>, seller: Option<String>, buyer_private_data: Option<String>, billed_buyer: Option<String>, last_updater_or_commentor_role: Option<String>, proposal_id: Option<String>, originator_role: Option<String>, seller_contacts: Option<Vec<String>>, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Proposal<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, billed_buyer: Option<String>, originator_role: Option<String>, seller: Option<String>, proposal_revision: Option<String>, private_auction_id: Option<String>, buyer: Option<String>, terms_and_conditions: Option<String>, buyer_private_data: Option<String>, deals: Option<Vec<String>>, proposal_id: Option<String>, buyer_contacts: Option<Vec<String>>, is_renegotiating: Option<bool>, display_name: Option<String>, is_setup_complete: Option<bool>, proposal_state: Option<String>, seller_contacts: Option<Vec<String>>, update_time: Option<String>, notes: Option<Vec<String>>, last_updater_or_commentor_role: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, is_setup_complete: Option<bool>, proposal_revision: Option<String>, private_auction_id: Option<String>, is_renegotiating: Option<bool>, notes: Option<Vec<String>>, terms_and_conditions: Option<String>, buyer: Option<String>, display_name: Option<String>, buyer_contacts: Option<Vec<String>>, update_time: Option<String>, deals: Option<Vec<String>>, proposal_state: Option<String>, seller: Option<String>, buyer_private_data: Option<String>, billed_buyer: Option<String>, last_updater_or_commentor_role: Option<String>, proposal_id: Option<String>, originator_role: Option<String>, seller_contacts: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

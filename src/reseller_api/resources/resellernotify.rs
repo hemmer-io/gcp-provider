@@ -1,6 +1,6 @@
 //! Resellernotify resource
 //!
-//! Registers a Reseller for receiving notifications.
+//! Unregisters a Reseller for receiving notifications.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

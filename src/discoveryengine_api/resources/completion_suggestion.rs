@@ -1,6 +1,6 @@
 //! Completion_suggestion resource
 //!
-//! Imports CompletionSuggestions for a DataStore.
+//! Permanently deletes all CompletionSuggestions for a DataStore.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Completion_suggestion<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, error_config: Option<String>, bigquery_source: Option<String>, inline_source: Option<String>, gcs_source: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

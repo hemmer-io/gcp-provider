@@ -1,6 +1,6 @@
 //! Keyvaluemap resource
 //!
-//! Creates a key value map in an organization.
+//! Creates a key value map in an API proxy.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Keyvaluemap<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, encrypted: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, encrypted: Option<bool>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Keyvaluemap<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, encrypted: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, encrypted: Option<bool>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Meshe<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, interception_port: Option<i64>, labels: Option<HashMap<String, String>>, self_link: Option<String>, update_time: Option<String>, envoy_headers: Option<String>, name: Option<String>, create_time: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, self_link: Option<String>, update_time: Option<String>, envoy_headers: Option<String>, interception_port: Option<i64>, description: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Meshe<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, interception_port: Option<i64>, labels: Option<HashMap<String, String>>, self_link: Option<String>, update_time: Option<String>, envoy_headers: Option<String>, name: Option<String>, create_time: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, self_link: Option<String>, update_time: Option<String>, envoy_headers: Option<String>, interception_port: Option<i64>, description: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

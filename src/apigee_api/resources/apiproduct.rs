@@ -21,7 +21,7 @@ impl<'a> Apiproduct<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, approval_type: Option<String>, created_at: Option<String>, last_modified_at: Option<String>, quota_counter_scope: Option<String>, name: Option<String>, space: Option<String>, description: Option<String>, graphql_operation_group: Option<String>, grpc_operation_group: Option<String>, attributes: Option<Vec<String>>, environments: Option<Vec<String>>, quota: Option<String>, quota_interval: Option<String>, quota_time_unit: Option<String>, scopes: Option<Vec<String>>, proxies: Option<Vec<String>>, display_name: Option<String>, operation_group: Option<String>, api_resources: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, quota_interval: Option<String>, approval_type: Option<String>, description: Option<String>, operation_group: Option<String>, quota: Option<String>, environments: Option<Vec<String>>, grpc_operation_group: Option<String>, proxies: Option<Vec<String>>, attributes: Option<Vec<String>>, display_name: Option<String>, created_at: Option<String>, graphql_operation_group: Option<String>, last_modified_at: Option<String>, name: Option<String>, quota_time_unit: Option<String>, scopes: Option<Vec<String>>, api_resources: Option<Vec<String>>, space: Option<String>, quota_counter_scope: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Apiproduct<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, approval_type: Option<String>, created_at: Option<String>, last_modified_at: Option<String>, quota_counter_scope: Option<String>, name: Option<String>, space: Option<String>, description: Option<String>, graphql_operation_group: Option<String>, grpc_operation_group: Option<String>, attributes: Option<Vec<String>>, environments: Option<Vec<String>>, quota: Option<String>, quota_interval: Option<String>, quota_time_unit: Option<String>, scopes: Option<Vec<String>>, proxies: Option<Vec<String>>, display_name: Option<String>, operation_group: Option<String>, api_resources: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, quota_interval: Option<String>, approval_type: Option<String>, description: Option<String>, operation_group: Option<String>, quota: Option<String>, environments: Option<Vec<String>>, grpc_operation_group: Option<String>, proxies: Option<Vec<String>>, attributes: Option<Vec<String>>, display_name: Option<String>, created_at: Option<String>, graphql_operation_group: Option<String>, last_modified_at: Option<String>, name: Option<String>, quota_time_unit: Option<String>, scopes: Option<Vec<String>>, api_resources: Option<Vec<String>>, space: Option<String>, quota_counter_scope: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

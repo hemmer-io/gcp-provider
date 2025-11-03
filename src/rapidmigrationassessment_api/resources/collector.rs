@@ -21,7 +21,7 @@ impl<'a> Collector<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, bucket: Option<String>, eula_uri: Option<String>, expected_asset_count: Option<String>, guest_os_scan: Option<String>, description: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, client_version: Option<String>, service_account: Option<String>, collection_days: Option<i64>, display_name: Option<String>, update_time: Option<String>, name: Option<String>, state: Option<String>, vsphere_scan: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, service_account: Option<String>, expected_asset_count: Option<String>, eula_uri: Option<String>, vsphere_scan: Option<String>, display_name: Option<String>, guest_os_scan: Option<String>, state: Option<String>, create_time: Option<String>, client_version: Option<String>, description: Option<String>, name: Option<String>, update_time: Option<String>, bucket: Option<String>, collection_days: Option<i64>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Collector<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, bucket: Option<String>, eula_uri: Option<String>, expected_asset_count: Option<String>, guest_os_scan: Option<String>, description: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, client_version: Option<String>, service_account: Option<String>, collection_days: Option<i64>, display_name: Option<String>, update_time: Option<String>, name: Option<String>, state: Option<String>, vsphere_scan: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, service_account: Option<String>, expected_asset_count: Option<String>, eula_uri: Option<String>, vsphere_scan: Option<String>, display_name: Option<String>, guest_os_scan: Option<String>, state: Option<String>, create_time: Option<String>, client_version: Option<String>, description: Option<String>, name: Option<String>, update_time: Option<String>, bucket: Option<String>, collection_days: Option<i64>, labels: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

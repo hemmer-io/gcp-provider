@@ -1,6 +1,7 @@
 //! Project resource
 //!
-//! Disable this project as a shared VPC host project.
+//! Disable a service resource (also known as service project) associated with
+this host project.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +22,7 @@ impl<'a> Project<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, project: String) -> Result<String> {
+    pub async fn create(&self, xpn_resource: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

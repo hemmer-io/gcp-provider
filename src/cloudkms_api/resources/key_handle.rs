@@ -21,7 +21,7 @@ impl<'a> Key_handle<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, kms_key: Option<String>, resource_type_selector: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, kms_key: Option<String>, name: Option<String>, resource_type_selector: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

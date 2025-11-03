@@ -22,7 +22,7 @@ impl<'a> Target_http_proxie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, fingerprint: Option<String>, http_keep_alive_timeout_sec: Option<i64>, region: Option<String>, description: Option<String>, name: Option<String>, self_link: Option<String>, http_filters: Option<Vec<String>>, proxy_bind: Option<bool>, creation_timestamp: Option<String>, id: Option<String>, kind: Option<String>, url_map: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, creation_timestamp: Option<String>, fingerprint: Option<String>, http_keep_alive_timeout_sec: Option<i64>, proxy_bind: Option<bool>, region: Option<String>, description: Option<String>, name: Option<String>, kind: Option<String>, url_map: Option<String>, id: Option<String>, self_link: Option<String>, http_filters: Option<Vec<String>>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Target_http_proxie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, fingerprint: Option<String>, http_keep_alive_timeout_sec: Option<i64>, region: Option<String>, description: Option<String>, name: Option<String>, self_link: Option<String>, http_filters: Option<Vec<String>>, proxy_bind: Option<bool>, creation_timestamp: Option<String>, id: Option<String>, kind: Option<String>, url_map: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, creation_timestamp: Option<String>, fingerprint: Option<String>, http_keep_alive_timeout_sec: Option<i64>, proxy_bind: Option<bool>, region: Option<String>, description: Option<String>, name: Option<String>, kind: Option<String>, url_map: Option<String>, id: Option<String>, self_link: Option<String>, http_filters: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

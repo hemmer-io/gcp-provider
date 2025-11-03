@@ -34,7 +34,7 @@ impl<'a> Automatic_improvement<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, item_updates: Option<String>, name: Option<String>, image_improvements: Option<String>, shipping_improvements: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, item_updates: Option<String>, shipping_improvements: Option<String>, image_improvements: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

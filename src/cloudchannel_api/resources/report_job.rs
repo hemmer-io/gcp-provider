@@ -21,7 +21,7 @@ impl<'a> Report_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, page_token: Option<String>, partition_keys: Option<Vec<String>>, page_size: Option<i64>, report_job: String) -> Result<String> {
+    pub async fn create(&self, partition_keys: Option<Vec<String>>, page_size: Option<i64>, page_token: Option<String>, report_job: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

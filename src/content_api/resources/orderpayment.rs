@@ -1,6 +1,6 @@
 //! Orderpayment resource
 //!
-//! Notify about charge on user's selected payments method.
+//! Notify about refund on user's selected payments method.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Orderpayment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, invoice_ids: Option<Vec<String>>, charge_state: Option<String>, invoice_id: Option<String>, merchant_id: String, order_id: String) -> Result<String> {
+    pub async fn create(&self, invoice_id: Option<String>, invoice_ids: Option<Vec<String>>, refund_state: Option<String>, order_id: String, merchant_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

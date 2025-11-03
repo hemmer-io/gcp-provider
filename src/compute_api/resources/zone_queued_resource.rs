@@ -21,7 +21,7 @@ impl<'a> Zone_queued_resource<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, self_link_with_id: Option<String>, creation_timestamp: Option<String>, id: Option<String>, kind: Option<String>, status: Option<String>, name: Option<String>, state: Option<String>, description: Option<String>, queuing_policy: Option<String>, self_link: Option<String>, bulk_insert_instance_resource: Option<String>, zone: Option<String>, project: String, zone: String) -> Result<String> {
+    pub async fn create(&self, state: Option<String>, id: Option<String>, kind: Option<String>, bulk_insert_instance_resource: Option<String>, name: Option<String>, queuing_policy: Option<String>, description: Option<String>, creation_timestamp: Option<String>, self_link: Option<String>, status: Option<String>, zone: Option<String>, self_link_with_id: Option<String>, zone: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

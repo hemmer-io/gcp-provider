@@ -1,6 +1,6 @@
 //! Purchase_option resource
 //!
-//! Deletes purchase options across one or multiple one-time products. By default this operation will fail if there are any existing offers under the deleted purchase options. Use the force parameter to override the default behavior.
+//! Activates or deactivates purchase options across one or multiple one-time products.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

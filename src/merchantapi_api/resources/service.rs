@@ -1,6 +1,6 @@
 //! Service resource
 //!
-//! Propose an account service.
+//! Approve an account service proposal.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Service<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, account_service: Option<String>, provider: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

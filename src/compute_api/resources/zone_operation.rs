@@ -35,7 +35,7 @@ impl<'a> Zone_operation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, project: String, operation: String, zone: String) -> Result<String> {
+    pub async fn create(&self, operation: String, project: String, zone: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

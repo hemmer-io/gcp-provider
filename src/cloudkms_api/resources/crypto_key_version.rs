@@ -21,7 +21,7 @@ impl<'a> Crypto_key_version<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, import_job: Option<String>, attestation: Option<String>, destroy_event_time: Option<String>, external_destruction_failure_reason: Option<String>, generate_time: Option<String>, algorithm: Option<String>, import_time: Option<String>, destroy_time: Option<String>, generation_failure_reason: Option<String>, external_protection_level_options: Option<String>, protection_level: Option<String>, name: Option<String>, reimport_eligible: Option<bool>, create_time: Option<String>, import_failure_reason: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, destroy_time: Option<String>, import_job: Option<String>, generation_failure_reason: Option<String>, import_time: Option<String>, protection_level: Option<String>, algorithm: Option<String>, import_failure_reason: Option<String>, attestation: Option<String>, reimport_eligible: Option<bool>, destroy_event_time: Option<String>, external_protection_level_options: Option<String>, generate_time: Option<String>, external_destruction_failure_reason: Option<String>, state: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Crypto_key_version<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, import_job: Option<String>, attestation: Option<String>, destroy_event_time: Option<String>, external_destruction_failure_reason: Option<String>, generate_time: Option<String>, algorithm: Option<String>, import_time: Option<String>, destroy_time: Option<String>, generation_failure_reason: Option<String>, external_protection_level_options: Option<String>, protection_level: Option<String>, name: Option<String>, reimport_eligible: Option<bool>, create_time: Option<String>, import_failure_reason: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, destroy_time: Option<String>, import_job: Option<String>, generation_failure_reason: Option<String>, import_time: Option<String>, protection_level: Option<String>, algorithm: Option<String>, import_failure_reason: Option<String>, attestation: Option<String>, reimport_eligible: Option<bool>, destroy_event_time: Option<String>, external_protection_level_options: Option<String>, generate_time: Option<String>, external_destruction_failure_reason: Option<String>, state: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

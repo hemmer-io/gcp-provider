@@ -21,7 +21,7 @@ impl<'a> Workerpool<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, spec: Option<String>, metadata: Option<String>, status: Option<String>, api_version: Option<String>, kind: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, status: Option<String>, spec: Option<String>, metadata: Option<String>, kind: Option<String>, api_version: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Workerpool<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, spec: Option<String>, metadata: Option<String>, status: Option<String>, api_version: Option<String>, kind: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, status: Option<String>, spec: Option<String>, metadata: Option<String>, kind: Option<String>, api_version: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

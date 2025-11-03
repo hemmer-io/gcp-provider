@@ -21,7 +21,7 @@ impl<'a> Qa_question<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, metrics: Option<String>, question_body: Option<String>, abbreviation: Option<String>, question_type: Option<String>, update_time: Option<String>, tuning_metadata: Option<String>, create_time: Option<String>, predefined_question_config: Option<String>, order: Option<i64>, answer_choices: Option<Vec<String>>, answer_instructions: Option<String>, name: Option<String>, tags: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, metrics: Option<String>, tags: Option<Vec<String>>, order: Option<i64>, answer_instructions: Option<String>, question_body: Option<String>, question_type: Option<String>, predefined_question_config: Option<String>, create_time: Option<String>, update_time: Option<String>, tuning_metadata: Option<String>, name: Option<String>, answer_choices: Option<Vec<String>>, abbreviation: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Qa_question<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, metrics: Option<String>, question_body: Option<String>, abbreviation: Option<String>, question_type: Option<String>, update_time: Option<String>, tuning_metadata: Option<String>, create_time: Option<String>, predefined_question_config: Option<String>, order: Option<i64>, answer_choices: Option<Vec<String>>, answer_instructions: Option<String>, name: Option<String>, tags: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, metrics: Option<String>, tags: Option<Vec<String>>, order: Option<i64>, answer_instructions: Option<String>, question_body: Option<String>, question_type: Option<String>, predefined_question_config: Option<String>, create_time: Option<String>, update_time: Option<String>, tuning_metadata: Option<String>, name: Option<String>, answer_choices: Option<Vec<String>>, abbreviation: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

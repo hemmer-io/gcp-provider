@@ -21,7 +21,7 @@ impl<'a> Worker<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, events: Option<Vec<String>>, result: Option<String>, event: Option<HashMap<String, String>>, deadline_expired: Option<String>, sos_report: Option<String>, worker_status: Option<String>, id: String) -> Result<String> {
+    pub async fn create(&self, event: Option<HashMap<String, String>>, sos_report: Option<String>, events: Option<Vec<String>>, deadline_expired: Option<String>, result: Option<String>, worker_status: Option<String>, id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

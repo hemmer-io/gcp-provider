@@ -24,10 +24,13 @@ impl<'a> Http_bodyService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "fhir" => self.plan_fhir(current_state, desired_input).await,
+            "fhir" => {
+                self.plan_fhir(current_state, desired_input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "http_body", resource_name
+                "http_body",
+                resource_name
             ))),
         }
     }
@@ -39,21 +42,31 @@ impl<'a> Http_bodyService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "fhir" => self.create_fhir(input).await,
+            "fhir" => {
+                self.create_fhir(input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "http_body", resource_name
+                "http_body",
+                resource_name
             ))),
         }
     }
 
     /// Read resource state
-    pub async fn read_resource(&self, resource_name: &str, id: &str) -> Result<ResourceOutput> {
+    pub async fn read_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         match resource_name {
-            "fhir" => self.read_fhir(id).await,
+            "fhir" => {
+                self.read_fhir(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "http_body", resource_name
+                "http_body",
+                resource_name
             ))),
         }
     }
@@ -66,21 +79,31 @@ impl<'a> Http_bodyService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "fhir" => self.update_fhir(id, input).await,
+            "fhir" => {
+                self.update_fhir(id, input).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "http_body", resource_name
+                "http_body",
+                resource_name
             ))),
         }
     }
 
     /// Delete a resource
-    pub async fn delete_resource(&self, resource_name: &str, id: &str) -> Result<()> {
+    pub async fn delete_resource(
+        &self,
+        resource_name: &str,
+        id: &str,
+    ) -> Result<()> {
         match resource_name {
-            "fhir" => self.delete_fhir(id).await,
+            "fhir" => {
+                self.delete_fhir(id).await
+            }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
-                "http_body", resource_name
+                "http_body",
+                resource_name
             ))),
         }
     }
@@ -88,6 +111,7 @@ impl<'a> Http_bodyService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
 
     // ------------------------------------------------------------------------
     // Fhir resource operations
@@ -110,26 +134,44 @@ impl<'a> Http_bodyService<'a> {
     }
 
     /// Create a new fhir resource
-    async fn create_fhir(&self, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn create_fhir(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id("placeholder-id"))
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
     }
 
     /// Read a fhir resource
-    async fn read_fhir(&self, id: &str) -> Result<ResourceOutput> {
+    async fn read_fhir(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Update a fhir resource
-    async fn update_fhir(&self, id: &str, input: ResourceInput) -> Result<ResourceOutput> {
+    async fn update_fhir(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
         // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new().with_id(id))
+        Ok(ResourceOutput::new()
+            .with_id(id))
     }
 
     /// Delete a fhir resource
-    async fn delete_fhir(&self, id: &str) -> Result<()> {
+    async fn delete_fhir(
+        &self,
+        id: &str,
+    ) -> Result<()> {
         // TODO: Implement Gcp SDK calls
         Ok(())
     }
+
+
 }

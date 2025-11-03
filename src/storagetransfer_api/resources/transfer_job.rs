@@ -21,7 +21,7 @@ impl<'a> Transfer_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, latest_operation_name: Option<String>, deletion_time: Option<String>, replication_spec: Option<String>, creation_time: Option<String>, event_stream: Option<String>, logging_config: Option<String>, status: Option<String>, notification_config: Option<String>, transfer_spec: Option<String>, last_modification_time: Option<String>, service_account: Option<String>, description: Option<String>, schedule: Option<String>, project_id: Option<String>) -> Result<String> {
+    pub async fn create(&self, creation_time: Option<String>, name: Option<String>, last_modification_time: Option<String>, event_stream: Option<String>, notification_config: Option<String>, service_account: Option<String>, schedule: Option<String>, deletion_time: Option<String>, replication_spec: Option<String>, transfer_spec: Option<String>, description: Option<String>, logging_config: Option<String>, project_id: Option<String>, status: Option<String>, latest_operation_name: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Transfer_job<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, latest_operation_name: Option<String>, deletion_time: Option<String>, replication_spec: Option<String>, creation_time: Option<String>, event_stream: Option<String>, logging_config: Option<String>, status: Option<String>, notification_config: Option<String>, transfer_spec: Option<String>, last_modification_time: Option<String>, service_account: Option<String>, description: Option<String>, schedule: Option<String>, project_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, creation_time: Option<String>, name: Option<String>, last_modification_time: Option<String>, event_stream: Option<String>, notification_config: Option<String>, service_account: Option<String>, schedule: Option<String>, deletion_time: Option<String>, replication_spec: Option<String>, transfer_spec: Option<String>, description: Option<String>, logging_config: Option<String>, project_id: Option<String>, status: Option<String>, latest_operation_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

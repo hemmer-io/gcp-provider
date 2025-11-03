@@ -21,7 +21,7 @@ impl<'a> Spoke<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, state: Option<String>, linked_router_appliance_instances: Option<Vec<String>>, unique_id: Option<String>, create_time: Option<String>, update_time: Option<String>, hub: Option<String>, linked_interconnect_attachments: Option<Vec<String>>, labels: Option<HashMap<String, String>>, description: Option<String>, linked_vpn_tunnels: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, state: Option<String>, hub: Option<String>, description: Option<String>, linked_vpn_tunnels: Option<Vec<String>>, linked_router_appliance_instances: Option<Vec<String>>, labels: Option<HashMap<String, String>>, linked_interconnect_attachments: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, update_time: Option<String>, unique_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Spoke<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, state: Option<String>, linked_router_appliance_instances: Option<Vec<String>>, unique_id: Option<String>, create_time: Option<String>, update_time: Option<String>, hub: Option<String>, linked_interconnect_attachments: Option<Vec<String>>, labels: Option<HashMap<String, String>>, description: Option<String>, linked_vpn_tunnels: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, state: Option<String>, hub: Option<String>, description: Option<String>, linked_vpn_tunnels: Option<Vec<String>>, linked_router_appliance_instances: Option<Vec<String>>, labels: Option<HashMap<String, String>>, linked_interconnect_attachments: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, update_time: Option<String>, unique_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

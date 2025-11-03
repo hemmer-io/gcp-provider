@@ -22,7 +22,7 @@ impl<'a> Region_backend_bucket<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cdn_policy: Option<String>, region: Option<String>, custom_response_headers: Option<Vec<String>>, enable_cdn: Option<bool>, load_balancing_scheme: Option<String>, self_link: Option<String>, creation_timestamp: Option<String>, edge_security_policy: Option<String>, kind: Option<String>, compression_mode: Option<String>, id: Option<String>, name: Option<String>, params: Option<String>, bucket_name: Option<String>, used_by: Option<Vec<String>>, description: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, used_by: Option<Vec<String>>, bucket_name: Option<String>, enable_cdn: Option<bool>, name: Option<String>, custom_response_headers: Option<Vec<String>>, params: Option<String>, load_balancing_scheme: Option<String>, description: Option<String>, id: Option<String>, kind: Option<String>, region: Option<String>, cdn_policy: Option<String>, edge_security_policy: Option<String>, creation_timestamp: Option<String>, compression_mode: Option<String>, self_link: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Region_backend_bucket<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, cdn_policy: Option<String>, region: Option<String>, custom_response_headers: Option<Vec<String>>, enable_cdn: Option<bool>, load_balancing_scheme: Option<String>, self_link: Option<String>, creation_timestamp: Option<String>, edge_security_policy: Option<String>, kind: Option<String>, compression_mode: Option<String>, id: Option<String>, name: Option<String>, params: Option<String>, bucket_name: Option<String>, used_by: Option<Vec<String>>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, used_by: Option<Vec<String>>, bucket_name: Option<String>, enable_cdn: Option<bool>, name: Option<String>, custom_response_headers: Option<Vec<String>>, params: Option<String>, load_balancing_scheme: Option<String>, description: Option<String>, id: Option<String>, kind: Option<String>, region: Option<String>, cdn_policy: Option<String>, edge_security_policy: Option<String>, creation_timestamp: Option<String>, compression_mode: Option<String>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 
