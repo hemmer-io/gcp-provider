@@ -11,10 +11,10 @@
 The gamesmanagement_api service provides access to 5 resource types:
 
 - [Application](#application) [R]
-- [Achievement](#achievement) [C]
 - [Player](#player) [CD]
-- [Event](#event) [C]
 - [Score](#score) [C]
+- [Event](#event) [C]
+- [Achievement](#achievement) [C]
 
 ---
 
@@ -63,41 +63,6 @@ application_next_page_token = application.next_page_token
 ---
 
 
-### Achievement
-
-Resets the achievement with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
-
-**Operations**: ✅ Create
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `achievement_id` | String | ✅ | The ID of the achievement used by this method. |
-
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create achievement
-achievement = provider.gamesmanagement_api.Achievement {
-    achievement_id = "value"  # The ID of the achievement used by this method.
-}
-
-```
-
----
-
-
 ### Player
 
 Hide the given player's leaderboard scores from the given application. This method is only available to user accounts for your developer console.
@@ -135,9 +100,9 @@ player = provider.gamesmanagement_api.Player {
 ---
 
 
-### Event
+### Score
 
-Resets all player progress on all events for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
+Resets scores for all draft leaderboards for all players. This method is only available to user accounts for your developer console.
 
 **Operations**: ✅ Create
 
@@ -145,6 +110,41 @@ Resets all player progress on all events for the currently authenticated player.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create score
+score = provider.gamesmanagement_api.Score {
+}
+
+```
+
+---
+
+
+### Event
+
+Resets events with the given IDs for all players. This method is only available to user accounts for your developer console. Only draft events may be reset.
+
+**Operations**: ✅ Create
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `event_ids` | Vec<String> |  | The IDs of events to reset. |
+| `kind` | String |  | Uniquely identifies the type of this resource. Value is always the fixed string `gamesManagement#eventsResetMultipleForAllRequest`. |
 
 
 
@@ -168,9 +168,9 @@ event = provider.gamesmanagement_api.Event {
 ---
 
 
-### Score
+### Achievement
 
-Resets scores for the leaderboard with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
+Resets all achievements for the currently authenticated player for your application. This method is only accessible to whitelisted tester accounts for your application.
 
 **Operations**: ✅ Create
 
@@ -178,7 +178,6 @@ Resets scores for the leaderboard with the given ID for the currently authentica
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `leaderboard_id` | String | ✅ | The ID of the leaderboard. |
 
 
 
@@ -193,9 +192,8 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create score
-score = provider.gamesmanagement_api.Score {
-    leaderboard_id = "value"  # The ID of the leaderboard.
+# Create achievement
+achievement = provider.gamesmanagement_api.Achievement {
 }
 
 ```

@@ -21,7 +21,7 @@ impl<'a> Script<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, function: Option<String>, parameters: Option<Vec<String>>, session_state: Option<String>, dev_mode: Option<bool>, script_id: String) -> Result<String> {
+    pub async fn create(&self, dev_mode: Option<bool>, function: Option<String>, parameters: Option<Vec<String>>, session_state: Option<String>, script_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

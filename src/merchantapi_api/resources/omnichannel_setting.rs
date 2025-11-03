@@ -21,7 +21,7 @@ impl<'a> Omnichannel_setting<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, inventory_verification: Option<String>, odo: Option<String>, pickup: Option<String>, lsf_type: Option<String>, region_code: Option<String>, about: Option<String>, name: Option<String>, in_stock: Option<String>, lfp_link: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, about: Option<String>, pickup: Option<String>, region_code: Option<String>, lfp_link: Option<String>, inventory_verification: Option<String>, in_stock: Option<String>, odo: Option<String>, lsf_type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Omnichannel_setting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, inventory_verification: Option<String>, odo: Option<String>, pickup: Option<String>, lsf_type: Option<String>, region_code: Option<String>, about: Option<String>, name: Option<String>, in_stock: Option<String>, lfp_link: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, about: Option<String>, pickup: Option<String>, region_code: Option<String>, lfp_link: Option<String>, inventory_verification: Option<String>, in_stock: Option<String>, odo: Option<String>, lsf_type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

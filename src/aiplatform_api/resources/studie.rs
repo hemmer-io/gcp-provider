@@ -21,7 +21,7 @@ impl<'a> Studie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, study_spec: Option<String>, state: Option<String>, create_time: Option<String>, display_name: Option<String>, inactive_reason: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, inactive_reason: Option<String>, create_time: Option<String>, name: Option<String>, study_spec: Option<String>, display_name: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

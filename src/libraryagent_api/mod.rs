@@ -24,11 +24,11 @@ impl<'a> Libraryagent_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "shelve" => {
-                self.plan_shelve(current_state, desired_input).await
-            }
             "book" => {
                 self.plan_book(current_state, desired_input).await
+            }
+            "shelve" => {
+                self.plan_shelve(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -45,11 +45,11 @@ impl<'a> Libraryagent_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "shelve" => {
-                self.create_shelve(input).await
-            }
             "book" => {
                 self.create_book(input).await
+            }
+            "shelve" => {
+                self.create_shelve(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,11 +66,11 @@ impl<'a> Libraryagent_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "shelve" => {
-                self.read_shelve(id).await
-            }
             "book" => {
                 self.read_book(id).await
+            }
+            "shelve" => {
+                self.read_shelve(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -88,11 +88,11 @@ impl<'a> Libraryagent_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "shelve" => {
-                self.update_shelve(id, input).await
-            }
             "book" => {
                 self.update_book(id, input).await
+            }
+            "shelve" => {
+                self.update_shelve(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -109,11 +109,11 @@ impl<'a> Libraryagent_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "shelve" => {
-                self.delete_shelve(id).await
-            }
             "book" => {
                 self.delete_book(id).await
+            }
+            "shelve" => {
+                self.delete_shelve(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -126,67 +126,6 @@ impl<'a> Libraryagent_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Shelve resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a shelve resource
-    async fn plan_shelve(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new shelve resource
-    async fn create_shelve(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a shelve resource
-    async fn read_shelve(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a shelve resource
-    async fn update_shelve(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a shelve resource
-    async fn delete_shelve(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -242,6 +181,67 @@ impl<'a> Libraryagent_apiService<'a> {
 
     /// Delete a book resource
     async fn delete_book(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Shelve resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a shelve resource
+    async fn plan_shelve(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new shelve resource
+    async fn create_shelve(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a shelve resource
+    async fn read_shelve(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a shelve resource
+    async fn update_shelve(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a shelve resource
+    async fn delete_shelve(
         &self,
         id: &str,
     ) -> Result<()> {

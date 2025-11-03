@@ -21,7 +21,7 @@ impl<'a> Manual_trigger<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, activation_duration_minutes: Option<String>, trigger_id: Option<String>, display_name: Option<String>, name: Option<String>, latest_activation_time: Option<String>, state: Option<String>, advertiser_id: Option<String>, advertiser_id: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, trigger_id: Option<String>, display_name: Option<String>, activation_duration_minutes: Option<String>, state: Option<String>, latest_activation_time: Option<String>, advertiser_id: Option<String>, advertiser_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Manual_trigger<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, activation_duration_minutes: Option<String>, trigger_id: Option<String>, display_name: Option<String>, name: Option<String>, latest_activation_time: Option<String>, state: Option<String>, advertiser_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, trigger_id: Option<String>, display_name: Option<String>, activation_duration_minutes: Option<String>, state: Option<String>, latest_activation_time: Option<String>, advertiser_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

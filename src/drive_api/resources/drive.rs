@@ -21,7 +21,7 @@ impl<'a> Drive<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, capabilities: Option<String>, restrictions: Option<String>, color_rgb: Option<String>, hidden: Option<bool>, id: Option<String>, background_image_file: Option<String>, background_image_link: Option<String>, name: Option<String>, theme_id: Option<String>, created_time: Option<String>, org_unit_id: Option<String>) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, org_unit_id: Option<String>, created_time: Option<String>, restrictions: Option<String>, background_image_file: Option<String>, kind: Option<String>, background_image_link: Option<String>, color_rgb: Option<String>, theme_id: Option<String>, capabilities: Option<String>, id: Option<String>, hidden: Option<bool>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Drive<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, kind: Option<String>, capabilities: Option<String>, restrictions: Option<String>, color_rgb: Option<String>, hidden: Option<bool>, id: Option<String>, background_image_file: Option<String>, background_image_link: Option<String>, name: Option<String>, theme_id: Option<String>, created_time: Option<String>, org_unit_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, org_unit_id: Option<String>, created_time: Option<String>, restrictions: Option<String>, background_image_file: Option<String>, kind: Option<String>, background_image_link: Option<String>, color_rgb: Option<String>, theme_id: Option<String>, capabilities: Option<String>, id: Option<String>, hidden: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

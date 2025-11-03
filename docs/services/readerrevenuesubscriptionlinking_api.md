@@ -36,11 +36,11 @@ Gets a reader of a publication. Returns NOT_FOUND if the reader does not exist.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `ppid` | String | Output only. The publisher provided id of the reader. |
-| `create_time` | String | Output only. Time the publication reader was created and associated with a Google user. |
 | `originating_publication_id` | String | Output only. The SwG publication id that the reader's subscription linking was originating from. |
-| `publication_id` | String | Output only. The SwG publication id that the reader has linked their subscription to. |
+| `create_time` | String | Output only. Time the publication reader was created and associated with a Google user. |
 | `name` | String | Output only. The resource name of the reader. The last part of ppid in the resource name is the publisher provided id. |
+| `ppid` | String | Output only. The publisher provided id of the reader. |
+| `publication_id` | String | Output only. The SwG publication id that the reader has linked their subscription to. |
 
 
 #### Usage Example
@@ -56,11 +56,11 @@ provider = gcp.GcpProvider {
 
 # Access reader outputs
 reader_id = reader.id
-reader_ppid = reader.ppid
-reader_create_time = reader.create_time
 reader_originating_publication_id = reader.originating_publication_id
-reader_publication_id = reader.publication_id
+reader_create_time = reader.create_time
 reader_name = reader.name
+reader_ppid = reader.ppid
+reader_publication_id = reader.publication_id
 ```
 
 ---

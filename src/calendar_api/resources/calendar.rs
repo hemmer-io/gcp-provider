@@ -21,7 +21,7 @@ impl<'a> Calendar<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<String>, kind: Option<String>, time_zone: Option<String>, conference_properties: Option<String>, location: Option<String>, etag: Option<String>, description: Option<String>, summary: Option<String>) -> Result<String> {
+    pub async fn create(&self, conference_properties: Option<String>, location: Option<String>, summary: Option<String>, etag: Option<String>, description: Option<String>, time_zone: Option<String>, id: Option<String>, kind: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Calendar<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, id: Option<String>, kind: Option<String>, time_zone: Option<String>, conference_properties: Option<String>, location: Option<String>, etag: Option<String>, description: Option<String>, summary: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, conference_properties: Option<String>, location: Option<String>, summary: Option<String>, etag: Option<String>, description: Option<String>, time_zone: Option<String>, id: Option<String>, kind: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

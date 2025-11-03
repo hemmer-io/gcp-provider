@@ -29,9 +29,6 @@ response header.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `parameters` | HashMap<String, String> |  | Map of parameter keys to their optional default values and optional submap
-of (condition name : value). Order doesn't affect semantics, and so is
-sorted by the server. The 'key' values of the params must be unique. |
 | `conditions` | Vec<String> |  | The list of named conditions. The order *does* affect the semantics.
 The condition_name values of these entries must be unique.
 
@@ -51,6 +48,9 @@ value of p1 would be v2 as long as c1 is true.  Otherwise, if c2 is true,
 p1 would evaluate to v3, and if c1 and c2 are both false, p1 would evaluate
 to v1.  If no default value was specified, and c1 and c2 were both false,
 no value for p1 would be generated. |
+| `parameters` | HashMap<String, String> |  | Map of parameter keys to their optional default values and optional submap
+of (condition name : value). Order doesn't affect semantics, and so is
+sorted by the server. The 'key' values of the params must be unique. |
 | `project` | String | ✅ | The GMP project identifier. Required.
 See note at the beginning of this file regarding project ids. |
 
@@ -59,9 +59,6 @@ See note at the beginning of this file regarding project ids. |
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `parameters` | HashMap<String, String> | Map of parameter keys to their optional default values and optional submap
-of (condition name : value). Order doesn't affect semantics, and so is
-sorted by the server. The 'key' values of the params must be unique. |
 | `conditions` | Vec<String> | The list of named conditions. The order *does* affect the semantics.
 The condition_name values of these entries must be unique.
 
@@ -81,6 +78,9 @@ value of p1 would be v2 as long as c1 is true.  Otherwise, if c2 is true,
 p1 would evaluate to v3, and if c1 and c2 are both false, p1 would evaluate
 to v1.  If no default value was specified, and c1 and c2 were both false,
 no value for p1 would be generated. |
+| `parameters` | HashMap<String, String> | Map of parameter keys to their optional default values and optional submap
+of (condition name : value). Order doesn't affect semantics, and so is
+sorted by the server. The 'key' values of the params must be unique. |
 
 
 #### Usage Example
@@ -96,8 +96,8 @@ provider = gcp.GcpProvider {
 
 # Access project outputs
 project_id = project.id
-project_parameters = project.parameters
 project_conditions = project.conditions
+project_parameters = project.parameters
 ```
 
 ---

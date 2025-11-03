@@ -1,0 +1,37 @@
+//! Resource modules
+
+pub mod add_on_attachment;
+pub use add_on_attachment::Add_on_attachment;
+pub mod guardian;
+pub use guardian::Guardian;
+pub mod announcement;
+pub use announcement::Announcement;
+pub mod course;
+pub use course::Course;
+pub mod guardian_invitation;
+pub use guardian_invitation::Guardian_invitation;
+pub mod user_profile;
+pub use user_profile::User_profile;
+pub mod invitation;
+pub use invitation::Invitation;
+pub mod topic;
+pub use topic::Topic;
+pub mod post;
+pub use post::Post;
+pub mod student_submission;
+pub use student_submission::Student_submission;
+pub mod teacher;
+pub use teacher::Teacher;
+pub mod course_work_material;
+pub use course_work_material::Course_work_material;
+pub mod student;
+pub use student::Student;
+pub mod aliase;
+pub use aliase::Aliase;
+pub mod registration;
+pub use registration::Registration;
+pub mod rubric;
+pub use rubric::Rubric;
+pub mod course_work;
+pub use course_work::Course_work;
+

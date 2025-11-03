@@ -21,7 +21,7 @@ impl<'a> Endpoint_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, name: Option<String>, authorization_policy: Option<String>, create_time: Option<String>, client_tls_policy: Option<String>, labels: Option<HashMap<String, String>>, endpoint_matcher: Option<String>, security_policy: Option<String>, server_tls_policy: Option<String>, traffic_port_selector: Option<String>, description: Option<String>, type: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, authorization_policy: Option<String>, description: Option<String>, endpoint_matcher: Option<String>, labels: Option<HashMap<String, String>>, traffic_port_selector: Option<String>, client_tls_policy: Option<String>, name: Option<String>, type: Option<String>, server_tls_policy: Option<String>, security_policy: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Endpoint_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, name: Option<String>, authorization_policy: Option<String>, create_time: Option<String>, client_tls_policy: Option<String>, labels: Option<HashMap<String, String>>, endpoint_matcher: Option<String>, security_policy: Option<String>, server_tls_policy: Option<String>, traffic_port_selector: Option<String>, description: Option<String>, type: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, authorization_policy: Option<String>, description: Option<String>, endpoint_matcher: Option<String>, labels: Option<HashMap<String, String>>, traffic_port_selector: Option<String>, client_tls_policy: Option<String>, name: Option<String>, type: Option<String>, server_tls_policy: Option<String>, security_policy: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

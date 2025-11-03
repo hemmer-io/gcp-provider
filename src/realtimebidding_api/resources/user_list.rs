@@ -21,7 +21,7 @@ impl<'a> User_list<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, display_name: Option<String>, membership_duration_days: Option<String>, status: Option<String>, name: Option<String>, url_restriction: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, display_name: Option<String>, url_restriction: Option<String>, description: Option<String>, membership_duration_days: Option<String>, name: Option<String>, status: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> User_list<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, display_name: Option<String>, membership_duration_days: Option<String>, status: Option<String>, name: Option<String>, url_restriction: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, display_name: Option<String>, url_restriction: Option<String>, description: Option<String>, membership_duration_days: Option<String>, name: Option<String>, status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

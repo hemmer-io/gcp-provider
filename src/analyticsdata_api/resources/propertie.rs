@@ -1,6 +1,6 @@
 //! Propertie resource
 //!
-//! Returns multiple reports in a batch. All reports must be for the same Google Analytics property.
+//! Returns a customized pivot report of your Google Analytics event data. Pivot reports are more advanced and expressive formats than regular reports. In a pivot report, dimensions are only visible if they are included in a pivot. Multiple pivots can be specified to further dissect your data.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Propertie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, requests: Option<Vec<String>>, property: String) -> Result<String> {
+    pub async fn create(&self, return_property_quota: Option<bool>, property: Option<String>, date_ranges: Option<Vec<String>>, keep_empty_rows: Option<bool>, metrics: Option<Vec<String>>, pivots: Option<Vec<String>>, currency_code: Option<String>, cohort_spec: Option<String>, comparisons: Option<Vec<String>>, dimension_filter: Option<String>, metric_filter: Option<String>, dimensions: Option<Vec<String>>, property: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

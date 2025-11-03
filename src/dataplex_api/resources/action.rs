@@ -1,6 +1,6 @@
 //! Action resource
 //!
-//! Lists action resources in an asset.
+//! Lists action resources in a lake.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

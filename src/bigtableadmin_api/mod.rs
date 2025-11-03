@@ -24,14 +24,17 @@ impl<'a> Bigtableadmin_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "app_profile" => {
-                self.plan_app_profile(current_state, desired_input).await
+            "instance" => {
+                self.plan_instance(current_state, desired_input).await
             }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
+            "schema_bundle" => {
+                self.plan_schema_bundle(current_state, desired_input).await
             }
-            "authorized_view" => {
-                self.plan_authorized_view(current_state, desired_input).await
+            "cluster" => {
+                self.plan_cluster(current_state, desired_input).await
+            }
+            "backup" => {
+                self.plan_backup(current_state, desired_input).await
             }
             "hot_tablet" => {
                 self.plan_hot_tablet(current_state, desired_input).await
@@ -42,23 +45,20 @@ impl<'a> Bigtableadmin_apiService<'a> {
             "table" => {
                 self.plan_table(current_state, desired_input).await
             }
-            "schema_bundle" => {
-                self.plan_schema_bundle(current_state, desired_input).await
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
+            "authorized_view" => {
+                self.plan_authorized_view(current_state, desired_input).await
+            }
+            "app_profile" => {
+                self.plan_app_profile(current_state, desired_input).await
             }
             "materialized_view" => {
                 self.plan_materialized_view(current_state, desired_input).await
             }
-            "cluster" => {
-                self.plan_cluster(current_state, desired_input).await
-            }
-            "instance" => {
-                self.plan_instance(current_state, desired_input).await
-            }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
-            "backup" => {
-                self.plan_backup(current_state, desired_input).await
+            "location" => {
+                self.plan_location(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -75,14 +75,17 @@ impl<'a> Bigtableadmin_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "app_profile" => {
-                self.create_app_profile(input).await
+            "instance" => {
+                self.create_instance(input).await
             }
-            "location" => {
-                self.create_location(input).await
+            "schema_bundle" => {
+                self.create_schema_bundle(input).await
             }
-            "authorized_view" => {
-                self.create_authorized_view(input).await
+            "cluster" => {
+                self.create_cluster(input).await
+            }
+            "backup" => {
+                self.create_backup(input).await
             }
             "hot_tablet" => {
                 self.create_hot_tablet(input).await
@@ -93,23 +96,20 @@ impl<'a> Bigtableadmin_apiService<'a> {
             "table" => {
                 self.create_table(input).await
             }
-            "schema_bundle" => {
-                self.create_schema_bundle(input).await
+            "operation" => {
+                self.create_operation(input).await
+            }
+            "authorized_view" => {
+                self.create_authorized_view(input).await
+            }
+            "app_profile" => {
+                self.create_app_profile(input).await
             }
             "materialized_view" => {
                 self.create_materialized_view(input).await
             }
-            "cluster" => {
-                self.create_cluster(input).await
-            }
-            "instance" => {
-                self.create_instance(input).await
-            }
-            "operation" => {
-                self.create_operation(input).await
-            }
-            "backup" => {
-                self.create_backup(input).await
+            "location" => {
+                self.create_location(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -126,14 +126,17 @@ impl<'a> Bigtableadmin_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "app_profile" => {
-                self.read_app_profile(id).await
+            "instance" => {
+                self.read_instance(id).await
             }
-            "location" => {
-                self.read_location(id).await
+            "schema_bundle" => {
+                self.read_schema_bundle(id).await
             }
-            "authorized_view" => {
-                self.read_authorized_view(id).await
+            "cluster" => {
+                self.read_cluster(id).await
+            }
+            "backup" => {
+                self.read_backup(id).await
             }
             "hot_tablet" => {
                 self.read_hot_tablet(id).await
@@ -144,23 +147,20 @@ impl<'a> Bigtableadmin_apiService<'a> {
             "table" => {
                 self.read_table(id).await
             }
-            "schema_bundle" => {
-                self.read_schema_bundle(id).await
+            "operation" => {
+                self.read_operation(id).await
+            }
+            "authorized_view" => {
+                self.read_authorized_view(id).await
+            }
+            "app_profile" => {
+                self.read_app_profile(id).await
             }
             "materialized_view" => {
                 self.read_materialized_view(id).await
             }
-            "cluster" => {
-                self.read_cluster(id).await
-            }
-            "instance" => {
-                self.read_instance(id).await
-            }
-            "operation" => {
-                self.read_operation(id).await
-            }
-            "backup" => {
-                self.read_backup(id).await
+            "location" => {
+                self.read_location(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -178,14 +178,17 @@ impl<'a> Bigtableadmin_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "app_profile" => {
-                self.update_app_profile(id, input).await
+            "instance" => {
+                self.update_instance(id, input).await
             }
-            "location" => {
-                self.update_location(id, input).await
+            "schema_bundle" => {
+                self.update_schema_bundle(id, input).await
             }
-            "authorized_view" => {
-                self.update_authorized_view(id, input).await
+            "cluster" => {
+                self.update_cluster(id, input).await
+            }
+            "backup" => {
+                self.update_backup(id, input).await
             }
             "hot_tablet" => {
                 self.update_hot_tablet(id, input).await
@@ -196,23 +199,20 @@ impl<'a> Bigtableadmin_apiService<'a> {
             "table" => {
                 self.update_table(id, input).await
             }
-            "schema_bundle" => {
-                self.update_schema_bundle(id, input).await
+            "operation" => {
+                self.update_operation(id, input).await
+            }
+            "authorized_view" => {
+                self.update_authorized_view(id, input).await
+            }
+            "app_profile" => {
+                self.update_app_profile(id, input).await
             }
             "materialized_view" => {
                 self.update_materialized_view(id, input).await
             }
-            "cluster" => {
-                self.update_cluster(id, input).await
-            }
-            "instance" => {
-                self.update_instance(id, input).await
-            }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
-            "backup" => {
-                self.update_backup(id, input).await
+            "location" => {
+                self.update_location(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -229,14 +229,17 @@ impl<'a> Bigtableadmin_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "app_profile" => {
-                self.delete_app_profile(id).await
+            "instance" => {
+                self.delete_instance(id).await
             }
-            "location" => {
-                self.delete_location(id).await
+            "schema_bundle" => {
+                self.delete_schema_bundle(id).await
             }
-            "authorized_view" => {
-                self.delete_authorized_view(id).await
+            "cluster" => {
+                self.delete_cluster(id).await
+            }
+            "backup" => {
+                self.delete_backup(id).await
             }
             "hot_tablet" => {
                 self.delete_hot_tablet(id).await
@@ -247,23 +250,20 @@ impl<'a> Bigtableadmin_apiService<'a> {
             "table" => {
                 self.delete_table(id).await
             }
-            "schema_bundle" => {
-                self.delete_schema_bundle(id).await
+            "operation" => {
+                self.delete_operation(id).await
+            }
+            "authorized_view" => {
+                self.delete_authorized_view(id).await
+            }
+            "app_profile" => {
+                self.delete_app_profile(id).await
             }
             "materialized_view" => {
                 self.delete_materialized_view(id).await
             }
-            "cluster" => {
-                self.delete_cluster(id).await
-            }
-            "instance" => {
-                self.delete_instance(id).await
-            }
-            "operation" => {
-                self.delete_operation(id).await
-            }
-            "backup" => {
-                self.delete_backup(id).await
+            "location" => {
+                self.delete_location(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -279,11 +279,11 @@ impl<'a> Bigtableadmin_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // App_profile resource operations
+    // Instance resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a app_profile resource
-    async fn plan_app_profile(
+    /// Plan changes to a instance resource
+    async fn plan_instance(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -298,8 +298,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new app_profile resource
-    async fn create_app_profile(
+    /// Create a new instance resource
+    async fn create_instance(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -308,8 +308,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a app_profile resource
-    async fn read_app_profile(
+    /// Read a instance resource
+    async fn read_instance(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -318,8 +318,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a app_profile resource
-    async fn update_app_profile(
+    /// Update a instance resource
+    async fn update_instance(
         &self,
         id: &str,
         input: ResourceInput,
@@ -329,8 +329,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a app_profile resource
-    async fn delete_app_profile(
+    /// Delete a instance resource
+    async fn delete_instance(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -340,11 +340,11 @@ impl<'a> Bigtableadmin_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Location resource operations
+    // Schema_bundle resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a location resource
-    async fn plan_location(
+    /// Plan changes to a schema_bundle resource
+    async fn plan_schema_bundle(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -359,8 +359,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new location resource
-    async fn create_location(
+    /// Create a new schema_bundle resource
+    async fn create_schema_bundle(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -369,8 +369,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a location resource
-    async fn read_location(
+    /// Read a schema_bundle resource
+    async fn read_schema_bundle(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -379,8 +379,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a location resource
-    async fn update_location(
+    /// Update a schema_bundle resource
+    async fn update_schema_bundle(
         &self,
         id: &str,
         input: ResourceInput,
@@ -390,8 +390,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a location resource
-    async fn delete_location(
+    /// Delete a schema_bundle resource
+    async fn delete_schema_bundle(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -401,11 +401,11 @@ impl<'a> Bigtableadmin_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Authorized_view resource operations
+    // Cluster resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a authorized_view resource
-    async fn plan_authorized_view(
+    /// Plan changes to a cluster resource
+    async fn plan_cluster(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -420,8 +420,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new authorized_view resource
-    async fn create_authorized_view(
+    /// Create a new cluster resource
+    async fn create_cluster(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -430,8 +430,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a authorized_view resource
-    async fn read_authorized_view(
+    /// Read a cluster resource
+    async fn read_cluster(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -440,8 +440,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a authorized_view resource
-    async fn update_authorized_view(
+    /// Update a cluster resource
+    async fn update_cluster(
         &self,
         id: &str,
         input: ResourceInput,
@@ -451,8 +451,69 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a authorized_view resource
-    async fn delete_authorized_view(
+    /// Delete a cluster resource
+    async fn delete_cluster(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Backup resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a backup resource
+    async fn plan_backup(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new backup resource
+    async fn create_backup(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a backup resource
+    async fn read_backup(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a backup resource
+    async fn update_backup(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a backup resource
+    async fn delete_backup(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -645,11 +706,11 @@ impl<'a> Bigtableadmin_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Schema_bundle resource operations
+    // Operation resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a schema_bundle resource
-    async fn plan_schema_bundle(
+    /// Plan changes to a operation resource
+    async fn plan_operation(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -664,8 +725,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new schema_bundle resource
-    async fn create_schema_bundle(
+    /// Create a new operation resource
+    async fn create_operation(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -674,8 +735,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a schema_bundle resource
-    async fn read_schema_bundle(
+    /// Read a operation resource
+    async fn read_operation(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -684,8 +745,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a schema_bundle resource
-    async fn update_schema_bundle(
+    /// Update a operation resource
+    async fn update_operation(
         &self,
         id: &str,
         input: ResourceInput,
@@ -695,8 +756,130 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a schema_bundle resource
-    async fn delete_schema_bundle(
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Authorized_view resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a authorized_view resource
+    async fn plan_authorized_view(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new authorized_view resource
+    async fn create_authorized_view(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a authorized_view resource
+    async fn read_authorized_view(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a authorized_view resource
+    async fn update_authorized_view(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a authorized_view resource
+    async fn delete_authorized_view(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // App_profile resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a app_profile resource
+    async fn plan_app_profile(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new app_profile resource
+    async fn create_app_profile(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a app_profile resource
+    async fn read_app_profile(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a app_profile resource
+    async fn update_app_profile(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a app_profile resource
+    async fn delete_app_profile(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -767,11 +950,11 @@ impl<'a> Bigtableadmin_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Cluster resource operations
+    // Location resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a cluster resource
-    async fn plan_cluster(
+    /// Plan changes to a location resource
+    async fn plan_location(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -786,8 +969,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new cluster resource
-    async fn create_cluster(
+    /// Create a new location resource
+    async fn create_location(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -796,8 +979,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a cluster resource
-    async fn read_cluster(
+    /// Read a location resource
+    async fn read_location(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -806,8 +989,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a cluster resource
-    async fn update_cluster(
+    /// Update a location resource
+    async fn update_location(
         &self,
         id: &str,
         input: ResourceInput,
@@ -817,191 +1000,8 @@ impl<'a> Bigtableadmin_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a cluster resource
-    async fn delete_cluster(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Instance resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a instance resource
-    async fn plan_instance(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new instance resource
-    async fn create_instance(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a instance resource
-    async fn read_instance(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a instance resource
-    async fn update_instance(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a instance resource
-    async fn delete_instance(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Backup resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a backup resource
-    async fn plan_backup(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new backup resource
-    async fn create_backup(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a backup resource
-    async fn read_backup(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a backup resource
-    async fn update_backup(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a backup resource
-    async fn delete_backup(
+    /// Delete a location resource
+    async fn delete_location(
         &self,
         id: &str,
     ) -> Result<()> {

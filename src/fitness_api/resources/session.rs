@@ -34,7 +34,7 @@ impl<'a> Session<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, active_time_millis: Option<String>, application: Option<String>, description: Option<String>, end_time_millis: Option<String>, id: Option<String>, modified_time_millis: Option<String>, activity_type: Option<i64>, name: Option<String>, start_time_millis: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, start_time_millis: Option<String>, description: Option<String>, name: Option<String>, modified_time_millis: Option<String>, activity_type: Option<i64>, application: Option<String>, active_time_millis: Option<String>, id: Option<String>, end_time_millis: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

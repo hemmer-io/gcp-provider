@@ -33,14 +33,14 @@ impl<'a> Memcache_apiService<'a> {
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
-            "instance" => {
-                self.plan_instance(current_state, desired_input).await
-            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
+            }
+            "instance" => {
+                self.plan_instance(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,14 +66,14 @@ impl<'a> Memcache_apiService<'a> {
             "operation" => {
                 self.create_operation(input).await
             }
-            "instance" => {
-                self.create_instance(input).await
-            }
             "operation" => {
                 self.create_operation(input).await
             }
             "location" => {
                 self.create_location(input).await
+            }
+            "instance" => {
+                self.create_instance(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -99,14 +99,14 @@ impl<'a> Memcache_apiService<'a> {
             "operation" => {
                 self.read_operation(id).await
             }
-            "instance" => {
-                self.read_instance(id).await
-            }
             "operation" => {
                 self.read_operation(id).await
             }
             "location" => {
                 self.read_location(id).await
+            }
+            "instance" => {
+                self.read_instance(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -133,14 +133,14 @@ impl<'a> Memcache_apiService<'a> {
             "operation" => {
                 self.update_operation(id, input).await
             }
-            "instance" => {
-                self.update_instance(id, input).await
-            }
             "operation" => {
                 self.update_operation(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
+            }
+            "instance" => {
+                self.update_instance(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -166,14 +166,14 @@ impl<'a> Memcache_apiService<'a> {
             "operation" => {
                 self.delete_operation(id).await
             }
-            "instance" => {
-                self.delete_instance(id).await
-            }
             "operation" => {
                 self.delete_operation(id).await
             }
             "location" => {
                 self.delete_location(id).await
+            }
+            "instance" => {
+                self.delete_instance(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -372,67 +372,6 @@ impl<'a> Memcache_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Instance resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a instance resource
-    async fn plan_instance(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new instance resource
-    async fn create_instance(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a instance resource
-    async fn read_instance(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a instance resource
-    async fn update_instance(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a instance resource
-    async fn delete_instance(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Operation resource operations
     // ------------------------------------------------------------------------
 
@@ -546,6 +485,67 @@ impl<'a> Memcache_apiService<'a> {
 
     /// Delete a location resource
     async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Instance resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a instance resource
+    async fn plan_instance(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new instance resource
+    async fn create_instance(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a instance resource
+    async fn read_instance(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a instance resource
+    async fn update_instance(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a instance resource
+    async fn delete_instance(
         &self,
         id: &str,
     ) -> Result<()> {

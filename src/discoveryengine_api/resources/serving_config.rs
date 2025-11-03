@@ -21,7 +21,7 @@ impl<'a> Serving_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, search_spec: Option<String>, user_labels: Option<HashMap<String, String>>, asynchronous_mode: Option<bool>, end_user_spec: Option<String>, query_understanding_spec: Option<String>, query: Option<String>, answer_generation_spec: Option<String>, grounding_spec: Option<String>, safety_spec: Option<String>, session: Option<String>, related_questions_spec: Option<String>, user_pseudo_id: Option<String>, serving_config: String) -> Result<String> {
+    pub async fn create(&self, search_spec: Option<String>, answer_generation_spec: Option<String>, end_user_spec: Option<String>, related_questions_spec: Option<String>, session: Option<String>, query: Option<String>, safety_spec: Option<String>, query_understanding_spec: Option<String>, asynchronous_mode: Option<bool>, grounding_spec: Option<String>, user_labels: Option<HashMap<String, String>>, user_pseudo_id: Option<String>, serving_config: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Serving_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, search_spec: Option<String>, user_labels: Option<HashMap<String, String>>, asynchronous_mode: Option<bool>, end_user_spec: Option<String>, query_understanding_spec: Option<String>, query: Option<String>, answer_generation_spec: Option<String>, grounding_spec: Option<String>, safety_spec: Option<String>, session: Option<String>, related_questions_spec: Option<String>, user_pseudo_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, search_spec: Option<String>, answer_generation_spec: Option<String>, end_user_spec: Option<String>, related_questions_spec: Option<String>, session: Option<String>, query: Option<String>, safety_spec: Option<String>, query_understanding_spec: Option<String>, asynchronous_mode: Option<bool>, grounding_spec: Option<String>, user_labels: Option<HashMap<String, String>>, user_pseudo_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

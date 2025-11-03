@@ -27,11 +27,11 @@ impl<'a> Keep_apiService<'a> {
             "media" => {
                 self.plan_media(current_state, desired_input).await
             }
-            "permission" => {
-                self.plan_permission(current_state, desired_input).await
-            }
             "note" => {
                 self.plan_note(current_state, desired_input).await
+            }
+            "permission" => {
+                self.plan_permission(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -51,11 +51,11 @@ impl<'a> Keep_apiService<'a> {
             "media" => {
                 self.create_media(input).await
             }
-            "permission" => {
-                self.create_permission(input).await
-            }
             "note" => {
                 self.create_note(input).await
+            }
+            "permission" => {
+                self.create_permission(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -75,11 +75,11 @@ impl<'a> Keep_apiService<'a> {
             "media" => {
                 self.read_media(id).await
             }
-            "permission" => {
-                self.read_permission(id).await
-            }
             "note" => {
                 self.read_note(id).await
+            }
+            "permission" => {
+                self.read_permission(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -100,11 +100,11 @@ impl<'a> Keep_apiService<'a> {
             "media" => {
                 self.update_media(id, input).await
             }
-            "permission" => {
-                self.update_permission(id, input).await
-            }
             "note" => {
                 self.update_note(id, input).await
+            }
+            "permission" => {
+                self.update_permission(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,11 +124,11 @@ impl<'a> Keep_apiService<'a> {
             "media" => {
                 self.delete_media(id).await
             }
-            "permission" => {
-                self.delete_permission(id).await
-            }
             "note" => {
                 self.delete_note(id).await
+            }
+            "permission" => {
+                self.delete_permission(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -205,67 +205,6 @@ impl<'a> Keep_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Permission resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a permission resource
-    async fn plan_permission(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new permission resource
-    async fn create_permission(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a permission resource
-    async fn read_permission(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a permission resource
-    async fn update_permission(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a permission resource
-    async fn delete_permission(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Note resource operations
     // ------------------------------------------------------------------------
 
@@ -318,6 +257,67 @@ impl<'a> Keep_apiService<'a> {
 
     /// Delete a note resource
     async fn delete_note(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Permission resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a permission resource
+    async fn plan_permission(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new permission resource
+    async fn create_permission(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a permission resource
+    async fn read_permission(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a permission resource
+    async fn update_permission(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a permission resource
+    async fn delete_permission(
         &self,
         id: &str,
     ) -> Result<()> {

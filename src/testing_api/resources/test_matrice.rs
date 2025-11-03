@@ -21,7 +21,7 @@ impl<'a> Test_matrice<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, timestamp: Option<String>, flaky_test_attempts: Option<i64>, invalid_matrix_details: Option<String>, test_specification: Option<String>, fail_fast: Option<bool>, extended_invalid_matrix_details: Option<Vec<String>>, client_info: Option<String>, project_id: Option<String>, result_storage: Option<String>, state: Option<String>, outcome_summary: Option<String>, test_executions: Option<Vec<String>>, test_matrix_id: Option<String>, environment_matrix: Option<String>, project_id: String) -> Result<String> {
+    pub async fn create(&self, fail_fast: Option<bool>, flaky_test_attempts: Option<i64>, test_executions: Option<Vec<String>>, outcome_summary: Option<String>, client_info: Option<String>, extended_invalid_matrix_details: Option<Vec<String>>, state: Option<String>, invalid_matrix_details: Option<String>, test_specification: Option<String>, timestamp: Option<String>, test_matrix_id: Option<String>, environment_matrix: Option<String>, result_storage: Option<String>, project_id: Option<String>, project_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

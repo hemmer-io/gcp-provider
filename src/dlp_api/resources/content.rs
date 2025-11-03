@@ -21,7 +21,7 @@ impl<'a> Content<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, deidentify_template_name: Option<String>, item: Option<String>, inspect_config: Option<String>, location_id: Option<String>, deidentify_config: Option<String>, inspect_template_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, item: Option<String>, deidentify_template_name: Option<String>, inspect_template_name: Option<String>, location_id: Option<String>, inspect_config: Option<String>, deidentify_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

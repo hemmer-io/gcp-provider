@@ -21,7 +21,7 @@ impl<'a> History<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, uaqi_color_palette: Option<String>, custom_local_aqis: Option<Vec<String>>, page_token: Option<String>, period: Option<String>, language_code: Option<String>, universal_aqi: Option<bool>, hours: Option<i64>, date_time: Option<String>, location: Option<String>, extra_computations: Option<Vec<String>>, page_size: Option<i64>) -> Result<String> {
+    pub async fn create(&self, location: Option<String>, uaqi_color_palette: Option<String>, page_token: Option<String>, date_time: Option<String>, universal_aqi: Option<bool>, period: Option<String>, custom_local_aqis: Option<Vec<String>>, hours: Option<i64>, page_size: Option<i64>, language_code: Option<String>, extra_computations: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

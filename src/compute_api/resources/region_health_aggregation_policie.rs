@@ -22,7 +22,7 @@ impl<'a> Region_health_aggregation_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, creation_timestamp: Option<String>, healthy_percent_threshold: Option<i64>, min_healthy_threshold: Option<i64>, policy_type: Option<String>, id: Option<String>, description: Option<String>, name: Option<String>, fingerprint: Option<String>, self_link_with_id: Option<String>, region: Option<String>, self_link: Option<String>, kind: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, self_link: Option<String>, creation_timestamp: Option<String>, self_link_with_id: Option<String>, policy_type: Option<String>, fingerprint: Option<String>, healthy_percent_threshold: Option<i64>, id: Option<String>, min_healthy_threshold: Option<i64>, name: Option<String>, region: Option<String>, description: Option<String>, kind: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Region_health_aggregation_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, creation_timestamp: Option<String>, healthy_percent_threshold: Option<i64>, min_healthy_threshold: Option<i64>, policy_type: Option<String>, id: Option<String>, description: Option<String>, name: Option<String>, fingerprint: Option<String>, self_link_with_id: Option<String>, region: Option<String>, self_link: Option<String>, kind: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, self_link: Option<String>, creation_timestamp: Option<String>, self_link_with_id: Option<String>, policy_type: Option<String>, fingerprint: Option<String>, healthy_percent_threshold: Option<i64>, id: Option<String>, min_healthy_threshold: Option<i64>, name: Option<String>, region: Option<String>, description: Option<String>, kind: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

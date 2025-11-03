@@ -36,17 +36,17 @@ impl<'a> Assuredworkloads_apiService<'a> {
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
-            "update" => {
-                self.plan_update(current_state, desired_input).await
+            "workload" => {
+                self.plan_workload(current_state, desired_input).await
             }
             "violation" => {
                 self.plan_violation(current_state, desired_input).await
             }
-            "workload" => {
-                self.plan_workload(current_state, desired_input).await
-            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
+            }
+            "update" => {
+                self.plan_update(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -75,17 +75,17 @@ impl<'a> Assuredworkloads_apiService<'a> {
             "operation" => {
                 self.create_operation(input).await
             }
-            "update" => {
-                self.create_update(input).await
+            "workload" => {
+                self.create_workload(input).await
             }
             "violation" => {
                 self.create_violation(input).await
             }
-            "workload" => {
-                self.create_workload(input).await
-            }
             "operation" => {
                 self.create_operation(input).await
+            }
+            "update" => {
+                self.create_update(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -114,17 +114,17 @@ impl<'a> Assuredworkloads_apiService<'a> {
             "operation" => {
                 self.read_operation(id).await
             }
-            "update" => {
-                self.read_update(id).await
+            "workload" => {
+                self.read_workload(id).await
             }
             "violation" => {
                 self.read_violation(id).await
             }
-            "workload" => {
-                self.read_workload(id).await
-            }
             "operation" => {
                 self.read_operation(id).await
+            }
+            "update" => {
+                self.read_update(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -154,17 +154,17 @@ impl<'a> Assuredworkloads_apiService<'a> {
             "operation" => {
                 self.update_operation(id, input).await
             }
-            "update" => {
-                self.update_update(id, input).await
+            "workload" => {
+                self.update_workload(id, input).await
             }
             "violation" => {
                 self.update_violation(id, input).await
             }
-            "workload" => {
-                self.update_workload(id, input).await
-            }
             "operation" => {
                 self.update_operation(id, input).await
+            }
+            "update" => {
+                self.update_update(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -193,17 +193,17 @@ impl<'a> Assuredworkloads_apiService<'a> {
             "operation" => {
                 self.delete_operation(id).await
             }
-            "update" => {
-                self.delete_update(id).await
+            "workload" => {
+                self.delete_workload(id).await
             }
             "violation" => {
                 self.delete_violation(id).await
             }
-            "workload" => {
-                self.delete_workload(id).await
-            }
             "operation" => {
                 self.delete_operation(id).await
+            }
+            "update" => {
+                self.delete_update(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -463,11 +463,11 @@ impl<'a> Assuredworkloads_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Update resource operations
+    // Workload resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a update resource
-    async fn plan_update(
+    /// Plan changes to a workload resource
+    async fn plan_workload(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -482,8 +482,8 @@ impl<'a> Assuredworkloads_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new update resource
-    async fn create_update(
+    /// Create a new workload resource
+    async fn create_workload(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -492,8 +492,8 @@ impl<'a> Assuredworkloads_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a update resource
-    async fn read_update(
+    /// Read a workload resource
+    async fn read_workload(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -502,8 +502,8 @@ impl<'a> Assuredworkloads_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a update resource
-    async fn update_update(
+    /// Update a workload resource
+    async fn update_workload(
         &self,
         id: &str,
         input: ResourceInput,
@@ -513,8 +513,8 @@ impl<'a> Assuredworkloads_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a update resource
-    async fn delete_update(
+    /// Delete a workload resource
+    async fn delete_workload(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -585,67 +585,6 @@ impl<'a> Assuredworkloads_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Workload resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a workload resource
-    async fn plan_workload(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new workload resource
-    async fn create_workload(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a workload resource
-    async fn read_workload(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a workload resource
-    async fn update_workload(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a workload resource
-    async fn delete_workload(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Operation resource operations
     // ------------------------------------------------------------------------
 
@@ -698,6 +637,67 @@ impl<'a> Assuredworkloads_apiService<'a> {
 
     /// Delete a operation resource
     async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Update resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a update resource
+    async fn plan_update(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new update resource
+    async fn create_update(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a update resource
+    async fn read_update(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a update resource
+    async fn update_update(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a update resource
+    async fn delete_update(
         &self,
         id: &str,
     ) -> Result<()> {

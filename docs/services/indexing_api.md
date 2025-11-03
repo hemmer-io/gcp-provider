@@ -27,9 +27,9 @@ Notifies that a URL has been updated or deleted.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `type` | String |  | The URL life cycle event that Google is being notified about. |
-| `notify_time` | String |  | Creation timestamp for this notification. Users should _not_ specify it, the field is ignored at the request time. |
 | `url` | String |  | The object of this notification. The URL must be owned by the publisher of this notification and, in case of `URL_UPDATED` notifications, it _must_ be crawlable by Google. |
+| `notify_time` | String |  | Creation timestamp for this notification. Users should _not_ specify it, the field is ignored at the request time. |
+| `type` | String |  | The URL life cycle event that Google is being notified about. |
 
 
 #### Outputs
@@ -37,8 +37,8 @@ Notifies that a URL has been updated or deleted.
 | Output | Type | Description |
 |--------|------|-------------|
 | `latest_update` | String | Latest notification received with type `URL_UPDATED`. |
-| `latest_remove` | String | Latest notification received with type `URL_REMOVED`. |
 | `url` | String | URL to which this metadata refers. |
+| `latest_remove` | String | Latest notification received with type `URL_REMOVED`. |
 
 
 #### Usage Example
@@ -59,8 +59,8 @@ url_notification = provider.indexing_api.Url_notification {
 # Access url_notification outputs
 url_notification_id = url_notification.id
 url_notification_latest_update = url_notification.latest_update
-url_notification_latest_remove = url_notification.latest_remove
 url_notification_url = url_notification.url
+url_notification_latest_remove = url_notification.latest_remove
 ```
 
 ---

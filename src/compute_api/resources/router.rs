@@ -22,7 +22,7 @@ impl<'a> Router<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, nats: Option<Vec<String>>, kind: Option<String>, ncc_gateway: Option<String>, md5_authentication_keys: Option<Vec<String>>, name: Option<String>, bgp_peers: Option<Vec<String>>, region: Option<String>, self_link: Option<String>, id: Option<String>, creation_timestamp: Option<String>, interfaces: Option<Vec<String>>, params: Option<String>, network: Option<String>, bgp: Option<String>, encrypted_interconnect_router: Option<bool>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, params: Option<String>, name: Option<String>, self_link: Option<String>, md5_authentication_keys: Option<Vec<String>>, kind: Option<String>, id: Option<String>, ncc_gateway: Option<String>, interfaces: Option<Vec<String>>, bgp_peers: Option<Vec<String>>, network: Option<String>, description: Option<String>, bgp: Option<String>, creation_timestamp: Option<String>, encrypted_interconnect_router: Option<bool>, nats: Option<Vec<String>>, region: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Router<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, nats: Option<Vec<String>>, kind: Option<String>, ncc_gateway: Option<String>, md5_authentication_keys: Option<Vec<String>>, name: Option<String>, bgp_peers: Option<Vec<String>>, region: Option<String>, self_link: Option<String>, id: Option<String>, creation_timestamp: Option<String>, interfaces: Option<Vec<String>>, params: Option<String>, network: Option<String>, bgp: Option<String>, encrypted_interconnect_router: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, params: Option<String>, name: Option<String>, self_link: Option<String>, md5_authentication_keys: Option<Vec<String>>, kind: Option<String>, id: Option<String>, ncc_gateway: Option<String>, interfaces: Option<Vec<String>>, bgp_peers: Option<Vec<String>>, network: Option<String>, description: Option<String>, bgp: Option<String>, creation_timestamp: Option<String>, encrypted_interconnect_router: Option<bool>, nats: Option<Vec<String>>, region: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

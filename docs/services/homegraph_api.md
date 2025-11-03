@@ -10,48 +10,12 @@
 
 The homegraph_api service provides access to 2 resource types:
 
-- [Device](#device) [C]
 - [Agent_user](#agent_user) [D]
+- [Device](#device) [C]
 
 ---
 
 ## Resources
-
-
-### Device
-
-Gets the current states in Home Graph for the given set of the third-party user's devices. The third-party user's identity is passed in via the `agent_user_id` (see QueryRequest). This request must be authorized using service account credentials from your Actions console project.
-
-**Operations**: ✅ Create
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `inputs` | Vec<String> |  | Required. Inputs containing third-party device IDs for which to get the device states. |
-| `agent_user_id` | String |  | Required. Third-party user ID. |
-| `request_id` | String |  | Request ID used for debugging. |
-
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create device
-device = provider.homegraph_api.Device {
-}
-
-```
-
----
 
 
 ### Agent_user
@@ -83,6 +47,42 @@ provider = gcp.GcpProvider {
 ---
 
 
+### Device
+
+Gets the current states in Home Graph for the given set of the third-party user's devices. The third-party user's identity is passed in via the `agent_user_id` (see QueryRequest). This request must be authorized using service account credentials from your Actions console project.
+
+**Operations**: ✅ Create
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `request_id` | String |  | Request ID used for debugging. |
+| `agent_user_id` | String |  | Required. Third-party user ID. |
+| `inputs` | Vec<String> |  | Required. Inputs containing third-party device IDs for which to get the device states. |
+
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create device
+device = provider.homegraph_api.Device {
+}
+
+```
+
+---
+
+
 
 ## Common Operations
 
@@ -95,12 +95,12 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple device resources
-device_0 = provider.homegraph_api.Device {
+# Create multiple agent_user resources
+agent_user_0 = provider.homegraph_api.Agent_user {
 }
-device_1 = provider.homegraph_api.Device {
+agent_user_1 = provider.homegraph_api.Agent_user {
 }
-device_2 = provider.homegraph_api.Device {
+agent_user_2 = provider.homegraph_api.Agent_user {
 }
 ```
 
@@ -109,7 +109,7 @@ device_2 = provider.homegraph_api.Device {
 ```kcl
 # Only create in production
 if environment == "production":
-    device = provider.homegraph_api.Device {
+    agent_user = provider.homegraph_api.Agent_user {
     }
 ```
 

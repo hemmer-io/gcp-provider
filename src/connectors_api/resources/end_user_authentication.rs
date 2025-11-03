@@ -21,7 +21,7 @@ impl<'a> End_user_authentication<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, status: Option<String>, config_variables: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, roles: Option<Vec<String>>, update_time: Option<String>, destination_configs: Option<Vec<String>>, end_user_authentication_config: Option<String>, notify_endpoint_destination: Option<String>, labels: Option<Vec<String>>, user_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, config_variables: Option<Vec<String>>, update_time: Option<String>, roles: Option<Vec<String>>, destination_configs: Option<Vec<String>>, user_id: Option<String>, status: Option<String>, labels: Option<Vec<String>>, notify_endpoint_destination: Option<String>, create_time: Option<String>, name: Option<String>, end_user_authentication_config: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> End_user_authentication<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, status: Option<String>, config_variables: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, roles: Option<Vec<String>>, update_time: Option<String>, destination_configs: Option<Vec<String>>, end_user_authentication_config: Option<String>, notify_endpoint_destination: Option<String>, labels: Option<Vec<String>>, user_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, config_variables: Option<Vec<String>>, update_time: Option<String>, roles: Option<Vec<String>>, destination_configs: Option<Vec<String>>, user_id: Option<String>, status: Option<String>, labels: Option<Vec<String>>, notify_endpoint_destination: Option<String>, create_time: Option<String>, name: Option<String>, end_user_authentication_config: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

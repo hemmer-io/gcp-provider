@@ -21,7 +21,7 @@ impl<'a> Job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, bucket_list: Option<String>, create_time: Option<String>, put_object_hold: Option<String>, error_summaries: Option<Vec<String>>, complete_time: Option<String>, delete_object: Option<String>, name: Option<String>, put_metadata: Option<String>, state: Option<String>, rewrite_object: Option<String>, logging_config: Option<String>, schedule_time: Option<String>, counters: Option<String>, description: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, description: Option<String>, put_metadata: Option<String>, schedule_time: Option<String>, counters: Option<String>, delete_object: Option<String>, logging_config: Option<String>, complete_time: Option<String>, error_summaries: Option<Vec<String>>, put_object_hold: Option<String>, bucket_list: Option<String>, rewrite_object: Option<String>, create_time: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Billing_assignment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, campaign_id: Option<String>, advertiser_id: Option<String>, subaccount_id: Option<String>, account_id: Option<String>, billing_profile_id: String, profile_id: String) -> Result<String> {
+    pub async fn create(&self, campaign_id: Option<String>, kind: Option<String>, advertiser_id: Option<String>, subaccount_id: Option<String>, account_id: Option<String>, billing_profile_id: String, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

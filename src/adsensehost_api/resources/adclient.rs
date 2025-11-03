@@ -1,6 +1,6 @@
 //! Adclient resource
 //!
-//! Get information about one of the ad clients in the specified publisher's AdSense account.
+//! Get information about one of the ad clients in the Host AdSense account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

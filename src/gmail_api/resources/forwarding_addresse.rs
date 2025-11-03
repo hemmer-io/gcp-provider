@@ -21,7 +21,7 @@ impl<'a> Forwarding_addresse<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, verification_status: Option<String>, forwarding_email: Option<String>, user_id: String) -> Result<String> {
+    pub async fn create(&self, forwarding_email: Option<String>, verification_status: Option<String>, user_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

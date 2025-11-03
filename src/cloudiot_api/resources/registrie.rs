@@ -21,7 +21,7 @@ impl<'a> Registrie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, event_notification_configs: Option<Vec<String>>, http_config: Option<String>, credentials: Option<Vec<String>>, mqtt_config: Option<String>, name: Option<String>, id: Option<String>, state_notification_config: Option<String>, log_level: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, credentials: Option<Vec<String>>, mqtt_config: Option<String>, name: Option<String>, http_config: Option<String>, state_notification_config: Option<String>, log_level: Option<String>, event_notification_configs: Option<Vec<String>>, id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Registrie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, event_notification_configs: Option<Vec<String>>, http_config: Option<String>, credentials: Option<Vec<String>>, mqtt_config: Option<String>, name: Option<String>, id: Option<String>, state_notification_config: Option<String>, log_level: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, credentials: Option<Vec<String>>, mqtt_config: Option<String>, name: Option<String>, http_config: Option<String>, state_notification_config: Option<String>, log_level: Option<String>, event_notification_configs: Option<Vec<String>>, id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

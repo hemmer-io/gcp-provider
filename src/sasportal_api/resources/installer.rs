@@ -1,6 +1,6 @@
 //! Installer resource
 //!
-//! Validates the identity of a Certified Professional Installer (CPI).
+//! Generates a secret to be used with the ValidateInstaller.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Installer<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, secret: Option<String>, encoded_secret: Option<String>, installer_id: Option<String>) -> Result<String> {
+    pub async fn create(&self) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

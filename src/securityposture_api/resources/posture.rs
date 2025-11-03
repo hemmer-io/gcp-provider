@@ -21,7 +21,7 @@ impl<'a> Posture<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, update_time: Option<String>, name: Option<String>, etag: Option<String>, annotations: Option<HashMap<String, String>>, revision_id: Option<String>, create_time: Option<String>, state: Option<String>, reconciling: Option<bool>, policy_sets: Option<Vec<String>>, description: Option<String>, categories: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, description: Option<String>, name: Option<String>, annotations: Option<HashMap<String, String>>, etag: Option<String>, create_time: Option<String>, policy_sets: Option<Vec<String>>, categories: Option<Vec<String>>, reconciling: Option<bool>, revision_id: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Posture<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, update_time: Option<String>, name: Option<String>, etag: Option<String>, annotations: Option<HashMap<String, String>>, revision_id: Option<String>, create_time: Option<String>, state: Option<String>, reconciling: Option<bool>, policy_sets: Option<Vec<String>>, description: Option<String>, categories: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, update_time: Option<String>, description: Option<String>, name: Option<String>, annotations: Option<HashMap<String, String>>, etag: Option<String>, create_time: Option<String>, policy_sets: Option<Vec<String>>, categories: Option<Vec<String>>, reconciling: Option<bool>, revision_id: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

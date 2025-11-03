@@ -1,6 +1,6 @@
 //! Setting resource
 //!
-//! Gets POP settings.
+//! Gets vacation responder settings.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -34,7 +34,7 @@ impl<'a> Setting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, access_window: Option<String>, disposition: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, response_body_html: Option<String>, response_body_plain_text: Option<String>, restrict_to_domain: Option<bool>, response_subject: Option<String>, start_time: Option<String>, enable_auto_reply: Option<bool>, restrict_to_contacts: Option<bool>, end_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

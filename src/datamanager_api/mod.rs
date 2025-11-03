@@ -24,11 +24,11 @@ impl<'a> Datamanager_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "request_statu" => {
-                self.plan_request_statu(current_state, desired_input).await
-            }
             "event" => {
                 self.plan_event(current_state, desired_input).await
+            }
+            "request_statu" => {
+                self.plan_request_statu(current_state, desired_input).await
             }
             "audience_member" => {
                 self.plan_audience_member(current_state, desired_input).await
@@ -48,11 +48,11 @@ impl<'a> Datamanager_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "request_statu" => {
-                self.create_request_statu(input).await
-            }
             "event" => {
                 self.create_event(input).await
+            }
+            "request_statu" => {
+                self.create_request_statu(input).await
             }
             "audience_member" => {
                 self.create_audience_member(input).await
@@ -72,11 +72,11 @@ impl<'a> Datamanager_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "request_statu" => {
-                self.read_request_statu(id).await
-            }
             "event" => {
                 self.read_event(id).await
+            }
+            "request_statu" => {
+                self.read_request_statu(id).await
             }
             "audience_member" => {
                 self.read_audience_member(id).await
@@ -97,11 +97,11 @@ impl<'a> Datamanager_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "request_statu" => {
-                self.update_request_statu(id, input).await
-            }
             "event" => {
                 self.update_event(id, input).await
+            }
+            "request_statu" => {
+                self.update_request_statu(id, input).await
             }
             "audience_member" => {
                 self.update_audience_member(id, input).await
@@ -121,11 +121,11 @@ impl<'a> Datamanager_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "request_statu" => {
-                self.delete_request_statu(id).await
-            }
             "event" => {
                 self.delete_event(id).await
+            }
+            "request_statu" => {
+                self.delete_request_statu(id).await
             }
             "audience_member" => {
                 self.delete_audience_member(id).await
@@ -141,67 +141,6 @@ impl<'a> Datamanager_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Request_statu resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a request_statu resource
-    async fn plan_request_statu(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new request_statu resource
-    async fn create_request_statu(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a request_statu resource
-    async fn read_request_statu(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a request_statu resource
-    async fn update_request_statu(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a request_statu resource
-    async fn delete_request_statu(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -257,6 +196,67 @@ impl<'a> Datamanager_apiService<'a> {
 
     /// Delete a event resource
     async fn delete_event(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Request_statu resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a request_statu resource
+    async fn plan_request_statu(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new request_statu resource
+    async fn create_request_statu(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a request_statu resource
+    async fn read_request_statu(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a request_statu resource
+    async fn update_request_statu(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a request_statu resource
+    async fn delete_request_statu(
         &self,
         id: &str,
     ) -> Result<()> {

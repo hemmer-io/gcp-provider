@@ -24,11 +24,11 @@ impl<'a> Clouddebugger_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "breakpoint" => {
-                self.plan_breakpoint(current_state, desired_input).await
-            }
             "debuggee" => {
                 self.plan_debuggee(current_state, desired_input).await
+            }
+            "breakpoint" => {
+                self.plan_breakpoint(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -45,11 +45,11 @@ impl<'a> Clouddebugger_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "breakpoint" => {
-                self.create_breakpoint(input).await
-            }
             "debuggee" => {
                 self.create_debuggee(input).await
+            }
+            "breakpoint" => {
+                self.create_breakpoint(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,11 +66,11 @@ impl<'a> Clouddebugger_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "breakpoint" => {
-                self.read_breakpoint(id).await
-            }
             "debuggee" => {
                 self.read_debuggee(id).await
+            }
+            "breakpoint" => {
+                self.read_breakpoint(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -88,11 +88,11 @@ impl<'a> Clouddebugger_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "breakpoint" => {
-                self.update_breakpoint(id, input).await
-            }
             "debuggee" => {
                 self.update_debuggee(id, input).await
+            }
+            "breakpoint" => {
+                self.update_breakpoint(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -109,11 +109,11 @@ impl<'a> Clouddebugger_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "breakpoint" => {
-                self.delete_breakpoint(id).await
-            }
             "debuggee" => {
                 self.delete_debuggee(id).await
+            }
+            "breakpoint" => {
+                self.delete_breakpoint(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -126,67 +126,6 @@ impl<'a> Clouddebugger_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Breakpoint resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a breakpoint resource
-    async fn plan_breakpoint(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new breakpoint resource
-    async fn create_breakpoint(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a breakpoint resource
-    async fn read_breakpoint(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a breakpoint resource
-    async fn update_breakpoint(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a breakpoint resource
-    async fn delete_breakpoint(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -242,6 +181,67 @@ impl<'a> Clouddebugger_apiService<'a> {
 
     /// Delete a debuggee resource
     async fn delete_debuggee(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Breakpoint resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a breakpoint resource
+    async fn plan_breakpoint(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new breakpoint resource
+    async fn create_breakpoint(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a breakpoint resource
+    async fn read_breakpoint(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a breakpoint resource
+    async fn update_breakpoint(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a breakpoint resource
+    async fn delete_breakpoint(
         &self,
         id: &str,
     ) -> Result<()> {

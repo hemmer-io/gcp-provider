@@ -1,6 +1,6 @@
 //! Program resource
 //!
-//! Enable participation in the specified program for the account.
+//! Disable participation in the specified program for the account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

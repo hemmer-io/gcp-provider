@@ -21,7 +21,7 @@ impl<'a> Image<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, deidentify_template: Option<String>, image_redaction_configs: Option<Vec<String>>, include_findings: Option<bool>, byte_item: Option<String>, location_id: Option<String>, inspect_config: Option<String>, inspect_template: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, location_id: Option<String>, inspect_config: Option<String>, deidentify_template: Option<String>, image_redaction_configs: Option<Vec<String>>, byte_item: Option<String>, include_findings: Option<bool>, inspect_template: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

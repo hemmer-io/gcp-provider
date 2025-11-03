@@ -21,7 +21,7 @@ impl<'a> Private_content<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, external_pass_id: Option<String>, update_uri: Option<String>, updated_pass_jwt_signature: Option<String>) -> Result<String> {
+    pub async fn create(&self, update_uri: Option<String>, updated_pass_jwt_signature: Option<String>, external_pass_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

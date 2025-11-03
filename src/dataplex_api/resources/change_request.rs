@@ -21,7 +21,7 @@ impl<'a> Change_request<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, policy: Option<String>, update_mask: Option<String>, resource: String) -> Result<String> {
+    pub async fn create(&self, update_mask: Option<String>, policy: Option<String>, resource: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

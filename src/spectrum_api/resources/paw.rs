@@ -1,6 +1,6 @@
 //! Paw resource
 //!
-//! The Google Spectrum Database does not support batch requests, so this method always yields an UNIMPLEMENTED error.
+//! Requests information about the available spectrum for a device at a location. Requests from a fixed-mode device must include owner information so the device can be registered with the database.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Paw<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, request_type: Option<String>, type: Option<String>, capabilities: Option<String>, master_device_desc: Option<String>, locations: Option<Vec<String>>, antenna: Option<String>, device_desc: Option<String>, owner: Option<String>, version: Option<String>) -> Result<String> {
+    pub async fn create(&self, version: Option<String>, request_type: Option<String>, antenna: Option<String>, capabilities: Option<String>, location: Option<String>, master_device_desc: Option<String>, owner: Option<String>, device_desc: Option<String>, type: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

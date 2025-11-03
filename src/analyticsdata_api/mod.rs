@@ -30,11 +30,11 @@ impl<'a> Analyticsdata_apiService<'a> {
             "analyticsdata" => {
                 self.plan_analyticsdata(current_state, desired_input).await
             }
-            "audience_export" => {
-                self.plan_audience_export(current_state, desired_input).await
-            }
             "propertie" => {
                 self.plan_propertie(current_state, desired_input).await
+            }
+            "audience_export" => {
+                self.plan_audience_export(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,11 +57,11 @@ impl<'a> Analyticsdata_apiService<'a> {
             "analyticsdata" => {
                 self.create_analyticsdata(input).await
             }
-            "audience_export" => {
-                self.create_audience_export(input).await
-            }
             "propertie" => {
                 self.create_propertie(input).await
+            }
+            "audience_export" => {
+                self.create_audience_export(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -84,11 +84,11 @@ impl<'a> Analyticsdata_apiService<'a> {
             "analyticsdata" => {
                 self.read_analyticsdata(id).await
             }
-            "audience_export" => {
-                self.read_audience_export(id).await
-            }
             "propertie" => {
                 self.read_propertie(id).await
+            }
+            "audience_export" => {
+                self.read_audience_export(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -112,11 +112,11 @@ impl<'a> Analyticsdata_apiService<'a> {
             "analyticsdata" => {
                 self.update_analyticsdata(id, input).await
             }
-            "audience_export" => {
-                self.update_audience_export(id, input).await
-            }
             "propertie" => {
                 self.update_propertie(id, input).await
+            }
+            "audience_export" => {
+                self.update_audience_export(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -139,11 +139,11 @@ impl<'a> Analyticsdata_apiService<'a> {
             "analyticsdata" => {
                 self.delete_analyticsdata(id).await
             }
-            "audience_export" => {
-                self.delete_audience_export(id).await
-            }
             "propertie" => {
                 self.delete_propertie(id).await
+            }
+            "audience_export" => {
+                self.delete_audience_export(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -281,67 +281,6 @@ impl<'a> Analyticsdata_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Audience_export resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a audience_export resource
-    async fn plan_audience_export(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new audience_export resource
-    async fn create_audience_export(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a audience_export resource
-    async fn read_audience_export(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a audience_export resource
-    async fn update_audience_export(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a audience_export resource
-    async fn delete_audience_export(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Propertie resource operations
     // ------------------------------------------------------------------------
 
@@ -394,6 +333,67 @@ impl<'a> Analyticsdata_apiService<'a> {
 
     /// Delete a propertie resource
     async fn delete_propertie(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Audience_export resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a audience_export resource
+    async fn plan_audience_export(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new audience_export resource
+    async fn create_audience_export(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a audience_export resource
+    async fn read_audience_export(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a audience_export resource
+    async fn update_audience_export(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a audience_export resource
+    async fn delete_audience_export(
         &self,
         id: &str,
     ) -> Result<()> {

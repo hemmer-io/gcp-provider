@@ -21,7 +21,7 @@ impl<'a> Reaction<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, user: Option<String>, emoji: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, emoji: Option<String>, name: Option<String>, user: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Time_serie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, metadata: Option<String>, value_type: Option<String>, name: Option<String>, create_time: Option<String>, etag: Option<String>, description: Option<String>, plugin_data: Option<String>, update_time: Option<String>, plugin_name: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, value_type: Option<String>, update_time: Option<String>, description: Option<String>, metadata: Option<String>, name: Option<String>, display_name: Option<String>, plugin_name: Option<String>, etag: Option<String>, plugin_data: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Time_serie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, metadata: Option<String>, value_type: Option<String>, name: Option<String>, create_time: Option<String>, etag: Option<String>, description: Option<String>, plugin_data: Option<String>, update_time: Option<String>, plugin_name: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, value_type: Option<String>, update_time: Option<String>, description: Option<String>, metadata: Option<String>, name: Option<String>, display_name: Option<String>, plugin_name: Option<String>, etag: Option<String>, plugin_data: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

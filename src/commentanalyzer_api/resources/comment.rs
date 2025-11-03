@@ -1,6 +1,6 @@
 //! Comment resource
 //!
-//! Suggest comment scores as training data.
+//! Analyzes the provided text and returns scores for requested attributes.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Comment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, attribute_scores: Option<HashMap<String, String>>, comment: Option<String>, languages: Option<Vec<String>>, context: Option<String>, client_token: Option<String>, session_id: Option<String>, community_id: Option<String>) -> Result<String> {
+    pub async fn create(&self, session_id: Option<String>, span_annotations: Option<bool>, languages: Option<Vec<String>>, requested_attributes: Option<HashMap<String, String>>, client_token: Option<String>, comment: Option<String>, community_id: Option<String>, context: Option<String>, do_not_store: Option<bool>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

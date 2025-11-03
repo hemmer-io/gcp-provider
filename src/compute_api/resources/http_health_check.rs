@@ -22,7 +22,7 @@ impl<'a> Http_health_check<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<String>, creation_timestamp: Option<String>, kind: Option<String>, description: Option<String>, name: Option<String>, port: Option<i64>, healthy_threshold: Option<i64>, request_path: Option<String>, self_link: Option<String>, unhealthy_threshold: Option<i64>, timeout_sec: Option<i64>, check_interval_sec: Option<i64>, host: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, creation_timestamp: Option<String>, healthy_threshold: Option<i64>, description: Option<String>, host: Option<String>, id: Option<String>, port: Option<i64>, request_path: Option<String>, self_link: Option<String>, timeout_sec: Option<i64>, unhealthy_threshold: Option<i64>, check_interval_sec: Option<i64>, name: Option<String>, kind: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Http_health_check<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, id: Option<String>, creation_timestamp: Option<String>, kind: Option<String>, description: Option<String>, name: Option<String>, port: Option<i64>, healthy_threshold: Option<i64>, request_path: Option<String>, self_link: Option<String>, unhealthy_threshold: Option<i64>, timeout_sec: Option<i64>, check_interval_sec: Option<i64>, host: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, creation_timestamp: Option<String>, healthy_threshold: Option<i64>, description: Option<String>, host: Option<String>, id: Option<String>, port: Option<i64>, request_path: Option<String>, self_link: Option<String>, timeout_sec: Option<i64>, unhealthy_threshold: Option<i64>, check_interval_sec: Option<i64>, name: Option<String>, kind: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

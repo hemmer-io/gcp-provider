@@ -24,14 +24,20 @@ impl<'a> Servicenetworking_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "dns_record_set" => {
-                self.plan_dns_record_set(current_state, desired_input).await
+            "peered_dns_domain" => {
+                self.plan_peered_dns_domain(current_state, desired_input).await
+            }
+            "network" => {
+                self.plan_network(current_state, desired_input).await
+            }
+            "connection" => {
+                self.plan_connection(current_state, desired_input).await
             }
             "service" => {
                 self.plan_service(current_state, desired_input).await
             }
-            "network" => {
-                self.plan_network(current_state, desired_input).await
+            "dns_record_set" => {
+                self.plan_dns_record_set(current_state, desired_input).await
             }
             "role" => {
                 self.plan_role(current_state, desired_input).await
@@ -39,20 +45,14 @@ impl<'a> Servicenetworking_apiService<'a> {
             "dns_zone" => {
                 self.plan_dns_zone(current_state, desired_input).await
             }
-            "peered_dns_domain" => {
-                self.plan_peered_dns_domain(current_state, desired_input).await
-            }
-            "connection" => {
-                self.plan_connection(current_state, desired_input).await
-            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
-            "connection" => {
-                self.plan_connection(current_state, desired_input).await
-            }
             "service" => {
                 self.plan_service(current_state, desired_input).await
+            }
+            "connection" => {
+                self.plan_connection(current_state, desired_input).await
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
@@ -72,14 +72,20 @@ impl<'a> Servicenetworking_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "dns_record_set" => {
-                self.create_dns_record_set(input).await
+            "peered_dns_domain" => {
+                self.create_peered_dns_domain(input).await
+            }
+            "network" => {
+                self.create_network(input).await
+            }
+            "connection" => {
+                self.create_connection(input).await
             }
             "service" => {
                 self.create_service(input).await
             }
-            "network" => {
-                self.create_network(input).await
+            "dns_record_set" => {
+                self.create_dns_record_set(input).await
             }
             "role" => {
                 self.create_role(input).await
@@ -87,20 +93,14 @@ impl<'a> Servicenetworking_apiService<'a> {
             "dns_zone" => {
                 self.create_dns_zone(input).await
             }
-            "peered_dns_domain" => {
-                self.create_peered_dns_domain(input).await
-            }
-            "connection" => {
-                self.create_connection(input).await
-            }
             "operation" => {
                 self.create_operation(input).await
             }
-            "connection" => {
-                self.create_connection(input).await
-            }
             "service" => {
                 self.create_service(input).await
+            }
+            "connection" => {
+                self.create_connection(input).await
             }
             "operation" => {
                 self.create_operation(input).await
@@ -120,14 +120,20 @@ impl<'a> Servicenetworking_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "dns_record_set" => {
-                self.read_dns_record_set(id).await
+            "peered_dns_domain" => {
+                self.read_peered_dns_domain(id).await
+            }
+            "network" => {
+                self.read_network(id).await
+            }
+            "connection" => {
+                self.read_connection(id).await
             }
             "service" => {
                 self.read_service(id).await
             }
-            "network" => {
-                self.read_network(id).await
+            "dns_record_set" => {
+                self.read_dns_record_set(id).await
             }
             "role" => {
                 self.read_role(id).await
@@ -135,20 +141,14 @@ impl<'a> Servicenetworking_apiService<'a> {
             "dns_zone" => {
                 self.read_dns_zone(id).await
             }
-            "peered_dns_domain" => {
-                self.read_peered_dns_domain(id).await
-            }
-            "connection" => {
-                self.read_connection(id).await
-            }
             "operation" => {
                 self.read_operation(id).await
             }
-            "connection" => {
-                self.read_connection(id).await
-            }
             "service" => {
                 self.read_service(id).await
+            }
+            "connection" => {
+                self.read_connection(id).await
             }
             "operation" => {
                 self.read_operation(id).await
@@ -169,14 +169,20 @@ impl<'a> Servicenetworking_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "dns_record_set" => {
-                self.update_dns_record_set(id, input).await
+            "peered_dns_domain" => {
+                self.update_peered_dns_domain(id, input).await
+            }
+            "network" => {
+                self.update_network(id, input).await
+            }
+            "connection" => {
+                self.update_connection(id, input).await
             }
             "service" => {
                 self.update_service(id, input).await
             }
-            "network" => {
-                self.update_network(id, input).await
+            "dns_record_set" => {
+                self.update_dns_record_set(id, input).await
             }
             "role" => {
                 self.update_role(id, input).await
@@ -184,20 +190,14 @@ impl<'a> Servicenetworking_apiService<'a> {
             "dns_zone" => {
                 self.update_dns_zone(id, input).await
             }
-            "peered_dns_domain" => {
-                self.update_peered_dns_domain(id, input).await
-            }
-            "connection" => {
-                self.update_connection(id, input).await
-            }
             "operation" => {
                 self.update_operation(id, input).await
             }
-            "connection" => {
-                self.update_connection(id, input).await
-            }
             "service" => {
                 self.update_service(id, input).await
+            }
+            "connection" => {
+                self.update_connection(id, input).await
             }
             "operation" => {
                 self.update_operation(id, input).await
@@ -217,14 +217,20 @@ impl<'a> Servicenetworking_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "dns_record_set" => {
-                self.delete_dns_record_set(id).await
+            "peered_dns_domain" => {
+                self.delete_peered_dns_domain(id).await
+            }
+            "network" => {
+                self.delete_network(id).await
+            }
+            "connection" => {
+                self.delete_connection(id).await
             }
             "service" => {
                 self.delete_service(id).await
             }
-            "network" => {
-                self.delete_network(id).await
+            "dns_record_set" => {
+                self.delete_dns_record_set(id).await
             }
             "role" => {
                 self.delete_role(id).await
@@ -232,20 +238,14 @@ impl<'a> Servicenetworking_apiService<'a> {
             "dns_zone" => {
                 self.delete_dns_zone(id).await
             }
-            "peered_dns_domain" => {
-                self.delete_peered_dns_domain(id).await
-            }
-            "connection" => {
-                self.delete_connection(id).await
-            }
             "operation" => {
                 self.delete_operation(id).await
             }
-            "connection" => {
-                self.delete_connection(id).await
-            }
             "service" => {
                 self.delete_service(id).await
+            }
+            "connection" => {
+                self.delete_connection(id).await
             }
             "operation" => {
                 self.delete_operation(id).await
@@ -264,11 +264,11 @@ impl<'a> Servicenetworking_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Dns_record_set resource operations
+    // Peered_dns_domain resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a dns_record_set resource
-    async fn plan_dns_record_set(
+    /// Plan changes to a peered_dns_domain resource
+    async fn plan_peered_dns_domain(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -283,8 +283,8 @@ impl<'a> Servicenetworking_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new dns_record_set resource
-    async fn create_dns_record_set(
+    /// Create a new peered_dns_domain resource
+    async fn create_peered_dns_domain(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -293,8 +293,8 @@ impl<'a> Servicenetworking_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a dns_record_set resource
-    async fn read_dns_record_set(
+    /// Read a peered_dns_domain resource
+    async fn read_peered_dns_domain(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -303,8 +303,8 @@ impl<'a> Servicenetworking_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a dns_record_set resource
-    async fn update_dns_record_set(
+    /// Update a peered_dns_domain resource
+    async fn update_peered_dns_domain(
         &self,
         id: &str,
         input: ResourceInput,
@@ -314,8 +314,130 @@ impl<'a> Servicenetworking_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a dns_record_set resource
-    async fn delete_dns_record_set(
+    /// Delete a peered_dns_domain resource
+    async fn delete_peered_dns_domain(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Network resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a network resource
+    async fn plan_network(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new network resource
+    async fn create_network(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a network resource
+    async fn read_network(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a network resource
+    async fn update_network(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a network resource
+    async fn delete_network(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Connection resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a connection resource
+    async fn plan_connection(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new connection resource
+    async fn create_connection(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a connection resource
+    async fn read_connection(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a connection resource
+    async fn update_connection(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a connection resource
+    async fn delete_connection(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -386,11 +508,11 @@ impl<'a> Servicenetworking_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Network resource operations
+    // Dns_record_set resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a network resource
-    async fn plan_network(
+    /// Plan changes to a dns_record_set resource
+    async fn plan_dns_record_set(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -405,8 +527,8 @@ impl<'a> Servicenetworking_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new network resource
-    async fn create_network(
+    /// Create a new dns_record_set resource
+    async fn create_dns_record_set(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -415,8 +537,8 @@ impl<'a> Servicenetworking_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a network resource
-    async fn read_network(
+    /// Read a dns_record_set resource
+    async fn read_dns_record_set(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -425,8 +547,8 @@ impl<'a> Servicenetworking_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a network resource
-    async fn update_network(
+    /// Update a dns_record_set resource
+    async fn update_dns_record_set(
         &self,
         id: &str,
         input: ResourceInput,
@@ -436,8 +558,8 @@ impl<'a> Servicenetworking_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a network resource
-    async fn delete_network(
+    /// Delete a dns_record_set resource
+    async fn delete_dns_record_set(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -569,128 +691,6 @@ impl<'a> Servicenetworking_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Peered_dns_domain resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a peered_dns_domain resource
-    async fn plan_peered_dns_domain(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new peered_dns_domain resource
-    async fn create_peered_dns_domain(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a peered_dns_domain resource
-    async fn read_peered_dns_domain(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a peered_dns_domain resource
-    async fn update_peered_dns_domain(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a peered_dns_domain resource
-    async fn delete_peered_dns_domain(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Connection resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a connection resource
-    async fn plan_connection(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new connection resource
-    async fn create_connection(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a connection resource
-    async fn read_connection(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a connection resource
-    async fn update_connection(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a connection resource
-    async fn delete_connection(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Operation resource operations
     // ------------------------------------------------------------------------
 
@@ -752,67 +752,6 @@ impl<'a> Servicenetworking_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Connection resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a connection resource
-    async fn plan_connection(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new connection resource
-    async fn create_connection(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a connection resource
-    async fn read_connection(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a connection resource
-    async fn update_connection(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a connection resource
-    async fn delete_connection(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Service resource operations
     // ------------------------------------------------------------------------
 
@@ -865,6 +804,67 @@ impl<'a> Servicenetworking_apiService<'a> {
 
     /// Delete a service resource
     async fn delete_service(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Connection resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a connection resource
+    async fn plan_connection(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new connection resource
+    async fn create_connection(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a connection resource
+    async fn read_connection(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a connection resource
+    async fn update_connection(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a connection resource
+    async fn delete_connection(
         &self,
         id: &str,
     ) -> Result<()> {

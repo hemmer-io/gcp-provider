@@ -27,8 +27,8 @@ Send a message to specified target (a registration token, topic or condition).
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `validate_only` | bool |  | Flag for testing the request without actually delivering the message. |
 | `message` | String |  | Required. Message to send. |
+| `validate_only` | bool |  | Flag for testing the request without actually delivering the message. |
 | `parent` | String | ✅ | Required. It contains the Firebase project id (i.e. the unique identifier for your Firebase project), in the format of `projects/{project_id}`. The numeric project number with no padding is also supported in the format of `projects/{project_number}`. |
 
 

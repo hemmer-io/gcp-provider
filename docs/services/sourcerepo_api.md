@@ -28,11 +28,11 @@ Creates a repo in the given project with the given name. If the named repository
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `url` | String |  | URL to clone the repository from Google Cloud Source Repositories. Read-only field. |
-| `size` | String |  | The disk usage of the repo, in bytes. Read-only field. Size is only returned by GetRepo. |
-| `name` | String |  | Resource name of the repository, of the form `projects//repos/`. The repo name may contain slashes. eg, `projects/myproject/repos/name/with/slash` |
 | `mirror_config` | String |  | How this repository mirrors a repository managed by another service. Read-only field. |
+| `size` | String |  | The disk usage of the repo, in bytes. Read-only field. Size is only returned by GetRepo. |
 | `pubsub_configs` | HashMap<String, String> |  | How this repository publishes a change in the repository through Cloud Pub/Sub. Keyed by the topic names. |
+| `name` | String |  | Resource name of the repository, of the form `projects//repos/`. The repo name may contain slashes. eg, `projects/myproject/repos/name/with/slash` |
+| `url` | String |  | URL to clone the repository from Google Cloud Source Repositories. Read-only field. |
 | `parent` | String | ✅ | The project in which to create the repo. Values are of the form `projects/`. |
 
 
@@ -40,11 +40,11 @@ Creates a repo in the given project with the given name. If the named repository
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `url` | String | URL to clone the repository from Google Cloud Source Repositories. Read-only field. |
-| `size` | String | The disk usage of the repo, in bytes. Read-only field. Size is only returned by GetRepo. |
-| `name` | String | Resource name of the repository, of the form `projects//repos/`. The repo name may contain slashes. eg, `projects/myproject/repos/name/with/slash` |
 | `mirror_config` | String | How this repository mirrors a repository managed by another service. Read-only field. |
+| `size` | String | The disk usage of the repo, in bytes. Read-only field. Size is only returned by GetRepo. |
 | `pubsub_configs` | HashMap<String, String> | How this repository publishes a change in the repository through Cloud Pub/Sub. Keyed by the topic names. |
+| `name` | String | Resource name of the repository, of the form `projects//repos/`. The repo name may contain slashes. eg, `projects/myproject/repos/name/with/slash` |
+| `url` | String | URL to clone the repository from Google Cloud Source Repositories. Read-only field. |
 
 
 #### Usage Example
@@ -65,11 +65,11 @@ repo = provider.sourcerepo_api.Repo {
 
 # Access repo outputs
 repo_id = repo.id
-repo_url = repo.url
-repo_size = repo.size
-repo_name = repo.name
 repo_mirror_config = repo.mirror_config
+repo_size = repo.size
 repo_pubsub_configs = repo.pubsub_configs
+repo_name = repo.name
+repo_url = repo.url
 ```
 
 ---
@@ -94,9 +94,9 @@ Returns the Cloud Source Repositories configuration of the project.
 
 | Output | Type | Description |
 |--------|------|-------------|
+| `name` | String | The name of the project. Values are of the form `projects/`. |
 | `pubsub_configs` | HashMap<String, String> | How this project publishes a change in the repositories through Cloud Pub/Sub. Keyed by the topic names. |
 | `enable_private_key_check` | bool | Reject a Git push that contains a private key. |
-| `name` | String | The name of the project. Values are of the form `projects/`. |
 
 
 #### Usage Example
@@ -112,9 +112,9 @@ provider = gcp.GcpProvider {
 
 # Access project outputs
 project_id = project.id
+project_name = project.name
 project_pubsub_configs = project.pubsub_configs
 project_enable_private_key_check = project.enable_private_key_check
-project_name = project.name
 ```
 
 ---

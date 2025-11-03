@@ -21,7 +21,7 @@ impl<'a> Cloud_vm_cluster<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, labels: Option<HashMap<String, String>>, cidr: Option<String>, gcp_oracle_zone: Option<String>, name: Option<String>, display_name: Option<String>, odb_network: Option<String>, odb_subnet: Option<String>, properties: Option<String>, network: Option<String>, backup_subnet_cidr: Option<String>, backup_odb_subnet: Option<String>, exadata_infrastructure: Option<String>, identity_connector: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, network: Option<String>, odb_network: Option<String>, properties: Option<String>, backup_subnet_cidr: Option<String>, exadata_infrastructure: Option<String>, cidr: Option<String>, create_time: Option<String>, backup_odb_subnet: Option<String>, labels: Option<HashMap<String, String>>, name: Option<String>, odb_subnet: Option<String>, display_name: Option<String>, gcp_oracle_zone: Option<String>, identity_connector: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

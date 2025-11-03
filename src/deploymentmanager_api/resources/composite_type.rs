@@ -21,7 +21,7 @@ impl<'a> Composite_type<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, labels: Option<Vec<String>>, operation: Option<String>, insert_time: Option<String>, self_link: Option<String>, status: Option<String>, template_contents: Option<String>, id: Option<String>, description: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, status: Option<String>, operation: Option<String>, id: Option<String>, name: Option<String>, self_link: Option<String>, template_contents: Option<String>, description: Option<String>, insert_time: Option<String>, labels: Option<Vec<String>>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Composite_type<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, labels: Option<Vec<String>>, operation: Option<String>, insert_time: Option<String>, self_link: Option<String>, status: Option<String>, template_contents: Option<String>, id: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, status: Option<String>, operation: Option<String>, id: Option<String>, name: Option<String>, self_link: Option<String>, template_contents: Option<String>, description: Option<String>, insert_time: Option<String>, labels: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

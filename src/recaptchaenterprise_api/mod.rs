@@ -27,17 +27,17 @@ impl<'a> Recaptchaenterprise_apiService<'a> {
             "key" => {
                 self.plan_key(current_state, desired_input).await
             }
-            "relatedaccountgroupmembership" => {
-                self.plan_relatedaccountgroupmembership(current_state, desired_input).await
-            }
             "assessment" => {
                 self.plan_assessment(current_state, desired_input).await
             }
-            "relatedaccountgroup" => {
-                self.plan_relatedaccountgroup(current_state, desired_input).await
-            }
             "membership" => {
                 self.plan_membership(current_state, desired_input).await
+            }
+            "relatedaccountgroupmembership" => {
+                self.plan_relatedaccountgroupmembership(current_state, desired_input).await
+            }
+            "relatedaccountgroup" => {
+                self.plan_relatedaccountgroup(current_state, desired_input).await
             }
             "firewallpolicie" => {
                 self.plan_firewallpolicie(current_state, desired_input).await
@@ -60,17 +60,17 @@ impl<'a> Recaptchaenterprise_apiService<'a> {
             "key" => {
                 self.create_key(input).await
             }
-            "relatedaccountgroupmembership" => {
-                self.create_relatedaccountgroupmembership(input).await
-            }
             "assessment" => {
                 self.create_assessment(input).await
             }
-            "relatedaccountgroup" => {
-                self.create_relatedaccountgroup(input).await
-            }
             "membership" => {
                 self.create_membership(input).await
+            }
+            "relatedaccountgroupmembership" => {
+                self.create_relatedaccountgroupmembership(input).await
+            }
+            "relatedaccountgroup" => {
+                self.create_relatedaccountgroup(input).await
             }
             "firewallpolicie" => {
                 self.create_firewallpolicie(input).await
@@ -93,17 +93,17 @@ impl<'a> Recaptchaenterprise_apiService<'a> {
             "key" => {
                 self.read_key(id).await
             }
-            "relatedaccountgroupmembership" => {
-                self.read_relatedaccountgroupmembership(id).await
-            }
             "assessment" => {
                 self.read_assessment(id).await
             }
-            "relatedaccountgroup" => {
-                self.read_relatedaccountgroup(id).await
-            }
             "membership" => {
                 self.read_membership(id).await
+            }
+            "relatedaccountgroupmembership" => {
+                self.read_relatedaccountgroupmembership(id).await
+            }
+            "relatedaccountgroup" => {
+                self.read_relatedaccountgroup(id).await
             }
             "firewallpolicie" => {
                 self.read_firewallpolicie(id).await
@@ -127,17 +127,17 @@ impl<'a> Recaptchaenterprise_apiService<'a> {
             "key" => {
                 self.update_key(id, input).await
             }
-            "relatedaccountgroupmembership" => {
-                self.update_relatedaccountgroupmembership(id, input).await
-            }
             "assessment" => {
                 self.update_assessment(id, input).await
             }
-            "relatedaccountgroup" => {
-                self.update_relatedaccountgroup(id, input).await
-            }
             "membership" => {
                 self.update_membership(id, input).await
+            }
+            "relatedaccountgroupmembership" => {
+                self.update_relatedaccountgroupmembership(id, input).await
+            }
+            "relatedaccountgroup" => {
+                self.update_relatedaccountgroup(id, input).await
             }
             "firewallpolicie" => {
                 self.update_firewallpolicie(id, input).await
@@ -160,17 +160,17 @@ impl<'a> Recaptchaenterprise_apiService<'a> {
             "key" => {
                 self.delete_key(id).await
             }
-            "relatedaccountgroupmembership" => {
-                self.delete_relatedaccountgroupmembership(id).await
-            }
             "assessment" => {
                 self.delete_assessment(id).await
             }
-            "relatedaccountgroup" => {
-                self.delete_relatedaccountgroup(id).await
-            }
             "membership" => {
                 self.delete_membership(id).await
+            }
+            "relatedaccountgroupmembership" => {
+                self.delete_relatedaccountgroupmembership(id).await
+            }
+            "relatedaccountgroup" => {
+                self.delete_relatedaccountgroup(id).await
             }
             "firewallpolicie" => {
                 self.delete_firewallpolicie(id).await
@@ -250,67 +250,6 @@ impl<'a> Recaptchaenterprise_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Relatedaccountgroupmembership resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a relatedaccountgroupmembership resource
-    async fn plan_relatedaccountgroupmembership(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new relatedaccountgroupmembership resource
-    async fn create_relatedaccountgroupmembership(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a relatedaccountgroupmembership resource
-    async fn read_relatedaccountgroupmembership(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a relatedaccountgroupmembership resource
-    async fn update_relatedaccountgroupmembership(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a relatedaccountgroupmembership resource
-    async fn delete_relatedaccountgroupmembership(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Assessment resource operations
     // ------------------------------------------------------------------------
 
@@ -372,67 +311,6 @@ impl<'a> Recaptchaenterprise_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Relatedaccountgroup resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a relatedaccountgroup resource
-    async fn plan_relatedaccountgroup(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new relatedaccountgroup resource
-    async fn create_relatedaccountgroup(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a relatedaccountgroup resource
-    async fn read_relatedaccountgroup(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a relatedaccountgroup resource
-    async fn update_relatedaccountgroup(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a relatedaccountgroup resource
-    async fn delete_relatedaccountgroup(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Membership resource operations
     // ------------------------------------------------------------------------
 
@@ -485,6 +363,128 @@ impl<'a> Recaptchaenterprise_apiService<'a> {
 
     /// Delete a membership resource
     async fn delete_membership(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Relatedaccountgroupmembership resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a relatedaccountgroupmembership resource
+    async fn plan_relatedaccountgroupmembership(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new relatedaccountgroupmembership resource
+    async fn create_relatedaccountgroupmembership(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a relatedaccountgroupmembership resource
+    async fn read_relatedaccountgroupmembership(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a relatedaccountgroupmembership resource
+    async fn update_relatedaccountgroupmembership(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a relatedaccountgroupmembership resource
+    async fn delete_relatedaccountgroupmembership(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Relatedaccountgroup resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a relatedaccountgroup resource
+    async fn plan_relatedaccountgroup(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new relatedaccountgroup resource
+    async fn create_relatedaccountgroup(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a relatedaccountgroup resource
+    async fn read_relatedaccountgroup(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a relatedaccountgroup resource
+    async fn update_relatedaccountgroup(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a relatedaccountgroup resource
+    async fn delete_relatedaccountgroup(
         &self,
         id: &str,
     ) -> Result<()> {

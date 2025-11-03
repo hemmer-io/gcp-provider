@@ -21,7 +21,7 @@ impl<'a> Entry_link<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, entry_link_type: Option<String>, entry_references: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, entry_link_type: Option<String>, create_time: Option<String>, update_time: Option<String>, name: Option<String>, entry_references: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

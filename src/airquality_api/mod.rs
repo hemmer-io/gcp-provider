@@ -24,6 +24,9 @@ impl<'a> Airquality_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "forecast" => {
+                self.plan_forecast(current_state, desired_input).await
+            }
             "heatmap_tile" => {
                 self.plan_heatmap_tile(current_state, desired_input).await
             }
@@ -32,9 +35,6 @@ impl<'a> Airquality_apiService<'a> {
             }
             "history" => {
                 self.plan_history(current_state, desired_input).await
-            }
-            "forecast" => {
-                self.plan_forecast(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -51,6 +51,9 @@ impl<'a> Airquality_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "forecast" => {
+                self.create_forecast(input).await
+            }
             "heatmap_tile" => {
                 self.create_heatmap_tile(input).await
             }
@@ -59,9 +62,6 @@ impl<'a> Airquality_apiService<'a> {
             }
             "history" => {
                 self.create_history(input).await
-            }
-            "forecast" => {
-                self.create_forecast(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -78,6 +78,9 @@ impl<'a> Airquality_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "forecast" => {
+                self.read_forecast(id).await
+            }
             "heatmap_tile" => {
                 self.read_heatmap_tile(id).await
             }
@@ -86,9 +89,6 @@ impl<'a> Airquality_apiService<'a> {
             }
             "history" => {
                 self.read_history(id).await
-            }
-            "forecast" => {
-                self.read_forecast(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -106,6 +106,9 @@ impl<'a> Airquality_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "forecast" => {
+                self.update_forecast(id, input).await
+            }
             "heatmap_tile" => {
                 self.update_heatmap_tile(id, input).await
             }
@@ -114,9 +117,6 @@ impl<'a> Airquality_apiService<'a> {
             }
             "history" => {
                 self.update_history(id, input).await
-            }
-            "forecast" => {
-                self.update_forecast(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -133,6 +133,9 @@ impl<'a> Airquality_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "forecast" => {
+                self.delete_forecast(id).await
+            }
             "heatmap_tile" => {
                 self.delete_heatmap_tile(id).await
             }
@@ -141,9 +144,6 @@ impl<'a> Airquality_apiService<'a> {
             }
             "history" => {
                 self.delete_history(id).await
-            }
-            "forecast" => {
-                self.delete_forecast(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -156,6 +156,67 @@ impl<'a> Airquality_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Forecast resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a forecast resource
+    async fn plan_forecast(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new forecast resource
+    async fn create_forecast(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a forecast resource
+    async fn read_forecast(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a forecast resource
+    async fn update_forecast(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a forecast resource
+    async fn delete_forecast(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -333,67 +394,6 @@ impl<'a> Airquality_apiService<'a> {
 
     /// Delete a history resource
     async fn delete_history(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Forecast resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a forecast resource
-    async fn plan_forecast(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new forecast resource
-    async fn create_forecast(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a forecast resource
-    async fn read_forecast(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a forecast resource
-    async fn update_forecast(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a forecast resource
-    async fn delete_forecast(
         &self,
         id: &str,
     ) -> Result<()> {

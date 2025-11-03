@@ -21,7 +21,7 @@ impl<'a> Data_source<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, supplemental_product_data_source: Option<String>, primary_product_data_source: Option<String>, input: Option<String>, promotion_data_source: Option<String>, name: Option<String>, product_review_data_source: Option<String>, display_name: Option<String>, regional_inventory_data_source: Option<String>, data_source_id: Option<String>, merchant_review_data_source: Option<String>, file_input: Option<String>, local_inventory_data_source: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, file_input: Option<String>, display_name: Option<String>, primary_product_data_source: Option<String>, data_source_id: Option<String>, product_review_data_source: Option<String>, name: Option<String>, promotion_data_source: Option<String>, regional_inventory_data_source: Option<String>, supplemental_product_data_source: Option<String>, input: Option<String>, merchant_review_data_source: Option<String>, local_inventory_data_source: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Data_source<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, supplemental_product_data_source: Option<String>, primary_product_data_source: Option<String>, input: Option<String>, promotion_data_source: Option<String>, name: Option<String>, product_review_data_source: Option<String>, display_name: Option<String>, regional_inventory_data_source: Option<String>, data_source_id: Option<String>, merchant_review_data_source: Option<String>, file_input: Option<String>, local_inventory_data_source: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, file_input: Option<String>, display_name: Option<String>, primary_product_data_source: Option<String>, data_source_id: Option<String>, product_review_data_source: Option<String>, name: Option<String>, promotion_data_source: Option<String>, regional_inventory_data_source: Option<String>, supplemental_product_data_source: Option<String>, input: Option<String>, merchant_review_data_source: Option<String>, local_inventory_data_source: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

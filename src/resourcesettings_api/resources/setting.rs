@@ -34,7 +34,7 @@ impl<'a> Setting<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, local_value: Option<String>, etag: Option<String>, effective_value: Option<String>, name: Option<String>, metadata: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, effective_value: Option<String>, metadata: Option<String>, local_value: Option<String>, etag: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

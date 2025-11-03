@@ -27,11 +27,11 @@ impl<'a> Reseller_apiService<'a> {
             "customer" => {
                 self.plan_customer(current_state, desired_input).await
             }
-            "subscription" => {
-                self.plan_subscription(current_state, desired_input).await
-            }
             "resellernotify" => {
                 self.plan_resellernotify(current_state, desired_input).await
+            }
+            "subscription" => {
+                self.plan_subscription(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -51,11 +51,11 @@ impl<'a> Reseller_apiService<'a> {
             "customer" => {
                 self.create_customer(input).await
             }
-            "subscription" => {
-                self.create_subscription(input).await
-            }
             "resellernotify" => {
                 self.create_resellernotify(input).await
+            }
+            "subscription" => {
+                self.create_subscription(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -75,11 +75,11 @@ impl<'a> Reseller_apiService<'a> {
             "customer" => {
                 self.read_customer(id).await
             }
-            "subscription" => {
-                self.read_subscription(id).await
-            }
             "resellernotify" => {
                 self.read_resellernotify(id).await
+            }
+            "subscription" => {
+                self.read_subscription(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -100,11 +100,11 @@ impl<'a> Reseller_apiService<'a> {
             "customer" => {
                 self.update_customer(id, input).await
             }
-            "subscription" => {
-                self.update_subscription(id, input).await
-            }
             "resellernotify" => {
                 self.update_resellernotify(id, input).await
+            }
+            "subscription" => {
+                self.update_subscription(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,11 +124,11 @@ impl<'a> Reseller_apiService<'a> {
             "customer" => {
                 self.delete_customer(id).await
             }
-            "subscription" => {
-                self.delete_subscription(id).await
-            }
             "resellernotify" => {
                 self.delete_resellernotify(id).await
+            }
+            "subscription" => {
+                self.delete_subscription(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -205,67 +205,6 @@ impl<'a> Reseller_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Subscription resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a subscription resource
-    async fn plan_subscription(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new subscription resource
-    async fn create_subscription(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a subscription resource
-    async fn read_subscription(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a subscription resource
-    async fn update_subscription(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a subscription resource
-    async fn delete_subscription(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Resellernotify resource operations
     // ------------------------------------------------------------------------
 
@@ -318,6 +257,67 @@ impl<'a> Reseller_apiService<'a> {
 
     /// Delete a resellernotify resource
     async fn delete_resellernotify(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Subscription resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a subscription resource
+    async fn plan_subscription(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new subscription resource
+    async fn create_subscription(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a subscription resource
+    async fn read_subscription(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a subscription resource
+    async fn update_subscription(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a subscription resource
+    async fn delete_subscription(
         &self,
         id: &str,
     ) -> Result<()> {

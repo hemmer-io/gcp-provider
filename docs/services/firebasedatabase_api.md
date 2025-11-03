@@ -27,10 +27,10 @@ Requests that a new DatabaseInstance be created. The state of a successfully cre
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `database_url` | String |  | Output only. Output Only. The globally unique hostname of the database. |
-| `name` | String |  | The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`. |
-| `project` | String |  | Output only. The resource name of the project this instance belongs to. For example: `projects/{project-number}`. |
 | `type` | String |  | Immutable. The database instance type. On creation only USER_DATABASE is allowed, which is also the default when omitted. |
+| `database_url` | String |  | Output only. Output Only. The globally unique hostname of the database. |
+| `project` | String |  | Output only. The resource name of the project this instance belongs to. For example: `projects/{project-number}`. |
+| `name` | String |  | The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`. |
 | `state` | String |  | Output only. The database's lifecycle state. Read-only. |
 | `parent` | String | ✅ | Required. The parent project for which to create a database instance, in the form: `projects/{project-number}/locations/{location-id}`. |
 
@@ -39,10 +39,10 @@ Requests that a new DatabaseInstance be created. The state of a successfully cre
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `database_url` | String | Output only. Output Only. The globally unique hostname of the database. |
-| `name` | String | The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`. |
-| `project` | String | Output only. The resource name of the project this instance belongs to. For example: `projects/{project-number}`. |
 | `type` | String | Immutable. The database instance type. On creation only USER_DATABASE is allowed, which is also the default when omitted. |
+| `database_url` | String | Output only. Output Only. The globally unique hostname of the database. |
+| `project` | String | Output only. The resource name of the project this instance belongs to. For example: `projects/{project-number}`. |
+| `name` | String | The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`. |
 | `state` | String | Output only. The database's lifecycle state. Read-only. |
 
 
@@ -64,10 +64,10 @@ instance = provider.firebasedatabase_api.Instance {
 
 # Access instance outputs
 instance_id = instance.id
-instance_database_url = instance.database_url
-instance_name = instance.name
-instance_project = instance.project
 instance_type = instance.type
+instance_database_url = instance.database_url
+instance_project = instance.project
+instance_name = instance.name
 instance_state = instance.state
 ```
 

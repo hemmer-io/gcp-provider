@@ -34,7 +34,7 @@ impl<'a> Traffic<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, reconciling: Option<bool>, current: Option<String>, create_time: Option<String>, target: Option<String>, update_time: Option<String>, etag: Option<String>, annotations: Option<HashMap<String, String>>, uid: Option<String>, name: Option<String>, rollout_policy: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, annotations: Option<HashMap<String, String>>, reconciling: Option<bool>, update_time: Option<String>, rollout_policy: Option<String>, current: Option<String>, name: Option<String>, uid: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, target: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

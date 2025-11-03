@@ -21,7 +21,7 @@ impl<'a> Group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, filter: Option<String>, display_name: Option<String>, is_cluster: Option<bool>, parent_name: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, parent_name: Option<String>, filter: Option<String>, is_cluster: Option<bool>, display_name: Option<String>, name: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, filter: Option<String>, display_name: Option<String>, is_cluster: Option<bool>, parent_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, parent_name: Option<String>, filter: Option<String>, is_cluster: Option<bool>, display_name: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

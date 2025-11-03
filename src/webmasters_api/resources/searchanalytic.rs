@@ -23,7 +23,7 @@ impl<'a> Searchanalytic<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, dimensions: Option<Vec<String>>, row_limit: Option<i64>, start_row: Option<i64>, end_date: Option<String>, start_date: Option<String>, search_type: Option<String>, data_state: Option<String>, aggregation_type: Option<String>, dimension_filter_groups: Option<Vec<String>>, site_url: String) -> Result<String> {
+    pub async fn create(&self, data_state: Option<String>, start_row: Option<i64>, dimension_filter_groups: Option<Vec<String>>, row_limit: Option<i64>, search_type: Option<String>, dimensions: Option<Vec<String>>, start_date: Option<String>, aggregation_type: Option<String>, end_date: Option<String>, site_url: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

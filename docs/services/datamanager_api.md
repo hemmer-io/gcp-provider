@@ -10,13 +10,52 @@
 
 The datamanager_api service provides access to 3 resource types:
 
-- [Request_statu](#request_statu) [R]
 - [Event](#event) [C]
+- [Request_statu](#request_statu) [R]
 - [Audience_member](#audience_member) [C]
 
 ---
 
 ## Resources
+
+
+### Event
+
+Uploads a list of Event resources from the provided Destination.
+
+**Operations**: ✅ Create
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `events` | Vec<String> |  | Required. The list of events to send to the specified destinations. At most 2000 Event resources can be sent in a single request. |
+| `encoding` | String |  | Optional. Required for UserData uploads. The encoding type of the user identifiers. For hashed user identifiers, this is the encoding type of the hashed string. For encrypted hashed user identifiers, this is the encoding type of the outer encrypted string, but not necessarily the inner hashed string, meaning the inner hashed string could be encoded in a different way than the outer encrypted string. For non `UserData` uploads, this field is ignored. |
+| `destinations` | Vec<String> |  | Required. The list of destinations to send the events to. |
+| `consent` | String |  | Optional. Request-level consent to apply to all users in the request. User-level consent overrides request-level consent, and can be specified in each Event. |
+| `validate_only` | bool |  | Optional. For testing purposes. If `true`, the request is validated but not executed. Only errors are returned, not results. |
+| `encryption_info` | String |  | Optional. Encryption information for UserData uploads. If not set, it's assumed that uploaded identifying information is hashed but not encrypted. For non `UserData` uploads, this field is ignored. |
+
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create event
+event = provider.datamanager_api.Event {
+}
+
+```
+
+---
 
 
 ### Request_statu
@@ -57,48 +96,9 @@ request_statu_request_status_per_destination = request_statu.request_status_per_
 ---
 
 
-### Event
-
-Uploads a list of Event resources from the provided Destination.
-
-**Operations**: ✅ Create
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `encoding` | String |  | Optional. Required for UserData uploads. The encoding type of the user identifiers. For hashed user identifiers, this is the encoding type of the hashed string. For encrypted hashed user identifiers, this is the encoding type of the outer encrypted string, but not necessarily the inner hashed string, meaning the inner hashed string could be encoded in a different way than the outer encrypted string. For non `UserData` uploads, this field is ignored. |
-| `consent` | String |  | Optional. Request-level consent to apply to all users in the request. User-level consent overrides request-level consent, and can be specified in each Event. |
-| `encryption_info` | String |  | Optional. Encryption information for UserData uploads. If not set, it's assumed that uploaded identifying information is hashed but not encrypted. For non `UserData` uploads, this field is ignored. |
-| `destinations` | Vec<String> |  | Required. The list of destinations to send the events to. |
-| `events` | Vec<String> |  | Required. The list of events to send to the specified destinations. At most 2000 Event resources can be sent in a single request. |
-| `validate_only` | bool |  | Optional. For testing purposes. If `true`, the request is validated but not executed. Only errors are returned, not results. |
-
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create event
-event = provider.datamanager_api.Event {
-}
-
-```
-
----
-
-
 ### Audience_member
 
-Uploads a list of AudienceMember resources to the provided Destination.
+Removes a list of AudienceMember resources from the provided Destination.
 
 **Operations**: ✅ Create
 
@@ -106,12 +106,10 @@ Uploads a list of AudienceMember resources to the provided Destination.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `terms_of_service` | String |  | Optional. The terms of service that the user has accepted/rejected. |
-| `audience_members` | Vec<String> |  | Required. The list of users to send to the specified destinations. At most 10000 AudienceMember resources can be sent in a single request. |
-| `destinations` | Vec<String> |  | Required. The list of destinations to send the audience members to. |
 | `validate_only` | bool |  | Optional. For testing purposes. If `true`, the request is validated but not executed. Only errors are returned, not results. |
-| `consent` | String |  | Optional. Request-level consent to apply to all users in the request. User-level consent overrides request-level consent, and can be specified in each AudienceMember. |
-| `encoding` | String |  | Optional. Required for UserData uploads. The encoding type of the user identifiers. For hashed user identifiers, this is the encoding type of the hashed string. For encrypted hashed user identifiers, this is the encoding type of the outer encrypted string, but not necessarily the inner hashed string, meaning the inner hashed string could be encoded in a different way than the outer encrypted string. For non `UserData` uploads, this field is ignored. |
+| `destinations` | Vec<String> |  | Required. The list of destinations to remove the users from. |
+| `encoding` | String |  | Optional. Required for UserData uploads. The encoding type of the user identifiers. Applies to only the outer encoding for encrypted user identifiers. For non `UserData` uploads, this field is ignored. |
+| `audience_members` | Vec<String> |  | Required. The list of users to remove. |
 | `encryption_info` | String |  | Optional. Encryption information for UserData uploads. If not set, it's assumed that uploaded identifying information is hashed but not encrypted. For non `UserData` uploads, this field is ignored. |
 
 
@@ -148,12 +146,12 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple request_statu resources
-request_statu_0 = provider.datamanager_api.Request_statu {
+# Create multiple event resources
+event_0 = provider.datamanager_api.Event {
 }
-request_statu_1 = provider.datamanager_api.Request_statu {
+event_1 = provider.datamanager_api.Event {
 }
-request_statu_2 = provider.datamanager_api.Request_statu {
+event_2 = provider.datamanager_api.Event {
 }
 ```
 
@@ -162,7 +160,7 @@ request_statu_2 = provider.datamanager_api.Request_statu {
 ```kcl
 # Only create in production
 if environment == "production":
-    request_statu = provider.datamanager_api.Request_statu {
+    event = provider.datamanager_api.Event {
     }
 ```
 

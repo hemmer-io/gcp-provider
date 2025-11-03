@@ -24,32 +24,32 @@ impl<'a> Config_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
-            "resource" => {
-                self.plan_resource(current_state, desired_input).await
+            "preview" => {
+                self.plan_preview(current_state, desired_input).await
             }
             "deployment" => {
                 self.plan_deployment(current_state, desired_input).await
             }
-            "terraform_version" => {
-                self.plan_terraform_version(current_state, desired_input).await
+            "resource_change" => {
+                self.plan_resource_change(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
             "resource_drift" => {
                 self.plan_resource_drift(current_state, desired_input).await
             }
-            "revision" => {
-                self.plan_revision(current_state, desired_input).await
-            }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "preview" => {
-                self.plan_preview(current_state, desired_input).await
+            "resource" => {
+                self.plan_resource(current_state, desired_input).await
             }
-            "resource_change" => {
-                self.plan_resource_change(current_state, desired_input).await
+            "revision" => {
+                self.plan_revision(current_state, desired_input).await
+            }
+            "terraform_version" => {
+                self.plan_terraform_version(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,32 +66,32 @@ impl<'a> Config_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "operation" => {
-                self.create_operation(input).await
-            }
-            "resource" => {
-                self.create_resource(input).await
+            "preview" => {
+                self.create_preview(input).await
             }
             "deployment" => {
                 self.create_deployment(input).await
             }
-            "terraform_version" => {
-                self.create_terraform_version(input).await
+            "resource_change" => {
+                self.create_resource_change(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
             }
             "resource_drift" => {
                 self.create_resource_drift(input).await
             }
-            "revision" => {
-                self.create_revision(input).await
-            }
             "location" => {
                 self.create_location(input).await
             }
-            "preview" => {
-                self.create_preview(input).await
+            "resource" => {
+                self.create_resource(input).await
             }
-            "resource_change" => {
-                self.create_resource_change(input).await
+            "revision" => {
+                self.create_revision(input).await
+            }
+            "terraform_version" => {
+                self.create_terraform_version(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -108,32 +108,32 @@ impl<'a> Config_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "operation" => {
-                self.read_operation(id).await
-            }
-            "resource" => {
-                self.read_resource(id).await
+            "preview" => {
+                self.read_preview(id).await
             }
             "deployment" => {
                 self.read_deployment(id).await
             }
-            "terraform_version" => {
-                self.read_terraform_version(id).await
+            "resource_change" => {
+                self.read_resource_change(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
             }
             "resource_drift" => {
                 self.read_resource_drift(id).await
             }
-            "revision" => {
-                self.read_revision(id).await
-            }
             "location" => {
                 self.read_location(id).await
             }
-            "preview" => {
-                self.read_preview(id).await
+            "resource" => {
+                self.read_resource(id).await
             }
-            "resource_change" => {
-                self.read_resource_change(id).await
+            "revision" => {
+                self.read_revision(id).await
+            }
+            "terraform_version" => {
+                self.read_terraform_version(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -151,32 +151,32 @@ impl<'a> Config_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "operation" => {
-                self.update_operation(id, input).await
-            }
-            "resource" => {
-                self.update_resource(id, input).await
+            "preview" => {
+                self.update_preview(id, input).await
             }
             "deployment" => {
                 self.update_deployment(id, input).await
             }
-            "terraform_version" => {
-                self.update_terraform_version(id, input).await
+            "resource_change" => {
+                self.update_resource_change(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
             }
             "resource_drift" => {
                 self.update_resource_drift(id, input).await
             }
-            "revision" => {
-                self.update_revision(id, input).await
-            }
             "location" => {
                 self.update_location(id, input).await
             }
-            "preview" => {
-                self.update_preview(id, input).await
+            "resource" => {
+                self.update_resource(id, input).await
             }
-            "resource_change" => {
-                self.update_resource_change(id, input).await
+            "revision" => {
+                self.update_revision(id, input).await
+            }
+            "terraform_version" => {
+                self.update_terraform_version(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -193,32 +193,32 @@ impl<'a> Config_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "operation" => {
-                self.delete_operation(id).await
-            }
-            "resource" => {
-                self.delete_resource(id).await
+            "preview" => {
+                self.delete_preview(id).await
             }
             "deployment" => {
                 self.delete_deployment(id).await
             }
-            "terraform_version" => {
-                self.delete_terraform_version(id).await
+            "resource_change" => {
+                self.delete_resource_change(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
             }
             "resource_drift" => {
                 self.delete_resource_drift(id).await
             }
-            "revision" => {
-                self.delete_revision(id).await
-            }
             "location" => {
                 self.delete_location(id).await
             }
-            "preview" => {
-                self.delete_preview(id).await
+            "resource" => {
+                self.delete_resource(id).await
             }
-            "resource_change" => {
-                self.delete_resource_change(id).await
+            "revision" => {
+                self.delete_revision(id).await
+            }
+            "terraform_version" => {
+                self.delete_terraform_version(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -234,11 +234,11 @@ impl<'a> Config_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
+    // Preview resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a operation resource
-    async fn plan_operation(
+    /// Plan changes to a preview resource
+    async fn plan_preview(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -253,8 +253,8 @@ impl<'a> Config_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new operation resource
-    async fn create_operation(
+    /// Create a new preview resource
+    async fn create_preview(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -263,8 +263,8 @@ impl<'a> Config_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a operation resource
-    async fn read_operation(
+    /// Read a preview resource
+    async fn read_preview(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -273,8 +273,8 @@ impl<'a> Config_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a operation resource
-    async fn update_operation(
+    /// Update a preview resource
+    async fn update_preview(
         &self,
         id: &str,
         input: ResourceInput,
@@ -284,69 +284,8 @@ impl<'a> Config_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Resource resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a resource resource
-    async fn plan_resource(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new resource resource
-    async fn create_resource(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a resource resource
-    async fn read_resource(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a resource resource
-    async fn update_resource(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a resource resource
-    async fn delete_resource(
+    /// Delete a preview resource
+    async fn delete_preview(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -417,11 +356,11 @@ impl<'a> Config_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Terraform_version resource operations
+    // Resource_change resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a terraform_version resource
-    async fn plan_terraform_version(
+    /// Plan changes to a resource_change resource
+    async fn plan_resource_change(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -436,8 +375,8 @@ impl<'a> Config_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new terraform_version resource
-    async fn create_terraform_version(
+    /// Create a new resource_change resource
+    async fn create_resource_change(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -446,8 +385,8 @@ impl<'a> Config_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a terraform_version resource
-    async fn read_terraform_version(
+    /// Read a resource_change resource
+    async fn read_resource_change(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -456,8 +395,8 @@ impl<'a> Config_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a terraform_version resource
-    async fn update_terraform_version(
+    /// Update a resource_change resource
+    async fn update_resource_change(
         &self,
         id: &str,
         input: ResourceInput,
@@ -467,8 +406,69 @@ impl<'a> Config_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a terraform_version resource
-    async fn delete_terraform_version(
+    /// Delete a resource_change resource
+    async fn delete_resource_change(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -539,67 +539,6 @@ impl<'a> Config_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Revision resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a revision resource
-    async fn plan_revision(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new revision resource
-    async fn create_revision(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a revision resource
-    async fn read_revision(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a revision resource
-    async fn update_revision(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a revision resource
-    async fn delete_revision(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Location resource operations
     // ------------------------------------------------------------------------
 
@@ -661,11 +600,11 @@ impl<'a> Config_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Preview resource operations
+    // Resource resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a preview resource
-    async fn plan_preview(
+    /// Plan changes to a resource resource
+    async fn plan_resource(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -680,8 +619,8 @@ impl<'a> Config_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new preview resource
-    async fn create_preview(
+    /// Create a new resource resource
+    async fn create_resource(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -690,8 +629,8 @@ impl<'a> Config_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a preview resource
-    async fn read_preview(
+    /// Read a resource resource
+    async fn read_resource(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -700,8 +639,8 @@ impl<'a> Config_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a preview resource
-    async fn update_preview(
+    /// Update a resource resource
+    async fn update_resource(
         &self,
         id: &str,
         input: ResourceInput,
@@ -711,8 +650,8 @@ impl<'a> Config_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a preview resource
-    async fn delete_preview(
+    /// Delete a resource resource
+    async fn delete_resource(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -722,11 +661,11 @@ impl<'a> Config_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Resource_change resource operations
+    // Revision resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a resource_change resource
-    async fn plan_resource_change(
+    /// Plan changes to a revision resource
+    async fn plan_revision(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -741,8 +680,8 @@ impl<'a> Config_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new resource_change resource
-    async fn create_resource_change(
+    /// Create a new revision resource
+    async fn create_revision(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -751,8 +690,8 @@ impl<'a> Config_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a resource_change resource
-    async fn read_resource_change(
+    /// Read a revision resource
+    async fn read_revision(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -761,8 +700,8 @@ impl<'a> Config_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a resource_change resource
-    async fn update_resource_change(
+    /// Update a revision resource
+    async fn update_revision(
         &self,
         id: &str,
         input: ResourceInput,
@@ -772,8 +711,69 @@ impl<'a> Config_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a resource_change resource
-    async fn delete_resource_change(
+    /// Delete a revision resource
+    async fn delete_revision(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Terraform_version resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a terraform_version resource
+    async fn plan_terraform_version(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new terraform_version resource
+    async fn create_terraform_version(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a terraform_version resource
+    async fn read_terraform_version(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a terraform_version resource
+    async fn update_terraform_version(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a terraform_version resource
+    async fn delete_terraform_version(
         &self,
         id: &str,
     ) -> Result<()> {

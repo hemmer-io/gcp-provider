@@ -21,7 +21,7 @@ impl<'a> Regionalinventory<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, price: Option<String>, custom_attributes: Option<Vec<String>>, region_id: Option<String>, kind: Option<String>, availability: Option<String>, sale_price: Option<String>, sale_price_effective_date: Option<String>, merchant_id: String, product_id: String) -> Result<String> {
+    pub async fn create(&self, sale_price: Option<String>, custom_attributes: Option<Vec<String>>, sale_price_effective_date: Option<String>, availability: Option<String>, price: Option<String>, region_id: Option<String>, kind: Option<String>, merchant_id: String, product_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

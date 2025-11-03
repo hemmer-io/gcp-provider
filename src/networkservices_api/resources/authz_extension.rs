@@ -21,7 +21,7 @@ impl<'a> Authz_extension<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, fail_open: Option<bool>, wire_format: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, service: Option<String>, metadata: Option<HashMap<String, String>>, timeout: Option<String>, create_time: Option<String>, forward_headers: Option<Vec<String>>, authority: Option<String>, description: Option<String>, load_balancing_scheme: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, fail_open: Option<bool>, forward_headers: Option<Vec<String>>, metadata: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, name: Option<String>, service: Option<String>, update_time: Option<String>, wire_format: Option<String>, load_balancing_scheme: Option<String>, authority: Option<String>, create_time: Option<String>, timeout: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Authz_extension<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, fail_open: Option<bool>, wire_format: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, service: Option<String>, metadata: Option<HashMap<String, String>>, timeout: Option<String>, create_time: Option<String>, forward_headers: Option<Vec<String>>, authority: Option<String>, description: Option<String>, load_balancing_scheme: Option<String>, update_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, fail_open: Option<bool>, forward_headers: Option<Vec<String>>, metadata: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, name: Option<String>, service: Option<String>, update_time: Option<String>, wire_format: Option<String>, load_balancing_scheme: Option<String>, authority: Option<String>, create_time: Option<String>, timeout: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

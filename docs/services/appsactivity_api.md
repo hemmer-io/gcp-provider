@@ -33,8 +33,8 @@ Returns a list of activities visible to the current logged in user. Visible acti
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `next_page_token` | String | Token for the next page of results. |
 | `activities` | Vec<String> | List of activities. |
+| `next_page_token` | String | Token for the next page of results. |
 
 
 #### Usage Example
@@ -50,8 +50,8 @@ provider = gcp.GcpProvider {
 
 # Access activitie outputs
 activitie_id = activitie.id
-activitie_next_page_token = activitie.next_page_token
 activitie_activities = activitie.activities
+activitie_next_page_token = activitie.next_page_token
 ```
 
 ---

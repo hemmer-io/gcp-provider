@@ -22,7 +22,7 @@ impl<'a> Region_network_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, kind: Option<String>, id: Option<String>, name: Option<String>, rule_tuple_count: Option<i64>, associations: Option<Vec<String>>, traffic_classification_rules: Option<Vec<String>>, creation_timestamp: Option<String>, region: Option<String>, description: Option<String>, self_link_with_id: Option<String>, self_link: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, kind: Option<String>, region: Option<String>, id: Option<String>, self_link_with_id: Option<String>, description: Option<String>, associations: Option<Vec<String>>, self_link: Option<String>, creation_timestamp: Option<String>, rule_tuple_count: Option<i64>, traffic_classification_rules: Option<Vec<String>>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Region_network_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, kind: Option<String>, id: Option<String>, name: Option<String>, rule_tuple_count: Option<i64>, associations: Option<Vec<String>>, traffic_classification_rules: Option<Vec<String>>, creation_timestamp: Option<String>, region: Option<String>, description: Option<String>, self_link_with_id: Option<String>, self_link: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, kind: Option<String>, region: Option<String>, id: Option<String>, self_link_with_id: Option<String>, description: Option<String>, associations: Option<Vec<String>>, self_link: Option<String>, creation_timestamp: Option<String>, rule_tuple_count: Option<i64>, traffic_classification_rules: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

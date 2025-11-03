@@ -1,6 +1,6 @@
 //! Version_header resource
 //!
-//! Lists all Container Versions of a GTM Container.
+//! Gets the latest container version header
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

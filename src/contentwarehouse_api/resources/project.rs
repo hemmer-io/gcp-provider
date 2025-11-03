@@ -1,6 +1,6 @@
 //! Project resource
 //!
-//! Gets the access control policy for a resource. Returns NOT_FOUND error if the resource does not exist. Returns an empty policy if the resource exists but does not have a policy set.
+//! Sets the access control policy for a resource. Replaces any existing policy.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Project<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, project_owner: Option<bool>, request_metadata: Option<String>, resource: String) -> Result<String> {
+    pub async fn create(&self, policy: Option<String>, project_owner: Option<bool>, request_metadata: Option<String>, resource: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

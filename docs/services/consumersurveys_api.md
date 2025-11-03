@@ -10,44 +10,33 @@
 
 The consumersurveys_api service provides access to 3 resource types:
 
-- [Mobileapppanel](#mobileapppanel) [RU]
-- [Survey](#survey) [CRUD]
 - [Result](#result) [R]
+- [Survey](#survey) [CRUD]
+- [Mobileapppanel](#mobileapppanel) [RU]
 
 ---
 
 ## Resources
 
 
-### Mobileapppanel
+### Result
 
-Retrieves a MobileAppPanel that is available to the authenticated user.
+Retrieves any survey results that have been produced so far. Results are formatted as an Excel file. You must add "?alt=media" to the URL as an argument to get results.
 
-**Operations**: ✅ Read ✅ Update
+**Operations**: ✅ Read
 
 #### Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `is_public_panel` | bool |  |  |
-| `country` | String |  |  |
-| `owners` | Vec<String> |  |  |
-| `name` | String |  |  |
-| `mobile_app_panel_id` | String |  |  |
-| `language` | String |  |  |
-| `panel_id` | String | ✅ | External URL ID for the panel. |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `is_public_panel` | bool |  |
-| `country` | String |  |
-| `owners` | Vec<String> |  |
-| `name` | String |  |
-| `mobile_app_panel_id` | String |  |
-| `language` | String |  |
+| `survey_url_id` | String |  |
+| `status` | String |  |
 
 
 #### Usage Example
@@ -61,14 +50,10 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Access mobileapppanel outputs
-mobileapppanel_id = mobileapppanel.id
-mobileapppanel_is_public_panel = mobileapppanel.is_public_panel
-mobileapppanel_country = mobileapppanel.country
-mobileapppanel_owners = mobileapppanel.owners
-mobileapppanel_name = mobileapppanel.name
-mobileapppanel_mobile_app_panel_id = mobileapppanel.mobile_app_panel_id
-mobileapppanel_language = mobileapppanel.language
+# Access result outputs
+result_id = result.id
+result_survey_url_id = result.survey_url_id
+result_status = result.status
 ```
 
 ---
@@ -84,34 +69,34 @@ Creates a survey.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `title` | String |  |  |
 | `state` | String |  |  |
-| `audience` | String |  |  |
-| `cost` | String |  |  |
-| `owners` | Vec<String> |  |  |
-| `customer_data` | String |  |  |
-| `questions` | Vec<String> |  |  |
 | `survey_url_id` | String |  |  |
-| `wanted_response_count` | i64 |  |  |
+| `questions` | Vec<String> |  |  |
+| `title` | String |  |  |
+| `audience` | String |  |  |
 | `rejection_reason` | String |  |  |
+| `owners` | Vec<String> |  |  |
 | `description` | String |  |  |
+| `cost` | String |  |  |
+| `customer_data` | String |  |  |
+| `wanted_response_count` | i64 |  |  |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `title` | String |  |
 | `state` | String |  |
-| `audience` | String |  |
-| `cost` | String |  |
-| `owners` | Vec<String> |  |
-| `customer_data` | String |  |
-| `questions` | Vec<String> |  |
 | `survey_url_id` | String |  |
-| `wanted_response_count` | i64 |  |
+| `questions` | Vec<String> |  |
+| `title` | String |  |
+| `audience` | String |  |
 | `rejection_reason` | String |  |
+| `owners` | Vec<String> |  |
 | `description` | String |  |
+| `cost` | String |  |
+| `customer_data` | String |  |
+| `wanted_response_count` | i64 |  |
 
 
 #### Usage Example
@@ -131,40 +116,51 @@ survey = provider.consumersurveys_api.Survey {
 
 # Access survey outputs
 survey_id = survey.id
-survey_title = survey.title
 survey_state = survey.state
-survey_audience = survey.audience
-survey_cost = survey.cost
-survey_owners = survey.owners
-survey_customer_data = survey.customer_data
-survey_questions = survey.questions
 survey_survey_url_id = survey.survey_url_id
-survey_wanted_response_count = survey.wanted_response_count
+survey_questions = survey.questions
+survey_title = survey.title
+survey_audience = survey.audience
 survey_rejection_reason = survey.rejection_reason
+survey_owners = survey.owners
 survey_description = survey.description
+survey_cost = survey.cost
+survey_customer_data = survey.customer_data
+survey_wanted_response_count = survey.wanted_response_count
 ```
 
 ---
 
 
-### Result
+### Mobileapppanel
 
-Retrieves any survey results that have been produced so far. Results are formatted as an Excel file. You must add "?alt=media" to the URL as an argument to get results.
+Retrieves a MobileAppPanel that is available to the authenticated user.
 
-**Operations**: ✅ Read
+**Operations**: ✅ Read ✅ Update
 
 #### Fields
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
+| `name` | String |  |  |
+| `is_public_panel` | bool |  |  |
+| `language` | String |  |  |
+| `mobile_app_panel_id` | String |  |  |
+| `owners` | Vec<String> |  |  |
+| `country` | String |  |  |
+| `panel_id` | String | ✅ | External URL ID for the panel. |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `status` | String |  |
-| `survey_url_id` | String |  |
+| `name` | String |  |
+| `is_public_panel` | bool |  |
+| `language` | String |  |
+| `mobile_app_panel_id` | String |  |
+| `owners` | Vec<String> |  |
+| `country` | String |  |
 
 
 #### Usage Example
@@ -178,10 +174,14 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Access result outputs
-result_id = result.id
-result_status = result.status
-result_survey_url_id = result.survey_url_id
+# Access mobileapppanel outputs
+mobileapppanel_id = mobileapppanel.id
+mobileapppanel_name = mobileapppanel.name
+mobileapppanel_is_public_panel = mobileapppanel.is_public_panel
+mobileapppanel_language = mobileapppanel.language
+mobileapppanel_mobile_app_panel_id = mobileapppanel.mobile_app_panel_id
+mobileapppanel_owners = mobileapppanel.owners
+mobileapppanel_country = mobileapppanel.country
 ```
 
 ---
@@ -199,15 +199,12 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple mobileapppanel resources
-mobileapppanel_0 = provider.consumersurveys_api.Mobileapppanel {
-    panel_id = "value-0"
+# Create multiple result resources
+result_0 = provider.consumersurveys_api.Result {
 }
-mobileapppanel_1 = provider.consumersurveys_api.Mobileapppanel {
-    panel_id = "value-1"
+result_1 = provider.consumersurveys_api.Result {
 }
-mobileapppanel_2 = provider.consumersurveys_api.Mobileapppanel {
-    panel_id = "value-2"
+result_2 = provider.consumersurveys_api.Result {
 }
 ```
 
@@ -216,8 +213,7 @@ mobileapppanel_2 = provider.consumersurveys_api.Mobileapppanel {
 ```kcl
 # Only create in production
 if environment == "production":
-    mobileapppanel = provider.consumersurveys_api.Mobileapppanel {
-        panel_id = "production-value"
+    result = provider.consumersurveys_api.Result {
     }
 ```
 

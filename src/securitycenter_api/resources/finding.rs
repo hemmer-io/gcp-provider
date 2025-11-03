@@ -21,7 +21,7 @@ impl<'a> Finding<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, external_uri: Option<String>, event_time: Option<String>, category: Option<String>, security_marks: Option<String>, parent: Option<String>, severity: Option<String>, state: Option<String>, resource_name: Option<String>, name: Option<String>, create_time: Option<String>, source_properties: Option<HashMap<String, String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, event_time: Option<String>, category: Option<String>, severity: Option<String>, security_marks: Option<String>, external_uri: Option<String>, source_properties: Option<HashMap<String, String>>, name: Option<String>, parent: Option<String>, create_time: Option<String>, resource_name: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Finding<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, external_uri: Option<String>, event_time: Option<String>, category: Option<String>, security_marks: Option<String>, parent: Option<String>, severity: Option<String>, state: Option<String>, resource_name: Option<String>, name: Option<String>, create_time: Option<String>, source_properties: Option<HashMap<String, String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, event_time: Option<String>, category: Option<String>, severity: Option<String>, security_marks: Option<String>, external_uri: Option<String>, source_properties: Option<HashMap<String, String>>, name: Option<String>, parent: Option<String>, create_time: Option<String>, resource_name: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

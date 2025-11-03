@@ -21,7 +21,7 @@ impl<'a> Variant<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, device_spec: Option<String>, variant_id: Option<i64>, options: Option<String>, version_code: String, package_name: String) -> Result<String> {
+    pub async fn create(&self, options: Option<String>, variant_id: Option<i64>, device_spec: Option<String>, version_code: String, package_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

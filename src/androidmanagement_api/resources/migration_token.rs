@@ -21,7 +21,7 @@ impl<'a> Migration_token<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, additional_data: Option<String>, device: Option<String>, management_mode: Option<String>, name: Option<String>, value: Option<String>, expire_time: Option<String>, policy: Option<String>, ttl: Option<String>, user_id: Option<String>, create_time: Option<String>, device_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, user_id: Option<String>, value: Option<String>, ttl: Option<String>, name: Option<String>, expire_time: Option<String>, policy: Option<String>, device_id: Option<String>, additional_data: Option<String>, management_mode: Option<String>, device: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

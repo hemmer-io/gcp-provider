@@ -1,6 +1,6 @@
 //! Score resource
 //!
-//! Resets scores for the leaderboard with the given ID for the currently authenticated player. This method is only accessible to whitelisted tester accounts for your application.
+//! Resets scores for all draft leaderboards for all players. This method is only available to user accounts for your developer console.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Score<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, leaderboard_id: String) -> Result<String> {
+    pub async fn create(&self) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

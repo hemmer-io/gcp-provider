@@ -27,8 +27,8 @@ Returns the pubsub notification settings for the account.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `pubsub_topic` | String |  | Optional. The Google Pub/Sub topic that will receive notifications when locations managed by this account are updated. If unset, no notifications will be posted. The account mybusiness-api-pubsub@system.gserviceaccount.com must have at least Publish permissions on the Pub/Sub topic. |
 | `notification_types` | Vec<String> |  | The types of notifications that will be sent to the Pub/Sub topic. To stop receiving notifications entirely, use NotificationSettings.UpdateNotificationSetting with an empty notification_types or set the pubsub_topic to an empty string. |
+| `pubsub_topic` | String |  | Optional. The Google Pub/Sub topic that will receive notifications when locations managed by this account are updated. If unset, no notifications will be posted. The account mybusiness-api-pubsub@system.gserviceaccount.com must have at least Publish permissions on the Pub/Sub topic. |
 | `name` | String |  | Required. The resource name this setting is for. This is of the form `accounts/{account_id}/notificationSetting`. |
 | `name` | String | ✅ | Required. The resource name this setting is for. This is of the form `accounts/{account_id}/notificationSetting`. |
 
@@ -37,8 +37,8 @@ Returns the pubsub notification settings for the account.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `pubsub_topic` | String | Optional. The Google Pub/Sub topic that will receive notifications when locations managed by this account are updated. If unset, no notifications will be posted. The account mybusiness-api-pubsub@system.gserviceaccount.com must have at least Publish permissions on the Pub/Sub topic. |
 | `notification_types` | Vec<String> | The types of notifications that will be sent to the Pub/Sub topic. To stop receiving notifications entirely, use NotificationSettings.UpdateNotificationSetting with an empty notification_types or set the pubsub_topic to an empty string. |
+| `pubsub_topic` | String | Optional. The Google Pub/Sub topic that will receive notifications when locations managed by this account are updated. If unset, no notifications will be posted. The account mybusiness-api-pubsub@system.gserviceaccount.com must have at least Publish permissions on the Pub/Sub topic. |
 | `name` | String | Required. The resource name this setting is for. This is of the form `accounts/{account_id}/notificationSetting`. |
 
 
@@ -55,8 +55,8 @@ provider = gcp.GcpProvider {
 
 # Access account outputs
 account_id = account.id
-account_pubsub_topic = account.pubsub_topic
 account_notification_types = account.notification_types
+account_pubsub_topic = account.pubsub_topic
 account_name = account.name
 ```
 

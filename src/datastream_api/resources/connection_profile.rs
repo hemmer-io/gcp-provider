@@ -21,7 +21,7 @@ impl<'a> Connection_profile<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, private_connectivity: Option<String>, static_service_ip_connectivity: Option<String>, no_connectivity: Option<String>, oracle_profile: Option<String>, create_time: Option<String>, update_time: Option<String>, forward_ssh_connectivity: Option<String>, name: Option<String>, gcs_profile: Option<String>, labels: Option<HashMap<String, String>>, mysql_profile: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, oracle_profile: Option<String>, static_service_ip_connectivity: Option<String>, update_time: Option<String>, gcs_profile: Option<String>, forward_ssh_connectivity: Option<String>, labels: Option<HashMap<String, String>>, private_connectivity: Option<String>, create_time: Option<String>, mysql_profile: Option<String>, display_name: Option<String>, no_connectivity: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Connection_profile<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, private_connectivity: Option<String>, static_service_ip_connectivity: Option<String>, no_connectivity: Option<String>, oracle_profile: Option<String>, create_time: Option<String>, update_time: Option<String>, forward_ssh_connectivity: Option<String>, name: Option<String>, gcs_profile: Option<String>, labels: Option<HashMap<String, String>>, mysql_profile: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, oracle_profile: Option<String>, static_service_ip_connectivity: Option<String>, update_time: Option<String>, gcs_profile: Option<String>, forward_ssh_connectivity: Option<String>, labels: Option<HashMap<String, String>>, private_connectivity: Option<String>, create_time: Option<String>, mysql_profile: Option<String>, display_name: Option<String>, no_connectivity: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

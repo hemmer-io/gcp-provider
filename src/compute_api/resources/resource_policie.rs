@@ -21,7 +21,7 @@ impl<'a> Resource_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, resource_status: Option<String>, group_placement_policy: Option<String>, status: Option<String>, name: Option<String>, region: Option<String>, workload_policy: Option<String>, instance_schedule_policy: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, disk_consistency_group_policy: Option<String>, id: Option<String>, snapshot_schedule_policy: Option<String>, self_link: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, workload_policy: Option<String>, kind: Option<String>, status: Option<String>, self_link: Option<String>, description: Option<String>, group_placement_policy: Option<String>, instance_schedule_policy: Option<String>, creation_timestamp: Option<String>, disk_consistency_group_policy: Option<String>, resource_status: Option<String>, name: Option<String>, snapshot_schedule_policy: Option<String>, id: Option<String>, region: Option<String>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Resource_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, resource_status: Option<String>, group_placement_policy: Option<String>, status: Option<String>, name: Option<String>, region: Option<String>, workload_policy: Option<String>, instance_schedule_policy: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, disk_consistency_group_policy: Option<String>, id: Option<String>, snapshot_schedule_policy: Option<String>, self_link: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, workload_policy: Option<String>, kind: Option<String>, status: Option<String>, self_link: Option<String>, description: Option<String>, group_placement_policy: Option<String>, instance_schedule_policy: Option<String>, creation_timestamp: Option<String>, disk_consistency_group_policy: Option<String>, resource_status: Option<String>, name: Option<String>, snapshot_schedule_policy: Option<String>, id: Option<String>, region: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

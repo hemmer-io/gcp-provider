@@ -24,23 +24,23 @@ impl<'a> Checks_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "aisafety" => {
-                self.plan_aisafety(current_state, desired_input).await
-            }
-            "app" => {
-                self.plan_app(current_state, desired_input).await
-            }
             "media" => {
                 self.plan_media(current_state, desired_input).await
+            }
+            "report" => {
+                self.plan_report(current_state, desired_input).await
             }
             "scan" => {
                 self.plan_scan(current_state, desired_input).await
             }
+            "app" => {
+                self.plan_app(current_state, desired_input).await
+            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
-            "report" => {
-                self.plan_report(current_state, desired_input).await
+            "aisafety" => {
+                self.plan_aisafety(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,23 +57,23 @@ impl<'a> Checks_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "aisafety" => {
-                self.create_aisafety(input).await
-            }
-            "app" => {
-                self.create_app(input).await
-            }
             "media" => {
                 self.create_media(input).await
+            }
+            "report" => {
+                self.create_report(input).await
             }
             "scan" => {
                 self.create_scan(input).await
             }
+            "app" => {
+                self.create_app(input).await
+            }
             "operation" => {
                 self.create_operation(input).await
             }
-            "report" => {
-                self.create_report(input).await
+            "aisafety" => {
+                self.create_aisafety(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -90,23 +90,23 @@ impl<'a> Checks_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "aisafety" => {
-                self.read_aisafety(id).await
-            }
-            "app" => {
-                self.read_app(id).await
-            }
             "media" => {
                 self.read_media(id).await
+            }
+            "report" => {
+                self.read_report(id).await
             }
             "scan" => {
                 self.read_scan(id).await
             }
+            "app" => {
+                self.read_app(id).await
+            }
             "operation" => {
                 self.read_operation(id).await
             }
-            "report" => {
-                self.read_report(id).await
+            "aisafety" => {
+                self.read_aisafety(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,23 +124,23 @@ impl<'a> Checks_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "aisafety" => {
-                self.update_aisafety(id, input).await
-            }
-            "app" => {
-                self.update_app(id, input).await
-            }
             "media" => {
                 self.update_media(id, input).await
+            }
+            "report" => {
+                self.update_report(id, input).await
             }
             "scan" => {
                 self.update_scan(id, input).await
             }
+            "app" => {
+                self.update_app(id, input).await
+            }
             "operation" => {
                 self.update_operation(id, input).await
             }
-            "report" => {
-                self.update_report(id, input).await
+            "aisafety" => {
+                self.update_aisafety(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -157,23 +157,23 @@ impl<'a> Checks_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "aisafety" => {
-                self.delete_aisafety(id).await
-            }
-            "app" => {
-                self.delete_app(id).await
-            }
             "media" => {
                 self.delete_media(id).await
+            }
+            "report" => {
+                self.delete_report(id).await
             }
             "scan" => {
                 self.delete_scan(id).await
             }
+            "app" => {
+                self.delete_app(id).await
+            }
             "operation" => {
                 self.delete_operation(id).await
             }
-            "report" => {
-                self.delete_report(id).await
+            "aisafety" => {
+                self.delete_aisafety(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -186,128 +186,6 @@ impl<'a> Checks_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Aisafety resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a aisafety resource
-    async fn plan_aisafety(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new aisafety resource
-    async fn create_aisafety(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a aisafety resource
-    async fn read_aisafety(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a aisafety resource
-    async fn update_aisafety(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a aisafety resource
-    async fn delete_aisafety(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // App resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a app resource
-    async fn plan_app(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new app resource
-    async fn create_app(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a app resource
-    async fn read_app(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a app resource
-    async fn update_app(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a app resource
-    async fn delete_app(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -363,6 +241,67 @@ impl<'a> Checks_apiService<'a> {
 
     /// Delete a media resource
     async fn delete_media(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Report resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a report resource
+    async fn plan_report(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new report resource
+    async fn create_report(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a report resource
+    async fn read_report(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a report resource
+    async fn update_report(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a report resource
+    async fn delete_report(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -433,6 +372,67 @@ impl<'a> Checks_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // App resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a app resource
+    async fn plan_app(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new app resource
+    async fn create_app(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a app resource
+    async fn read_app(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a app resource
+    async fn update_app(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a app resource
+    async fn delete_app(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Operation resource operations
     // ------------------------------------------------------------------------
 
@@ -494,11 +494,11 @@ impl<'a> Checks_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Report resource operations
+    // Aisafety resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a report resource
-    async fn plan_report(
+    /// Plan changes to a aisafety resource
+    async fn plan_aisafety(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -513,8 +513,8 @@ impl<'a> Checks_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new report resource
-    async fn create_report(
+    /// Create a new aisafety resource
+    async fn create_aisafety(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -523,8 +523,8 @@ impl<'a> Checks_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a report resource
-    async fn read_report(
+    /// Read a aisafety resource
+    async fn read_aisafety(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -533,8 +533,8 @@ impl<'a> Checks_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a report resource
-    async fn update_report(
+    /// Update a aisafety resource
+    async fn update_aisafety(
         &self,
         id: &str,
         input: ResourceInput,
@@ -544,8 +544,8 @@ impl<'a> Checks_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a report resource
-    async fn delete_report(
+    /// Delete a aisafety resource
+    async fn delete_aisafety(
         &self,
         id: &str,
     ) -> Result<()> {

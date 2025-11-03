@@ -10,13 +10,52 @@
 
 The firebasestorage_api service provides access to 3 resource types:
 
+- [Default_bucket](#default_bucket) [C]
 - [Project](#project) [RD]
 - [Bucket](#bucket) [CR]
-- [Default_bucket](#default_bucket) [C]
 
 ---
 
 ## Resources
+
+
+### Default_bucket
+
+Creates a Spark tier-eligible Cloud Storage bucket and links it to your Firebase project. If the default bucket already exists, this method will re-link it to your Firebase project. See https://firebase.google.com/pricing for pricing details.
+
+**Operations**: ✅ Create
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `location` | String |  | Immutable. Location of the default bucket. |
+| `bucket` | String |  | Output only. Underlying bucket resource. |
+| `name` | String |  | Resource name of the default bucket. |
+| `storage_class` | String |  | Immutable. Storage class of the default bucket. Supported values are available at https://cloud.google.com/storage/docs/storage-classes#classes. |
+| `parent` | String | ✅ | Required. The parent resource where the default bucket will be created, `projects/{project_id_or_number}`. |
+
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create default_bucket
+default_bucket = provider.firebasestorage_api.Default_bucket {
+    parent = "value"  # Required. The parent resource where the default bucket will be created, `projects/{project_id_or_number}`.
+}
+
+```
+
+---
 
 
 ### Project
@@ -35,8 +74,8 @@ Gets the default bucket.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `bucket` | String | Output only. Underlying bucket resource. |
 | `location` | String | Immutable. Location of the default bucket. |
+| `bucket` | String | Output only. Underlying bucket resource. |
 | `name` | String | Resource name of the default bucket. |
 | `storage_class` | String | Immutable. Storage class of the default bucket. Supported values are available at https://cloud.google.com/storage/docs/storage-classes#classes. |
 
@@ -54,8 +93,8 @@ provider = gcp.GcpProvider {
 
 # Access project outputs
 project_id = project.id
-project_bucket = project.bucket
 project_location = project.location
+project_bucket = project.bucket
 project_name = project.name
 project_storage_class = project.storage_class
 ```
@@ -107,45 +146,6 @@ bucket_name = bucket.name
 ---
 
 
-### Default_bucket
-
-Creates a Spark tier-eligible Cloud Storage bucket and links it to your Firebase project. If the default bucket already exists, this method will re-link it to your Firebase project. See https://firebase.google.com/pricing for pricing details.
-
-**Operations**: ✅ Create
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `bucket` | String |  | Output only. Underlying bucket resource. |
-| `location` | String |  | Immutable. Location of the default bucket. |
-| `name` | String |  | Resource name of the default bucket. |
-| `storage_class` | String |  | Immutable. Storage class of the default bucket. Supported values are available at https://cloud.google.com/storage/docs/storage-classes#classes. |
-| `parent` | String | ✅ | Required. The parent resource where the default bucket will be created, `projects/{project_id_or_number}`. |
-
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create default_bucket
-default_bucket = provider.firebasestorage_api.Default_bucket {
-    parent = "value"  # Required. The parent resource where the default bucket will be created, `projects/{project_id_or_number}`.
-}
-
-```
-
----
-
-
 
 ## Common Operations
 
@@ -158,12 +158,15 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple project resources
-project_0 = provider.firebasestorage_api.Project {
+# Create multiple default_bucket resources
+default_bucket_0 = provider.firebasestorage_api.Default_bucket {
+    parent = "value-0"
 }
-project_1 = provider.firebasestorage_api.Project {
+default_bucket_1 = provider.firebasestorage_api.Default_bucket {
+    parent = "value-1"
 }
-project_2 = provider.firebasestorage_api.Project {
+default_bucket_2 = provider.firebasestorage_api.Default_bucket {
+    parent = "value-2"
 }
 ```
 
@@ -172,7 +175,8 @@ project_2 = provider.firebasestorage_api.Project {
 ```kcl
 # Only create in production
 if environment == "production":
-    project = provider.firebasestorage_api.Project {
+    default_bucket = provider.firebasestorage_api.Default_bucket {
+        parent = "production-value"
     }
 ```
 

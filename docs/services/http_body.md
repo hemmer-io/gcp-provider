@@ -28,10 +28,10 @@ Creates a FHIR resource.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `content_type` | String |  | The HTTP Content-Type header value specifying the content type of the body. |
-| `data` | String |  | The HTTP request/response body as raw binary. |
 | `extensions` | Vec<HashMap<String, String>> |  | Application specific response metadata. Must be set in the first response
 for streaming APIs. |
+| `content_type` | String |  | The HTTP Content-Type header value specifying the content type of the body. |
+| `data` | String |  | The HTTP request/response body as raw binary. |
 | `parent` | String | ✅ | The name of the FHIR store this resource belongs to. |
 | `type` | String | ✅ | The type of the resource to create. |
 
@@ -40,10 +40,10 @@ for streaming APIs. |
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `content_type` | String | The HTTP Content-Type header value specifying the content type of the body. |
-| `data` | String | The HTTP request/response body as raw binary. |
 | `extensions` | Vec<HashMap<String, String>> | Application specific response metadata. Must be set in the first response
 for streaming APIs. |
+| `content_type` | String | The HTTP Content-Type header value specifying the content type of the body. |
+| `data` | String | The HTTP request/response body as raw binary. |
 
 
 #### Usage Example
@@ -65,9 +65,9 @@ fhir = provider.http_body.Fhir {
 
 # Access fhir outputs
 fhir_id = fhir.id
+fhir_extensions = fhir.extensions
 fhir_content_type = fhir.content_type
 fhir_data = fhir.data
-fhir_extensions = fhir.extensions
 ```
 
 ---

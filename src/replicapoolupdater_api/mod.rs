@@ -24,11 +24,11 @@ impl<'a> Replicapoolupdater_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "rolling_update" => {
-                self.plan_rolling_update(current_state, desired_input).await
-            }
             "zone_operation" => {
                 self.plan_zone_operation(current_state, desired_input).await
+            }
+            "rolling_update" => {
+                self.plan_rolling_update(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -45,11 +45,11 @@ impl<'a> Replicapoolupdater_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "rolling_update" => {
-                self.create_rolling_update(input).await
-            }
             "zone_operation" => {
                 self.create_zone_operation(input).await
+            }
+            "rolling_update" => {
+                self.create_rolling_update(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,11 +66,11 @@ impl<'a> Replicapoolupdater_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "rolling_update" => {
-                self.read_rolling_update(id).await
-            }
             "zone_operation" => {
                 self.read_zone_operation(id).await
+            }
+            "rolling_update" => {
+                self.read_rolling_update(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -88,11 +88,11 @@ impl<'a> Replicapoolupdater_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "rolling_update" => {
-                self.update_rolling_update(id, input).await
-            }
             "zone_operation" => {
                 self.update_zone_operation(id, input).await
+            }
+            "rolling_update" => {
+                self.update_rolling_update(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -109,11 +109,11 @@ impl<'a> Replicapoolupdater_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "rolling_update" => {
-                self.delete_rolling_update(id).await
-            }
             "zone_operation" => {
                 self.delete_zone_operation(id).await
+            }
+            "rolling_update" => {
+                self.delete_rolling_update(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -126,67 +126,6 @@ impl<'a> Replicapoolupdater_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Rolling_update resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a rolling_update resource
-    async fn plan_rolling_update(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new rolling_update resource
-    async fn create_rolling_update(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a rolling_update resource
-    async fn read_rolling_update(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a rolling_update resource
-    async fn update_rolling_update(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a rolling_update resource
-    async fn delete_rolling_update(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -242,6 +181,67 @@ impl<'a> Replicapoolupdater_apiService<'a> {
 
     /// Delete a zone_operation resource
     async fn delete_zone_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Rolling_update resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a rolling_update resource
+    async fn plan_rolling_update(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new rolling_update resource
+    async fn create_rolling_update(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a rolling_update resource
+    async fn read_rolling_update(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a rolling_update resource
+    async fn update_rolling_update(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a rolling_update resource
+    async fn delete_rolling_update(
         &self,
         id: &str,
     ) -> Result<()> {

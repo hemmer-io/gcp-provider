@@ -21,7 +21,7 @@ impl<'a> Permission<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, email_address: Option<String>, permission_id: Option<String>, account_access: Option<String>, account_id: Option<String>, container_access: Option<Vec<String>>, account_id: String) -> Result<String> {
+    pub async fn create(&self, account_id: Option<String>, container_access: Option<Vec<String>>, account_access: Option<String>, permission_id: Option<String>, email_address: Option<String>, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Permission<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, email_address: Option<String>, permission_id: Option<String>, account_access: Option<String>, account_id: Option<String>, container_access: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, account_id: Option<String>, container_access: Option<Vec<String>>, account_access: Option<String>, permission_id: Option<String>, email_address: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

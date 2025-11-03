@@ -1,6 +1,6 @@
 //! Playablelocation resource
 //!
-//! Returns a set of playable locations that lie within a specified area, that satisfy optional filter criteria. Note: Identical `SamplePlayableLocations` requests can return different results as the state of the world changes over time.
+//! Logs bad playable location reports submitted by players. Reports are not partially saved; either all reports are saved and this request succeeds, or no reports are saved, and this request fails.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Playablelocation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, criteria: Option<Vec<String>>, area_filter: Option<String>) -> Result<String> {
+    pub async fn create(&self, client_info: Option<String>, player_reports: Option<Vec<String>>, request_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

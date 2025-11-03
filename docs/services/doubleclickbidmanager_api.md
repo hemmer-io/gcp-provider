@@ -10,66 +10,14 @@
 
 The doubleclickbidmanager_api service provides access to 4 resource types:
 
-- [Querie](#querie) [CRD]
 - [Report](#report) [R]
+- [Querie](#querie) [CRD]
 - [Report](#report) [R]
 - [Querie](#querie) [CRD]
 
 ---
 
 ## Resources
-
-
-### Querie
-
-Runs a stored query to generate a report.
-
-**Operations**: ✅ Create ✅ Read ✅ Delete
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `report_data_start_time_ms` | String |  | The starting time for the data that is shown in the report. Note, reportDataStartTimeMs is required if dataRange is CUSTOM_DATES and ignored otherwise. |
-| `report_data_end_time_ms` | String |  | The ending time for the data that is shown in the report. Note, reportDataEndTimeMs is required if dataRange is CUSTOM_DATES and ignored otherwise. |
-| `data_range` | String |  | Report data range used to generate the report. |
-| `timezone_code` | String |  | Canonical timezone code for report data time. Defaults to America/New_York. |
-| `query_id` | String | ✅ | Query ID to run. |
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `next_page_token` | String | Next page's pagination token if one exists. |
-| `queries` | Vec<String> | Retrieved queries. |
-| `kind` | String | Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#listQueriesResponse". |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create querie
-querie = provider.doubleclickbidmanager_api.Querie {
-    query_id = "value"  # Query ID to run.
-}
-
-# Access querie outputs
-querie_id = querie.id
-querie_next_page_token = querie.next_page_token
-querie_queries = querie.queries
-querie_kind = querie.kind
-```
-
----
 
 
 ### Report
@@ -89,8 +37,8 @@ Retrieves stored reports.
 | Output | Type | Description |
 |--------|------|-------------|
 | `reports` | Vec<String> | Retrieved reports. |
-| `next_page_token` | String | Next page's pagination token if one exists. |
 | `kind` | String | Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#listReportsResponse". |
+| `next_page_token` | String | Next page's pagination token if one exists. |
 
 
 #### Usage Example
@@ -107,8 +55,62 @@ provider = gcp.GcpProvider {
 # Access report outputs
 report_id = report.id
 report_reports = report.reports
-report_next_page_token = report.next_page_token
 report_kind = report.kind
+report_next_page_token = report.next_page_token
+```
+
+---
+
+
+### Querie
+
+Creates a query.
+
+**Operations**: ✅ Create ✅ Read ✅ Delete
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `report_data_end_time_ms` | String |  | The ending time for the data that is shown in the report. Note, reportDataEndTimeMs is required if metadata.dataRange is CUSTOM_DATES and ignored otherwise. |
+| `schedule` | String |  | Information on how often and when to run a query. |
+| `params` | String |  | Query parameters. |
+| `report_data_start_time_ms` | String |  | The starting time for the data that is shown in the report. Note, reportDataStartTimeMs is required if metadata.dataRange is CUSTOM_DATES and ignored otherwise. |
+| `query_id` | String |  | Query ID. |
+| `metadata` | String |  | Query metadata. |
+| `timezone_code` | String |  | Canonical timezone code for report data time. Defaults to America/New_York. |
+| `kind` | String |  | Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#query". |
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `queries` | Vec<String> | Retrieved queries. |
+| `kind` | String | Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#listQueriesResponse". |
+| `next_page_token` | String | Next page's pagination token if one exists. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create querie
+querie = provider.doubleclickbidmanager_api.Querie {
+}
+
+# Access querie outputs
+querie_id = querie.id
+querie_queries = querie.queries
+querie_kind = querie.kind
+querie_next_page_token = querie.next_page_token
 ```
 
 ---
@@ -130,9 +132,9 @@ Retrieves a report.
 
 | Output | Type | Description |
 |--------|------|-------------|
+| `params` | String | The parameters of the report. |
 | `metadata` | String | The metadata of the report. |
 | `key` | String | The key information identifying the report. |
-| `params` | String | The parameters of the report. |
 
 
 #### Usage Example
@@ -148,9 +150,9 @@ provider = gcp.GcpProvider {
 
 # Access report outputs
 report_id = report.id
+report_params = report.params
 report_metadata = report.metadata
 report_key = report.key
-report_params = report.params
 ```
 
 ---
@@ -166,20 +168,20 @@ Creates a new query.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `metadata` | String |  | The metadata of the query. |
-| `params` | String |  | The parameters of the report generated by the query. |
-| `schedule` | String |  | When and how often the query is scheduled to run. If the frequency field is set to `ONE_TIME`, the query will only run when queries.run is called. |
 | `query_id` | String |  | Output only. The unique ID of the query. |
+| `schedule` | String |  | When and how often the query is scheduled to run. If the frequency field is set to `ONE_TIME`, the query will only run when queries.run is called. |
+| `params` | String |  | The parameters of the report generated by the query. |
+| `metadata` | String |  | The metadata of the query. |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `metadata` | String | The metadata of the query. |
-| `params` | String | The parameters of the report generated by the query. |
-| `schedule` | String | When and how often the query is scheduled to run. If the frequency field is set to `ONE_TIME`, the query will only run when queries.run is called. |
 | `query_id` | String | Output only. The unique ID of the query. |
+| `schedule` | String | When and how often the query is scheduled to run. If the frequency field is set to `ONE_TIME`, the query will only run when queries.run is called. |
+| `params` | String | The parameters of the report generated by the query. |
+| `metadata` | String | The metadata of the query. |
 
 
 #### Usage Example
@@ -199,10 +201,10 @@ querie = provider.doubleclickbidmanager_api.Querie {
 
 # Access querie outputs
 querie_id = querie.id
-querie_metadata = querie.metadata
-querie_params = querie.params
-querie_schedule = querie.schedule
 querie_query_id = querie.query_id
+querie_schedule = querie.schedule
+querie_params = querie.params
+querie_metadata = querie.metadata
 ```
 
 ---
@@ -220,15 +222,12 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple querie resources
-querie_0 = provider.doubleclickbidmanager_api.Querie {
-    query_id = "value-0"
+# Create multiple report resources
+report_0 = provider.doubleclickbidmanager_api.Report {
 }
-querie_1 = provider.doubleclickbidmanager_api.Querie {
-    query_id = "value-1"
+report_1 = provider.doubleclickbidmanager_api.Report {
 }
-querie_2 = provider.doubleclickbidmanager_api.Querie {
-    query_id = "value-2"
+report_2 = provider.doubleclickbidmanager_api.Report {
 }
 ```
 
@@ -237,8 +236,7 @@ querie_2 = provider.doubleclickbidmanager_api.Querie {
 ```kcl
 # Only create in production
 if environment == "production":
-    querie = provider.doubleclickbidmanager_api.Querie {
-        query_id = "production-value"
+    report = provider.doubleclickbidmanager_api.Report {
     }
 ```
 

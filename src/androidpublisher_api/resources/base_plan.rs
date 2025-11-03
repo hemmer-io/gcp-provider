@@ -1,6 +1,6 @@
 //! Base_plan resource
 //!
-//! Activates or deactivates base plans across one or multiple subscriptions. Set the latencyTolerance field on nested requests to PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT to achieve maximum update throughput.
+//! Deactivates a base plan. Once deactivated, the base plan will become unavailable to new subscribers, but existing subscribers will maintain their subscription
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Base_plan<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, requests: Option<Vec<String>>, package_name: String, product_id: String) -> Result<String> {
+    pub async fn create(&self, latency_tolerance: Option<String>, base_plan_id: Option<String>, package_name: Option<String>, product_id: Option<String>, product_id: String, base_plan_id: String, package_name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

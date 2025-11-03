@@ -27,14 +27,14 @@ impl<'a> Sheets_apiService<'a> {
             "spreadsheet" => {
                 self.plan_spreadsheet(current_state, desired_input).await
             }
-            "value" => {
-                self.plan_value(current_state, desired_input).await
+            "sheet" => {
+                self.plan_sheet(current_state, desired_input).await
             }
             "developer_metadata" => {
                 self.plan_developer_metadata(current_state, desired_input).await
             }
-            "sheet" => {
-                self.plan_sheet(current_state, desired_input).await
+            "value" => {
+                self.plan_value(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -54,14 +54,14 @@ impl<'a> Sheets_apiService<'a> {
             "spreadsheet" => {
                 self.create_spreadsheet(input).await
             }
-            "value" => {
-                self.create_value(input).await
+            "sheet" => {
+                self.create_sheet(input).await
             }
             "developer_metadata" => {
                 self.create_developer_metadata(input).await
             }
-            "sheet" => {
-                self.create_sheet(input).await
+            "value" => {
+                self.create_value(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -81,14 +81,14 @@ impl<'a> Sheets_apiService<'a> {
             "spreadsheet" => {
                 self.read_spreadsheet(id).await
             }
-            "value" => {
-                self.read_value(id).await
+            "sheet" => {
+                self.read_sheet(id).await
             }
             "developer_metadata" => {
                 self.read_developer_metadata(id).await
             }
-            "sheet" => {
-                self.read_sheet(id).await
+            "value" => {
+                self.read_value(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -109,14 +109,14 @@ impl<'a> Sheets_apiService<'a> {
             "spreadsheet" => {
                 self.update_spreadsheet(id, input).await
             }
-            "value" => {
-                self.update_value(id, input).await
+            "sheet" => {
+                self.update_sheet(id, input).await
             }
             "developer_metadata" => {
                 self.update_developer_metadata(id, input).await
             }
-            "sheet" => {
-                self.update_sheet(id, input).await
+            "value" => {
+                self.update_value(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -136,14 +136,14 @@ impl<'a> Sheets_apiService<'a> {
             "spreadsheet" => {
                 self.delete_spreadsheet(id).await
             }
-            "value" => {
-                self.delete_value(id).await
+            "sheet" => {
+                self.delete_sheet(id).await
             }
             "developer_metadata" => {
                 self.delete_developer_metadata(id).await
             }
-            "sheet" => {
-                self.delete_sheet(id).await
+            "value" => {
+                self.delete_value(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -220,11 +220,11 @@ impl<'a> Sheets_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Value resource operations
+    // Sheet resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a value resource
-    async fn plan_value(
+    /// Plan changes to a sheet resource
+    async fn plan_sheet(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -239,8 +239,8 @@ impl<'a> Sheets_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new value resource
-    async fn create_value(
+    /// Create a new sheet resource
+    async fn create_sheet(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -249,8 +249,8 @@ impl<'a> Sheets_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a value resource
-    async fn read_value(
+    /// Read a sheet resource
+    async fn read_sheet(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -259,8 +259,8 @@ impl<'a> Sheets_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a value resource
-    async fn update_value(
+    /// Update a sheet resource
+    async fn update_sheet(
         &self,
         id: &str,
         input: ResourceInput,
@@ -270,8 +270,8 @@ impl<'a> Sheets_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a value resource
-    async fn delete_value(
+    /// Delete a sheet resource
+    async fn delete_sheet(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -342,11 +342,11 @@ impl<'a> Sheets_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Sheet resource operations
+    // Value resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a sheet resource
-    async fn plan_sheet(
+    /// Plan changes to a value resource
+    async fn plan_value(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -361,8 +361,8 @@ impl<'a> Sheets_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new sheet resource
-    async fn create_sheet(
+    /// Create a new value resource
+    async fn create_value(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -371,8 +371,8 @@ impl<'a> Sheets_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a sheet resource
-    async fn read_sheet(
+    /// Read a value resource
+    async fn read_value(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -381,8 +381,8 @@ impl<'a> Sheets_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a sheet resource
-    async fn update_sheet(
+    /// Update a value resource
+    async fn update_value(
         &self,
         id: &str,
         input: ResourceInput,
@@ -392,8 +392,8 @@ impl<'a> Sheets_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a sheet resource
-    async fn delete_sheet(
+    /// Delete a value resource
+    async fn delete_value(
         &self,
         id: &str,
     ) -> Result<()> {

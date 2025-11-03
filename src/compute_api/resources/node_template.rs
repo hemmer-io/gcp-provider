@@ -22,7 +22,7 @@ impl<'a> Node_template<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, node_type: Option<String>, node_affinity_labels: Option<HashMap<String, String>>, status: Option<String>, id: Option<String>, region: Option<String>, self_link: Option<String>, accelerators: Option<Vec<String>>, status_message: Option<String>, name: Option<String>, disks: Option<Vec<String>>, server_binding: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, cpu_overcommit_type: Option<String>, description: Option<String>, node_type_flexibility: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, cpu_overcommit_type: Option<String>, region: Option<String>, id: Option<String>, server_binding: Option<String>, accelerators: Option<Vec<String>>, description: Option<String>, node_affinity_labels: Option<HashMap<String, String>>, status_message: Option<String>, kind: Option<String>, status: Option<String>, node_type: Option<String>, disks: Option<Vec<String>>, creation_timestamp: Option<String>, self_link: Option<String>, name: Option<String>, node_type_flexibility: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Scim_tenant<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, service_agent: Option<String>, state: Option<String>, claim_mapping: Option<HashMap<String, String>>, base_uri: Option<String>, display_name: Option<String>, name: Option<String>, purge_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, description: Option<String>, purge_time: Option<String>, claim_mapping: Option<HashMap<String, String>>, service_agent: Option<String>, base_uri: Option<String>, state: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Scim_tenant<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, service_agent: Option<String>, state: Option<String>, claim_mapping: Option<HashMap<String, String>>, base_uri: Option<String>, display_name: Option<String>, name: Option<String>, purge_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, description: Option<String>, purge_time: Option<String>, claim_mapping: Option<HashMap<String, String>>, service_agent: Option<String>, base_uri: Option<String>, state: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

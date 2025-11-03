@@ -1,6 +1,6 @@
 //! Alert resource
 //!
-//! Restores, or "undeletes", an alert that was marked for deletion within the past 30 days. Attempting to undelete an alert which was marked for deletion over 30 days ago (which has been removed from the Alert Center database) or a nonexistent alert returns a `NOT_FOUND` error. Attempting to undelete an alert which has not been marked for deletion has no effect.
+//! Performs batch delete operation on alerts.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Alert<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, customer_id: Option<String>, alert_id: String) -> Result<String> {
+    pub async fn create(&self, customer_id: Option<String>, alert_id: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

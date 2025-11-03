@@ -1,6 +1,6 @@
 //! V1 resource
 //!
-//! Evaluate a PromQL query at a single point in time.
+//! Lists exemplars relevant to a given PromQL query,
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> V1<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, query: Option<String>, time: Option<String>, timeout: Option<String>, location: String, name: String) -> Result<String> {
+    pub async fn create(&self, end: Option<String>, query: Option<String>, start: Option<String>, name: String, location: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

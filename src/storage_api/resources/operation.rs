@@ -1,6 +1,6 @@
 //! Operation resource
 //!
-//! Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed.
+//! Starts asynchronous advancement of the relocate bucket operation in the case of required write downtime, to allow it to lock the bucket at the source location, and proceed with the bucket location swap. The server makes a best effort to advance the relocate bucket operation, but success is not guaranteed.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Operation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, operation_id: String, bucket: String) -> Result<String> {
+    pub async fn create(&self, ttl: Option<String>, expire_time: Option<String>, operation_id: String, bucket: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

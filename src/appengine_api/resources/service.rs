@@ -34,7 +34,7 @@ impl<'a> Service<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, generated_customer_metadata: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, id: Option<String>, name: Option<String>, network_settings: Option<String>, split: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, network_settings: Option<String>, split: Option<String>, name: Option<String>, generated_customer_metadata: Option<HashMap<String, String>>, labels: Option<HashMap<String, String>>, id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

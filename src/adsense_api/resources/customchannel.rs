@@ -1,6 +1,6 @@
 //! Customchannel resource
 //!
-//! Get the specified custom channel from the specified ad client.
+//! Get the specified custom channel from the specified ad client for the specified account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

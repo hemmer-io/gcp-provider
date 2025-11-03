@@ -21,7 +21,7 @@ impl<'a> Entrie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, resource_names: Option<Vec<String>>, buffer_window: Option<String>, filter: Option<String>) -> Result<String> {
+    pub async fn create(&self, buffer_window: Option<String>, filter: Option<String>, resource_names: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

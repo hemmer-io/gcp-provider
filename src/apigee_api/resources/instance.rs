@@ -21,7 +21,7 @@ impl<'a> Instance<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, ip_range: Option<String>, disk_encryption_key_name: Option<String>, name: Option<String>, consumer_accept_list: Option<Vec<String>>, display_name: Option<String>, description: Option<String>, last_modified_at: Option<String>, port: Option<String>, maintenance_update_policy: Option<String>, runtime_version: Option<String>, host: Option<String>, service_attachment: Option<String>, peering_cidr_range: Option<String>, created_at: Option<String>, is_version_locked: Option<bool>, state: Option<String>, access_logging_config: Option<String>, scheduled_maintenance: Option<String>, location: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, scheduled_maintenance: Option<String>, name: Option<String>, last_modified_at: Option<String>, description: Option<String>, disk_encryption_key_name: Option<String>, maintenance_update_policy: Option<String>, runtime_version: Option<String>, host: Option<String>, location: Option<String>, port: Option<String>, peering_cidr_range: Option<String>, ip_range: Option<String>, consumer_accept_list: Option<Vec<String>>, created_at: Option<String>, display_name: Option<String>, service_attachment: Option<String>, is_version_locked: Option<bool>, access_logging_config: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Instance<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, ip_range: Option<String>, disk_encryption_key_name: Option<String>, name: Option<String>, consumer_accept_list: Option<Vec<String>>, display_name: Option<String>, description: Option<String>, last_modified_at: Option<String>, port: Option<String>, maintenance_update_policy: Option<String>, runtime_version: Option<String>, host: Option<String>, service_attachment: Option<String>, peering_cidr_range: Option<String>, created_at: Option<String>, is_version_locked: Option<bool>, state: Option<String>, access_logging_config: Option<String>, scheduled_maintenance: Option<String>, location: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, scheduled_maintenance: Option<String>, name: Option<String>, last_modified_at: Option<String>, description: Option<String>, disk_encryption_key_name: Option<String>, maintenance_update_policy: Option<String>, runtime_version: Option<String>, host: Option<String>, location: Option<String>, port: Option<String>, peering_cidr_range: Option<String>, ip_range: Option<String>, consumer_accept_list: Option<Vec<String>>, created_at: Option<String>, display_name: Option<String>, service_attachment: Option<String>, is_version_locked: Option<bool>, access_logging_config: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

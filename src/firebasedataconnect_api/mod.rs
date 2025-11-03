@@ -30,12 +30,6 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             "schema" => {
                 self.plan_schema(current_state, desired_input).await
             }
-            "service" => {
-                self.plan_service(current_state, desired_input).await
-            }
-            "connector" => {
-                self.plan_connector(current_state, desired_input).await
-            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
@@ -44,15 +38,21 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             }
             "service" => {
                 self.plan_service(current_state, desired_input).await
-            }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
-            }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
             }
             "schema" => {
                 self.plan_schema(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
+            "service" => {
+                self.plan_service(current_state, desired_input).await
+            }
+            "connector" => {
+                self.plan_connector(current_state, desired_input).await
+            }
+            "location" => {
+                self.plan_location(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -75,12 +75,6 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             "schema" => {
                 self.create_schema(input).await
             }
-            "service" => {
-                self.create_service(input).await
-            }
-            "connector" => {
-                self.create_connector(input).await
-            }
             "operation" => {
                 self.create_operation(input).await
             }
@@ -89,15 +83,21 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             }
             "service" => {
                 self.create_service(input).await
-            }
-            "location" => {
-                self.create_location(input).await
-            }
-            "operation" => {
-                self.create_operation(input).await
             }
             "schema" => {
                 self.create_schema(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
+            }
+            "service" => {
+                self.create_service(input).await
+            }
+            "connector" => {
+                self.create_connector(input).await
+            }
+            "location" => {
+                self.create_location(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -120,12 +120,6 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             "schema" => {
                 self.read_schema(id).await
             }
-            "service" => {
-                self.read_service(id).await
-            }
-            "connector" => {
-                self.read_connector(id).await
-            }
             "operation" => {
                 self.read_operation(id).await
             }
@@ -134,15 +128,21 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             }
             "service" => {
                 self.read_service(id).await
-            }
-            "location" => {
-                self.read_location(id).await
-            }
-            "operation" => {
-                self.read_operation(id).await
             }
             "schema" => {
                 self.read_schema(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
+            }
+            "service" => {
+                self.read_service(id).await
+            }
+            "connector" => {
+                self.read_connector(id).await
+            }
+            "location" => {
+                self.read_location(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -166,12 +166,6 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             "schema" => {
                 self.update_schema(id, input).await
             }
-            "service" => {
-                self.update_service(id, input).await
-            }
-            "connector" => {
-                self.update_connector(id, input).await
-            }
             "operation" => {
                 self.update_operation(id, input).await
             }
@@ -180,15 +174,21 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             }
             "service" => {
                 self.update_service(id, input).await
-            }
-            "location" => {
-                self.update_location(id, input).await
-            }
-            "operation" => {
-                self.update_operation(id, input).await
             }
             "schema" => {
                 self.update_schema(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
+            }
+            "service" => {
+                self.update_service(id, input).await
+            }
+            "connector" => {
+                self.update_connector(id, input).await
+            }
+            "location" => {
+                self.update_location(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -211,12 +211,6 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             "schema" => {
                 self.delete_schema(id).await
             }
-            "service" => {
-                self.delete_service(id).await
-            }
-            "connector" => {
-                self.delete_connector(id).await
-            }
             "operation" => {
                 self.delete_operation(id).await
             }
@@ -225,15 +219,21 @@ impl<'a> Firebasedataconnect_apiService<'a> {
             }
             "service" => {
                 self.delete_service(id).await
-            }
-            "location" => {
-                self.delete_location(id).await
-            }
-            "operation" => {
-                self.delete_operation(id).await
             }
             "schema" => {
                 self.delete_schema(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
+            }
+            "service" => {
+                self.delete_service(id).await
+            }
+            "connector" => {
+                self.delete_connector(id).await
+            }
+            "location" => {
+                self.delete_location(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -371,128 +371,6 @@ impl<'a> Firebasedataconnect_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Service resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a service resource
-    async fn plan_service(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new service resource
-    async fn create_service(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a service resource
-    async fn read_service(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a service resource
-    async fn update_service(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a service resource
-    async fn delete_service(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Connector resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a connector resource
-    async fn plan_connector(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new connector resource
-    async fn create_connector(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a connector resource
-    async fn read_connector(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a connector resource
-    async fn update_connector(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a connector resource
-    async fn delete_connector(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Operation resource operations
     // ------------------------------------------------------------------------
 
@@ -667,128 +545,6 @@ impl<'a> Firebasedataconnect_apiService<'a> {
 
     /// Delete a service resource
     async fn delete_service(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Location resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a location resource
-    async fn plan_location(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new location resource
-    async fn create_location(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a location resource
-    async fn read_location(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a location resource
-    async fn update_location(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a location resource
-    async fn delete_location(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -850,6 +606,250 @@ impl<'a> Firebasedataconnect_apiService<'a> {
 
     /// Delete a schema resource
     async fn delete_schema(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Service resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a service resource
+    async fn plan_service(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new service resource
+    async fn create_service(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a service resource
+    async fn read_service(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a service resource
+    async fn update_service(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a service resource
+    async fn delete_service(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Connector resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a connector resource
+    async fn plan_connector(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new connector resource
+    async fn create_connector(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a connector resource
+    async fn read_connector(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a connector resource
+    async fn update_connector(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a connector resource
+    async fn delete_connector(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(
         &self,
         id: &str,
     ) -> Result<()> {

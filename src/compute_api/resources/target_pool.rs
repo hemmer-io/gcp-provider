@@ -22,7 +22,7 @@ impl<'a> Target_pool<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, instances: Option<Vec<String>>, health_checks: Option<Vec<String>>, creation_timestamp: Option<String>, kind: Option<String>, region: Option<String>, self_link: Option<String>, session_affinity: Option<String>, name: Option<String>, security_policy: Option<String>, backup_pool: Option<String>, failover_ratio: Option<f64>, id: Option<String>, description: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, id: Option<String>, kind: Option<String>, region: Option<String>, security_policy: Option<String>, backup_pool: Option<String>, instances: Option<Vec<String>>, creation_timestamp: Option<String>, session_affinity: Option<String>, description: Option<String>, failover_ratio: Option<f64>, name: Option<String>, self_link: Option<String>, health_checks: Option<Vec<String>>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

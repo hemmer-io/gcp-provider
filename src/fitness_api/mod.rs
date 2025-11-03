@@ -27,14 +27,14 @@ impl<'a> Fitness_apiService<'a> {
             "data_source" => {
                 self.plan_data_source(current_state, desired_input).await
             }
-            "data_point_change" => {
-                self.plan_data_point_change(current_state, desired_input).await
-            }
             "dataset" => {
                 self.plan_dataset(current_state, desired_input).await
             }
             "session" => {
                 self.plan_session(current_state, desired_input).await
+            }
+            "data_point_change" => {
+                self.plan_data_point_change(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -54,14 +54,14 @@ impl<'a> Fitness_apiService<'a> {
             "data_source" => {
                 self.create_data_source(input).await
             }
-            "data_point_change" => {
-                self.create_data_point_change(input).await
-            }
             "dataset" => {
                 self.create_dataset(input).await
             }
             "session" => {
                 self.create_session(input).await
+            }
+            "data_point_change" => {
+                self.create_data_point_change(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -81,14 +81,14 @@ impl<'a> Fitness_apiService<'a> {
             "data_source" => {
                 self.read_data_source(id).await
             }
-            "data_point_change" => {
-                self.read_data_point_change(id).await
-            }
             "dataset" => {
                 self.read_dataset(id).await
             }
             "session" => {
                 self.read_session(id).await
+            }
+            "data_point_change" => {
+                self.read_data_point_change(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -109,14 +109,14 @@ impl<'a> Fitness_apiService<'a> {
             "data_source" => {
                 self.update_data_source(id, input).await
             }
-            "data_point_change" => {
-                self.update_data_point_change(id, input).await
-            }
             "dataset" => {
                 self.update_dataset(id, input).await
             }
             "session" => {
                 self.update_session(id, input).await
+            }
+            "data_point_change" => {
+                self.update_data_point_change(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -136,14 +136,14 @@ impl<'a> Fitness_apiService<'a> {
             "data_source" => {
                 self.delete_data_source(id).await
             }
-            "data_point_change" => {
-                self.delete_data_point_change(id).await
-            }
             "dataset" => {
                 self.delete_dataset(id).await
             }
             "session" => {
                 self.delete_session(id).await
+            }
+            "data_point_change" => {
+                self.delete_data_point_change(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -211,67 +211,6 @@ impl<'a> Fitness_apiService<'a> {
 
     /// Delete a data_source resource
     async fn delete_data_source(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Data_point_change resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a data_point_change resource
-    async fn plan_data_point_change(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new data_point_change resource
-    async fn create_data_point_change(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a data_point_change resource
-    async fn read_data_point_change(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a data_point_change resource
-    async fn update_data_point_change(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a data_point_change resource
-    async fn delete_data_point_change(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -394,6 +333,67 @@ impl<'a> Fitness_apiService<'a> {
 
     /// Delete a session resource
     async fn delete_session(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Data_point_change resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a data_point_change resource
+    async fn plan_data_point_change(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new data_point_change resource
+    async fn create_data_point_change(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a data_point_change resource
+    async fn read_data_point_change(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a data_point_change resource
+    async fn update_data_point_change(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a data_point_change resource
+    async fn delete_data_point_change(
         &self,
         id: &str,
     ) -> Result<()> {

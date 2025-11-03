@@ -10,12 +10,62 @@
 
 The libraryagent_api service provides access to 2 resource types:
 
-- [Shelve](#shelve) [R]
 - [Book](#book) [CR]
+- [Shelve](#shelve) [R]
 
 ---
 
 ## Resources
+
+
+### Book
+
+Borrow a book from the library. Returns the book if it is borrowed successfully. Returns NOT_FOUND if the book does not exist in the library. Returns quota exceeded error if the amount of books borrowed exceeds allocation quota in any dimensions.
+
+**Operations**: ✅ Create ✅ Read
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | String | ✅ | Required. The name of the book to borrow. |
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `title` | String | The title of the book. |
+| `read` | bool | Value indicating whether the book has been read. |
+| `author` | String | The name of the book author. |
+| `name` | String | The resource name of the book. Book names have the form `shelves/{shelf_id}/books/{book_id}`. The name is ignored when creating a book. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create book
+book = provider.libraryagent_api.Book {
+    name = "value"  # Required. The name of the book to borrow.
+}
+
+# Access book outputs
+book_id = book.id
+book_title = book.title
+book_read = book.read
+book_author = book.author
+book_name = book.name
+```
+
+---
 
 
 ### Shelve
@@ -34,8 +84,8 @@ Gets a shelf. Returns NOT_FOUND if the shelf does not exist.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `name` | String | Output only. The resource name of the shelf. Shelf names have the form `shelves/{shelf_id}`. The name is ignored when creating a shelf. |
 | `theme` | String | The theme of the shelf |
+| `name` | String | Output only. The resource name of the shelf. Shelf names have the form `shelves/{shelf_id}`. The name is ignored when creating a shelf. |
 
 
 #### Usage Example
@@ -51,58 +101,8 @@ provider = gcp.GcpProvider {
 
 # Access shelve outputs
 shelve_id = shelve.id
-shelve_name = shelve.name
 shelve_theme = shelve.theme
-```
-
----
-
-
-### Book
-
-Return a book to the library. Returns the book if it is returned to the library successfully. Returns error if the book does not belong to the library or the users didn't borrow before.
-
-**Operations**: ✅ Create ✅ Read
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `name` | String | ✅ | Required. The name of the book to return. |
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `read` | bool | Value indicating whether the book has been read. |
-| `title` | String | The title of the book. |
-| `author` | String | The name of the book author. |
-| `name` | String | The resource name of the book. Book names have the form `shelves/{shelf_id}/books/{book_id}`. The name is ignored when creating a book. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create book
-book = provider.libraryagent_api.Book {
-    name = "value"  # Required. The name of the book to return.
-}
-
-# Access book outputs
-book_id = book.id
-book_read = book.read
-book_title = book.title
-book_author = book.author
-book_name = book.name
+shelve_name = shelve.name
 ```
 
 ---
@@ -120,12 +120,15 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple shelve resources
-shelve_0 = provider.libraryagent_api.Shelve {
+# Create multiple book resources
+book_0 = provider.libraryagent_api.Book {
+    name = "value-0"
 }
-shelve_1 = provider.libraryagent_api.Shelve {
+book_1 = provider.libraryagent_api.Book {
+    name = "value-1"
 }
-shelve_2 = provider.libraryagent_api.Shelve {
+book_2 = provider.libraryagent_api.Book {
+    name = "value-2"
 }
 ```
 
@@ -134,7 +137,8 @@ shelve_2 = provider.libraryagent_api.Shelve {
 ```kcl
 # Only create in production
 if environment == "production":
-    shelve = provider.libraryagent_api.Shelve {
+    book = provider.libraryagent_api.Book {
+        name = "production-value"
     }
 ```
 

@@ -33,11 +33,11 @@ impl<'a> Cloudtrace_apiService<'a> {
             "trace_sink" => {
                 self.plan_trace_sink(current_state, desired_input).await
             }
-            "trace" => {
-                self.plan_trace(current_state, desired_input).await
-            }
             "span" => {
                 self.plan_span(current_state, desired_input).await
+            }
+            "trace" => {
+                self.plan_trace(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -63,11 +63,11 @@ impl<'a> Cloudtrace_apiService<'a> {
             "trace_sink" => {
                 self.create_trace_sink(input).await
             }
-            "trace" => {
-                self.create_trace(input).await
-            }
             "span" => {
                 self.create_span(input).await
+            }
+            "trace" => {
+                self.create_trace(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -93,11 +93,11 @@ impl<'a> Cloudtrace_apiService<'a> {
             "trace_sink" => {
                 self.read_trace_sink(id).await
             }
-            "trace" => {
-                self.read_trace(id).await
-            }
             "span" => {
                 self.read_span(id).await
+            }
+            "trace" => {
+                self.read_trace(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,11 +124,11 @@ impl<'a> Cloudtrace_apiService<'a> {
             "trace_sink" => {
                 self.update_trace_sink(id, input).await
             }
-            "trace" => {
-                self.update_trace(id, input).await
-            }
             "span" => {
                 self.update_span(id, input).await
+            }
+            "trace" => {
+                self.update_trace(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -154,11 +154,11 @@ impl<'a> Cloudtrace_apiService<'a> {
             "trace_sink" => {
                 self.delete_trace_sink(id).await
             }
-            "trace" => {
-                self.delete_trace(id).await
-            }
             "span" => {
                 self.delete_span(id).await
+            }
+            "trace" => {
+                self.delete_trace(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -357,67 +357,6 @@ impl<'a> Cloudtrace_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Trace resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a trace resource
-    async fn plan_trace(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new trace resource
-    async fn create_trace(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a trace resource
-    async fn read_trace(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a trace resource
-    async fn update_trace(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a trace resource
-    async fn delete_trace(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Span resource operations
     // ------------------------------------------------------------------------
 
@@ -470,6 +409,67 @@ impl<'a> Cloudtrace_apiService<'a> {
 
     /// Delete a span resource
     async fn delete_span(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Trace resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a trace resource
+    async fn plan_trace(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new trace resource
+    async fn create_trace(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a trace resource
+    async fn read_trace(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a trace resource
+    async fn update_trace(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a trace resource
+    async fn delete_trace(
         &self,
         id: &str,
     ) -> Result<()> {

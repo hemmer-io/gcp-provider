@@ -1,6 +1,6 @@
 //! Integration resource
 //!
-//! Executes an integration on receiving events from Integration Connector triggers, Eventarc or CPS Trigger. The details about integration are derived from CloudEvent request body.
+//! Schedules an integration for execution by passing the trigger id and the scheduled time in the request body.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Integration<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cloud_event: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, schedule_time: Option<String>, parameter_entries: Option<Vec<String>>, parameters: Option<String>, request_id: Option<String>, trigger_id: Option<String>, input_parameters: Option<HashMap<String, String>>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

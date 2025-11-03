@@ -21,7 +21,7 @@ impl<'a> Notebook<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, cmek_config: Option<String>, name: Option<String>, title: Option<String>, metadata: Option<String>, sources: Option<Vec<String>>, emoji: Option<String>, notebook_id: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, notebook_id: Option<String>, sources: Option<Vec<String>>, title: Option<String>, cmek_config: Option<String>, name: Option<String>, emoji: Option<String>, metadata: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

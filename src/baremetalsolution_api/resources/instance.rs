@@ -1,6 +1,6 @@
 //! Instance resource
 //!
-//! Detach LUN from Instance.
+//! Stop a running server.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Instance<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, lun: Option<String>, skip_reboot: Option<bool>, instance: String) -> Result<String> {
+    pub async fn create(&self, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Instance<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, lun: Option<String>, skip_reboot: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

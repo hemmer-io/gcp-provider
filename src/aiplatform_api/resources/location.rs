@@ -1,6 +1,6 @@
 //! Location resource
 //!
-//! Gets a Model's spec recommendations. This API is called by UI, SDK, and internal.
+//! Given an input prompt, it returns augmented prompt from vertex rag store to guide LLM towards generating grounded responses.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Location<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, check_user_quota: Option<bool>, gcs_uri: Option<String>, check_machine_availability: Option<bool>, parent: String) -> Result<String> {
+    pub async fn create(&self, model: Option<String>, contents: Option<Vec<String>>, vertex_rag_store: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Location<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, check_user_quota: Option<bool>, gcs_uri: Option<String>, check_machine_availability: Option<bool>) -> Result<()> {
+    pub async fn update(&self, id: &str, model: Option<String>, contents: Option<Vec<String>>, vertex_rag_store: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

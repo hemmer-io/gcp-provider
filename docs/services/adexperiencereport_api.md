@@ -34,9 +34,9 @@ Gets a site's Ad Experience Report summary.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `desktop_summary` | String | The site's Ad Experience Report summary on desktop. |
 | `mobile_summary` | String | The site's Ad Experience Report summary on mobile. |
 | `reviewed_site` | String | The name of the reviewed site, e.g. `google.com`. |
+| `desktop_summary` | String | The site's Ad Experience Report summary on desktop. |
 
 
 #### Usage Example
@@ -52,9 +52,9 @@ provider = gcp.GcpProvider {
 
 # Access site outputs
 site_id = site.id
-site_desktop_summary = site.desktop_summary
 site_mobile_summary = site.mobile_summary
 site_reviewed_site = site.reviewed_site
+site_desktop_summary = site.desktop_summary
 ```
 
 ---

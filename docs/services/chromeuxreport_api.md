@@ -28,10 +28,10 @@ Queries the Chrome User Experience Report for a timeseries `history record` for 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `url` | String |  | The url pattern "url" refers to a url pattern that is any arbitrary url. Examples: "https://example.com/", "https://cloud.google.com/why-google-cloud/" |
-| `origin` | String |  | The url pattern "origin" refers to a url pattern that is the origin of a website. Examples: "https://example.com", "https://cloud.google.com" |
 | `metrics` | Vec<String> |  | The metrics that should be included in the response. If none are specified then any metrics found will be returned. Allowed values: ["first_contentful_paint", "first_input_delay", "largest_contentful_paint", "cumulative_layout_shift", "experimental_time_to_first_byte", "experimental_interaction_to_next_paint"] |
 | `collection_period_count` | i64 |  | The number of collection periods to return. If not specified, the default is 25. If present, must be in the range [1, 40]. |
 | `form_factor` | String |  | The form factor is a query dimension that specifies the device class that the record's data should belong to. Note: If no form factor is specified, then a special record with aggregated data over all form factors will be returned. |
+| `origin` | String |  | The url pattern "origin" refers to a url pattern that is the origin of a website. Examples: "https://example.com", "https://cloud.google.com" |
 
 
 

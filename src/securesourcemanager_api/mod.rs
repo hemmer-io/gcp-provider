@@ -24,35 +24,35 @@ impl<'a> Securesourcemanager_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "instance" => {
-                self.plan_instance(current_state, desired_input).await
-            }
-            "issue" => {
-                self.plan_issue(current_state, desired_input).await
-            }
-            "issue_comment" => {
-                self.plan_issue_comment(current_state, desired_input).await
-            }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
-            "pull_request" => {
-                self.plan_pull_request(current_state, desired_input).await
-            }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
-            }
             "pull_request_comment" => {
                 self.plan_pull_request_comment(current_state, desired_input).await
             }
             "branch_rule" => {
                 self.plan_branch_rule(current_state, desired_input).await
             }
+            "issue_comment" => {
+                self.plan_issue_comment(current_state, desired_input).await
+            }
             "repositorie" => {
                 self.plan_repositorie(current_state, desired_input).await
             }
+            "instance" => {
+                self.plan_instance(current_state, desired_input).await
+            }
             "hook" => {
                 self.plan_hook(current_state, desired_input).await
+            }
+            "location" => {
+                self.plan_location(current_state, desired_input).await
+            }
+            "issue" => {
+                self.plan_issue(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
+            "pull_request" => {
+                self.plan_pull_request(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -69,35 +69,35 @@ impl<'a> Securesourcemanager_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "instance" => {
-                self.create_instance(input).await
-            }
-            "issue" => {
-                self.create_issue(input).await
-            }
-            "issue_comment" => {
-                self.create_issue_comment(input).await
-            }
-            "operation" => {
-                self.create_operation(input).await
-            }
-            "pull_request" => {
-                self.create_pull_request(input).await
-            }
-            "location" => {
-                self.create_location(input).await
-            }
             "pull_request_comment" => {
                 self.create_pull_request_comment(input).await
             }
             "branch_rule" => {
                 self.create_branch_rule(input).await
             }
+            "issue_comment" => {
+                self.create_issue_comment(input).await
+            }
             "repositorie" => {
                 self.create_repositorie(input).await
             }
+            "instance" => {
+                self.create_instance(input).await
+            }
             "hook" => {
                 self.create_hook(input).await
+            }
+            "location" => {
+                self.create_location(input).await
+            }
+            "issue" => {
+                self.create_issue(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
+            }
+            "pull_request" => {
+                self.create_pull_request(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -114,35 +114,35 @@ impl<'a> Securesourcemanager_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "instance" => {
-                self.read_instance(id).await
-            }
-            "issue" => {
-                self.read_issue(id).await
-            }
-            "issue_comment" => {
-                self.read_issue_comment(id).await
-            }
-            "operation" => {
-                self.read_operation(id).await
-            }
-            "pull_request" => {
-                self.read_pull_request(id).await
-            }
-            "location" => {
-                self.read_location(id).await
-            }
             "pull_request_comment" => {
                 self.read_pull_request_comment(id).await
             }
             "branch_rule" => {
                 self.read_branch_rule(id).await
             }
+            "issue_comment" => {
+                self.read_issue_comment(id).await
+            }
             "repositorie" => {
                 self.read_repositorie(id).await
             }
+            "instance" => {
+                self.read_instance(id).await
+            }
             "hook" => {
                 self.read_hook(id).await
+            }
+            "location" => {
+                self.read_location(id).await
+            }
+            "issue" => {
+                self.read_issue(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
+            }
+            "pull_request" => {
+                self.read_pull_request(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -160,35 +160,35 @@ impl<'a> Securesourcemanager_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "instance" => {
-                self.update_instance(id, input).await
-            }
-            "issue" => {
-                self.update_issue(id, input).await
-            }
-            "issue_comment" => {
-                self.update_issue_comment(id, input).await
-            }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
-            "pull_request" => {
-                self.update_pull_request(id, input).await
-            }
-            "location" => {
-                self.update_location(id, input).await
-            }
             "pull_request_comment" => {
                 self.update_pull_request_comment(id, input).await
             }
             "branch_rule" => {
                 self.update_branch_rule(id, input).await
             }
+            "issue_comment" => {
+                self.update_issue_comment(id, input).await
+            }
             "repositorie" => {
                 self.update_repositorie(id, input).await
             }
+            "instance" => {
+                self.update_instance(id, input).await
+            }
             "hook" => {
                 self.update_hook(id, input).await
+            }
+            "location" => {
+                self.update_location(id, input).await
+            }
+            "issue" => {
+                self.update_issue(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
+            }
+            "pull_request" => {
+                self.update_pull_request(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -205,35 +205,35 @@ impl<'a> Securesourcemanager_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "instance" => {
-                self.delete_instance(id).await
-            }
-            "issue" => {
-                self.delete_issue(id).await
-            }
-            "issue_comment" => {
-                self.delete_issue_comment(id).await
-            }
-            "operation" => {
-                self.delete_operation(id).await
-            }
-            "pull_request" => {
-                self.delete_pull_request(id).await
-            }
-            "location" => {
-                self.delete_location(id).await
-            }
             "pull_request_comment" => {
                 self.delete_pull_request_comment(id).await
             }
             "branch_rule" => {
                 self.delete_branch_rule(id).await
             }
+            "issue_comment" => {
+                self.delete_issue_comment(id).await
+            }
             "repositorie" => {
                 self.delete_repositorie(id).await
             }
+            "instance" => {
+                self.delete_instance(id).await
+            }
             "hook" => {
                 self.delete_hook(id).await
+            }
+            "location" => {
+                self.delete_location(id).await
+            }
+            "issue" => {
+                self.delete_issue(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
+            }
+            "pull_request" => {
+                self.delete_pull_request(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -246,372 +246,6 @@ impl<'a> Securesourcemanager_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Instance resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a instance resource
-    async fn plan_instance(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new instance resource
-    async fn create_instance(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a instance resource
-    async fn read_instance(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a instance resource
-    async fn update_instance(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a instance resource
-    async fn delete_instance(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Issue resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a issue resource
-    async fn plan_issue(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new issue resource
-    async fn create_issue(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a issue resource
-    async fn read_issue(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a issue resource
-    async fn update_issue(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a issue resource
-    async fn delete_issue(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Issue_comment resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a issue_comment resource
-    async fn plan_issue_comment(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new issue_comment resource
-    async fn create_issue_comment(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a issue_comment resource
-    async fn read_issue_comment(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a issue_comment resource
-    async fn update_issue_comment(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a issue_comment resource
-    async fn delete_issue_comment(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Pull_request resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a pull_request resource
-    async fn plan_pull_request(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new pull_request resource
-    async fn create_pull_request(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a pull_request resource
-    async fn read_pull_request(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a pull_request resource
-    async fn update_pull_request(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a pull_request resource
-    async fn delete_pull_request(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Location resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a location resource
-    async fn plan_location(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new location resource
-    async fn create_location(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a location resource
-    async fn read_location(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a location resource
-    async fn update_location(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a location resource
-    async fn delete_location(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -737,6 +371,67 @@ impl<'a> Securesourcemanager_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Issue_comment resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a issue_comment resource
+    async fn plan_issue_comment(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new issue_comment resource
+    async fn create_issue_comment(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a issue_comment resource
+    async fn read_issue_comment(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a issue_comment resource
+    async fn update_issue_comment(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a issue_comment resource
+    async fn delete_issue_comment(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Repositorie resource operations
     // ------------------------------------------------------------------------
 
@@ -798,6 +493,67 @@ impl<'a> Securesourcemanager_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Instance resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a instance resource
+    async fn plan_instance(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new instance resource
+    async fn create_instance(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a instance resource
+    async fn read_instance(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a instance resource
+    async fn update_instance(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a instance resource
+    async fn delete_instance(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Hook resource operations
     // ------------------------------------------------------------------------
 
@@ -850,6 +606,250 @@ impl<'a> Securesourcemanager_apiService<'a> {
 
     /// Delete a hook resource
     async fn delete_hook(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Issue resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a issue resource
+    async fn plan_issue(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new issue resource
+    async fn create_issue(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a issue resource
+    async fn read_issue(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a issue resource
+    async fn update_issue(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a issue resource
+    async fn delete_issue(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Pull_request resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a pull_request resource
+    async fn plan_pull_request(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new pull_request resource
+    async fn create_pull_request(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a pull_request resource
+    async fn read_pull_request(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a pull_request resource
+    async fn update_pull_request(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a pull_request resource
+    async fn delete_pull_request(
         &self,
         id: &str,
     ) -> Result<()> {

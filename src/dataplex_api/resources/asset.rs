@@ -21,7 +21,7 @@ impl<'a> Asset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, uid: Option<String>, discovery_status: Option<String>, description: Option<String>, discovery_spec: Option<String>, resource_spec: Option<String>, update_time: Option<String>, display_name: Option<String>, resource_status: Option<String>, create_time: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, security_status: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, discovery_status: Option<String>, resource_spec: Option<String>, resource_status: Option<String>, discovery_spec: Option<String>, create_time: Option<String>, security_status: Option<String>, state: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, description: Option<String>, display_name: Option<String>, uid: Option<String>, name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Asset<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, uid: Option<String>, discovery_status: Option<String>, description: Option<String>, discovery_spec: Option<String>, resource_spec: Option<String>, update_time: Option<String>, display_name: Option<String>, resource_status: Option<String>, create_time: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, security_status: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, discovery_status: Option<String>, resource_spec: Option<String>, resource_status: Option<String>, discovery_spec: Option<String>, create_time: Option<String>, security_status: Option<String>, state: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, description: Option<String>, display_name: Option<String>, uid: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

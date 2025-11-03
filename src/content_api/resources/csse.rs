@@ -21,7 +21,7 @@ impl<'a> Csse<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, label_ids: Option<Vec<String>>, css_domain_id: String, css_group_id: String) -> Result<String> {
+    pub async fn create(&self, label_ids: Option<Vec<String>>, css_group_id: String, css_domain_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

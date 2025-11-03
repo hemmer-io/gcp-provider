@@ -34,7 +34,7 @@ impl<'a> Upgrade<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_time: Option<String>, version: Option<String>, etag: Option<String>, end_time: Option<String>, component_upgrades: Option<Vec<String>>, start_version: Option<String>, state: Option<String>, name: Option<String>, schedule: Option<String>, target_version: Option<String>, update_time: Option<String>, estimated_duration: Option<String>, uid: Option<String>, description: Option<String>, type: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, component_upgrades: Option<Vec<String>>, uid: Option<String>, end_time: Option<String>, estimated_duration: Option<String>, start_version: Option<String>, state: Option<String>, target_version: Option<String>, schedule: Option<String>, create_time: Option<String>, name: Option<String>, update_time: Option<String>, description: Option<String>, type: Option<String>, version: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

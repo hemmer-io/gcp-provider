@@ -1,6 +1,6 @@
 //! Savedadstyle resource
 //!
-//! Get a specific saved ad style from the user's account.
+//! List a specific saved ad style for the specified account.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

@@ -21,7 +21,7 @@ impl<'a> Idea_activitie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, topics: Option<Vec<String>>, uri: Option<String>, ideas: Option<Vec<String>>, name: Option<String>, type: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, uri: Option<String>, topics: Option<Vec<String>>, ideas: Option<Vec<String>>, type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

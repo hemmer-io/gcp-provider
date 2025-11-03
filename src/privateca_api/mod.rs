@@ -24,21 +24,6 @@ impl<'a> Privateca_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "certificate_authoritie" => {
-                self.plan_certificate_authoritie(current_state, desired_input).await
-            }
-            "certificate_revocation_list" => {
-                self.plan_certificate_revocation_list(current_state, desired_input).await
-            }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
-            "certificate_template" => {
-                self.plan_certificate_template(current_state, desired_input).await
-            }
-            "certificate" => {
-                self.plan_certificate(current_state, desired_input).await
-            }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
@@ -48,6 +33,24 @@ impl<'a> Privateca_apiService<'a> {
             "certificate_authoritie" => {
                 self.plan_certificate_authoritie(current_state, desired_input).await
             }
+            "certificate_template" => {
+                self.plan_certificate_template(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
+            "certificate_revocation_list" => {
+                self.plan_certificate_revocation_list(current_state, desired_input).await
+            }
+            "certificate" => {
+                self.plan_certificate(current_state, desired_input).await
+            }
+            "certificate_authoritie" => {
+                self.plan_certificate_authoritie(current_state, desired_input).await
+            }
+            "certificate_revocation_list" => {
+                self.plan_certificate_revocation_list(current_state, desired_input).await
+            }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
@@ -56,9 +59,6 @@ impl<'a> Privateca_apiService<'a> {
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
-            }
-            "certificate_revocation_list" => {
-                self.plan_certificate_revocation_list(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -75,21 +75,6 @@ impl<'a> Privateca_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "certificate_authoritie" => {
-                self.create_certificate_authoritie(input).await
-            }
-            "certificate_revocation_list" => {
-                self.create_certificate_revocation_list(input).await
-            }
-            "operation" => {
-                self.create_operation(input).await
-            }
-            "certificate_template" => {
-                self.create_certificate_template(input).await
-            }
-            "certificate" => {
-                self.create_certificate(input).await
-            }
             "location" => {
                 self.create_location(input).await
             }
@@ -99,6 +84,24 @@ impl<'a> Privateca_apiService<'a> {
             "certificate_authoritie" => {
                 self.create_certificate_authoritie(input).await
             }
+            "certificate_template" => {
+                self.create_certificate_template(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
+            }
+            "certificate_revocation_list" => {
+                self.create_certificate_revocation_list(input).await
+            }
+            "certificate" => {
+                self.create_certificate(input).await
+            }
+            "certificate_authoritie" => {
+                self.create_certificate_authoritie(input).await
+            }
+            "certificate_revocation_list" => {
+                self.create_certificate_revocation_list(input).await
+            }
             "location" => {
                 self.create_location(input).await
             }
@@ -107,9 +110,6 @@ impl<'a> Privateca_apiService<'a> {
             }
             "operation" => {
                 self.create_operation(input).await
-            }
-            "certificate_revocation_list" => {
-                self.create_certificate_revocation_list(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -126,21 +126,6 @@ impl<'a> Privateca_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "certificate_authoritie" => {
-                self.read_certificate_authoritie(id).await
-            }
-            "certificate_revocation_list" => {
-                self.read_certificate_revocation_list(id).await
-            }
-            "operation" => {
-                self.read_operation(id).await
-            }
-            "certificate_template" => {
-                self.read_certificate_template(id).await
-            }
-            "certificate" => {
-                self.read_certificate(id).await
-            }
             "location" => {
                 self.read_location(id).await
             }
@@ -150,6 +135,24 @@ impl<'a> Privateca_apiService<'a> {
             "certificate_authoritie" => {
                 self.read_certificate_authoritie(id).await
             }
+            "certificate_template" => {
+                self.read_certificate_template(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
+            }
+            "certificate_revocation_list" => {
+                self.read_certificate_revocation_list(id).await
+            }
+            "certificate" => {
+                self.read_certificate(id).await
+            }
+            "certificate_authoritie" => {
+                self.read_certificate_authoritie(id).await
+            }
+            "certificate_revocation_list" => {
+                self.read_certificate_revocation_list(id).await
+            }
             "location" => {
                 self.read_location(id).await
             }
@@ -158,9 +161,6 @@ impl<'a> Privateca_apiService<'a> {
             }
             "operation" => {
                 self.read_operation(id).await
-            }
-            "certificate_revocation_list" => {
-                self.read_certificate_revocation_list(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -178,21 +178,6 @@ impl<'a> Privateca_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "certificate_authoritie" => {
-                self.update_certificate_authoritie(id, input).await
-            }
-            "certificate_revocation_list" => {
-                self.update_certificate_revocation_list(id, input).await
-            }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
-            "certificate_template" => {
-                self.update_certificate_template(id, input).await
-            }
-            "certificate" => {
-                self.update_certificate(id, input).await
-            }
             "location" => {
                 self.update_location(id, input).await
             }
@@ -202,6 +187,24 @@ impl<'a> Privateca_apiService<'a> {
             "certificate_authoritie" => {
                 self.update_certificate_authoritie(id, input).await
             }
+            "certificate_template" => {
+                self.update_certificate_template(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
+            }
+            "certificate_revocation_list" => {
+                self.update_certificate_revocation_list(id, input).await
+            }
+            "certificate" => {
+                self.update_certificate(id, input).await
+            }
+            "certificate_authoritie" => {
+                self.update_certificate_authoritie(id, input).await
+            }
+            "certificate_revocation_list" => {
+                self.update_certificate_revocation_list(id, input).await
+            }
             "location" => {
                 self.update_location(id, input).await
             }
@@ -210,9 +213,6 @@ impl<'a> Privateca_apiService<'a> {
             }
             "operation" => {
                 self.update_operation(id, input).await
-            }
-            "certificate_revocation_list" => {
-                self.update_certificate_revocation_list(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -229,21 +229,6 @@ impl<'a> Privateca_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "certificate_authoritie" => {
-                self.delete_certificate_authoritie(id).await
-            }
-            "certificate_revocation_list" => {
-                self.delete_certificate_revocation_list(id).await
-            }
-            "operation" => {
-                self.delete_operation(id).await
-            }
-            "certificate_template" => {
-                self.delete_certificate_template(id).await
-            }
-            "certificate" => {
-                self.delete_certificate(id).await
-            }
             "location" => {
                 self.delete_location(id).await
             }
@@ -253,6 +238,24 @@ impl<'a> Privateca_apiService<'a> {
             "certificate_authoritie" => {
                 self.delete_certificate_authoritie(id).await
             }
+            "certificate_template" => {
+                self.delete_certificate_template(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
+            }
+            "certificate_revocation_list" => {
+                self.delete_certificate_revocation_list(id).await
+            }
+            "certificate" => {
+                self.delete_certificate(id).await
+            }
+            "certificate_authoritie" => {
+                self.delete_certificate_authoritie(id).await
+            }
+            "certificate_revocation_list" => {
+                self.delete_certificate_revocation_list(id).await
+            }
             "location" => {
                 self.delete_location(id).await
             }
@@ -261,9 +264,6 @@ impl<'a> Privateca_apiService<'a> {
             }
             "operation" => {
                 self.delete_operation(id).await
-            }
-            "certificate_revocation_list" => {
-                self.delete_certificate_revocation_list(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -276,311 +276,6 @@ impl<'a> Privateca_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Certificate_authoritie resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a certificate_authoritie resource
-    async fn plan_certificate_authoritie(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new certificate_authoritie resource
-    async fn create_certificate_authoritie(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a certificate_authoritie resource
-    async fn read_certificate_authoritie(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a certificate_authoritie resource
-    async fn update_certificate_authoritie(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a certificate_authoritie resource
-    async fn delete_certificate_authoritie(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Certificate_revocation_list resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a certificate_revocation_list resource
-    async fn plan_certificate_revocation_list(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new certificate_revocation_list resource
-    async fn create_certificate_revocation_list(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a certificate_revocation_list resource
-    async fn read_certificate_revocation_list(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a certificate_revocation_list resource
-    async fn update_certificate_revocation_list(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a certificate_revocation_list resource
-    async fn delete_certificate_revocation_list(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Certificate_template resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a certificate_template resource
-    async fn plan_certificate_template(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new certificate_template resource
-    async fn create_certificate_template(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a certificate_template resource
-    async fn read_certificate_template(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a certificate_template resource
-    async fn update_certificate_template(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a certificate_template resource
-    async fn delete_certificate_template(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Certificate resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a certificate resource
-    async fn plan_certificate(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new certificate resource
-    async fn create_certificate(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a certificate resource
-    async fn read_certificate(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a certificate resource
-    async fn update_certificate(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a certificate resource
-    async fn delete_certificate(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -767,6 +462,372 @@ impl<'a> Privateca_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Certificate_template resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a certificate_template resource
+    async fn plan_certificate_template(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new certificate_template resource
+    async fn create_certificate_template(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a certificate_template resource
+    async fn read_certificate_template(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a certificate_template resource
+    async fn update_certificate_template(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a certificate_template resource
+    async fn delete_certificate_template(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Certificate_revocation_list resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a certificate_revocation_list resource
+    async fn plan_certificate_revocation_list(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new certificate_revocation_list resource
+    async fn create_certificate_revocation_list(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a certificate_revocation_list resource
+    async fn read_certificate_revocation_list(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a certificate_revocation_list resource
+    async fn update_certificate_revocation_list(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a certificate_revocation_list resource
+    async fn delete_certificate_revocation_list(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Certificate resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a certificate resource
+    async fn plan_certificate(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new certificate resource
+    async fn create_certificate(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a certificate resource
+    async fn read_certificate(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a certificate resource
+    async fn update_certificate(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a certificate resource
+    async fn delete_certificate(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Certificate_authoritie resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a certificate_authoritie resource
+    async fn plan_certificate_authoritie(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new certificate_authoritie resource
+    async fn create_certificate_authoritie(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a certificate_authoritie resource
+    async fn read_certificate_authoritie(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a certificate_authoritie resource
+    async fn update_certificate_authoritie(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a certificate_authoritie resource
+    async fn delete_certificate_authoritie(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Certificate_revocation_list resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a certificate_revocation_list resource
+    async fn plan_certificate_revocation_list(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new certificate_revocation_list resource
+    async fn create_certificate_revocation_list(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a certificate_revocation_list resource
+    async fn read_certificate_revocation_list(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a certificate_revocation_list resource
+    async fn update_certificate_revocation_list(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a certificate_revocation_list resource
+    async fn delete_certificate_revocation_list(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Location resource operations
     // ------------------------------------------------------------------------
 
@@ -941,67 +1002,6 @@ impl<'a> Privateca_apiService<'a> {
 
     /// Delete a operation resource
     async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Certificate_revocation_list resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a certificate_revocation_list resource
-    async fn plan_certificate_revocation_list(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new certificate_revocation_list resource
-    async fn create_certificate_revocation_list(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a certificate_revocation_list resource
-    async fn read_certificate_revocation_list(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a certificate_revocation_list resource
-    async fn update_certificate_revocation_list(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a certificate_revocation_list resource
-    async fn delete_certificate_revocation_list(
         &self,
         id: &str,
     ) -> Result<()> {

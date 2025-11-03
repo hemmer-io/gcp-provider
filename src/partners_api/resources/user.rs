@@ -34,7 +34,7 @@ impl<'a> User<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, markets: Option<Vec<String>>, job_functions: Option<Vec<String>>, migrate_to_afa: Option<bool>, email_opt_ins: Option<String>, languages: Option<Vec<String>>, given_name: Option<String>, adwords_manager_account: Option<String>, phone_number: Option<String>, email_address: Option<String>, family_name: Option<String>, profile_public: Option<bool>, primary_country_code: Option<String>, address: Option<String>, industries: Option<Vec<String>>, channels: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, address: Option<String>, resolved_timestamp: Option<String>, company_id: Option<String>, logo_url: Option<String>, state: Option<String>, badge_tier: Option<String>, primary_language_code: Option<String>, website: Option<String>, is_pending: Option<bool>, specialization_status: Option<Vec<String>>, creation_time: Option<String>, company_admin: Option<bool>, phone_number: Option<String>, primary_country_code: Option<String>, primary_address: Option<String>, internal_company_id: Option<String>, manager_account: Option<String>, segment: Option<Vec<String>>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

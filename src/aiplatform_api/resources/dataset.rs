@@ -21,7 +21,7 @@ impl<'a> Dataset<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, saved_queries: Option<Vec<String>>, satisfies_pzi: Option<bool>, update_time: Option<String>, data_item_count: Option<String>, display_name: Option<String>, satisfies_pzs: Option<bool>, encryption_spec: Option<String>, metadata_artifact: Option<String>, metadata: Option<String>, description: Option<String>, metadata_schema_uri: Option<String>, model_reference: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, encryption_spec: Option<String>, create_time: Option<String>, metadata_schema_uri: Option<String>, saved_queries: Option<Vec<String>>, labels: Option<HashMap<String, String>>, update_time: Option<String>, model_reference: Option<String>, display_name: Option<String>, satisfies_pzi: Option<bool>, name: Option<String>, data_item_count: Option<String>, metadata: Option<String>, satisfies_pzs: Option<bool>, description: Option<String>, metadata_artifact: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Dataset<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, saved_queries: Option<Vec<String>>, satisfies_pzi: Option<bool>, update_time: Option<String>, data_item_count: Option<String>, display_name: Option<String>, satisfies_pzs: Option<bool>, encryption_spec: Option<String>, metadata_artifact: Option<String>, metadata: Option<String>, description: Option<String>, metadata_schema_uri: Option<String>, model_reference: Option<String>, etag: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, encryption_spec: Option<String>, create_time: Option<String>, metadata_schema_uri: Option<String>, saved_queries: Option<Vec<String>>, labels: Option<HashMap<String, String>>, update_time: Option<String>, model_reference: Option<String>, display_name: Option<String>, satisfies_pzi: Option<bool>, name: Option<String>, data_item_count: Option<String>, metadata: Option<String>, satisfies_pzs: Option<bool>, description: Option<String>, metadata_artifact: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

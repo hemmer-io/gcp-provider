@@ -21,7 +21,7 @@ impl<'a> Region_multi_mig<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, region: Option<String>, status: Option<String>, creation_timestamp: Option<String>, id: Option<String>, kind: Option<String>, name: Option<String>, self_link: Option<String>, resource_policies: Option<String>, description: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, name: Option<String>, self_link: Option<String>, region: Option<String>, creation_timestamp: Option<String>, status: Option<String>, resource_policies: Option<String>, kind: Option<String>, id: Option<String>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

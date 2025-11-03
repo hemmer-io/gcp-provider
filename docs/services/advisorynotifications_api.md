@@ -28,9 +28,9 @@ Get notification settings.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `etag` | String |  | Required. Fingerprint for optimistic concurrency returned in Get requests. Must be provided for Update requests. If the value provided does not match the value known to the server, ABORTED will be thrown, and the client should retry the read-modify-write cycle. |
-| `name` | String |  | Identifier. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings or projects/{projects}/locations/{location}/settings. |
 | `notification_settings` | HashMap<String, String> |  | Required. Map of each notification type and its settings to get/set all settings at once. The server will validate the value for each notification type. |
+| `name` | String |  | Identifier. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings or projects/{projects}/locations/{location}/settings. |
+| `etag` | String |  | Required. Fingerprint for optimistic concurrency returned in Get requests. Must be provided for Update requests. If the value provided does not match the value known to the server, ABORTED will be thrown, and the client should retry the read-modify-write cycle. |
 | `name` | String | ✅ | Identifier. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings or projects/{projects}/locations/{location}/settings. |
 
 
@@ -38,9 +38,9 @@ Get notification settings.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `etag` | String | Required. Fingerprint for optimistic concurrency returned in Get requests. Must be provided for Update requests. If the value provided does not match the value known to the server, ABORTED will be thrown, and the client should retry the read-modify-write cycle. |
-| `name` | String | Identifier. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings or projects/{projects}/locations/{location}/settings. |
 | `notification_settings` | HashMap<String, String> | Required. Map of each notification type and its settings to get/set all settings at once. The server will validate the value for each notification type. |
+| `name` | String | Identifier. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings or projects/{projects}/locations/{location}/settings. |
+| `etag` | String | Required. Fingerprint for optimistic concurrency returned in Get requests. Must be provided for Update requests. If the value provided does not match the value known to the server, ABORTED will be thrown, and the client should retry the read-modify-write cycle. |
 
 
 #### Usage Example
@@ -56,9 +56,9 @@ provider = gcp.GcpProvider {
 
 # Access location outputs
 location_id = location.id
-location_etag = location.etag
-location_name = location.name
 location_notification_settings = location.notification_settings
+location_name = location.name
+location_etag = location.etag
 ```
 
 ---
@@ -80,11 +80,11 @@ Gets a notification.
 
 | Output | Type | Description |
 |--------|------|-------------|
+| `name` | String | The resource name of the notification. Format: organizations/{organization}/locations/{location}/notifications/{notification} or projects/{project}/locations/{location}/notifications/{notification}. |
+| `create_time` | String | Output only. Time the notification was created. |
 | `notification_type` | String | Type of notification |
 | `messages` | Vec<String> | A list of messages in the notification. |
 | `subject` | String | The subject line of the notification. |
-| `name` | String | The resource name of the notification. Format: organizations/{organization}/locations/{location}/notifications/{notification} or projects/{project}/locations/{location}/notifications/{notification}. |
-| `create_time` | String | Output only. Time the notification was created. |
 
 
 #### Usage Example
@@ -100,11 +100,11 @@ provider = gcp.GcpProvider {
 
 # Access notification outputs
 notification_id = notification.id
+notification_name = notification.name
+notification_create_time = notification.create_time
 notification_notification_type = notification.notification_type
 notification_messages = notification.messages
 notification_subject = notification.subject
-notification_name = notification.name
-notification_create_time = notification.create_time
 ```
 
 ---

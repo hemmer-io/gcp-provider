@@ -24,11 +24,11 @@ impl<'a> Kmsinventory_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "protected_resource" => {
-                self.plan_protected_resource(current_state, desired_input).await
-            }
             "crypto_key" => {
                 self.plan_crypto_key(current_state, desired_input).await
+            }
+            "protected_resource" => {
+                self.plan_protected_resource(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -45,11 +45,11 @@ impl<'a> Kmsinventory_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "protected_resource" => {
-                self.create_protected_resource(input).await
-            }
             "crypto_key" => {
                 self.create_crypto_key(input).await
+            }
+            "protected_resource" => {
+                self.create_protected_resource(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -66,11 +66,11 @@ impl<'a> Kmsinventory_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "protected_resource" => {
-                self.read_protected_resource(id).await
-            }
             "crypto_key" => {
                 self.read_crypto_key(id).await
+            }
+            "protected_resource" => {
+                self.read_protected_resource(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -88,11 +88,11 @@ impl<'a> Kmsinventory_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "protected_resource" => {
-                self.update_protected_resource(id, input).await
-            }
             "crypto_key" => {
                 self.update_crypto_key(id, input).await
+            }
+            "protected_resource" => {
+                self.update_protected_resource(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -109,11 +109,11 @@ impl<'a> Kmsinventory_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "protected_resource" => {
-                self.delete_protected_resource(id).await
-            }
             "crypto_key" => {
                 self.delete_crypto_key(id).await
+            }
+            "protected_resource" => {
+                self.delete_protected_resource(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -126,67 +126,6 @@ impl<'a> Kmsinventory_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Protected_resource resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a protected_resource resource
-    async fn plan_protected_resource(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new protected_resource resource
-    async fn create_protected_resource(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a protected_resource resource
-    async fn read_protected_resource(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a protected_resource resource
-    async fn update_protected_resource(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a protected_resource resource
-    async fn delete_protected_resource(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -242,6 +181,67 @@ impl<'a> Kmsinventory_apiService<'a> {
 
     /// Delete a crypto_key resource
     async fn delete_crypto_key(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Protected_resource resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a protected_resource resource
+    async fn plan_protected_resource(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new protected_resource resource
+    async fn create_protected_resource(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a protected_resource resource
+    async fn read_protected_resource(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a protected_resource resource
+    async fn update_protected_resource(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a protected_resource resource
+    async fn delete_protected_resource(
         &self,
         id: &str,
     ) -> Result<()> {

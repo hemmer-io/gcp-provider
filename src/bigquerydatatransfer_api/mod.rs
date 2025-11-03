@@ -24,8 +24,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "run" => {
-                self.plan_run(current_state, desired_input).await
+            "location" => {
+                self.plan_location(current_state, desired_input).await
             }
             "transfer_config" => {
                 self.plan_transfer_config(current_state, desired_input).await
@@ -33,14 +33,14 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             "data_source" => {
                 self.plan_data_source(current_state, desired_input).await
             }
-            "transfer_log" => {
-                self.plan_transfer_log(current_state, desired_input).await
-            }
             "project" => {
                 self.plan_project(current_state, desired_input).await
             }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
+            "run" => {
+                self.plan_run(current_state, desired_input).await
+            }
+            "transfer_log" => {
+                self.plan_transfer_log(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,8 +57,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "run" => {
-                self.create_run(input).await
+            "location" => {
+                self.create_location(input).await
             }
             "transfer_config" => {
                 self.create_transfer_config(input).await
@@ -66,14 +66,14 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             "data_source" => {
                 self.create_data_source(input).await
             }
-            "transfer_log" => {
-                self.create_transfer_log(input).await
-            }
             "project" => {
                 self.create_project(input).await
             }
-            "location" => {
-                self.create_location(input).await
+            "run" => {
+                self.create_run(input).await
+            }
+            "transfer_log" => {
+                self.create_transfer_log(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -90,8 +90,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "run" => {
-                self.read_run(id).await
+            "location" => {
+                self.read_location(id).await
             }
             "transfer_config" => {
                 self.read_transfer_config(id).await
@@ -99,14 +99,14 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             "data_source" => {
                 self.read_data_source(id).await
             }
-            "transfer_log" => {
-                self.read_transfer_log(id).await
-            }
             "project" => {
                 self.read_project(id).await
             }
-            "location" => {
-                self.read_location(id).await
+            "run" => {
+                self.read_run(id).await
+            }
+            "transfer_log" => {
+                self.read_transfer_log(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,8 +124,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "run" => {
-                self.update_run(id, input).await
+            "location" => {
+                self.update_location(id, input).await
             }
             "transfer_config" => {
                 self.update_transfer_config(id, input).await
@@ -133,14 +133,14 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             "data_source" => {
                 self.update_data_source(id, input).await
             }
-            "transfer_log" => {
-                self.update_transfer_log(id, input).await
-            }
             "project" => {
                 self.update_project(id, input).await
             }
-            "location" => {
-                self.update_location(id, input).await
+            "run" => {
+                self.update_run(id, input).await
+            }
+            "transfer_log" => {
+                self.update_transfer_log(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -157,8 +157,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "run" => {
-                self.delete_run(id).await
+            "location" => {
+                self.delete_location(id).await
             }
             "transfer_config" => {
                 self.delete_transfer_config(id).await
@@ -166,14 +166,14 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             "data_source" => {
                 self.delete_data_source(id).await
             }
-            "transfer_log" => {
-                self.delete_transfer_log(id).await
-            }
             "project" => {
                 self.delete_project(id).await
             }
-            "location" => {
-                self.delete_location(id).await
+            "run" => {
+                self.delete_run(id).await
+            }
+            "transfer_log" => {
+                self.delete_transfer_log(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -189,11 +189,11 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Run resource operations
+    // Location resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a run resource
-    async fn plan_run(
+    /// Plan changes to a location resource
+    async fn plan_location(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -208,8 +208,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new run resource
-    async fn create_run(
+    /// Create a new location resource
+    async fn create_location(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -218,8 +218,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a run resource
-    async fn read_run(
+    /// Read a location resource
+    async fn read_location(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -228,8 +228,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a run resource
-    async fn update_run(
+    /// Update a location resource
+    async fn update_location(
         &self,
         id: &str,
         input: ResourceInput,
@@ -239,8 +239,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a run resource
-    async fn delete_run(
+    /// Delete a location resource
+    async fn delete_location(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -372,67 +372,6 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Transfer_log resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a transfer_log resource
-    async fn plan_transfer_log(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new transfer_log resource
-    async fn create_transfer_log(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a transfer_log resource
-    async fn read_transfer_log(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a transfer_log resource
-    async fn update_transfer_log(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a transfer_log resource
-    async fn delete_transfer_log(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Project resource operations
     // ------------------------------------------------------------------------
 
@@ -494,11 +433,11 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Location resource operations
+    // Run resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a location resource
-    async fn plan_location(
+    /// Plan changes to a run resource
+    async fn plan_run(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -513,8 +452,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new location resource
-    async fn create_location(
+    /// Create a new run resource
+    async fn create_run(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -523,8 +462,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a location resource
-    async fn read_location(
+    /// Read a run resource
+    async fn read_run(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -533,8 +472,8 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a location resource
-    async fn update_location(
+    /// Update a run resource
+    async fn update_run(
         &self,
         id: &str,
         input: ResourceInput,
@@ -544,8 +483,69 @@ impl<'a> Bigquerydatatransfer_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a location resource
-    async fn delete_location(
+    /// Delete a run resource
+    async fn delete_run(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Transfer_log resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a transfer_log resource
+    async fn plan_transfer_log(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new transfer_log resource
+    async fn create_transfer_log(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a transfer_log resource
+    async fn read_transfer_log(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a transfer_log resource
+    async fn update_transfer_log(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a transfer_log resource
+    async fn delete_transfer_log(
         &self,
         id: &str,
     ) -> Result<()> {

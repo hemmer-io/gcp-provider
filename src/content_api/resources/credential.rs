@@ -21,7 +21,7 @@ impl<'a> Credential<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, purpose: Option<String>, expires_in: Option<String>, access_token: Option<String>, account_id: String) -> Result<String> {
+    pub async fn create(&self, access_token: Option<String>, purpose: Option<String>, expires_in: Option<String>, account_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

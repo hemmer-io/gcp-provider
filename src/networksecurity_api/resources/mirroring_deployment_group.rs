@@ -21,7 +21,7 @@ impl<'a> Mirroring_deployment_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, locations: Option<Vec<String>>, create_time: Option<String>, nested_deployments: Option<Vec<String>>, connected_endpoint_groups: Option<Vec<String>>, name: Option<String>, reconciling: Option<bool>, state: Option<String>, update_time: Option<String>, description: Option<String>, network: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, nested_deployments: Option<Vec<String>>, labels: Option<HashMap<String, String>>, create_time: Option<String>, description: Option<String>, reconciling: Option<bool>, state: Option<String>, name: Option<String>, update_time: Option<String>, locations: Option<Vec<String>>, network: Option<String>, connected_endpoint_groups: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Mirroring_deployment_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, locations: Option<Vec<String>>, create_time: Option<String>, nested_deployments: Option<Vec<String>>, connected_endpoint_groups: Option<Vec<String>>, name: Option<String>, reconciling: Option<bool>, state: Option<String>, update_time: Option<String>, description: Option<String>, network: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, nested_deployments: Option<Vec<String>>, labels: Option<HashMap<String, String>>, create_time: Option<String>, description: Option<String>, reconciling: Option<bool>, state: Option<String>, name: Option<String>, update_time: Option<String>, locations: Option<Vec<String>>, network: Option<String>, connected_endpoint_groups: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -1,6 +1,6 @@
 //! Model_garden_eula resource
 //!
-//! Checks the EULA acceptance status of a publisher model.
+//! Accepts the EULA acceptance status of a publisher model.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

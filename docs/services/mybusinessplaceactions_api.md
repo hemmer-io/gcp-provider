@@ -28,14 +28,14 @@ Creates a place action link associated with the specified location, and returns 
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `update_time` | String |  | Output only. The time when the place action link was last modified. |
+| `uri` | String |  | Required. The link uri. The same uri can be reused for different action types across different locations. However, only one place action link is allowed for each unique combination of (uri, place action type, location). |
 | `name` | String |  | Optional. The resource name, in the format `locations/{location_id}/placeActionLinks/{place_action_link_id}`. The name field will only be considered in UpdatePlaceActionLink and DeletePlaceActionLink requests for updating and deleting links respectively. However, it will be ignored in CreatePlaceActionLink request, where `place_action_link_id` will be assigned by the server on successful creation of a new link and returned as part of the response. |
-| `is_editable` | bool |  | Output only. Indicates whether this link can be edited by the client. |
+| `update_time` | String |  | Output only. The time when the place action link was last modified. |
+| `provider_type` | String |  | Output only. Specifies the provider type. |
 | `create_time` | String |  | Output only. The time when the place action link was created. |
 | `is_preferred` | bool |  | Optional. Whether this link is preferred by the merchant. Only one link can be marked as preferred per place action type at a location. If a future request marks a different link as preferred for the same place action type, then the current preferred link (if any exists) will lose its preference. |
-| `provider_type` | String |  | Output only. Specifies the provider type. |
-| `uri` | String |  | Required. The link uri. The same uri can be reused for different action types across different locations. However, only one place action link is allowed for each unique combination of (uri, place action type, location). |
 | `place_action_type` | String |  | Required. The type of place action that can be performed using this link. |
+| `is_editable` | bool |  | Output only. Indicates whether this link can be edited by the client. |
 | `parent` | String | ✅ | Required. The resource name of the location where to create this place action link. `locations/{location_id}`. |
 
 
@@ -43,14 +43,14 @@ Creates a place action link associated with the specified location, and returns 
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `update_time` | String | Output only. The time when the place action link was last modified. |
+| `uri` | String | Required. The link uri. The same uri can be reused for different action types across different locations. However, only one place action link is allowed for each unique combination of (uri, place action type, location). |
 | `name` | String | Optional. The resource name, in the format `locations/{location_id}/placeActionLinks/{place_action_link_id}`. The name field will only be considered in UpdatePlaceActionLink and DeletePlaceActionLink requests for updating and deleting links respectively. However, it will be ignored in CreatePlaceActionLink request, where `place_action_link_id` will be assigned by the server on successful creation of a new link and returned as part of the response. |
-| `is_editable` | bool | Output only. Indicates whether this link can be edited by the client. |
+| `update_time` | String | Output only. The time when the place action link was last modified. |
+| `provider_type` | String | Output only. Specifies the provider type. |
 | `create_time` | String | Output only. The time when the place action link was created. |
 | `is_preferred` | bool | Optional. Whether this link is preferred by the merchant. Only one link can be marked as preferred per place action type at a location. If a future request marks a different link as preferred for the same place action type, then the current preferred link (if any exists) will lose its preference. |
-| `provider_type` | String | Output only. Specifies the provider type. |
-| `uri` | String | Required. The link uri. The same uri can be reused for different action types across different locations. However, only one place action link is allowed for each unique combination of (uri, place action type, location). |
 | `place_action_type` | String | Required. The type of place action that can be performed using this link. |
+| `is_editable` | bool | Output only. Indicates whether this link can be edited by the client. |
 
 
 #### Usage Example
@@ -71,14 +71,14 @@ place_action_link = provider.mybusinessplaceactions_api.Place_action_link {
 
 # Access place_action_link outputs
 place_action_link_id = place_action_link.id
-place_action_link_update_time = place_action_link.update_time
+place_action_link_uri = place_action_link.uri
 place_action_link_name = place_action_link.name
-place_action_link_is_editable = place_action_link.is_editable
+place_action_link_update_time = place_action_link.update_time
+place_action_link_provider_type = place_action_link.provider_type
 place_action_link_create_time = place_action_link.create_time
 place_action_link_is_preferred = place_action_link.is_preferred
-place_action_link_provider_type = place_action_link.provider_type
-place_action_link_uri = place_action_link.uri
 place_action_link_place_action_type = place_action_link.place_action_type
+place_action_link_is_editable = place_action_link.is_editable
 ```
 
 ---
@@ -100,8 +100,8 @@ Returns the list of available place action types for a location or country.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `place_action_type_metadata` | Vec<String> | A collection of metadata for the available place action types. |
 | `next_page_token` | String | If the number of action types exceeded the requested page size, this field will be populated with a token to fetch the next page on a subsequent call to `placeActionTypeMetadata.list`. If there are no more results, this field will not be present in the response. |
+| `place_action_type_metadata` | Vec<String> | A collection of metadata for the available place action types. |
 
 
 #### Usage Example
@@ -117,8 +117,8 @@ provider = gcp.GcpProvider {
 
 # Access place_action_type_metadata outputs
 place_action_type_metadata_id = place_action_type_metadata.id
-place_action_type_metadata_place_action_type_metadata = place_action_type_metadata.place_action_type_metadata
 place_action_type_metadata_next_page_token = place_action_type_metadata.next_page_token
+place_action_type_metadata_place_action_type_metadata = place_action_type_metadata.place_action_type_metadata
 ```
 
 ---

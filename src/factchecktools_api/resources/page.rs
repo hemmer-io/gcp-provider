@@ -21,7 +21,7 @@ impl<'a> Page<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, page_url: Option<String>, claim_review_author: Option<String>, version_id: Option<String>, name: Option<String>, publish_date: Option<String>, claim_review_markups: Option<Vec<String>>) -> Result<String> {
+    pub async fn create(&self, claim_review_author: Option<String>, page_url: Option<String>, claim_review_markups: Option<Vec<String>>, version_id: Option<String>, name: Option<String>, publish_date: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Page<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, page_url: Option<String>, claim_review_author: Option<String>, version_id: Option<String>, name: Option<String>, publish_date: Option<String>, claim_review_markups: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, claim_review_author: Option<String>, page_url: Option<String>, claim_review_markups: Option<Vec<String>>, version_id: Option<String>, name: Option<String>, publish_date: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

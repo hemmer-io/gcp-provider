@@ -1,7 +1,9 @@
 //! Project resource
 //!
-//! Disable a service resource (also known as service project) associated with
-this host project.
+//! Sets the Cloud Armor tier of the project. To set ENTERPRISE or above the
+billing account of the project must be subscribed to Cloud Armor
+Enterprise. See Subscribing
+to Cloud Armor Enterprise for more information.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -22,7 +24,7 @@ impl<'a> Project<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, xpn_resource: Option<String>, project: String) -> Result<String> {
+    pub async fn create(&self, cloud_armor_tier: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

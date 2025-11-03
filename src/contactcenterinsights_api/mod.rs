@@ -24,44 +24,59 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "issue_model" => {
-                self.plan_issue_model(current_state, desired_input).await
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
-            "issue" => {
-                self.plan_issue(current_state, desired_input).await
+            "view" => {
+                self.plan_view(current_state, desired_input).await
             }
-            "authorized_view_set" => {
-                self.plan_authorized_view_set(current_state, desired_input).await
+            "conversation" => {
+                self.plan_conversation(current_state, desired_input).await
             }
             "dataset" => {
                 self.plan_dataset(current_state, desired_input).await
             }
-            "assessment_rule" => {
-                self.plan_assessment_rule(current_state, desired_input).await
-            }
-            "qa_scorecard" => {
-                self.plan_qa_scorecard(current_state, desired_input).await
-            }
-            "analyse" => {
-                self.plan_analyse(current_state, desired_input).await
-            }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
-            "qa_question" => {
-                self.plan_qa_question(current_state, desired_input).await
+            "phrase_matcher" => {
+                self.plan_phrase_matcher(current_state, desired_input).await
             }
             "qa_question_tag" => {
                 self.plan_qa_question_tag(current_state, desired_input).await
             }
-            "authorized_view" => {
-                self.plan_authorized_view(current_state, desired_input).await
+            "feedback_label" => {
+                self.plan_feedback_label(current_state, desired_input).await
             }
             "note" => {
                 self.plan_note(current_state, desired_input).await
             }
+            "authorized_view_set" => {
+                self.plan_authorized_view_set(current_state, desired_input).await
+            }
+            "authorized_view" => {
+                self.plan_authorized_view(current_state, desired_input).await
+            }
+            "qa_question" => {
+                self.plan_qa_question(current_state, desired_input).await
+            }
+            "qa_scorecard" => {
+                self.plan_qa_scorecard(current_state, desired_input).await
+            }
+            "assessment" => {
+                self.plan_assessment(current_state, desired_input).await
+            }
+            "issue" => {
+                self.plan_issue(current_state, desired_input).await
+            }
+            "encryption_spec" => {
+                self.plan_encryption_spec(current_state, desired_input).await
+            }
             "analysis_rule" => {
                 self.plan_analysis_rule(current_state, desired_input).await
+            }
+            "segment" => {
+                self.plan_segment(current_state, desired_input).await
+            }
+            "assessment_rule" => {
+                self.plan_assessment_rule(current_state, desired_input).await
             }
             "revision" => {
                 self.plan_revision(current_state, desired_input).await
@@ -69,29 +84,14 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "encryption_spec" => {
-                self.plan_encryption_spec(current_state, desired_input).await
-            }
-            "feedback_label" => {
-                self.plan_feedback_label(current_state, desired_input).await
-            }
-            "segment" => {
-                self.plan_segment(current_state, desired_input).await
-            }
-            "assessment" => {
-                self.plan_assessment(current_state, desired_input).await
-            }
-            "view" => {
-                self.plan_view(current_state, desired_input).await
-            }
             "insightsdata" => {
                 self.plan_insightsdata(current_state, desired_input).await
             }
-            "phrase_matcher" => {
-                self.plan_phrase_matcher(current_state, desired_input).await
+            "issue_model" => {
+                self.plan_issue_model(current_state, desired_input).await
             }
-            "conversation" => {
-                self.plan_conversation(current_state, desired_input).await
+            "analyse" => {
+                self.plan_analyse(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -108,44 +108,59 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "issue_model" => {
-                self.create_issue_model(input).await
+            "operation" => {
+                self.create_operation(input).await
             }
-            "issue" => {
-                self.create_issue(input).await
+            "view" => {
+                self.create_view(input).await
             }
-            "authorized_view_set" => {
-                self.create_authorized_view_set(input).await
+            "conversation" => {
+                self.create_conversation(input).await
             }
             "dataset" => {
                 self.create_dataset(input).await
             }
-            "assessment_rule" => {
-                self.create_assessment_rule(input).await
-            }
-            "qa_scorecard" => {
-                self.create_qa_scorecard(input).await
-            }
-            "analyse" => {
-                self.create_analyse(input).await
-            }
-            "operation" => {
-                self.create_operation(input).await
-            }
-            "qa_question" => {
-                self.create_qa_question(input).await
+            "phrase_matcher" => {
+                self.create_phrase_matcher(input).await
             }
             "qa_question_tag" => {
                 self.create_qa_question_tag(input).await
             }
-            "authorized_view" => {
-                self.create_authorized_view(input).await
+            "feedback_label" => {
+                self.create_feedback_label(input).await
             }
             "note" => {
                 self.create_note(input).await
             }
+            "authorized_view_set" => {
+                self.create_authorized_view_set(input).await
+            }
+            "authorized_view" => {
+                self.create_authorized_view(input).await
+            }
+            "qa_question" => {
+                self.create_qa_question(input).await
+            }
+            "qa_scorecard" => {
+                self.create_qa_scorecard(input).await
+            }
+            "assessment" => {
+                self.create_assessment(input).await
+            }
+            "issue" => {
+                self.create_issue(input).await
+            }
+            "encryption_spec" => {
+                self.create_encryption_spec(input).await
+            }
             "analysis_rule" => {
                 self.create_analysis_rule(input).await
+            }
+            "segment" => {
+                self.create_segment(input).await
+            }
+            "assessment_rule" => {
+                self.create_assessment_rule(input).await
             }
             "revision" => {
                 self.create_revision(input).await
@@ -153,29 +168,14 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             "location" => {
                 self.create_location(input).await
             }
-            "encryption_spec" => {
-                self.create_encryption_spec(input).await
-            }
-            "feedback_label" => {
-                self.create_feedback_label(input).await
-            }
-            "segment" => {
-                self.create_segment(input).await
-            }
-            "assessment" => {
-                self.create_assessment(input).await
-            }
-            "view" => {
-                self.create_view(input).await
-            }
             "insightsdata" => {
                 self.create_insightsdata(input).await
             }
-            "phrase_matcher" => {
-                self.create_phrase_matcher(input).await
+            "issue_model" => {
+                self.create_issue_model(input).await
             }
-            "conversation" => {
-                self.create_conversation(input).await
+            "analyse" => {
+                self.create_analyse(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -192,44 +192,59 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "issue_model" => {
-                self.read_issue_model(id).await
+            "operation" => {
+                self.read_operation(id).await
             }
-            "issue" => {
-                self.read_issue(id).await
+            "view" => {
+                self.read_view(id).await
             }
-            "authorized_view_set" => {
-                self.read_authorized_view_set(id).await
+            "conversation" => {
+                self.read_conversation(id).await
             }
             "dataset" => {
                 self.read_dataset(id).await
             }
-            "assessment_rule" => {
-                self.read_assessment_rule(id).await
-            }
-            "qa_scorecard" => {
-                self.read_qa_scorecard(id).await
-            }
-            "analyse" => {
-                self.read_analyse(id).await
-            }
-            "operation" => {
-                self.read_operation(id).await
-            }
-            "qa_question" => {
-                self.read_qa_question(id).await
+            "phrase_matcher" => {
+                self.read_phrase_matcher(id).await
             }
             "qa_question_tag" => {
                 self.read_qa_question_tag(id).await
             }
-            "authorized_view" => {
-                self.read_authorized_view(id).await
+            "feedback_label" => {
+                self.read_feedback_label(id).await
             }
             "note" => {
                 self.read_note(id).await
             }
+            "authorized_view_set" => {
+                self.read_authorized_view_set(id).await
+            }
+            "authorized_view" => {
+                self.read_authorized_view(id).await
+            }
+            "qa_question" => {
+                self.read_qa_question(id).await
+            }
+            "qa_scorecard" => {
+                self.read_qa_scorecard(id).await
+            }
+            "assessment" => {
+                self.read_assessment(id).await
+            }
+            "issue" => {
+                self.read_issue(id).await
+            }
+            "encryption_spec" => {
+                self.read_encryption_spec(id).await
+            }
             "analysis_rule" => {
                 self.read_analysis_rule(id).await
+            }
+            "segment" => {
+                self.read_segment(id).await
+            }
+            "assessment_rule" => {
+                self.read_assessment_rule(id).await
             }
             "revision" => {
                 self.read_revision(id).await
@@ -237,29 +252,14 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             "location" => {
                 self.read_location(id).await
             }
-            "encryption_spec" => {
-                self.read_encryption_spec(id).await
-            }
-            "feedback_label" => {
-                self.read_feedback_label(id).await
-            }
-            "segment" => {
-                self.read_segment(id).await
-            }
-            "assessment" => {
-                self.read_assessment(id).await
-            }
-            "view" => {
-                self.read_view(id).await
-            }
             "insightsdata" => {
                 self.read_insightsdata(id).await
             }
-            "phrase_matcher" => {
-                self.read_phrase_matcher(id).await
+            "issue_model" => {
+                self.read_issue_model(id).await
             }
-            "conversation" => {
-                self.read_conversation(id).await
+            "analyse" => {
+                self.read_analyse(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -277,44 +277,59 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "issue_model" => {
-                self.update_issue_model(id, input).await
+            "operation" => {
+                self.update_operation(id, input).await
             }
-            "issue" => {
-                self.update_issue(id, input).await
+            "view" => {
+                self.update_view(id, input).await
             }
-            "authorized_view_set" => {
-                self.update_authorized_view_set(id, input).await
+            "conversation" => {
+                self.update_conversation(id, input).await
             }
             "dataset" => {
                 self.update_dataset(id, input).await
             }
-            "assessment_rule" => {
-                self.update_assessment_rule(id, input).await
-            }
-            "qa_scorecard" => {
-                self.update_qa_scorecard(id, input).await
-            }
-            "analyse" => {
-                self.update_analyse(id, input).await
-            }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
-            "qa_question" => {
-                self.update_qa_question(id, input).await
+            "phrase_matcher" => {
+                self.update_phrase_matcher(id, input).await
             }
             "qa_question_tag" => {
                 self.update_qa_question_tag(id, input).await
             }
-            "authorized_view" => {
-                self.update_authorized_view(id, input).await
+            "feedback_label" => {
+                self.update_feedback_label(id, input).await
             }
             "note" => {
                 self.update_note(id, input).await
             }
+            "authorized_view_set" => {
+                self.update_authorized_view_set(id, input).await
+            }
+            "authorized_view" => {
+                self.update_authorized_view(id, input).await
+            }
+            "qa_question" => {
+                self.update_qa_question(id, input).await
+            }
+            "qa_scorecard" => {
+                self.update_qa_scorecard(id, input).await
+            }
+            "assessment" => {
+                self.update_assessment(id, input).await
+            }
+            "issue" => {
+                self.update_issue(id, input).await
+            }
+            "encryption_spec" => {
+                self.update_encryption_spec(id, input).await
+            }
             "analysis_rule" => {
                 self.update_analysis_rule(id, input).await
+            }
+            "segment" => {
+                self.update_segment(id, input).await
+            }
+            "assessment_rule" => {
+                self.update_assessment_rule(id, input).await
             }
             "revision" => {
                 self.update_revision(id, input).await
@@ -322,29 +337,14 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             "location" => {
                 self.update_location(id, input).await
             }
-            "encryption_spec" => {
-                self.update_encryption_spec(id, input).await
-            }
-            "feedback_label" => {
-                self.update_feedback_label(id, input).await
-            }
-            "segment" => {
-                self.update_segment(id, input).await
-            }
-            "assessment" => {
-                self.update_assessment(id, input).await
-            }
-            "view" => {
-                self.update_view(id, input).await
-            }
             "insightsdata" => {
                 self.update_insightsdata(id, input).await
             }
-            "phrase_matcher" => {
-                self.update_phrase_matcher(id, input).await
+            "issue_model" => {
+                self.update_issue_model(id, input).await
             }
-            "conversation" => {
-                self.update_conversation(id, input).await
+            "analyse" => {
+                self.update_analyse(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -361,44 +361,59 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "issue_model" => {
-                self.delete_issue_model(id).await
+            "operation" => {
+                self.delete_operation(id).await
             }
-            "issue" => {
-                self.delete_issue(id).await
+            "view" => {
+                self.delete_view(id).await
             }
-            "authorized_view_set" => {
-                self.delete_authorized_view_set(id).await
+            "conversation" => {
+                self.delete_conversation(id).await
             }
             "dataset" => {
                 self.delete_dataset(id).await
             }
-            "assessment_rule" => {
-                self.delete_assessment_rule(id).await
-            }
-            "qa_scorecard" => {
-                self.delete_qa_scorecard(id).await
-            }
-            "analyse" => {
-                self.delete_analyse(id).await
-            }
-            "operation" => {
-                self.delete_operation(id).await
-            }
-            "qa_question" => {
-                self.delete_qa_question(id).await
+            "phrase_matcher" => {
+                self.delete_phrase_matcher(id).await
             }
             "qa_question_tag" => {
                 self.delete_qa_question_tag(id).await
             }
-            "authorized_view" => {
-                self.delete_authorized_view(id).await
+            "feedback_label" => {
+                self.delete_feedback_label(id).await
             }
             "note" => {
                 self.delete_note(id).await
             }
+            "authorized_view_set" => {
+                self.delete_authorized_view_set(id).await
+            }
+            "authorized_view" => {
+                self.delete_authorized_view(id).await
+            }
+            "qa_question" => {
+                self.delete_qa_question(id).await
+            }
+            "qa_scorecard" => {
+                self.delete_qa_scorecard(id).await
+            }
+            "assessment" => {
+                self.delete_assessment(id).await
+            }
+            "issue" => {
+                self.delete_issue(id).await
+            }
+            "encryption_spec" => {
+                self.delete_encryption_spec(id).await
+            }
             "analysis_rule" => {
                 self.delete_analysis_rule(id).await
+            }
+            "segment" => {
+                self.delete_segment(id).await
+            }
+            "assessment_rule" => {
+                self.delete_assessment_rule(id).await
             }
             "revision" => {
                 self.delete_revision(id).await
@@ -406,29 +421,14 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             "location" => {
                 self.delete_location(id).await
             }
-            "encryption_spec" => {
-                self.delete_encryption_spec(id).await
-            }
-            "feedback_label" => {
-                self.delete_feedback_label(id).await
-            }
-            "segment" => {
-                self.delete_segment(id).await
-            }
-            "assessment" => {
-                self.delete_assessment(id).await
-            }
-            "view" => {
-                self.delete_view(id).await
-            }
             "insightsdata" => {
                 self.delete_insightsdata(id).await
             }
-            "phrase_matcher" => {
-                self.delete_phrase_matcher(id).await
+            "issue_model" => {
+                self.delete_issue_model(id).await
             }
-            "conversation" => {
-                self.delete_conversation(id).await
+            "analyse" => {
+                self.delete_analyse(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -444,11 +444,11 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Issue_model resource operations
+    // Operation resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a issue_model resource
-    async fn plan_issue_model(
+    /// Plan changes to a operation resource
+    async fn plan_operation(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -463,8 +463,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new issue_model resource
-    async fn create_issue_model(
+    /// Create a new operation resource
+    async fn create_operation(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -473,8 +473,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a issue_model resource
-    async fn read_issue_model(
+    /// Read a operation resource
+    async fn read_operation(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -483,8 +483,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a issue_model resource
-    async fn update_issue_model(
+    /// Update a operation resource
+    async fn update_operation(
         &self,
         id: &str,
         input: ResourceInput,
@@ -494,8 +494,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a issue_model resource
-    async fn delete_issue_model(
+    /// Delete a operation resource
+    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -505,11 +505,11 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Issue resource operations
+    // View resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a issue resource
-    async fn plan_issue(
+    /// Plan changes to a view resource
+    async fn plan_view(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -524,8 +524,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new issue resource
-    async fn create_issue(
+    /// Create a new view resource
+    async fn create_view(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -534,8 +534,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a issue resource
-    async fn read_issue(
+    /// Read a view resource
+    async fn read_view(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -544,8 +544,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a issue resource
-    async fn update_issue(
+    /// Update a view resource
+    async fn update_view(
         &self,
         id: &str,
         input: ResourceInput,
@@ -555,8 +555,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a issue resource
-    async fn delete_issue(
+    /// Delete a view resource
+    async fn delete_view(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -566,11 +566,11 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Authorized_view_set resource operations
+    // Conversation resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a authorized_view_set resource
-    async fn plan_authorized_view_set(
+    /// Plan changes to a conversation resource
+    async fn plan_conversation(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -585,8 +585,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new authorized_view_set resource
-    async fn create_authorized_view_set(
+    /// Create a new conversation resource
+    async fn create_conversation(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -595,8 +595,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a authorized_view_set resource
-    async fn read_authorized_view_set(
+    /// Read a conversation resource
+    async fn read_conversation(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -605,8 +605,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a authorized_view_set resource
-    async fn update_authorized_view_set(
+    /// Update a conversation resource
+    async fn update_conversation(
         &self,
         id: &str,
         input: ResourceInput,
@@ -616,8 +616,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a authorized_view_set resource
-    async fn delete_authorized_view_set(
+    /// Delete a conversation resource
+    async fn delete_conversation(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -688,11 +688,11 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Assessment_rule resource operations
+    // Phrase_matcher resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a assessment_rule resource
-    async fn plan_assessment_rule(
+    /// Plan changes to a phrase_matcher resource
+    async fn plan_phrase_matcher(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -707,8 +707,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new assessment_rule resource
-    async fn create_assessment_rule(
+    /// Create a new phrase_matcher resource
+    async fn create_phrase_matcher(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -717,8 +717,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a assessment_rule resource
-    async fn read_assessment_rule(
+    /// Read a phrase_matcher resource
+    async fn read_phrase_matcher(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -727,8 +727,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a assessment_rule resource
-    async fn update_assessment_rule(
+    /// Update a phrase_matcher resource
+    async fn update_phrase_matcher(
         &self,
         id: &str,
         input: ResourceInput,
@@ -738,252 +738,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a assessment_rule resource
-    async fn delete_assessment_rule(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Qa_scorecard resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a qa_scorecard resource
-    async fn plan_qa_scorecard(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new qa_scorecard resource
-    async fn create_qa_scorecard(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a qa_scorecard resource
-    async fn read_qa_scorecard(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a qa_scorecard resource
-    async fn update_qa_scorecard(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a qa_scorecard resource
-    async fn delete_qa_scorecard(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Analyse resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a analyse resource
-    async fn plan_analyse(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new analyse resource
-    async fn create_analyse(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a analyse resource
-    async fn read_analyse(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a analyse resource
-    async fn update_analyse(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a analyse resource
-    async fn delete_analyse(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Qa_question resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a qa_question resource
-    async fn plan_qa_question(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new qa_question resource
-    async fn create_qa_question(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a qa_question resource
-    async fn read_qa_question(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a qa_question resource
-    async fn update_qa_question(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a qa_question resource
-    async fn delete_qa_question(
+    /// Delete a phrase_matcher resource
+    async fn delete_phrase_matcher(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1054,11 +810,11 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Authorized_view resource operations
+    // Feedback_label resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a authorized_view resource
-    async fn plan_authorized_view(
+    /// Plan changes to a feedback_label resource
+    async fn plan_feedback_label(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1073,8 +829,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new authorized_view resource
-    async fn create_authorized_view(
+    /// Create a new feedback_label resource
+    async fn create_feedback_label(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1083,8 +839,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a authorized_view resource
-    async fn read_authorized_view(
+    /// Read a feedback_label resource
+    async fn read_feedback_label(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1093,8 +849,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a authorized_view resource
-    async fn update_authorized_view(
+    /// Update a feedback_label resource
+    async fn update_feedback_label(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1104,8 +860,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a authorized_view resource
-    async fn delete_authorized_view(
+    /// Delete a feedback_label resource
+    async fn delete_feedback_label(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1176,6 +932,433 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Authorized_view_set resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a authorized_view_set resource
+    async fn plan_authorized_view_set(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new authorized_view_set resource
+    async fn create_authorized_view_set(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a authorized_view_set resource
+    async fn read_authorized_view_set(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a authorized_view_set resource
+    async fn update_authorized_view_set(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a authorized_view_set resource
+    async fn delete_authorized_view_set(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Authorized_view resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a authorized_view resource
+    async fn plan_authorized_view(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new authorized_view resource
+    async fn create_authorized_view(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a authorized_view resource
+    async fn read_authorized_view(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a authorized_view resource
+    async fn update_authorized_view(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a authorized_view resource
+    async fn delete_authorized_view(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Qa_question resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a qa_question resource
+    async fn plan_qa_question(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new qa_question resource
+    async fn create_qa_question(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a qa_question resource
+    async fn read_qa_question(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a qa_question resource
+    async fn update_qa_question(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a qa_question resource
+    async fn delete_qa_question(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Qa_scorecard resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a qa_scorecard resource
+    async fn plan_qa_scorecard(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new qa_scorecard resource
+    async fn create_qa_scorecard(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a qa_scorecard resource
+    async fn read_qa_scorecard(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a qa_scorecard resource
+    async fn update_qa_scorecard(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a qa_scorecard resource
+    async fn delete_qa_scorecard(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Assessment resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a assessment resource
+    async fn plan_assessment(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new assessment resource
+    async fn create_assessment(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a assessment resource
+    async fn read_assessment(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a assessment resource
+    async fn update_assessment(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a assessment resource
+    async fn delete_assessment(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Issue resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a issue resource
+    async fn plan_issue(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new issue resource
+    async fn create_issue(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a issue resource
+    async fn read_issue(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a issue resource
+    async fn update_issue(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a issue resource
+    async fn delete_issue(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Encryption_spec resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a encryption_spec resource
+    async fn plan_encryption_spec(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new encryption_spec resource
+    async fn create_encryption_spec(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a encryption_spec resource
+    async fn read_encryption_spec(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a encryption_spec resource
+    async fn update_encryption_spec(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a encryption_spec resource
+    async fn delete_encryption_spec(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Analysis_rule resource operations
     // ------------------------------------------------------------------------
 
@@ -1228,6 +1411,128 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
     /// Delete a analysis_rule resource
     async fn delete_analysis_rule(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Segment resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a segment resource
+    async fn plan_segment(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new segment resource
+    async fn create_segment(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a segment resource
+    async fn read_segment(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a segment resource
+    async fn update_segment(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a segment resource
+    async fn delete_segment(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Assessment_rule resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a assessment_rule resource
+    async fn plan_assessment_rule(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new assessment_rule resource
+    async fn create_assessment_rule(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a assessment_rule resource
+    async fn read_assessment_rule(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a assessment_rule resource
+    async fn update_assessment_rule(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a assessment_rule resource
+    async fn delete_assessment_rule(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1359,311 +1664,6 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Encryption_spec resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a encryption_spec resource
-    async fn plan_encryption_spec(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new encryption_spec resource
-    async fn create_encryption_spec(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a encryption_spec resource
-    async fn read_encryption_spec(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a encryption_spec resource
-    async fn update_encryption_spec(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a encryption_spec resource
-    async fn delete_encryption_spec(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Feedback_label resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a feedback_label resource
-    async fn plan_feedback_label(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new feedback_label resource
-    async fn create_feedback_label(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a feedback_label resource
-    async fn read_feedback_label(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a feedback_label resource
-    async fn update_feedback_label(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a feedback_label resource
-    async fn delete_feedback_label(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Segment resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a segment resource
-    async fn plan_segment(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new segment resource
-    async fn create_segment(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a segment resource
-    async fn read_segment(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a segment resource
-    async fn update_segment(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a segment resource
-    async fn delete_segment(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Assessment resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a assessment resource
-    async fn plan_assessment(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new assessment resource
-    async fn create_assessment(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a assessment resource
-    async fn read_assessment(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a assessment resource
-    async fn update_assessment(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a assessment resource
-    async fn delete_assessment(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // View resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a view resource
-    async fn plan_view(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new view resource
-    async fn create_view(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a view resource
-    async fn read_view(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a view resource
-    async fn update_view(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a view resource
-    async fn delete_view(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Insightsdata resource operations
     // ------------------------------------------------------------------------
 
@@ -1725,11 +1725,11 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Phrase_matcher resource operations
+    // Issue_model resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a phrase_matcher resource
-    async fn plan_phrase_matcher(
+    /// Plan changes to a issue_model resource
+    async fn plan_issue_model(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1744,8 +1744,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new phrase_matcher resource
-    async fn create_phrase_matcher(
+    /// Create a new issue_model resource
+    async fn create_issue_model(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1754,8 +1754,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a phrase_matcher resource
-    async fn read_phrase_matcher(
+    /// Read a issue_model resource
+    async fn read_issue_model(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1764,8 +1764,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a phrase_matcher resource
-    async fn update_phrase_matcher(
+    /// Update a issue_model resource
+    async fn update_issue_model(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1775,8 +1775,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a phrase_matcher resource
-    async fn delete_phrase_matcher(
+    /// Delete a issue_model resource
+    async fn delete_issue_model(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1786,11 +1786,11 @@ impl<'a> Contactcenterinsights_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Conversation resource operations
+    // Analyse resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a conversation resource
-    async fn plan_conversation(
+    /// Plan changes to a analyse resource
+    async fn plan_analyse(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1805,8 +1805,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new conversation resource
-    async fn create_conversation(
+    /// Create a new analyse resource
+    async fn create_analyse(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1815,8 +1815,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a conversation resource
-    async fn read_conversation(
+    /// Read a analyse resource
+    async fn read_analyse(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1825,8 +1825,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a conversation resource
-    async fn update_conversation(
+    /// Update a analyse resource
+    async fn update_analyse(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1836,8 +1836,8 @@ impl<'a> Contactcenterinsights_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a conversation resource
-    async fn delete_conversation(
+    /// Delete a analyse resource
+    async fn delete_analyse(
         &self,
         id: &str,
     ) -> Result<()> {

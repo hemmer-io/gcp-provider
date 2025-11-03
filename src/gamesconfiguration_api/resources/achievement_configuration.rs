@@ -21,7 +21,7 @@ impl<'a> Achievement_configuration<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, id: Option<String>, published: Option<String>, achievement_type: Option<String>, draft: Option<String>, initial_state: Option<String>, steps_to_unlock: Option<i64>, kind: Option<String>, token: Option<String>, application_id: String) -> Result<String> {
+    pub async fn create(&self, initial_state: Option<String>, published: Option<String>, steps_to_unlock: Option<i64>, draft: Option<String>, achievement_type: Option<String>, id: Option<String>, kind: Option<String>, token: Option<String>, application_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Achievement_configuration<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, id: Option<String>, published: Option<String>, achievement_type: Option<String>, draft: Option<String>, initial_state: Option<String>, steps_to_unlock: Option<i64>, kind: Option<String>, token: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, initial_state: Option<String>, published: Option<String>, steps_to_unlock: Option<i64>, draft: Option<String>, achievement_type: Option<String>, id: Option<String>, kind: Option<String>, token: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

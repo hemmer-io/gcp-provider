@@ -24,7 +24,7 @@ impl<'a> Reauthorize_environment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, container_version_id: Option<String>, account_id: Option<String>, environment_id: Option<String>, url: Option<String>, authorization_timestamp_ms: Option<String>, enable_debug: Option<bool>, authorization_code: Option<String>, fingerprint: Option<String>, type: Option<String>, description: Option<String>, container_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, fingerprint: Option<String>, name: Option<String>, description: Option<String>, authorization_timestamp_ms: Option<String>, container_version_id: Option<String>, account_id: Option<String>, authorization_code: Option<String>, url: Option<String>, environment_id: Option<String>, container_id: Option<String>, type: Option<String>, enable_debug: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -34,7 +34,7 @@ impl<'a> Project<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, notification_pubsub_topic: Option<String>, request_scope_max_width_preference: Option<String>, ancestor_has_active_key_version: Option<bool>, enrolled_services: Option<Vec<String>>, approval_policy: Option<String>, prefer_no_broad_approval_requests: Option<bool>, require_customer_visible_justification: Option<bool>, active_key_version: Option<String>, name: Option<String>, enrolled_ancestor: Option<bool>, preferred_request_expiration_days: Option<i64>, invalid_key_version: Option<bool>, effective_approval_policy: Option<String>, notification_emails: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, effective_approval_policy: Option<String>, enrolled_services: Option<Vec<String>>, notification_emails: Option<Vec<String>>, request_scope_max_width_preference: Option<String>, invalid_key_version: Option<bool>, ancestor_has_active_key_version: Option<bool>, active_key_version: Option<String>, approval_policy: Option<String>, name: Option<String>, preferred_request_expiration_days: Option<i64>, require_customer_visible_justification: Option<bool>, enrolled_ancestor: Option<bool>, notification_pubsub_topic: Option<String>, prefer_no_broad_approval_requests: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

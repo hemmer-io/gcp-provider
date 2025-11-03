@@ -21,7 +21,7 @@ impl<'a> App<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, api_products: Option<Vec<String>>, app_id: Option<String>, app_family: Option<String>, credentials: Option<Vec<String>>, name: Option<String>, attributes: Option<Vec<String>>, key_expires_in: Option<String>, last_modified_at: Option<String>, scopes: Option<Vec<String>>, callback_url: Option<String>, developer_id: Option<String>, created_at: Option<String>, status: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, api_products: Option<Vec<String>>, name: Option<String>, last_modified_at: Option<String>, scopes: Option<Vec<String>>, app_family: Option<String>, attributes: Option<Vec<String>>, created_at: Option<String>, key_expires_in: Option<String>, credentials: Option<Vec<String>>, app_id: Option<String>, callback_url: Option<String>, developer_id: Option<String>, status: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> App<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, api_products: Option<Vec<String>>, app_id: Option<String>, app_family: Option<String>, credentials: Option<Vec<String>>, name: Option<String>, attributes: Option<Vec<String>>, key_expires_in: Option<String>, last_modified_at: Option<String>, scopes: Option<Vec<String>>, callback_url: Option<String>, developer_id: Option<String>, created_at: Option<String>, status: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, api_products: Option<Vec<String>>, name: Option<String>, last_modified_at: Option<String>, scopes: Option<Vec<String>>, app_family: Option<String>, attributes: Option<Vec<String>>, created_at: Option<String>, key_expires_in: Option<String>, credentials: Option<Vec<String>>, app_id: Option<String>, callback_url: Option<String>, developer_id: Option<String>, status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

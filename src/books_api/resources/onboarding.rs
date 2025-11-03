@@ -1,6 +1,6 @@
 //! Onboarding resource
 //!
-//! List available volumes under categories for onboarding experience.
+//! List categories for onboarding experience.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

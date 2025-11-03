@@ -10,58 +10,18 @@
 
 The serviceconsumermanagement_api service provides access to 8 resource types:
 
-- [Service](#service) [R]
 - [Tenancy_unit](#tenancy_unit) [CRD]
 - [Operation](#operation) [CRD]
+- [Service](#service) [R]
 - [Operation](#operation) [R]
 - [Limit](#limit) [R]
-- [Producer_override](#producer_override) [CRUD]
 - [Producer_quota_policie](#producer_quota_policie) [CRUD]
 - [Consumer_quota_metric](#consumer_quota_metric) [CR]
+- [Producer_override](#producer_override) [CRUD]
 
 ---
 
 ## Resources
-
-
-### Service
-
-Search tenancy units for a managed service.
-
-**Operations**: ✅ Read
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `next_page_token` | String | Pagination token for large results. |
-| `tenancy_units` | Vec<String> | Tenancy Units matching the request. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Access service outputs
-service_id = service.id
-service_next_page_token = service.next_page_token
-service_tenancy_units = service.tenancy_units
-```
-
----
 
 
 ### Tenancy_unit
@@ -128,10 +88,10 @@ Starts asynchronous cancellation on a long-running operation. The server makes a
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
-| `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
 | `error` | String | The error result of the operation in case of failure or cancellation. |
+| `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
 | `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
+| `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
 | `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
 
 
@@ -153,11 +113,51 @@ operation = provider.serviceconsumermanagement_api.Operation {
 
 # Access operation outputs
 operation_id = operation.id
-operation_name = operation.name
-operation_done = operation.done
 operation_error = operation.error
+operation_name = operation.name
 operation_response = operation.response
+operation_done = operation.done
 operation_metadata = operation.metadata
+```
+
+---
+
+
+### Service
+
+Search tenancy units for a managed service.
+
+**Operations**: ✅ Read
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `tenancy_units` | Vec<String> | Tenancy Units matching the request. |
+| `next_page_token` | String | Pagination token for large results. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Access service outputs
+service_id = service.id
+service_tenancy_units = service.tenancy_units
+service_next_page_token = service.next_page_token
 ```
 
 ---
@@ -179,11 +179,11 @@ Gets the latest state of a long-running operation. Clients can use this method t
 
 | Output | Type | Description |
 |--------|------|-------------|
+| `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
+| `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
+| `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
 | `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
 | `error` | String | The error result of the operation in case of failure or cancellation. |
-| `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
-| `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
-| `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
 
 
 #### Usage Example
@@ -199,11 +199,11 @@ provider = gcp.GcpProvider {
 
 # Access operation outputs
 operation_id = operation.id
+operation_name = operation.name
+operation_metadata = operation.metadata
+operation_response = operation.response
 operation_done = operation.done
 operation_error = operation.error
-operation_name = operation.name
-operation_response = operation.response
-operation_metadata = operation.metadata
 ```
 
 ---
@@ -225,11 +225,11 @@ Retrieves a summary of quota information for a specific quota limit.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `is_precise` | bool | Whether this limit is precise or imprecise. |
 | `unit` | String | The limit unit. An example unit would be: `1/{project}/{region}` Note that `{project}` and `{region}` are not placeholders in this example; the literal characters `{` and `}` occur in the string. |
-| `supported_locations` | Vec<String> | List of all supported locations. This field is present only if the limit has a {region} or {zone} dimension. |
-| `name` | String | The resource name of the quota limit. An example name would be: `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion` The resource name is intended to be opaque and should not be parsed for its component strings, since its representation could change in the future. |
 | `metric` | String | The name of the parent metric of this limit. An example name would be: `compute.googleapis.com/cpus` |
+| `name` | String | The resource name of the quota limit. An example name would be: `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion` The resource name is intended to be opaque and should not be parsed for its component strings, since its representation could change in the future. |
+| `is_precise` | bool | Whether this limit is precise or imprecise. |
+| `supported_locations` | Vec<String> | List of all supported locations. This field is present only if the limit has a {region} or {zone} dimension. |
 | `quota_buckets` | Vec<String> | Summary of the enforced quota buckets, organized by quota dimension, ordered from least specific to most specific (for example, the global default bucket, with no quota dimensions, will always appear first). |
 
 
@@ -246,64 +246,12 @@ provider = gcp.GcpProvider {
 
 # Access limit outputs
 limit_id = limit.id
-limit_is_precise = limit.is_precise
 limit_unit = limit.unit
-limit_supported_locations = limit.supported_locations
-limit_name = limit.name
 limit_metric = limit.metric
+limit_name = limit.name
+limit_is_precise = limit.is_precise
+limit_supported_locations = limit.supported_locations
 limit_quota_buckets = limit.quota_buckets
-```
-
----
-
-
-### Producer_override
-
-Creates a producer override. A producer override is applied by the owner or administrator of a service to increase or decrease the amount of quota a consumer of the service is allowed to use. To create multiple overrides at once, use ImportProducerOverrides instead. If an override with the specified dimensions already exists, this call will fail. To overwrite an existing override if one is already present ("upsert" semantics), use ImportProducerOverrides instead.
-
-**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `unit` | String |  | The limit unit of the limit to which this override applies. An example unit would be: `1/{project}/{region}` Note that `{project}` and `{region}` are not placeholders in this example; the literal characters `{` and `}` occur in the string. |
-| `admin_override_ancestor` | String |  | The resource name of the ancestor that requested the override. For example: "organizations/12345" or "folders/67890". Used by admin overrides only. |
-| `metric` | String |  | The name of the metric to which this override applies. An example name would be: `compute.googleapis.com/cpus` |
-| `override_value` | String |  | The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota). |
-| `dimensions` | HashMap<String, String> |  |  If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit. For example, an override on a limit with the unit 1/{project}/{region} could contain an entry with the key "region" and the value "us-east-1"; the override is only applied to quota consumed in that region. This map has the following restrictions: * Keys that are not defined in the limit's unit are not valid keys. Any string appearing in {brackets} in the unit (besides {project} or {user}) is a defined key. * "project" is not a valid key; the project is already specified in the parent resource name. * "user" is not a valid key; the API does not support quota overrides that apply only to a specific user. * If "region" appears as a key, its value must be a valid Cloud region. * If "zone" appears as a key, its value must be a valid Cloud zone. * If any valid key other than "region" or "zone" appears in the map, then all valid keys other than "region" or "zone" must also appear in the map. |
-| `name` | String |  | The resource name of the producer override. An example name would be: `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion/producerOverrides/4a3f2c1d` |
-| `parent` | String | ✅ | The resource name of the parent quota limit, returned by a ListConsumerQuotaMetrics or GetConsumerQuotaMetric call. An example name would be: `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion` |
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `next_page_token` | String | Token identifying which result to start with; returned by a previous list call. |
-| `overrides` | Vec<String> | Producer overrides on this limit. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create producer_override
-producer_override = provider.serviceconsumermanagement_api.Producer_override {
-    parent = "value"  # The resource name of the parent quota limit, returned by a ListConsumerQuotaMetrics or GetConsumerQuotaMetric call. An example name would be: `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
-}
-
-# Access producer_override outputs
-producer_override_id = producer_override.id
-producer_override_next_page_token = producer_override.next_page_token
-producer_override_overrides = producer_override.overrides
 ```
 
 ---
@@ -319,12 +267,12 @@ Creates a producer quota policy. A producer quota policy is applied by the owner
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `container` | String |  | The cloud resource container at which the quota policy is created. The format is {container_type}/{container_number} |
-| `unit` | String |  | The limit unit of the limit to which this policy applies. An example unit would be: `1/{project}/{region}` Note that `{project}` and `{region}` are not placeholders in this example; the literal characters `{` and `}` occur in the string. |
-| `policy_value` | String |  | The quota policy value. Can be any nonnegative integer, or -1 (unlimited quota). |
-| `dimensions` | HashMap<String, String> |  |  If this map is nonempty, then this policy applies only to specific values for dimensions defined in the limit unit. For example, a policy on a limit with the unit 1/{project}/{region} could contain an entry with the key "region" and the value "us-east-1"; the policy is only applied to quota consumed in that region. This map has the following restrictions: * Keys that are not defined in the limit's unit are not valid keys. Any string appearing in {brackets} in the unit (besides {project} or {user}) is a defined key. * "project" is not a valid key; the project is already specified in the parent resource name. * "user" is not a valid key; the API does not support quota polcies that apply only to a specific user. * If "region" appears as a key, its value must be a valid Cloud region. * If "zone" appears as a key, its value must be a valid Cloud zone. * If any valid key other than "region" or "zone" appears in the map, then all valid keys other than "region" or "zone" must also appear in the map. |
-| `metric` | String |  | The name of the metric to which this policy applies. An example name would be: `compute.googleapis.com/cpus` |
 | `name` | String |  | The resource name of the producer policy. An example name would be: `services/compute.googleapis.com/organizations/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion/producerQuotaPolicies/4a3f2c1d` |
+| `metric` | String |  | The name of the metric to which this policy applies. An example name would be: `compute.googleapis.com/cpus` |
+| `container` | String |  | The cloud resource container at which the quota policy is created. The format is {container_type}/{container_number} |
+| `policy_value` | String |  | The quota policy value. Can be any nonnegative integer, or -1 (unlimited quota). |
+| `unit` | String |  | The limit unit of the limit to which this policy applies. An example unit would be: `1/{project}/{region}` Note that `{project}` and `{region}` are not placeholders in this example; the literal characters `{` and `}` occur in the string. |
+| `dimensions` | HashMap<String, String> |  |  If this map is nonempty, then this policy applies only to specific values for dimensions defined in the limit unit. For example, a policy on a limit with the unit 1/{project}/{region} could contain an entry with the key "region" and the value "us-east-1"; the policy is only applied to quota consumed in that region. This map has the following restrictions: * Keys that are not defined in the limit's unit are not valid keys. Any string appearing in {brackets} in the unit (besides {project} or {user}) is a defined key. * "project" is not a valid key; the project is already specified in the parent resource name. * "user" is not a valid key; the API does not support quota polcies that apply only to a specific user. * If "region" appears as a key, its value must be a valid Cloud region. * If "zone" appears as a key, its value must be a valid Cloud zone. * If any valid key other than "region" or "zone" appears in the map, then all valid keys other than "region" or "zone" must also appear in the map. |
 | `parent` | String | ✅ | Required. The resource name of the parent quota limit. An example name would be: `services/compute.googleapis.com/organizations/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion` |
 
 
@@ -332,8 +280,8 @@ Creates a producer quota policy. A producer quota policy is applied by the owner
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `next_page_token` | String | Token identifying which result to start with; returned by a previous list call. |
 | `producer_quota_policies` | Vec<String> | Producer policies on this limit. |
+| `next_page_token` | String | Token identifying which result to start with; returned by a previous list call. |
 
 
 #### Usage Example
@@ -354,8 +302,8 @@ producer_quota_policie = provider.serviceconsumermanagement_api.Producer_quota_p
 
 # Access producer_quota_policie outputs
 producer_quota_policie_id = producer_quota_policie.id
-producer_quota_policie_next_page_token = producer_quota_policie.next_page_token
 producer_quota_policie_producer_quota_policies = producer_quota_policie.producer_quota_policies
+producer_quota_policie_next_page_token = producer_quota_policie.next_page_token
 ```
 
 ---
@@ -363,7 +311,7 @@ producer_quota_policie_producer_quota_policies = producer_quota_policie.producer
 
 ### Consumer_quota_metric
 
-Create or update multiple producer overrides atomically, all on the same consumer, but on many different metrics or limits. The name field in the quota override message should not be set.
+Create or update multiple producer quota policies atomically, all on the same ancestor, but on many different metrics or limits. The name field in the quota policy message should not be set.
 
 **Operations**: ✅ Create ✅ Read
 
@@ -371,23 +319,24 @@ Create or update multiple producer overrides atomically, all on the same consume
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `force_only` | Vec<String> |  | The list of quota safety checks to ignore before the override mutation. Unlike 'force' field that ignores all the quota safety checks, the 'force_only' field ignores only the specified checks; other checks are still enforced. The 'force' and 'force_only' fields cannot both be set. |
-| `force` | bool |  | Whether to force the creation of the quota overrides. Setting the force parameter to 'true' ignores all quota safety checks that would fail the request. QuotaSafetyCheck lists all such validations. |
-| `force_justification` | String |  | If force option is set to true, force_justification is suggested to be set to log the reason in audit logs. |
+| `force_skip_quota_usage_check` | bool |  | If set to true, skip the quota usage check. This field is only used when the effective limit can be decreased. If the force field is not set, this field will be ignored. |
 | `inline_source` | String |  | The import data is specified in the request message itself |
-| `parent` | String | ✅ | The resource name of the consumer. An example name would be: `services/compute.googleapis.com/projects/123` |
+| `validate_only` | bool |  | If set to true, validate the request, but do not actually update. |
+| `force` | bool |  | Whether quota policy can result in a decrease of effective limit. Don't allow any decreases if force is not specified. If force is specified, then don't allow any decreases below 120% of the 7d quota usage, or for cases where usage cannot be examined (custom dimensions/ per user/per resource), only allow a 10% decrease. |
+| `force_justification` | String |  | If force or force_skip_quota_usage_check option is set to true, force_justification is suggested to be set to log the reason in audit logs. |
+| `parent` | String | ✅ | The resource name of the consumer. An example name would be: `services/compute.googleapis.com/organizations/123` |
 
 
 #### Outputs
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `display_name` | String | The display name of the metric. An example name would be: "CPUs" |
-| `unit` | String | The units in which the metric value is reported. |
-| `metric` | String | The name of the metric. An example name would be: `compute.googleapis.com/cpus` |
-| `descendant_consumer_quota_limits` | Vec<String> | The quota limits targeting the descendant containers of the consumer in request. If the consumer in request is of type `organizations` or `folders`, the field will list per-project limits in the metric; if the consumer in request is of type `project`, the field will be empty. The `quota_buckets` field of each descendant consumer quota limit will not be populated. |
 | `consumer_quota_limits` | Vec<String> | The consumer quota for each quota limit defined on the metric. |
+| `descendant_consumer_quota_limits` | Vec<String> | The quota limits targeting the descendant containers of the consumer in request. If the consumer in request is of type `organizations` or `folders`, the field will list per-project limits in the metric; if the consumer in request is of type `project`, the field will be empty. The `quota_buckets` field of each descendant consumer quota limit will not be populated. |
+| `metric` | String | The name of the metric. An example name would be: `compute.googleapis.com/cpus` |
+| `display_name` | String | The display name of the metric. An example name would be: "CPUs" |
 | `name` | String | The resource name of the quota settings on this metric for this consumer. An example name would be: `services/serviceconsumermanagement.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus` The resource name is intended to be opaque and should not be parsed for its component strings, since its representation could change in the future. |
+| `unit` | String | The units in which the metric value is reported. |
 
 
 #### Usage Example
@@ -403,17 +352,69 @@ provider = gcp.GcpProvider {
 
 # Create consumer_quota_metric
 consumer_quota_metric = provider.serviceconsumermanagement_api.Consumer_quota_metric {
-    parent = "value"  # The resource name of the consumer. An example name would be: `services/compute.googleapis.com/projects/123`
+    parent = "value"  # The resource name of the consumer. An example name would be: `services/compute.googleapis.com/organizations/123`
 }
 
 # Access consumer_quota_metric outputs
 consumer_quota_metric_id = consumer_quota_metric.id
-consumer_quota_metric_display_name = consumer_quota_metric.display_name
-consumer_quota_metric_unit = consumer_quota_metric.unit
-consumer_quota_metric_metric = consumer_quota_metric.metric
-consumer_quota_metric_descendant_consumer_quota_limits = consumer_quota_metric.descendant_consumer_quota_limits
 consumer_quota_metric_consumer_quota_limits = consumer_quota_metric.consumer_quota_limits
+consumer_quota_metric_descendant_consumer_quota_limits = consumer_quota_metric.descendant_consumer_quota_limits
+consumer_quota_metric_metric = consumer_quota_metric.metric
+consumer_quota_metric_display_name = consumer_quota_metric.display_name
 consumer_quota_metric_name = consumer_quota_metric.name
+consumer_quota_metric_unit = consumer_quota_metric.unit
+```
+
+---
+
+
+### Producer_override
+
+Creates a producer override. A producer override is applied by the owner or administrator of a service to increase or decrease the amount of quota a consumer of the service is allowed to use. To create multiple overrides at once, use ImportProducerOverrides instead. If an override with the specified dimensions already exists, this call will fail. To overwrite an existing override if one is already present ("upsert" semantics), use ImportProducerOverrides instead.
+
+**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `metric` | String |  | The name of the metric to which this override applies. An example name would be: `compute.googleapis.com/cpus` |
+| `admin_override_ancestor` | String |  | The resource name of the ancestor that requested the override. For example: "organizations/12345" or "folders/67890". Used by admin overrides only. |
+| `dimensions` | HashMap<String, String> |  |  If this map is nonempty, then this override applies only to specific values for dimensions defined in the limit unit. For example, an override on a limit with the unit 1/{project}/{region} could contain an entry with the key "region" and the value "us-east-1"; the override is only applied to quota consumed in that region. This map has the following restrictions: * Keys that are not defined in the limit's unit are not valid keys. Any string appearing in {brackets} in the unit (besides {project} or {user}) is a defined key. * "project" is not a valid key; the project is already specified in the parent resource name. * "user" is not a valid key; the API does not support quota overrides that apply only to a specific user. * If "region" appears as a key, its value must be a valid Cloud region. * If "zone" appears as a key, its value must be a valid Cloud zone. * If any valid key other than "region" or "zone" appears in the map, then all valid keys other than "region" or "zone" must also appear in the map. |
+| `name` | String |  | The resource name of the producer override. An example name would be: `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion/producerOverrides/4a3f2c1d` |
+| `override_value` | String |  | The overriding quota limit value. Can be any nonnegative integer, or -1 (unlimited quota). |
+| `unit` | String |  | The limit unit of the limit to which this override applies. An example unit would be: `1/{project}/{region}` Note that `{project}` and `{region}` are not placeholders in this example; the literal characters `{` and `}` occur in the string. |
+| `parent` | String | ✅ | The resource name of the parent quota limit, returned by a ListConsumerQuotaMetrics or GetConsumerQuotaMetric call. An example name would be: `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion` |
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `overrides` | Vec<String> | Producer overrides on this limit. |
+| `next_page_token` | String | Token identifying which result to start with; returned by a previous list call. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create producer_override
+producer_override = provider.serviceconsumermanagement_api.Producer_override {
+    parent = "value"  # The resource name of the parent quota limit, returned by a ListConsumerQuotaMetrics or GetConsumerQuotaMetric call. An example name would be: `services/compute.googleapis.com/projects/123/consumerQuotaMetrics/compute.googleapis.com%2Fcpus/limits/%2Fproject%2Fregion`
+}
+
+# Access producer_override outputs
+producer_override_id = producer_override.id
+producer_override_overrides = producer_override.overrides
+producer_override_next_page_token = producer_override.next_page_token
 ```
 
 ---
@@ -431,12 +432,15 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple service resources
-service_0 = provider.serviceconsumermanagement_api.Service {
+# Create multiple tenancy_unit resources
+tenancy_unit_0 = provider.serviceconsumermanagement_api.Tenancy_unit {
+    parent = "value-0"
 }
-service_1 = provider.serviceconsumermanagement_api.Service {
+tenancy_unit_1 = provider.serviceconsumermanagement_api.Tenancy_unit {
+    parent = "value-1"
 }
-service_2 = provider.serviceconsumermanagement_api.Service {
+tenancy_unit_2 = provider.serviceconsumermanagement_api.Tenancy_unit {
+    parent = "value-2"
 }
 ```
 
@@ -445,7 +449,8 @@ service_2 = provider.serviceconsumermanagement_api.Service {
 ```kcl
 # Only create in production
 if environment == "production":
-    service = provider.serviceconsumermanagement_api.Service {
+    tenancy_unit = provider.serviceconsumermanagement_api.Tenancy_unit {
+        parent = "production-value"
     }
 ```
 

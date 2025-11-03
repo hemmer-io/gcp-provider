@@ -24,11 +24,11 @@ impl<'a> Cloudbilling_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "project" => {
+                self.plan_project(current_state, desired_input).await
+            }
             "sub_account" => {
                 self.plan_sub_account(current_state, desired_input).await
-            }
-            "billing_account" => {
-                self.plan_billing_account(current_state, desired_input).await
             }
             "service" => {
                 self.plan_service(current_state, desired_input).await
@@ -36,17 +36,17 @@ impl<'a> Cloudbilling_apiService<'a> {
             "sku" => {
                 self.plan_sku(current_state, desired_input).await
             }
-            "project" => {
-                self.plan_project(current_state, desired_input).await
+            "billing_account" => {
+                self.plan_billing_account(current_state, desired_input).await
+            }
+            "sku_group" => {
+                self.plan_sku_group(current_state, desired_input).await
             }
             "price" => {
                 self.plan_price(current_state, desired_input).await
             }
             "sku" => {
                 self.plan_sku(current_state, desired_input).await
-            }
-            "sku_group" => {
-                self.plan_sku_group(current_state, desired_input).await
             }
             "service" => {
                 self.plan_service(current_state, desired_input).await
@@ -66,11 +66,11 @@ impl<'a> Cloudbilling_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "project" => {
+                self.create_project(input).await
+            }
             "sub_account" => {
                 self.create_sub_account(input).await
-            }
-            "billing_account" => {
-                self.create_billing_account(input).await
             }
             "service" => {
                 self.create_service(input).await
@@ -78,17 +78,17 @@ impl<'a> Cloudbilling_apiService<'a> {
             "sku" => {
                 self.create_sku(input).await
             }
-            "project" => {
-                self.create_project(input).await
+            "billing_account" => {
+                self.create_billing_account(input).await
+            }
+            "sku_group" => {
+                self.create_sku_group(input).await
             }
             "price" => {
                 self.create_price(input).await
             }
             "sku" => {
                 self.create_sku(input).await
-            }
-            "sku_group" => {
-                self.create_sku_group(input).await
             }
             "service" => {
                 self.create_service(input).await
@@ -108,11 +108,11 @@ impl<'a> Cloudbilling_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "project" => {
+                self.read_project(id).await
+            }
             "sub_account" => {
                 self.read_sub_account(id).await
-            }
-            "billing_account" => {
-                self.read_billing_account(id).await
             }
             "service" => {
                 self.read_service(id).await
@@ -120,17 +120,17 @@ impl<'a> Cloudbilling_apiService<'a> {
             "sku" => {
                 self.read_sku(id).await
             }
-            "project" => {
-                self.read_project(id).await
+            "billing_account" => {
+                self.read_billing_account(id).await
+            }
+            "sku_group" => {
+                self.read_sku_group(id).await
             }
             "price" => {
                 self.read_price(id).await
             }
             "sku" => {
                 self.read_sku(id).await
-            }
-            "sku_group" => {
-                self.read_sku_group(id).await
             }
             "service" => {
                 self.read_service(id).await
@@ -151,11 +151,11 @@ impl<'a> Cloudbilling_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "project" => {
+                self.update_project(id, input).await
+            }
             "sub_account" => {
                 self.update_sub_account(id, input).await
-            }
-            "billing_account" => {
-                self.update_billing_account(id, input).await
             }
             "service" => {
                 self.update_service(id, input).await
@@ -163,17 +163,17 @@ impl<'a> Cloudbilling_apiService<'a> {
             "sku" => {
                 self.update_sku(id, input).await
             }
-            "project" => {
-                self.update_project(id, input).await
+            "billing_account" => {
+                self.update_billing_account(id, input).await
+            }
+            "sku_group" => {
+                self.update_sku_group(id, input).await
             }
             "price" => {
                 self.update_price(id, input).await
             }
             "sku" => {
                 self.update_sku(id, input).await
-            }
-            "sku_group" => {
-                self.update_sku_group(id, input).await
             }
             "service" => {
                 self.update_service(id, input).await
@@ -193,11 +193,11 @@ impl<'a> Cloudbilling_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "project" => {
+                self.delete_project(id).await
+            }
             "sub_account" => {
                 self.delete_sub_account(id).await
-            }
-            "billing_account" => {
-                self.delete_billing_account(id).await
             }
             "service" => {
                 self.delete_service(id).await
@@ -205,17 +205,17 @@ impl<'a> Cloudbilling_apiService<'a> {
             "sku" => {
                 self.delete_sku(id).await
             }
-            "project" => {
-                self.delete_project(id).await
+            "billing_account" => {
+                self.delete_billing_account(id).await
+            }
+            "sku_group" => {
+                self.delete_sku_group(id).await
             }
             "price" => {
                 self.delete_price(id).await
             }
             "sku" => {
                 self.delete_sku(id).await
-            }
-            "sku_group" => {
-                self.delete_sku_group(id).await
             }
             "service" => {
                 self.delete_service(id).await
@@ -231,6 +231,67 @@ impl<'a> Cloudbilling_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Project resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a project resource
+    async fn plan_project(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new project resource
+    async fn create_project(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a project resource
+    async fn read_project(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a project resource
+    async fn update_project(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a project resource
+    async fn delete_project(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -286,67 +347,6 @@ impl<'a> Cloudbilling_apiService<'a> {
 
     /// Delete a sub_account resource
     async fn delete_sub_account(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Billing_account resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a billing_account resource
-    async fn plan_billing_account(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new billing_account resource
-    async fn create_billing_account(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a billing_account resource
-    async fn read_billing_account(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a billing_account resource
-    async fn update_billing_account(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a billing_account resource
-    async fn delete_billing_account(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -478,11 +478,11 @@ impl<'a> Cloudbilling_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Project resource operations
+    // Billing_account resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a project resource
-    async fn plan_project(
+    /// Plan changes to a billing_account resource
+    async fn plan_billing_account(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -497,8 +497,8 @@ impl<'a> Cloudbilling_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new project resource
-    async fn create_project(
+    /// Create a new billing_account resource
+    async fn create_billing_account(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -507,8 +507,8 @@ impl<'a> Cloudbilling_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a project resource
-    async fn read_project(
+    /// Read a billing_account resource
+    async fn read_billing_account(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -517,8 +517,8 @@ impl<'a> Cloudbilling_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a project resource
-    async fn update_project(
+    /// Update a billing_account resource
+    async fn update_billing_account(
         &self,
         id: &str,
         input: ResourceInput,
@@ -528,8 +528,69 @@ impl<'a> Cloudbilling_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a project resource
-    async fn delete_project(
+    /// Delete a billing_account resource
+    async fn delete_billing_account(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Sku_group resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a sku_group resource
+    async fn plan_sku_group(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new sku_group resource
+    async fn create_sku_group(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a sku_group resource
+    async fn read_sku_group(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a sku_group resource
+    async fn update_sku_group(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a sku_group resource
+    async fn delete_sku_group(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -652,67 +713,6 @@ impl<'a> Cloudbilling_apiService<'a> {
 
     /// Delete a sku resource
     async fn delete_sku(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Sku_group resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a sku_group resource
-    async fn plan_sku_group(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new sku_group resource
-    async fn create_sku_group(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a sku_group resource
-    async fn read_sku_group(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a sku_group resource
-    async fn update_sku_group(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a sku_group resource
-    async fn delete_sku_group(
         &self,
         id: &str,
     ) -> Result<()> {

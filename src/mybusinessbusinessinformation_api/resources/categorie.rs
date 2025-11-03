@@ -1,6 +1,6 @@
 //! Categorie resource
 //!
-//! Returns a list of business categories for the provided language and GConcept ids.
+//! Returns a list of business categories. Search will match the category name but not the category ID. Search only matches the front of a category name (that is, 'food' may return 'Food Court' but not 'Fast Food Restaurant').
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

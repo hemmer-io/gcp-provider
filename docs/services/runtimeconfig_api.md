@@ -12,9 +12,9 @@ The runtimeconfig_api service provides access to 5 resource types:
 
 - [Operation](#operation) [CRD]
 - [Operation](#operation) [CR]
-- [Config](#config) [CRUD]
 - [Variable](#variable) [CRUD]
 - [Waiter](#waiter) [CRD]
+- [Config](#config) [CRUD]
 
 ---
 
@@ -85,11 +85,11 @@ Returns permissions that a caller has on the specified resource. If the resource
 
 | Output | Type | Description |
 |--------|------|-------------|
+| `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
 | `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
+| `error` | String | The error result of the operation in case of failure or cancellation. |
 | `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
 | `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
-| `error` | String | The error result of the operation in case of failure or cancellation. |
-| `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
 
 
 #### Usage Example
@@ -110,59 +110,11 @@ operation = provider.runtimeconfig_api.Operation {
 
 # Access operation outputs
 operation_id = operation.id
+operation_metadata = operation.metadata
 operation_done = operation.done
+operation_error = operation.error
 operation_response = operation.response
 operation_name = operation.name
-operation_error = operation.error
-operation_metadata = operation.metadata
-```
-
----
-
-
-### Config
-
-Creates a new RuntimeConfig resource. The configuration name must be unique within project.
-
-**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `name` | String |  | The resource name of a runtime config. The name must have the format: projects/[PROJECT_ID]/configs/[CONFIG_NAME] The `[PROJECT_ID]` must be a valid project ID, and `[CONFIG_NAME]` is an arbitrary name that matches the `[0-9A-Za-z](?:[_.A-Za-z0-9-]{0,62}[_.A-Za-z0-9])?` regular expression. The length of `[CONFIG_NAME]` must be less than 64 characters. You pick the RuntimeConfig resource name, but the server will validate that the name adheres to this format. After you create the resource, you cannot change the resource's name. |
-| `description` | String |  | An optional description of the RuntimeConfig object. |
-| `parent` | String | ✅ | The [project ID](https://support.google.com/cloud/answer/6158840?hl=en&ref_topic=6158848) for this request, in the format `projects/[PROJECT_ID]`. |
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `name` | String | The resource name of a runtime config. The name must have the format: projects/[PROJECT_ID]/configs/[CONFIG_NAME] The `[PROJECT_ID]` must be a valid project ID, and `[CONFIG_NAME]` is an arbitrary name that matches the `[0-9A-Za-z](?:[_.A-Za-z0-9-]{0,62}[_.A-Za-z0-9])?` regular expression. The length of `[CONFIG_NAME]` must be less than 64 characters. You pick the RuntimeConfig resource name, but the server will validate that the name adheres to this format. After you create the resource, you cannot change the resource's name. |
-| `description` | String | An optional description of the RuntimeConfig object. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create config
-config = provider.runtimeconfig_api.Config {
-    parent = "value"  # The [project ID](https://support.google.com/cloud/answer/6158840?hl=en&ref_topic=6158848) for this request, in the format `projects/[PROJECT_ID]`.
-}
-
-# Access config outputs
-config_id = config.id
-config_name = config.name
-config_description = config.description
 ```
 
 ---
@@ -179,10 +131,10 @@ Creates a variable within the given configuration. You cannot create a variable 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `update_time` | String |  | Output only. The time of the last variable update. Timestamp will be UTC timestamp. |
-| `value` | String |  | The binary value of the variable. The length of the value must be less than 4096 bytes. Empty values are also accepted. The value must be base64 encoded, and must comply with IETF RFC4648 (https://www.ietf.org/rfc/rfc4648.txt). Only one of `value` or `text` can be set. |
+| `text` | String |  | The string value of the variable. The length of the value must be less than 4096 bytes. Empty values are also accepted. For example, `text: "my text value"`. The string must be valid UTF-8. |
 | `name` | String |  | The name of the variable resource, in the format: projects/[PROJECT_ID]/configs/[CONFIG_NAME]/variables/[VARIABLE_NAME] The `[PROJECT_ID]` must be a valid project ID, `[CONFIG_NAME]` must be a valid RuntimeConfig resource and `[VARIABLE_NAME]` follows Unix file system file path naming. The `[VARIABLE_NAME]` can contain ASCII letters, numbers, slashes and dashes. Slashes are used as path element separators and are not part of the `[VARIABLE_NAME]` itself, so `[VARIABLE_NAME]` must contain at least one non-slash character. Multiple slashes are coalesced into single slash character. Each path segment should match [0-9A-Za-z](?:[_.A-Za-z0-9-]{0,62}[_.A-Za-z0-9])? regular expression. The length of a `[VARIABLE_NAME]` must be less than 256 characters. Once you create a variable, you cannot change the variable name. |
 | `state` | String |  | Output only. The current state of the variable. The variable state indicates the outcome of the `variables().watch` call and is visible through the `get` and `list` calls. |
-| `text` | String |  | The string value of the variable. The length of the value must be less than 4096 bytes. Empty values are also accepted. For example, `text: "my text value"`. The string must be valid UTF-8. |
+| `value` | String |  | The binary value of the variable. The length of the value must be less than 4096 bytes. Empty values are also accepted. The value must be base64 encoded, and must comply with IETF RFC4648 (https://www.ietf.org/rfc/rfc4648.txt). Only one of `value` or `text` can be set. |
 | `parent` | String | ✅ | The path to the RutimeConfig resource that this variable should belong to. The configuration must exist beforehand; the path must be in the format: `projects/[PROJECT_ID]/configs/[CONFIG_NAME]` |
 
 
@@ -191,10 +143,10 @@ Creates a variable within the given configuration. You cannot create a variable 
 | Output | Type | Description |
 |--------|------|-------------|
 | `update_time` | String | Output only. The time of the last variable update. Timestamp will be UTC timestamp. |
-| `value` | String | The binary value of the variable. The length of the value must be less than 4096 bytes. Empty values are also accepted. The value must be base64 encoded, and must comply with IETF RFC4648 (https://www.ietf.org/rfc/rfc4648.txt). Only one of `value` or `text` can be set. |
+| `text` | String | The string value of the variable. The length of the value must be less than 4096 bytes. Empty values are also accepted. For example, `text: "my text value"`. The string must be valid UTF-8. |
 | `name` | String | The name of the variable resource, in the format: projects/[PROJECT_ID]/configs/[CONFIG_NAME]/variables/[VARIABLE_NAME] The `[PROJECT_ID]` must be a valid project ID, `[CONFIG_NAME]` must be a valid RuntimeConfig resource and `[VARIABLE_NAME]` follows Unix file system file path naming. The `[VARIABLE_NAME]` can contain ASCII letters, numbers, slashes and dashes. Slashes are used as path element separators and are not part of the `[VARIABLE_NAME]` itself, so `[VARIABLE_NAME]` must contain at least one non-slash character. Multiple slashes are coalesced into single slash character. Each path segment should match [0-9A-Za-z](?:[_.A-Za-z0-9-]{0,62}[_.A-Za-z0-9])? regular expression. The length of a `[VARIABLE_NAME]` must be less than 256 characters. Once you create a variable, you cannot change the variable name. |
 | `state` | String | Output only. The current state of the variable. The variable state indicates the outcome of the `variables().watch` call and is visible through the `get` and `list` calls. |
-| `text` | String | The string value of the variable. The length of the value must be less than 4096 bytes. Empty values are also accepted. For example, `text: "my text value"`. The string must be valid UTF-8. |
+| `value` | String | The binary value of the variable. The length of the value must be less than 4096 bytes. Empty values are also accepted. The value must be base64 encoded, and must comply with IETF RFC4648 (https://www.ietf.org/rfc/rfc4648.txt). Only one of `value` or `text` can be set. |
 
 
 #### Usage Example
@@ -216,10 +168,10 @@ variable = provider.runtimeconfig_api.Variable {
 # Access variable outputs
 variable_id = variable.id
 variable_update_time = variable.update_time
-variable_value = variable.value
+variable_text = variable.text
 variable_name = variable.name
 variable_state = variable.state
-variable_text = variable.text
+variable_value = variable.value
 ```
 
 ---
@@ -235,12 +187,12 @@ Creates a Waiter resource. This operation returns a long-running Operation resou
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `success` | String |  | [Required] The success condition. If this condition is met, `done` will be set to `true` and the `error` value will remain unset. The failure condition takes precedence over the success condition. If both conditions are met, a failure will be indicated. |
-| `error` | String |  | Output only. If the waiter ended due to a failure or timeout, this value will be set. |
 | `timeout` | String |  | [Required] Specifies the timeout of the waiter in seconds, beginning from the instant that `waiters().create` method is called. If this time elapses before the success or failure conditions are met, the waiter fails and sets the `error` code to `DEADLINE_EXCEEDED`. |
 | `create_time` | String |  | Output only. The instant at which this Waiter resource was created. Adding the value of `timeout` to this instant yields the timeout deadline for the waiter. |
-| `failure` | String |  | [Optional] The failure condition of this waiter. If this condition is met, `done` will be set to `true` and the `error` code will be set to `ABORTED`. The failure condition takes precedence over the success condition. If both conditions are met, a failure will be indicated. This value is optional; if no failure condition is set, the only failure scenario will be a timeout. |
 | `done` | bool |  | Output only. If the value is `false`, it means the waiter is still waiting for one of its conditions to be met. If true, the waiter has finished. If the waiter finished due to a timeout or failure, `error` will be set. |
+| `failure` | String |  | [Optional] The failure condition of this waiter. If this condition is met, `done` will be set to `true` and the `error` code will be set to `ABORTED`. The failure condition takes precedence over the success condition. If both conditions are met, a failure will be indicated. This value is optional; if no failure condition is set, the only failure scenario will be a timeout. |
+| `success` | String |  | [Required] The success condition. If this condition is met, `done` will be set to `true` and the `error` value will remain unset. The failure condition takes precedence over the success condition. If both conditions are met, a failure will be indicated. |
+| `error` | String |  | Output only. If the waiter ended due to a failure or timeout, this value will be set. |
 | `name` | String |  | The name of the Waiter resource, in the format: projects/[PROJECT_ID]/configs/[CONFIG_NAME]/waiters/[WAITER_NAME] The `[PROJECT_ID]` must be a valid Google Cloud project ID, the `[CONFIG_NAME]` must be a valid RuntimeConfig resource, the `[WAITER_NAME]` must match RFC 1035 segment specification, and the length of `[WAITER_NAME]` must be less than 64 bytes. After you create a Waiter resource, you cannot change the resource name. |
 | `parent` | String | ✅ | The path to the configuration that will own the waiter. The configuration must exist beforehand; the path must be in the format: `projects/[PROJECT_ID]/configs/[CONFIG_NAME]`. |
 
@@ -249,12 +201,12 @@ Creates a Waiter resource. This operation returns a long-running Operation resou
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `success` | String | [Required] The success condition. If this condition is met, `done` will be set to `true` and the `error` value will remain unset. The failure condition takes precedence over the success condition. If both conditions are met, a failure will be indicated. |
-| `error` | String | Output only. If the waiter ended due to a failure or timeout, this value will be set. |
 | `timeout` | String | [Required] Specifies the timeout of the waiter in seconds, beginning from the instant that `waiters().create` method is called. If this time elapses before the success or failure conditions are met, the waiter fails and sets the `error` code to `DEADLINE_EXCEEDED`. |
 | `create_time` | String | Output only. The instant at which this Waiter resource was created. Adding the value of `timeout` to this instant yields the timeout deadline for the waiter. |
-| `failure` | String | [Optional] The failure condition of this waiter. If this condition is met, `done` will be set to `true` and the `error` code will be set to `ABORTED`. The failure condition takes precedence over the success condition. If both conditions are met, a failure will be indicated. This value is optional; if no failure condition is set, the only failure scenario will be a timeout. |
 | `done` | bool | Output only. If the value is `false`, it means the waiter is still waiting for one of its conditions to be met. If true, the waiter has finished. If the waiter finished due to a timeout or failure, `error` will be set. |
+| `failure` | String | [Optional] The failure condition of this waiter. If this condition is met, `done` will be set to `true` and the `error` code will be set to `ABORTED`. The failure condition takes precedence over the success condition. If both conditions are met, a failure will be indicated. This value is optional; if no failure condition is set, the only failure scenario will be a timeout. |
+| `success` | String | [Required] The success condition. If this condition is met, `done` will be set to `true` and the `error` value will remain unset. The failure condition takes precedence over the success condition. If both conditions are met, a failure will be indicated. |
+| `error` | String | Output only. If the waiter ended due to a failure or timeout, this value will be set. |
 | `name` | String | The name of the Waiter resource, in the format: projects/[PROJECT_ID]/configs/[CONFIG_NAME]/waiters/[WAITER_NAME] The `[PROJECT_ID]` must be a valid Google Cloud project ID, the `[CONFIG_NAME]` must be a valid RuntimeConfig resource, the `[WAITER_NAME]` must match RFC 1035 segment specification, and the length of `[WAITER_NAME]` must be less than 64 bytes. After you create a Waiter resource, you cannot change the resource name. |
 
 
@@ -276,13 +228,61 @@ waiter = provider.runtimeconfig_api.Waiter {
 
 # Access waiter outputs
 waiter_id = waiter.id
-waiter_success = waiter.success
-waiter_error = waiter.error
 waiter_timeout = waiter.timeout
 waiter_create_time = waiter.create_time
-waiter_failure = waiter.failure
 waiter_done = waiter.done
+waiter_failure = waiter.failure
+waiter_success = waiter.success
+waiter_error = waiter.error
 waiter_name = waiter.name
+```
+
+---
+
+
+### Config
+
+Creates a new RuntimeConfig resource. The configuration name must be unique within project.
+
+**Operations**: ✅ Create ✅ Read ✅ Update ✅ Delete
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `description` | String |  | An optional description of the RuntimeConfig object. |
+| `name` | String |  | The resource name of a runtime config. The name must have the format: projects/[PROJECT_ID]/configs/[CONFIG_NAME] The `[PROJECT_ID]` must be a valid project ID, and `[CONFIG_NAME]` is an arbitrary name that matches the `[0-9A-Za-z](?:[_.A-Za-z0-9-]{0,62}[_.A-Za-z0-9])?` regular expression. The length of `[CONFIG_NAME]` must be less than 64 characters. You pick the RuntimeConfig resource name, but the server will validate that the name adheres to this format. After you create the resource, you cannot change the resource's name. |
+| `parent` | String | ✅ | The [project ID](https://support.google.com/cloud/answer/6158840?hl=en&ref_topic=6158848) for this request, in the format `projects/[PROJECT_ID]`. |
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `description` | String | An optional description of the RuntimeConfig object. |
+| `name` | String | The resource name of a runtime config. The name must have the format: projects/[PROJECT_ID]/configs/[CONFIG_NAME] The `[PROJECT_ID]` must be a valid project ID, and `[CONFIG_NAME]` is an arbitrary name that matches the `[0-9A-Za-z](?:[_.A-Za-z0-9-]{0,62}[_.A-Za-z0-9])?` regular expression. The length of `[CONFIG_NAME]` must be less than 64 characters. You pick the RuntimeConfig resource name, but the server will validate that the name adheres to this format. After you create the resource, you cannot change the resource's name. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create config
+config = provider.runtimeconfig_api.Config {
+    parent = "value"  # The [project ID](https://support.google.com/cloud/answer/6158840?hl=en&ref_topic=6158848) for this request, in the format `projects/[PROJECT_ID]`.
+}
+
+# Access config outputs
+config_id = config.id
+config_description = config.description
+config_name = config.name
 ```
 
 ---

@@ -21,7 +21,7 @@ impl<'a> Compilation_result<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, resolved_git_commit_sha: Option<String>, internal_metadata: Option<String>, name: Option<String>, git_commitish: Option<String>, code_compilation_config: Option<String>, compilation_errors: Option<Vec<String>>, create_time: Option<String>, data_encryption_state: Option<String>, workspace: Option<String>, dataform_core_version: Option<String>, release_config: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, workspace: Option<String>, compilation_errors: Option<Vec<String>>, git_commitish: Option<String>, release_config: Option<String>, internal_metadata: Option<String>, create_time: Option<String>, code_compilation_config: Option<String>, dataform_core_version: Option<String>, data_encryption_state: Option<String>, name: Option<String>, resolved_git_commit_sha: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

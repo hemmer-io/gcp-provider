@@ -24,65 +24,65 @@ impl<'a> Walletobjects_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "genericclas" => {
-                self.plan_genericclas(current_state, desired_input).await
-            }
-            "eventticketobject" => {
-                self.plan_eventticketobject(current_state, desired_input).await
-            }
-            "transitobject" => {
-                self.plan_transitobject(current_state, desired_input).await
-            }
             "loyaltyobject" => {
                 self.plan_loyaltyobject(current_state, desired_input).await
-            }
-            "offerobject" => {
-                self.plan_offerobject(current_state, desired_input).await
             }
             "genericobject" => {
                 self.plan_genericobject(current_state, desired_input).await
             }
-            "giftcardobject" => {
-                self.plan_giftcardobject(current_state, desired_input).await
-            }
             "media" => {
                 self.plan_media(current_state, desired_input).await
-            }
-            "flightobject" => {
-                self.plan_flightobject(current_state, desired_input).await
-            }
-            "smarttap" => {
-                self.plan_smarttap(current_state, desired_input).await
-            }
-            "offerclas" => {
-                self.plan_offerclas(current_state, desired_input).await
-            }
-            "private_content" => {
-                self.plan_private_content(current_state, desired_input).await
-            }
-            "transitclas" => {
-                self.plan_transitclas(current_state, desired_input).await
             }
             "permission" => {
                 self.plan_permission(current_state, desired_input).await
             }
-            "giftcardclas" => {
-                self.plan_giftcardclas(current_state, desired_input).await
+            "flightobject" => {
+                self.plan_flightobject(current_state, desired_input).await
             }
-            "loyaltyclas" => {
-                self.plan_loyaltyclas(current_state, desired_input).await
+            "offerclas" => {
+                self.plan_offerclas(current_state, desired_input).await
+            }
+            "eventticketobject" => {
+                self.plan_eventticketobject(current_state, desired_input).await
             }
             "issuer" => {
                 self.plan_issuer(current_state, desired_input).await
             }
+            "smarttap" => {
+                self.plan_smarttap(current_state, desired_input).await
+            }
             "eventticketclas" => {
                 self.plan_eventticketclas(current_state, desired_input).await
+            }
+            "transitclas" => {
+                self.plan_transitclas(current_state, desired_input).await
             }
             "jwt" => {
                 self.plan_jwt(current_state, desired_input).await
             }
+            "giftcardobject" => {
+                self.plan_giftcardobject(current_state, desired_input).await
+            }
+            "transitobject" => {
+                self.plan_transitobject(current_state, desired_input).await
+            }
             "flightclas" => {
                 self.plan_flightclas(current_state, desired_input).await
+            }
+            "genericclas" => {
+                self.plan_genericclas(current_state, desired_input).await
+            }
+            "offerobject" => {
+                self.plan_offerobject(current_state, desired_input).await
+            }
+            "giftcardclas" => {
+                self.plan_giftcardclas(current_state, desired_input).await
+            }
+            "private_content" => {
+                self.plan_private_content(current_state, desired_input).await
+            }
+            "loyaltyclas" => {
+                self.plan_loyaltyclas(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -99,65 +99,65 @@ impl<'a> Walletobjects_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "genericclas" => {
-                self.create_genericclas(input).await
-            }
-            "eventticketobject" => {
-                self.create_eventticketobject(input).await
-            }
-            "transitobject" => {
-                self.create_transitobject(input).await
-            }
             "loyaltyobject" => {
                 self.create_loyaltyobject(input).await
-            }
-            "offerobject" => {
-                self.create_offerobject(input).await
             }
             "genericobject" => {
                 self.create_genericobject(input).await
             }
-            "giftcardobject" => {
-                self.create_giftcardobject(input).await
-            }
             "media" => {
                 self.create_media(input).await
-            }
-            "flightobject" => {
-                self.create_flightobject(input).await
-            }
-            "smarttap" => {
-                self.create_smarttap(input).await
-            }
-            "offerclas" => {
-                self.create_offerclas(input).await
-            }
-            "private_content" => {
-                self.create_private_content(input).await
-            }
-            "transitclas" => {
-                self.create_transitclas(input).await
             }
             "permission" => {
                 self.create_permission(input).await
             }
-            "giftcardclas" => {
-                self.create_giftcardclas(input).await
+            "flightobject" => {
+                self.create_flightobject(input).await
             }
-            "loyaltyclas" => {
-                self.create_loyaltyclas(input).await
+            "offerclas" => {
+                self.create_offerclas(input).await
+            }
+            "eventticketobject" => {
+                self.create_eventticketobject(input).await
             }
             "issuer" => {
                 self.create_issuer(input).await
             }
+            "smarttap" => {
+                self.create_smarttap(input).await
+            }
             "eventticketclas" => {
                 self.create_eventticketclas(input).await
+            }
+            "transitclas" => {
+                self.create_transitclas(input).await
             }
             "jwt" => {
                 self.create_jwt(input).await
             }
+            "giftcardobject" => {
+                self.create_giftcardobject(input).await
+            }
+            "transitobject" => {
+                self.create_transitobject(input).await
+            }
             "flightclas" => {
                 self.create_flightclas(input).await
+            }
+            "genericclas" => {
+                self.create_genericclas(input).await
+            }
+            "offerobject" => {
+                self.create_offerobject(input).await
+            }
+            "giftcardclas" => {
+                self.create_giftcardclas(input).await
+            }
+            "private_content" => {
+                self.create_private_content(input).await
+            }
+            "loyaltyclas" => {
+                self.create_loyaltyclas(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -174,65 +174,65 @@ impl<'a> Walletobjects_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "genericclas" => {
-                self.read_genericclas(id).await
-            }
-            "eventticketobject" => {
-                self.read_eventticketobject(id).await
-            }
-            "transitobject" => {
-                self.read_transitobject(id).await
-            }
             "loyaltyobject" => {
                 self.read_loyaltyobject(id).await
-            }
-            "offerobject" => {
-                self.read_offerobject(id).await
             }
             "genericobject" => {
                 self.read_genericobject(id).await
             }
-            "giftcardobject" => {
-                self.read_giftcardobject(id).await
-            }
             "media" => {
                 self.read_media(id).await
-            }
-            "flightobject" => {
-                self.read_flightobject(id).await
-            }
-            "smarttap" => {
-                self.read_smarttap(id).await
-            }
-            "offerclas" => {
-                self.read_offerclas(id).await
-            }
-            "private_content" => {
-                self.read_private_content(id).await
-            }
-            "transitclas" => {
-                self.read_transitclas(id).await
             }
             "permission" => {
                 self.read_permission(id).await
             }
-            "giftcardclas" => {
-                self.read_giftcardclas(id).await
+            "flightobject" => {
+                self.read_flightobject(id).await
             }
-            "loyaltyclas" => {
-                self.read_loyaltyclas(id).await
+            "offerclas" => {
+                self.read_offerclas(id).await
+            }
+            "eventticketobject" => {
+                self.read_eventticketobject(id).await
             }
             "issuer" => {
                 self.read_issuer(id).await
             }
+            "smarttap" => {
+                self.read_smarttap(id).await
+            }
             "eventticketclas" => {
                 self.read_eventticketclas(id).await
+            }
+            "transitclas" => {
+                self.read_transitclas(id).await
             }
             "jwt" => {
                 self.read_jwt(id).await
             }
+            "giftcardobject" => {
+                self.read_giftcardobject(id).await
+            }
+            "transitobject" => {
+                self.read_transitobject(id).await
+            }
             "flightclas" => {
                 self.read_flightclas(id).await
+            }
+            "genericclas" => {
+                self.read_genericclas(id).await
+            }
+            "offerobject" => {
+                self.read_offerobject(id).await
+            }
+            "giftcardclas" => {
+                self.read_giftcardclas(id).await
+            }
+            "private_content" => {
+                self.read_private_content(id).await
+            }
+            "loyaltyclas" => {
+                self.read_loyaltyclas(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -250,65 +250,65 @@ impl<'a> Walletobjects_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "genericclas" => {
-                self.update_genericclas(id, input).await
-            }
-            "eventticketobject" => {
-                self.update_eventticketobject(id, input).await
-            }
-            "transitobject" => {
-                self.update_transitobject(id, input).await
-            }
             "loyaltyobject" => {
                 self.update_loyaltyobject(id, input).await
-            }
-            "offerobject" => {
-                self.update_offerobject(id, input).await
             }
             "genericobject" => {
                 self.update_genericobject(id, input).await
             }
-            "giftcardobject" => {
-                self.update_giftcardobject(id, input).await
-            }
             "media" => {
                 self.update_media(id, input).await
-            }
-            "flightobject" => {
-                self.update_flightobject(id, input).await
-            }
-            "smarttap" => {
-                self.update_smarttap(id, input).await
-            }
-            "offerclas" => {
-                self.update_offerclas(id, input).await
-            }
-            "private_content" => {
-                self.update_private_content(id, input).await
-            }
-            "transitclas" => {
-                self.update_transitclas(id, input).await
             }
             "permission" => {
                 self.update_permission(id, input).await
             }
-            "giftcardclas" => {
-                self.update_giftcardclas(id, input).await
+            "flightobject" => {
+                self.update_flightobject(id, input).await
             }
-            "loyaltyclas" => {
-                self.update_loyaltyclas(id, input).await
+            "offerclas" => {
+                self.update_offerclas(id, input).await
+            }
+            "eventticketobject" => {
+                self.update_eventticketobject(id, input).await
             }
             "issuer" => {
                 self.update_issuer(id, input).await
             }
+            "smarttap" => {
+                self.update_smarttap(id, input).await
+            }
             "eventticketclas" => {
                 self.update_eventticketclas(id, input).await
+            }
+            "transitclas" => {
+                self.update_transitclas(id, input).await
             }
             "jwt" => {
                 self.update_jwt(id, input).await
             }
+            "giftcardobject" => {
+                self.update_giftcardobject(id, input).await
+            }
+            "transitobject" => {
+                self.update_transitobject(id, input).await
+            }
             "flightclas" => {
                 self.update_flightclas(id, input).await
+            }
+            "genericclas" => {
+                self.update_genericclas(id, input).await
+            }
+            "offerobject" => {
+                self.update_offerobject(id, input).await
+            }
+            "giftcardclas" => {
+                self.update_giftcardclas(id, input).await
+            }
+            "private_content" => {
+                self.update_private_content(id, input).await
+            }
+            "loyaltyclas" => {
+                self.update_loyaltyclas(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -325,65 +325,65 @@ impl<'a> Walletobjects_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "genericclas" => {
-                self.delete_genericclas(id).await
-            }
-            "eventticketobject" => {
-                self.delete_eventticketobject(id).await
-            }
-            "transitobject" => {
-                self.delete_transitobject(id).await
-            }
             "loyaltyobject" => {
                 self.delete_loyaltyobject(id).await
-            }
-            "offerobject" => {
-                self.delete_offerobject(id).await
             }
             "genericobject" => {
                 self.delete_genericobject(id).await
             }
-            "giftcardobject" => {
-                self.delete_giftcardobject(id).await
-            }
             "media" => {
                 self.delete_media(id).await
-            }
-            "flightobject" => {
-                self.delete_flightobject(id).await
-            }
-            "smarttap" => {
-                self.delete_smarttap(id).await
-            }
-            "offerclas" => {
-                self.delete_offerclas(id).await
-            }
-            "private_content" => {
-                self.delete_private_content(id).await
-            }
-            "transitclas" => {
-                self.delete_transitclas(id).await
             }
             "permission" => {
                 self.delete_permission(id).await
             }
-            "giftcardclas" => {
-                self.delete_giftcardclas(id).await
+            "flightobject" => {
+                self.delete_flightobject(id).await
             }
-            "loyaltyclas" => {
-                self.delete_loyaltyclas(id).await
+            "offerclas" => {
+                self.delete_offerclas(id).await
+            }
+            "eventticketobject" => {
+                self.delete_eventticketobject(id).await
             }
             "issuer" => {
                 self.delete_issuer(id).await
             }
+            "smarttap" => {
+                self.delete_smarttap(id).await
+            }
             "eventticketclas" => {
                 self.delete_eventticketclas(id).await
+            }
+            "transitclas" => {
+                self.delete_transitclas(id).await
             }
             "jwt" => {
                 self.delete_jwt(id).await
             }
+            "giftcardobject" => {
+                self.delete_giftcardobject(id).await
+            }
+            "transitobject" => {
+                self.delete_transitobject(id).await
+            }
             "flightclas" => {
                 self.delete_flightclas(id).await
+            }
+            "genericclas" => {
+                self.delete_genericclas(id).await
+            }
+            "offerobject" => {
+                self.delete_offerobject(id).await
+            }
+            "giftcardclas" => {
+                self.delete_giftcardclas(id).await
+            }
+            "private_content" => {
+                self.delete_private_content(id).await
+            }
+            "loyaltyclas" => {
+                self.delete_loyaltyclas(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -396,189 +396,6 @@ impl<'a> Walletobjects_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Genericclas resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a genericclas resource
-    async fn plan_genericclas(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new genericclas resource
-    async fn create_genericclas(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a genericclas resource
-    async fn read_genericclas(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a genericclas resource
-    async fn update_genericclas(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a genericclas resource
-    async fn delete_genericclas(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Eventticketobject resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a eventticketobject resource
-    async fn plan_eventticketobject(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new eventticketobject resource
-    async fn create_eventticketobject(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a eventticketobject resource
-    async fn read_eventticketobject(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a eventticketobject resource
-    async fn update_eventticketobject(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a eventticketobject resource
-    async fn delete_eventticketobject(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Transitobject resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a transitobject resource
-    async fn plan_transitobject(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new transitobject resource
-    async fn create_transitobject(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a transitobject resource
-    async fn read_transitobject(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a transitobject resource
-    async fn update_transitobject(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a transitobject resource
-    async fn delete_transitobject(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -634,67 +451,6 @@ impl<'a> Walletobjects_apiService<'a> {
 
     /// Delete a loyaltyobject resource
     async fn delete_loyaltyobject(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Offerobject resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a offerobject resource
-    async fn plan_offerobject(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new offerobject resource
-    async fn create_offerobject(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a offerobject resource
-    async fn read_offerobject(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a offerobject resource
-    async fn update_offerobject(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a offerobject resource
-    async fn delete_offerobject(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -765,67 +521,6 @@ impl<'a> Walletobjects_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Giftcardobject resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a giftcardobject resource
-    async fn plan_giftcardobject(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new giftcardobject resource
-    async fn create_giftcardobject(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a giftcardobject resource
-    async fn read_giftcardobject(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a giftcardobject resource
-    async fn update_giftcardobject(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a giftcardobject resource
-    async fn delete_giftcardobject(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Media resource operations
     // ------------------------------------------------------------------------
 
@@ -878,311 +573,6 @@ impl<'a> Walletobjects_apiService<'a> {
 
     /// Delete a media resource
     async fn delete_media(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Flightobject resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a flightobject resource
-    async fn plan_flightobject(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new flightobject resource
-    async fn create_flightobject(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a flightobject resource
-    async fn read_flightobject(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a flightobject resource
-    async fn update_flightobject(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a flightobject resource
-    async fn delete_flightobject(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Smarttap resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a smarttap resource
-    async fn plan_smarttap(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new smarttap resource
-    async fn create_smarttap(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a smarttap resource
-    async fn read_smarttap(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a smarttap resource
-    async fn update_smarttap(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a smarttap resource
-    async fn delete_smarttap(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Offerclas resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a offerclas resource
-    async fn plan_offerclas(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new offerclas resource
-    async fn create_offerclas(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a offerclas resource
-    async fn read_offerclas(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a offerclas resource
-    async fn update_offerclas(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a offerclas resource
-    async fn delete_offerclas(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Private_content resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a private_content resource
-    async fn plan_private_content(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new private_content resource
-    async fn create_private_content(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a private_content resource
-    async fn read_private_content(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a private_content resource
-    async fn update_private_content(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a private_content resource
-    async fn delete_private_content(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Transitclas resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a transitclas resource
-    async fn plan_transitclas(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new transitclas resource
-    async fn create_transitclas(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a transitclas resource
-    async fn read_transitclas(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a transitclas resource
-    async fn update_transitclas(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a transitclas resource
-    async fn delete_transitclas(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1253,11 +643,11 @@ impl<'a> Walletobjects_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Giftcardclas resource operations
+    // Flightobject resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a giftcardclas resource
-    async fn plan_giftcardclas(
+    /// Plan changes to a flightobject resource
+    async fn plan_flightobject(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1272,8 +662,8 @@ impl<'a> Walletobjects_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new giftcardclas resource
-    async fn create_giftcardclas(
+    /// Create a new flightobject resource
+    async fn create_flightobject(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1282,8 +672,8 @@ impl<'a> Walletobjects_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a giftcardclas resource
-    async fn read_giftcardclas(
+    /// Read a flightobject resource
+    async fn read_flightobject(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1292,8 +682,8 @@ impl<'a> Walletobjects_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a giftcardclas resource
-    async fn update_giftcardclas(
+    /// Update a flightobject resource
+    async fn update_flightobject(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1303,8 +693,8 @@ impl<'a> Walletobjects_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a giftcardclas resource
-    async fn delete_giftcardclas(
+    /// Delete a flightobject resource
+    async fn delete_flightobject(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1314,11 +704,11 @@ impl<'a> Walletobjects_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Loyaltyclas resource operations
+    // Offerclas resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a loyaltyclas resource
-    async fn plan_loyaltyclas(
+    /// Plan changes to a offerclas resource
+    async fn plan_offerclas(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1333,8 +723,8 @@ impl<'a> Walletobjects_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new loyaltyclas resource
-    async fn create_loyaltyclas(
+    /// Create a new offerclas resource
+    async fn create_offerclas(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1343,8 +733,8 @@ impl<'a> Walletobjects_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a loyaltyclas resource
-    async fn read_loyaltyclas(
+    /// Read a offerclas resource
+    async fn read_offerclas(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1353,8 +743,8 @@ impl<'a> Walletobjects_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a loyaltyclas resource
-    async fn update_loyaltyclas(
+    /// Update a offerclas resource
+    async fn update_offerclas(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1364,8 +754,69 @@ impl<'a> Walletobjects_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a loyaltyclas resource
-    async fn delete_loyaltyclas(
+    /// Delete a offerclas resource
+    async fn delete_offerclas(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Eventticketobject resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a eventticketobject resource
+    async fn plan_eventticketobject(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new eventticketobject resource
+    async fn create_eventticketobject(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a eventticketobject resource
+    async fn read_eventticketobject(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a eventticketobject resource
+    async fn update_eventticketobject(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a eventticketobject resource
+    async fn delete_eventticketobject(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1436,6 +887,67 @@ impl<'a> Walletobjects_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Smarttap resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a smarttap resource
+    async fn plan_smarttap(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new smarttap resource
+    async fn create_smarttap(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a smarttap resource
+    async fn read_smarttap(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a smarttap resource
+    async fn update_smarttap(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a smarttap resource
+    async fn delete_smarttap(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Eventticketclas resource operations
     // ------------------------------------------------------------------------
 
@@ -1488,6 +1000,67 @@ impl<'a> Walletobjects_apiService<'a> {
 
     /// Delete a eventticketclas resource
     async fn delete_eventticketclas(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Transitclas resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a transitclas resource
+    async fn plan_transitclas(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new transitclas resource
+    async fn create_transitclas(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a transitclas resource
+    async fn read_transitclas(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a transitclas resource
+    async fn update_transitclas(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a transitclas resource
+    async fn delete_transitclas(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1558,6 +1131,128 @@ impl<'a> Walletobjects_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Giftcardobject resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a giftcardobject resource
+    async fn plan_giftcardobject(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new giftcardobject resource
+    async fn create_giftcardobject(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a giftcardobject resource
+    async fn read_giftcardobject(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a giftcardobject resource
+    async fn update_giftcardobject(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a giftcardobject resource
+    async fn delete_giftcardobject(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Transitobject resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a transitobject resource
+    async fn plan_transitobject(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new transitobject resource
+    async fn create_transitobject(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a transitobject resource
+    async fn read_transitobject(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a transitobject resource
+    async fn update_transitobject(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a transitobject resource
+    async fn delete_transitobject(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Flightclas resource operations
     // ------------------------------------------------------------------------
 
@@ -1610,6 +1305,311 @@ impl<'a> Walletobjects_apiService<'a> {
 
     /// Delete a flightclas resource
     async fn delete_flightclas(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Genericclas resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a genericclas resource
+    async fn plan_genericclas(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new genericclas resource
+    async fn create_genericclas(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a genericclas resource
+    async fn read_genericclas(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a genericclas resource
+    async fn update_genericclas(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a genericclas resource
+    async fn delete_genericclas(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Offerobject resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a offerobject resource
+    async fn plan_offerobject(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new offerobject resource
+    async fn create_offerobject(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a offerobject resource
+    async fn read_offerobject(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a offerobject resource
+    async fn update_offerobject(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a offerobject resource
+    async fn delete_offerobject(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Giftcardclas resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a giftcardclas resource
+    async fn plan_giftcardclas(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new giftcardclas resource
+    async fn create_giftcardclas(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a giftcardclas resource
+    async fn read_giftcardclas(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a giftcardclas resource
+    async fn update_giftcardclas(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a giftcardclas resource
+    async fn delete_giftcardclas(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Private_content resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a private_content resource
+    async fn plan_private_content(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new private_content resource
+    async fn create_private_content(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a private_content resource
+    async fn read_private_content(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a private_content resource
+    async fn update_private_content(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a private_content resource
+    async fn delete_private_content(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Loyaltyclas resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a loyaltyclas resource
+    async fn plan_loyaltyclas(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new loyaltyclas resource
+    async fn create_loyaltyclas(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a loyaltyclas resource
+    async fn read_loyaltyclas(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a loyaltyclas resource
+    async fn update_loyaltyclas(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a loyaltyclas resource
+    async fn delete_loyaltyclas(
         &self,
         id: &str,
     ) -> Result<()> {

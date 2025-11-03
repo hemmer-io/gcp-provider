@@ -62,9 +62,9 @@ discovery = provider.trafficdirector_api.Discovery {
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `node_matchers` | Vec<String> |  | Management server can use these match criteria to identify clients. The match follows OR semantics. |
 | `exclude_resource_contents` | bool |  | If true, the server will not include the resource contents in the response (i.e., the generic_xds_configs.xds_config field will not be populated). [#not-implemented-hide:] |
 | `node` | String |  | The node making the csds request. |
+| `node_matchers` | Vec<String> |  | Management server can use these match criteria to identify clients. The match follows OR semantics. |
 
 
 

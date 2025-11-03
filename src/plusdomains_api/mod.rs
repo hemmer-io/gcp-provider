@@ -24,23 +24,23 @@ impl<'a> Plusdomains_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "activitie" => {
-                self.plan_activitie(current_state, desired_input).await
-            }
-            "audience" => {
-                self.plan_audience(current_state, desired_input).await
-            }
             "circle" => {
                 self.plan_circle(current_state, desired_input).await
             }
-            "comment" => {
-                self.plan_comment(current_state, desired_input).await
+            "media" => {
+                self.plan_media(current_state, desired_input).await
+            }
+            "activitie" => {
+                self.plan_activitie(current_state, desired_input).await
             }
             "people" => {
                 self.plan_people(current_state, desired_input).await
             }
-            "media" => {
-                self.plan_media(current_state, desired_input).await
+            "comment" => {
+                self.plan_comment(current_state, desired_input).await
+            }
+            "audience" => {
+                self.plan_audience(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -57,23 +57,23 @@ impl<'a> Plusdomains_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "activitie" => {
-                self.create_activitie(input).await
-            }
-            "audience" => {
-                self.create_audience(input).await
-            }
             "circle" => {
                 self.create_circle(input).await
             }
-            "comment" => {
-                self.create_comment(input).await
+            "media" => {
+                self.create_media(input).await
+            }
+            "activitie" => {
+                self.create_activitie(input).await
             }
             "people" => {
                 self.create_people(input).await
             }
-            "media" => {
-                self.create_media(input).await
+            "comment" => {
+                self.create_comment(input).await
+            }
+            "audience" => {
+                self.create_audience(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -90,23 +90,23 @@ impl<'a> Plusdomains_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "activitie" => {
-                self.read_activitie(id).await
-            }
-            "audience" => {
-                self.read_audience(id).await
-            }
             "circle" => {
                 self.read_circle(id).await
             }
-            "comment" => {
-                self.read_comment(id).await
+            "media" => {
+                self.read_media(id).await
+            }
+            "activitie" => {
+                self.read_activitie(id).await
             }
             "people" => {
                 self.read_people(id).await
             }
-            "media" => {
-                self.read_media(id).await
+            "comment" => {
+                self.read_comment(id).await
+            }
+            "audience" => {
+                self.read_audience(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -124,23 +124,23 @@ impl<'a> Plusdomains_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "activitie" => {
-                self.update_activitie(id, input).await
-            }
-            "audience" => {
-                self.update_audience(id, input).await
-            }
             "circle" => {
                 self.update_circle(id, input).await
             }
-            "comment" => {
-                self.update_comment(id, input).await
+            "media" => {
+                self.update_media(id, input).await
+            }
+            "activitie" => {
+                self.update_activitie(id, input).await
             }
             "people" => {
                 self.update_people(id, input).await
             }
-            "media" => {
-                self.update_media(id, input).await
+            "comment" => {
+                self.update_comment(id, input).await
+            }
+            "audience" => {
+                self.update_audience(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -157,23 +157,23 @@ impl<'a> Plusdomains_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "activitie" => {
-                self.delete_activitie(id).await
-            }
-            "audience" => {
-                self.delete_audience(id).await
-            }
             "circle" => {
                 self.delete_circle(id).await
             }
-            "comment" => {
-                self.delete_comment(id).await
+            "media" => {
+                self.delete_media(id).await
+            }
+            "activitie" => {
+                self.delete_activitie(id).await
             }
             "people" => {
                 self.delete_people(id).await
             }
-            "media" => {
-                self.delete_media(id).await
+            "comment" => {
+                self.delete_comment(id).await
+            }
+            "audience" => {
+                self.delete_audience(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -186,128 +186,6 @@ impl<'a> Plusdomains_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Activitie resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a activitie resource
-    async fn plan_activitie(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new activitie resource
-    async fn create_activitie(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a activitie resource
-    async fn read_activitie(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a activitie resource
-    async fn update_activitie(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a activitie resource
-    async fn delete_activitie(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Audience resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a audience resource
-    async fn plan_audience(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new audience resource
-    async fn create_audience(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a audience resource
-    async fn read_audience(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a audience resource
-    async fn update_audience(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a audience resource
-    async fn delete_audience(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -372,11 +250,11 @@ impl<'a> Plusdomains_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Comment resource operations
+    // Media resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a comment resource
-    async fn plan_comment(
+    /// Plan changes to a media resource
+    async fn plan_media(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -391,8 +269,8 @@ impl<'a> Plusdomains_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new comment resource
-    async fn create_comment(
+    /// Create a new media resource
+    async fn create_media(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -401,8 +279,8 @@ impl<'a> Plusdomains_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a comment resource
-    async fn read_comment(
+    /// Read a media resource
+    async fn read_media(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -411,8 +289,8 @@ impl<'a> Plusdomains_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a comment resource
-    async fn update_comment(
+    /// Update a media resource
+    async fn update_media(
         &self,
         id: &str,
         input: ResourceInput,
@@ -422,8 +300,69 @@ impl<'a> Plusdomains_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a comment resource
-    async fn delete_comment(
+    /// Delete a media resource
+    async fn delete_media(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Activitie resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a activitie resource
+    async fn plan_activitie(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new activitie resource
+    async fn create_activitie(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a activitie resource
+    async fn read_activitie(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a activitie resource
+    async fn update_activitie(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a activitie resource
+    async fn delete_activitie(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -494,11 +433,11 @@ impl<'a> Plusdomains_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Media resource operations
+    // Comment resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a media resource
-    async fn plan_media(
+    /// Plan changes to a comment resource
+    async fn plan_comment(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -513,8 +452,8 @@ impl<'a> Plusdomains_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new media resource
-    async fn create_media(
+    /// Create a new comment resource
+    async fn create_comment(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -523,8 +462,8 @@ impl<'a> Plusdomains_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a media resource
-    async fn read_media(
+    /// Read a comment resource
+    async fn read_comment(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -533,8 +472,8 @@ impl<'a> Plusdomains_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a media resource
-    async fn update_media(
+    /// Update a comment resource
+    async fn update_comment(
         &self,
         id: &str,
         input: ResourceInput,
@@ -544,8 +483,69 @@ impl<'a> Plusdomains_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a media resource
-    async fn delete_media(
+    /// Delete a comment resource
+    async fn delete_comment(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Audience resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a audience resource
+    async fn plan_audience(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new audience resource
+    async fn create_audience(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a audience resource
+    async fn read_audience(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a audience resource
+    async fn update_audience(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a audience resource
+    async fn delete_audience(
         &self,
         id: &str,
     ) -> Result<()> {

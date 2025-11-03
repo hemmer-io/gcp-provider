@@ -21,7 +21,7 @@ impl<'a> User_cred<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, update_time: Option<String>, create_time: Option<String>, secure_password: Option<String>, resource_identity: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, state: Option<String>, update_time: Option<String>, create_time: Option<String>, resource_identity: Option<String>, secure_password: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Backup_policie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, labels: Option<HashMap<String, String>>, daily_backup_limit: Option<i64>, name: Option<String>, create_time: Option<String>, weekly_backup_limit: Option<i64>, assigned_volume_count: Option<i64>, state: Option<String>, enabled: Option<bool>, monthly_backup_limit: Option<i64>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, state: Option<String>, assigned_volume_count: Option<i64>, description: Option<String>, daily_backup_limit: Option<i64>, labels: Option<HashMap<String, String>>, weekly_backup_limit: Option<i64>, enabled: Option<bool>, name: Option<String>, monthly_backup_limit: Option<i64>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup_policie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, labels: Option<HashMap<String, String>>, daily_backup_limit: Option<i64>, name: Option<String>, create_time: Option<String>, weekly_backup_limit: Option<i64>, assigned_volume_count: Option<i64>, state: Option<String>, enabled: Option<bool>, monthly_backup_limit: Option<i64>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, state: Option<String>, assigned_volume_count: Option<i64>, description: Option<String>, daily_backup_limit: Option<i64>, labels: Option<HashMap<String, String>>, weekly_backup_limit: Option<i64>, enabled: Option<bool>, name: Option<String>, monthly_backup_limit: Option<i64>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Posture_deployment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, annotations: Option<HashMap<String, String>>, update_time: Option<String>, desired_posture_id: Option<String>, name: Option<String>, posture_id: Option<String>, desired_posture_revision_id: Option<String>, failure_message: Option<String>, posture_revision_id: Option<String>, state: Option<String>, description: Option<String>, etag: Option<String>, create_time: Option<String>, categories: Option<Vec<String>>, reconciling: Option<bool>, target_resource: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, etag: Option<String>, annotations: Option<HashMap<String, String>>, reconciling: Option<bool>, target_resource: Option<String>, categories: Option<Vec<String>>, name: Option<String>, description: Option<String>, posture_id: Option<String>, state: Option<String>, update_time: Option<String>, desired_posture_revision_id: Option<String>, posture_revision_id: Option<String>, create_time: Option<String>, desired_posture_id: Option<String>, failure_message: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Posture_deployment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, annotations: Option<HashMap<String, String>>, update_time: Option<String>, desired_posture_id: Option<String>, name: Option<String>, posture_id: Option<String>, desired_posture_revision_id: Option<String>, failure_message: Option<String>, posture_revision_id: Option<String>, state: Option<String>, description: Option<String>, etag: Option<String>, create_time: Option<String>, categories: Option<Vec<String>>, reconciling: Option<bool>, target_resource: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, etag: Option<String>, annotations: Option<HashMap<String, String>>, reconciling: Option<bool>, target_resource: Option<String>, categories: Option<Vec<String>>, name: Option<String>, description: Option<String>, posture_id: Option<String>, state: Option<String>, update_time: Option<String>, desired_posture_revision_id: Option<String>, posture_revision_id: Option<String>, create_time: Option<String>, desired_posture_id: Option<String>, failure_message: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

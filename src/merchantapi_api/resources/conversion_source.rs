@@ -21,7 +21,7 @@ impl<'a> Conversion_source<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, controller: Option<String>, state: Option<String>, expire_time: Option<String>, merchant_center_destination: Option<String>, google_analytics_link: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, merchant_center_destination: Option<String>, google_analytics_link: Option<String>, name: Option<String>, controller: Option<String>, expire_time: Option<String>, state: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Conversion_source<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, controller: Option<String>, state: Option<String>, expire_time: Option<String>, merchant_center_destination: Option<String>, google_analytics_link: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, merchant_center_destination: Option<String>, google_analytics_link: Option<String>, name: Option<String>, controller: Option<String>, expire_time: Option<String>, state: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

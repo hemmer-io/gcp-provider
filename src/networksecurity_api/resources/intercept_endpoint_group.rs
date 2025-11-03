@@ -21,7 +21,7 @@ impl<'a> Intercept_endpoint_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, state: Option<String>, reconciling: Option<bool>, associations: Option<Vec<String>>, update_time: Option<String>, connected_deployment_group: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, name: Option<String>, description: Option<String>, intercept_deployment_group: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, reconciling: Option<bool>, update_time: Option<String>, connected_deployment_group: Option<String>, state: Option<String>, intercept_deployment_group: Option<String>, create_time: Option<String>, associations: Option<Vec<String>>, description: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Intercept_endpoint_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, state: Option<String>, reconciling: Option<bool>, associations: Option<Vec<String>>, update_time: Option<String>, connected_deployment_group: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, name: Option<String>, description: Option<String>, intercept_deployment_group: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, reconciling: Option<bool>, update_time: Option<String>, connected_deployment_group: Option<String>, state: Option<String>, intercept_deployment_group: Option<String>, create_time: Option<String>, associations: Option<Vec<String>>, description: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

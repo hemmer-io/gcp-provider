@@ -21,7 +21,7 @@ impl<'a> Verification_token<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, location_id: Option<String>, location_data: Option<String>) -> Result<String> {
+    pub async fn create(&self, location_data: Option<String>, location_id: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

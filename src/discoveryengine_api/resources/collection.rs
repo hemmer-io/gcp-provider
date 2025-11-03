@@ -34,7 +34,7 @@ impl<'a> Collection<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_time: Option<String>, data_connector: Option<String>, display_name: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, data_connector: Option<String>, name: Option<String>, create_time: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

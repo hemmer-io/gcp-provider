@@ -21,7 +21,7 @@ impl<'a> Sac_attachment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, sac_realm: Option<String>, update_time: Option<String>, country: Option<String>, time_zone: Option<String>, symantec_options: Option<String>, name: Option<String>, ncc_gateway: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, update_time: Option<String>, sac_realm: Option<String>, ncc_gateway: Option<String>, country: Option<String>, symantec_options: Option<String>, state: Option<String>, name: Option<String>, time_zone: Option<String>, create_time: Option<String>, labels: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

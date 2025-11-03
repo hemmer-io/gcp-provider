@@ -21,7 +21,7 @@ impl<'a> Acme_challenge_set<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, keep_expired_records: Option<bool>, records_to_remove: Option<Vec<String>>, records_to_add: Option<Vec<String>>, access_token: Option<String>, root_domain: String) -> Result<String> {
+    pub async fn create(&self, records_to_remove: Option<Vec<String>>, access_token: Option<String>, keep_expired_records: Option<bool>, records_to_add: Option<Vec<String>>, root_domain: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

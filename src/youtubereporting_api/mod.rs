@@ -24,11 +24,11 @@ impl<'a> Youtubereporting_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "job" => {
-                self.plan_job(current_state, desired_input).await
-            }
             "report" => {
                 self.plan_report(current_state, desired_input).await
+            }
+            "job" => {
+                self.plan_job(current_state, desired_input).await
             }
             "media" => {
                 self.plan_media(current_state, desired_input).await
@@ -51,11 +51,11 @@ impl<'a> Youtubereporting_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "job" => {
-                self.create_job(input).await
-            }
             "report" => {
                 self.create_report(input).await
+            }
+            "job" => {
+                self.create_job(input).await
             }
             "media" => {
                 self.create_media(input).await
@@ -78,11 +78,11 @@ impl<'a> Youtubereporting_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "job" => {
-                self.read_job(id).await
-            }
             "report" => {
                 self.read_report(id).await
+            }
+            "job" => {
+                self.read_job(id).await
             }
             "media" => {
                 self.read_media(id).await
@@ -106,11 +106,11 @@ impl<'a> Youtubereporting_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "job" => {
-                self.update_job(id, input).await
-            }
             "report" => {
                 self.update_report(id, input).await
+            }
+            "job" => {
+                self.update_job(id, input).await
             }
             "media" => {
                 self.update_media(id, input).await
@@ -133,11 +133,11 @@ impl<'a> Youtubereporting_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "job" => {
-                self.delete_job(id).await
-            }
             "report" => {
                 self.delete_report(id).await
+            }
+            "job" => {
+                self.delete_job(id).await
             }
             "media" => {
                 self.delete_media(id).await
@@ -156,67 +156,6 @@ impl<'a> Youtubereporting_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Job resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a job resource
-    async fn plan_job(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new job resource
-    async fn create_job(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a job resource
-    async fn read_job(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a job resource
-    async fn update_job(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a job resource
-    async fn delete_job(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -272,6 +211,67 @@ impl<'a> Youtubereporting_apiService<'a> {
 
     /// Delete a report resource
     async fn delete_report(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Job resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a job resource
+    async fn plan_job(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new job resource
+    async fn create_job(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a job resource
+    async fn read_job(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a job resource
+    async fn update_job(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a job resource
+    async fn delete_job(
         &self,
         id: &str,
     ) -> Result<()> {

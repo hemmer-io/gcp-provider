@@ -1,6 +1,6 @@
 //! Notebook_runtime resource
 //!
-//! Stops a NotebookRuntime.
+//! Internal only: Called from Compute Engine instance to obtain EUC for owner Anonymous access: authenticates caller using VM identity JWT. Design doc: go/colab-on-vertex-euc-dd
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Notebook_runtime<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: String) -> Result<String> {
+    pub async fn create(&self, vm_token: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

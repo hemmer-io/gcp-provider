@@ -21,7 +21,7 @@ impl<'a> Remarketing_list<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, active: Option<bool>, list_size: Option<String>, name: Option<String>, kind: Option<String>, list_population_rule: Option<String>, description: Option<String>, advertiser_id: Option<String>, life_span: Option<String>, subaccount_id: Option<String>, id: Option<String>, advertiser_id_dimension_value: Option<String>, list_source: Option<String>, account_id: Option<String>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, kind: Option<String>, list_population_rule: Option<String>, id: Option<String>, description: Option<String>, subaccount_id: Option<String>, active: Option<bool>, list_source: Option<String>, list_size: Option<String>, advertiser_id_dimension_value: Option<String>, advertiser_id: Option<String>, account_id: Option<String>, life_span: Option<String>, name: Option<String>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Remarketing_list<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, active: Option<bool>, list_size: Option<String>, name: Option<String>, kind: Option<String>, list_population_rule: Option<String>, description: Option<String>, advertiser_id: Option<String>, life_span: Option<String>, subaccount_id: Option<String>, id: Option<String>, advertiser_id_dimension_value: Option<String>, list_source: Option<String>, account_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, kind: Option<String>, list_population_rule: Option<String>, id: Option<String>, description: Option<String>, subaccount_id: Option<String>, active: Option<bool>, list_source: Option<String>, list_size: Option<String>, advertiser_id_dimension_value: Option<String>, advertiser_id: Option<String>, account_id: Option<String>, life_span: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

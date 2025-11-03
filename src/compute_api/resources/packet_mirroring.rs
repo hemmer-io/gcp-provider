@@ -22,7 +22,7 @@ impl<'a> Packet_mirroring<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, filter: Option<String>, collector_ilb: Option<String>, mirrored_resources: Option<String>, region: Option<String>, id: Option<String>, kind: Option<String>, name: Option<String>, priority: Option<i64>, self_link: Option<String>, network: Option<String>, description: Option<String>, creation_timestamp: Option<String>, enable: Option<String>, region: String, project: String) -> Result<String> {
+    pub async fn create(&self, collector_ilb: Option<String>, filter: Option<String>, description: Option<String>, id: Option<String>, mirrored_resources: Option<String>, creation_timestamp: Option<String>, enable: Option<String>, network: Option<String>, name: Option<String>, priority: Option<i64>, region: Option<String>, kind: Option<String>, self_link: Option<String>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Packet_mirroring<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, filter: Option<String>, collector_ilb: Option<String>, mirrored_resources: Option<String>, region: Option<String>, id: Option<String>, kind: Option<String>, name: Option<String>, priority: Option<i64>, self_link: Option<String>, network: Option<String>, description: Option<String>, creation_timestamp: Option<String>, enable: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, collector_ilb: Option<String>, filter: Option<String>, description: Option<String>, id: Option<String>, mirrored_resources: Option<String>, creation_timestamp: Option<String>, enable: Option<String>, network: Option<String>, name: Option<String>, priority: Option<i64>, region: Option<String>, kind: Option<String>, self_link: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

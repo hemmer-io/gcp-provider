@@ -21,7 +21,7 @@ impl<'a> First_and_third_party_audience<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_mobile_app_audience_size: Option<String>, gmail_audience_size: Option<String>, display_audience_size: Option<String>, active_display_audience_size: Option<String>, audience_type: Option<String>, membership_duration_days: Option<String>, display_name: Option<String>, name: Option<String>, description: Option<String>, youtube_audience_size: Option<String>, display_desktop_audience_size: Option<String>, mobile_device_id_list: Option<String>, audience_source: Option<String>, app_id: Option<String>, first_and_third_party_audience_type: Option<String>, contact_info_list: Option<String>, display_mobile_web_audience_size: Option<String>, first_and_third_party_audience_id: Option<String>) -> Result<String> {
+    pub async fn create(&self, first_and_third_party_audience_type: Option<String>, contact_info_list: Option<String>, display_desktop_audience_size: Option<String>, first_and_third_party_audience_id: Option<String>, audience_source: Option<String>, youtube_audience_size: Option<String>, description: Option<String>, audience_type: Option<String>, gmail_audience_size: Option<String>, display_mobile_web_audience_size: Option<String>, membership_duration_days: Option<String>, display_audience_size: Option<String>, app_id: Option<String>, display_name: Option<String>, mobile_device_id_list: Option<String>, active_display_audience_size: Option<String>, name: Option<String>, display_mobile_app_audience_size: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> First_and_third_party_audience<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_mobile_app_audience_size: Option<String>, gmail_audience_size: Option<String>, display_audience_size: Option<String>, active_display_audience_size: Option<String>, audience_type: Option<String>, membership_duration_days: Option<String>, display_name: Option<String>, name: Option<String>, description: Option<String>, youtube_audience_size: Option<String>, display_desktop_audience_size: Option<String>, mobile_device_id_list: Option<String>, audience_source: Option<String>, app_id: Option<String>, first_and_third_party_audience_type: Option<String>, contact_info_list: Option<String>, display_mobile_web_audience_size: Option<String>, first_and_third_party_audience_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, first_and_third_party_audience_type: Option<String>, contact_info_list: Option<String>, display_desktop_audience_size: Option<String>, first_and_third_party_audience_id: Option<String>, audience_source: Option<String>, youtube_audience_size: Option<String>, description: Option<String>, audience_type: Option<String>, gmail_audience_size: Option<String>, display_mobile_web_audience_size: Option<String>, membership_duration_days: Option<String>, display_audience_size: Option<String>, app_id: Option<String>, display_name: Option<String>, mobile_device_id_list: Option<String>, active_display_audience_size: Option<String>, name: Option<String>, display_mobile_app_audience_size: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

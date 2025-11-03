@@ -21,7 +21,7 @@ impl<'a> Exclusion<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, create_time: Option<String>, update_time: Option<String>, description: Option<String>, disabled: Option<bool>, name: Option<String>, filter: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, disabled: Option<bool>, create_time: Option<String>, name: Option<String>, update_time: Option<String>, filter: Option<String>, description: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Exclusion<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, create_time: Option<String>, update_time: Option<String>, description: Option<String>, disabled: Option<bool>, name: Option<String>, filter: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, disabled: Option<bool>, create_time: Option<String>, name: Option<String>, update_time: Option<String>, filter: Option<String>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

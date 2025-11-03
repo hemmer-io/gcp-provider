@@ -21,7 +21,7 @@ impl<'a> Environment<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, satisfies_pzi: Option<bool>, state: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, config: Option<String>, storage_config: Option<String>, update_time: Option<String>, satisfies_pzs: Option<bool>, name: Option<String>, uuid: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, labels: Option<HashMap<String, String>>, name: Option<String>, state: Option<String>, satisfies_pzi: Option<bool>, storage_config: Option<String>, satisfies_pzs: Option<bool>, update_time: Option<String>, uuid: Option<String>, config: Option<String>, create_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Environment<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, satisfies_pzi: Option<bool>, state: Option<String>, labels: Option<HashMap<String, String>>, create_time: Option<String>, config: Option<String>, storage_config: Option<String>, update_time: Option<String>, satisfies_pzs: Option<bool>, name: Option<String>, uuid: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, name: Option<String>, state: Option<String>, satisfies_pzi: Option<bool>, storage_config: Option<String>, satisfies_pzs: Option<bool>, update_time: Option<String>, uuid: Option<String>, config: Option<String>, create_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

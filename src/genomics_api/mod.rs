@@ -30,14 +30,14 @@ impl<'a> Genomics_apiService<'a> {
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
+            "pipeline" => {
+                self.plan_pipeline(current_state, desired_input).await
+            }
             "worker" => {
                 self.plan_worker(current_state, desired_input).await
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
-            }
-            "pipeline" => {
-                self.plan_pipeline(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -60,14 +60,14 @@ impl<'a> Genomics_apiService<'a> {
             "operation" => {
                 self.create_operation(input).await
             }
+            "pipeline" => {
+                self.create_pipeline(input).await
+            }
             "worker" => {
                 self.create_worker(input).await
             }
             "operation" => {
                 self.create_operation(input).await
-            }
-            "pipeline" => {
-                self.create_pipeline(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -90,14 +90,14 @@ impl<'a> Genomics_apiService<'a> {
             "operation" => {
                 self.read_operation(id).await
             }
+            "pipeline" => {
+                self.read_pipeline(id).await
+            }
             "worker" => {
                 self.read_worker(id).await
             }
             "operation" => {
                 self.read_operation(id).await
-            }
-            "pipeline" => {
-                self.read_pipeline(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -121,14 +121,14 @@ impl<'a> Genomics_apiService<'a> {
             "operation" => {
                 self.update_operation(id, input).await
             }
+            "pipeline" => {
+                self.update_pipeline(id, input).await
+            }
             "worker" => {
                 self.update_worker(id, input).await
             }
             "operation" => {
                 self.update_operation(id, input).await
-            }
-            "pipeline" => {
-                self.update_pipeline(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -151,14 +151,14 @@ impl<'a> Genomics_apiService<'a> {
             "operation" => {
                 self.delete_operation(id).await
             }
+            "pipeline" => {
+                self.delete_pipeline(id).await
+            }
             "worker" => {
                 self.delete_worker(id).await
             }
             "operation" => {
                 self.delete_operation(id).await
-            }
-            "pipeline" => {
-                self.delete_pipeline(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -296,6 +296,67 @@ impl<'a> Genomics_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Pipeline resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a pipeline resource
+    async fn plan_pipeline(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new pipeline resource
+    async fn create_pipeline(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a pipeline resource
+    async fn read_pipeline(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a pipeline resource
+    async fn update_pipeline(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a pipeline resource
+    async fn delete_pipeline(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Worker resource operations
     // ------------------------------------------------------------------------
 
@@ -409,67 +470,6 @@ impl<'a> Genomics_apiService<'a> {
 
     /// Delete a operation resource
     async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Pipeline resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a pipeline resource
-    async fn plan_pipeline(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new pipeline resource
-    async fn create_pipeline(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a pipeline resource
-    async fn read_pipeline(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a pipeline resource
-    async fn update_pipeline(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a pipeline resource
-    async fn delete_pipeline(
         &self,
         id: &str,
     ) -> Result<()> {

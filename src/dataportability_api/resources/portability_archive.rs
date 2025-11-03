@@ -21,7 +21,7 @@ impl<'a> Portability_archive<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, start_time: Option<String>, resources: Option<Vec<String>>, end_time: Option<String>) -> Result<String> {
+    pub async fn create(&self, end_time: Option<String>, resources: Option<Vec<String>>, start_time: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

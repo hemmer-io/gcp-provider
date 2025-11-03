@@ -21,7 +21,7 @@ impl<'a> Encryption_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, key: Option<String>, update_time: Option<String>, create_time: Option<String>, name: Option<String>, encryption_state: Option<String>, enable_metastore_encryption: Option<bool>, etag: Option<String>, failure_details: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, enable_metastore_encryption: Option<bool>, etag: Option<String>, name: Option<String>, failure_details: Option<String>, encryption_state: Option<String>, key: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Encryption_config<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, key: Option<String>, update_time: Option<String>, create_time: Option<String>, name: Option<String>, encryption_state: Option<String>, enable_metastore_encryption: Option<bool>, etag: Option<String>, failure_details: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, enable_metastore_encryption: Option<bool>, etag: Option<String>, name: Option<String>, failure_details: Option<String>, encryption_state: Option<String>, key: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

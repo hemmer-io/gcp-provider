@@ -24,9 +24,6 @@ impl<'a> Transcoder_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "job" => {
-                self.plan_job(current_state, desired_input).await
-            }
             "job_template" => {
                 self.plan_job_template(current_state, desired_input).await
             }
@@ -35,6 +32,9 @@ impl<'a> Transcoder_apiService<'a> {
             }
             "job_template" => {
                 self.plan_job_template(current_state, desired_input).await
+            }
+            "job" => {
+                self.plan_job(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -51,9 +51,6 @@ impl<'a> Transcoder_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "job" => {
-                self.create_job(input).await
-            }
             "job_template" => {
                 self.create_job_template(input).await
             }
@@ -62,6 +59,9 @@ impl<'a> Transcoder_apiService<'a> {
             }
             "job_template" => {
                 self.create_job_template(input).await
+            }
+            "job" => {
+                self.create_job(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -78,9 +78,6 @@ impl<'a> Transcoder_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "job" => {
-                self.read_job(id).await
-            }
             "job_template" => {
                 self.read_job_template(id).await
             }
@@ -89,6 +86,9 @@ impl<'a> Transcoder_apiService<'a> {
             }
             "job_template" => {
                 self.read_job_template(id).await
+            }
+            "job" => {
+                self.read_job(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -106,9 +106,6 @@ impl<'a> Transcoder_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "job" => {
-                self.update_job(id, input).await
-            }
             "job_template" => {
                 self.update_job_template(id, input).await
             }
@@ -117,6 +114,9 @@ impl<'a> Transcoder_apiService<'a> {
             }
             "job_template" => {
                 self.update_job_template(id, input).await
+            }
+            "job" => {
+                self.update_job(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -133,9 +133,6 @@ impl<'a> Transcoder_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "job" => {
-                self.delete_job(id).await
-            }
             "job_template" => {
                 self.delete_job_template(id).await
             }
@@ -144,6 +141,9 @@ impl<'a> Transcoder_apiService<'a> {
             }
             "job_template" => {
                 self.delete_job_template(id).await
+            }
+            "job" => {
+                self.delete_job(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -159,67 +159,6 @@ impl<'a> Transcoder_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Job resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a job resource
-    async fn plan_job(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new job resource
-    async fn create_job(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a job resource
-    async fn read_job(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a job resource
-    async fn update_job(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a job resource
-    async fn delete_job(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Job_template resource operations
     // ------------------------------------------------------------------------
 
@@ -394,6 +333,67 @@ impl<'a> Transcoder_apiService<'a> {
 
     /// Delete a job_template resource
     async fn delete_job_template(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Job resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a job resource
+    async fn plan_job(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new job resource
+    async fn create_job(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a job resource
+    async fn read_job(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a job resource
+    async fn update_job(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a job resource
+    async fn delete_job(
         &self,
         id: &str,
     ) -> Result<()> {

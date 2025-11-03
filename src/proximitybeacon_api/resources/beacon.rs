@@ -1,9 +1,9 @@
 //! Beacon resource
 //!
-//! Decommissions the specified beacon in the service. This beacon will no
-longer be returned from `beaconinfo.getforobserved`. This operation is
-permanent -- you will not be able to re-register a beacon with this ID
-again.
+//! Deactivates a beacon. Once deactivated, the API will not return
+information nor attachment data for the beacon when queried via
+`beaconinfo.getforobserved`. Calling this method on an already inactive
+beacon will do nothing (but will return a successful response code).
 
 Authenticate using an [OAuth access
 token](https://developers.google.com/identity/protocols/OAuth2) from a

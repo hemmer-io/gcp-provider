@@ -27,38 +27,38 @@ impl<'a> Composer_apiService<'a> {
             "environment" => {
                 self.plan_environment(current_state, desired_input).await
             }
-            "workload" => {
-                self.plan_workload(current_state, desired_input).await
-            }
             "user_workloads_secret" => {
                 self.plan_user_workloads_secret(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
-            "image_version" => {
-                self.plan_image_version(current_state, desired_input).await
-            }
             "user_workloads_config_map" => {
                 self.plan_user_workloads_config_map(current_state, desired_input).await
             }
             "workload" => {
                 self.plan_workload(current_state, desired_input).await
             }
-            "image_version" => {
-                self.plan_image_version(current_state, desired_input).await
-            }
-            "user_workloads_config_map" => {
-                self.plan_user_workloads_config_map(current_state, desired_input).await
-            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
+            }
+            "image_version" => {
+                self.plan_image_version(current_state, desired_input).await
             }
             "environment" => {
                 self.plan_environment(current_state, desired_input).await
             }
+            "user_workloads_config_map" => {
+                self.plan_user_workloads_config_map(current_state, desired_input).await
+            }
             "user_workloads_secret" => {
                 self.plan_user_workloads_secret(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
+            "image_version" => {
+                self.plan_image_version(current_state, desired_input).await
+            }
+            "workload" => {
+                self.plan_workload(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -78,38 +78,38 @@ impl<'a> Composer_apiService<'a> {
             "environment" => {
                 self.create_environment(input).await
             }
-            "workload" => {
-                self.create_workload(input).await
-            }
             "user_workloads_secret" => {
                 self.create_user_workloads_secret(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
-            }
-            "image_version" => {
-                self.create_image_version(input).await
-            }
             "user_workloads_config_map" => {
                 self.create_user_workloads_config_map(input).await
             }
             "workload" => {
                 self.create_workload(input).await
             }
-            "image_version" => {
-                self.create_image_version(input).await
-            }
-            "user_workloads_config_map" => {
-                self.create_user_workloads_config_map(input).await
-            }
             "operation" => {
                 self.create_operation(input).await
+            }
+            "image_version" => {
+                self.create_image_version(input).await
             }
             "environment" => {
                 self.create_environment(input).await
             }
+            "user_workloads_config_map" => {
+                self.create_user_workloads_config_map(input).await
+            }
             "user_workloads_secret" => {
                 self.create_user_workloads_secret(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
+            }
+            "image_version" => {
+                self.create_image_version(input).await
+            }
+            "workload" => {
+                self.create_workload(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -129,38 +129,38 @@ impl<'a> Composer_apiService<'a> {
             "environment" => {
                 self.read_environment(id).await
             }
-            "workload" => {
-                self.read_workload(id).await
-            }
             "user_workloads_secret" => {
                 self.read_user_workloads_secret(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
-            }
-            "image_version" => {
-                self.read_image_version(id).await
-            }
             "user_workloads_config_map" => {
                 self.read_user_workloads_config_map(id).await
             }
             "workload" => {
                 self.read_workload(id).await
             }
-            "image_version" => {
-                self.read_image_version(id).await
-            }
-            "user_workloads_config_map" => {
-                self.read_user_workloads_config_map(id).await
-            }
             "operation" => {
                 self.read_operation(id).await
+            }
+            "image_version" => {
+                self.read_image_version(id).await
             }
             "environment" => {
                 self.read_environment(id).await
             }
+            "user_workloads_config_map" => {
+                self.read_user_workloads_config_map(id).await
+            }
             "user_workloads_secret" => {
                 self.read_user_workloads_secret(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
+            }
+            "image_version" => {
+                self.read_image_version(id).await
+            }
+            "workload" => {
+                self.read_workload(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -181,38 +181,38 @@ impl<'a> Composer_apiService<'a> {
             "environment" => {
                 self.update_environment(id, input).await
             }
-            "workload" => {
-                self.update_workload(id, input).await
-            }
             "user_workloads_secret" => {
                 self.update_user_workloads_secret(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
-            "image_version" => {
-                self.update_image_version(id, input).await
-            }
             "user_workloads_config_map" => {
                 self.update_user_workloads_config_map(id, input).await
             }
             "workload" => {
                 self.update_workload(id, input).await
             }
-            "image_version" => {
-                self.update_image_version(id, input).await
-            }
-            "user_workloads_config_map" => {
-                self.update_user_workloads_config_map(id, input).await
-            }
             "operation" => {
                 self.update_operation(id, input).await
+            }
+            "image_version" => {
+                self.update_image_version(id, input).await
             }
             "environment" => {
                 self.update_environment(id, input).await
             }
+            "user_workloads_config_map" => {
+                self.update_user_workloads_config_map(id, input).await
+            }
             "user_workloads_secret" => {
                 self.update_user_workloads_secret(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
+            }
+            "image_version" => {
+                self.update_image_version(id, input).await
+            }
+            "workload" => {
+                self.update_workload(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -232,38 +232,38 @@ impl<'a> Composer_apiService<'a> {
             "environment" => {
                 self.delete_environment(id).await
             }
-            "workload" => {
-                self.delete_workload(id).await
-            }
             "user_workloads_secret" => {
                 self.delete_user_workloads_secret(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
-            }
-            "image_version" => {
-                self.delete_image_version(id).await
-            }
             "user_workloads_config_map" => {
                 self.delete_user_workloads_config_map(id).await
             }
             "workload" => {
                 self.delete_workload(id).await
             }
-            "image_version" => {
-                self.delete_image_version(id).await
-            }
-            "user_workloads_config_map" => {
-                self.delete_user_workloads_config_map(id).await
-            }
             "operation" => {
                 self.delete_operation(id).await
+            }
+            "image_version" => {
+                self.delete_image_version(id).await
             }
             "environment" => {
                 self.delete_environment(id).await
             }
+            "user_workloads_config_map" => {
+                self.delete_user_workloads_config_map(id).await
+            }
             "user_workloads_secret" => {
                 self.delete_user_workloads_secret(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
+            }
+            "image_version" => {
+                self.delete_image_version(id).await
+            }
+            "workload" => {
+                self.delete_workload(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -340,67 +340,6 @@ impl<'a> Composer_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Workload resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a workload resource
-    async fn plan_workload(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new workload resource
-    async fn create_workload(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a workload resource
-    async fn read_workload(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a workload resource
-    async fn update_workload(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a workload resource
-    async fn delete_workload(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // User_workloads_secret resource operations
     // ------------------------------------------------------------------------
 
@@ -462,128 +401,6 @@ impl<'a> Composer_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Image_version resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a image_version resource
-    async fn plan_image_version(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new image_version resource
-    async fn create_image_version(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a image_version resource
-    async fn read_image_version(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a image_version resource
-    async fn update_image_version(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a image_version resource
-    async fn delete_image_version(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // User_workloads_config_map resource operations
     // ------------------------------------------------------------------------
 
@@ -706,128 +523,6 @@ impl<'a> Composer_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Image_version resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a image_version resource
-    async fn plan_image_version(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new image_version resource
-    async fn create_image_version(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a image_version resource
-    async fn read_image_version(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a image_version resource
-    async fn update_image_version(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a image_version resource
-    async fn delete_image_version(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // User_workloads_config_map resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a user_workloads_config_map resource
-    async fn plan_user_workloads_config_map(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new user_workloads_config_map resource
-    async fn create_user_workloads_config_map(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a user_workloads_config_map resource
-    async fn read_user_workloads_config_map(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a user_workloads_config_map resource
-    async fn update_user_workloads_config_map(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a user_workloads_config_map resource
-    async fn delete_user_workloads_config_map(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Operation resource operations
     // ------------------------------------------------------------------------
 
@@ -880,6 +575,67 @@ impl<'a> Composer_apiService<'a> {
 
     /// Delete a operation resource
     async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Image_version resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a image_version resource
+    async fn plan_image_version(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new image_version resource
+    async fn create_image_version(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a image_version resource
+    async fn read_image_version(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a image_version resource
+    async fn update_image_version(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a image_version resource
+    async fn delete_image_version(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -950,6 +706,67 @@ impl<'a> Composer_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // User_workloads_config_map resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a user_workloads_config_map resource
+    async fn plan_user_workloads_config_map(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new user_workloads_config_map resource
+    async fn create_user_workloads_config_map(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a user_workloads_config_map resource
+    async fn read_user_workloads_config_map(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a user_workloads_config_map resource
+    async fn update_user_workloads_config_map(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a user_workloads_config_map resource
+    async fn delete_user_workloads_config_map(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // User_workloads_secret resource operations
     // ------------------------------------------------------------------------
 
@@ -1002,6 +819,189 @@ impl<'a> Composer_apiService<'a> {
 
     /// Delete a user_workloads_secret resource
     async fn delete_user_workloads_secret(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Image_version resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a image_version resource
+    async fn plan_image_version(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new image_version resource
+    async fn create_image_version(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a image_version resource
+    async fn read_image_version(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a image_version resource
+    async fn update_image_version(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a image_version resource
+    async fn delete_image_version(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Workload resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a workload resource
+    async fn plan_workload(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new workload resource
+    async fn create_workload(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a workload resource
+    async fn read_workload(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a workload resource
+    async fn update_workload(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a workload resource
+    async fn delete_workload(
         &self,
         id: &str,
     ) -> Result<()> {

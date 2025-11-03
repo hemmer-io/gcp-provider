@@ -24,14 +24,14 @@ impl<'a> Ondemandscanning_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "scan" => {
+                self.plan_scan(current_state, desired_input).await
+            }
             "vulnerabilitie" => {
                 self.plan_vulnerabilitie(current_state, desired_input).await
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
-            }
-            "scan" => {
-                self.plan_scan(current_state, desired_input).await
             }
             "vulnerabilitie" => {
                 self.plan_vulnerabilitie(current_state, desired_input).await
@@ -57,14 +57,14 @@ impl<'a> Ondemandscanning_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "scan" => {
+                self.create_scan(input).await
+            }
             "vulnerabilitie" => {
                 self.create_vulnerabilitie(input).await
             }
             "operation" => {
                 self.create_operation(input).await
-            }
-            "scan" => {
-                self.create_scan(input).await
             }
             "vulnerabilitie" => {
                 self.create_vulnerabilitie(input).await
@@ -90,14 +90,14 @@ impl<'a> Ondemandscanning_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "scan" => {
+                self.read_scan(id).await
+            }
             "vulnerabilitie" => {
                 self.read_vulnerabilitie(id).await
             }
             "operation" => {
                 self.read_operation(id).await
-            }
-            "scan" => {
-                self.read_scan(id).await
             }
             "vulnerabilitie" => {
                 self.read_vulnerabilitie(id).await
@@ -124,14 +124,14 @@ impl<'a> Ondemandscanning_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "scan" => {
+                self.update_scan(id, input).await
+            }
             "vulnerabilitie" => {
                 self.update_vulnerabilitie(id, input).await
             }
             "operation" => {
                 self.update_operation(id, input).await
-            }
-            "scan" => {
-                self.update_scan(id, input).await
             }
             "vulnerabilitie" => {
                 self.update_vulnerabilitie(id, input).await
@@ -157,14 +157,14 @@ impl<'a> Ondemandscanning_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "scan" => {
+                self.delete_scan(id).await
+            }
             "vulnerabilitie" => {
                 self.delete_vulnerabilitie(id).await
             }
             "operation" => {
                 self.delete_operation(id).await
-            }
-            "scan" => {
-                self.delete_scan(id).await
             }
             "vulnerabilitie" => {
                 self.delete_vulnerabilitie(id).await
@@ -186,6 +186,67 @@ impl<'a> Ondemandscanning_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Scan resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a scan resource
+    async fn plan_scan(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new scan resource
+    async fn create_scan(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a scan resource
+    async fn read_scan(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a scan resource
+    async fn update_scan(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a scan resource
+    async fn delete_scan(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -302,67 +363,6 @@ impl<'a> Ondemandscanning_apiService<'a> {
 
     /// Delete a operation resource
     async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Scan resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a scan resource
-    async fn plan_scan(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new scan resource
-    async fn create_scan(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a scan resource
-    async fn read_scan(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a scan resource
-    async fn update_scan(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a scan resource
-    async fn delete_scan(
         &self,
         id: &str,
     ) -> Result<()> {

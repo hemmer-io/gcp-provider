@@ -1,6 +1,6 @@
 //! Object resource
 //!
-//! Starts backfill job for the specified stream object.
+//! Stops the backfill job for the specified stream object.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

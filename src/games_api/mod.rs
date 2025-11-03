@@ -24,44 +24,44 @@ impl<'a> Games_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "revision" => {
-                self.plan_revision(current_state, desired_input).await
+            "score" => {
+                self.plan_score(current_state, desired_input).await
             }
             "recall" => {
                 self.plan_recall(current_state, desired_input).await
             }
-            "application" => {
-                self.plan_application(current_state, desired_input).await
-            }
-            "accesstoken" => {
-                self.plan_accesstoken(current_state, desired_input).await
-            }
-            "score" => {
-                self.plan_score(current_state, desired_input).await
+            "achievement_definition" => {
+                self.plan_achievement_definition(current_state, desired_input).await
             }
             "leaderboard" => {
                 self.plan_leaderboard(current_state, desired_input).await
             }
-            "metagame" => {
-                self.plan_metagame(current_state, desired_input).await
+            "stat" => {
+                self.plan_stat(current_state, desired_input).await
             }
             "snapshot" => {
                 self.plan_snapshot(current_state, desired_input).await
             }
+            "metagame" => {
+                self.plan_metagame(current_state, desired_input).await
+            }
             "player" => {
                 self.plan_player(current_state, desired_input).await
-            }
-            "achievement_definition" => {
-                self.plan_achievement_definition(current_state, desired_input).await
             }
             "event" => {
                 self.plan_event(current_state, desired_input).await
             }
-            "stat" => {
-                self.plan_stat(current_state, desired_input).await
-            }
             "achievement" => {
                 self.plan_achievement(current_state, desired_input).await
+            }
+            "accesstoken" => {
+                self.plan_accesstoken(current_state, desired_input).await
+            }
+            "application" => {
+                self.plan_application(current_state, desired_input).await
+            }
+            "revision" => {
+                self.plan_revision(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -78,44 +78,44 @@ impl<'a> Games_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "revision" => {
-                self.create_revision(input).await
+            "score" => {
+                self.create_score(input).await
             }
             "recall" => {
                 self.create_recall(input).await
             }
-            "application" => {
-                self.create_application(input).await
-            }
-            "accesstoken" => {
-                self.create_accesstoken(input).await
-            }
-            "score" => {
-                self.create_score(input).await
+            "achievement_definition" => {
+                self.create_achievement_definition(input).await
             }
             "leaderboard" => {
                 self.create_leaderboard(input).await
             }
-            "metagame" => {
-                self.create_metagame(input).await
+            "stat" => {
+                self.create_stat(input).await
             }
             "snapshot" => {
                 self.create_snapshot(input).await
             }
+            "metagame" => {
+                self.create_metagame(input).await
+            }
             "player" => {
                 self.create_player(input).await
-            }
-            "achievement_definition" => {
-                self.create_achievement_definition(input).await
             }
             "event" => {
                 self.create_event(input).await
             }
-            "stat" => {
-                self.create_stat(input).await
-            }
             "achievement" => {
                 self.create_achievement(input).await
+            }
+            "accesstoken" => {
+                self.create_accesstoken(input).await
+            }
+            "application" => {
+                self.create_application(input).await
+            }
+            "revision" => {
+                self.create_revision(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -132,44 +132,44 @@ impl<'a> Games_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "revision" => {
-                self.read_revision(id).await
+            "score" => {
+                self.read_score(id).await
             }
             "recall" => {
                 self.read_recall(id).await
             }
-            "application" => {
-                self.read_application(id).await
-            }
-            "accesstoken" => {
-                self.read_accesstoken(id).await
-            }
-            "score" => {
-                self.read_score(id).await
+            "achievement_definition" => {
+                self.read_achievement_definition(id).await
             }
             "leaderboard" => {
                 self.read_leaderboard(id).await
             }
-            "metagame" => {
-                self.read_metagame(id).await
+            "stat" => {
+                self.read_stat(id).await
             }
             "snapshot" => {
                 self.read_snapshot(id).await
             }
+            "metagame" => {
+                self.read_metagame(id).await
+            }
             "player" => {
                 self.read_player(id).await
-            }
-            "achievement_definition" => {
-                self.read_achievement_definition(id).await
             }
             "event" => {
                 self.read_event(id).await
             }
-            "stat" => {
-                self.read_stat(id).await
-            }
             "achievement" => {
                 self.read_achievement(id).await
+            }
+            "accesstoken" => {
+                self.read_accesstoken(id).await
+            }
+            "application" => {
+                self.read_application(id).await
+            }
+            "revision" => {
+                self.read_revision(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -187,44 +187,44 @@ impl<'a> Games_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "revision" => {
-                self.update_revision(id, input).await
+            "score" => {
+                self.update_score(id, input).await
             }
             "recall" => {
                 self.update_recall(id, input).await
             }
-            "application" => {
-                self.update_application(id, input).await
-            }
-            "accesstoken" => {
-                self.update_accesstoken(id, input).await
-            }
-            "score" => {
-                self.update_score(id, input).await
+            "achievement_definition" => {
+                self.update_achievement_definition(id, input).await
             }
             "leaderboard" => {
                 self.update_leaderboard(id, input).await
             }
-            "metagame" => {
-                self.update_metagame(id, input).await
+            "stat" => {
+                self.update_stat(id, input).await
             }
             "snapshot" => {
                 self.update_snapshot(id, input).await
             }
+            "metagame" => {
+                self.update_metagame(id, input).await
+            }
             "player" => {
                 self.update_player(id, input).await
-            }
-            "achievement_definition" => {
-                self.update_achievement_definition(id, input).await
             }
             "event" => {
                 self.update_event(id, input).await
             }
-            "stat" => {
-                self.update_stat(id, input).await
-            }
             "achievement" => {
                 self.update_achievement(id, input).await
+            }
+            "accesstoken" => {
+                self.update_accesstoken(id, input).await
+            }
+            "application" => {
+                self.update_application(id, input).await
+            }
+            "revision" => {
+                self.update_revision(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -241,44 +241,44 @@ impl<'a> Games_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "revision" => {
-                self.delete_revision(id).await
+            "score" => {
+                self.delete_score(id).await
             }
             "recall" => {
                 self.delete_recall(id).await
             }
-            "application" => {
-                self.delete_application(id).await
-            }
-            "accesstoken" => {
-                self.delete_accesstoken(id).await
-            }
-            "score" => {
-                self.delete_score(id).await
+            "achievement_definition" => {
+                self.delete_achievement_definition(id).await
             }
             "leaderboard" => {
                 self.delete_leaderboard(id).await
             }
-            "metagame" => {
-                self.delete_metagame(id).await
+            "stat" => {
+                self.delete_stat(id).await
             }
             "snapshot" => {
                 self.delete_snapshot(id).await
             }
+            "metagame" => {
+                self.delete_metagame(id).await
+            }
             "player" => {
                 self.delete_player(id).await
-            }
-            "achievement_definition" => {
-                self.delete_achievement_definition(id).await
             }
             "event" => {
                 self.delete_event(id).await
             }
-            "stat" => {
-                self.delete_stat(id).await
-            }
             "achievement" => {
                 self.delete_achievement(id).await
+            }
+            "accesstoken" => {
+                self.delete_accesstoken(id).await
+            }
+            "application" => {
+                self.delete_application(id).await
+            }
+            "revision" => {
+                self.delete_revision(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -294,11 +294,11 @@ impl<'a> Games_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Revision resource operations
+    // Score resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a revision resource
-    async fn plan_revision(
+    /// Plan changes to a score resource
+    async fn plan_score(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -313,8 +313,8 @@ impl<'a> Games_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new revision resource
-    async fn create_revision(
+    /// Create a new score resource
+    async fn create_score(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -323,8 +323,8 @@ impl<'a> Games_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a revision resource
-    async fn read_revision(
+    /// Read a score resource
+    async fn read_score(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -333,8 +333,8 @@ impl<'a> Games_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a revision resource
-    async fn update_revision(
+    /// Update a score resource
+    async fn update_score(
         &self,
         id: &str,
         input: ResourceInput,
@@ -344,8 +344,8 @@ impl<'a> Games_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a revision resource
-    async fn delete_revision(
+    /// Delete a score resource
+    async fn delete_score(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -416,11 +416,11 @@ impl<'a> Games_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Application resource operations
+    // Achievement_definition resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a application resource
-    async fn plan_application(
+    /// Plan changes to a achievement_definition resource
+    async fn plan_achievement_definition(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -435,8 +435,8 @@ impl<'a> Games_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new application resource
-    async fn create_application(
+    /// Create a new achievement_definition resource
+    async fn create_achievement_definition(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -445,8 +445,8 @@ impl<'a> Games_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a application resource
-    async fn read_application(
+    /// Read a achievement_definition resource
+    async fn read_achievement_definition(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -455,8 +455,8 @@ impl<'a> Games_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a application resource
-    async fn update_application(
+    /// Update a achievement_definition resource
+    async fn update_achievement_definition(
         &self,
         id: &str,
         input: ResourceInput,
@@ -466,130 +466,8 @@ impl<'a> Games_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a application resource
-    async fn delete_application(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Accesstoken resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a accesstoken resource
-    async fn plan_accesstoken(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new accesstoken resource
-    async fn create_accesstoken(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a accesstoken resource
-    async fn read_accesstoken(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a accesstoken resource
-    async fn update_accesstoken(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a accesstoken resource
-    async fn delete_accesstoken(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Score resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a score resource
-    async fn plan_score(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new score resource
-    async fn create_score(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a score resource
-    async fn read_score(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a score resource
-    async fn update_score(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a score resource
-    async fn delete_score(
+    /// Delete a achievement_definition resource
+    async fn delete_achievement_definition(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -660,11 +538,11 @@ impl<'a> Games_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Metagame resource operations
+    // Stat resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a metagame resource
-    async fn plan_metagame(
+    /// Plan changes to a stat resource
+    async fn plan_stat(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -679,8 +557,8 @@ impl<'a> Games_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new metagame resource
-    async fn create_metagame(
+    /// Create a new stat resource
+    async fn create_stat(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -689,8 +567,8 @@ impl<'a> Games_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a metagame resource
-    async fn read_metagame(
+    /// Read a stat resource
+    async fn read_stat(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -699,8 +577,8 @@ impl<'a> Games_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a metagame resource
-    async fn update_metagame(
+    /// Update a stat resource
+    async fn update_stat(
         &self,
         id: &str,
         input: ResourceInput,
@@ -710,8 +588,8 @@ impl<'a> Games_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a metagame resource
-    async fn delete_metagame(
+    /// Delete a stat resource
+    async fn delete_stat(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -782,6 +660,67 @@ impl<'a> Games_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Metagame resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a metagame resource
+    async fn plan_metagame(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new metagame resource
+    async fn create_metagame(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a metagame resource
+    async fn read_metagame(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a metagame resource
+    async fn update_metagame(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a metagame resource
+    async fn delete_metagame(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Player resource operations
     // ------------------------------------------------------------------------
 
@@ -834,67 +773,6 @@ impl<'a> Games_apiService<'a> {
 
     /// Delete a player resource
     async fn delete_player(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Achievement_definition resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a achievement_definition resource
-    async fn plan_achievement_definition(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new achievement_definition resource
-    async fn create_achievement_definition(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a achievement_definition resource
-    async fn read_achievement_definition(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a achievement_definition resource
-    async fn update_achievement_definition(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a achievement_definition resource
-    async fn delete_achievement_definition(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -965,67 +843,6 @@ impl<'a> Games_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Stat resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a stat resource
-    async fn plan_stat(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new stat resource
-    async fn create_stat(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a stat resource
-    async fn read_stat(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a stat resource
-    async fn update_stat(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a stat resource
-    async fn delete_stat(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Achievement resource operations
     // ------------------------------------------------------------------------
 
@@ -1078,6 +895,189 @@ impl<'a> Games_apiService<'a> {
 
     /// Delete a achievement resource
     async fn delete_achievement(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Accesstoken resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a accesstoken resource
+    async fn plan_accesstoken(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new accesstoken resource
+    async fn create_accesstoken(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a accesstoken resource
+    async fn read_accesstoken(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a accesstoken resource
+    async fn update_accesstoken(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a accesstoken resource
+    async fn delete_accesstoken(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Application resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a application resource
+    async fn plan_application(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new application resource
+    async fn create_application(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a application resource
+    async fn read_application(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a application resource
+    async fn update_application(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a application resource
+    async fn delete_application(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Revision resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a revision resource
+    async fn plan_revision(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new revision resource
+    async fn create_revision(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a revision resource
+    async fn read_revision(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a revision resource
+    async fn update_revision(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a revision resource
+    async fn delete_revision(
         &self,
         id: &str,
     ) -> Result<()> {

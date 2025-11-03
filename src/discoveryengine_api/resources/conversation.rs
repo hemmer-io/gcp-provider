@@ -21,7 +21,7 @@ impl<'a> Conversation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, start_time: Option<String>, state: Option<String>, user_pseudo_id: Option<String>, messages: Option<Vec<String>>, end_time: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, state: Option<String>, end_time: Option<String>, user_pseudo_id: Option<String>, name: Option<String>, messages: Option<Vec<String>>, start_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Conversation<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, start_time: Option<String>, state: Option<String>, user_pseudo_id: Option<String>, messages: Option<Vec<String>>, end_time: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, state: Option<String>, end_time: Option<String>, user_pseudo_id: Option<String>, name: Option<String>, messages: Option<Vec<String>>, start_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -19,7 +19,7 @@ The commentanalyzer_api service provides access to 1 resource type:
 
 ### Comment
 
-Suggest comment scores as training data.
+Analyzes the provided text and returns scores for requested attributes.
 
 **Operations**: ✅ Create
 
@@ -27,37 +27,39 @@ Suggest comment scores as training data.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `attribute_scores` | HashMap<String, String> |  | Attribute scores for the comment. The map keys are attribute names, same as
-the requested_attribute field in AnalyzeCommentRequest (for example
-"ATTACK_ON_AUTHOR", "INFLAMMATORY", etc.). This field has the same type as
-the `attribute_scores` field in AnalyzeCommentResponse.
-
-To specify an overall attribute score for the entire comment as a whole,
-use the `summary_score` field of the mapped AttributeScores object. To
-specify scores on specific subparts of the comment, use the `span_scores`
-field. All SpanScore objects must have begin and end fields set.
-
-All Score objects must be explicitly set (for binary classification, use
-the score values 0 and 1). If Score objects don't include a ScoreType,
-`PROBABILITY` is assumed.
-
-`attribute_scores` must not be empty. The mapped AttributeScores objects
-also must not be empty. An `INVALID_ARGUMENT` error is returned for all
-malformed requests. |
-| `comment` | String |  | The comment being scored. |
-| `languages` | Vec<String> |  | The language(s) of the comment and context. If none are specified, we
-attempt to automatically detect the language. Both ISO and BCP-47 language
-codes are accepted. |
-| `context` | String |  | The context of the comment. |
-| `client_token` | String |  | Opaque token that is echoed from the request to the response. |
 | `session_id` | String |  | Session ID. Used to join related RPCs into a single session. For example,
 an interactive tool that calls both the AnalyzeComment and
 SuggestCommentScore RPCs should set all invocations of both RPCs to the
 same Session ID, typically a random 64-bit integer. |
-| `community_id` | String |  | Optional identifier associating this comment score suggestion with a
-particular sub-community. Different communities may have different norms
-and rules. Specifying this value enables training community-specific
-models. |
+| `span_annotations` | bool |  | An advisory parameter that will return span annotations if the model
+is capable of providing scores with sub-comment resolution. This will
+likely increase the size of the returned message. |
+| `languages` | Vec<String> |  | The language(s) of the comment and context. If none are specified, we
+attempt to automatically detect the language. Specifying multiple languages
+means the text contains multiple lanugages. Both ISO and BCP-47 language
+codes are accepted.
+
+The server returns an error if no language was specified and language
+detection fails. The server also returns an error if the languages (either
+specified by the caller, or auto-detected) are not *all* supported by the
+service. |
+| `requested_attributes` | HashMap<String, String> |  | Specification of requested attributes. The AttributeParameters serve as
+configuration for each associated attribute. The map keys are attribute
+names. The available attributes may be different on each RFE installation,
+and can be seen by calling ListAttributes (see above).
+For the prod installation, known as Perspective API, at
+blade:commentanalyzer-esf and commentanalyzer.googleapis.com, see
+go/checker-models (internal) and
+https://github.com/conversationai/perspectiveapi/blob/master/2-api/models.md#all-attribute-types. |
+| `client_token` | String |  | Opaque token that is echoed from the request to the response. |
+| `comment` | String |  | The comment to analyze. |
+| `community_id` | String |  | Optional identifier associating this AnalyzeCommentRequest with a
+particular client's community. Different communities may have different
+norms and rules. Specifying this value enables us to explore building
+community-specific models for clients. |
+| `context` | String |  | The context of the comment. |
+| `do_not_store` | bool |  | Do not store the comment or context sent in this request. By default, the
+service may store comments/context for debugging purposes. |
 
 
 

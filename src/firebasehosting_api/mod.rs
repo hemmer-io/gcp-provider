@@ -27,29 +27,29 @@ impl<'a> Firebasehosting_apiService<'a> {
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
             "release" => {
                 self.plan_release(current_state, desired_input).await
-            }
-            "site" => {
-                self.plan_site(current_state, desired_input).await
-            }
-            "version" => {
-                self.plan_version(current_state, desired_input).await
-            }
-            "domain" => {
-                self.plan_domain(current_state, desired_input).await
             }
             "custom_domain" => {
                 self.plan_custom_domain(current_state, desired_input).await
             }
-            "channel" => {
-                self.plan_channel(current_state, desired_input).await
+            "site" => {
+                self.plan_site(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
             "file" => {
                 self.plan_file(current_state, desired_input).await
+            }
+            "domain" => {
+                self.plan_domain(current_state, desired_input).await
+            }
+            "channel" => {
+                self.plan_channel(current_state, desired_input).await
+            }
+            "version" => {
+                self.plan_version(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -69,29 +69,29 @@ impl<'a> Firebasehosting_apiService<'a> {
             "operation" => {
                 self.create_operation(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
-            }
             "release" => {
                 self.create_release(input).await
-            }
-            "site" => {
-                self.create_site(input).await
-            }
-            "version" => {
-                self.create_version(input).await
-            }
-            "domain" => {
-                self.create_domain(input).await
             }
             "custom_domain" => {
                 self.create_custom_domain(input).await
             }
-            "channel" => {
-                self.create_channel(input).await
+            "site" => {
+                self.create_site(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
             }
             "file" => {
                 self.create_file(input).await
+            }
+            "domain" => {
+                self.create_domain(input).await
+            }
+            "channel" => {
+                self.create_channel(input).await
+            }
+            "version" => {
+                self.create_version(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -111,29 +111,29 @@ impl<'a> Firebasehosting_apiService<'a> {
             "operation" => {
                 self.read_operation(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
-            }
             "release" => {
                 self.read_release(id).await
-            }
-            "site" => {
-                self.read_site(id).await
-            }
-            "version" => {
-                self.read_version(id).await
-            }
-            "domain" => {
-                self.read_domain(id).await
             }
             "custom_domain" => {
                 self.read_custom_domain(id).await
             }
-            "channel" => {
-                self.read_channel(id).await
+            "site" => {
+                self.read_site(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
             }
             "file" => {
                 self.read_file(id).await
+            }
+            "domain" => {
+                self.read_domain(id).await
+            }
+            "channel" => {
+                self.read_channel(id).await
+            }
+            "version" => {
+                self.read_version(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -154,29 +154,29 @@ impl<'a> Firebasehosting_apiService<'a> {
             "operation" => {
                 self.update_operation(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
             "release" => {
                 self.update_release(id, input).await
-            }
-            "site" => {
-                self.update_site(id, input).await
-            }
-            "version" => {
-                self.update_version(id, input).await
-            }
-            "domain" => {
-                self.update_domain(id, input).await
             }
             "custom_domain" => {
                 self.update_custom_domain(id, input).await
             }
-            "channel" => {
-                self.update_channel(id, input).await
+            "site" => {
+                self.update_site(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
             }
             "file" => {
                 self.update_file(id, input).await
+            }
+            "domain" => {
+                self.update_domain(id, input).await
+            }
+            "channel" => {
+                self.update_channel(id, input).await
+            }
+            "version" => {
+                self.update_version(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -196,29 +196,29 @@ impl<'a> Firebasehosting_apiService<'a> {
             "operation" => {
                 self.delete_operation(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
-            }
             "release" => {
                 self.delete_release(id).await
-            }
-            "site" => {
-                self.delete_site(id).await
-            }
-            "version" => {
-                self.delete_version(id).await
-            }
-            "domain" => {
-                self.delete_domain(id).await
             }
             "custom_domain" => {
                 self.delete_custom_domain(id).await
             }
-            "channel" => {
-                self.delete_channel(id).await
+            "site" => {
+                self.delete_site(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
             }
             "file" => {
                 self.delete_file(id).await
+            }
+            "domain" => {
+                self.delete_domain(id).await
+            }
+            "channel" => {
+                self.delete_channel(id).await
+            }
+            "version" => {
+                self.delete_version(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -231,67 +231,6 @@ impl<'a> Firebasehosting_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -417,6 +356,67 @@ impl<'a> Firebasehosting_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Custom_domain resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a custom_domain resource
+    async fn plan_custom_domain(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new custom_domain resource
+    async fn create_custom_domain(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a custom_domain resource
+    async fn read_custom_domain(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a custom_domain resource
+    async fn update_custom_domain(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a custom_domain resource
+    async fn delete_custom_domain(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Site resource operations
     // ------------------------------------------------------------------------
 
@@ -478,11 +478,11 @@ impl<'a> Firebasehosting_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Version resource operations
+    // Operation resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a version resource
-    async fn plan_version(
+    /// Plan changes to a operation resource
+    async fn plan_operation(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -497,8 +497,8 @@ impl<'a> Firebasehosting_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new version resource
-    async fn create_version(
+    /// Create a new operation resource
+    async fn create_operation(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -507,8 +507,8 @@ impl<'a> Firebasehosting_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a version resource
-    async fn read_version(
+    /// Read a operation resource
+    async fn read_operation(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -517,8 +517,8 @@ impl<'a> Firebasehosting_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a version resource
-    async fn update_version(
+    /// Update a operation resource
+    async fn update_operation(
         &self,
         id: &str,
         input: ResourceInput,
@@ -528,8 +528,69 @@ impl<'a> Firebasehosting_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a version resource
-    async fn delete_version(
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // File resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a file resource
+    async fn plan_file(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new file resource
+    async fn create_file(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a file resource
+    async fn read_file(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a file resource
+    async fn update_file(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a file resource
+    async fn delete_file(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -600,67 +661,6 @@ impl<'a> Firebasehosting_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Custom_domain resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a custom_domain resource
-    async fn plan_custom_domain(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new custom_domain resource
-    async fn create_custom_domain(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a custom_domain resource
-    async fn read_custom_domain(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a custom_domain resource
-    async fn update_custom_domain(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a custom_domain resource
-    async fn delete_custom_domain(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Channel resource operations
     // ------------------------------------------------------------------------
 
@@ -722,11 +722,11 @@ impl<'a> Firebasehosting_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // File resource operations
+    // Version resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a file resource
-    async fn plan_file(
+    /// Plan changes to a version resource
+    async fn plan_version(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -741,8 +741,8 @@ impl<'a> Firebasehosting_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new file resource
-    async fn create_file(
+    /// Create a new version resource
+    async fn create_version(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -751,8 +751,8 @@ impl<'a> Firebasehosting_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a file resource
-    async fn read_file(
+    /// Read a version resource
+    async fn read_version(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -761,8 +761,8 @@ impl<'a> Firebasehosting_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a file resource
-    async fn update_file(
+    /// Update a version resource
+    async fn update_version(
         &self,
         id: &str,
         input: ResourceInput,
@@ -772,8 +772,8 @@ impl<'a> Firebasehosting_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a file resource
-    async fn delete_file(
+    /// Delete a version resource
+    async fn delete_version(
         &self,
         id: &str,
     ) -> Result<()> {

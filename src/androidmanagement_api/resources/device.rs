@@ -21,7 +21,7 @@ impl<'a> Device<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, add_esim_params: Option<String>, user_name: Option<String>, create_time: Option<String>, stop_lost_mode_status: Option<String>, duration: Option<String>, start_lost_mode_params: Option<String>, new_password: Option<String>, request_device_info_status: Option<String>, esim_status: Option<String>, stop_lost_mode_params: Option<String>, reset_password_flags: Option<Vec<String>>, clear_apps_data_status: Option<String>, remove_esim_params: Option<String>, wipe_params: Option<String>, start_lost_mode_status: Option<String>, error_code: Option<String>, request_device_info_params: Option<String>, clear_apps_data_params: Option<String>, type: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, create_time: Option<String>, new_password: Option<String>, reset_password_flags: Option<Vec<String>>, type: Option<String>, stop_lost_mode_status: Option<String>, esim_status: Option<String>, wipe_params: Option<String>, request_device_info_params: Option<String>, user_name: Option<String>, request_device_info_status: Option<String>, start_lost_mode_params: Option<String>, stop_lost_mode_params: Option<String>, remove_esim_params: Option<String>, error_code: Option<String>, clear_apps_data_params: Option<String>, add_esim_params: Option<String>, duration: Option<String>, start_lost_mode_status: Option<String>, clear_apps_data_status: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Device<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, add_esim_params: Option<String>, user_name: Option<String>, create_time: Option<String>, stop_lost_mode_status: Option<String>, duration: Option<String>, start_lost_mode_params: Option<String>, new_password: Option<String>, request_device_info_status: Option<String>, esim_status: Option<String>, stop_lost_mode_params: Option<String>, reset_password_flags: Option<Vec<String>>, clear_apps_data_status: Option<String>, remove_esim_params: Option<String>, wipe_params: Option<String>, start_lost_mode_status: Option<String>, error_code: Option<String>, request_device_info_params: Option<String>, clear_apps_data_params: Option<String>, type: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, create_time: Option<String>, new_password: Option<String>, reset_password_flags: Option<Vec<String>>, type: Option<String>, stop_lost_mode_status: Option<String>, esim_status: Option<String>, wipe_params: Option<String>, request_device_info_params: Option<String>, user_name: Option<String>, request_device_info_status: Option<String>, start_lost_mode_params: Option<String>, stop_lost_mode_params: Option<String>, remove_esim_params: Option<String>, error_code: Option<String>, clear_apps_data_params: Option<String>, add_esim_params: Option<String>, duration: Option<String>, start_lost_mode_status: Option<String>, clear_apps_data_status: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

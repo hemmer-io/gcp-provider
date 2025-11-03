@@ -21,7 +21,7 @@ impl<'a> Workload_identity_pool<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, mode: Option<String>, inline_certificate_issuance_config: Option<String>, description: Option<String>, display_name: Option<String>, disabled: Option<bool>, state: Option<String>, inline_trust_config: Option<String>, expire_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, inline_certificate_issuance_config: Option<String>, state: Option<String>, inline_trust_config: Option<String>, mode: Option<String>, description: Option<String>, name: Option<String>, disabled: Option<bool>, expire_time: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Workload_identity_pool<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, mode: Option<String>, inline_certificate_issuance_config: Option<String>, description: Option<String>, display_name: Option<String>, disabled: Option<bool>, state: Option<String>, inline_trust_config: Option<String>, expire_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, inline_certificate_issuance_config: Option<String>, state: Option<String>, inline_trust_config: Option<String>, mode: Option<String>, description: Option<String>, name: Option<String>, disabled: Option<bool>, expire_time: Option<String>, display_name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

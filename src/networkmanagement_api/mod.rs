@@ -27,23 +27,23 @@ impl<'a> Networkmanagement_apiService<'a> {
             "vpc_flow_logs_config" => {
                 self.plan_vpc_flow_logs_config(current_state, desired_input).await
             }
+            "connectivity_test" => {
+                self.plan_connectivity_test(current_state, desired_input).await
+            }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "connectivity_test" => {
-                self.plan_connectivity_test(current_state, desired_input).await
-            }
             "vpc_flow_logs_config" => {
                 self.plan_vpc_flow_logs_config(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
-            }
             "connectivity_test" => {
                 self.plan_connectivity_test(current_state, desired_input).await
+            }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
@@ -66,23 +66,23 @@ impl<'a> Networkmanagement_apiService<'a> {
             "vpc_flow_logs_config" => {
                 self.create_vpc_flow_logs_config(input).await
             }
+            "connectivity_test" => {
+                self.create_connectivity_test(input).await
+            }
             "operation" => {
                 self.create_operation(input).await
             }
             "location" => {
                 self.create_location(input).await
             }
-            "connectivity_test" => {
-                self.create_connectivity_test(input).await
-            }
             "vpc_flow_logs_config" => {
                 self.create_vpc_flow_logs_config(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
-            }
             "connectivity_test" => {
                 self.create_connectivity_test(input).await
+            }
+            "operation" => {
+                self.create_operation(input).await
             }
             "location" => {
                 self.create_location(input).await
@@ -105,23 +105,23 @@ impl<'a> Networkmanagement_apiService<'a> {
             "vpc_flow_logs_config" => {
                 self.read_vpc_flow_logs_config(id).await
             }
+            "connectivity_test" => {
+                self.read_connectivity_test(id).await
+            }
             "operation" => {
                 self.read_operation(id).await
             }
             "location" => {
                 self.read_location(id).await
             }
-            "connectivity_test" => {
-                self.read_connectivity_test(id).await
-            }
             "vpc_flow_logs_config" => {
                 self.read_vpc_flow_logs_config(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
-            }
             "connectivity_test" => {
                 self.read_connectivity_test(id).await
+            }
+            "operation" => {
+                self.read_operation(id).await
             }
             "location" => {
                 self.read_location(id).await
@@ -145,23 +145,23 @@ impl<'a> Networkmanagement_apiService<'a> {
             "vpc_flow_logs_config" => {
                 self.update_vpc_flow_logs_config(id, input).await
             }
+            "connectivity_test" => {
+                self.update_connectivity_test(id, input).await
+            }
             "operation" => {
                 self.update_operation(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
             }
-            "connectivity_test" => {
-                self.update_connectivity_test(id, input).await
-            }
             "vpc_flow_logs_config" => {
                 self.update_vpc_flow_logs_config(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
-            }
             "connectivity_test" => {
                 self.update_connectivity_test(id, input).await
+            }
+            "operation" => {
+                self.update_operation(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
@@ -184,23 +184,23 @@ impl<'a> Networkmanagement_apiService<'a> {
             "vpc_flow_logs_config" => {
                 self.delete_vpc_flow_logs_config(id).await
             }
+            "connectivity_test" => {
+                self.delete_connectivity_test(id).await
+            }
             "operation" => {
                 self.delete_operation(id).await
             }
             "location" => {
                 self.delete_location(id).await
             }
-            "connectivity_test" => {
-                self.delete_connectivity_test(id).await
-            }
             "vpc_flow_logs_config" => {
                 self.delete_vpc_flow_logs_config(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
-            }
             "connectivity_test" => {
                 self.delete_connectivity_test(id).await
+            }
+            "operation" => {
+                self.delete_operation(id).await
             }
             "location" => {
                 self.delete_location(id).await
@@ -271,6 +271,67 @@ impl<'a> Networkmanagement_apiService<'a> {
 
     /// Delete a vpc_flow_logs_config resource
     async fn delete_vpc_flow_logs_config(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Connectivity_test resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a connectivity_test resource
+    async fn plan_connectivity_test(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new connectivity_test resource
+    async fn create_connectivity_test(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a connectivity_test resource
+    async fn read_connectivity_test(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a connectivity_test resource
+    async fn update_connectivity_test(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a connectivity_test resource
+    async fn delete_connectivity_test(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -402,67 +463,6 @@ impl<'a> Networkmanagement_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Connectivity_test resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a connectivity_test resource
-    async fn plan_connectivity_test(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new connectivity_test resource
-    async fn create_connectivity_test(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a connectivity_test resource
-    async fn read_connectivity_test(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a connectivity_test resource
-    async fn update_connectivity_test(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a connectivity_test resource
-    async fn delete_connectivity_test(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Vpc_flow_logs_config resource operations
     // ------------------------------------------------------------------------
 
@@ -524,67 +524,6 @@ impl<'a> Networkmanagement_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a operation resource
-    async fn plan_operation(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new operation resource
-    async fn create_operation(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a operation resource
-    async fn read_operation(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a operation resource
-    async fn update_operation(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a operation resource
-    async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Connectivity_test resource operations
     // ------------------------------------------------------------------------
 
@@ -637,6 +576,67 @@ impl<'a> Networkmanagement_apiService<'a> {
 
     /// Delete a connectivity_test resource
     async fn delete_connectivity_test(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
         &self,
         id: &str,
     ) -> Result<()> {

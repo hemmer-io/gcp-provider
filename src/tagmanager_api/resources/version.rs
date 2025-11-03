@@ -1,6 +1,6 @@
 //! Version resource
 //!
-//! Publishes a Container Version.
+//! Undeletes a Container Version.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

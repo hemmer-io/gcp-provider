@@ -21,7 +21,7 @@ impl<'a> Evaluation<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, quality_metrics: Option<String>, error: Option<String>, state: Option<String>, error_samples: Option<Vec<String>>, create_time: Option<String>, name: Option<String>, end_time: Option<String>, evaluation_spec: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, evaluation_spec: Option<String>, create_time: Option<String>, quality_metrics: Option<String>, error: Option<String>, state: Option<String>, name: Option<String>, end_time: Option<String>, error_samples: Option<Vec<String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

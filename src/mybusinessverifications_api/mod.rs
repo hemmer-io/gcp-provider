@@ -24,14 +24,14 @@ impl<'a> Mybusinessverifications_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "verification_token" => {
-                self.plan_verification_token(current_state, desired_input).await
+            "verification" => {
+                self.plan_verification(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "verification" => {
-                self.plan_verification(current_state, desired_input).await
+            "verification_token" => {
+                self.plan_verification_token(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -48,14 +48,14 @@ impl<'a> Mybusinessverifications_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "verification_token" => {
-                self.create_verification_token(input).await
+            "verification" => {
+                self.create_verification(input).await
             }
             "location" => {
                 self.create_location(input).await
             }
-            "verification" => {
-                self.create_verification(input).await
+            "verification_token" => {
+                self.create_verification_token(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -72,14 +72,14 @@ impl<'a> Mybusinessverifications_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "verification_token" => {
-                self.read_verification_token(id).await
+            "verification" => {
+                self.read_verification(id).await
             }
             "location" => {
                 self.read_location(id).await
             }
-            "verification" => {
-                self.read_verification(id).await
+            "verification_token" => {
+                self.read_verification_token(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -97,14 +97,14 @@ impl<'a> Mybusinessverifications_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "verification_token" => {
-                self.update_verification_token(id, input).await
+            "verification" => {
+                self.update_verification(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
             }
-            "verification" => {
-                self.update_verification(id, input).await
+            "verification_token" => {
+                self.update_verification_token(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -121,14 +121,14 @@ impl<'a> Mybusinessverifications_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "verification_token" => {
-                self.delete_verification_token(id).await
+            "verification" => {
+                self.delete_verification(id).await
             }
             "location" => {
                 self.delete_location(id).await
             }
-            "verification" => {
-                self.delete_verification(id).await
+            "verification_token" => {
+                self.delete_verification_token(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -144,11 +144,11 @@ impl<'a> Mybusinessverifications_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Verification_token resource operations
+    // Verification resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a verification_token resource
-    async fn plan_verification_token(
+    /// Plan changes to a verification resource
+    async fn plan_verification(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -163,8 +163,8 @@ impl<'a> Mybusinessverifications_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new verification_token resource
-    async fn create_verification_token(
+    /// Create a new verification resource
+    async fn create_verification(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -173,8 +173,8 @@ impl<'a> Mybusinessverifications_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a verification_token resource
-    async fn read_verification_token(
+    /// Read a verification resource
+    async fn read_verification(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -183,8 +183,8 @@ impl<'a> Mybusinessverifications_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a verification_token resource
-    async fn update_verification_token(
+    /// Update a verification resource
+    async fn update_verification(
         &self,
         id: &str,
         input: ResourceInput,
@@ -194,8 +194,8 @@ impl<'a> Mybusinessverifications_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a verification_token resource
-    async fn delete_verification_token(
+    /// Delete a verification resource
+    async fn delete_verification(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -266,11 +266,11 @@ impl<'a> Mybusinessverifications_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Verification resource operations
+    // Verification_token resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a verification resource
-    async fn plan_verification(
+    /// Plan changes to a verification_token resource
+    async fn plan_verification_token(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -285,8 +285,8 @@ impl<'a> Mybusinessverifications_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new verification resource
-    async fn create_verification(
+    /// Create a new verification_token resource
+    async fn create_verification_token(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -295,8 +295,8 @@ impl<'a> Mybusinessverifications_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a verification resource
-    async fn read_verification(
+    /// Read a verification_token resource
+    async fn read_verification_token(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -305,8 +305,8 @@ impl<'a> Mybusinessverifications_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a verification resource
-    async fn update_verification(
+    /// Update a verification_token resource
+    async fn update_verification_token(
         &self,
         id: &str,
         input: ResourceInput,
@@ -316,8 +316,8 @@ impl<'a> Mybusinessverifications_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a verification resource
-    async fn delete_verification(
+    /// Delete a verification_token resource
+    async fn delete_verification_token(
         &self,
         id: &str,
     ) -> Result<()> {

@@ -22,7 +22,7 @@ impl<'a> Region_target_http_proxie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, creation_timestamp: Option<String>, fingerprint: Option<String>, http_keep_alive_timeout_sec: Option<i64>, proxy_bind: Option<bool>, region: Option<String>, description: Option<String>, name: Option<String>, kind: Option<String>, url_map: Option<String>, id: Option<String>, self_link: Option<String>, http_filters: Option<Vec<String>>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, region: Option<String>, url_map: Option<String>, proxy_bind: Option<bool>, kind: Option<String>, http_filters: Option<Vec<String>>, fingerprint: Option<String>, self_link: Option<String>, description: Option<String>, creation_timestamp: Option<String>, http_keep_alive_timeout_sec: Option<i64>, id: Option<String>, name: Option<String>, project: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

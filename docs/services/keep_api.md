@@ -11,8 +11,8 @@
 The keep_api service provides access to 3 resource types:
 
 - [Media](#media) [R]
-- [Permission](#permission) [C]
 - [Note](#note) [CRD]
+- [Permission](#permission) [C]
 
 ---
 
@@ -35,8 +35,8 @@ Gets an attachment. To download attachment media via REST requires the alt=media
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `name` | String | The resource name; |
 | `mime_type` | Vec<String> | The MIME types (IANA media types) in which the attachment is available. |
+| `name` | String | The resource name; |
 
 
 #### Usage Example
@@ -52,8 +52,75 @@ provider = gcp.GcpProvider {
 
 # Access media outputs
 media_id = media.id
-media_name = media.name
 media_mime_type = media.mime_type
+media_name = media.name
+```
+
+---
+
+
+### Note
+
+Creates a new note.
+
+**Operations**: ✅ Create ✅ Read ✅ Delete
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `update_time` | String |  | Output only. When this note was last modified. |
+| `name` | String |  | Output only. The resource name of this note. See general note on identifiers in KeepService. |
+| `attachments` | Vec<String> |  | Output only. The attachments attached to this note. |
+| `permissions` | Vec<String> |  | Output only. The list of permissions set on the note. Contains at least one entry for the note owner. |
+| `body` | String |  | The body of the note. |
+| `create_time` | String |  | Output only. When this note was created. |
+| `trashed` | bool |  | Output only. `true` if this note has been trashed. If trashed, the note is eventually deleted. |
+| `title` | String |  | The title of the note. Length must be less than 1,000 characters. |
+| `trash_time` | String |  | Output only. When this note was trashed. If `trashed`, the note is eventually deleted. If the note is not trashed, this field is not set (and the trashed field is `false`). |
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `update_time` | String | Output only. When this note was last modified. |
+| `name` | String | Output only. The resource name of this note. See general note on identifiers in KeepService. |
+| `attachments` | Vec<String> | Output only. The attachments attached to this note. |
+| `permissions` | Vec<String> | Output only. The list of permissions set on the note. Contains at least one entry for the note owner. |
+| `body` | String | The body of the note. |
+| `create_time` | String | Output only. When this note was created. |
+| `trashed` | bool | Output only. `true` if this note has been trashed. If trashed, the note is eventually deleted. |
+| `title` | String | The title of the note. Length must be less than 1,000 characters. |
+| `trash_time` | String | Output only. When this note was trashed. If `trashed`, the note is eventually deleted. If the note is not trashed, this field is not set (and the trashed field is `false`). |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Create note
+note = provider.keep_api.Note {
+}
+
+# Access note outputs
+note_id = note.id
+note_update_time = note.update_time
+note_name = note.name
+note_attachments = note.attachments
+note_permissions = note.permissions
+note_body = note.body
+note_create_time = note.create_time
+note_trashed = note.trashed
+note_title = note.title
+note_trash_time = note.trash_time
 ```
 
 ---
@@ -90,73 +157,6 @@ permission = provider.keep_api.Permission {
     parent = "value"  # The parent resource shared by all permissions being deleted. Format: `notes/{note}` If this is set, the parent of all of the permissions specified in the DeletePermissionRequest messages must match this field.
 }
 
-```
-
----
-
-
-### Note
-
-Creates a new note.
-
-**Operations**: ✅ Create ✅ Read ✅ Delete
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `trash_time` | String |  | Output only. When this note was trashed. If `trashed`, the note is eventually deleted. If the note is not trashed, this field is not set (and the trashed field is `false`). |
-| `update_time` | String |  | Output only. When this note was last modified. |
-| `title` | String |  | The title of the note. Length must be less than 1,000 characters. |
-| `name` | String |  | Output only. The resource name of this note. See general note on identifiers in KeepService. |
-| `trashed` | bool |  | Output only. `true` if this note has been trashed. If trashed, the note is eventually deleted. |
-| `body` | String |  | The body of the note. |
-| `permissions` | Vec<String> |  | Output only. The list of permissions set on the note. Contains at least one entry for the note owner. |
-| `create_time` | String |  | Output only. When this note was created. |
-| `attachments` | Vec<String> |  | Output only. The attachments attached to this note. |
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `trash_time` | String | Output only. When this note was trashed. If `trashed`, the note is eventually deleted. If the note is not trashed, this field is not set (and the trashed field is `false`). |
-| `update_time` | String | Output only. When this note was last modified. |
-| `title` | String | The title of the note. Length must be less than 1,000 characters. |
-| `name` | String | Output only. The resource name of this note. See general note on identifiers in KeepService. |
-| `trashed` | bool | Output only. `true` if this note has been trashed. If trashed, the note is eventually deleted. |
-| `body` | String | The body of the note. |
-| `permissions` | Vec<String> | Output only. The list of permissions set on the note. Contains at least one entry for the note owner. |
-| `create_time` | String | Output only. When this note was created. |
-| `attachments` | Vec<String> | Output only. The attachments attached to this note. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Create note
-note = provider.keep_api.Note {
-}
-
-# Access note outputs
-note_id = note.id
-note_trash_time = note.trash_time
-note_update_time = note.update_time
-note_title = note.title
-note_name = note.name
-note_trashed = note.trashed
-note_body = note.body
-note_permissions = note.permissions
-note_create_time = note.create_time
-note_attachments = note.attachments
 ```
 
 ---

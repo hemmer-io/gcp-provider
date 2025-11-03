@@ -10,9 +10,9 @@
 
 The versionhistory_api service provides access to 4 resource types:
 
-- [Release](#release) [R]
-- [Platform](#platform) [R]
 - [Channel](#channel) [R]
+- [Platform](#platform) [R]
+- [Release](#release) [R]
 - [Version](#version) [R]
 
 ---
@@ -20,9 +20,9 @@ The versionhistory_api service provides access to 4 resource types:
 ## Resources
 
 
-### Release
+### Channel
 
-Returns list of releases of the given version.
+Returns list of channels that are available for a given platform.
 
 **Operations**: ✅ Read
 
@@ -36,8 +36,8 @@ Returns list of releases of the given version.
 
 | Output | Type | Description |
 |--------|------|-------------|
+| `channels` | Vec<String> | The list of channels. |
 | `next_page_token` | String | A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. |
-| `releases` | Vec<String> | The list of releases. |
 
 
 #### Usage Example
@@ -51,10 +51,10 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Access release outputs
-release_id = release.id
-release_next_page_token = release.next_page_token
-release_releases = release.releases
+# Access channel outputs
+channel_id = channel.id
+channel_channels = channel.channels
+channel_next_page_token = channel.next_page_token
 ```
 
 ---
@@ -100,9 +100,9 @@ platform_platforms = platform.platforms
 ---
 
 
-### Channel
+### Release
 
-Returns list of channels that are available for a given platform.
+Returns list of releases of the given version.
 
 **Operations**: ✅ Read
 
@@ -116,7 +116,7 @@ Returns list of channels that are available for a given platform.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `channels` | Vec<String> | The list of channels. |
+| `releases` | Vec<String> | The list of releases. |
 | `next_page_token` | String | A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. |
 
 
@@ -131,10 +131,10 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Access channel outputs
-channel_id = channel.id
-channel_channels = channel.channels
-channel_next_page_token = channel.next_page_token
+# Access release outputs
+release_id = release.id
+release_releases = release.releases
+release_next_page_token = release.next_page_token
 ```
 
 ---
@@ -192,12 +192,12 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple release resources
-release_0 = provider.versionhistory_api.Release {
+# Create multiple channel resources
+channel_0 = provider.versionhistory_api.Channel {
 }
-release_1 = provider.versionhistory_api.Release {
+channel_1 = provider.versionhistory_api.Channel {
 }
-release_2 = provider.versionhistory_api.Release {
+channel_2 = provider.versionhistory_api.Channel {
 }
 ```
 
@@ -206,7 +206,7 @@ release_2 = provider.versionhistory_api.Release {
 ```kcl
 # Only create in production
 if environment == "production":
-    release = provider.versionhistory_api.Release {
+    channel = provider.versionhistory_api.Channel {
     }
 ```
 

@@ -27,8 +27,8 @@ This method lets you retrieve insights about areas using a variety of filter suc
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `insights` | Vec<String> |  | Required. Insights to compute. Currently only INSIGHT_COUNT and INSIGHT_PLACES are supported. |
 | `filter` | String |  | Required. Insight filter. |
+| `insights` | Vec<String> |  | Required. Insights to compute. Currently only INSIGHT_COUNT and INSIGHT_PLACES are supported. |
 
 
 

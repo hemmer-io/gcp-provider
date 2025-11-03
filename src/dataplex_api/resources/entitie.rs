@@ -21,7 +21,7 @@ impl<'a> Entitie<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, format: Option<String>, system: Option<String>, update_time: Option<String>, data_path: Option<String>, create_time: Option<String>, id: Option<String>, access: Option<String>, name: Option<String>, catalog_entry: Option<String>, uid: Option<String>, type: Option<String>, compatibility: Option<String>, schema: Option<String>, data_path_pattern: Option<String>, asset: Option<String>, etag: Option<String>, display_name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, uid: Option<String>, data_path_pattern: Option<String>, asset: Option<String>, create_time: Option<String>, access: Option<String>, name: Option<String>, data_path: Option<String>, type: Option<String>, id: Option<String>, description: Option<String>, etag: Option<String>, catalog_entry: Option<String>, display_name: Option<String>, format: Option<String>, schema: Option<String>, system: Option<String>, compatibility: Option<String>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Entitie<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, format: Option<String>, system: Option<String>, update_time: Option<String>, data_path: Option<String>, create_time: Option<String>, id: Option<String>, access: Option<String>, name: Option<String>, catalog_entry: Option<String>, uid: Option<String>, type: Option<String>, compatibility: Option<String>, schema: Option<String>, data_path_pattern: Option<String>, asset: Option<String>, etag: Option<String>, display_name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, uid: Option<String>, data_path_pattern: Option<String>, asset: Option<String>, create_time: Option<String>, access: Option<String>, name: Option<String>, data_path: Option<String>, type: Option<String>, id: Option<String>, description: Option<String>, etag: Option<String>, catalog_entry: Option<String>, display_name: Option<String>, format: Option<String>, schema: Option<String>, system: Option<String>, compatibility: Option<String>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

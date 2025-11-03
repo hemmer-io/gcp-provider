@@ -36,9 +36,9 @@ CreateProfile creates a new profile resource in the online mode. _Direct use of 
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `next_page_token` | String | Token to receive the next page of results. This field maybe empty if there are no more profiles to fetch. |
-| `profiles` | Vec<String> | List of profiles fetched. |
 | `skipped_profiles` | i64 | Number of profiles that were skipped in the current page since they were not able to be fetched successfully. This should typically be zero. A non-zero value may indicate a transient failure, in which case if the number is too high for your use case, the call may be retried. |
+| `profiles` | Vec<String> | List of profiles fetched. |
+| `next_page_token` | String | Token to receive the next page of results. This field maybe empty if there are no more profiles to fetch. |
 
 
 #### Usage Example
@@ -59,9 +59,9 @@ profile = provider.cloudprofiler_api.Profile {
 
 # Access profile outputs
 profile_id = profile.id
-profile_next_page_token = profile.next_page_token
-profile_profiles = profile.profiles
 profile_skipped_profiles = profile.skipped_profiles
+profile_profiles = profile.profiles
+profile_next_page_token = profile.next_page_token
 ```
 
 ---

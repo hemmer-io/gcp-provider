@@ -10,59 +10,13 @@
 
 The blockchainnodeengine_api service provides access to 3 resource types:
 
-- [Location](#location) [R]
 - [Operation](#operation) [CRD]
+- [Location](#location) [R]
 - [Blockchain_node](#blockchain_node) [CRUD]
 
 ---
 
 ## Resources
-
-
-### Location
-
-Gets information about a location.
-
-**Operations**: ✅ Read
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `location_id` | String | The canonical id for this location. For example: `"us-east1"`. |
-| `labels` | HashMap<String, String> | Cross-service attributes for the location. For example {"cloud.googleapis.com/region": "us-east1"} |
-| `display_name` | String | The friendly name for this location, typically a nearby city name. For example, "Tokyo". |
-| `metadata` | HashMap<String, String> | Service-specific metadata. For example the available capacity at the given location. |
-| `name` | String | Resource name for the location, which may vary between implementations. For example: `"projects/example-project/locations/us-east1"` |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Access location outputs
-location_id = location.id
-location_location_id = location.location_id
-location_labels = location.labels
-location_display_name = location.display_name
-location_metadata = location.metadata
-location_name = location.name
-```
-
----
 
 
 ### Operation
@@ -83,10 +37,10 @@ Starts asynchronous cancellation on a long-running operation. The server makes a
 | Output | Type | Description |
 |--------|------|-------------|
 | `name` | String | The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the `name` should be a resource name ending with `operations/{unique_id}`. |
-| `error` | String | The error result of the operation in case of failure or cancellation. |
 | `done` | bool | If the value is `false`, it means the operation is still in progress. If `true`, the operation is completed, and either `error` or `response` is available. |
-| `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
+| `error` | String | The error result of the operation in case of failure or cancellation. |
 | `response` | HashMap<String, String> | The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`. |
+| `metadata` | HashMap<String, String> | Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any. |
 
 
 #### Usage Example
@@ -108,10 +62,56 @@ operation = provider.blockchainnodeengine_api.Operation {
 # Access operation outputs
 operation_id = operation.id
 operation_name = operation.name
-operation_error = operation.error
 operation_done = operation.done
-operation_metadata = operation.metadata
+operation_error = operation.error
 operation_response = operation.response
+operation_metadata = operation.metadata
+```
+
+---
+
+
+### Location
+
+Gets information about a location.
+
+**Operations**: ✅ Read
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `metadata` | HashMap<String, String> | Service-specific metadata. For example the available capacity at the given location. |
+| `labels` | HashMap<String, String> | Cross-service attributes for the location. For example {"cloud.googleapis.com/region": "us-east1"} |
+| `name` | String | Resource name for the location, which may vary between implementations. For example: `"projects/example-project/locations/us-east1"` |
+| `display_name` | String | The friendly name for this location, typically a nearby city name. For example, "Tokyo". |
+| `location_id` | String | The canonical id for this location. For example: `"us-east1"`. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Access location outputs
+location_id = location.id
+location_metadata = location.metadata
+location_labels = location.labels
+location_name = location.name
+location_display_name = location.display_name
+location_location_id = location.location_id
 ```
 
 ---
@@ -128,14 +128,14 @@ Creates a new blockchain node in a given project and location.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `connection_info` | String |  | Output only. The connection information used to interact with a blockchain node. |
-| `blockchain_type` | String |  | Immutable. The blockchain type of the node. |
-| `labels` | HashMap<String, String> |  | User-provided key-value pairs. |
-| `ethereum_details` | String |  | Ethereum-specific blockchain node details. |
-| `state` | String |  | Output only. A status representing the state of the node. |
+| `create_time` | String |  | Output only. The timestamp at which the blockchain node was first created. |
 | `name` | String |  | Output only. The fully qualified name of the blockchain node. e.g. `projects/my-project/locations/us-central1/blockchainNodes/my-node`. |
 | `private_service_connect_enabled` | bool |  | Optional. When true, the node is only accessible via Private Service Connect; no public endpoints are exposed. Otherwise, the node is only accessible via public endpoints. Warning: These nodes are deprecated, please use public endpoints instead. |
-| `create_time` | String |  | Output only. The timestamp at which the blockchain node was first created. |
+| `blockchain_type` | String |  | Immutable. The blockchain type of the node. |
+| `ethereum_details` | String |  | Ethereum-specific blockchain node details. |
 | `update_time` | String |  | Output only. The timestamp at which the blockchain node was last updated. |
+| `labels` | HashMap<String, String> |  | User-provided key-value pairs. |
+| `state` | String |  | Output only. A status representing the state of the node. |
 | `parent` | String | ✅ | Required. Value for parent. |
 
 
@@ -144,14 +144,14 @@ Creates a new blockchain node in a given project and location.
 | Output | Type | Description |
 |--------|------|-------------|
 | `connection_info` | String | Output only. The connection information used to interact with a blockchain node. |
-| `blockchain_type` | String | Immutable. The blockchain type of the node. |
-| `labels` | HashMap<String, String> | User-provided key-value pairs. |
-| `ethereum_details` | String | Ethereum-specific blockchain node details. |
-| `state` | String | Output only. A status representing the state of the node. |
+| `create_time` | String | Output only. The timestamp at which the blockchain node was first created. |
 | `name` | String | Output only. The fully qualified name of the blockchain node. e.g. `projects/my-project/locations/us-central1/blockchainNodes/my-node`. |
 | `private_service_connect_enabled` | bool | Optional. When true, the node is only accessible via Private Service Connect; no public endpoints are exposed. Otherwise, the node is only accessible via public endpoints. Warning: These nodes are deprecated, please use public endpoints instead. |
-| `create_time` | String | Output only. The timestamp at which the blockchain node was first created. |
+| `blockchain_type` | String | Immutable. The blockchain type of the node. |
+| `ethereum_details` | String | Ethereum-specific blockchain node details. |
 | `update_time` | String | Output only. The timestamp at which the blockchain node was last updated. |
+| `labels` | HashMap<String, String> | User-provided key-value pairs. |
+| `state` | String | Output only. A status representing the state of the node. |
 
 
 #### Usage Example
@@ -173,14 +173,14 @@ blockchain_node = provider.blockchainnodeengine_api.Blockchain_node {
 # Access blockchain_node outputs
 blockchain_node_id = blockchain_node.id
 blockchain_node_connection_info = blockchain_node.connection_info
-blockchain_node_blockchain_type = blockchain_node.blockchain_type
-blockchain_node_labels = blockchain_node.labels
-blockchain_node_ethereum_details = blockchain_node.ethereum_details
-blockchain_node_state = blockchain_node.state
+blockchain_node_create_time = blockchain_node.create_time
 blockchain_node_name = blockchain_node.name
 blockchain_node_private_service_connect_enabled = blockchain_node.private_service_connect_enabled
-blockchain_node_create_time = blockchain_node.create_time
+blockchain_node_blockchain_type = blockchain_node.blockchain_type
+blockchain_node_ethereum_details = blockchain_node.ethereum_details
 blockchain_node_update_time = blockchain_node.update_time
+blockchain_node_labels = blockchain_node.labels
+blockchain_node_state = blockchain_node.state
 ```
 
 ---
@@ -198,12 +198,15 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple location resources
-location_0 = provider.blockchainnodeengine_api.Location {
+# Create multiple operation resources
+operation_0 = provider.blockchainnodeengine_api.Operation {
+    name = "value-0"
 }
-location_1 = provider.blockchainnodeengine_api.Location {
+operation_1 = provider.blockchainnodeengine_api.Operation {
+    name = "value-1"
 }
-location_2 = provider.blockchainnodeengine_api.Location {
+operation_2 = provider.blockchainnodeengine_api.Operation {
+    name = "value-2"
 }
 ```
 
@@ -212,7 +215,8 @@ location_2 = provider.blockchainnodeengine_api.Location {
 ```kcl
 # Only create in production
 if environment == "production":
-    location = provider.blockchainnodeengine_api.Location {
+    operation = provider.blockchainnodeengine_api.Operation {
+        name = "production-value"
     }
 ```
 

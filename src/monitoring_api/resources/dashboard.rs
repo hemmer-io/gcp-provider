@@ -21,7 +21,7 @@ impl<'a> Dashboard<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, etag: Option<String>, grid_layout: Option<String>, column_layout: Option<String>, annotations: Option<String>, mosaic_layout: Option<String>, display_name: Option<String>, name: Option<String>, row_layout: Option<String>, dashboard_filters: Option<Vec<String>>, parent: String) -> Result<String> {
+    pub async fn create(&self, annotations: Option<String>, dashboard_filters: Option<Vec<String>>, name: Option<String>, etag: Option<String>, display_name: Option<String>, mosaic_layout: Option<String>, row_layout: Option<String>, labels: Option<HashMap<String, String>>, column_layout: Option<String>, grid_layout: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Dashboard<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, labels: Option<HashMap<String, String>>, etag: Option<String>, grid_layout: Option<String>, column_layout: Option<String>, annotations: Option<String>, mosaic_layout: Option<String>, display_name: Option<String>, name: Option<String>, row_layout: Option<String>, dashboard_filters: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, annotations: Option<String>, dashboard_filters: Option<Vec<String>>, name: Option<String>, etag: Option<String>, display_name: Option<String>, mosaic_layout: Option<String>, row_layout: Option<String>, labels: Option<HashMap<String, String>>, column_layout: Option<String>, grid_layout: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

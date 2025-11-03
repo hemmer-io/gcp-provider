@@ -21,7 +21,7 @@ impl<'a> Table<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, expire_time: Option<String>, hive_options: Option<String>, type: Option<String>, etag: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, delete_time: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, expire_time: Option<String>, name: Option<String>, update_time: Option<String>, hive_options: Option<String>, create_time: Option<String>, etag: Option<String>, delete_time: Option<String>, type: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Table<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, expire_time: Option<String>, hive_options: Option<String>, type: Option<String>, etag: Option<String>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, delete_time: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, expire_time: Option<String>, name: Option<String>, update_time: Option<String>, hive_options: Option<String>, create_time: Option<String>, etag: Option<String>, delete_time: Option<String>, type: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

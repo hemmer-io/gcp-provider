@@ -22,7 +22,7 @@ impl<'a> Firewall<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, creation_timestamp: Option<String>, source_ranges: Option<Vec<String>>, network: Option<String>, allowed: Option<Vec<String>>, destination_ranges: Option<Vec<String>>, id: Option<String>, name: Option<String>, direction: Option<String>, target_tags: Option<Vec<String>>, description: Option<String>, self_link: Option<String>, source_service_accounts: Option<Vec<String>>, disabled: Option<bool>, priority: Option<i64>, params: Option<String>, denied: Option<Vec<String>>, kind: Option<String>, log_config: Option<String>, source_tags: Option<Vec<String>>, enable_logging: Option<bool>, target_service_accounts: Option<Vec<String>>, project: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, source_ranges: Option<Vec<String>>, source_service_accounts: Option<Vec<String>>, allowed: Option<Vec<String>>, creation_timestamp: Option<String>, disabled: Option<bool>, enable_logging: Option<bool>, id: Option<String>, denied: Option<Vec<String>>, log_config: Option<String>, network: Option<String>, self_link: Option<String>, priority: Option<i64>, source_tags: Option<Vec<String>>, target_tags: Option<Vec<String>>, name: Option<String>, target_service_accounts: Option<Vec<String>>, params: Option<String>, destination_ranges: Option<Vec<String>>, kind: Option<String>, direction: Option<String>, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -46,7 +46,7 @@ impl<'a> Firewall<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, creation_timestamp: Option<String>, source_ranges: Option<Vec<String>>, network: Option<String>, allowed: Option<Vec<String>>, destination_ranges: Option<Vec<String>>, id: Option<String>, name: Option<String>, direction: Option<String>, target_tags: Option<Vec<String>>, description: Option<String>, self_link: Option<String>, source_service_accounts: Option<Vec<String>>, disabled: Option<bool>, priority: Option<i64>, params: Option<String>, denied: Option<Vec<String>>, kind: Option<String>, log_config: Option<String>, source_tags: Option<Vec<String>>, enable_logging: Option<bool>, target_service_accounts: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, source_ranges: Option<Vec<String>>, source_service_accounts: Option<Vec<String>>, allowed: Option<Vec<String>>, creation_timestamp: Option<String>, disabled: Option<bool>, enable_logging: Option<bool>, id: Option<String>, denied: Option<Vec<String>>, log_config: Option<String>, network: Option<String>, self_link: Option<String>, priority: Option<i64>, source_tags: Option<Vec<String>>, target_tags: Option<Vec<String>>, name: Option<String>, target_service_accounts: Option<Vec<String>>, params: Option<String>, destination_ranges: Option<Vec<String>>, kind: Option<String>, direction: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

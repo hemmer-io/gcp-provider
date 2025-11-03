@@ -21,7 +21,7 @@ impl<'a> Intercept_deployment_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, reconciling: Option<bool>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, connected_endpoint_groups: Option<Vec<String>>, nested_deployments: Option<Vec<String>>, locations: Option<Vec<String>>, network: Option<String>, state: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, network: Option<String>, update_time: Option<String>, connected_endpoint_groups: Option<Vec<String>>, locations: Option<Vec<String>>, create_time: Option<String>, nested_deployments: Option<Vec<String>>, state: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, reconciling: Option<bool>, description: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Intercept_deployment_group<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, reconciling: Option<bool>, update_time: Option<String>, name: Option<String>, create_time: Option<String>, description: Option<String>, labels: Option<HashMap<String, String>>, connected_endpoint_groups: Option<Vec<String>>, nested_deployments: Option<Vec<String>>, locations: Option<Vec<String>>, network: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, network: Option<String>, update_time: Option<String>, connected_endpoint_groups: Option<Vec<String>>, locations: Option<Vec<String>>, create_time: Option<String>, nested_deployments: Option<Vec<String>>, state: Option<String>, name: Option<String>, labels: Option<HashMap<String, String>>, reconciling: Option<bool>, description: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

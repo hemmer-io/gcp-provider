@@ -24,6 +24,9 @@ impl<'a> Observability_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "scope" => {
+                self.plan_scope(current_state, desired_input).await
+            }
             "trace_scope" => {
                 self.plan_trace_scope(current_state, desired_input).await
             }
@@ -32,9 +35,6 @@ impl<'a> Observability_apiService<'a> {
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
-            }
-            "scope" => {
-                self.plan_scope(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -51,6 +51,9 @@ impl<'a> Observability_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "scope" => {
+                self.create_scope(input).await
+            }
             "trace_scope" => {
                 self.create_trace_scope(input).await
             }
@@ -59,9 +62,6 @@ impl<'a> Observability_apiService<'a> {
             }
             "operation" => {
                 self.create_operation(input).await
-            }
-            "scope" => {
-                self.create_scope(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -78,6 +78,9 @@ impl<'a> Observability_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "scope" => {
+                self.read_scope(id).await
+            }
             "trace_scope" => {
                 self.read_trace_scope(id).await
             }
@@ -86,9 +89,6 @@ impl<'a> Observability_apiService<'a> {
             }
             "operation" => {
                 self.read_operation(id).await
-            }
-            "scope" => {
-                self.read_scope(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -106,6 +106,9 @@ impl<'a> Observability_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "scope" => {
+                self.update_scope(id, input).await
+            }
             "trace_scope" => {
                 self.update_trace_scope(id, input).await
             }
@@ -114,9 +117,6 @@ impl<'a> Observability_apiService<'a> {
             }
             "operation" => {
                 self.update_operation(id, input).await
-            }
-            "scope" => {
-                self.update_scope(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -133,6 +133,9 @@ impl<'a> Observability_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "scope" => {
+                self.delete_scope(id).await
+            }
             "trace_scope" => {
                 self.delete_trace_scope(id).await
             }
@@ -141,9 +144,6 @@ impl<'a> Observability_apiService<'a> {
             }
             "operation" => {
                 self.delete_operation(id).await
-            }
-            "scope" => {
-                self.delete_scope(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -156,6 +156,67 @@ impl<'a> Observability_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Scope resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a scope resource
+    async fn plan_scope(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new scope resource
+    async fn create_scope(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a scope resource
+    async fn read_scope(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a scope resource
+    async fn update_scope(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a scope resource
+    async fn delete_scope(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -333,67 +394,6 @@ impl<'a> Observability_apiService<'a> {
 
     /// Delete a operation resource
     async fn delete_operation(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Scope resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a scope resource
-    async fn plan_scope(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new scope resource
-    async fn create_scope(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a scope resource
-    async fn read_scope(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a scope resource
-    async fn update_scope(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a scope resource
-    async fn delete_scope(
         &self,
         id: &str,
     ) -> Result<()> {

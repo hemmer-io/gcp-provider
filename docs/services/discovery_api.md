@@ -33,9 +33,9 @@ Retrieve the list of APIs supported at this endpoint.
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `kind` | String | The kind for this response. |
-| `discovery_version` | String | Indicate the version of the Discovery API used to generate this doc. |
 | `items` | Vec<String> | The individual directory entries. One entry per api/version pair. |
+| `discovery_version` | String | Indicate the version of the Discovery API used to generate this doc. |
+| `kind` | String | The kind for this response. |
 
 
 #### Usage Example
@@ -51,9 +51,9 @@ provider = gcp.GcpProvider {
 
 # Access api outputs
 api_id = api.id
-api_kind = api.kind
-api_discovery_version = api.discovery_version
 api_items = api.items
+api_discovery_version = api.discovery_version
+api_kind = api.kind
 ```
 
 ---

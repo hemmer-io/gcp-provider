@@ -1,6 +1,6 @@
 //! Crypto_key resource
 //!
-//! Returns cryptographic keys managed by Cloud KMS in a given Cloud project. Note that this data is sourced from snapshots, meaning it may not completely reflect the actual state of key metadata at call time.
+//! Returns aggregate information about the resources protected by the given Cloud KMS CryptoKey. Only resources within the same Cloud organization as the key will be returned. The project that holds the key must be part of an organization in order for this call to succeed.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

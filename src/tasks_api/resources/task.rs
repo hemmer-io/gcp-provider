@@ -21,7 +21,7 @@ impl<'a> Task<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, assignment_info: Option<String>, deleted: Option<bool>, due: Option<String>, self_link: Option<String>, web_view_link: Option<String>, id: Option<String>, position: Option<String>, notes: Option<String>, links: Option<Vec<String>>, hidden: Option<bool>, updated: Option<String>, parent: Option<String>, completed: Option<String>, etag: Option<String>, kind: Option<String>, status: Option<String>, title: Option<String>, tasklist: String) -> Result<String> {
+    pub async fn create(&self, updated: Option<String>, etag: Option<String>, parent: Option<String>, notes: Option<String>, status: Option<String>, deleted: Option<bool>, assignment_info: Option<String>, id: Option<String>, kind: Option<String>, completed: Option<String>, self_link: Option<String>, due: Option<String>, links: Option<Vec<String>>, position: Option<String>, web_view_link: Option<String>, title: Option<String>, hidden: Option<bool>, tasklist: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Task<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, assignment_info: Option<String>, deleted: Option<bool>, due: Option<String>, self_link: Option<String>, web_view_link: Option<String>, id: Option<String>, position: Option<String>, notes: Option<String>, links: Option<Vec<String>>, hidden: Option<bool>, updated: Option<String>, parent: Option<String>, completed: Option<String>, etag: Option<String>, kind: Option<String>, status: Option<String>, title: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, updated: Option<String>, etag: Option<String>, parent: Option<String>, notes: Option<String>, status: Option<String>, deleted: Option<bool>, assignment_info: Option<String>, id: Option<String>, kind: Option<String>, completed: Option<String>, self_link: Option<String>, due: Option<String>, links: Option<Vec<String>>, position: Option<String>, web_view_link: Option<String>, title: Option<String>, hidden: Option<bool>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

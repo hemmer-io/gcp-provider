@@ -24,29 +24,29 @@ impl<'a> Calendar_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "channel" => {
-                self.plan_channel(current_state, desired_input).await
+            "setting" => {
+                self.plan_setting(current_state, desired_input).await
             }
             "acl" => {
                 self.plan_acl(current_state, desired_input).await
             }
-            "freebusy" => {
-                self.plan_freebusy(current_state, desired_input).await
+            "calendar_list" => {
+                self.plan_calendar_list(current_state, desired_input).await
             }
             "calendar" => {
                 self.plan_calendar(current_state, desired_input).await
+            }
+            "freebusy" => {
+                self.plan_freebusy(current_state, desired_input).await
+            }
+            "channel" => {
+                self.plan_channel(current_state, desired_input).await
             }
             "color" => {
                 self.plan_color(current_state, desired_input).await
             }
             "event" => {
                 self.plan_event(current_state, desired_input).await
-            }
-            "calendar_list" => {
-                self.plan_calendar_list(current_state, desired_input).await
-            }
-            "setting" => {
-                self.plan_setting(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -63,29 +63,29 @@ impl<'a> Calendar_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "channel" => {
-                self.create_channel(input).await
+            "setting" => {
+                self.create_setting(input).await
             }
             "acl" => {
                 self.create_acl(input).await
             }
-            "freebusy" => {
-                self.create_freebusy(input).await
+            "calendar_list" => {
+                self.create_calendar_list(input).await
             }
             "calendar" => {
                 self.create_calendar(input).await
+            }
+            "freebusy" => {
+                self.create_freebusy(input).await
+            }
+            "channel" => {
+                self.create_channel(input).await
             }
             "color" => {
                 self.create_color(input).await
             }
             "event" => {
                 self.create_event(input).await
-            }
-            "calendar_list" => {
-                self.create_calendar_list(input).await
-            }
-            "setting" => {
-                self.create_setting(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -102,29 +102,29 @@ impl<'a> Calendar_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "channel" => {
-                self.read_channel(id).await
+            "setting" => {
+                self.read_setting(id).await
             }
             "acl" => {
                 self.read_acl(id).await
             }
-            "freebusy" => {
-                self.read_freebusy(id).await
+            "calendar_list" => {
+                self.read_calendar_list(id).await
             }
             "calendar" => {
                 self.read_calendar(id).await
+            }
+            "freebusy" => {
+                self.read_freebusy(id).await
+            }
+            "channel" => {
+                self.read_channel(id).await
             }
             "color" => {
                 self.read_color(id).await
             }
             "event" => {
                 self.read_event(id).await
-            }
-            "calendar_list" => {
-                self.read_calendar_list(id).await
-            }
-            "setting" => {
-                self.read_setting(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -142,29 +142,29 @@ impl<'a> Calendar_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "channel" => {
-                self.update_channel(id, input).await
+            "setting" => {
+                self.update_setting(id, input).await
             }
             "acl" => {
                 self.update_acl(id, input).await
             }
-            "freebusy" => {
-                self.update_freebusy(id, input).await
+            "calendar_list" => {
+                self.update_calendar_list(id, input).await
             }
             "calendar" => {
                 self.update_calendar(id, input).await
+            }
+            "freebusy" => {
+                self.update_freebusy(id, input).await
+            }
+            "channel" => {
+                self.update_channel(id, input).await
             }
             "color" => {
                 self.update_color(id, input).await
             }
             "event" => {
                 self.update_event(id, input).await
-            }
-            "calendar_list" => {
-                self.update_calendar_list(id, input).await
-            }
-            "setting" => {
-                self.update_setting(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -181,29 +181,29 @@ impl<'a> Calendar_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "channel" => {
-                self.delete_channel(id).await
+            "setting" => {
+                self.delete_setting(id).await
             }
             "acl" => {
                 self.delete_acl(id).await
             }
-            "freebusy" => {
-                self.delete_freebusy(id).await
+            "calendar_list" => {
+                self.delete_calendar_list(id).await
             }
             "calendar" => {
                 self.delete_calendar(id).await
+            }
+            "freebusy" => {
+                self.delete_freebusy(id).await
+            }
+            "channel" => {
+                self.delete_channel(id).await
             }
             "color" => {
                 self.delete_color(id).await
             }
             "event" => {
                 self.delete_event(id).await
-            }
-            "calendar_list" => {
-                self.delete_calendar_list(id).await
-            }
-            "setting" => {
-                self.delete_setting(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -219,11 +219,11 @@ impl<'a> Calendar_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Channel resource operations
+    // Setting resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a channel resource
-    async fn plan_channel(
+    /// Plan changes to a setting resource
+    async fn plan_setting(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -238,8 +238,8 @@ impl<'a> Calendar_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new channel resource
-    async fn create_channel(
+    /// Create a new setting resource
+    async fn create_setting(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -248,8 +248,8 @@ impl<'a> Calendar_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a channel resource
-    async fn read_channel(
+    /// Read a setting resource
+    async fn read_setting(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -258,8 +258,8 @@ impl<'a> Calendar_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a channel resource
-    async fn update_channel(
+    /// Update a setting resource
+    async fn update_setting(
         &self,
         id: &str,
         input: ResourceInput,
@@ -269,8 +269,8 @@ impl<'a> Calendar_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a channel resource
-    async fn delete_channel(
+    /// Delete a setting resource
+    async fn delete_setting(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -341,11 +341,11 @@ impl<'a> Calendar_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Freebusy resource operations
+    // Calendar_list resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a freebusy resource
-    async fn plan_freebusy(
+    /// Plan changes to a calendar_list resource
+    async fn plan_calendar_list(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -360,8 +360,8 @@ impl<'a> Calendar_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new freebusy resource
-    async fn create_freebusy(
+    /// Create a new calendar_list resource
+    async fn create_calendar_list(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -370,8 +370,8 @@ impl<'a> Calendar_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a freebusy resource
-    async fn read_freebusy(
+    /// Read a calendar_list resource
+    async fn read_calendar_list(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -380,8 +380,8 @@ impl<'a> Calendar_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a freebusy resource
-    async fn update_freebusy(
+    /// Update a calendar_list resource
+    async fn update_calendar_list(
         &self,
         id: &str,
         input: ResourceInput,
@@ -391,8 +391,8 @@ impl<'a> Calendar_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a freebusy resource
-    async fn delete_freebusy(
+    /// Delete a calendar_list resource
+    async fn delete_calendar_list(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -454,6 +454,128 @@ impl<'a> Calendar_apiService<'a> {
 
     /// Delete a calendar resource
     async fn delete_calendar(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Freebusy resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a freebusy resource
+    async fn plan_freebusy(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new freebusy resource
+    async fn create_freebusy(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a freebusy resource
+    async fn read_freebusy(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a freebusy resource
+    async fn update_freebusy(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a freebusy resource
+    async fn delete_freebusy(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Channel resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a channel resource
+    async fn plan_channel(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new channel resource
+    async fn create_channel(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a channel resource
+    async fn read_channel(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a channel resource
+    async fn update_channel(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a channel resource
+    async fn delete_channel(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -576,128 +698,6 @@ impl<'a> Calendar_apiService<'a> {
 
     /// Delete a event resource
     async fn delete_event(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Calendar_list resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a calendar_list resource
-    async fn plan_calendar_list(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new calendar_list resource
-    async fn create_calendar_list(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a calendar_list resource
-    async fn read_calendar_list(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a calendar_list resource
-    async fn update_calendar_list(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a calendar_list resource
-    async fn delete_calendar_list(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Setting resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a setting resource
-    async fn plan_setting(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new setting resource
-    async fn create_setting(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a setting resource
-    async fn read_setting(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a setting resource
-    async fn update_setting(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a setting resource
-    async fn delete_setting(
         &self,
         id: &str,
     ) -> Result<()> {

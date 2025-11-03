@@ -21,7 +21,7 @@ impl<'a> Web_app<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, api_key_id: Option<String>, expire_time: Option<String>, name: Option<String>, app_urls: Option<Vec<String>>, state: Option<String>, app_id: Option<String>, display_name: Option<String>, web_id: Option<String>, project_id: Option<String>, etag: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, app_urls: Option<Vec<String>>, state: Option<String>, api_key_id: Option<String>, name: Option<String>, project_id: Option<String>, app_id: Option<String>, display_name: Option<String>, web_id: Option<String>, etag: Option<String>, expire_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Web_app<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, api_key_id: Option<String>, expire_time: Option<String>, name: Option<String>, app_urls: Option<Vec<String>>, state: Option<String>, app_id: Option<String>, display_name: Option<String>, web_id: Option<String>, project_id: Option<String>, etag: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, app_urls: Option<Vec<String>>, state: Option<String>, api_key_id: Option<String>, name: Option<String>, project_id: Option<String>, app_id: Option<String>, display_name: Option<String>, web_id: Option<String>, etag: Option<String>, expire_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

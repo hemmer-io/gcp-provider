@@ -24,14 +24,14 @@ impl<'a> Consumersurveys_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "mobileapppanel" => {
-                self.plan_mobileapppanel(current_state, desired_input).await
+            "result" => {
+                self.plan_result(current_state, desired_input).await
             }
             "survey" => {
                 self.plan_survey(current_state, desired_input).await
             }
-            "result" => {
-                self.plan_result(current_state, desired_input).await
+            "mobileapppanel" => {
+                self.plan_mobileapppanel(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -48,14 +48,14 @@ impl<'a> Consumersurveys_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "mobileapppanel" => {
-                self.create_mobileapppanel(input).await
+            "result" => {
+                self.create_result(input).await
             }
             "survey" => {
                 self.create_survey(input).await
             }
-            "result" => {
-                self.create_result(input).await
+            "mobileapppanel" => {
+                self.create_mobileapppanel(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -72,14 +72,14 @@ impl<'a> Consumersurveys_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "mobileapppanel" => {
-                self.read_mobileapppanel(id).await
+            "result" => {
+                self.read_result(id).await
             }
             "survey" => {
                 self.read_survey(id).await
             }
-            "result" => {
-                self.read_result(id).await
+            "mobileapppanel" => {
+                self.read_mobileapppanel(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -97,14 +97,14 @@ impl<'a> Consumersurveys_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "mobileapppanel" => {
-                self.update_mobileapppanel(id, input).await
+            "result" => {
+                self.update_result(id, input).await
             }
             "survey" => {
                 self.update_survey(id, input).await
             }
-            "result" => {
-                self.update_result(id, input).await
+            "mobileapppanel" => {
+                self.update_mobileapppanel(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -121,14 +121,14 @@ impl<'a> Consumersurveys_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "mobileapppanel" => {
-                self.delete_mobileapppanel(id).await
+            "result" => {
+                self.delete_result(id).await
             }
             "survey" => {
                 self.delete_survey(id).await
             }
-            "result" => {
-                self.delete_result(id).await
+            "mobileapppanel" => {
+                self.delete_mobileapppanel(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -144,11 +144,11 @@ impl<'a> Consumersurveys_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Mobileapppanel resource operations
+    // Result resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a mobileapppanel resource
-    async fn plan_mobileapppanel(
+    /// Plan changes to a result resource
+    async fn plan_result(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -163,8 +163,8 @@ impl<'a> Consumersurveys_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new mobileapppanel resource
-    async fn create_mobileapppanel(
+    /// Create a new result resource
+    async fn create_result(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -173,8 +173,8 @@ impl<'a> Consumersurveys_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a mobileapppanel resource
-    async fn read_mobileapppanel(
+    /// Read a result resource
+    async fn read_result(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -183,8 +183,8 @@ impl<'a> Consumersurveys_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a mobileapppanel resource
-    async fn update_mobileapppanel(
+    /// Update a result resource
+    async fn update_result(
         &self,
         id: &str,
         input: ResourceInput,
@@ -194,8 +194,8 @@ impl<'a> Consumersurveys_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a mobileapppanel resource
-    async fn delete_mobileapppanel(
+    /// Delete a result resource
+    async fn delete_result(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -266,11 +266,11 @@ impl<'a> Consumersurveys_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Result resource operations
+    // Mobileapppanel resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a result resource
-    async fn plan_result(
+    /// Plan changes to a mobileapppanel resource
+    async fn plan_mobileapppanel(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -285,8 +285,8 @@ impl<'a> Consumersurveys_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new result resource
-    async fn create_result(
+    /// Create a new mobileapppanel resource
+    async fn create_mobileapppanel(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -295,8 +295,8 @@ impl<'a> Consumersurveys_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a result resource
-    async fn read_result(
+    /// Read a mobileapppanel resource
+    async fn read_mobileapppanel(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -305,8 +305,8 @@ impl<'a> Consumersurveys_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a result resource
-    async fn update_result(
+    /// Update a mobileapppanel resource
+    async fn update_mobileapppanel(
         &self,
         id: &str,
         input: ResourceInput,
@@ -316,8 +316,8 @@ impl<'a> Consumersurveys_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a result resource
-    async fn delete_result(
+    /// Delete a mobileapppanel resource
+    async fn delete_mobileapppanel(
         &self,
         id: &str,
     ) -> Result<()> {

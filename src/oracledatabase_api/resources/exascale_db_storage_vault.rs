@@ -21,7 +21,7 @@ impl<'a> Exascale_db_storage_vault<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, labels: Option<HashMap<String, String>>, properties: Option<String>, entitlement_id: Option<String>, display_name: Option<String>, gcp_oracle_zone: Option<String>, create_time: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, create_time: Option<String>, entitlement_id: Option<String>, display_name: Option<String>, gcp_oracle_zone: Option<String>, labels: Option<HashMap<String, String>>, properties: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

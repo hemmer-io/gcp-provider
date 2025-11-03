@@ -34,7 +34,7 @@ impl<'a> Preview_feature<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, status: Option<String>, name: Option<String>, self_link: Option<String>, kind: Option<String>, activation_status: Option<String>, id: Option<String>, rollout_operation: Option<String>, creation_timestamp: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, self_link: Option<String>, description: Option<String>, status: Option<String>, activation_status: Option<String>, kind: Option<String>, name: Option<String>, id: Option<String>, rollout_operation: Option<String>, creation_timestamp: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

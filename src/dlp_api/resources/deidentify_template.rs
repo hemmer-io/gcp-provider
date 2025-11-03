@@ -21,7 +21,7 @@ impl<'a> Deidentify_template<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, location_id: Option<String>, template_id: Option<String>, deidentify_template: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, deidentify_template: Option<String>, location_id: Option<String>, template_id: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Deidentify_template<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, location_id: Option<String>, template_id: Option<String>, deidentify_template: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, deidentify_template: Option<String>, location_id: Option<String>, template_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

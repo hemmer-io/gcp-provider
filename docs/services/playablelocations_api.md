@@ -19,7 +19,7 @@ The playablelocations_api service provides access to 1 resource type:
 
 ### Playablelocation
 
-Returns a set of playable locations that lie within a specified area, that satisfy optional filter criteria. Note: Identical `SamplePlayableLocations` requests can return different results as the state of the world changes over time.
+Logs bad playable location reports submitted by players. Reports are not partially saved; either all reports are saved and this request succeeds, or no reports are saved, and this request fails.
 
 **Operations**: ✅ Create
 
@@ -27,8 +27,9 @@ Returns a set of playable locations that lie within a specified area, that satis
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `criteria` | Vec<String> |  | Required. Specifies one or more (up to 5) criteria for filtering the returned playable locations. |
-| `area_filter` | String |  | Required. Specifies the area to search within for playable locations. |
+| `client_info` | String |  | Required. Information about the client device (for example, device model and operating system). |
+| `player_reports` | Vec<String> |  | Required. Player reports. The maximum number of player reports that you can log at once is 50. |
+| `request_id` | String |  | Required. A string that uniquely identifies the log player reports request. This allows you to detect duplicate requests. We recommend that you use UUIDs for this value. The value must not exceed 50 characters. You should reuse the `request_id` only when retrying a request in the case of a failure. In that case, the request must be identical to the one that failed. |
 
 
 

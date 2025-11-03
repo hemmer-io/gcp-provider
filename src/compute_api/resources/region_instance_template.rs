@@ -22,7 +22,7 @@ impl<'a> Region_instance_template<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, name: Option<String>, id: Option<String>, properties: Option<String>, region: Option<String>, self_link: Option<String>, description: Option<String>, source_instance: Option<String>, creation_timestamp: Option<String>, source_instance_params: Option<String>, kind: Option<String>, project: String, region: String) -> Result<String> {
+    pub async fn create(&self, self_link: Option<String>, source_instance: Option<String>, name: Option<String>, source_instance_params: Option<String>, description: Option<String>, id: Option<String>, kind: Option<String>, creation_timestamp: Option<String>, properties: Option<String>, region: Option<String>, region: String, project: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

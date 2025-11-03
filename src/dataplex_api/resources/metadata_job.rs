@@ -21,7 +21,7 @@ impl<'a> Metadata_job<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, export_spec: Option<String>, create_time: Option<String>, type: Option<String>, uid: Option<String>, import_spec: Option<String>, labels: Option<HashMap<String, String>>, update_time: Option<String>, status: Option<String>, import_result: Option<String>, name: Option<String>, export_result: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, export_spec: Option<String>, export_result: Option<String>, name: Option<String>, create_time: Option<String>, import_result: Option<String>, labels: Option<HashMap<String, String>>, type: Option<String>, uid: Option<String>, update_time: Option<String>, import_spec: Option<String>, status: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

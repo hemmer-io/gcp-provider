@@ -21,7 +21,7 @@ impl<'a> Freebusy<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, group_expansion_max: Option<i64>, items: Option<Vec<String>>, time_min: Option<String>, calendar_expansion_max: Option<i64>, time_max: Option<String>, time_zone: Option<String>) -> Result<String> {
+    pub async fn create(&self, time_zone: Option<String>, group_expansion_max: Option<i64>, time_min: Option<String>, calendar_expansion_max: Option<i64>, time_max: Option<String>, items: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

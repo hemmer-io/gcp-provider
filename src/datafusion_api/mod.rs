@@ -24,14 +24,14 @@ impl<'a> Datafusion_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "dns_peering" => {
-                self.plan_dns_peering(current_state, desired_input).await
+            "instance" => {
+                self.plan_instance(current_state, desired_input).await
             }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
-            "instance" => {
-                self.plan_instance(current_state, desired_input).await
+            "dns_peering" => {
+                self.plan_dns_peering(current_state, desired_input).await
             }
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
@@ -39,14 +39,8 @@ impl<'a> Datafusion_apiService<'a> {
             "version" => {
                 self.plan_version(current_state, desired_input).await
             }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
-            }
             "instance" => {
                 self.plan_instance(current_state, desired_input).await
-            }
-            "version" => {
-                self.plan_version(current_state, desired_input).await
             }
             "namespace" => {
                 self.plan_namespace(current_state, desired_input).await
@@ -54,8 +48,14 @@ impl<'a> Datafusion_apiService<'a> {
             "operation" => {
                 self.plan_operation(current_state, desired_input).await
             }
+            "location" => {
+                self.plan_location(current_state, desired_input).await
+            }
             "dns_peering" => {
                 self.plan_dns_peering(current_state, desired_input).await
+            }
+            "version" => {
+                self.plan_version(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -72,14 +72,14 @@ impl<'a> Datafusion_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "dns_peering" => {
-                self.create_dns_peering(input).await
+            "instance" => {
+                self.create_instance(input).await
             }
             "location" => {
                 self.create_location(input).await
             }
-            "instance" => {
-                self.create_instance(input).await
+            "dns_peering" => {
+                self.create_dns_peering(input).await
             }
             "operation" => {
                 self.create_operation(input).await
@@ -87,14 +87,8 @@ impl<'a> Datafusion_apiService<'a> {
             "version" => {
                 self.create_version(input).await
             }
-            "location" => {
-                self.create_location(input).await
-            }
             "instance" => {
                 self.create_instance(input).await
-            }
-            "version" => {
-                self.create_version(input).await
             }
             "namespace" => {
                 self.create_namespace(input).await
@@ -102,8 +96,14 @@ impl<'a> Datafusion_apiService<'a> {
             "operation" => {
                 self.create_operation(input).await
             }
+            "location" => {
+                self.create_location(input).await
+            }
             "dns_peering" => {
                 self.create_dns_peering(input).await
+            }
+            "version" => {
+                self.create_version(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -120,14 +120,14 @@ impl<'a> Datafusion_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "dns_peering" => {
-                self.read_dns_peering(id).await
+            "instance" => {
+                self.read_instance(id).await
             }
             "location" => {
                 self.read_location(id).await
             }
-            "instance" => {
-                self.read_instance(id).await
+            "dns_peering" => {
+                self.read_dns_peering(id).await
             }
             "operation" => {
                 self.read_operation(id).await
@@ -135,14 +135,8 @@ impl<'a> Datafusion_apiService<'a> {
             "version" => {
                 self.read_version(id).await
             }
-            "location" => {
-                self.read_location(id).await
-            }
             "instance" => {
                 self.read_instance(id).await
-            }
-            "version" => {
-                self.read_version(id).await
             }
             "namespace" => {
                 self.read_namespace(id).await
@@ -150,8 +144,14 @@ impl<'a> Datafusion_apiService<'a> {
             "operation" => {
                 self.read_operation(id).await
             }
+            "location" => {
+                self.read_location(id).await
+            }
             "dns_peering" => {
                 self.read_dns_peering(id).await
+            }
+            "version" => {
+                self.read_version(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -169,14 +169,14 @@ impl<'a> Datafusion_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "dns_peering" => {
-                self.update_dns_peering(id, input).await
+            "instance" => {
+                self.update_instance(id, input).await
             }
             "location" => {
                 self.update_location(id, input).await
             }
-            "instance" => {
-                self.update_instance(id, input).await
+            "dns_peering" => {
+                self.update_dns_peering(id, input).await
             }
             "operation" => {
                 self.update_operation(id, input).await
@@ -184,14 +184,8 @@ impl<'a> Datafusion_apiService<'a> {
             "version" => {
                 self.update_version(id, input).await
             }
-            "location" => {
-                self.update_location(id, input).await
-            }
             "instance" => {
                 self.update_instance(id, input).await
-            }
-            "version" => {
-                self.update_version(id, input).await
             }
             "namespace" => {
                 self.update_namespace(id, input).await
@@ -199,8 +193,14 @@ impl<'a> Datafusion_apiService<'a> {
             "operation" => {
                 self.update_operation(id, input).await
             }
+            "location" => {
+                self.update_location(id, input).await
+            }
             "dns_peering" => {
                 self.update_dns_peering(id, input).await
+            }
+            "version" => {
+                self.update_version(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -217,14 +217,14 @@ impl<'a> Datafusion_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "dns_peering" => {
-                self.delete_dns_peering(id).await
+            "instance" => {
+                self.delete_instance(id).await
             }
             "location" => {
                 self.delete_location(id).await
             }
-            "instance" => {
-                self.delete_instance(id).await
+            "dns_peering" => {
+                self.delete_dns_peering(id).await
             }
             "operation" => {
                 self.delete_operation(id).await
@@ -232,14 +232,8 @@ impl<'a> Datafusion_apiService<'a> {
             "version" => {
                 self.delete_version(id).await
             }
-            "location" => {
-                self.delete_location(id).await
-            }
             "instance" => {
                 self.delete_instance(id).await
-            }
-            "version" => {
-                self.delete_version(id).await
             }
             "namespace" => {
                 self.delete_namespace(id).await
@@ -247,8 +241,14 @@ impl<'a> Datafusion_apiService<'a> {
             "operation" => {
                 self.delete_operation(id).await
             }
+            "location" => {
+                self.delete_location(id).await
+            }
             "dns_peering" => {
                 self.delete_dns_peering(id).await
+            }
+            "version" => {
+                self.delete_version(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -264,11 +264,11 @@ impl<'a> Datafusion_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Dns_peering resource operations
+    // Instance resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a dns_peering resource
-    async fn plan_dns_peering(
+    /// Plan changes to a instance resource
+    async fn plan_instance(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -283,8 +283,8 @@ impl<'a> Datafusion_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new dns_peering resource
-    async fn create_dns_peering(
+    /// Create a new instance resource
+    async fn create_instance(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -293,8 +293,8 @@ impl<'a> Datafusion_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a dns_peering resource
-    async fn read_dns_peering(
+    /// Read a instance resource
+    async fn read_instance(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -303,8 +303,8 @@ impl<'a> Datafusion_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a dns_peering resource
-    async fn update_dns_peering(
+    /// Update a instance resource
+    async fn update_instance(
         &self,
         id: &str,
         input: ResourceInput,
@@ -314,8 +314,8 @@ impl<'a> Datafusion_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a dns_peering resource
-    async fn delete_dns_peering(
+    /// Delete a instance resource
+    async fn delete_instance(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -386,11 +386,11 @@ impl<'a> Datafusion_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Instance resource operations
+    // Dns_peering resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a instance resource
-    async fn plan_instance(
+    /// Plan changes to a dns_peering resource
+    async fn plan_dns_peering(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -405,8 +405,8 @@ impl<'a> Datafusion_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new instance resource
-    async fn create_instance(
+    /// Create a new dns_peering resource
+    async fn create_dns_peering(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -415,8 +415,8 @@ impl<'a> Datafusion_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a instance resource
-    async fn read_instance(
+    /// Read a dns_peering resource
+    async fn read_dns_peering(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -425,8 +425,8 @@ impl<'a> Datafusion_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a instance resource
-    async fn update_instance(
+    /// Update a dns_peering resource
+    async fn update_dns_peering(
         &self,
         id: &str,
         input: ResourceInput,
@@ -436,8 +436,8 @@ impl<'a> Datafusion_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a instance resource
-    async fn delete_instance(
+    /// Delete a dns_peering resource
+    async fn delete_dns_peering(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -569,67 +569,6 @@ impl<'a> Datafusion_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Location resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a location resource
-    async fn plan_location(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new location resource
-    async fn create_location(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a location resource
-    async fn read_location(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a location resource
-    async fn update_location(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a location resource
-    async fn delete_location(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Instance resource operations
     // ------------------------------------------------------------------------
 
@@ -682,67 +621,6 @@ impl<'a> Datafusion_apiService<'a> {
 
     /// Delete a instance resource
     async fn delete_instance(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Version resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a version resource
-    async fn plan_version(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new version resource
-    async fn create_version(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a version resource
-    async fn read_version(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a version resource
-    async fn update_version(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a version resource
-    async fn delete_version(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -874,6 +752,67 @@ impl<'a> Datafusion_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Dns_peering resource operations
     // ------------------------------------------------------------------------
 
@@ -926,6 +865,67 @@ impl<'a> Datafusion_apiService<'a> {
 
     /// Delete a dns_peering resource
     async fn delete_dns_peering(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Version resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a version resource
+    async fn plan_version(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new version resource
+    async fn create_version(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a version resource
+    async fn read_version(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a version resource
+    async fn update_version(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a version resource
+    async fn delete_version(
         &self,
         id: &str,
     ) -> Result<()> {

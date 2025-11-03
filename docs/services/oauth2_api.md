@@ -10,9 +10,9 @@
 
 The oauth2_api service provides access to 6 resource types:
 
+- [Me](#me) [R]
 - [Oauth2](#oauth2) [C]
 - [Userinfo](#userinfo) [R]
-- [Me](#me) [R]
 - [Userinfo](#userinfo) [R]
 - [Me](#me) [R]
 - [Oauth2](#oauth2) [C]
@@ -20,6 +20,64 @@ The oauth2_api service provides access to 6 resource types:
 ---
 
 ## Resources
+
+
+### Me
+
+Get user info
+
+**Operations**: ✅ Read
+
+#### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+
+
+#### Outputs
+
+| Output | Type | Description |
+|--------|------|-------------|
+| `hd` | String | The hosted domain e.g. example.com if the user is Google apps user. |
+| `email` | String | The user's email address. |
+| `link` | String | URL of the profile page. |
+| `given_name` | String | The user's first name. |
+| `picture` | String | URL of the user's picture image. |
+| `verified_email` | bool | Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address. |
+| `family_name` | String | The user's last name. |
+| `gender` | String | The user's gender. |
+| `locale` | String | The user's preferred locale. |
+| `name` | String | The user's full name. |
+| `id` | String | The obfuscated ID of the user. |
+
+
+#### Usage Example
+
+```kcl
+# main.k
+import gcp
+
+# Initialize provider
+provider = gcp.GcpProvider {
+    project = "my-project-id"
+}
+
+# Access me outputs
+me_id = me.id
+me_hd = me.hd
+me_email = me.email
+me_link = me.link
+me_given_name = me.given_name
+me_picture = me.picture
+me_verified_email = me.verified_email
+me_family_name = me.family_name
+me_gender = me.gender
+me_locale = me.locale
+me_name = me.name
+me_id = me.id
+```
+
+---
 
 
 ### Oauth2
@@ -71,17 +129,17 @@ Get user info
 
 | Output | Type | Description |
 |--------|------|-------------|
+| `hd` | String | The hosted domain e.g. example.com if the user is Google apps user. |
+| `email` | String | The user's email address. |
+| `link` | String | URL of the profile page. |
+| `given_name` | String | The user's first name. |
 | `picture` | String | URL of the user's picture image. |
 | `verified_email` | bool | Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address. |
-| `email` | String | The user's email address. |
 | `family_name` | String | The user's last name. |
-| `given_name` | String | The user's first name. |
-| `id` | String | The obfuscated ID of the user. |
-| `name` | String | The user's full name. |
 | `gender` | String | The user's gender. |
-| `hd` | String | The hosted domain e.g. example.com if the user is Google apps user. |
-| `link` | String | URL of the profile page. |
 | `locale` | String | The user's preferred locale. |
+| `name` | String | The user's full name. |
+| `id` | String | The obfuscated ID of the user. |
 
 
 #### Usage Example
@@ -97,75 +155,17 @@ provider = gcp.GcpProvider {
 
 # Access userinfo outputs
 userinfo_id = userinfo.id
+userinfo_hd = userinfo.hd
+userinfo_email = userinfo.email
+userinfo_link = userinfo.link
+userinfo_given_name = userinfo.given_name
 userinfo_picture = userinfo.picture
 userinfo_verified_email = userinfo.verified_email
-userinfo_email = userinfo.email
 userinfo_family_name = userinfo.family_name
-userinfo_given_name = userinfo.given_name
-userinfo_id = userinfo.id
-userinfo_name = userinfo.name
 userinfo_gender = userinfo.gender
-userinfo_hd = userinfo.hd
-userinfo_link = userinfo.link
 userinfo_locale = userinfo.locale
-```
-
----
-
-
-### Me
-
-Get user info
-
-**Operations**: ✅ Read
-
-#### Fields
-
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-
-
-#### Outputs
-
-| Output | Type | Description |
-|--------|------|-------------|
-| `picture` | String | URL of the user's picture image. |
-| `verified_email` | bool | Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address. |
-| `email` | String | The user's email address. |
-| `family_name` | String | The user's last name. |
-| `given_name` | String | The user's first name. |
-| `id` | String | The obfuscated ID of the user. |
-| `name` | String | The user's full name. |
-| `gender` | String | The user's gender. |
-| `hd` | String | The hosted domain e.g. example.com if the user is Google apps user. |
-| `link` | String | URL of the profile page. |
-| `locale` | String | The user's preferred locale. |
-
-
-#### Usage Example
-
-```kcl
-# main.k
-import gcp
-
-# Initialize provider
-provider = gcp.GcpProvider {
-    project = "my-project-id"
-}
-
-# Access me outputs
-me_id = me.id
-me_picture = me.picture
-me_verified_email = me.verified_email
-me_email = me.email
-me_family_name = me.family_name
-me_given_name = me.given_name
-me_id = me.id
-me_name = me.name
-me_gender = me.gender
-me_hd = me.hd
-me_link = me.link
-me_locale = me.locale
+userinfo_name = userinfo.name
+userinfo_id = userinfo.id
 ```
 
 ---
@@ -187,17 +187,17 @@ me_locale = me.locale
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `hd` | String | The hosted domain e.g. example.com if the user is Google apps user. |
 | `gender` | String | The user's gender. |
+| `family_name` | String | The user's last name. |
+| `verified_email` | bool | Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address. |
+| `given_name` | String | The user's first name. |
+| `name` | String | The user's full name. |
+| `picture` | String | URL of the user's picture image. |
+| `email` | String | The user's email address. |
+| `id` | String | The obfuscated ID of the user. |
 | `link` | String | URL of the profile page. |
 | `locale` | String | The user's preferred locale. |
-| `name` | String | The user's full name. |
-| `verified_email` | bool | Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address. |
-| `id` | String | The obfuscated ID of the user. |
-| `given_name` | String | The user's first name. |
-| `email` | String | The user's email address. |
-| `picture` | String | URL of the user's picture image. |
-| `family_name` | String | The user's last name. |
+| `hd` | String | The hosted domain e.g. example.com if the user is Google apps user. |
 
 
 #### Usage Example
@@ -213,17 +213,17 @@ provider = gcp.GcpProvider {
 
 # Access userinfo outputs
 userinfo_id = userinfo.id
-userinfo_hd = userinfo.hd
 userinfo_gender = userinfo.gender
+userinfo_family_name = userinfo.family_name
+userinfo_verified_email = userinfo.verified_email
+userinfo_given_name = userinfo.given_name
+userinfo_name = userinfo.name
+userinfo_picture = userinfo.picture
+userinfo_email = userinfo.email
+userinfo_id = userinfo.id
 userinfo_link = userinfo.link
 userinfo_locale = userinfo.locale
-userinfo_name = userinfo.name
-userinfo_verified_email = userinfo.verified_email
-userinfo_id = userinfo.id
-userinfo_given_name = userinfo.given_name
-userinfo_email = userinfo.email
-userinfo_picture = userinfo.picture
-userinfo_family_name = userinfo.family_name
+userinfo_hd = userinfo.hd
 ```
 
 ---
@@ -245,17 +245,17 @@ userinfo_family_name = userinfo.family_name
 
 | Output | Type | Description |
 |--------|------|-------------|
-| `hd` | String | The hosted domain e.g. example.com if the user is Google apps user. |
 | `gender` | String | The user's gender. |
+| `family_name` | String | The user's last name. |
+| `verified_email` | bool | Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address. |
+| `given_name` | String | The user's first name. |
+| `name` | String | The user's full name. |
+| `picture` | String | URL of the user's picture image. |
+| `email` | String | The user's email address. |
+| `id` | String | The obfuscated ID of the user. |
 | `link` | String | URL of the profile page. |
 | `locale` | String | The user's preferred locale. |
-| `name` | String | The user's full name. |
-| `verified_email` | bool | Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address. |
-| `id` | String | The obfuscated ID of the user. |
-| `given_name` | String | The user's first name. |
-| `email` | String | The user's email address. |
-| `picture` | String | URL of the user's picture image. |
-| `family_name` | String | The user's last name. |
+| `hd` | String | The hosted domain e.g. example.com if the user is Google apps user. |
 
 
 #### Usage Example
@@ -271,17 +271,17 @@ provider = gcp.GcpProvider {
 
 # Access me outputs
 me_id = me.id
-me_hd = me.hd
 me_gender = me.gender
+me_family_name = me.family_name
+me_verified_email = me.verified_email
+me_given_name = me.given_name
+me_name = me.name
+me_picture = me.picture
+me_email = me.email
+me_id = me.id
 me_link = me.link
 me_locale = me.locale
-me_name = me.name
-me_verified_email = me.verified_email
-me_id = me.id
-me_given_name = me.given_name
-me_email = me.email
-me_picture = me.picture
-me_family_name = me.family_name
+me_hd = me.hd
 ```
 
 ---
@@ -332,12 +332,12 @@ provider = gcp.GcpProvider {
     project = "my-project-id"
 }
 
-# Create multiple oauth2 resources
-oauth2_0 = provider.oauth2_api.Oauth2 {
+# Create multiple me resources
+me_0 = provider.oauth2_api.Me {
 }
-oauth2_1 = provider.oauth2_api.Oauth2 {
+me_1 = provider.oauth2_api.Me {
 }
-oauth2_2 = provider.oauth2_api.Oauth2 {
+me_2 = provider.oauth2_api.Me {
 }
 ```
 
@@ -346,7 +346,7 @@ oauth2_2 = provider.oauth2_api.Oauth2 {
 ```kcl
 # Only create in production
 if environment == "production":
-    oauth2 = provider.oauth2_api.Oauth2 {
+    me = provider.oauth2_api.Me {
     }
 ```
 

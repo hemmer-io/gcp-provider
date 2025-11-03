@@ -1,6 +1,6 @@
 //! Project resource
 //!
-//! Gets the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project.
+//! Returns the KeyAccessJustificationsPolicyConfig of the resource closest to the given project in hierarchy.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;

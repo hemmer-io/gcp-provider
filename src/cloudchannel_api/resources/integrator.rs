@@ -21,7 +21,7 @@ impl<'a> Integrator<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, integrator: Option<String>, account: Option<String>, service_account: Option<String>, integrator: String) -> Result<String> {
+    pub async fn create(&self, service_account: Option<String>, account: Option<String>, integrator: Option<String>, integrator: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

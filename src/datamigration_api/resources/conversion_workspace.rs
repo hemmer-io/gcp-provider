@@ -21,7 +21,7 @@ impl<'a> Conversion_workspace<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, destination_provider: Option<String>, name: Option<String>, update_time: Option<String>, has_uncommitted_changes: Option<bool>, display_name: Option<String>, create_time: Option<String>, latest_commit_id: Option<String>, global_settings: Option<HashMap<String, String>>, destination: Option<String>, source_provider: Option<String>, latest_commit_time: Option<String>, source: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, has_uncommitted_changes: Option<bool>, destination: Option<String>, latest_commit_time: Option<String>, source_provider: Option<String>, create_time: Option<String>, update_time: Option<String>, name: Option<String>, destination_provider: Option<String>, display_name: Option<String>, latest_commit_id: Option<String>, source: Option<String>, global_settings: Option<HashMap<String, String>>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Conversion_workspace<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, destination_provider: Option<String>, name: Option<String>, update_time: Option<String>, has_uncommitted_changes: Option<bool>, display_name: Option<String>, create_time: Option<String>, latest_commit_id: Option<String>, global_settings: Option<HashMap<String, String>>, destination: Option<String>, source_provider: Option<String>, latest_commit_time: Option<String>, source: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, has_uncommitted_changes: Option<bool>, destination: Option<String>, latest_commit_time: Option<String>, source_provider: Option<String>, create_time: Option<String>, update_time: Option<String>, name: Option<String>, destination_provider: Option<String>, display_name: Option<String>, latest_commit_id: Option<String>, source: Option<String>, global_settings: Option<HashMap<String, String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

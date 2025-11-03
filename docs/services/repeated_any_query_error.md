@@ -27,8 +27,8 @@ Creates one or more log entries in a log. You must supply a list of `LogEntry` o
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `entries` | Vec<String> |  | Log entries to insert. |
 | `common_labels` | HashMap<String, String> |  | Metadata labels that apply to all entries in this request. If one of the log entries contains a (key, value) with the same key that is in `commonLabels`, then the entry's (key, value) overrides the one in `commonLabels`. |
+| `entries` | Vec<String> |  | Log entries to insert. |
 | `projects_id` | String | ✅ | Part of `logName`. The name of the log resource into which to insert the log entries. |
 | `logs_id` | String | ✅ | Part of `logName`. See documentation of `projectsId`. |
 

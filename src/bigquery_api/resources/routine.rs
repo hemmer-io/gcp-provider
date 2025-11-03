@@ -21,7 +21,7 @@ impl<'a> Routine<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, security_mode: Option<String>, spark_options: Option<String>, remote_function_options: Option<String>, routine_reference: Option<String>, arguments: Option<Vec<String>>, return_type: Option<String>, routine_type: Option<String>, strict_mode: Option<bool>, determinism_level: Option<String>, etag: Option<String>, definition_body: Option<String>, return_table_type: Option<String>, python_options: Option<String>, last_modified_time: Option<String>, description: Option<String>, data_governance_type: Option<String>, creation_time: Option<String>, external_runtime_options: Option<String>, language: Option<String>, imported_libraries: Option<Vec<String>>, dataset_id: String, project_id: String) -> Result<String> {
+    pub async fn create(&self, creation_time: Option<String>, description: Option<String>, strict_mode: Option<bool>, routine_reference: Option<String>, determinism_level: Option<String>, etag: Option<String>, external_runtime_options: Option<String>, return_type: Option<String>, python_options: Option<String>, spark_options: Option<String>, routine_type: Option<String>, return_table_type: Option<String>, definition_body: Option<String>, data_governance_type: Option<String>, security_mode: Option<String>, language: Option<String>, arguments: Option<Vec<String>>, imported_libraries: Option<Vec<String>>, last_modified_time: Option<String>, remote_function_options: Option<String>, dataset_id: String, project_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Routine<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, security_mode: Option<String>, spark_options: Option<String>, remote_function_options: Option<String>, routine_reference: Option<String>, arguments: Option<Vec<String>>, return_type: Option<String>, routine_type: Option<String>, strict_mode: Option<bool>, determinism_level: Option<String>, etag: Option<String>, definition_body: Option<String>, return_table_type: Option<String>, python_options: Option<String>, last_modified_time: Option<String>, description: Option<String>, data_governance_type: Option<String>, creation_time: Option<String>, external_runtime_options: Option<String>, language: Option<String>, imported_libraries: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, creation_time: Option<String>, description: Option<String>, strict_mode: Option<bool>, routine_reference: Option<String>, determinism_level: Option<String>, etag: Option<String>, external_runtime_options: Option<String>, return_type: Option<String>, python_options: Option<String>, spark_options: Option<String>, routine_type: Option<String>, return_table_type: Option<String>, definition_body: Option<String>, data_governance_type: Option<String>, security_mode: Option<String>, language: Option<String>, arguments: Option<Vec<String>>, imported_libraries: Option<Vec<String>>, last_modified_time: Option<String>, remote_function_options: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -24,23 +24,23 @@ impl<'a> Mirror_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "setting" => {
-                self.plan_setting(current_state, desired_input).await
-            }
             "location" => {
                 self.plan_location(current_state, desired_input).await
             }
             "contact" => {
                 self.plan_contact(current_state, desired_input).await
             }
-            "attachment" => {
-                self.plan_attachment(current_state, desired_input).await
-            }
             "timeline" => {
                 self.plan_timeline(current_state, desired_input).await
             }
+            "setting" => {
+                self.plan_setting(current_state, desired_input).await
+            }
             "account" => {
                 self.plan_account(current_state, desired_input).await
+            }
+            "attachment" => {
+                self.plan_attachment(current_state, desired_input).await
             }
             "subscription" => {
                 self.plan_subscription(current_state, desired_input).await
@@ -60,23 +60,23 @@ impl<'a> Mirror_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "setting" => {
-                self.create_setting(input).await
-            }
             "location" => {
                 self.create_location(input).await
             }
             "contact" => {
                 self.create_contact(input).await
             }
-            "attachment" => {
-                self.create_attachment(input).await
-            }
             "timeline" => {
                 self.create_timeline(input).await
             }
+            "setting" => {
+                self.create_setting(input).await
+            }
             "account" => {
                 self.create_account(input).await
+            }
+            "attachment" => {
+                self.create_attachment(input).await
             }
             "subscription" => {
                 self.create_subscription(input).await
@@ -96,23 +96,23 @@ impl<'a> Mirror_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "setting" => {
-                self.read_setting(id).await
-            }
             "location" => {
                 self.read_location(id).await
             }
             "contact" => {
                 self.read_contact(id).await
             }
-            "attachment" => {
-                self.read_attachment(id).await
-            }
             "timeline" => {
                 self.read_timeline(id).await
             }
+            "setting" => {
+                self.read_setting(id).await
+            }
             "account" => {
                 self.read_account(id).await
+            }
+            "attachment" => {
+                self.read_attachment(id).await
             }
             "subscription" => {
                 self.read_subscription(id).await
@@ -133,23 +133,23 @@ impl<'a> Mirror_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "setting" => {
-                self.update_setting(id, input).await
-            }
             "location" => {
                 self.update_location(id, input).await
             }
             "contact" => {
                 self.update_contact(id, input).await
             }
-            "attachment" => {
-                self.update_attachment(id, input).await
-            }
             "timeline" => {
                 self.update_timeline(id, input).await
             }
+            "setting" => {
+                self.update_setting(id, input).await
+            }
             "account" => {
                 self.update_account(id, input).await
+            }
+            "attachment" => {
+                self.update_attachment(id, input).await
             }
             "subscription" => {
                 self.update_subscription(id, input).await
@@ -169,23 +169,23 @@ impl<'a> Mirror_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "setting" => {
-                self.delete_setting(id).await
-            }
             "location" => {
                 self.delete_location(id).await
             }
             "contact" => {
                 self.delete_contact(id).await
             }
-            "attachment" => {
-                self.delete_attachment(id).await
-            }
             "timeline" => {
                 self.delete_timeline(id).await
             }
+            "setting" => {
+                self.delete_setting(id).await
+            }
             "account" => {
                 self.delete_account(id).await
+            }
+            "attachment" => {
+                self.delete_attachment(id).await
             }
             "subscription" => {
                 self.delete_subscription(id).await
@@ -201,67 +201,6 @@ impl<'a> Mirror_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Setting resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a setting resource
-    async fn plan_setting(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new setting resource
-    async fn create_setting(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a setting resource
-    async fn read_setting(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a setting resource
-    async fn update_setting(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a setting resource
-    async fn delete_setting(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -387,67 +326,6 @@ impl<'a> Mirror_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Attachment resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a attachment resource
-    async fn plan_attachment(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new attachment resource
-    async fn create_attachment(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a attachment resource
-    async fn read_attachment(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a attachment resource
-    async fn update_attachment(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a attachment resource
-    async fn delete_attachment(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Timeline resource operations
     // ------------------------------------------------------------------------
 
@@ -509,6 +387,67 @@ impl<'a> Mirror_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Setting resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a setting resource
+    async fn plan_setting(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new setting resource
+    async fn create_setting(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a setting resource
+    async fn read_setting(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a setting resource
+    async fn update_setting(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a setting resource
+    async fn delete_setting(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Account resource operations
     // ------------------------------------------------------------------------
 
@@ -561,6 +500,67 @@ impl<'a> Mirror_apiService<'a> {
 
     /// Delete a account resource
     async fn delete_account(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Attachment resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a attachment resource
+    async fn plan_attachment(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new attachment resource
+    async fn create_attachment(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a attachment resource
+    async fn read_attachment(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a attachment resource
+    async fn update_attachment(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a attachment resource
+    async fn delete_attachment(
         &self,
         id: &str,
     ) -> Result<()> {

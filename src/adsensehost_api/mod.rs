@@ -24,26 +24,26 @@ impl<'a> Adsensehost_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "adunit" => {
-                self.plan_adunit(current_state, desired_input).await
+            "customchannel" => {
+                self.plan_customchannel(current_state, desired_input).await
             }
             "urlchannel" => {
                 self.plan_urlchannel(current_state, desired_input).await
             }
-            "report" => {
-                self.plan_report(current_state, desired_input).await
-            }
             "account" => {
                 self.plan_account(current_state, desired_input).await
-            }
-            "customchannel" => {
-                self.plan_customchannel(current_state, desired_input).await
             }
             "adclient" => {
                 self.plan_adclient(current_state, desired_input).await
             }
+            "adunit" => {
+                self.plan_adunit(current_state, desired_input).await
+            }
             "associationsession" => {
                 self.plan_associationsession(current_state, desired_input).await
+            }
+            "report" => {
+                self.plan_report(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -60,26 +60,26 @@ impl<'a> Adsensehost_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "adunit" => {
-                self.create_adunit(input).await
+            "customchannel" => {
+                self.create_customchannel(input).await
             }
             "urlchannel" => {
                 self.create_urlchannel(input).await
             }
-            "report" => {
-                self.create_report(input).await
-            }
             "account" => {
                 self.create_account(input).await
-            }
-            "customchannel" => {
-                self.create_customchannel(input).await
             }
             "adclient" => {
                 self.create_adclient(input).await
             }
+            "adunit" => {
+                self.create_adunit(input).await
+            }
             "associationsession" => {
                 self.create_associationsession(input).await
+            }
+            "report" => {
+                self.create_report(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -96,26 +96,26 @@ impl<'a> Adsensehost_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "adunit" => {
-                self.read_adunit(id).await
+            "customchannel" => {
+                self.read_customchannel(id).await
             }
             "urlchannel" => {
                 self.read_urlchannel(id).await
             }
-            "report" => {
-                self.read_report(id).await
-            }
             "account" => {
                 self.read_account(id).await
-            }
-            "customchannel" => {
-                self.read_customchannel(id).await
             }
             "adclient" => {
                 self.read_adclient(id).await
             }
+            "adunit" => {
+                self.read_adunit(id).await
+            }
             "associationsession" => {
                 self.read_associationsession(id).await
+            }
+            "report" => {
+                self.read_report(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -133,26 +133,26 @@ impl<'a> Adsensehost_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "adunit" => {
-                self.update_adunit(id, input).await
+            "customchannel" => {
+                self.update_customchannel(id, input).await
             }
             "urlchannel" => {
                 self.update_urlchannel(id, input).await
             }
-            "report" => {
-                self.update_report(id, input).await
-            }
             "account" => {
                 self.update_account(id, input).await
-            }
-            "customchannel" => {
-                self.update_customchannel(id, input).await
             }
             "adclient" => {
                 self.update_adclient(id, input).await
             }
+            "adunit" => {
+                self.update_adunit(id, input).await
+            }
             "associationsession" => {
                 self.update_associationsession(id, input).await
+            }
+            "report" => {
+                self.update_report(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -169,26 +169,26 @@ impl<'a> Adsensehost_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "adunit" => {
-                self.delete_adunit(id).await
+            "customchannel" => {
+                self.delete_customchannel(id).await
             }
             "urlchannel" => {
                 self.delete_urlchannel(id).await
             }
-            "report" => {
-                self.delete_report(id).await
-            }
             "account" => {
                 self.delete_account(id).await
-            }
-            "customchannel" => {
-                self.delete_customchannel(id).await
             }
             "adclient" => {
                 self.delete_adclient(id).await
             }
+            "adunit" => {
+                self.delete_adunit(id).await
+            }
             "associationsession" => {
                 self.delete_associationsession(id).await
+            }
+            "report" => {
+                self.delete_report(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -204,11 +204,11 @@ impl<'a> Adsensehost_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Adunit resource operations
+    // Customchannel resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a adunit resource
-    async fn plan_adunit(
+    /// Plan changes to a customchannel resource
+    async fn plan_customchannel(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -223,8 +223,8 @@ impl<'a> Adsensehost_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new adunit resource
-    async fn create_adunit(
+    /// Create a new customchannel resource
+    async fn create_customchannel(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -233,8 +233,8 @@ impl<'a> Adsensehost_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a adunit resource
-    async fn read_adunit(
+    /// Read a customchannel resource
+    async fn read_customchannel(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -243,8 +243,8 @@ impl<'a> Adsensehost_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a adunit resource
-    async fn update_adunit(
+    /// Update a customchannel resource
+    async fn update_customchannel(
         &self,
         id: &str,
         input: ResourceInput,
@@ -254,8 +254,8 @@ impl<'a> Adsensehost_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a adunit resource
-    async fn delete_adunit(
+    /// Delete a customchannel resource
+    async fn delete_customchannel(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -326,67 +326,6 @@ impl<'a> Adsensehost_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Report resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a report resource
-    async fn plan_report(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new report resource
-    async fn create_report(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a report resource
-    async fn read_report(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a report resource
-    async fn update_report(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a report resource
-    async fn delete_report(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
     // Account resource operations
     // ------------------------------------------------------------------------
 
@@ -439,67 +378,6 @@ impl<'a> Adsensehost_apiService<'a> {
 
     /// Delete a account resource
     async fn delete_account(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Customchannel resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a customchannel resource
-    async fn plan_customchannel(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new customchannel resource
-    async fn create_customchannel(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a customchannel resource
-    async fn read_customchannel(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a customchannel resource
-    async fn update_customchannel(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a customchannel resource
-    async fn delete_customchannel(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -570,6 +448,67 @@ impl<'a> Adsensehost_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Adunit resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a adunit resource
+    async fn plan_adunit(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new adunit resource
+    async fn create_adunit(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a adunit resource
+    async fn read_adunit(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a adunit resource
+    async fn update_adunit(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a adunit resource
+    async fn delete_adunit(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Associationsession resource operations
     // ------------------------------------------------------------------------
 
@@ -622,6 +561,67 @@ impl<'a> Adsensehost_apiService<'a> {
 
     /// Delete a associationsession resource
     async fn delete_associationsession(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Report resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a report resource
+    async fn plan_report(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new report resource
+    async fn create_report(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a report resource
+    async fn read_report(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a report resource
+    async fn update_report(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a report resource
+    async fn delete_report(
         &self,
         id: &str,
     ) -> Result<()> {

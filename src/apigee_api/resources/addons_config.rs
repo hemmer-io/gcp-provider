@@ -21,7 +21,7 @@ impl<'a> Addons_config<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, analytics_enabled: Option<bool>, api_security_enabled: Option<bool>, name: String) -> Result<String> {
+    pub async fn create(&self, api_security_enabled: Option<bool>, analytics_enabled: Option<bool>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

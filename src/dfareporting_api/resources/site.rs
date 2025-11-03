@@ -21,7 +21,7 @@ impl<'a> Site<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, approved: Option<bool>, kind: Option<String>, directory_site_id: Option<String>, id: Option<String>, directory_site_id_dimension_value: Option<String>, site_contacts: Option<Vec<String>>, site_settings: Option<String>, id_dimension_value: Option<String>, key_name: Option<String>, name: Option<String>, subaccount_id: Option<String>, account_id: Option<String>, profile_id: String) -> Result<String> {
+    pub async fn create(&self, directory_site_id_dimension_value: Option<String>, site_contacts: Option<Vec<String>>, key_name: Option<String>, site_settings: Option<String>, directory_site_id: Option<String>, name: Option<String>, subaccount_id: Option<String>, kind: Option<String>, id: Option<String>, id_dimension_value: Option<String>, approved: Option<bool>, account_id: Option<String>, profile_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Site<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, approved: Option<bool>, kind: Option<String>, directory_site_id: Option<String>, id: Option<String>, directory_site_id_dimension_value: Option<String>, site_contacts: Option<Vec<String>>, site_settings: Option<String>, id_dimension_value: Option<String>, key_name: Option<String>, name: Option<String>, subaccount_id: Option<String>, account_id: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, directory_site_id_dimension_value: Option<String>, site_contacts: Option<Vec<String>>, key_name: Option<String>, site_settings: Option<String>, directory_site_id: Option<String>, name: Option<String>, subaccount_id: Option<String>, kind: Option<String>, id: Option<String>, id_dimension_value: Option<String>, approved: Option<bool>, account_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

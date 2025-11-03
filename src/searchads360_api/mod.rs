@@ -24,17 +24,17 @@ impl<'a> Searchads360_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
+            "customer" => {
+                self.plan_customer(current_state, desired_input).await
+            }
             "search_ads360" => {
                 self.plan_search_ads360(current_state, desired_input).await
-            }
-            "custom_column" => {
-                self.plan_custom_column(current_state, desired_input).await
             }
             "search_ads360_field" => {
                 self.plan_search_ads360_field(current_state, desired_input).await
             }
-            "customer" => {
-                self.plan_customer(current_state, desired_input).await
+            "custom_column" => {
+                self.plan_custom_column(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -51,17 +51,17 @@ impl<'a> Searchads360_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "customer" => {
+                self.create_customer(input).await
+            }
             "search_ads360" => {
                 self.create_search_ads360(input).await
-            }
-            "custom_column" => {
-                self.create_custom_column(input).await
             }
             "search_ads360_field" => {
                 self.create_search_ads360_field(input).await
             }
-            "customer" => {
-                self.create_customer(input).await
+            "custom_column" => {
+                self.create_custom_column(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -78,17 +78,17 @@ impl<'a> Searchads360_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "customer" => {
+                self.read_customer(id).await
+            }
             "search_ads360" => {
                 self.read_search_ads360(id).await
-            }
-            "custom_column" => {
-                self.read_custom_column(id).await
             }
             "search_ads360_field" => {
                 self.read_search_ads360_field(id).await
             }
-            "customer" => {
-                self.read_customer(id).await
+            "custom_column" => {
+                self.read_custom_column(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -106,17 +106,17 @@ impl<'a> Searchads360_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
+            "customer" => {
+                self.update_customer(id, input).await
+            }
             "search_ads360" => {
                 self.update_search_ads360(id, input).await
-            }
-            "custom_column" => {
-                self.update_custom_column(id, input).await
             }
             "search_ads360_field" => {
                 self.update_search_ads360_field(id, input).await
             }
-            "customer" => {
-                self.update_customer(id, input).await
+            "custom_column" => {
+                self.update_custom_column(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -133,17 +133,17 @@ impl<'a> Searchads360_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
+            "customer" => {
+                self.delete_customer(id).await
+            }
             "search_ads360" => {
                 self.delete_search_ads360(id).await
-            }
-            "custom_column" => {
-                self.delete_custom_column(id).await
             }
             "search_ads360_field" => {
                 self.delete_search_ads360_field(id).await
             }
-            "customer" => {
-                self.delete_customer(id).await
+            "custom_column" => {
+                self.delete_custom_column(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -156,6 +156,67 @@ impl<'a> Searchads360_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
+
+
+    // ------------------------------------------------------------------------
+    // Customer resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a customer resource
+    async fn plan_customer(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new customer resource
+    async fn create_customer(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a customer resource
+    async fn read_customer(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a customer resource
+    async fn update_customer(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a customer resource
+    async fn delete_customer(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
 
 
     // ------------------------------------------------------------------------
@@ -211,67 +272,6 @@ impl<'a> Searchads360_apiService<'a> {
 
     /// Delete a search_ads360 resource
     async fn delete_search_ads360(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Custom_column resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a custom_column resource
-    async fn plan_custom_column(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new custom_column resource
-    async fn create_custom_column(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a custom_column resource
-    async fn read_custom_column(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a custom_column resource
-    async fn update_custom_column(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a custom_column resource
-    async fn delete_custom_column(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -342,11 +342,11 @@ impl<'a> Searchads360_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Customer resource operations
+    // Custom_column resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a customer resource
-    async fn plan_customer(
+    /// Plan changes to a custom_column resource
+    async fn plan_custom_column(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -361,8 +361,8 @@ impl<'a> Searchads360_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new customer resource
-    async fn create_customer(
+    /// Create a new custom_column resource
+    async fn create_custom_column(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -371,8 +371,8 @@ impl<'a> Searchads360_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a customer resource
-    async fn read_customer(
+    /// Read a custom_column resource
+    async fn read_custom_column(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -381,8 +381,8 @@ impl<'a> Searchads360_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a customer resource
-    async fn update_customer(
+    /// Update a custom_column resource
+    async fn update_custom_column(
         &self,
         id: &str,
         input: ResourceInput,
@@ -392,8 +392,8 @@ impl<'a> Searchads360_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a customer resource
-    async fn delete_customer(
+    /// Delete a custom_column resource
+    async fn delete_custom_column(
         &self,
         id: &str,
     ) -> Result<()> {

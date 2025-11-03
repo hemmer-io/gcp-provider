@@ -21,7 +21,7 @@ impl<'a> Workforce_pool<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, access_restrictions: Option<String>, display_name: Option<String>, parent: Option<String>, expire_time: Option<String>, state: Option<String>, session_duration: Option<String>, disabled: Option<bool>, name: Option<String>, description: Option<String>, location: String) -> Result<String> {
+    pub async fn create(&self, description: Option<String>, parent: Option<String>, disabled: Option<bool>, display_name: Option<String>, state: Option<String>, session_duration: Option<String>, access_restrictions: Option<String>, name: Option<String>, expire_time: Option<String>, location: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Workforce_pool<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, access_restrictions: Option<String>, display_name: Option<String>, parent: Option<String>, expire_time: Option<String>, state: Option<String>, session_duration: Option<String>, disabled: Option<bool>, name: Option<String>, description: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, description: Option<String>, parent: Option<String>, disabled: Option<bool>, display_name: Option<String>, state: Option<String>, session_duration: Option<String>, access_restrictions: Option<String>, name: Option<String>, expire_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

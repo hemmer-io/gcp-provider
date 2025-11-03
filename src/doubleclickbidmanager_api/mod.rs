@@ -24,11 +24,11 @@ impl<'a> Doubleclickbidmanager_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "querie" => {
-                self.plan_querie(current_state, desired_input).await
-            }
             "report" => {
                 self.plan_report(current_state, desired_input).await
+            }
+            "querie" => {
+                self.plan_querie(current_state, desired_input).await
             }
             "report" => {
                 self.plan_report(current_state, desired_input).await
@@ -51,11 +51,11 @@ impl<'a> Doubleclickbidmanager_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "querie" => {
-                self.create_querie(input).await
-            }
             "report" => {
                 self.create_report(input).await
+            }
+            "querie" => {
+                self.create_querie(input).await
             }
             "report" => {
                 self.create_report(input).await
@@ -78,11 +78,11 @@ impl<'a> Doubleclickbidmanager_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "querie" => {
-                self.read_querie(id).await
-            }
             "report" => {
                 self.read_report(id).await
+            }
+            "querie" => {
+                self.read_querie(id).await
             }
             "report" => {
                 self.read_report(id).await
@@ -106,11 +106,11 @@ impl<'a> Doubleclickbidmanager_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "querie" => {
-                self.update_querie(id, input).await
-            }
             "report" => {
                 self.update_report(id, input).await
+            }
+            "querie" => {
+                self.update_querie(id, input).await
             }
             "report" => {
                 self.update_report(id, input).await
@@ -133,11 +133,11 @@ impl<'a> Doubleclickbidmanager_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "querie" => {
-                self.delete_querie(id).await
-            }
             "report" => {
                 self.delete_report(id).await
+            }
+            "querie" => {
+                self.delete_querie(id).await
             }
             "report" => {
                 self.delete_report(id).await
@@ -156,67 +156,6 @@ impl<'a> Doubleclickbidmanager_apiService<'a> {
     // ========================================================================
     // Resource-specific CRUD implementations
     // ========================================================================
-
-
-    // ------------------------------------------------------------------------
-    // Querie resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a querie resource
-    async fn plan_querie(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new querie resource
-    async fn create_querie(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a querie resource
-    async fn read_querie(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a querie resource
-    async fn update_querie(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a querie resource
-    async fn delete_querie(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
 
 
     // ------------------------------------------------------------------------
@@ -272,6 +211,67 @@ impl<'a> Doubleclickbidmanager_apiService<'a> {
 
     /// Delete a report resource
     async fn delete_report(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Querie resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a querie resource
+    async fn plan_querie(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new querie resource
+    async fn create_querie(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a querie resource
+    async fn read_querie(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a querie resource
+    async fn update_querie(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a querie resource
+    async fn delete_querie(
         &self,
         id: &str,
     ) -> Result<()> {

@@ -21,7 +21,7 @@ impl<'a> Issuer<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, issuer_id: Option<String>, name: Option<String>, smart_tap_merchant_data: Option<String>, contact_info: Option<String>, callback_options: Option<String>, homepage_url: Option<String>) -> Result<String> {
+    pub async fn create(&self, contact_info: Option<String>, issuer_id: Option<String>, homepage_url: Option<String>, smart_tap_merchant_data: Option<String>, callback_options: Option<String>, name: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Issuer<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, issuer_id: Option<String>, name: Option<String>, smart_tap_merchant_data: Option<String>, contact_info: Option<String>, callback_options: Option<String>, homepage_url: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, contact_info: Option<String>, issuer_id: Option<String>, homepage_url: Option<String>, smart_tap_merchant_data: Option<String>, callback_options: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

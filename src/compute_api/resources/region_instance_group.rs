@@ -1,9 +1,6 @@
 //! Region_instance_group resource
 //!
-//! Lists the instances in the specified instance group and displays
-information about the named ports. Depending on the specified options, this
-method can list all instances or only the instances that are running.
-The orderBy query parameter is not supported.
+//! Sets the named ports for the specified regional instance group.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -24,7 +21,7 @@ impl<'a> Region_instance_group<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, port_name: Option<String>, instance_state: Option<String>, region: String, project: String, instance_group: String) -> Result<String> {
+    pub async fn create(&self, fingerprint: Option<String>, named_ports: Option<Vec<String>>, project: String, instance_group: String, region: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Backup<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, compute_instance_target_environment: Option<String>, compute_instance_restore_properties: Option<String>, region_disk_target_environment: Option<String>, request_id: Option<String>, disk_restore_properties: Option<String>, disk_target_environment: Option<String>, name: String) -> Result<String> {
+    pub async fn create(&self, disk_restore_properties: Option<String>, disk_target_environment: Option<String>, compute_instance_restore_properties: Option<String>, compute_instance_target_environment: Option<String>, region_disk_target_environment: Option<String>, request_id: Option<String>, name: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Backup<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, compute_instance_target_environment: Option<String>, compute_instance_restore_properties: Option<String>, region_disk_target_environment: Option<String>, request_id: Option<String>, disk_restore_properties: Option<String>, disk_target_environment: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, disk_restore_properties: Option<String>, disk_target_environment: Option<String>, compute_instance_restore_properties: Option<String>, compute_instance_target_environment: Option<String>, region_disk_target_environment: Option<String>, request_id: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

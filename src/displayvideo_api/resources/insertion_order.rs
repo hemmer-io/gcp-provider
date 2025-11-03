@@ -21,7 +21,7 @@ impl<'a> Insertion_order<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, advertiser_id: Option<String>, optimization_objective: Option<String>, bid_strategy: Option<String>, update_time: Option<String>, display_name: Option<String>, insertion_order_id: Option<String>, reservation_type: Option<String>, entity_status: Option<String>, insertion_order_type: Option<String>, campaign_id: Option<String>, kpi: Option<String>, name: Option<String>, budget: Option<String>, frequency_cap: Option<String>, integration_details: Option<String>, pacing: Option<String>, partner_costs: Option<Vec<String>>, advertiser_id: String) -> Result<String> {
+    pub async fn create(&self, frequency_cap: Option<String>, reservation_type: Option<String>, insertion_order_type: Option<String>, name: Option<String>, insertion_order_id: Option<String>, integration_details: Option<String>, partner_costs: Option<Vec<String>>, update_time: Option<String>, budget: Option<String>, advertiser_id: Option<String>, bid_strategy: Option<String>, display_name: Option<String>, optimization_objective: Option<String>, entity_status: Option<String>, campaign_id: Option<String>, pacing: Option<String>, kpi: Option<String>, advertiser_id: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Insertion_order<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, advertiser_id: Option<String>, optimization_objective: Option<String>, bid_strategy: Option<String>, update_time: Option<String>, display_name: Option<String>, insertion_order_id: Option<String>, reservation_type: Option<String>, entity_status: Option<String>, insertion_order_type: Option<String>, campaign_id: Option<String>, kpi: Option<String>, name: Option<String>, budget: Option<String>, frequency_cap: Option<String>, integration_details: Option<String>, pacing: Option<String>, partner_costs: Option<Vec<String>>) -> Result<()> {
+    pub async fn update(&self, id: &str, frequency_cap: Option<String>, reservation_type: Option<String>, insertion_order_type: Option<String>, name: Option<String>, insertion_order_id: Option<String>, integration_details: Option<String>, partner_costs: Option<Vec<String>>, update_time: Option<String>, budget: Option<String>, advertiser_id: Option<String>, bid_strategy: Option<String>, display_name: Option<String>, optimization_objective: Option<String>, entity_status: Option<String>, campaign_id: Option<String>, pacing: Option<String>, kpi: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

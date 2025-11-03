@@ -21,7 +21,7 @@ impl<'a> Engine<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, display_name: Option<String>, disable_analytics: Option<bool>, common_config: Option<String>, create_time: Option<String>, data_store_ids: Option<Vec<String>>, app_type: Option<String>, name: Option<String>, configurable_billing_approach: Option<String>, features: Option<HashMap<String, String>>, solution_type: Option<String>, update_time: Option<String>, industry_vertical: Option<String>, media_recommendation_engine_config: Option<String>, chat_engine_config: Option<String>, search_engine_config: Option<String>, chat_engine_metadata: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, data_store_ids: Option<Vec<String>>, features: Option<HashMap<String, String>>, display_name: Option<String>, name: Option<String>, solution_type: Option<String>, chat_engine_metadata: Option<String>, media_recommendation_engine_config: Option<String>, app_type: Option<String>, common_config: Option<String>, create_time: Option<String>, industry_vertical: Option<String>, search_engine_config: Option<String>, chat_engine_config: Option<String>, configurable_billing_approach: Option<String>, disable_analytics: Option<bool>, update_time: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Engine<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, display_name: Option<String>, disable_analytics: Option<bool>, common_config: Option<String>, create_time: Option<String>, data_store_ids: Option<Vec<String>>, app_type: Option<String>, name: Option<String>, configurable_billing_approach: Option<String>, features: Option<HashMap<String, String>>, solution_type: Option<String>, update_time: Option<String>, industry_vertical: Option<String>, media_recommendation_engine_config: Option<String>, chat_engine_config: Option<String>, search_engine_config: Option<String>, chat_engine_metadata: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, data_store_ids: Option<Vec<String>>, features: Option<HashMap<String, String>>, display_name: Option<String>, name: Option<String>, solution_type: Option<String>, chat_engine_metadata: Option<String>, media_recommendation_engine_config: Option<String>, app_type: Option<String>, common_config: Option<String>, create_time: Option<String>, industry_vertical: Option<String>, search_engine_config: Option<String>, chat_engine_config: Option<String>, configurable_billing_approach: Option<String>, disable_analytics: Option<bool>, update_time: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

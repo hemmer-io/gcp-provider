@@ -21,7 +21,7 @@ impl<'a> Member<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, role: Option<String>, create_time: Option<String>, group_member: Option<String>, delete_time: Option<String>, state: Option<String>, member: Option<String>, name: Option<String>, parent: String) -> Result<String> {
+    pub async fn create(&self, name: Option<String>, delete_time: Option<String>, create_time: Option<String>, role: Option<String>, group_member: Option<String>, state: Option<String>, member: Option<String>, parent: String) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Member<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, role: Option<String>, create_time: Option<String>, group_member: Option<String>, delete_time: Option<String>, state: Option<String>, member: Option<String>, name: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, name: Option<String>, delete_time: Option<String>, create_time: Option<String>, role: Option<String>, group_member: Option<String>, state: Option<String>, member: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

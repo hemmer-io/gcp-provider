@@ -1,6 +1,6 @@
 //! Document resource
 //!
-//! Analyzes the sentiment of the provided text.
+//! A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and analyzeSyntax provide in one call.
 
 use crate::{ProviderError, Result};
 use std::collections::HashMap;
@@ -21,7 +21,7 @@ impl<'a> Document<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, document: Option<String>, encoding_type: Option<String>) -> Result<String> {
+    pub async fn create(&self, document: Option<String>, encoding_type: Option<String>, features: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 

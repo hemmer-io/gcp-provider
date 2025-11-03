@@ -34,7 +34,7 @@ impl<'a> Email_preference<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, name: Option<String>, news_and_tips: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, news_and_tips: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -21,7 +21,7 @@ impl<'a> Proposal<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, proposals: Option<Vec<String>>, web_property_code: Option<String>) -> Result<String> {
+    pub async fn create(&self, web_property_code: Option<String>, proposals: Option<Vec<String>>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Proposal<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, proposals: Option<Vec<String>>, web_property_code: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, web_property_code: Option<String>, proposals: Option<Vec<String>>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

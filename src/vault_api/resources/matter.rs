@@ -21,7 +21,7 @@ impl<'a> Matter<'a> {
     /// Note: Parameter types are simplified. SDK may require specific enums/types.
     /// TODO: Convert String parameters to appropriate SDK types as needed.
     #[allow(unused_variables)]
-    pub async fn create(&self, description: Option<String>, matter_permissions: Option<Vec<String>>, matter_id: Option<String>, name: Option<String>, matter_region: Option<String>, state: Option<String>) -> Result<String> {
+    pub async fn create(&self, state: Option<String>, matter_permissions: Option<Vec<String>>, matter_id: Option<String>, description: Option<String>, matter_region: Option<String>, name: Option<String>) -> Result<String> {
 
         todo!("Implement create for Gcp")
 
@@ -45,7 +45,7 @@ impl<'a> Matter<'a> {
     ///
     /// TODO: Map `id` and update fields to appropriate SDK parameters
     #[allow(unused_variables)]
-    pub async fn update(&self, id: &str, description: Option<String>, matter_permissions: Option<Vec<String>>, matter_id: Option<String>, name: Option<String>, matter_region: Option<String>, state: Option<String>) -> Result<()> {
+    pub async fn update(&self, id: &str, state: Option<String>, matter_permissions: Option<Vec<String>>, matter_id: Option<String>, description: Option<String>, matter_region: Option<String>, name: Option<String>) -> Result<()> {
 
         todo!("Implement update for Gcp")
 

@@ -24,17 +24,29 @@ impl<'a> Managedkafka_apiService<'a> {
         desired_input: &ResourceInput,
     ) -> Result<ResourcePlan> {
         match resource_name {
-            "schema_registrie" => {
-                self.plan_schema_registrie(current_state, desired_input).await
+            "consumer_group" => {
+                self.plan_consumer_group(current_state, desired_input).await
             }
-            "operation" => {
-                self.plan_operation(current_state, desired_input).await
+            "subject" => {
+                self.plan_subject(current_state, desired_input).await
+            }
+            "mode" => {
+                self.plan_mode(current_state, desired_input).await
             }
             "cluster" => {
                 self.plan_cluster(current_state, desired_input).await
             }
-            "schema" => {
-                self.plan_schema(current_state, desired_input).await
+            "connector" => {
+                self.plan_connector(current_state, desired_input).await
+            }
+            "config" => {
+                self.plan_config(current_state, desired_input).await
+            }
+            "type_" => {
+                self.plan_type_(current_state, desired_input).await
+            }
+            "schema_registrie" => {
+                self.plan_schema_registrie(current_state, desired_input).await
             }
             "compatibility" => {
                 self.plan_compatibility(current_state, desired_input).await
@@ -42,20 +54,8 @@ impl<'a> Managedkafka_apiService<'a> {
             "version" => {
                 self.plan_version(current_state, desired_input).await
             }
-            "config" => {
-                self.plan_config(current_state, desired_input).await
-            }
-            "referencedby" => {
-                self.plan_referencedby(current_state, desired_input).await
-            }
-            "type_" => {
-                self.plan_type_(current_state, desired_input).await
-            }
-            "acl" => {
-                self.plan_acl(current_state, desired_input).await
-            }
-            "location" => {
-                self.plan_location(current_state, desired_input).await
+            "schema" => {
+                self.plan_schema(current_state, desired_input).await
             }
             "topic" => {
                 self.plan_topic(current_state, desired_input).await
@@ -63,20 +63,20 @@ impl<'a> Managedkafka_apiService<'a> {
             "context" => {
                 self.plan_context(current_state, desired_input).await
             }
+            "operation" => {
+                self.plan_operation(current_state, desired_input).await
+            }
+            "location" => {
+                self.plan_location(current_state, desired_input).await
+            }
             "connect_cluster" => {
                 self.plan_connect_cluster(current_state, desired_input).await
             }
-            "consumer_group" => {
-                self.plan_consumer_group(current_state, desired_input).await
+            "acl" => {
+                self.plan_acl(current_state, desired_input).await
             }
-            "subject" => {
-                self.plan_subject(current_state, desired_input).await
-            }
-            "connector" => {
-                self.plan_connector(current_state, desired_input).await
-            }
-            "mode" => {
-                self.plan_mode(current_state, desired_input).await
+            "referencedby" => {
+                self.plan_referencedby(current_state, desired_input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -93,17 +93,29 @@ impl<'a> Managedkafka_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "schema_registrie" => {
-                self.create_schema_registrie(input).await
+            "consumer_group" => {
+                self.create_consumer_group(input).await
             }
-            "operation" => {
-                self.create_operation(input).await
+            "subject" => {
+                self.create_subject(input).await
+            }
+            "mode" => {
+                self.create_mode(input).await
             }
             "cluster" => {
                 self.create_cluster(input).await
             }
-            "schema" => {
-                self.create_schema(input).await
+            "connector" => {
+                self.create_connector(input).await
+            }
+            "config" => {
+                self.create_config(input).await
+            }
+            "type_" => {
+                self.create_type_(input).await
+            }
+            "schema_registrie" => {
+                self.create_schema_registrie(input).await
             }
             "compatibility" => {
                 self.create_compatibility(input).await
@@ -111,20 +123,8 @@ impl<'a> Managedkafka_apiService<'a> {
             "version" => {
                 self.create_version(input).await
             }
-            "config" => {
-                self.create_config(input).await
-            }
-            "referencedby" => {
-                self.create_referencedby(input).await
-            }
-            "type_" => {
-                self.create_type_(input).await
-            }
-            "acl" => {
-                self.create_acl(input).await
-            }
-            "location" => {
-                self.create_location(input).await
+            "schema" => {
+                self.create_schema(input).await
             }
             "topic" => {
                 self.create_topic(input).await
@@ -132,20 +132,20 @@ impl<'a> Managedkafka_apiService<'a> {
             "context" => {
                 self.create_context(input).await
             }
+            "operation" => {
+                self.create_operation(input).await
+            }
+            "location" => {
+                self.create_location(input).await
+            }
             "connect_cluster" => {
                 self.create_connect_cluster(input).await
             }
-            "consumer_group" => {
-                self.create_consumer_group(input).await
+            "acl" => {
+                self.create_acl(input).await
             }
-            "subject" => {
-                self.create_subject(input).await
-            }
-            "connector" => {
-                self.create_connector(input).await
-            }
-            "mode" => {
-                self.create_mode(input).await
+            "referencedby" => {
+                self.create_referencedby(input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -162,17 +162,29 @@ impl<'a> Managedkafka_apiService<'a> {
         id: &str,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "schema_registrie" => {
-                self.read_schema_registrie(id).await
+            "consumer_group" => {
+                self.read_consumer_group(id).await
             }
-            "operation" => {
-                self.read_operation(id).await
+            "subject" => {
+                self.read_subject(id).await
+            }
+            "mode" => {
+                self.read_mode(id).await
             }
             "cluster" => {
                 self.read_cluster(id).await
             }
-            "schema" => {
-                self.read_schema(id).await
+            "connector" => {
+                self.read_connector(id).await
+            }
+            "config" => {
+                self.read_config(id).await
+            }
+            "type_" => {
+                self.read_type_(id).await
+            }
+            "schema_registrie" => {
+                self.read_schema_registrie(id).await
             }
             "compatibility" => {
                 self.read_compatibility(id).await
@@ -180,20 +192,8 @@ impl<'a> Managedkafka_apiService<'a> {
             "version" => {
                 self.read_version(id).await
             }
-            "config" => {
-                self.read_config(id).await
-            }
-            "referencedby" => {
-                self.read_referencedby(id).await
-            }
-            "type_" => {
-                self.read_type_(id).await
-            }
-            "acl" => {
-                self.read_acl(id).await
-            }
-            "location" => {
-                self.read_location(id).await
+            "schema" => {
+                self.read_schema(id).await
             }
             "topic" => {
                 self.read_topic(id).await
@@ -201,20 +201,20 @@ impl<'a> Managedkafka_apiService<'a> {
             "context" => {
                 self.read_context(id).await
             }
+            "operation" => {
+                self.read_operation(id).await
+            }
+            "location" => {
+                self.read_location(id).await
+            }
             "connect_cluster" => {
                 self.read_connect_cluster(id).await
             }
-            "consumer_group" => {
-                self.read_consumer_group(id).await
+            "acl" => {
+                self.read_acl(id).await
             }
-            "subject" => {
-                self.read_subject(id).await
-            }
-            "connector" => {
-                self.read_connector(id).await
-            }
-            "mode" => {
-                self.read_mode(id).await
+            "referencedby" => {
+                self.read_referencedby(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -232,17 +232,29 @@ impl<'a> Managedkafka_apiService<'a> {
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
         match resource_name {
-            "schema_registrie" => {
-                self.update_schema_registrie(id, input).await
+            "consumer_group" => {
+                self.update_consumer_group(id, input).await
             }
-            "operation" => {
-                self.update_operation(id, input).await
+            "subject" => {
+                self.update_subject(id, input).await
+            }
+            "mode" => {
+                self.update_mode(id, input).await
             }
             "cluster" => {
                 self.update_cluster(id, input).await
             }
-            "schema" => {
-                self.update_schema(id, input).await
+            "connector" => {
+                self.update_connector(id, input).await
+            }
+            "config" => {
+                self.update_config(id, input).await
+            }
+            "type_" => {
+                self.update_type_(id, input).await
+            }
+            "schema_registrie" => {
+                self.update_schema_registrie(id, input).await
             }
             "compatibility" => {
                 self.update_compatibility(id, input).await
@@ -250,20 +262,8 @@ impl<'a> Managedkafka_apiService<'a> {
             "version" => {
                 self.update_version(id, input).await
             }
-            "config" => {
-                self.update_config(id, input).await
-            }
-            "referencedby" => {
-                self.update_referencedby(id, input).await
-            }
-            "type_" => {
-                self.update_type_(id, input).await
-            }
-            "acl" => {
-                self.update_acl(id, input).await
-            }
-            "location" => {
-                self.update_location(id, input).await
+            "schema" => {
+                self.update_schema(id, input).await
             }
             "topic" => {
                 self.update_topic(id, input).await
@@ -271,20 +271,20 @@ impl<'a> Managedkafka_apiService<'a> {
             "context" => {
                 self.update_context(id, input).await
             }
+            "operation" => {
+                self.update_operation(id, input).await
+            }
+            "location" => {
+                self.update_location(id, input).await
+            }
             "connect_cluster" => {
                 self.update_connect_cluster(id, input).await
             }
-            "consumer_group" => {
-                self.update_consumer_group(id, input).await
+            "acl" => {
+                self.update_acl(id, input).await
             }
-            "subject" => {
-                self.update_subject(id, input).await
-            }
-            "connector" => {
-                self.update_connector(id, input).await
-            }
-            "mode" => {
-                self.update_mode(id, input).await
+            "referencedby" => {
+                self.update_referencedby(id, input).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -301,17 +301,29 @@ impl<'a> Managedkafka_apiService<'a> {
         id: &str,
     ) -> Result<()> {
         match resource_name {
-            "schema_registrie" => {
-                self.delete_schema_registrie(id).await
+            "consumer_group" => {
+                self.delete_consumer_group(id).await
             }
-            "operation" => {
-                self.delete_operation(id).await
+            "subject" => {
+                self.delete_subject(id).await
+            }
+            "mode" => {
+                self.delete_mode(id).await
             }
             "cluster" => {
                 self.delete_cluster(id).await
             }
-            "schema" => {
-                self.delete_schema(id).await
+            "connector" => {
+                self.delete_connector(id).await
+            }
+            "config" => {
+                self.delete_config(id).await
+            }
+            "type_" => {
+                self.delete_type_(id).await
+            }
+            "schema_registrie" => {
+                self.delete_schema_registrie(id).await
             }
             "compatibility" => {
                 self.delete_compatibility(id).await
@@ -319,20 +331,8 @@ impl<'a> Managedkafka_apiService<'a> {
             "version" => {
                 self.delete_version(id).await
             }
-            "config" => {
-                self.delete_config(id).await
-            }
-            "referencedby" => {
-                self.delete_referencedby(id).await
-            }
-            "type_" => {
-                self.delete_type_(id).await
-            }
-            "acl" => {
-                self.delete_acl(id).await
-            }
-            "location" => {
-                self.delete_location(id).await
+            "schema" => {
+                self.delete_schema(id).await
             }
             "topic" => {
                 self.delete_topic(id).await
@@ -340,20 +340,20 @@ impl<'a> Managedkafka_apiService<'a> {
             "context" => {
                 self.delete_context(id).await
             }
+            "operation" => {
+                self.delete_operation(id).await
+            }
+            "location" => {
+                self.delete_location(id).await
+            }
             "connect_cluster" => {
                 self.delete_connect_cluster(id).await
             }
-            "consumer_group" => {
-                self.delete_consumer_group(id).await
+            "acl" => {
+                self.delete_acl(id).await
             }
-            "subject" => {
-                self.delete_subject(id).await
-            }
-            "connector" => {
-                self.delete_connector(id).await
-            }
-            "mode" => {
-                self.delete_mode(id).await
+            "referencedby" => {
+                self.delete_referencedby(id).await
             }
             _ => Err(hemmer_core::HemmerError::Provider(format!(
                 "Unknown resource type: {}.{}",
@@ -369,11 +369,11 @@ impl<'a> Managedkafka_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Schema_registrie resource operations
+    // Consumer_group resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a schema_registrie resource
-    async fn plan_schema_registrie(
+    /// Plan changes to a consumer_group resource
+    async fn plan_consumer_group(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -388,8 +388,8 @@ impl<'a> Managedkafka_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new schema_registrie resource
-    async fn create_schema_registrie(
+    /// Create a new consumer_group resource
+    async fn create_consumer_group(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -398,8 +398,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a schema_registrie resource
-    async fn read_schema_registrie(
+    /// Read a consumer_group resource
+    async fn read_consumer_group(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -408,8 +408,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a schema_registrie resource
-    async fn update_schema_registrie(
+    /// Update a consumer_group resource
+    async fn update_consumer_group(
         &self,
         id: &str,
         input: ResourceInput,
@@ -419,8 +419,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a schema_registrie resource
-    async fn delete_schema_registrie(
+    /// Delete a consumer_group resource
+    async fn delete_consumer_group(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -430,11 +430,11 @@ impl<'a> Managedkafka_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Operation resource operations
+    // Subject resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a operation resource
-    async fn plan_operation(
+    /// Plan changes to a subject resource
+    async fn plan_subject(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -449,8 +449,8 @@ impl<'a> Managedkafka_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new operation resource
-    async fn create_operation(
+    /// Create a new subject resource
+    async fn create_subject(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -459,8 +459,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a operation resource
-    async fn read_operation(
+    /// Read a subject resource
+    async fn read_subject(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -469,8 +469,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a operation resource
-    async fn update_operation(
+    /// Update a subject resource
+    async fn update_subject(
         &self,
         id: &str,
         input: ResourceInput,
@@ -480,8 +480,69 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a operation resource
-    async fn delete_operation(
+    /// Delete a subject resource
+    async fn delete_subject(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Mode resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a mode resource
+    async fn plan_mode(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new mode resource
+    async fn create_mode(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a mode resource
+    async fn read_mode(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a mode resource
+    async fn update_mode(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a mode resource
+    async fn delete_mode(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -552,11 +613,11 @@ impl<'a> Managedkafka_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Schema resource operations
+    // Connector resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a schema resource
-    async fn plan_schema(
+    /// Plan changes to a connector resource
+    async fn plan_connector(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -571,8 +632,8 @@ impl<'a> Managedkafka_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new schema resource
-    async fn create_schema(
+    /// Create a new connector resource
+    async fn create_connector(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -581,8 +642,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a schema resource
-    async fn read_schema(
+    /// Read a connector resource
+    async fn read_connector(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -591,8 +652,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a schema resource
-    async fn update_schema(
+    /// Update a connector resource
+    async fn update_connector(
         &self,
         id: &str,
         input: ResourceInput,
@@ -602,8 +663,191 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a schema resource
-    async fn delete_schema(
+    /// Delete a connector resource
+    async fn delete_connector(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Config resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a config resource
+    async fn plan_config(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new config resource
+    async fn create_config(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a config resource
+    async fn read_config(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a config resource
+    async fn update_config(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a config resource
+    async fn delete_config(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Type resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a type resource
+    async fn plan_type_(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new type resource
+    async fn create_type_(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a type resource
+    async fn read_type_(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a type resource
+    async fn update_type_(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a type resource
+    async fn delete_type_(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Schema_registrie resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a schema_registrie resource
+    async fn plan_schema_registrie(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new schema_registrie resource
+    async fn create_schema_registrie(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a schema_registrie resource
+    async fn read_schema_registrie(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a schema_registrie resource
+    async fn update_schema_registrie(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a schema_registrie resource
+    async fn delete_schema_registrie(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -735,11 +979,11 @@ impl<'a> Managedkafka_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Config resource operations
+    // Schema resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a config resource
-    async fn plan_config(
+    /// Plan changes to a schema resource
+    async fn plan_schema(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -754,8 +998,8 @@ impl<'a> Managedkafka_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new config resource
-    async fn create_config(
+    /// Create a new schema resource
+    async fn create_schema(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -764,8 +1008,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a config resource
-    async fn read_config(
+    /// Read a schema resource
+    async fn read_schema(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -774,8 +1018,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a config resource
-    async fn update_config(
+    /// Update a schema resource
+    async fn update_schema(
         &self,
         id: &str,
         input: ResourceInput,
@@ -785,252 +1029,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a config resource
-    async fn delete_config(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Referencedby resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a referencedby resource
-    async fn plan_referencedby(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new referencedby resource
-    async fn create_referencedby(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a referencedby resource
-    async fn read_referencedby(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a referencedby resource
-    async fn update_referencedby(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a referencedby resource
-    async fn delete_referencedby(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Type resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a type resource
-    async fn plan_type_(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new type resource
-    async fn create_type_(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a type resource
-    async fn read_type_(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a type resource
-    async fn update_type_(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a type resource
-    async fn delete_type_(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Acl resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a acl resource
-    async fn plan_acl(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new acl resource
-    async fn create_acl(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a acl resource
-    async fn read_acl(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a acl resource
-    async fn update_acl(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a acl resource
-    async fn delete_acl(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Location resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a location resource
-    async fn plan_location(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new location resource
-    async fn create_location(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a location resource
-    async fn read_location(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a location resource
-    async fn update_location(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a location resource
-    async fn delete_location(
+    /// Delete a schema resource
+    async fn delete_schema(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1162,6 +1162,128 @@ impl<'a> Managedkafka_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
+    // Operation resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a operation resource
+    async fn plan_operation(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new operation resource
+    async fn create_operation(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a operation resource
+    async fn read_operation(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a operation resource
+    async fn update_operation(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a operation resource
+    async fn delete_operation(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
+    // Location resource operations
+    // ------------------------------------------------------------------------
+
+    /// Plan changes to a location resource
+    async fn plan_location(
+        &self,
+        current_state: Option<&ResourceOutput>,
+        desired_input: &ResourceInput,
+    ) -> Result<ResourcePlan> {
+        // If no current state exists, this is a create operation
+        if current_state.is_none() {
+            return Ok(ResourcePlan::create());
+        }
+
+        // TODO: Implement proper diff logic
+        // For now, return NoOp if resource exists
+        Ok(ResourcePlan::no_op())
+    }
+
+    /// Create a new location resource
+    async fn create_location(
+        &self,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id("placeholder-id"))
+    }
+
+    /// Read a location resource
+    async fn read_location(
+        &self,
+        id: &str,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Update a location resource
+    async fn update_location(
+        &self,
+        id: &str,
+        input: ResourceInput,
+    ) -> Result<ResourceOutput> {
+        // TODO: Implement Gcp SDK calls
+        Ok(ResourceOutput::new()
+            .with_id(id))
+    }
+
+    /// Delete a location resource
+    async fn delete_location(
+        &self,
+        id: &str,
+    ) -> Result<()> {
+        // TODO: Implement Gcp SDK calls
+        Ok(())
+    }
+
+
+    // ------------------------------------------------------------------------
     // Connect_cluster resource operations
     // ------------------------------------------------------------------------
 
@@ -1223,11 +1345,11 @@ impl<'a> Managedkafka_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Consumer_group resource operations
+    // Acl resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a consumer_group resource
-    async fn plan_consumer_group(
+    /// Plan changes to a acl resource
+    async fn plan_acl(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1242,8 +1364,8 @@ impl<'a> Managedkafka_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new consumer_group resource
-    async fn create_consumer_group(
+    /// Create a new acl resource
+    async fn create_acl(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1252,8 +1374,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a consumer_group resource
-    async fn read_consumer_group(
+    /// Read a acl resource
+    async fn read_acl(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1262,8 +1384,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a consumer_group resource
-    async fn update_consumer_group(
+    /// Update a acl resource
+    async fn update_acl(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1273,8 +1395,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a consumer_group resource
-    async fn delete_consumer_group(
+    /// Delete a acl resource
+    async fn delete_acl(
         &self,
         id: &str,
     ) -> Result<()> {
@@ -1284,11 +1406,11 @@ impl<'a> Managedkafka_apiService<'a> {
 
 
     // ------------------------------------------------------------------------
-    // Subject resource operations
+    // Referencedby resource operations
     // ------------------------------------------------------------------------
 
-    /// Plan changes to a subject resource
-    async fn plan_subject(
+    /// Plan changes to a referencedby resource
+    async fn plan_referencedby(
         &self,
         current_state: Option<&ResourceOutput>,
         desired_input: &ResourceInput,
@@ -1303,8 +1425,8 @@ impl<'a> Managedkafka_apiService<'a> {
         Ok(ResourcePlan::no_op())
     }
 
-    /// Create a new subject resource
-    async fn create_subject(
+    /// Create a new referencedby resource
+    async fn create_referencedby(
         &self,
         input: ResourceInput,
     ) -> Result<ResourceOutput> {
@@ -1313,8 +1435,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id("placeholder-id"))
     }
 
-    /// Read a subject resource
-    async fn read_subject(
+    /// Read a referencedby resource
+    async fn read_referencedby(
         &self,
         id: &str,
     ) -> Result<ResourceOutput> {
@@ -1323,8 +1445,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Update a subject resource
-    async fn update_subject(
+    /// Update a referencedby resource
+    async fn update_referencedby(
         &self,
         id: &str,
         input: ResourceInput,
@@ -1334,130 +1456,8 @@ impl<'a> Managedkafka_apiService<'a> {
             .with_id(id))
     }
 
-    /// Delete a subject resource
-    async fn delete_subject(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Connector resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a connector resource
-    async fn plan_connector(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new connector resource
-    async fn create_connector(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a connector resource
-    async fn read_connector(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a connector resource
-    async fn update_connector(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a connector resource
-    async fn delete_connector(
-        &self,
-        id: &str,
-    ) -> Result<()> {
-        // TODO: Implement Gcp SDK calls
-        Ok(())
-    }
-
-
-    // ------------------------------------------------------------------------
-    // Mode resource operations
-    // ------------------------------------------------------------------------
-
-    /// Plan changes to a mode resource
-    async fn plan_mode(
-        &self,
-        current_state: Option<&ResourceOutput>,
-        desired_input: &ResourceInput,
-    ) -> Result<ResourcePlan> {
-        // If no current state exists, this is a create operation
-        if current_state.is_none() {
-            return Ok(ResourcePlan::create());
-        }
-
-        // TODO: Implement proper diff logic
-        // For now, return NoOp if resource exists
-        Ok(ResourcePlan::no_op())
-    }
-
-    /// Create a new mode resource
-    async fn create_mode(
-        &self,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id("placeholder-id"))
-    }
-
-    /// Read a mode resource
-    async fn read_mode(
-        &self,
-        id: &str,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Update a mode resource
-    async fn update_mode(
-        &self,
-        id: &str,
-        input: ResourceInput,
-    ) -> Result<ResourceOutput> {
-        // TODO: Implement Gcp SDK calls
-        Ok(ResourceOutput::new()
-            .with_id(id))
-    }
-
-    /// Delete a mode resource
-    async fn delete_mode(
+    /// Delete a referencedby resource
+    async fn delete_referencedby(
         &self,
         id: &str,
     ) -> Result<()> {
